@@ -1,0 +1,11 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+/tmp
+.docusaurus/
+/build
+
+/.nx/cache
+/.nx/workspace-data
+/node_modules
