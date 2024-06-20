@@ -1,11 +1,13 @@
 {
   "name": "ipedis",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "scripts": {
     "nx": "nx",
-    "prettier": "prettier",
-    "lint": "prettier *.json --write && nx run-many --target=lint --all --fix"
+    "build": "nx run-many --target=build --all --fix",
+    "lint": "prettier *.json --write && nx run-many --target=lint --all --fix",
+    "e2e": "nx run-many --target=e2e --all --fix",
+    "test": "nx run-many --target=test --all --fix"
   },
   "private": false,
   "devDependencies": {

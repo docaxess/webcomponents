@@ -61,7 +61,7 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "packages/toggle/**/*.{ts,tsx,json}",
+          "packages/toggle/src/**/*.{ts,tsx,json}",
           "packages/toggle/*.{ts,tsx,json}"
         ]
       }

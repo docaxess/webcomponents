@@ -2,7 +2,7 @@ import { Component, h, Prop, State } from "@stencil/core";
 
 @Component({
   tag: "ip-toggle",
-  styleUrl: "ip-toggle.scss",
+  styleUrl: "toggle.scss",
   shadow: true,
 })
 export class ToggleButton {
