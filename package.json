@@ -4,10 +4,11 @@
   "license": "CC0-1.0",
   "scripts": {
     "nx": "nx",
-    "build": "nx run-many --target=build --all --fix",
-    "lint": "prettier *.json --write && nx run-many --target=lint --all --fix",
-    "e2e": "nx run-many --target=e2e --all --fix",
-    "test": "nx run-many --target=test --all --fix"
+    "lint:update": "prettier *.json --write && nx run-many --target=lint --all --fix",
+    "build": "nx run-many --target=build --all",
+    "lint": "nx run-many --target=lint --all",
+    "e2e": "nx run-many --target=e2e --all",
+    "test": "nx run-many --target=test --all"
   },
   "private": false,
   "devDependencies": {

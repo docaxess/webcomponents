@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,3 +28,6 @@ jobs:
 
       - name: Test all packages
         run: npm run test
+
+      - name: e2e all packages
+        run: npm run e2e
