@@ -6,56 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface IpToggle {
+        "activeLabel": string;
+        "ariaLabel": string;
+        "inactiveLabel": string;
+        "toggleDisabled": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLIpToggleElement extends Components.IpToggle, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLIpToggleElement: {
+        prototype: HTMLIpToggleElement;
+        new (): HTMLIpToggleElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ip-toggle": HTMLIpToggleElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface IpToggle {
+        "activeLabel"?: string;
+        "ariaLabel"?: string;
+        "inactiveLabel"?: string;
+        "toggleDisabled"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "ip-toggle": IpToggle;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ip-toggle": LocalJSX.IpToggle & JSXBase.HTMLAttributes<HTMLIpToggleElement>;
         }
     }
 }

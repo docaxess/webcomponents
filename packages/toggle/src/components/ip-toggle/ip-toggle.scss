@@ -1,0 +1,56 @@
+:host {
+  --primary-color: var(--primaryColor, #4caf50);
+  --secondary-color: var(--secondaryColor, #000000);
+  --font-family: var(--fontFamily, Arial, sans-serif);
+  --text-color: var(--textColor, #ffffff);
+}
+.switch-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 209px;
+  height: 80px;
+  background-color: var(--secondary-color);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.switch-checkbox:focus {
+  outline: 1px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.switch-checkbox.active {
+  background-color: var(--primary-color);
+}
+
+.switch-checkbox .switch-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 75px;
+  background-color: #fff;
+  border-radius: 100%;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.switch-checkbox.active .switch-icon {
+  transform: translateX(120px) translateY(-50%);
+}
+
+.active-label {
+  font-size: 50px;
+  position: absolute;
+  left: 20px;
+  top: -40px;
+  color: var(--text-color);
+}
+
+.inactive-label {
+  font-size: 50px;
+  position: absolute;
+  right: 15px;
+  top: -40px;
+  color: var(--text-color);
+}
