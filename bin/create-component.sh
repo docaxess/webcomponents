@@ -38,3 +38,20 @@ jq '.targets.lint = {
     "lintFilePatterns": ["packages/'${PROJECT_NAME}'/**/*.ts", "packages/'${PROJECT_NAME}'/*.ts"]
   }
 }' "packages/${PROJECT_NAME}/project.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/project.json"
+
+## we update the package.json to add the homepage and issues url
+jq '.homepage = "https://github.com/docaxess/webcomponents"' "packages/${PROJECT_NAME}/package.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/package.json"
+jq '.bugs = {
+    "url": "https://github.com/docaxess/webcomponents/issues",
+    "email": "hi@docaxess.com"
+}' "packages/${PROJECT_NAME}/package.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/package.json"
+
+
+echo "Project $PROJECT_NAME created"
+echo "available commands:"
+echo "  - nx build $PROJECT_NAME"
+echo "  - nx lint $PROJECT_NAME"
+echo "  - nx test $PROJECT_NAME"
+echo "  - nx e2e $PROJECT_NAME"
+echo "  - nx serve $PROJECT_NAME"
+echo "Happy coding! 🚀"

@@ -2,6 +2,11 @@
   "name": "ipedis",
   "version": "0.0.0",
   "license": "CC0-1.0",
+  "homepage": "https://github.com/docaxess/webcomponents",
+  "bugs": {
+    "url": "https://github.com/docaxess/webcomponents/issues",
+    "email": "hi@docaxess.com"
+  },
   "scripts": {
     "nx": "nx",
     "lint:update": "prettier *.json --write && nx run-many --target=lint --all --fix",

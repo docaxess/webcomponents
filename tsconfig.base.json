@@ -16,6 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ipedis/che": ["dist/libs/che"],
+      "@ipedis/che/*": ["dist/libs/che/dist/components/*"],
+      "@ipedis/che/loader": ["dist/libs/che/loader"],
       "@ipedis/toggle": ["dist/libs/toggle"],
       "@ipedis/toggle/*": ["dist/libs/toggle/dist/components/*"],
       "@ipedis/toggle/loader": ["dist/libs/toggle/loader"]
