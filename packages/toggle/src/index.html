@@ -1,18 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <title>Stencil Component Starter</title>
     <style>
-        ip-toggle {
-            --primary-color: rgb(37, 152, 219);
-            --text-color: rgb(216, 188, 188);
-        }
+      .toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .without-text {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        border: 1px solid #000;
+        width: 250px;
+        height: 100px;
+      }
+
+      .with-text {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        border: 1px solid #000;
+        width: 250px;
+        height: 100px;
+      }
+
+      .with-indication {
+        border: 1px solid black;
+        width: 250px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
+      }
+
+      .switch-label {
+        font-size: 18px;
+        color: #000;
+      }
+
+      .helper-text {
+        font-size: 12px;
+        color: #000;
+      }
     </style>
     <script type="module" src="/build/toggle.esm.js"></script>
     <script nomodule src="/build/toggle.js"></script>
-</head>
-<body>
-<ip-toggle active-label="Yes" inactive-label="No"></ip-toggle>
-</body>
+  </head>
+  <body>
+    <div class="toggle">
+      <div class="with-text">
+        <label for="">Toggle with text</label>
+        <ip-toggle active-label="ON" inactive-label="OFF"></ip-toggle>
+      </div>
+      <div class="without-text">
+        <label for="">Toggle without text</label>
+        <ip-toggle></ip-toggle>
+      </div>
+      <div class="with-indication">
+        <ip-toggle size="small">
+          <label class="switch-label" slot="switch-label"
+            >Activate strong authentication</label
+          >
+          <p class="helper-text" slot="helper-text">This is the helper text.</p>
+        </ip-toggle>
+      </div>
+    </div>
+    <ip-toggle active-label="Yes" inactive-label="No"></ip-toggle>
+  </body>
+</html>
