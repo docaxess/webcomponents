@@ -11,9 +11,8 @@ describe("ip-toggle", () => {
       <ip-toggle>
         <mock:shadow-root>
            <div class="switch-button">
-             <button aria-checked="false" class="switch-checkbox" role="switch">
+             <input aria-checked="false" class="switch-checkbox" role="switch" />
                <span class="switch-icon"></span>
-             </button>
         </mock:shadow-root>
       </ip-toggle>
     `);
@@ -28,14 +27,14 @@ describe("ip-toggle", () => {
       <ip-toggle active-label="Oui" inactive-label="Non">
         <mock:shadow-root>
          <div class="switch-button">
-           <button aria-checked="false" class="switch-checkbox" role="switch">
+           <input aria-checked="false" class="switch-checkbox" role="switch" />
              <span class="switch-icon"></span>
              <span class="label">
                <p class="inactive-label">
                  Non
                </p>
              </span>
-           </button>
+
           </div>
         </mock:shadow-root>
       </ip-toggle>
