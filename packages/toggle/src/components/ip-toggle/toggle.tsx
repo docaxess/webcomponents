@@ -21,18 +21,20 @@ export class ToggleButton {
 
   render() {
     return (
-      <div class="switch-button">
-        <button
-          class={`switch-checkbox ${this.isActive ? "active" : ""}`}
-          onClick={() => this.handleClick()}
-          role="switch"
-          aria-checked={this.isActive.toString()}
-          aria-label={this.ariaLabel}
-          disabled={this.toggleDisabled}
-        >
-          <span class="switch-icon"></span>
-          {this.activeLabel !== undefined &&
-            this.inactiveLabel !== undefined && (
+      <div class="switch-container">
+        <slot name="switch-label"></slot>
+        <div class="switch-button">
+          <input
+            type="checkbox"
+            class={`switch-checkbox ${this.isActive ? "active" : ""}`}
+            onClick={() => this.handleClick()}
+            role="switch"
+            aria-checked={this.isActive.toString()}
+            aria-label={this.ariaLabel}
+            disabled={this.toggleDisabled}
+          />
+          <span class="switch-icon">
+            {this.activeLabel && this.inactiveLabel && (
               <span class="label">
                 {this.isActive ? (
                   <p class="active-label">{this.activeLabel}</p>
@@ -41,7 +43,9 @@ export class ToggleButton {
                 )}
               </span>
             )}
-        </button>
+          </span>
+        </div>
+        <slot name="helper-text"></slot>
       </div>
     );
   }
