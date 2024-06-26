@@ -1,0 +1,77 @@
+{
+  "name": "tooltip",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/tooltip/src",
+  "projectType": "library",
+  "tags": [],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/tooltip/tsconfig.lib.json",
+        "configPath": "packages/tooltip/stencil.config.ts",
+        "outputPath": "dist/packages/tooltip"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/tooltip/tsconfig.lib.json",
+        "configPath": "packages/tooltip/stencil.config.ts",
+        "outputPath": "dist/packages/tooltip"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/tooltip/tsconfig.lib.json",
+        "configPath": "packages/tooltip/stencil.config.ts",
+        "outputPath": "dist/packages/tooltip"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/tooltip/tsconfig.lib.json",
+        "configPath": "packages/tooltip/stencil.config.ts",
+        "outputPath": "dist/packages/tooltip"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/tooltip/**/*.ts",
+          "packages/tooltip/*.ts"
+        ]
+      }
+    }
+  }
+}

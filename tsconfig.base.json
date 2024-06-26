@@ -21,7 +21,10 @@
       "@ipedis/che/loader": ["dist/libs/che/loader"],
       "@ipedis/toggle": ["dist/libs/toggle"],
       "@ipedis/toggle/*": ["dist/libs/toggle/dist/components/*"],
-      "@ipedis/toggle/loader": ["dist/libs/toggle/loader"]
+      "@ipedis/toggle/loader": ["dist/libs/toggle/loader"],
+      "@ipedis/tooltip": ["dist/libs/tooltip"],
+      "@ipedis/tooltip/*": ["dist/libs/tooltip/dist/components/*"],
+      "@ipedis/tooltip/loader": ["dist/libs/tooltip/loader"]
     }
   },
   "exclude": ["node_modules", "tmp"]
