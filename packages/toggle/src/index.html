@@ -19,7 +19,7 @@
         align-items: center;
         margin-top: 20px;
         border: 1px solid #000;
-        width: 250px;
+        width: 580px;
         height: 100px;
       }
 
@@ -29,7 +29,7 @@
         align-items: center;
         margin-top: 20px;
         border: 1px solid #000;
-        width: 250px;
+        width: 580px;
         height: 100px;
       }
 
@@ -60,15 +60,29 @@
   <body>
     <div class="toggle">
       <div class="with-text">
-        <label for="">Toggle with text</label>
+        <label for="">Large</label>
+        <ip-toggle
+          active-label="ON"
+          inactive-label="OFF"
+          size="large"
+        ></ip-toggle>
+        <label for="">Medium</label>
         <ip-toggle active-label="ON" inactive-label="OFF"></ip-toggle>
+        <label for="">Small</label>
+        <ip-toggle
+          active-label="ON"
+          inactive-label="OFF"
+          size="small"
+        ></ip-toggle>
       </div>
       <div class="without-text">
         <label for="">Toggle without text</label>
+        <ip-toggle size="large"></ip-toggle>
         <ip-toggle></ip-toggle>
+        <ip-toggle size="small"></ip-toggle>
       </div>
       <div class="with-indication">
-        <ip-toggle>
+        <ip-toggle size="small">
           <label class="switch-label" slot="switch-label"
             >Activate strong authentication</label
           >
@@ -76,6 +90,5 @@
         </ip-toggle>
       </div>
     </div>
-    <ip-toggle active-label="Yes" inactive-label="No"></ip-toggle>
   </body>
 </html>
