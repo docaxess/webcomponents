@@ -19,6 +19,9 @@
       "@ipedis/che": ["dist/libs/che"],
       "@ipedis/che/*": ["dist/libs/che/dist/components/*"],
       "@ipedis/che/loader": ["dist/libs/che/loader"],
+      "@ipedis/login": ["dist/libs/login"],
+      "@ipedis/login/*": ["dist/libs/login/dist/components/*"],
+      "@ipedis/login/loader": ["dist/libs/login/loader"],
       "@ipedis/toggle": ["dist/libs/toggle"],
       "@ipedis/toggle/*": ["dist/libs/toggle/dist/components/*"],
       "@ipedis/toggle/loader": ["dist/libs/toggle/loader"]
