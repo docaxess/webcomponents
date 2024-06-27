@@ -35,7 +35,7 @@ describe('ip-checkbox-list', () => {
     });
 
     expect(root).toEqualHtml(`
-      <ip-checkbox-list>
+      <ip-checkbox-list options="{}">
          <mock:shadow-root>
            <div class="checkbox-list">
              <fieldset class="checkbox-content"></fieldset>
