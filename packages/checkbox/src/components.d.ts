@@ -9,7 +9,7 @@ export namespace Components {
     interface IpCheckbox {
         "defaultChecked": boolean;
         "disabled": boolean;
-        "id": string;
+        "identifier": string;
         "name": string;
     }
     interface IpCheckboxList {
@@ -54,7 +54,7 @@ declare namespace LocalJSX {
     interface IpCheckbox {
         "defaultChecked"?: boolean;
         "disabled"?: boolean;
-        "id"?: string;
+        "identifier"?: string;
         "name"?: string;
     }
     interface IpCheckboxList {

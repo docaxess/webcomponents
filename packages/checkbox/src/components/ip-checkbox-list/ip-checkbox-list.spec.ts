@@ -2,15 +2,37 @@ import { newSpecPage } from "@stencil/core/testing";
 import { IpCheckboxList } from "./ip-checkbox-list";
 
 describe("ip-checkbox-list", () => {
-  it("renders", async () => {
-    const mockedConsole = jest.spyOn(global.console, 'error').mockImplementation();
+  it("renders with errors", async () => {
+    /* global global */
+    const mockedConsole = jest
+      .spyOn(global.console, "error")
+      .mockImplementation();
 
     const { root } = await newSpecPage({
       components: [IpCheckboxList],
-      html: "<ip-checkbox-list></ip-checkbox-list>",
+      html: `<ip-checkbox-list options="{}"></ip-checkbox-list>`,
     });
 
-    expect(console.error).toBeCalledTimes(1)
+    expect(console.error).toHaveBeenCalledTimes(1);
+
+    expect(root).toEqualHtml(`
+      <ip-checkbox-list options="{}">
+         <mock:shadow-root>
+           <div class="checkbox-list">
+             <fieldset class="checkbox-content"></fieldset>
+           </div>
+         </mock:shadow-root>
+      </ip-checkbox-list>
+    `);
+
+    mockedConsole.mockRestore();
+  });
+
+  it("renders", async () => {
+    const { root } = await newSpecPage({
+      components: [IpCheckboxList],
+      html: `<ip-checkbox-list></ip-checkbox-list>`,
+    });
 
     expect(root).toEqualHtml(`
       <ip-checkbox-list>
@@ -21,8 +43,6 @@ describe("ip-checkbox-list", () => {
          </mock:shadow-root>
       </ip-checkbox-list>
     `);
-
-    mockedConsole.mockRestore();
   });
 
   it("renders with options", async () => {

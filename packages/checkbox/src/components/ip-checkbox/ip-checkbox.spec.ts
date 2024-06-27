@@ -27,10 +27,10 @@ describe("ip-checkbox", () => {
   it("renders with values", async () => {
     const { root } = await newSpecPage({
       components: [IpCheckbox],
-      html: `  <ip-checkbox default-checked="true" id="check me">Check me !</ip-checkbox>`,
+      html: `  <ip-checkbox default-checked="true" identifier="check me">Check me !</ip-checkbox>`,
     });
     expect(root).toEqualHtml(`
-     <ip-checkbox default-checked="true" id="check me">
+     <ip-checkbox default-checked="true" identifier="check me">
        <mock:shadow-root>
          <div class="checkbox-content">
            <input checked="" class="checkbox-input" id="check me" type="checkbox">

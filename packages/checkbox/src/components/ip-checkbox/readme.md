@@ -17,7 +17,7 @@
 | ---------------- | ----------------- | ----------- | --------- | ----------- |
 | `defaultChecked` | `default-checked` |             | `boolean` | `false`     |
 | `disabled`       | `disabled`        |             | `boolean` | `false`     |
-| `id`             | `id`              |             | `string`  | `undefined` |
+| `identifier`     | `identifier`      |             | `string`  | `undefined` |
 | `name`           | `name`            |             | `string`  | `undefined` |
 
 
