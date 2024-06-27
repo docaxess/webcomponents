@@ -30,15 +30,17 @@ describe("ip-checkbox", () => {
       html: `  <ip-checkbox default-checked="true" id="check me">Check me !</ip-checkbox>`,
     });
     expect(root).toEqualHtml(`
-     <div class="checkbox-content">
-        <input 
-            class="checkbox-input"
-            type="checkbox"
-            id="check me">
-            <label for="check me" class="checkbox-label">
-            <slot></slot>
-            </label>
-        </div>
+     <ip-checkbox default-checked="true" id="check me">
+       <mock:shadow-root>
+         <div class="checkbox-content">
+           <input checked="" class="checkbox-input" id="check me" type="checkbox">
+           <label class="checkbox-label" htmlfor="check me">
+             <slot></slot>
+           </label>
+         </div>
+       </mock:shadow-root>
+       Check me !
+     </ip-checkbox>
     `);
   });
 });

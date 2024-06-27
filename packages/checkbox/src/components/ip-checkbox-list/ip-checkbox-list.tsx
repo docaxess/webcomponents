@@ -29,7 +29,7 @@ export class IpCheckboxList {
   @Watch('options')
   parseOptions(newValue: string) {
     try {
-      const parsedOptions = JSON.parse(newValue);
+      const parsedOptions = JSON.parse(newValue || '{}');
 
       if (Array.isArray(parsedOptions) && parsedOptions.every(option => 'id' in option && 'label' in option)) {
         this.parsedOptions = parsedOptions;

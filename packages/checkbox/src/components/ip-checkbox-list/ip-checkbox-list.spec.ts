@@ -3,19 +3,26 @@ import { IpCheckboxList } from "./ip-checkbox-list";
 
 describe("ip-checkbox-list", () => {
   it("renders", async () => {
+    const mockedConsole = jest.spyOn(global.console, 'error').mockImplementation();
+
     const { root } = await newSpecPage({
       components: [IpCheckboxList],
       html: "<ip-checkbox-list></ip-checkbox-list>",
     });
+
+    expect(console.error).toBeCalledTimes(1)
+
     expect(root).toEqualHtml(`
       <ip-checkbox-list>
-        <mock:shadow-root>
-          <div class="checkbox-list">
+         <mock:shadow-root>
+           <div class="checkbox-list">
              <fieldset class="checkbox-content"></fieldset>
-          </div>
-        </mock:shadow-root>
+           </div>
+         </mock:shadow-root>
       </ip-checkbox-list>
     `);
+
+    mockedConsole.mockRestore();
   });
 
   it("renders with options", async () => {
@@ -24,15 +31,19 @@ describe("ip-checkbox-list", () => {
       html: `<ip-checkbox-list
                 legend="Preferences:"
                 options='[
-                    {"id": "1", "label": "Option 1"}, 
-                    {"id": "2", "label": "Option 2"}, 
+                    {"id": "1", "label": "Option 1"},
+                    {"id": "2", "label": "Option 2"},
                     {"id": "3", "label": "Option 3"}
                 ]'
                 >
              </ip-checkbox-list>"`,
     });
     expect(root).toEqualHtml(`
-      <ip-checkbox-list>
+      <ip-checkbox-list legend="Preferences:" options="[
+                    {&quot;id&quot;: &quot;1&quot;, &quot;label&quot;: &quot;Option 1&quot;},
+                    {&quot;id&quot;: &quot;2&quot;, &quot;label&quot;: &quot;Option 2&quot;},
+                    {&quot;id&quot;: &quot;3&quot;, &quot;label&quot;: &quot;Option 3&quot;}
+                ]">
         <mock:shadow-root>
             <div class="checkbox-list">
                 <fieldset class="checkbox-content">
@@ -45,7 +56,7 @@ describe("ip-checkbox-list", () => {
                             aria-checked="false"
                             role="checkbox"
                         />
-                        <label class="checkbox-label" for="1">Option 1</label>
+                        <label class="checkbox-label" htmlfor="1">Option 1</label>
                     </div>
                     <div>
                         <input
@@ -55,7 +66,7 @@ describe("ip-checkbox-list", () => {
                             aria-checked="false"
                             role="checkbox"
                         />
-                        <label class="checkbox-label" for="2">Option 2</label>
+                        <label class="checkbox-label" htmlfor="2">Option 2</label>
                     </div>
                     <div>
                     <input
@@ -65,7 +76,7 @@ describe("ip-checkbox-list", () => {
                         aria-checked="false"
                         role="checkbox"
                     />
-                        <label class="checkbox-label" for="3">Option 3</label>
+                        <label class="checkbox-label" htmlfor="3">Option 3</label>
                     </div>
                 </fieldset>
             </div>
