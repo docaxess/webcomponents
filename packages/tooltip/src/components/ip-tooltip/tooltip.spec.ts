@@ -16,8 +16,8 @@ describe("ip-tooltip", () => {
                     <div class="tooltip-container">
                         <div class="tooltip-trigger" role="button" aria-describedby="desc-tooltip" tabindex="0" >Trigger Text</div>
                         <div class="tooltip-content" role="tooltip" id="desc-tooltip">
-                        <p>Tooltip content</p>
-                        <div class="btn-inside"></div>
+                            <p>Tooltip content</p>
+                            <div class="btn-inside"></div>
                         </div>
                     </div>
                 </mock:shadow-root>
@@ -61,16 +61,16 @@ describe("ip-tooltip", () => {
             <ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="Tooltip content" tooltip-title="Title" tooltip-btn-close="true">
                 <mock:shadow-root>
                 <div class="tooltip-container">
-                <div class="tooltip-trigger" role="button" tabindex="0" aria-describedby="desc-tooltip" >Trigger Text</div>
-                <div class="tooltip-content" role="tooltip" id="desc-tooltip">
-                    <h3 class="tooltip-title">Title</h3>
-                    <button class="close" aria-label="Close tooltip" role="button" tabindex="0">
-                        <span>x</span>
-                    </button>
-                    <p> Tooltip content </p>
-                    <div class="btn-inside"></div>
-                </div>
-            
+                    <div class="tooltip-trigger" role="button" tabindex="0" aria-describedby="desc-tooltip" >Trigger Text</div>
+                    <div class="tooltip-content" role="tooltip" id="desc-tooltip">
+                        <h3 class="tooltip-title">Title</h3>
+                        <button class="close" aria-label="Close tooltip" role="button" tabindex="0">
+                            <span>x</span>
+                        </button>
+                        <p>Tooltip content</p>
+                        <div class="btn-inside"></div>
+                    </div>
+                </div>    
                 </mock:shadow-root>
             </ip-tooltip>
         `);
