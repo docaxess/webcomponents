@@ -16,8 +16,8 @@ interface CheckboxOption {
 }
 
 @Component({
-  tag: 'ip-checkbox-list',
-  styleUrl: 'ip-checkbox-list.scss',
+  tag: "ip-checkbox-list",
+  styleUrl: "ip-checkbox-list.scss",
   shadow: true,
 })
 export class IpCheckboxList {
@@ -38,7 +38,7 @@ export class IpCheckboxList {
       .map((option) => option.id);
   }
 
-  @Watch('options')
+  @Watch("options")
   parseOptions(newValue: string) {
     try {
       const parsedOptions = JSON.parse(newValue || '[]');
@@ -54,7 +54,7 @@ export class IpCheckboxList {
         );
       }
     } catch (error) {
-      console.error('Invalid options:', error);
+      console.error("Invalid options:", error);
     }
   }
 

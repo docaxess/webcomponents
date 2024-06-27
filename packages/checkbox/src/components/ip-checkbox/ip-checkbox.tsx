@@ -1,8 +1,8 @@
-import { Component, h, Element, Prop } from '@stencil/core/internal';
+import { Component, h, Element, Prop } from "@stencil/core/internal";
 
 @Component({
-  tag: 'ip-checkbox',
-  styleUrl: 'ip-checkbox.scss',
+  tag: "ip-checkbox",
+  styleUrl: "ip-checkbox.scss",
   shadow: true,
 })
 export class IpCheckbox {
@@ -16,7 +16,7 @@ export class IpCheckbox {
   handleChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     this.hostElement.dispatchEvent(
-      new CustomEvent('change', {
+      new CustomEvent("change", {
         detail: {
           name: this.name,
           checked: checkbox.checked,
