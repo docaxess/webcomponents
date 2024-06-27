@@ -1,56 +1,131 @@
 :host {
-  --primary-color: var(--primaryColor, #4caf50);
+  --primary-color: var(--ip-primary-color, #008c38);
   --secondary-color: var(--secondaryColor, #000000);
-  --font-family: var(--fontFamily, Arial, sans-serif);
+  --font-family: var(--fontFamily, Segoe UI);
   --text-color: var(--textColor, #ffffff);
 }
-.switch-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 209px;
-  height: 80px;
-  background-color: var(--secondary-color);
-  border-radius: 40px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.switch-button {
+  margin: 5px 0;
 }
-.switch-checkbox:focus {
-  outline: 1px solid var(--secondary-color);
+.switch-checkbox {
+  opacity: 0;
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.switch-icon {
+  width: 100px;
+  height: 40px;
+  display: block;
+  background-color: var(--secondary-color);
+  border-radius: 100px;
+  position: relative;
+  transition: background-color 0.5s;
+  box-shadow: 0 0 20px #477a8550;
+}
+
+.switch-checkbox:focus + .switch-icon {
+  outline: 2px solid #0f826e;
   outline-offset: 2px;
 }
 
-.switch-checkbox.active {
+.switch-icon::after {
+  content: "";
+  width: 33px;
+  height: 33px;
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 70px;
+  top: 3px;
+  left: 4px;
+  transition: 0.2s;
+}
+
+.switch-checkbox:checked + .switch-icon::after {
+  left: calc(100% - 10px);
+  transform: translateX(-80%);
+}
+
+.switch-checkbox:checked + .switch-icon {
   background-color: var(--primary-color);
 }
 
-.switch-checkbox .switch-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 80px;
-  height: 75px;
-  background-color: #fff;
-  border-radius: 100%;
-  left: 3px;
-  transition: transform 0.3s ease;
-}
-
-.switch-checkbox.active .switch-icon {
-  transform: translateX(120px) translateY(-50%);
+.switch-icon:active::after {
+  width: 160px;
 }
 
 .active-label {
-  font-size: 50px;
+  font-size: 25px;
   position: absolute;
-  left: 20px;
-  top: -40px;
+  left: 11px;
+  top: -20px;
   color: var(--text-color);
 }
 
 .inactive-label {
-  font-size: 50px;
+  font-size: 25px;
   position: absolute;
-  right: 15px;
-  top: -40px;
+  right: 11px;
+  top: -20px;
   color: var(--text-color);
+  font-family: var(--font-family);
+}
+.switch-checkbox.small {
+  width: 80px;
+  height: 30px;
+}
+
+.switch-icon.small {
+  width: 50px;
+  height: 25px;
+}
+
+.switch-icon.small::after {
+  width: 21px;
+  height: 21px;
+  top: 2px;
+  left: 3px;
+}
+.switch-checkbox.small:checked + .switch-icon.small::after {
+  left: calc(100% - 7px);
+  transform: translateX(-80%);
+}
+
+.active-label.small,
+.inactive-label.small {
+  font-size: 10px;
+}
+
+.active-label.small {
+  left: 5px;
+  top: -4px;
+}
+.inactive-label.small {
+  right: 5px;
+  top: -4px;
+}
+.switch-checkbox.large {
+  width: 120px;
+  height: 50px;
+}
+
+.switch-icon.large {
+  width: 120px;
+  height: 50px;
+}
+
+.switch-icon.large::after {
+  width: 40px;
+  height: 40px;
+  top: 5px;
+  left: 3px;
+}
+
+.active-label.large,
+.inactive-label.large {
+  font-size: 30px;
 }

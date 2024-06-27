@@ -10,6 +10,7 @@ export namespace Components {
         "activeLabel": string;
         "ariaLabel": string;
         "inactiveLabel": string;
+        "size": "small" | "medium" | "large";
         "toggleDisabled": boolean;
     }
 }
@@ -29,6 +30,7 @@ declare namespace LocalJSX {
         "activeLabel"?: string;
         "ariaLabel"?: string;
         "inactiveLabel"?: string;
+        "size"?: "small" | "medium" | "large";
         "toggleDisabled"?: boolean;
     }
     interface IntrinsicElements {
