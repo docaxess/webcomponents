@@ -47,20 +47,18 @@ export class IpTooltip {
 
   render() {
     return (
-      <div
-        class="tooltip-container"
-        onKeyUp={this._handleKeyUp}
-        onClick={this._toggleTooltip}
-        onMouseEnter={this._handleOnHover}
-        onMouseLeave={this._handleMouseLeave}
-        onFocus={this._toggleTooltip}
-        onBlur={this._handleMouseLeave}
-      >
+      <div class="tooltip-container">
         <div
           class="tooltip-trigger"
           tabindex="0"
           role="button"
           aria-describedby="desc-tooltip"
+          onKeyUp={this._handleKeyUp}
+          onClick={this._toggleTooltip}
+          onMouseEnter={this._handleOnHover}
+          onMouseLeave={this._handleMouseLeave}
+          onFocus={this._toggleTooltip}
+          onBlur={this._handleMouseLeave}
         >
           {this.tooltipTrigger}
         </div>
