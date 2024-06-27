@@ -19,6 +19,9 @@
       "@ipedis/che": ["dist/libs/che"],
       "@ipedis/che/*": ["dist/libs/che/dist/components/*"],
       "@ipedis/che/loader": ["dist/libs/che/loader"],
+      "@ipedis/checkbox": ["dist/libs/checkbox"],
+      "@ipedis/checkbox/*": ["dist/libs/checkbox/dist/components/*"],
+      "@ipedis/checkbox/loader": ["dist/libs/checkbox/loader"],
       "@ipedis/toggle": ["dist/libs/toggle"],
       "@ipedis/toggle/*": ["dist/libs/toggle/dist/components/*"],
       "@ipedis/toggle/loader": ["dist/libs/toggle/loader"]
