@@ -10,7 +10,7 @@
 | Property       | Attribute       | Description | Type      | Default     |
 | -------------- | --------------- | ----------- | --------- | ----------- |
 | `errorMessage` | `error-message` |             | `string`  | `undefined` |
-| `inputLabel`   | `input-label`   |             | `string`  | `'Email'`   |
+| `inputLabel`   | `input-label`   |             | `string`  | `"Email"`   |
 | `invalid`      | `invalid`       |             | `boolean` | `false`     |
 
 
