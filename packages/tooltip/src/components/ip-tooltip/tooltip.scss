@@ -1,0 +1,112 @@
+:host {
+  --primary-color: var(--primaryColor, #00376c);
+  --secondary-color: var(--secondaryColor, #0c0b2c);
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+}
+
+.tooltip-trigger {
+  cursor: pointer;
+  padding: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 2px;
+}
+
+.tooltip-trigger:focus,
+.tooltip-trigger:hover {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.tooltip-content {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+}
+
+.tooltip-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  width: 95%;
+}
+
+.tooltip-content h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+.tooltip-content .close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  border: none;
+}
+.tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  height: 125px;
+  border-color: var(--primary-color) transparent transparent transparent;
+  top: calc(100% - 2px);
+}
+
+.tooltip-title {
+  margin: 7px 0;
+  font-size: 1.2rem;
+}
+
+.close span {
+  color: white;
+  cursor: pointer;
+}
+
+.close span:hover {
+  color: var(--secondary-color);
+}
+
+.btn-inside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.cancel {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.cancel:hover,
+.learn-more:hover {
+  color: var(--secondary-color);
+}
+
+.learn-more {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  height: 30px;
+}

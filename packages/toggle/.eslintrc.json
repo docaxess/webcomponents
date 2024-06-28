@@ -11,7 +11,8 @@
   ],
   "plugins": ["jest", "prettier"],
   "env": {
-    "jest/globals": true
+    "jest/globals": true,
+    "browser": true
   },
   "rules": {
     "no-unused-vars": [

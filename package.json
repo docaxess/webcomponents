@@ -24,6 +24,8 @@
     "@nxext/stencil": "^19.0.0",
     "@stencil/core": "^4.12.6",
     "@stencil/sass": "3.0.7",
+    "@swc-node/register": "^1.9.2",
+    "@swc/core": "^1.6.5",
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "eslint-config-prettier": "^9.1.0",

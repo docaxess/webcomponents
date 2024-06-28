@@ -6,7 +6,7 @@ describe("ip-toggle", () => {
 
     await page.setContent("<ip-toggle></ip-toggle>");
     const toggle = await page.find("ip-toggle");
-    const button = await page.find("ip-toggle >>> button");
+    const button = await page.find("ip-toggle >>> input[type='checkbox']");
 
     expect(toggle).toHaveClass("hydrated");
     expect(button).toEqualAttribute("role", "switch");
@@ -33,7 +33,7 @@ describe("ip-toggle", () => {
     await page.setContent(
       '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>',
     );
-    const button = await page.find("ip-toggle >>> button");
+    const button = await page.find("ip-toggle >>> input[type='checkbox']");
     const paragraph = await page.find("ip-toggle >>> p");
 
     expect(button).toEqualAttribute("aria-checked", "false");
@@ -46,7 +46,7 @@ describe("ip-toggle", () => {
     await page.setContent(
       '<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>',
     );
-    const button = await page.find("ip-toggle >>> button");
+    const button = await page.find("ip-toggle >>> input[type='checkbox']");
     const paragraph = await page.find("ip-toggle >>> p");
 
     await button.click();
