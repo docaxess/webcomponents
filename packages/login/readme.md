@@ -1,69 +1,78 @@
+# Login Documentation
 
-# Installation:
+In this component we have two elements combined: - **ip-email**: for email or username input - **ip-password**: for password input
 
-## Step 1:
+## Installation:
+
+  <!-- TODO  -->
+
+### Step 1:
 
 Install the ip-tooltip component as a dependency in the project:
-<!-- TODO pending deployment on npm -->
+
 ```bash
-npm install 
+npm install
 ```
 
-## Step 2:
+### Step 2:
 
-Import module in script file: 
+Import module in script file:
 
 ```bash
 import '../node_modules/';
 ```
 
-# Usage:
+## Usage:
 
-To use these components, we make us of tag: As input, we have the following options for each:
-  
-## Ip-email
+To use these components, we must add the properties as attributes.
 
-  - **error-message** : The error message when the user enters a wrong username or email
-  - **input-label** : The name of the input, it's default value is "Email".
-  - **invalid** : It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.
+### Component Tag:
 
+Use the `<ip-email>` and `<ip-password>` tag in your JSX/HTML.
 
-## Ip-password
+### Properties
 
-  - **error-message** : The error message when the user enters a wrong password.
-  - **invalid** : It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.
-  - **forgot-password-link** : your personal link for reinitialize password
+### Ip-email
 
+| Property       | Attribute       | Necessity | Description                                                                                                   | Type      | Default     |
+| -------------- | --------------- | --------- | ------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `errorMessage` | `error-message` | Required  | `The error message when the user enters a wrong username or email`                                            | `string`  | `undefined` |
+| `inputLabel`   | `input-label`   | Optional  | `The name of the input, it's default value is "Email", you can specify it.`                                   | `string`  | `"Email"`   |
+| `invalid`      | `invalid`       | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
 
+### Ip-password
 
+| Property             | Attribute              | Necessity | Description                                                                                                   | Type      | Default     |
+| -------------------- | ---------------------- | --------- | ------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `errorMessage`       | `error-message`        | Required  | `The error message when the user enters a wrong username or email`                                            | `string`  | `undefined` |
+| `forgotPasswordLink` | `forgot-password-link` | Required  | `your personal link for reinitialize password`                                                                | `string`  | `undefined` |
+| `invalid`            | `invalid`              | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
 
-*e.g:*
+_e.g:_
 
 ```html
-    <form class="login-form">
-      <ip-email
-      class="form-group "
-      error-message="The username entered is incorrect"
-      invalid="true"
-      input-label="User name"
-    >
-    </ip-email>
-    <ip-password
+<form class="login-form">
+  <ip-email
+    class="form-group "
+    error-message="The username entered is incorrect"
+    invalid="true"
+    input-label="User name"
+  >
+  </ip-email>
+  <ip-password
     class="form-group "
     error-message="The password entered is incorrect"
     invalid="true"
-    forgot-password-link="https://www.google.com"
-    >
-    </ip-password>
-    <button class="btn" type="submit" >
-      Login
-    </button>
-
+    forgot-password-link="https://your_personal_link_to_reset_password"
+  >
+  </ip-password>
+  <button class="btn" type="submit">Login</button>
+</form>
 ```
 
 # Customization:
 
-We have a set of predefined variable used to customisation the tooltip: 
+We have a set of predefined variable used to customisation the tooltip:
 
 - **--primary-color**
 - **--secondary-color**
