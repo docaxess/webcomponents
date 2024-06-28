@@ -30,15 +30,18 @@
 
 .input__input {
   color: #000;
-  font-size: 1rem;
   border-style: none;
   outline: none;
   width: 100%;
   padding: 1.3rem 1rem;
   border: 1px solid var(--secondary-color);
   border-radius: 4px;
-  height: 30px;
+  height: 35px;
   font-size: 12px;
+
+  &--invalid {
+    border: 1px solid red;
+  }
 }
 .input__input:hover {
   background-position: 100% 0;
@@ -56,6 +59,13 @@
 
 .input__error {
   color: red;
-  font-size: 0.8rem;
-  margin-top: 0.5em;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.input_btn {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
