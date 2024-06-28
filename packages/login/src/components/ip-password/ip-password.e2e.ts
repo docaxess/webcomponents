@@ -1,29 +1,35 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpPassword } from "./ip-password";
+import { newE2EPage } from "@stencil/core/testing";
 
 describe("ip-password", () => {
   it("renders", async () => {
-    const { root } = await newSpecPage({
-      components: [IpPassword],
-      html: "<ip-password></ip-password>",
-    });
-    expect(root).toEqualHtml(`
-            <ip-password>
-                <mock:shadow-root>
-                    <div class="input">
-                        <label htmlfor="password" class="input__label">
-                            Password
-                            <span aria-hidden="true" class="required-asterisk">
-                                *
-                            </span>
-                        </label>
-                        <div class="input_btn">
-                            <input type="password" id="password" class="input__input" autocomplete="current-password" required placeholder="Type your Password here...">
-                        </div>
-                        
-                    </div>
-                </mock:shadow-root>
-            </ip-password>
-        `);
+    const page = await newE2EPage();
+
+    await page.setContent("<ip-password></ip-password>");
+    const password = await page.find("ip-password");
+    const input = await page.find("ip-password >>> input");
+
+    expect(password).toHaveClass("hydrated");
+    expect(input).toEqualAttribute("type", "password");
+  });
+
+  it("toogles password visibility", async () => {
+    const page = await newE2EPage();
+    await page.setContent("<ip-password></ip-password>");
+    const password = await page.find("ip-password");
+    const input = await page.find("ip-password >>> input");
+    const button = await page.find("ip-password >>> button");
+
+    expect(password).toHaveClass("hydrated");
+    expect(input).toEqualAttribute("type", "password");
+
+    await button.click();
+    await page.waitForChanges();
+
+    expect(input).toEqualAttribute("type", "text");
+
+    await button.click();
+    await page.waitForChanges();
+
+    expect(input).toEqualAttribute("type", "password");
   });
 });
