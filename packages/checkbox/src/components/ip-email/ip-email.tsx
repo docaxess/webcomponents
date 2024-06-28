@@ -29,13 +29,17 @@ export class IpEmail {
             type="email"
             id="email"
             class={inputClasses}
-            autocomplete="email"
+            autoComplete="email"
             required
             placeholder={`Type your ${this.inputLabel} here...`}
           />
         </div>
 
-        {this.invalid && <p class="input__error">{this.errorMessage}</p>}
+        {this.invalid && (
+          <p id={`${this.inputLabel}-error`} class="input__error">
+            {this.errorMessage}
+          </p>
+        )}
       </div>
     );
   }
