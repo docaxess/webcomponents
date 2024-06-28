@@ -15,10 +15,6 @@ export class IpPassword {
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
-    const passwordInput = this.el.querySelector(
-      "#password"
-    ) as HTMLInputElement;
-    passwordInput.type = this.passwordVisible ? "text" : "password";
   }
 
   render() {
@@ -39,7 +35,7 @@ export class IpPassword {
             type={this.passwordVisible ? "text" : "password"}
             id="password"
             class={inputClasses}
-            autocomplete="new-password"
+            autoComplete="new-password"
             required
             aria-invalid={this.invalid ? "true" : "false"}
             aria-describedby={this.invalid ? "password-error" : ""}
@@ -85,7 +81,11 @@ export class IpPassword {
               </a>
             </p>
           )}
-          {this.invalid && <p class="input__error">{this.errorMessage}</p>}
+          {this.invalid && (
+            <p id="password-error" class="input__error">
+              {this.errorMessage}
+            </p>
+          )}
         </div>
       </div>
     );
