@@ -1,6 +1,16 @@
 # Login Documentation
 
-In this component we have two elements combined: - **ip-email**: for email or username input - **ip-password**: for password input
+In this component we have two elements combined:
+
+- **ip-email**: for email or username input
+  [Figma link](https://www.figma.com/design/63w4li687mfdYtETlBu6a9/Component---Mixed?node-id=616-2637&m=dev)
+
+[Design System link](https://design.ipedis.com/5dda74a23/p/83b269-text-input)
+
+- **ip-password**: for password input
+  [Figma link](https://www.figma.com/design/63w4li687mfdYtETlBu6a9/Component---Mixed?node-id=616-2637&m=dev)
+
+[Design System link](https://design.ipedis.com/5dda74a23/p/59c81f-password-input)
 
 ## Installation:
 
