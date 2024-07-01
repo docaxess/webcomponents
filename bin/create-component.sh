@@ -35,7 +35,7 @@ sed -i -e "s|TEMPLATE_NAMESPACE|${PROJECT_NAME}|g" "packages/${PROJECT_NAME}/ste
 jq '.targets.lint = {
   "executor": "@nx/eslint:lint",
   "options": {
-    "lintFilePatterns": ["packages/'${PROJECT_NAME}'/**/*.{ts,tsx,json}", "packages/'${PROJECT_NAME}'/*.{ts,tsx,json}"]
+    "lintFilePatterns": ["packages/'${PROJECT_NAME}'/src/**/*.{ts,tsx,json}", "packages/'${PROJECT_NAME}'/*.{ts,tsx,json}"]
   }
 }' "packages/${PROJECT_NAME}/project.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/project.json"
 
