@@ -1,0 +1,29 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+      name="viewport"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script src="/build/ip-radio.esm.js" type="module"></script>
+    <script nomodule src="/build/radio.js"></script>
+  </head>
+  <body>
+    <ip-radio
+      options='[
+      {"id": "1", "label": "Option 1", "disabled": true},
+      {"id": "2", "label": "Option 2"}, 
+      {"id": "3", "label": "Option 3"}
+      ]'
+    ></ip-radio>
+    <script>
+      const radio = document.querySelector('ip-radio');
+      radio.addEventListener('selectionChanged', (event) => {
+        console.log('selectionChanged', event.detail);
+      });
+    </script>
+  </body>
+</html>
