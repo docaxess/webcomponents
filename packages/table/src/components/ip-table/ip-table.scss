@@ -1,55 +1,106 @@
-/* ip-table.scss */
+:host {
+  --primary-color: var(--ip-primary-color, #1a73e8);
+  --secondary-color: var(--ip-secondary-color, #f9f9f9);
+  --font-size: var(--ip-font-size, 15px);
+  --font-family: var(--ip-font-family, Arial, sans-serif);
+  --thead-color: var(--ip-thead-color, white);
+  --hover-color: var(--ip-hover-color, #8f2b8f);
+}
 
 :host {
-  display: block; /* Permet à l'élément d'être un bloc */
-  font-family: Arial, sans-serif; /* Choix de la police */
-  border: 1px solid #ccc; /* Bordure autour du tableau */
-  border-radius: 8px; /* Coins arrondis */
-  overflow: hidden; /* Pour contenir les éléments fils sans déborder */
+  display: block;
+  font-family: var(--font-family);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 table {
-  width: 100%; /* Tableau prend la largeur complète du composant */
-  border-collapse: collapse; /* Fusionner les bordures des cellules */
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: var(--font-size);
 }
 
 thead {
-  background-color: #1a73e8; /* Couleur de fond de l'en-tête */
+  background-color: var(--primary-color);
+  color: var(--thead-color);
 }
 
 th,
 td {
-  padding: 12px 16px; /* Espacement interne des cellules */
-  text-align: left; /* Alignement du texte à gauche */
-  border-bottom: 1px solid #ddd; /* Bordure basse des lignes de tableau */
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #1a73e8; /* Couleur de fond des cellules d'en-tête */
-  font-weight: bold; /* Texte en gras pour les en-têtes */
+  background-color: var(--primary-color);
+  font-weight: bold;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Couleur de fond des lignes paires */
+  background-color: var(--secondary-color);
 }
 
 tbody tr:hover {
-  background-color: #ffffff; /* Couleur de fond au survol */
-  border: 2px solid rgb(143, 43, 143);
+  background-color: #ffffff;
+  border: 2px solid var(--hover-color);
 }
 button {
-  background-color: #1a73e8;
+  background-color: var(--primary-color);
   border: none;
 }
-
+button:focus {
+  outline: none;
+  svg {
+    background-color: white;
+    border-radius: 10px;
+    path {
+      fill: var(--primary-color);
+    }
+  }
+}
 .status-svg circle {
   width: 8px;
   height: 8px;
-  fill: #3cc13b; /* Couleur par défaut pour "In Stock" */
+  fill: #3cc13b;
 }
 
 .status-svg.red circle {
   width: 8px;
   height: 8px;
-  fill: #ff4136; /* Couleur pour "Backorder" */
+  fill: #df1f15;
+}
+
+.status-svg.orange circle {
+  width: 8px;
+  height: 8px;
+  fill: #ff851b;
+}
+.status {
+  display: flex;
+  padding: 0px 30px;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+}
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  .status-svg circle {
+    width: 6px;
+    height: 6px;
+  }
+
+  .status {
+    padding: 0 10px;
+  }
 }

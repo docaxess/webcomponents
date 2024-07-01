@@ -15,6 +15,10 @@ interface tableOption {
 })
 export class IpTable {
   @Prop() options: string;
+  @Prop() currency: string = "$";
+  @Prop() state1: string = "In Stock";
+  @Prop() state2: string = "Backorder";
+  @Prop() state3: string = "Low Stock";
 
   @State() parsedOptions: tableOption[] = [];
   @State() sortDirection: { [key in keyof tableOption]: "asc" | "desc" } = {
@@ -80,6 +84,7 @@ export class IpTable {
           viewBox="0 0 17 16"
           fill="none"
           class={focusClass}
+          aria-hidden="true"
         >
           <g clip-path="url(#clip0_2545_1451)">
             <path
@@ -98,7 +103,7 @@ export class IpTable {
     };
 
     const statusSvg = (status: string) => {
-      if (status === "In Stock") {
+      if (status === this.state1) {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,11 +112,12 @@ export class IpTable {
             height="8"
             viewBox="0 0 8 8"
             fill="#3CC13B"
+            aria-label={this.state1}
           >
             <circle cx="4" cy="4" r="4" />
           </svg>
         );
-      } else if (status === "Backorder") {
+      } else if (status === this.state2) {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +125,22 @@ export class IpTable {
             width="8"
             height="8"
             viewBox="0 0 8 8"
-            fill="#FF4136"
+            fill="red"
+            aria-label={this.state2}
+          >
+            <circle cx="4" cy="4" r="4" />
+          </svg>
+        );
+      } else if (status === this.state3) {
+        return (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="status-svg orange"
+            width="8"
+            height="8"
+            viewBox="0 0 8 8"
+            fill="orange"
+            aria-label={this.state3}
           >
             <circle cx="4" cy="4" r="4" />
           </svg>
@@ -131,34 +152,49 @@ export class IpTable {
     return (
       <table>
         <thead>
-          <tr>
+          <tr class="head">
             <th>
-              Name
-              <button onClick={() => this.sortTable("name")}>
+              <label htmlFor="">Product Name</label>
+              <button
+                onClick={() => this.sortTable("name")}
+                aria-label="Sort by name"
+              >
                 {filterSvg("name")}
               </button>
             </th>
             <th>
-              Number
-              <button onClick={() => this.sortTable("number")}>
+              <label htmlFor="">Product no.</label>
+              <button
+                onClick={() => this.sortTable("number")}
+                aria-label="Sort by number"
+              >
                 {filterSvg("number")}
               </button>
             </th>
             <th>
-              Category
-              <button onClick={() => this.sortTable("category")}>
+              <label htmlFor="">Category</label>
+              <button
+                onClick={() => this.sortTable("category")}
+                aria-label="Sort by category"
+              >
                 {filterSvg("category")}
               </button>
             </th>
             <th>
-              Price
-              <button onClick={() => this.sortTable("price")}>
+              <label htmlFor="">Price</label>
+              <button
+                onClick={() => this.sortTable("price")}
+                aria-label="Sort by price"
+              >
                 {filterSvg("price")}
               </button>
             </th>
             <th>
-              Status
-              <button onClick={() => this.sortTable("status")}>
+              <label htmlFor="">Status</label>
+              <button
+                onClick={() => this.sortTable("status")}
+                aria-label="Sort by status"
+              >
                 {filterSvg("status")}
               </button>
             </th>
@@ -170,19 +206,26 @@ export class IpTable {
               <td>{option.name}</td>
               <td>{option.number}</td>
               <td>{option.category}</td>
-              <td>{option.price}</td>
               <td>
-                {option.status === "In Stock" ? (
-                  <span>
-                    {statusSvg("In Stock")}
-                    In Stock
+                {this.currency} {option.price}
+              </td>
+              <td>
+                {option.status === this.state1 ? (
+                  <span class="status">
+                    {statusSvg(this.state1)}
+                    {this.state1}
                   </span>
-                ) : (
-                  <span>
-                    {statusSvg("Backorder")}
-                    Backorder
+                ) : option.status === this.state2 ? (
+                  <span class="status">
+                    {statusSvg(this.state2)}
+                    {this.state2}
                   </span>
-                )}
+                ) : option.status === this.state3 ? (
+                  <span class="status">
+                    {statusSvg(this.state3)}
+                    {this.state3}
+                  </span>
+                ) : null}
               </td>
             </tr>
           ))}
