@@ -158,6 +158,11 @@ export class IpTable {
               <button
                 onClick={() => this.sortTable("name")}
                 aria-label="Sort by name"
+                aria-sort={
+                  this.sortDirection["name"] === "asc"
+                    ? "ascending"
+                    : "descending"
+                }
               >
                 {filterSvg("name")}
               </button>
@@ -167,6 +172,11 @@ export class IpTable {
               <button
                 onClick={() => this.sortTable("number")}
                 aria-label="Sort by number"
+                aria-sort={
+                  this.sortDirection["number"] === "asc"
+                    ? "ascending"
+                    : "descending"
+                }
               >
                 {filterSvg("number")}
               </button>
@@ -176,6 +186,11 @@ export class IpTable {
               <button
                 onClick={() => this.sortTable("category")}
                 aria-label="Sort by category"
+                aria-sort={
+                  this.sortDirection["category"] === "asc"
+                    ? "ascending"
+                    : "descending"
+                }
               >
                 {filterSvg("category")}
               </button>
@@ -185,6 +200,11 @@ export class IpTable {
               <button
                 onClick={() => this.sortTable("price")}
                 aria-label="Sort by price"
+                aria-sort={
+                  this.sortDirection["price"] === "asc"
+                    ? "ascending"
+                    : "descending"
+                }
               >
                 {filterSvg("price")}
               </button>
@@ -194,6 +214,11 @@ export class IpTable {
               <button
                 onClick={() => this.sortTable("status")}
                 aria-label="Sort by status"
+                aria-sort={
+                  this.sortDirection["status"] === "asc"
+                    ? "ascending"
+                    : "descending"
+                }
               >
                 {filterSvg("status")}
               </button>
