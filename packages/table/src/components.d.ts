@@ -7,7 +7,11 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpTable {
+        "currency": string;
         "options": string;
+        "state1": string;
+        "state2": string;
+        "state3": string;
     }
 }
 declare global {
@@ -23,7 +27,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpTable {
+        "currency"?: string;
         "options"?: string;
+        "state1"?: string;
+        "state2"?: string;
+        "state3"?: string;
     }
     interface IntrinsicElements {
         "ip-table": IpTable;
