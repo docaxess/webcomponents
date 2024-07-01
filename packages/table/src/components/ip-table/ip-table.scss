@@ -1,0 +1,55 @@
+/* ip-table.scss */
+
+:host {
+  display: block; /* Permet à l'élément d'être un bloc */
+  font-family: Arial, sans-serif; /* Choix de la police */
+  border: 1px solid #ccc; /* Bordure autour du tableau */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Pour contenir les éléments fils sans déborder */
+}
+
+table {
+  width: 100%; /* Tableau prend la largeur complète du composant */
+  border-collapse: collapse; /* Fusionner les bordures des cellules */
+}
+
+thead {
+  background-color: #1a73e8; /* Couleur de fond de l'en-tête */
+}
+
+th,
+td {
+  padding: 12px 16px; /* Espacement interne des cellules */
+  text-align: left; /* Alignement du texte à gauche */
+  border-bottom: 1px solid #ddd; /* Bordure basse des lignes de tableau */
+}
+
+th {
+  background-color: #1a73e8; /* Couleur de fond des cellules d'en-tête */
+  font-weight: bold; /* Texte en gras pour les en-têtes */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Couleur de fond des lignes paires */
+}
+
+tbody tr:hover {
+  background-color: #ffffff; /* Couleur de fond au survol */
+  border: 2px solid rgb(143, 43, 143);
+}
+button {
+  background-color: #1a73e8;
+  border: none;
+}
+
+.status-svg circle {
+  width: 8px;
+  height: 8px;
+  fill: #3cc13b; /* Couleur par défaut pour "In Stock" */
+}
+
+.status-svg.red circle {
+  width: 8px;
+  height: 8px;
+  fill: #ff4136; /* Couleur pour "Backorder" */
+}
