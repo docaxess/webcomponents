@@ -1,4 +1,13 @@
-import { Component, Prop, h, State } from "@stencil/core";
+import {
+  Component,
+  Prop,
+  h,
+  State,
+  Listen,
+  Element,
+  Event,
+  EventEmitter,
+} from "@stencil/core";
 
 @Component({
   tag: "ip-tooltip",
@@ -14,35 +23,65 @@ export class IpTooltip {
   @Prop() btn2AriaLabel: string;
   @Prop() tooltipBtnClose: boolean = false;
   @Prop() tooltipTitle: string;
-  @Prop() hoverTooltip: boolean = false;
+  @Prop() type: "click" | "hover" = "hover";
+
+  @Event() btn1Click: EventEmitter;
+  @Event() btn2Click: EventEmitter;
 
   @State() showTooltip: boolean = false;
+
+  @Element() el: HTMLElement;
 
   _toggleTooltip = () => {
     this.showTooltip = !this.showTooltip;
   };
 
-  _handleMouseEnter = () => {
-    if (!this.showTooltip) {
+  @Listen("click", { target: "document" })
+  handleOutsideClick(event) {
+    if (!event.composedPath().includes(this.el)) {
+      this.showTooltip = false;
+    }
+  }
+
+  @Listen("mouseenter")
+  handleMouseEnter() {
+    if (this.type === "hover") {
       this.showTooltip = true;
     }
-  };
+  }
 
-  _handleMouseLeave = () => {
+  @Listen("mouseleave")
+  handleMouseLeave() {
+    if (this.type === "hover") {
+      this.showTooltip = false;
+    }
+  }
+
+  closeTooltip = () => {
     this.showTooltip = false;
   };
 
-  _handleOnHover = () => {
-    if (this.hoverTooltip) {
-      this._handleMouseEnter();
+  handleBlur = () => {
+    const containsButtons =
+      this.el.querySelector(".tooltip-content button") !== null;
+    if (!containsButtons) {
+      this.showTooltip = false;
     }
   };
 
-  _handleKeyUp = (event: KeyboardEvent) => {
+  handleKeyUp = (event: KeyboardEvent) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      this._toggleTooltip();
+      this.showTooltip = !this.showTooltip;
     }
+  };
+
+  handleBtn1Click = () => {
+    this.btn1Click.emit();
+  };
+
+  handleBtn2Click = () => {
+    this.btn2Click.emit();
   };
 
   render() {
@@ -53,18 +92,21 @@ export class IpTooltip {
           tabindex="0"
           role="button"
           aria-describedby="desc-tooltip"
-          onKeyUp={this._handleKeyUp}
-          onClick={this._toggleTooltip}
-          onMouseEnter={this._handleOnHover}
-          onMouseLeave={this._handleMouseLeave}
-          onFocus={this._toggleTooltip}
-          onBlur={this._handleMouseLeave}
+          onFocus={this.type === "click" ? undefined : this._toggleTooltip}
+          onBlur={this.type === "click" ? undefined : this.handleBlur}
+          onKeyUp={this.handleKeyUp}
+          onClick={this.type === "click" ? this._toggleTooltip : undefined}
         >
           {this.tooltipTrigger}
         </div>
 
         {this.showTooltip && (
-          <div class="tooltip-content" role="tooltip" id="desc-tooltip">
+          <div
+            class="tooltip-content"
+            role="tooltip"
+            id="desc-tooltip"
+            aria-hidden={this.showTooltip ? "false" : "true"}
+          >
             {this.tooltipTitle && (
               <h3 class="tooltip-title">{this.tooltipTitle}</h3>
             )}
@@ -74,7 +116,7 @@ export class IpTooltip {
                 role="button"
                 tabindex="0"
                 aria-label="Close tooltip"
-                onClick={this._handleMouseLeave}
+                onClick={this.closeTooltip}
               >
                 <span>x</span>
               </button>
@@ -88,6 +130,7 @@ export class IpTooltip {
                   role="button"
                   aria-label={this.btn1AriaLabel}
                   tabindex="0"
+                  onClick={this.handleBtn1Click}
                 >
                   {this.tooltipBtn1}
                 </button>
@@ -98,6 +141,7 @@ export class IpTooltip {
                   role="button"
                   aria-label={this.btn2AriaLabel}
                   tabindex="0"
+                  onClick={this.handleBtn2Click}
                 >
                   {this.tooltipBtn2}
                 </button>
