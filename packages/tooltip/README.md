@@ -88,4 +88,21 @@ ip-tooltip {
 }
 ```
 
-## Event
+## Listening to Event
+
+To listen to events emitted by ip-tooltip,open your browser's console. Event details will be displayed in the console when checkboxes are modified.
+Example JavaScript code to listen to events:
+
+```javascript
+document.addEventListener("DOMContentLoaded", function () {
+  const tooltip = document.querySelector("#clicked-tooltip");
+
+  tooltip.addEventListener("btn1Click", function () {
+    console.log("Event btn1Click captured from index.html");
+  });
+
+  tooltip.addEventListener("btn2Click", function () {
+    console.log("Event btn2Click captured from index.html");
+  });
+});
+```
