@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from "@stencil/core";
+import { Component, h, Prop, State, Watch } from "@stencil/core";
 
 @Component({
   tag: "ip-toggle",
@@ -13,6 +13,18 @@ export class ToggleButton {
   @Prop() ariaLabel: string;
   @Prop() toggleDisabled: boolean = false;
   @Prop() size: "small" | "medium" | "large" = "medium";
+  @Prop() checked: boolean = false;
+
+  @Watch("checked")
+  handleCheckedChange(newValue: boolean) {
+    if (newValue !== this.isActive) {
+      this.isActive = newValue;
+    }
+  }
+
+  componentWillLoad() {
+    this.isActive = this.checked;
+  }
 
   handleClick() {
     if (!this.toggleDisabled) {
@@ -33,6 +45,7 @@ export class ToggleButton {
             aria-checked={this.isActive.toString()}
             aria-label={this.ariaLabel}
             disabled={this.toggleDisabled}
+            checked={this.isActive}
           />
           <span class={`switch-icon ${this.size}`}>
             {this.activeLabel && this.inactiveLabel && (

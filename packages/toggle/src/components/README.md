@@ -33,6 +33,7 @@ To use this component, we must add the properties as attributes.
 | Property         | Attribute         | Necessity | Description                                                           | Type      | Default     |
 | ---------------- | ----------------- | --------- | --------------------------------------------------------------------- | --------- | ----------- |
 | `ariaLabel`      | `aria-label`      | Required  | `it is the aria-label of content for accessibility`                   | `string`  | `undefined` |
+| `checked`        | `checked`         | Optional  | `it is the initial state of checked`                                  | `boolean` | `false`     |
 | `activeLabel`    | `active-label`    | Optional  | `this is the text that will be displayed when the toggle is active`   | `string`  | `undefined` |
 | `inactiveLabel`  | `inactive-label`  | Optional  | `this is the text that will be displayed when the toggle is inactive` | `string`  | `undefined` |
 | `toggleDisabled` | `toggle-disabled` | Optional  | `when we need to set the toggle to disabled`                          | `boolean` | `false`     |
@@ -46,6 +47,7 @@ _e.g:_
   inactive-label="OFF"
   aria-label="Toggle notifications on or off"
   size="small"
+  checked="true"
 >
 </ip-toggle>
 ```

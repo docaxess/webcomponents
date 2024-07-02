@@ -9,6 +9,7 @@ export namespace Components {
     interface IpToggle {
         "activeLabel": string;
         "ariaLabel": string;
+        "checked": boolean;
         "inactiveLabel": string;
         "size": "small" | "medium" | "large";
         "toggleDisabled": boolean;
@@ -29,6 +30,7 @@ declare namespace LocalJSX {
     interface IpToggle {
         "activeLabel"?: string;
         "ariaLabel"?: string;
+        "checked"?: boolean;
         "inactiveLabel"?: string;
         "size"?: "small" | "medium" | "large";
         "toggleDisabled"?: boolean;
