@@ -1,9 +1,6 @@
 # ip-dropdown
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,14 +10,12 @@
 | `itemsOptions`  | `items-options`  |             | `string` | `'[]'`               |
 | `placeholder`   | `placeholder`    |             | `string` | `'Select an option'` |
 
-
 ## Events
 
 | Event          | Description | Type                  |
 | -------------- | ----------- | --------------------- |
 | `itemSelected` |             | `CustomEvent<string>` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
