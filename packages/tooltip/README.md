@@ -30,17 +30,17 @@ To use this component, we must add the properties as attributes.
 
 ### Properties
 
-| Property          | Attribute           | Necessity | Description                                                             | Type      | Default     |
-| ----------------- | ------------------- | --------- | ----------------------------------------------------------------------- | --------- | ----------- |
-| `tooltipTrigger`  | `tooltip-trigger`   | Required  | `this is the button that will display the tooltip`                      | `string`  | `undefined` |
-| `tooltipContent`  | `tooltip-content`   | Required  | `this is the text that will be displayed in the tooltip`                | `string`  | `undefined` |
-| `hoverTooltip`    | `hover-tooltip`     | Optional  | `if we need the tooltip to appear when content is hover`                | `boolean` | `false`     |
-| `tooltipBtnClose` | `tooltip-btn-close` | Optional  | `if we need to add close button in the tooltip`                         | `boolean` | `false`     |
-| `tooltipTitle`    | `tooltip-title`     | Optional  | `this is the title of the tooltip if we want to put a title`            | `string`  | `undefined` |
-| `tooltipBtn1`     | `tooltip-btn-1`     | Optional  | `if we need to add button in the tooltip`                               | `string`  | `undefined` |
-| `tooltipBtn2`     | `tooltip-btn-2`     | Optional  | `if we need to add button in the tooltip`                               | `string`  | `undefined` |
-| `btn1AriaLabel`   | `btn-1-aria-label`  | Optional  | `this is the aria-label of button ,and it's requierd for accessibility` | `string`  | `undefined` |
-| `btn2AriaLabel`   | `btn-2-aria-label`  | Optional  | `this is the aria-label of button ,and it's requierd for accessibility` | `string`  | `undefined` |
+| Property          | Attribute           | Necessity | Description                                                             | Type                 | Default     |
+| ----------------- | ------------------- | --------- | ----------------------------------------------------------------------- | -------------------- | ----------- |
+| `tooltipTrigger`  | `tooltip-trigger`   | Required  | `this is the button that will display the tooltip`                      | `string`             | `undefined` |
+| `tooltipContent`  | `tooltip-content`   | Required  | `this is the text that will be displayed in the tooltip`                | `string`             | `undefined` |
+| `type`            | `type`              | Optional  | `If the tooltip needs to show up when content is clicked or hovered.`   | `"click" \| "hover"` | `"hover"`   |
+| `tooltipBtnClose` | `tooltip-btn-close` | Optional  | `if we need to add close button in the tooltip`                         | `boolean`            | `false`     |
+| `tooltipTitle`    | `tooltip-title`     | Optional  | `this is the title of the tooltip if we want to put a title`            | `string`             | `undefined` |
+| `tooltipBtn1`     | `tooltip-btn-1`     | Optional  | `if we need to add button in the tooltip`                               | `string`             | `undefined` |
+| `tooltipBtn2`     | `tooltip-btn-2`     | Optional  | `if we need to add button in the tooltip`                               | `string`             | `undefined` |
+| `btn1AriaLabel`   | `btn-1-aria-label`  | Optional  | `this is the aria-label of button ,and it's requierd for accessibility` | `string`             | `undefined` |
+| `btn2AriaLabel`   | `btn-2-aria-label`  | Optional  | `this is the aria-label of button ,and it's requierd for accessibility` | `string`             | `undefined` |
 
 _e.g:_
 
@@ -87,3 +87,5 @@ ip-tooltip {
   --secondary-color: #000000;
 }
 ```
+
+## Event
