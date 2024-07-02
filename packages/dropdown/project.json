@@ -1,0 +1,77 @@
+{
+  "name": "dropdown",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/dropdown/src",
+  "projectType": "library",
+  "tags": [],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/dropdown/tsconfig.lib.json",
+        "configPath": "packages/dropdown/stencil.config.ts",
+        "outputPath": "dist/packages/dropdown"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/dropdown/tsconfig.lib.json",
+        "configPath": "packages/dropdown/stencil.config.ts",
+        "outputPath": "dist/packages/dropdown"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/dropdown/tsconfig.lib.json",
+        "configPath": "packages/dropdown/stencil.config.ts",
+        "outputPath": "dist/packages/dropdown"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/dropdown/tsconfig.lib.json",
+        "configPath": "packages/dropdown/stencil.config.ts",
+        "outputPath": "dist/packages/dropdown"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/dropdown/src/**/*.{ts,tsx,json}",
+          "packages/dropdown/*.{ts,tsx,json}"
+        ]
+      }
+    }
+  }
+}
