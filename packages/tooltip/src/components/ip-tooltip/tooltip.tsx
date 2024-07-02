@@ -108,7 +108,9 @@ export class IpTooltip {
             aria-hidden={this.showTooltip ? 'false' : 'true'}
           >
             {this.tooltipTitle && (
-              <h3 class="tooltip-title">{this.tooltipTitle}</h3>
+              <h3 aria-label={this.tooltipTitle} class="tooltip-title">
+                {this.tooltipTitle}
+              </h3>
             )}
             {this.tooltipBtnClose && (
               <button
