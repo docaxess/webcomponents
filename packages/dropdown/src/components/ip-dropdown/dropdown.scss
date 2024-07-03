@@ -1,9 +1,16 @@
+:host {
+  --primary-color: var(--ip-primary-color, #2749a3);
+  --color-hover: var(--ip-color-hover, #f0f0f0);
+  --font-color: var(--ip-font-color, #2749a3);
+  --selected-bg-color: var(--ip-selected-bg, #738cce1a);
+  --font-size: var(--ip-font-size, 14px);
+}
 .dropdown {
   position: relative;
   width: 200px;
-  color: #2749a3;
+  color: var(--font-color);
   font-family: Inter;
-  font-size: 14px;
+  font-size: var(--font-size);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -17,15 +24,15 @@
     height: 36px;
     flex-shrink: 0;
     border-radius: 8px;
-    border: 0.5px solid #2749a3;
-    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.2);
+    border: 0.5px solid var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     outline: none;
 
     &:focus {
-      box-shadow: 0 0 3px 1px #2749a3;
+      border: 3px solid var(--primary-color);
+      outline-offset: 2px;
     }
     .dropdown-head {
       padding: 0 0 0 9px;
@@ -34,7 +41,7 @@
 
   .dropdown-arrow {
     padding: 8px;
-    font-size: 12px;
+    font-size: var(--font-size);
   }
 
   .dropdown-list {
@@ -51,7 +58,7 @@
     overflow-y: auto;
     list-style-type: none;
     margin-top: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 
     li {
       display: flex;
@@ -65,16 +72,17 @@
       }
 
       &.selected {
-        background-color: #738cce1a;
-        color: #2749a3;
+        background-color: var(--selected-bg-color);
+        border-radius: 8px;
       }
       &:focus {
-        border: 1px solid #2749a3;
-        outline: none;
+        border: 3px solid var(--primary-color);
+        border-radius: 8px;
       }
       &:focus-visible {
-        border: 1px solid #2749a3;
+        border: 3px solid var(--primary-color);
         outline: none;
+        border-radius: 8px;
       }
       .selected-icon {
         margin-right: 5px;
