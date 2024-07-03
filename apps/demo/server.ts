@@ -48,11 +48,11 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
-
+  const port = process.env['PORT'] ? parseInt(process.env['PORT']) : 4000;
+  const ip = process.env['IP'] || '0.0.0.0';
   // Start up the Node server
   const server = app();
-  server.listen(port, () => {
+  server.listen(port, ip, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
