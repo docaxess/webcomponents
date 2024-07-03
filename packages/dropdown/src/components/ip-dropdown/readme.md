@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type       | Default     |
-| ----------- | ------------ | ----------- | ---------- | ----------- |
-| `dropTitle` | `drop-title` |             | `string`   | `undefined` |
-| `options`   | --           |             | `string[]` | `[]`        |
+| Property       | Attribute       | Description | Type     | Default              |
+| -------------- | --------------- | ----------- | -------- | -------------------- |
+| `itemsOptions` | `items-options` |             | `string` | `"[]"`               |
+| `placeholder`  | `placeholder`   |             | `string` | `"Select an option"` |
+| `title`        | `title`         |             | `string` | `"Dropdown"`         |
 
 
 ----------------------------------------------

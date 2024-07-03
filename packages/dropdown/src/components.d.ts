@@ -7,8 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpDropdown {
-        "dropTitle": string;
-        "options": string[];
+        "itemsOptions": string;
+        "placeholder": string;
+        "title": string;
     }
 }
 declare global {
@@ -24,8 +25,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpDropdown {
-        "dropTitle"?: string;
-        "options"?: string[];
+        "itemsOptions"?: string;
+        "placeholder"?: string;
+        "title"?: string;
     }
     interface IntrinsicElements {
         "ip-dropdown": IpDropdown;

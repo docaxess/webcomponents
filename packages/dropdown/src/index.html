@@ -7,14 +7,26 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
-
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      ip-dropdown {
+        display: block;
+        margin: 20px auto;
+        width: 300px;
+      }
+    </style>
     <script type="module" src="/build/dropdown.esm.js"></script>
     <script nomodule src="/build/dropdown.js"></script>
   </head>
   <body>
     <ip-dropdown
-      options='["India", "USA", "UK", "Canada", "Australia"]'
-      drop-title="Select a country"
+      title="Select a Color"
+      placeholder="Choose a color"
+      items-options='["Red", "Green", "Blue", "Yellow"]'
     ></ip-dropdown>
   </body>
 </html>
