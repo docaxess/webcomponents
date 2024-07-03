@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpCheckboxList } from "./ip-checkbox-list";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpCheckboxList } from './ip-checkbox-list';
 
-describe("ip-checkbox-list", () => {
-  it("renders with errors", async () => {
+describe('ip-checkbox-list', () => {
+  it('renders with errors', async () => {
     /* global global */
     const mockedConsole = jest
-      .spyOn(global.console, "error")
+      .spyOn(global.console, 'error')
       .mockImplementation();
 
     const { root } = await newSpecPage({
@@ -28,7 +28,7 @@ describe("ip-checkbox-list", () => {
     mockedConsole.mockRestore();
   });
 
-  it("renders", async () => {
+  it('renders', async () => {
     const { root } = await newSpecPage({
       components: [IpCheckboxList],
       html: `<ip-checkbox-list></ip-checkbox-list>`,
@@ -45,7 +45,7 @@ describe("ip-checkbox-list", () => {
     `);
   });
 
-  it("renders with options", async () => {
+  it('renders with options', async () => {
     const { root } = await newSpecPage({
       components: [IpCheckboxList],
       html: `<ip-checkbox-list

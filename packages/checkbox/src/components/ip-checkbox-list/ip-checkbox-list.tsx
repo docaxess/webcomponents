@@ -6,7 +6,7 @@ import {
   Watch,
   EventEmitter,
   Event,
-} from "@stencil/core";
+} from '@stencil/core';
 
 interface CheckboxOption {
   id: string;
@@ -16,8 +16,8 @@ interface CheckboxOption {
 }
 
 @Component({
-  tag: "ip-checkbox-list",
-  styleUrl: "ip-checkbox-list.scss",
+  tag: 'ip-checkbox-list',
+  styleUrl: 'ip-checkbox-list.scss',
   shadow: true,
 })
 export class IpCheckboxList {
@@ -38,14 +38,14 @@ export class IpCheckboxList {
       .map((option) => option.id);
   }
 
-  @Watch("options")
+  @Watch('options')
   parseOptions(newValue: string) {
     try {
-      const parsedOptions = JSON.parse(newValue || "[]");
+      const parsedOptions = JSON.parse(newValue || '[]');
 
       if (
         Array.isArray(parsedOptions) &&
-        parsedOptions.every((option) => "id" in option && "label" in option)
+        parsedOptions.every((option) => 'id' in option && 'label' in option)
       ) {
         this.parsedOptions = parsedOptions;
       } else {
@@ -54,7 +54,7 @@ export class IpCheckboxList {
         );
       }
     } catch (error) {
-      console.error("Invalid options:", error);
+      console.error('Invalid options:', error);
     }
   }
 
@@ -83,7 +83,7 @@ export class IpCheckboxList {
                 checked={this.selectedOptions.includes(option.id)}
                 onChange={() => this.handleChange(option.id)}
                 aria-checked={
-                  this.selectedOptions.includes(option.id) ? "true" : "false"
+                  this.selectedOptions.includes(option.id) ? 'true' : 'false'
                 }
                 role="checkbox"
                 disabled={option.disabled}

@@ -1,8 +1,8 @@
-import { Component, Prop, h, State } from "@stencil/core";
+import { Component, Prop, h, State } from '@stencil/core';
 
 @Component({
-  tag: "ip-tooltip",
-  styleUrl: "./tooltip.scss",
+  tag: 'ip-tooltip',
+  styleUrl: './tooltip.scss',
   shadow: true,
 })
 export class IpTooltip {
@@ -12,11 +12,11 @@ export class IpTooltip {
   @Prop() btn1AriaLabel: string;
   @Prop() tooltipBtn2: string;
   @Prop() btn2AriaLabel: string;
-  @Prop() tooltipBtnClose: boolean = false;
+  @Prop() tooltipBtnClose = false;
   @Prop() tooltipTitle: string;
-  @Prop() hoverTooltip: boolean = false;
+  @Prop() hoverTooltip = false;
 
-  @State() showTooltip: boolean = false;
+  @State() showTooltip = false;
 
   _toggleTooltip = () => {
     this.showTooltip = !this.showTooltip;
@@ -41,7 +41,7 @@ export class IpTooltip {
   };
 
   _handleKeyUp = (event: KeyboardEvent) => {
-    if (event.key === "Enter" || event.key === " ") {
+    if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       this._toggleTooltip();
     }

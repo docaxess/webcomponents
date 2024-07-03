@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpCheckbox } from "./ip-checkbox";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpCheckbox } from './ip-checkbox';
 
-describe("ip-checkbox", () => {
-  it("renders", async () => {
+describe('ip-checkbox', () => {
+  it('renders', async () => {
     const { root } = await newSpecPage({
       components: [IpCheckbox],
-      html: "<ip-checkbox></ip-checkbox>",
+      html: '<ip-checkbox></ip-checkbox>',
     });
     expect(root).toEqualHtml(`
       <ip-checkbox>
@@ -24,7 +24,7 @@ describe("ip-checkbox", () => {
   });
 
   //This test will fail because of the slot being hard to test
-  it("renders with values", async () => {
+  it('renders with values', async () => {
     const { root } = await newSpecPage({
       components: [IpCheckbox],
       html: `  <ip-checkbox default-checked="true" identifier="check me">Check me !</ip-checkbox>`,

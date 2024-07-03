@@ -11,7 +11,7 @@ export namespace Components {
         "ariaLabel": string;
         "checked": boolean;
         "inactiveLabel": string;
-        "size": "small" | "medium" | "large";
+        "size": 'small' | 'medium' | 'large';
         "toggleDisabled": boolean;
     }
 }
@@ -32,7 +32,7 @@ declare namespace LocalJSX {
         "ariaLabel"?: string;
         "checked"?: boolean;
         "inactiveLabel"?: string;
-        "size"?: "small" | "medium" | "large";
+        "size"?: 'small' | 'medium' | 'large';
         "toggleDisabled"?: boolean;
     }
     interface IntrinsicElements {

@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { ToggleButton } from "./toggle";
+import { newSpecPage } from '@stencil/core/testing';
+import { ToggleButton } from './toggle';
 
-describe("ip-toggle", () => {
-  it("renders", async () => {
+describe('ip-toggle', () => {
+  it('renders', async () => {
     const page = await newSpecPage({
       components: [ToggleButton],
-      html: "<ip-toggle></ip-toggle>",
+      html: '<ip-toggle></ip-toggle>',
     });
     expect(page.root).toEqualHtml(`
       <ip-toggle>
@@ -23,7 +23,7 @@ describe("ip-toggle", () => {
     `);
   });
 
-  it("renders with values", async () => {
+  it('renders with values', async () => {
     const page = await newSpecPage({
       components: [ToggleButton],
       html: `<ip-toggle active-label="Oui" inactive-label="Non"></ip-toggle>`,
