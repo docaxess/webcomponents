@@ -13,7 +13,8 @@
     "build": "nx run-many --target=build --all",
     "lint": "nx run-many --target=lint --all",
     "e2e": "nx run-many --target=e2e --all",
-    "test": "nx run-many --target=test --all"
+    "test": "nx run-many --target=test --all",
+    "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs"
   },
   "private": false,
   "devDependencies": {
