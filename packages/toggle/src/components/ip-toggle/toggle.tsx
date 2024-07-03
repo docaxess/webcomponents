@@ -1,21 +1,21 @@
-import { Component, h, Prop, State, Watch } from "@stencil/core";
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
-  tag: "ip-toggle",
-  styleUrl: "toggle.scss",
+  tag: 'ip-toggle',
+  styleUrl: 'toggle.scss',
   shadow: true,
 })
 export class ToggleButton {
-  @State() isActive: boolean = false;
+  @State() isActive = false;
 
   @Prop() activeLabel: string;
   @Prop() inactiveLabel: string;
   @Prop() ariaLabel: string;
-  @Prop() toggleDisabled: boolean = false;
-  @Prop() size: "small" | "medium" | "large" = "medium";
-  @Prop() checked: boolean = false;
+  @Prop() toggleDisabled = false;
+  @Prop() size: 'small' | 'medium' | 'large' = 'medium';
+  @Prop() checked = false;
 
-  @Watch("checked")
+  @Watch('checked')
   handleCheckedChange(newValue: boolean) {
     if (newValue !== this.isActive) {
       this.isActive = newValue;
@@ -39,7 +39,7 @@ export class ToggleButton {
         <div class="switch-button">
           <input
             type="checkbox"
-            class={`switch-checkbox ${this.size} ${this.isActive ? "active" : ""}`}
+            class={`switch-checkbox ${this.size} ${this.isActive ? 'active' : ''}`}
             onClick={() => this.handleClick()}
             role="switch"
             aria-checked={this.isActive.toString()}
