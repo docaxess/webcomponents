@@ -10,8 +10,8 @@
 | Property        | Attribute        | Description | Type     | Default              |
 | --------------- | ---------------- | ----------- | -------- | -------------------- |
 | `dropdownTitle` | `dropdown-title` |             | `string` | `undefined`          |
-| `itemsOptions`  | `items-options`  |             | `string` | `"[]"`               |
-| `placeholder`   | `placeholder`    |             | `string` | `"Select an option"` |
+| `itemsOptions`  | `items-options`  |             | `string` | `'[]'`               |
+| `placeholder`   | `placeholder`    |             | `string` | `'Select an option'` |
 
 
 ## Events
