@@ -18,12 +18,12 @@ export class Dropdown {
   @Element() el: HTMLElement;
 
   @Prop() dropdownTitle: string;
-  @Prop() placeholder: string = 'Select an option';
-  @Prop() itemsOptions: string = '[]';
+  @Prop() placeholder = 'Select an option';
+  @Prop() itemsOptions = '[]';
 
   @State() items: string[] = [];
-  @State() selectedItem: string = '';
-  @State() isOpen: boolean = false;
+  @State() selectedItem= '';
+  @State() isOpen= false;
 
   @Event() itemSelected: EventEmitter<string>;
 
@@ -92,7 +92,7 @@ export class Dropdown {
           tabindex="0"
           onClick={() => this.toggleDropdown()}
           onKeyDown={(event) => this.handleKeyDown(event)}
-          aria-expanded={this.isOpen ? "true" : "false"}
+          aria-expanded={this.isOpen ? 'true' : 'false'}
         >
           <span class="dropdown-head" role="button" aria-haspopup="listbox">
             {this.selectedItem || this.placeholder}
@@ -123,8 +123,8 @@ export class Dropdown {
               <li
                 key={index}
                 role="option"
-                aria-selected={item === this.selectedItem ? "true" : "false"}
-                class={item === this.selectedItem ? "selected" : ""}
+                aria-selected={item === this.selectedItem ? 'true' : 'false'}
+                class={item === this.selectedItem ? 'selected' : ''}
                 onClick={() => this.selectItem(item)}
                 onKeyDown={(event) => this.keySelectItem(event, item)}
                 tabindex="0"
