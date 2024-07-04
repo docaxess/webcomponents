@@ -14,7 +14,7 @@ describe("ip-dropdown", () => {
     const page = await newE2EPage();
 
     await page.setContent(
-      "<ip-dropdown dropdown-title='Select an option'></ip-dropdown>"
+      "<ip-dropdown dropdown-title='Select an option'></ip-dropdown>",
     );
     const dropdownTitle = await page.find("ip-dropdown >>> .dropdown-title");
 
@@ -39,11 +39,11 @@ describe("ip-dropdown", () => {
     const page = await newE2EPage();
 
     await page.setContent(
-      '<ip-dropdown dropdown-title=\'Select an option\' items-options=\'["Option 1", "Option 2", "Option 3"]\'></ip-dropdown>'
+      '<ip-dropdown dropdown-title=\'Select an option\' items-options=\'["Option 1", "Option 2", "Option 3"]\'></ip-dropdown>',
     );
 
     const dropdownContent = await page.find(
-      "ip-dropdown >>> .dropdown-content"
+      "ip-dropdown >>> .dropdown-content",
     );
     const dropdownArrow = await page.find("ip-dropdown >>> .dropdown-arrow");
 
@@ -67,11 +67,11 @@ describe("ip-dropdown", () => {
     const page = await newE2EPage();
 
     await page.setContent(
-      '<ip-dropdown dropdown-title=\'Select an option\' items-options=\'["Option 1", "Option 2", "Option 3"]\'></ip-dropdown>'
+      '<ip-dropdown dropdown-title=\'Select an option\' items-options=\'["Option 1", "Option 2", "Option 3"]\'></ip-dropdown>',
     );
 
     const dropdownContent = await page.find(
-      "ip-dropdown >>> .dropdown-content"
+      "ip-dropdown >>> .dropdown-content",
     );
     const dropdownArrow = await page.find("ip-dropdown >>> .dropdown-arrow");
 
@@ -79,7 +79,7 @@ describe("ip-dropdown", () => {
     await page.waitForChanges();
 
     const option2 = await page.find(
-      "ip-dropdown >>> .dropdown-list li:nth-child(2)"
+      "ip-dropdown >>> .dropdown-list li:nth-child(2)",
     );
     await option2.click();
     await page.waitForChanges();

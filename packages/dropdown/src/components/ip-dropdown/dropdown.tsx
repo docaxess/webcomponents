@@ -64,7 +64,7 @@ export class Dropdown {
   watchIsOpen(value: boolean) {
     if (!value) {
       const contentElement = this.el.shadowRoot.querySelector(
-        ".dropdown-content"
+        ".dropdown-content",
       ) as HTMLElement;
       if (contentElement) {
         contentElement.focus();

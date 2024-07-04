@@ -37,7 +37,7 @@ describe("Dropdown", () => {
     });
 
     const dropdown = page.root.shadowRoot.querySelector(
-      ".dropdown-content"
+      ".dropdown-content",
     ) as HTMLElement;
     dropdown.click();
 
@@ -52,7 +52,7 @@ describe("Dropdown", () => {
     });
 
     const dropdownContent = page.root.shadowRoot.querySelector(
-      ".dropdown-content"
+      ".dropdown-content",
     ) as HTMLElement;
     dropdownContent.click();
     await page.waitForChanges();
@@ -72,20 +72,20 @@ describe("Dropdown", () => {
     });
 
     const dropdownContent = page.root.shadowRoot.querySelector(
-      ".dropdown-content"
+      ".dropdown-content",
     ) as HTMLElement;
 
     dropdownContent.click();
     await page.waitForChanges();
 
     const option2 = page.root.shadowRoot.querySelector(
-      ".dropdown-list li:nth-child(2)"
+      ".dropdown-list li:nth-child(2)",
     ) as HTMLElement;
     option2.click();
     await page.waitForChanges();
 
     const dropdownHead = page.root.shadowRoot.querySelector(
-      ".dropdown-head"
+      ".dropdown-head",
     ) as HTMLElement;
     expect(dropdownHead.textContent.trim()).toBe("Option 2");
 
