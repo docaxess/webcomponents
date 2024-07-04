@@ -22,8 +22,8 @@ export class Dropdown {
   @Prop() itemsOptions = '[]';
 
   @State() items: string[] = [];
-  @State() selectedItem= '';
-  @State() isOpen= false;
+  @State() selectedItem = '';
+  @State() isOpen = false;
 
   @Event() itemSelected: EventEmitter<string>;
 
