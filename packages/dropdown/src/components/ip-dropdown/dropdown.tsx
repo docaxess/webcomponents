@@ -1,4 +1,13 @@
-import { Component, h, Prop, State, Watch, Element } from "@stencil/core";
+import {
+  Component,
+  h,
+  Prop,
+  State,
+  Watch,
+  Element,
+  Event,
+  EventEmitter,
+} from "@stencil/core";
 
 @Component({
   tag: "ip-dropdown",
@@ -8,7 +17,7 @@ import { Component, h, Prop, State, Watch, Element } from "@stencil/core";
 export class Dropdown {
   @Element() el: HTMLElement;
 
-  @Prop() title: string = "Dropdown";
+  @Prop() dropdownTitle: string;
   @Prop() placeholder: string = "Select an option";
   @Prop() itemsOptions: string = "[]";
 
@@ -16,8 +25,23 @@ export class Dropdown {
   @State() selectedItem: string = "";
   @State() isOpen: boolean = false;
 
+  @Event() itemSelected: EventEmitter<string>;
+
   componentWillLoad() {
     this.items = JSON.parse(this.itemsOptions);
+  }
+
+  connectedCallback() {
+    document.addEventListener("click", this.handleClickOutside.bind(this));
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener("click", this.handleClickOutside.bind(this));
+  }
+  handleClickOutside(event: MouseEvent) {
+    if (!this.el.contains(event.target as Node)) {
+      this.isOpen = false;
+    }
   }
   toggleDropdown() {
     this.isOpen = !this.isOpen;
@@ -26,6 +50,7 @@ export class Dropdown {
   selectItem(item: string) {
     this.selectedItem = item;
     this.isOpen = false;
+    this.itemSelected.emit(item);
   }
 
   keySelectItem(event: KeyboardEvent, item: string) {
@@ -57,20 +82,19 @@ export class Dropdown {
   render() {
     return (
       <div class="dropdown">
-        <div class="dropdown-title" aria-label={this.title}>
-          {this.title}
+        <div class="dropdown-title" aria-label={this.dropdownTitle}>
+          {this.dropdownTitle}
         </div>
         <div
+          role="combobox"
+          aria-labelledby="dropdown-title"
           class="dropdown-content"
           tabindex="0"
           onClick={() => this.toggleDropdown()}
           onKeyDown={(event) => this.handleKeyDown(event)}
+          aria-expanded={this.isOpen ? "true" : "false"}
         >
-          <span
-            class="dropdown-head"
-            aria-haspopup="listbox"
-            aria-expanded={this.isOpen ? "true" : "false"}
-          >
+          <span class="dropdown-head" role="button" aria-haspopup="listbox">
             {this.selectedItem || this.placeholder}
           </span>
           <span class="dropdown-arrow" aria-hidden="true">

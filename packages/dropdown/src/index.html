@@ -24,14 +24,24 @@
   </head>
   <body>
     <ip-dropdown
-      title="Color"
+      class="color-dropdown"
+      dropdown-title="Color"
       placeholder="Choose a color:"
       items-options='["Red", "Green", "Blue", "Yellow"]'
     ></ip-dropdown>
     <ip-dropdown
-      title="Country"
+      dropdown-title="Country"
       placeholder="Select a country:"
       items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
     ></ip-dropdown>
+
+    <script>
+      const dropdown = document.querySelector(".color-dropdown");
+
+      dropdown.addEventListener("itemSelected", (event) => {
+        const selectedItem = event.detail;
+        console.log("Item selected :", selectedItem);
+      });
+    </script>
   </body>
 </html>

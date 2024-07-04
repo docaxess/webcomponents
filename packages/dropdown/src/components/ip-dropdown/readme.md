@@ -7,11 +7,18 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type     | Default              |
-| -------------- | --------------- | ----------- | -------- | -------------------- |
-| `itemsOptions` | `items-options` |             | `string` | `"[]"`               |
-| `placeholder`  | `placeholder`   |             | `string` | `"Select an option"` |
-| `title`        | `title`         |             | `string` | `"Dropdown"`         |
+| Property        | Attribute        | Description | Type     | Default              |
+| --------------- | ---------------- | ----------- | -------- | -------------------- |
+| `dropdownTitle` | `dropdown-title` |             | `string` | `undefined`          |
+| `itemsOptions`  | `items-options`  |             | `string` | `"[]"`               |
+| `placeholder`   | `placeholder`    |             | `string` | `"Select an option"` |
+
+
+## Events
+
+| Event          | Description | Type                  |
+| -------------- | ----------- | --------------------- |
+| `itemSelected` |             | `CustomEvent<string>` |
 
 
 ----------------------------------------------
