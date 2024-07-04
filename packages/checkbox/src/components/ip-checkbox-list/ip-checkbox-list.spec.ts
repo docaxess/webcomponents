@@ -35,7 +35,7 @@ describe('ip-checkbox-list', () => {
     });
 
     expect(root).toEqualHtml(`
-      <ip-checkbox-list options="{}">
+      <ip-checkbox-list>
          <mock:shadow-root>
            <div class="checkbox-list">
              <fieldset class="checkbox-content"></fieldset>
@@ -44,7 +44,6 @@ describe('ip-checkbox-list', () => {
       </ip-checkbox-list>
     `);
 
-    mockedConsole.mockRestore();
   });
 
   it('renders with options', async () => {

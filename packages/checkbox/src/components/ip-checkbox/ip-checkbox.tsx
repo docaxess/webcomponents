@@ -1,8 +1,15 @@
-import { Component, h, Element, Prop } from "@stencil/core/internal";
+import {
+  Component,
+  h,
+  Element,
+  Prop,
+  Event,
+  EventEmitter,
+} from '@stencil/core/internal';
 
 @Component({
-  tag: "ip-checkbox",
-  styleUrl: "ip-checkbox.scss",
+  tag: 'ip-checkbox',
+  styleUrl: 'ip-checkbox.scss',
   shadow: true,
 })
 export class IpCheckbox {
@@ -10,19 +17,15 @@ export class IpCheckbox {
 
   @Prop() identifier: string;
   @Prop() disabled = false;
-  @Prop() defaultChecked = false;
+  @Prop({ mutable: true }) checked = false;
   @Prop() name: string;
+
+  @Event() change: EventEmitter<{ name: string; checked: boolean }>;
 
   handleChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;
-    this.hostElement.dispatchEvent(
-      new CustomEvent("change", {
-        detail: {
-          name: this.name,
-          checked: checkbox.checked,
-        },
-      }),
-    );
+    this.checked = checkbox.checked;
+    this.change.emit({ name: this.name, checked: this.checked });
   }
 
   render() {
@@ -33,9 +36,10 @@ export class IpCheckbox {
           type="checkbox"
           name={this.name}
           id={this.identifier}
-          checked={this.defaultChecked}
+          checked={this.checked}
           disabled={this.disabled}
           onChange={(event) => this.handleChange(event)}
+          aria-checked={this.checked ? 'true' : 'false'}
         />
         <label htmlFor={this.identifier} class="checkbox-label">
           <slot></slot>
