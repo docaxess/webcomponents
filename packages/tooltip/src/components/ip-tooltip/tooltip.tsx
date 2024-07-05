@@ -28,7 +28,7 @@ export class IpTooltip {
   @Event() btn1Click: EventEmitter;
   @Event() btn2Click: EventEmitter;
 
-  @State() showTooltip: boolean = false;
+  @State() showTooltip = false;
 
   @Element() el: HTMLElement;
 

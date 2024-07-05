@@ -1,8 +1,8 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpTooltip } from "./tooltip";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpTooltip } from './tooltip';
 
-describe("ip tooltip", () => {
-  it("renders and shows content", async () => {
+describe('ip tooltip', () => {
+  it('renders and shows content', async () => {
     const page = await newSpecPage({
       components: [IpTooltip],
       html: `
@@ -19,7 +19,7 @@ describe("ip tooltip", () => {
       </ip-tooltip>
       `);
     const tooltipTrigger = page.root.shadowRoot.querySelector(
-      ".tooltip-trigger"
+      '.tooltip-trigger',
     ) as HTMLButtonElement;
     tooltipTrigger.focus();
 
@@ -42,7 +42,7 @@ describe("ip tooltip", () => {
   `);
   });
 
-  it("renders and shows title", async () => {
+  it('renders and shows title', async () => {
     const page = await newSpecPage({
       components: [IpTooltip],
       html: `
@@ -60,7 +60,7 @@ describe("ip tooltip", () => {
             `);
 
     const tooltipTrigger = page.root.shadowRoot.querySelector(
-      ".tooltip-trigger"
+      '.tooltip-trigger',
     ) as HTMLButtonElement;
     tooltipTrigger.click();
     await page.waitForChanges();
@@ -81,7 +81,7 @@ describe("ip tooltip", () => {
         `);
   });
 
-  it("renders and shows close button", async () => {
+  it('renders and shows close button', async () => {
     const page = await newSpecPage({
       components: [IpTooltip],
       html: `
@@ -100,7 +100,7 @@ describe("ip tooltip", () => {
     `);
 
     const tooltipTrigger = page.root.shadowRoot.querySelector(
-      ".tooltip-trigger"
+      '.tooltip-trigger',
     ) as HTMLButtonElement;
     tooltipTrigger.click();
 
@@ -131,7 +131,7 @@ describe("ip tooltip", () => {
         `);
   });
 
-  it("renders and has two buttons", async () => {
+  it('renders and has two buttons', async () => {
     const page = await newSpecPage({
       components: [IpTooltip],
       html: `
@@ -150,7 +150,7 @@ describe("ip tooltip", () => {
     `);
 
     const tooltipTrigger = page.root.shadowRoot.querySelector(
-      ".tooltip-trigger"
+      '.tooltip-trigger',
     ) as HTMLButtonElement;
 
     tooltipTrigger.click();
