@@ -34,7 +34,9 @@ import '../node_modules/';
 
 ## Usage:
 
-To use these components, we must add the properties as attributes.
+These components can be utilized as simple inputs, with the addition of validators and properties such as value, name, and disabled.
+
+To make use of these components, we need to add the properties as attributes.
 
 ### Component Tag:
 

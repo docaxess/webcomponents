@@ -3,6 +3,7 @@ import { Component, h, State, Element, Prop } from "@stencil/core";
 @Component({
   tag: "ip-password",
   styleUrl: "ip-password.scss",
+  formAssociated: true,
   shadow: true,
 })
 export class IpPassword {
