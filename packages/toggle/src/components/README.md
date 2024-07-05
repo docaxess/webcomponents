@@ -21,7 +21,7 @@ npm install ip-toggle
 Import module in script file:
 
 ```javascript or typescript
-import "../node_modules/ip-toggle/dist/ip-toggle/ip-toggle.esm";
+import '../node_modules/ip-toggle/dist/ip-toggle/ip-toggle.esm';
 ```
 
 ## Usage:
