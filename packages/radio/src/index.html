@@ -19,10 +19,12 @@
       {"id": "3", "label": "Option 3"}
       ]'
     ></ip-radio>
+
+    <ip-radio></ip-radio>
     <script>
-      const radio = document.querySelector('ip-radio');
-      radio.addEventListener('selectionChanged', (event) => {
-        console.log('selectionChanged', event.detail);
+      const radio = document.querySelector("ip-radio");
+      radio.addEventListener("selectionChanged", (event) => {
+        console.log("selectionChanged", event.detail);
       });
     </script>
   </body>
