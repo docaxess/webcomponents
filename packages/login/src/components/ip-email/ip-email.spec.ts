@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpEmail } from "./ip-email";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpEmail } from './ip-email';
 
-describe("ip-email", () => {
-  it("renders", async () => {
+describe('ip-email', () => {
+  it('renders', async () => {
     const { root } = await newSpecPage({
       components: [IpEmail],
-      html: "<ip-email></ip-email>",
+      html: '<ip-email></ip-email>',
     });
     expect(root).toEqualHtml(`
             <ip-email>
@@ -26,7 +26,7 @@ describe("ip-email", () => {
         `);
   });
 
-  it("renders with values", async () => {
+  it('renders with values', async () => {
     const { root } = await newSpecPage({
       components: [IpEmail],
       html: `<ip-email input-label="Username"></ip-email>`,

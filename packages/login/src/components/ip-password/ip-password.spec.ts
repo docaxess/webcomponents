@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpPassword } from "./ip-password";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpPassword } from './ip-password';
 
-describe("ip-password", () => {
-  it("renders", async () => {
+describe('ip-password', () => {
+  it('renders', async () => {
     const { root } = await newSpecPage({
       components: [IpPassword],
-      html: "<ip-password></ip-password>",
+      html: '<ip-password></ip-password>',
     });
     expect(root).toEqualHtml(`
             <ip-password>
@@ -37,19 +37,19 @@ describe("ip-password", () => {
         `);
   });
 
-  it("toggles password visibility", async () => {
+  it('toggles password visibility', async () => {
     const page = await newSpecPage({
       components: [IpPassword],
-      html: "<ip-password></ip-password>",
+      html: '<ip-password></ip-password>',
     });
-    const passwordInput = page.root.shadowRoot.querySelector("input");
-    const toggleButton = page.root.shadowRoot.querySelector("button");
-    expect(passwordInput.type).toBe("password");
+    const passwordInput = page.root.shadowRoot.querySelector('input');
+    const toggleButton = page.root.shadowRoot.querySelector('button');
+    expect(passwordInput.type).toBe('password');
     toggleButton.click();
     await page.waitForChanges();
-    expect(passwordInput.type).toBe("text");
+    expect(passwordInput.type).toBe('text');
     toggleButton.click();
     await page.waitForChanges();
-    expect(passwordInput.type).toBe("password");
+    expect(passwordInput.type).toBe('password');
   });
 });
