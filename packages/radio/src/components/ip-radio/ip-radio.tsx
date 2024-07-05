@@ -15,6 +15,7 @@ interface RadioOption {
 })
 export class IpRadio {
   @Element() hostElement: HTMLElement;
+
   @Prop() labelPosition: "before" | "after" = "after";
   @Prop() options: string;
   @Event({ bubbles: true, composed: true })
@@ -45,6 +46,7 @@ export class IpRadio {
         <div class={containerClasses}>
           <div class="radio">
             <input
+              role="radio"
               type="radio"
               value={option.id}
               id={this.id + option.id}
