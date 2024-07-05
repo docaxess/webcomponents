@@ -31,17 +31,44 @@
       <ip-tooltip
         tooltip-trigger="Hover over me"
         tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-        hover-tooltip="true"
+        type="hover"
       >
       </ip-tooltip>
     </div>
 
     <div>
       <ip-tooltip
+        id="clicked-tooltip"
         tooltip-trigger="Click me !"
         tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+        tooltip-btn-close="true"
+        tooltip-btn-1="Cancel"
+        tooltip-btn-2="Learn More"
+        type="click"
       >
       </ip-tooltip>
     </div>
+    <div>
+      <ip-tooltip
+        tooltip-trigger="Click Me!"
+        tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+        type="click"
+      >
+      </ip-tooltip>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tooltip = document.querySelector("#clicked-tooltip");
+
+        tooltip.addEventListener("btn1Click", function () {
+          console.log("Event btn1Click captured from index.html");
+        });
+
+        tooltip.addEventListener("btn2Click", function () {
+          console.log("Event btn2Click captured from index.html");
+        });
+      });
+    </script>
   </body>
 </html>
