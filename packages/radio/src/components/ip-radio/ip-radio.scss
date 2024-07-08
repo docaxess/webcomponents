@@ -1,5 +1,7 @@
 :host {
   --primary-color: var(--primaryColor, #d6254f);
+  --secondray-color: var(--secondrayColor, #333);
+  --radio-size: var(--radioSize, 20px);
 }
 
 * {
@@ -21,12 +23,13 @@
   }
 
   .radio-background {
-    opacity: .5;
+    opacity: 0.5;
     filter: grayscale(1);
   }
 
   label {
     cursor: not-allowed;
+    color: #aaaaaa;
   }
 }
 
@@ -71,12 +74,12 @@ input:checked + .radio-background {
 
 .radio-background {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: var(--radio-size);
+  height: var(--radio-size);
 }
 
 .radio-background::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -90,7 +93,7 @@ input:checked + .radio-background {
 }
 
 .outer-circle {
-  border: #333 solid 2px;
+  border: 2px solid var(--secondray-color);
   border-radius: 50%;
   height: 100%;
 }
@@ -103,7 +106,7 @@ input:checked + .radio-background {
   height: 100%;
   border-radius: 50%;
   background: var(--primary-color);
-  transform: scale(.6);
+  transform: scale(0.6);
   opacity: 0;
 }
 
