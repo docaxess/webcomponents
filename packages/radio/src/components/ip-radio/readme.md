@@ -8,7 +8,7 @@
 | Property          | Attribute           | Description | Type                  | Default     |
 | ----------------- | ------------------- | ----------- | --------------------- | ----------- |
 | `defaultOptionId` | `default-option-id` |             | `number \| string`    | `undefined` |
-| `labelPosition`   | `label-position`    |             | `"after" \| "before"` | `"after"`   |
+| `labelPosition`   | `label-position`    |             | `"after" \| "before"` | `'after'`   |
 | `options`         | `options`           |             | `string`              | `undefined` |
 
 

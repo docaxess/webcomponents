@@ -6,9 +6,9 @@ import {
   Prop,
   State,
   Watch,
-} from "@stencil/core";
-import { convertToObjectArray } from "../../utils/utils";
-import { Element } from "@stencil/core/internal";
+} from '@stencil/core';
+import { convertToObjectArray } from '../../utils/utils';
+import { Element } from '@stencil/core/internal';
 
 interface RadioOption {
   id: string | number;
@@ -17,14 +17,14 @@ interface RadioOption {
 }
 
 @Component({
-  tag: "ip-radio",
-  styleUrl: "ip-radio.scss",
+  tag: 'ip-radio',
+  styleUrl: 'ip-radio.scss',
   shadow: true,
 })
 export class IpRadio {
   @Element() hostElement: HTMLElement;
 
-  @Prop() labelPosition: "before" | "after" = "after";
+  @Prop() labelPosition: 'before' | 'after' = 'after';
   @Prop() options: string;
   @Prop() defaultOptionId: string | number;
   @Event({ bubbles: true, composed: true })
@@ -33,16 +33,16 @@ export class IpRadio {
 
   @State() selectedOption: RadioOption = null;
 
-  @Watch("options")
+  @Watch('options')
   writeValue(value: string | null) {
     this.radioOptions = convertToObjectArray<RadioOption>(value, [
-      "id",
-      "label",
+      'id',
+      'label',
     ]);
     if (this.defaultOptionId) {
       this.selectedOption =
         this.radioOptions.find(
-          (option) => option.id === this.defaultOptionId
+          (option) => option.id === this.defaultOptionId,
         ) || null;
     }
   }
@@ -74,10 +74,10 @@ export class IpRadio {
               type="radio"
               value={option.id}
               id={inputId}
-              name={"radio" + option.id}
+              name={'radio' + option.id}
               disabled={option.disabled}
               checked={isChecked}
-              aria-checked={isChecked ? "true" : "false"}
+              aria-checked={isChecked ? 'true' : 'false'}
               aria-labelledby={labelId}
               onChange={() => this.handleOptionChange(option)}
             />
