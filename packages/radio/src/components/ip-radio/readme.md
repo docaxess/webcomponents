@@ -5,10 +5,11 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type                  | Default     |
-| --------------- | ---------------- | ----------- | --------------------- | ----------- |
-| `labelPosition` | `label-position` |             | `"after" \| "before"` | `"after"`   |
-| `options`       | `options`        |             | `string`              | `undefined` |
+| Property          | Attribute           | Description | Type                  | Default     |
+| ----------------- | ------------------- | ----------- | --------------------- | ----------- |
+| `defaultOptionId` | `default-option-id` |             | `number \| string`    | `undefined` |
+| `labelPosition`   | `label-position`    |             | `"after" \| "before"` | `"after"`   |
+| `options`         | `options`           |             | `string`              | `undefined` |
 
 
 ## Events
