@@ -1,8 +1,8 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpRadio } from "./ip-radio";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpRadio } from './ip-radio';
 
-describe("IpRadio Component", () => {
-  it("renders options correctly ", async () => {
+describe('IpRadio Component', () => {
+  it('renders options correctly', async () => {
     const page = await newSpecPage({
       components: [IpRadio],
       html: `<ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>`,
@@ -35,17 +35,17 @@ describe("IpRadio Component", () => {
       </ip-radio>
     `);
   });
-  it("emits selectionChanged event on option change", async () => {
+  it('emits selectionChanged event on option change', async () => {
     const page = await newSpecPage({
       components: [IpRadio],
       html: `<ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>`,
     });
 
-    const inputElements = page.root.shadowRoot.querySelectorAll("input");
+    const inputElements = page.root.shadowRoot.querySelectorAll('input');
     const eventSpy = jest.fn();
-    page.root.addEventListener("selectionChanged", eventSpy);
+    page.root.addEventListener('selectionChanged', eventSpy);
 
-    inputElements[0].dispatchEvent(new Event("change"));
+    inputElements[0].dispatchEvent(new Event('change'));
 
     expect(eventSpy).toHaveBeenCalled();
     await page.waitForChanges();
@@ -77,7 +77,7 @@ describe("IpRadio Component", () => {
     `);
   });
 
-  it("initializes selectedOption state to null", async () => {
+  it('initializes selectedOption state to null', async () => {
     const page = await newSpecPage({
       components: [IpRadio],
       html: `<ip-radio options='[{"id": "1", "label": "Option 1"}]'></ip-radio>`,
@@ -103,23 +103,23 @@ describe("IpRadio Component", () => {
     expect(page.rootInstance.selectedOption).toBeNull();
   });
 
-  it("passes accessibility standards", async () => {
+  it('passes accessibility standards', async () => {
     const page = await newSpecPage({
       components: [IpRadio],
       html: `<ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>`,
     });
 
-    const inputElements = page.root.shadowRoot.querySelectorAll("input");
-    const labels = page.root.shadowRoot.querySelectorAll("label");
+    const inputElements = page.root.shadowRoot.querySelectorAll('input');
+    const labels = page.root.shadowRoot.querySelectorAll('label');
 
     inputElements.forEach((input, index) => {
-      expect(input.getAttribute("id")).toBe(`radio-${index + 1}`);
-      expect(labels[index].getAttribute("htmlFor")).toBe(`radio-${index + 1}`);
+      expect(input.getAttribute('id')).toBe(`radio-${index + 1}`);
+      expect(labels[index].getAttribute('htmlFor')).toBe(`radio-${index + 1}`);
     });
 
     inputElements.forEach((input) => {
       input.click();
-      expect(input.getAttribute("aria-checked")).toBe("false");
+      expect(input.getAttribute('aria-checked')).toBe('false');
     });
   });
 });
