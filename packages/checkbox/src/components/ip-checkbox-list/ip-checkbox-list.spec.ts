@@ -43,7 +43,6 @@ describe('ip-checkbox-list', () => {
          </mock:shadow-root>
       </ip-checkbox-list>
     `);
-
   });
 
   it('renders with options', async () => {
@@ -75,7 +74,6 @@ describe('ip-checkbox-list', () => {
                             type="checkbox"
                             id="1"
                             aria-checked="false"
-                            role="checkbox"
                         />
                         <label class="checkbox-label" htmlfor="1">Option 1</label>
                     </div>
@@ -85,7 +83,6 @@ describe('ip-checkbox-list', () => {
                             type="checkbox"
                             id="2"
                             aria-checked="false"
-                            role="checkbox"
                         />
                         <label class="checkbox-label" htmlfor="2">Option 2</label>
                     </div>
@@ -95,7 +92,6 @@ describe('ip-checkbox-list', () => {
                         type="checkbox"
                         id="3"
                         aria-checked="false"
-                        role="checkbox"
                     />
                         <label class="checkbox-label" htmlfor="3">Option 3</label>
                     </div>

@@ -32,14 +32,13 @@ export class IpCheckbox {
     return (
       <div class="checkbox-content">
         <input
+          id={this.identifier}
+          name={this.name}
           class="checkbox-input"
           type="checkbox"
-          name={this.name}
-          id={this.identifier}
-          checked={this.checked}
+          {...(this.checked ? { defaultChecked: true } : {})}
           disabled={this.disabled}
           onChange={(event) => this.handleChange(event)}
-          aria-checked={this.checked ? 'true' : 'false'}
         />
         <label htmlFor={this.identifier} class="checkbox-label">
           <slot></slot>
