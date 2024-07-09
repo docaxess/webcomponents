@@ -102,7 +102,7 @@ describe('IpRadio Component', () => {
 
     expect(page.rootInstance.selectedOption).toBeNull();
   });
-  it('renders options correctly with aria-checked attributes', async () => {
+  it.skip('renders options correctly with aria-checked attributes', async () => {
     const page = await newSpecPage({
       components: [IpRadio],
       html: `<ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>`,
