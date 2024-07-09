@@ -7,13 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpTable {
-        "currency": string;
-        "options": string;
-        "state1": string;
-        "state2": string;
-        "state3": string;
-    }
-    interface WcTable {
         "tbody": string;
         "thead": string;
     }
@@ -25,32 +18,17 @@ declare global {
         prototype: HTMLIpTableElement;
         new (): HTMLIpTableElement;
     };
-    interface HTMLWcTableElement extends Components.WcTable, HTMLStencilElement {
-    }
-    var HTMLWcTableElement: {
-        prototype: HTMLWcTableElement;
-        new (): HTMLWcTableElement;
-    };
     interface HTMLElementTagNameMap {
         "ip-table": HTMLIpTableElement;
-        "wc-table": HTMLWcTableElement;
     }
 }
 declare namespace LocalJSX {
     interface IpTable {
-        "currency"?: string;
-        "options"?: string;
-        "state1"?: string;
-        "state2"?: string;
-        "state3"?: string;
-    }
-    interface WcTable {
         "tbody"?: string;
         "thead"?: string;
     }
     interface IntrinsicElements {
         "ip-table": IpTable;
-        "wc-table": WcTable;
     }
 }
 export { LocalJSX as JSX };
@@ -58,7 +36,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ip-table": LocalJSX.IpTable & JSXBase.HTMLAttributes<HTMLIpTableElement>;
-            "wc-table": LocalJSX.WcTable & JSXBase.HTMLAttributes<HTMLWcTableElement>;
         }
     }
 }

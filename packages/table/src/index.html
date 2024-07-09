@@ -23,82 +23,31 @@
     <script nomodule src="/build/table.js"></script>
   </head>
   <body>
-    <ip-table
-      options='[
-    {
-      "name":"Slim Fit chinos",
-      "number": 9504,
-      "price": 98.25,
-      "category":"Men’s outwear",
-      "status": "In Stock"
-    },
-    {
-      "name":"Wide-Brimmed Floppy Hat",
-      "number": 9485,
-      "price": 145.66,
-      "category":"Women’s Outwear",
-      "status": "Low Stock"
-    },
-    {      
-      "name":"V-Neck Cashmere Sweater",
-      "number": 1524,
-      "price": 56.22,
-      "category":"Men’s outwear",
-      "status": "In Stock"
-    },
-    {
-      "name":"Striped Off-Shoulder Top",
-      "number": 1235,
-      "price": 65.00,
-      "category":"Women’s Outwear",
-      "status": "Backorder"
-    },   
-    {      
-      "name":"Quilted Bomber Jacket",
-      "number": 5689,
-      "price": 14.56,
-      "category":"Women’s Outwear",
-      "status": "In Stock"
-    },
-    {      
-      "name":"Women’s Chescott Down Jacket",
-      "number": 2394,
-      "price": 100.00,
-      "category":"Women’s Outwear",
-      "status": "In Stock"
-    },
-    {      
-      "name":"Denim Trucker Jacket",
-      "number": 7859,
-      "price": 52.45,
-      "category":"Men’s outwear",
-      "status": "Backorder"
-    },
-    {      
-      "name":"High-Waisted Skinny Jeans",
-      "number": 5600,
-      "price": 150.58,
-      "category":"Women’s Outwear",
-      "status": "Backorder"
-    },
-    {      
-      "name":"Men’s Harrington Jacket",
-      "number": 9000,
-      "price": 125.00,
-      "category":"Men’s Outwear",
-      "status": "In Stock"
-    }
-    ]'
-    ></ip-table>
-
     <wc-table
-      thead='["Name", "Number", "Category", "Price", "Status"]'
+      thead='[
+      { "header": "Name" , "type": "string"},
+      { "header": "Number", "type": "number" },
+      { "header": "Category", "type": "string" },
+      { "header": "Price" ,"type": "number"},
+      { "header": "Status", "type": "string" }
+      ]'
       tbody='[
-      ["Item 1", "1", "Category 1", "$10", "In Stock"],
-      ["Item 2", "2", "Category 2", "$20", "Backorder"],
-      ["Item 3", "3", "Category 3", "$30", "Low Stock"]
+      ["Slim Fit chinos", "9504", "Men’s outwear", " 98.25", "In Stock"],
+      ["Wide-Brimmed Floppy Hat", "9000", "Women’s Outwear", " 145.66", "Backorder"],
+      ["V-Neck Cashmere Sweater", "9485", "Men’s outwear", " 65.00", "Low Stock"],
+      ["Striped Off-Shoulder To", "1524", "Women’s Outwear", " 56.22", "In Stock"],
+      ["Quilted Bomber Jacket", "1235", "Men’s outwear", " 14.56", "In Stock"],
+      ["Women’s Chescott Down Jacket", "5689", "Women’s Outwear", " 100", "Backorder"],
+      ["Denim Trucker Jacket", "2394", "Men’s outwear", " 52.45", "In Stock"],
+      ["High-Waisted Skinny Jeans", "7859", "Women’s Outwear", " 125.00", "Low Stock"],
+      ["Men’s Harrington Jacket", "5600", "Men’s outwear", " 150.58", "In Stock"]
     ]'
     >
     </wc-table>
+
+    <wc-table
+      thead='[{"header": "Name", "type": "string"}, {"header": "Age", "type": "number"}]'
+      tbody='[["Alice", "25"], ["Bob", "30"]]'
+    ></wc-table>
   </body>
 </html>
