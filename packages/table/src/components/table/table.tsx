@@ -1,13 +1,13 @@
-import { Component, h, Prop, State } from "@stencil/core";
+import { Component, h, Prop, State } from '@stencil/core';
 
 interface Column {
   header: string;
-  type: "string" | "number";
+  type: 'string' | 'number';
 }
 
 @Component({
-  tag: "ip-table",
-  styleUrl: "table.scss",
+  tag: 'ip-table',
+  styleUrl: 'table.scss',
   shadow: true,
 })
 export class IpTable {
@@ -17,7 +17,7 @@ export class IpTable {
   @State() parsedThead: Column[] = [];
   @State() parsedTbody: string[][] = [];
   @State() sortedColumn: number = null;
-  @State() isAscending: boolean = true;
+  @State() isAscending = true;
 
   componentWillLoad() {
     this.parseThead(this.thead);
@@ -26,16 +26,16 @@ export class IpTable {
 
   parseThead(newValue: string) {
     try {
-      const parsedThead = JSON.parse(newValue || "[]");
+      const parsedThead = JSON.parse(newValue || '[]');
 
       if (
         Array.isArray(parsedThead) &&
         parsedThead.every(
           (item) =>
-            typeof item === "object" &&
+            typeof item === 'object' &&
             item !== null &&
-            "header" in item &&
-            "type" in item,
+            'header' in item &&
+            'type' in item,
         )
       ) {
         this.parsedThead = parsedThead;
@@ -45,13 +45,13 @@ export class IpTable {
         );
       }
     } catch (error) {
-      console.error("Invalid thead:", error);
+      console.error('Invalid thead:', error);
     }
   }
 
   parseTbody(newValue: string) {
     try {
-      const parsedTbody = JSON.parse(newValue || "[]");
+      const parsedTbody = JSON.parse(newValue || '[]');
 
       if (
         Array.isArray(parsedTbody) &&
@@ -59,10 +59,10 @@ export class IpTable {
       ) {
         this.parsedTbody = parsedTbody;
       } else {
-        console.error("Invalid tbody structure. Expected an array of arrays.");
+        console.error('Invalid tbody structure. Expected an array of arrays.');
       }
     } catch (error) {
-      console.error("Invalid tbody:", error);
+      console.error('Invalid tbody:', error);
     }
   }
 
@@ -78,7 +78,7 @@ export class IpTable {
       const valueA = a[index];
       const valueB = b[index];
 
-      if (this.parsedThead[index].type === "number") {
+      if (this.parsedThead[index].type === 'number') {
         return this.compareNumbers(parseFloat(valueA), parseFloat(valueB));
       } else {
         return this.compareCellValues(valueA, valueB);
@@ -118,7 +118,7 @@ export class IpTable {
                     height="16"
                     viewBox="0 0 17 16"
                     fill="none"
-                    class={this.sortedColumn === index ? "focus-style" : ""}
+                    class={this.sortedColumn === index ? 'focus-style' : ''}
                     aria-hidden="true"
                   >
                     <g clip-path="url(#clip0_2545_1451)">

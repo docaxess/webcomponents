@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
-import { IpTable } from "./table";
+import { newSpecPage } from '@stencil/core/testing';
+import { IpTable } from './table';
 
-describe("ip-table", () => {
-  it("renders", async () => {
+describe('ip-table', () => {
+  it('renders', async () => {
     const page = await newSpecPage({
       components: [IpTable],
-      html: "<ip-table></ip-table>",
+      html: '<ip-table></ip-table>',
     });
     expect(page.root).toEqualHtml(`
             <ip-table>
@@ -21,7 +21,7 @@ describe("ip-table", () => {
         `);
   });
 
-  it("renders table with headers and rows", async () => {
+  it('renders table with headers and rows', async () => {
     const page = await newSpecPage({
       components: [IpTable],
       html: `
