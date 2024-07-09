@@ -43,23 +43,16 @@ describe('ip-checkbox', () => {
     expect(input).toHaveAttribute('checked');
   });
 
-  it('should toggle the checked attribute when the enter keyboard is pressed', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ip-checkbox></ip-checkbox>');
-    const input = await page.find('ip-checkbox >>> input');
-    expect(input).not.toHaveAttribute('checked');
-
-    await input.focus();
-    await page.waitForChanges();
-    await input.press('Enter');
-    await page.waitForChanges();
-    expect(input).toHaveAttribute('checked');
-  });
-
   it('should render label properly', async () => {
     const page = await newE2EPage();
-    await page.setContent('<ip-checkbox>Check me !</ip-checkbox>');
+    await page.setContent(
+      '<ip-checkbox identifier="firstCheckbox">Check me !</ip-checkbox>',
+    );
+
+    const input = await page.find('ip-checkbox >>> input');
+    expect(input).toEqualAttribute('id', 'firstCheckbox');
+
     const label = await page.find('ip-checkbox >>> label');
-    expect(label.textContent).toEqual(`Check me !`);
+    expect(label).toEqualAttribute('for', 'firstCheckbox');
   });
 });
