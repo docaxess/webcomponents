@@ -16,7 +16,7 @@
     "test": "nx run-many --target=test --all",
     "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists",
-    "ci": "npm run lint && npm run test && npm run e2e && npm run build"
+    "ci:full": "npm run lint && npm run test && npm run e2e && npm run build"
   },
   "private": false,
   "devDependencies": {
