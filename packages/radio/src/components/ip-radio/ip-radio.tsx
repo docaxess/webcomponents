@@ -27,6 +27,7 @@ export class IpRadio {
   @Prop() labelPosition: 'before' | 'after' = 'after';
   @Prop() options: string;
   @Prop() defaultOptionId: string | number;
+  @Prop() legend: string;
   @Event({ bubbles: true, composed: true })
   selectionChanged: EventEmitter<RadioOption>;
   radioOptions: RadioOption[] = [];
@@ -57,40 +58,44 @@ export class IpRadio {
   }
 
   render() {
-    return this.radioOptions.map((option) => {
-      const containerClasses = {
-        container: true,
-        [this.labelPosition]: true,
-        disabled: option.disabled,
-      };
-      const isChecked =
-        this.selectedOption && this.selectedOption.id === option.id;
-      const inputId = `radio-${option.id}`;
-      const labelId = `label-${inputId}`;
-      return (
-        <div class={containerClasses}>
-          <div class="radio">
-            <input
-              type="radio"
-              value={option.id}
-              id={inputId}
-              name={'radio' + option.id}
-              disabled={option.disabled}
-              checked={isChecked}
-              aria-checked={isChecked ? 'true' : 'false'}
-              aria-labelledby={labelId}
-              onChange={() => this.handleOptionChange(option)}
-            />
-            <div class="radio-background">
-              <div class="outer-circle"></div>
-              <div class="inner-circle"></div>
+    return (
+      <fieldset class="custom-fieldset">
+        {this.legend && <legend>{this.legend}</legend>}
+        {this.radioOptions.map((option) => {
+          const containerClasses = {
+            container: true,
+            [this.labelPosition]: true,
+            disabled: option.disabled,
+          };
+          const isChecked =
+            this.selectedOption && this.selectedOption.id === option.id;
+          const inputId = `radio-${option.id}`;
+          const labelId = `label-${inputId}`;
+          return (
+            <div class={containerClasses}>
+              <div class="radio">
+                <input
+                  type="radio"
+                  value={option.id}
+                  id={inputId}
+                  name={'radio' + option.id}
+                  disabled={option.disabled}
+                  checked={isChecked}
+                  aria-checked={isChecked ? 'true' : 'false'}
+                  onChange={() => this.handleOptionChange(option)}
+                />
+                <div class="radio-background">
+                  <div class="outer-circle"></div>
+                  <div class="inner-circle"></div>
+                </div>
+              </div>
+              <label id={labelId} htmlFor={inputId}>
+                {option.label}
+              </label>
             </div>
-          </div>
-          <label id={labelId} htmlFor={inputId}>
-            {option.label}
-          </label>
-        </div>
-      );
-    });
+          );
+        })}
+      </fieldset>
+    );
   }
 }

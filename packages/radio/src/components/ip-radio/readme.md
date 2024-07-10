@@ -9,6 +9,7 @@
 | ----------------- | ------------------- | ----------- | --------------------- | ----------- |
 | `defaultOptionId` | `default-option-id` |             | `number \| string`    | `undefined` |
 | `labelPosition`   | `label-position`    |             | `"after" \| "before"` | `'after'`   |
+| `legend`          | `legend`            |             | `string`              | `undefined` |
 | `options`         | `options`           |             | `string`              | `undefined` |
 
 

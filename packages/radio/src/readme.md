@@ -21,7 +21,7 @@ npm install ip-radio
 Import module in script file:
 
 ```javascript or typescript
-import "../node_modules/ip-radio/dist/ip-radio/ip-radio.esm";
+import '../node_modules/ip-radio/dist/ip-radio/ip-radio.esm';
 ```
 
 ## Usage:
@@ -61,11 +61,14 @@ Example:
 
 ### Customization:
 
+The elements are encapsulated in a fieldset.
+
 We have a set of predefined variable used to customisation the checkbox:
 
 - **--primary-color**
 - **--secondary-color**
 - **--radio-size**
+- **--fieldset-border**
 
 To update the values use the following:
 
@@ -74,18 +77,19 @@ ip-checkbox-list {
   --primary-color: #006342;
   --secondary-color: #000000;
   --radio-size: 18px;
+  --fieldset-border: 2px solid #d6254f;
 }
 ```
 
-### Events
+### Event
 
 - `selectionChanged`: This event is emitted when a radio button is selected. The event detail is the selected option.
 
 _e.g:_
 
 ```javascript
-const radio = document.querySelector("ip-radio");
-radio.addEventListener("selectionChanged", (event) => {
-  console.log("selectionChanged", event.detail);
+const radio = document.querySelector('ip-radio');
+radio.addEventListener('selectionChanged', (event) => {
+  console.log('selectionChanged', event.detail);
 });
 ```
