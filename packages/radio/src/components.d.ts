@@ -9,6 +9,7 @@ export namespace Components {
     interface IpRadio {
         "defaultOptionId": string | number;
         "labelPosition": 'before' | 'after';
+        "legend": string;
         "options": string;
     }
 }
@@ -42,6 +43,7 @@ declare namespace LocalJSX {
     interface IpRadio {
         "defaultOptionId"?: string | number;
         "labelPosition"?: 'before' | 'after';
+        "legend"?: string;
         "onSelectionChanged"?: (event: IpRadioCustomEvent<RadioOption>) => void;
         "options"?: string;
     }

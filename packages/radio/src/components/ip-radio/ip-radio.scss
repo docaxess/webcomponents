@@ -2,6 +2,7 @@
   --primary-color: var(--primaryColor, #d6254f);
   --secondray-color: var(--secondrayColor, #333);
   --radio-size: var(--radioSize, 20px);
+  --fieldset-border: var(--fieldsetBorder, 2px solid #d6254f);
 }
 
 * {
@@ -12,6 +13,11 @@
   display: block;
 }
 
+fieldset {
+  border: var(--fieldset-border);
+  border-radius: 5px;
+  padding: 10px;
+}
 .container {
   display: flex;
   align-items: stretch;
@@ -79,7 +85,7 @@ input:checked + .radio-background {
 }
 
 .radio-background::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;

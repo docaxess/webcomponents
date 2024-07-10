@@ -12,15 +12,16 @@
         font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
+        width: 250px;
       }
       .radio-button {
         margin: 20px;
         display: flex;
         flex-direction: column;
       }
+
       ip-radio {
-        display: block;
-        font-size: 15px;
+        --fieldset-border: 1px solid black;
       }
     </style>
     <script src="/build/ip-radio.esm.js" type="module"></script>
@@ -28,9 +29,9 @@
   </head>
   <body>
     <div class="radio-button">
-      <label for="radio">What is your gender</label>
       <ip-radio
         id="radio"
+        legend="What is your gender"
         default-option-id="Female"
         options='[
       {"id": "Male", "label": "Male"}, 
@@ -41,11 +42,15 @@
       ></ip-radio>
     </div>
 
-    <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'></ip-radio>
+    <ip-radio
+      class="radio-button"
+      legend="Option list"
+      options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'
+    ></ip-radio>
     <script>
-      const radio = document.querySelector("ip-radio");
-      radio.addEventListener("selectionChanged", (event) => {
-        console.log("selectionChanged", event.detail);
+      const radio = document.querySelector('ip-radio');
+      radio.addEventListener('selectionChanged', (event) => {
+        console.log('selectionChanged', event.detail);
       });
     </script>
   </body>
