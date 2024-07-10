@@ -43,8 +43,6 @@ describe('ip-checkbox-list', () => {
          </mock:shadow-root>
       </ip-checkbox-list>
     `);
-
-    mockedConsole.mockRestore();
   });
 
   it('renders with options', async () => {

@@ -10,6 +10,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute    | Description | Type      | Default     |
@@ -26,6 +27,7 @@
 | ---------------- | ----------- | -------------------------------------------------- |
 | `checkboxChange` |             | `CustomEvent<{ name: string; checked: boolean; }>` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
