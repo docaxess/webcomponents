@@ -59,13 +59,9 @@ export class IpCheckboxList {
   }
 
   handleChange(optionId: string) {
-    if (!this.selectedOptions.includes(optionId)) {
-      this.selectedOptions.push(optionId);
-    } else {
-      this.selectedOptions = this.selectedOptions.filter(
-        (id) => id !== optionId,
-      );
-    }
+    this.selectedOptions = this.selectedOptions.includes(optionId)
+      ? this.selectedOptions.filter((id) => id !== optionId)
+      : [...this.selectedOptions, optionId];
     this.selectionChanged.emit(this.selectedOptions);
   }
 
@@ -80,11 +76,8 @@ export class IpCheckboxList {
                 class="checkbox-input"
                 type="checkbox"
                 id={option.id}
-                checked={this.selectedOptions.includes(option.id)}
+                {...(this.selectedOptions.includes(option.id) ? { defaultChecked: true } : {})}
                 onChange={() => this.handleChange(option.id)}
-                aria-checked={
-                  this.selectedOptions.includes(option.id) ? 'true' : 'false'
-                }
                 disabled={option.disabled}
               />
               <label class="checkbox-label" htmlFor={option.id}>
