@@ -22,9 +22,9 @@
 
 ## Events
 
-| Event    | Description | Type                                               |
-| -------- | ----------- | -------------------------------------------------- |
-| `change` |             | `CustomEvent<{ name: string; checked: boolean; }>` |
+| Event            | Description | Type                                               |
+| ---------------- | ----------- | -------------------------------------------------- |
+| `checkboxChange` |             | `CustomEvent<{ name: string; checked: boolean; }>` |
 
 ---
 

@@ -76,7 +76,9 @@ export class IpCheckboxList {
                 class="checkbox-input"
                 type="checkbox"
                 id={option.id}
-                {...(this.selectedOptions.includes(option.id) ? { defaultChecked: true } : {})}
+                {...(this.selectedOptions.includes(option.id)
+                  ? { defaultChecked: true }
+                  : {})}
                 onChange={() => this.handleChange(option.id)}
                 disabled={option.disabled}
               />

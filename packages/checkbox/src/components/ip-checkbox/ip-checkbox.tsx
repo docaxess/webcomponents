@@ -20,12 +20,12 @@ export class IpCheckbox {
   @Prop({ mutable: true }) checked = false;
   @Prop() name: string;
 
-  @Event() change: EventEmitter<{ name: string; checked: boolean }>;
+  @Event() checkboxChange: EventEmitter<{ name: string; checked: boolean }>;
 
   handleChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     this.checked = checkbox.checked;
-    this.change.emit({ name: this.name, checked: this.checked });
+    this.checkboxChange.emit({ name: this.name, checked: this.checked });
   }
 
   render() {

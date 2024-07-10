@@ -37,7 +37,7 @@ export interface IpCheckboxListCustomEvent<T> extends CustomEvent<T> {
 }
 declare global {
     interface HTMLIpCheckboxElementEventMap {
-        "change": { name: string; checked: boolean };
+        "checkboxChange": { name: string; checked: boolean };
     }
     interface HTMLIpCheckboxElement extends Components.IpCheckbox, HTMLStencilElement {
         addEventListener<K extends keyof HTMLIpCheckboxElementEventMap>(type: K, listener: (this: HTMLIpCheckboxElement, ev: IpCheckboxCustomEvent<HTMLIpCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -95,7 +95,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "identifier"?: string;
         "name"?: string;
-        "onChange"?: (event: IpCheckboxCustomEvent<{ name: string; checked: boolean }>) => void;
+        "onCheckboxChange"?: (event: IpCheckboxCustomEvent<{ name: string; checked: boolean }>) => void;
     }
     interface IpCheckboxList {
         "legend"?: string;

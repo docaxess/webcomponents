@@ -23,27 +23,38 @@ describe('ip-checkbox-list', () => {
     `);
 
     await page.$eval('ip-checkbox-list', (component: any) => {
-      const input = component.shadowRoot.querySelector('input[id="2"]') as HTMLInputElement;
+      const input = component.shadowRoot.querySelector(
+        'input[id="2"]',
+      ) as HTMLInputElement;
       input.click();
     });
 
     await page.waitForChanges();
 
     const isChecked = await page.$eval('ip-checkbox-list', (component: any) => {
-      const input = component.shadowRoot.querySelector('input[id="2"]') as HTMLInputElement;
+      const input = component.shadowRoot.querySelector(
+        'input[id="2"]',
+      ) as HTMLInputElement;
       return input.checked;
     });
     expect(isChecked).toBe(true);
 
     await page.$eval('ip-checkbox-list', (component: any) => {
-      const input = component.shadowRoot.querySelector('input[id="1"]') as HTMLInputElement;
+      const input = component.shadowRoot.querySelector(
+        'input[id="1"]',
+      ) as HTMLInputElement;
       input.click();
     });
     await page.waitForChanges();
-      const isChecked1 = await page.$eval('ip-checkbox-list', (component: any) => {
-      const input = component.shadowRoot.querySelector('input[id="1"]') as HTMLInputElement;
-      return input.checked;
-      });
+    const isChecked1 = await page.$eval(
+      'ip-checkbox-list',
+      (component: any) => {
+        const input = component.shadowRoot.querySelector(
+          'input[id="1"]',
+        ) as HTMLInputElement;
+        return input.checked;
+      },
+    );
     expect(isChecked1).toBe(true);
     expect(isChecked).toBe(true);
   });
