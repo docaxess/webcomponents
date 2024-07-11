@@ -31,16 +31,16 @@ export class IpCheckbox {
   render() {
     return (
       <div class="checkbox-content">
-        <input
-          id={this.identifier}
-          name={this.name}
-          class="checkbox-input"
-          type="checkbox"
-          {...(this.checked ? { defaultChecked: true } : {})}
-          disabled={this.disabled}
-          onChange={(event) => this.handleChange(event)}
-        />
         <label htmlFor={this.identifier} class="checkbox-label">
+          <input
+            id={this.identifier}
+            name={this.name}
+            class="checkbox-input"
+            type="checkbox"
+            {...(this.checked ? { defaultChecked: true } : {})}
+            disabled={this.disabled}
+            onChange={(event) => this.handleChange(event)}
+          />
           <slot></slot>
         </label>
       </div>

@@ -11,12 +11,12 @@ describe('ip-checkbox', () => {
       <ip-checkbox>
         <mock:shadow-root>
           <div class="checkbox-content">
-            <input 
+              <label class="checkbox-label">
+                <input 
                 class="checkbox-input"
                 type="checkbox">
-                <label class="checkbox-label">
-                    <slot></slot>
-                </label>
+                <slot></slot>
+              </label>
           </div>
         </mock:shadow-root>
       </ip-checkbox>
@@ -31,9 +31,9 @@ describe('ip-checkbox', () => {
     expect(root).toEqualHtml(`
      <ip-checkbox checked="true" identifier="check me">
        <mock:shadow-root>
-         <div class="checkbox-content">
-           <input defaultchecked="" class="checkbox-input" id="check me" type="checkbox">
+         <div class="checkbox-content">          
            <label class="checkbox-label" htmlfor="check me">
+           <input defaultchecked="" class="checkbox-input" id="check me" type="checkbox">
              <slot></slot>
            </label>
          </div>
