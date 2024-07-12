@@ -54,9 +54,33 @@ export class Dropdown {
   }
 
   keySelectItem(event: KeyboardEvent, item: string) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      this.selectItem(item);
+    switch (event.key) {
+      case 'Enter':
+      case ' ':
+        event.preventDefault();
+        this.selectItem(item);
+        break;
+      case 'Tab':
+        event.preventDefault();
+        const currentIndex = this.items.indexOf(item);
+        const nextIndex =
+          currentIndex === this.items.length - 1 ? 0 : currentIndex + 1;
+        const nextItem = this.el.shadowRoot.querySelector(
+          `.dropdown-list li:nth-child(${nextIndex + 1})`,
+        ) as HTMLElement;
+        if (nextItem) {
+          nextItem.focus();
+        }
+        break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+        event.preventDefault();
+        break;
+      case 'Shift':
+        event.preventDefault();
+        break;
+      default:
+        break;
     }
   }
 
