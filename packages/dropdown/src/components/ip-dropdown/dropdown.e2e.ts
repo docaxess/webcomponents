@@ -90,4 +90,27 @@ describe('ip-dropdown', () => {
 
     expect(await dropdownContent.getAttribute('aria-expanded')).toBe('false');
   });
+
+  it('should close dropdown when keydown Escape', async () => {
+    const page = await newE2EPage();
+
+    await page.setContent(
+      '<ip-dropdown dropdown-title=\'Select an option\' items-options=\'["Option 1", "Option 2", "Option 3"]\'></ip-dropdown>',
+    );
+
+    const dropdownContent = await page.find(
+      'ip-dropdown >>> .dropdown-content',
+    );
+    const dropdownArrow = await page.find('ip-dropdown >>> .dropdown-arrow');
+
+    await dropdownArrow.click();
+    await page.waitForChanges();
+
+    expect(await dropdownContent.getAttribute('aria-expanded')).toBe('true');
+
+    await page.keyboard.press('Escape');
+    await page.waitForChanges();
+
+    expect(await dropdownContent.getAttribute('aria-expanded')).toBe('false');
+  });
 });
