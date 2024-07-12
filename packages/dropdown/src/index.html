@@ -32,12 +32,12 @@
     <ip-dropdown
       dropdown-title="Country"
       placeholder="Select a country:"
-      items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
+      items-options='["Mauritius", "France", "Germany", "Zimbabwe","Allemagne", "Angleterre", "Réunion","Canada", "USA", "Japan","China", "Korea", "Nigeria","Algeria", "Cameroun", "Mali"]'
     ></ip-dropdown>
 
     <script>
       const dropdown = document.querySelector('.color-dropdown');
-
+      
       dropdown.addEventListener('itemSelected', (event) => {
         const selectedItem = event.detail;
         console.log('Item selected :', selectedItem);

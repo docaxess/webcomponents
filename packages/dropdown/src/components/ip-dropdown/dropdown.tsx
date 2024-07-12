@@ -54,9 +54,61 @@ export class Dropdown {
   }
 
   keySelectItem(event: KeyboardEvent, item: string) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      this.selectItem(item);
+    switch (event.key) {
+      case 'Enter':
+      case ' ':
+        event.preventDefault();
+        this.selectItem(item);
+        break;
+      case 'Tab':
+        event.preventDefault();
+        {
+          const currentIndex = this.items.indexOf(item);
+          const nextIndex =
+            currentIndex === this.items.length - 1 ? 0 : currentIndex + 1;
+          const nextItem = this.el.shadowRoot.querySelector(
+            `.dropdown-list li:nth-child(${nextIndex + 1})`,
+          ) as HTMLElement;
+          if (nextItem) {
+            nextItem.focus();
+          }
+        }
+        break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+        event.preventDefault();
+        break;
+      case 'Shift':
+        event.preventDefault();
+        break;
+      default:
+        break;
+      case 'Escape':
+        event.preventDefault();
+        this.isOpen = false;
+        break;
+      case 'End':
+        event.preventDefault();
+        {
+          const lastItem = this.el.shadowRoot.querySelector(
+            '.dropdown-list li:last-child',
+          ) as HTMLElement;
+          if (lastItem) {
+            lastItem.focus();
+          }
+        }
+        break;
+      case 'Home':
+        event.preventDefault();
+        {
+          const firstItem = this.el.shadowRoot.querySelector(
+            '.dropdown-list li:first-child',
+          ) as HTMLElement;
+          if (firstItem) {
+            firstItem.focus();
+          }
+        }
+        break;
     }
   }
 
@@ -76,6 +128,25 @@ export class Dropdown {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       this.toggleDropdown();
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      this.isOpen = false;
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      const lastItem = this.el.shadowRoot.querySelector(
+        '.dropdown-list li:last-child',
+      ) as HTMLElement;
+      if (lastItem) {
+        lastItem.focus();
+      }
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      const firstItem = this.el.shadowRoot.querySelector(
+        '.dropdown-list li:first-child',
+      ) as HTMLElement;
+      if (firstItem) {
+        firstItem.focus();
+      }
     }
   }
 
@@ -93,6 +164,7 @@ export class Dropdown {
           onClick={() => this.toggleDropdown()}
           onKeyDown={(event) => this.handleKeyDown(event)}
           aria-expanded={this.isOpen ? 'true' : 'false'}
+          aria-label={this.placeholder}
         >
           <span class="dropdown-head" role="button" aria-haspopup="listbox">
             {this.selectedItem || this.placeholder}

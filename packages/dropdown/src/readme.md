@@ -62,9 +62,11 @@ ip-checkbox-list {
 }
 ```
 
-## Events
+## Event
 
 To listen this event emitted,we have definied `itemSelected` event in this component.
+
+The `itemSelected` event is fired when a user selects an item in the dropdown. You can listen to this event in your application to handle the selection.
 
 _e.g:_
 

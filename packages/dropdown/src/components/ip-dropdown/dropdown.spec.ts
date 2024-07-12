@@ -13,7 +13,7 @@ describe('Dropdown', () => {
     <mock:shadow-root>
       <div class="dropdown">
         <div class="dropdown-title" aria-label="Select an option">Select an option</div>
-        <div class="dropdown-content" tabindex="0" aria-expanded="false" role="combobox"
+        <div class="dropdown-content" tabindex="0" aria-expanded="false" role="combobox" aria-label="Select an option"
         aria-labelledby="dropdown-title">
           <span class="dropdown-head" aria-haspopup="listbox" role="button">Select an option</span>
           <span class="dropdown-arrow" aria-hidden="true">
