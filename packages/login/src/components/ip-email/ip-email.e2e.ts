@@ -14,7 +14,7 @@ describe('ip-email', () => {
 
   it('renders with values', async () => {
     const page = await newE2EPage();
-    await page.setContent('<ip-email input-label="Username"></ip-email>');
+    await page.setContent('<ip-email input-label="Username" required></ip-email>');
     const email = await page.find('ip-email');
     const label = await page.find('ip-email >>> label');
 

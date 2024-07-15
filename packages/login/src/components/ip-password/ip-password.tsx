@@ -1,4 +1,4 @@
-import { Component, h, State, Element, Prop } from "@stencil/core";
+import { Component, h, State, Element, Prop,Event ,EventEmitter } from "@stencil/core";
 
 @Component({
   tag: "ip-password",
@@ -11,10 +11,20 @@ export class IpPassword {
   @Prop() errorMessage: string;
   @Prop({ mutable: true }) invalid: boolean = false;
   @Prop() forgotPasswordLink: string;
-
+  
+  @State() value: string = "";
   @State() passwordVisible: boolean = false;
 
-  togglePasswordVisibility() {
+  @Event({eventName: 'passwordChange'}) passwordChange: EventEmitter<string>;
+
+  _handleInput = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    this.value = target.value;
+    this.passwordChange.emit(this.value);
+    this.invalid = !target.checkValidity();
+  };
+
+  _togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
   }
 
@@ -41,11 +51,13 @@ export class IpPassword {
             aria-invalid={this.invalid ? "true" : "false"}
             aria-describedby={this.invalid ? "password-error" : ""}
             placeholder="Type your password here..."
+            onInput={(event) => this._handleInput(event)}
+            value={this.value}
           />
           <button
             type="button"
             class="toggle-password"
-            onClick={() => this.togglePasswordVisibility()}
+            onClick={() => this._togglePasswordVisibility()}
             aria-label={
               this.passwordVisible ? "Hide password" : "Show password"
             }

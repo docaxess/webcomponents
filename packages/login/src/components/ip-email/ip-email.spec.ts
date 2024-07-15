@@ -5,20 +5,20 @@ describe('ip-email', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
       components: [IpEmail],
-      html: '<ip-email></ip-email>',
+      html: '<ip-email required></ip-email>',
     });
     expect(root).toEqualHtml(`
-            <ip-email>
+            <ip-email required>
                 <mock:shadow-root>
                     <div class="input">
-                        <label htmlfor="email" class="input__label">
+                        <label htmlfor="email" class="input__label" >
                             Email
                             <span aria-hidden="true" class="required-asterisk">
                                 *
                             </span>
                         </label>
                         <div class="input_btn">
-                            <input type="email" id="email" class="input__input" autocomplete="email" required placeholder="Type your Email here...">
+                            <input type="email" id="email" class="input__input" autocomplete="email" required value="" placeholder="Type your Email here...">
                         </div>
                     </div>
                 </mock:shadow-root>
@@ -37,12 +37,9 @@ describe('ip-email', () => {
                         <div class="input">
                             <label htmlfor="email" class="input__label">
                             Username
-                                <span aria-hidden="true" class="required-asterisk">
-                                    *
-                                </span>
                             </label>
                             <div class="input_btn">
-                                <input type="email" id="email" class="input__input" autocomplete="email" required placeholder="Type your Username here...">
+                                <input type="email" id="email" class="input__input" autocomplete="email" value="" placeholder="Type your Username here...">
                             </div>
                         </div>
                     </mock:shadow-root>
