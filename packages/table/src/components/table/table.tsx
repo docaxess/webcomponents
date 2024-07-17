@@ -11,8 +11,8 @@ interface Column {
   shadow: true,
 })
 export class IpTable {
-  @Prop() thead: string;
-  @Prop() tbody: string;
+  @Prop() columns: string;
+  @Prop() rows: string;
 
   @State() parsedThead: Column[] = [];
   @State() parsedTbody: string[][] = [];
@@ -20,49 +20,47 @@ export class IpTable {
   @State() isAscending = true;
 
   componentWillLoad() {
-    this.parseThead(this.thead);
-    this.parseTbody(this.tbody);
+    this.parseColumns(this.columns);
+    this.parseRows(this.rows);
   }
 
-  parseThead(newValue: string) {
+  parseColumns(newValue: string) {
     try {
-      const parsedThead = JSON.parse(newValue || '[]');
+      const parsedColumns: Column[] = JSON.parse(newValue || '[]');
 
       if (
-        Array.isArray(parsedThead) &&
-        parsedThead.every(
+        Array.isArray(parsedColumns) &&
+        parsedColumns.every(
           (item) =>
             typeof item === 'object' &&
             item !== null &&
             'header' in item &&
-            'type' in item,
+            'type' in item &&
+            (item.type === 'string' || item.type === 'number')
         )
       ) {
-        this.parsedThead = parsedThead;
+        this.parsedThead = parsedColumns;
       } else {
         console.error(
-          "Invalid thead structure. Expected an array of objects with 'header' and 'type' properties.",
+          "Invalid columns structure. Expected an array of objects with 'header' and 'type' properties.",
         );
       }
     } catch (error) {
-      console.error('Invalid thead:', error);
+      console.error('Invalid columns:', error);
     }
   }
 
-  parseTbody(newValue: string) {
+  parseRows(newValue: string) {
     try {
-      const parsedTbody = JSON.parse(newValue || '[]');
+      const parsedRows: { [key: string]: string | number }[] = JSON.parse(newValue || '[]');
 
-      if (
-        Array.isArray(parsedTbody) &&
-        parsedTbody.every((row) => Array.isArray(row))
-      ) {
-        this.parsedTbody = parsedTbody;
-      } else {
-        console.error('Invalid tbody structure. Expected an array of arrays.');
-      }
+      this.parsedTbody = parsedRows.map(row =>
+        this.parsedThead.map(column =>
+          row[column.header] !== undefined ? String(row[column.header]) : ''
+        )
+      );
     } catch (error) {
-      console.error('Invalid tbody:', error);
+      console.error('Invalid rows:', error);
     }
   }
 
@@ -102,14 +100,14 @@ export class IpTable {
 
   render() {
     return (
-      <table>
+      <table role='table'>
         <thead>
           <tr>
             {this.parsedThead.map((column, index) => (
               <th>
-                {column.header}
+               <span>{column.header}</span> 
                 <button
-                  aria-label={`Sort by ${column.header}`}
+                 aria-label={`Sort by ${column.header}`}
                   onClick={() => this.sortColumn(index)}
                 >
                   <svg

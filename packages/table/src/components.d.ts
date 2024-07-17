@@ -7,8 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpTable {
-        "tbody": string;
-        "thead": string;
+        "columns": string;
+        "rows": string;
     }
 }
 declare global {
@@ -24,8 +24,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpTable {
-        "tbody"?: string;
-        "thead"?: string;
+        "columns"?: string;
+        "rows"?: string;
     }
     interface IntrinsicElements {
         "ip-table": IpTable;

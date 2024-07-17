@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `tbody`  | `tbody`   |             | `string` | `undefined` |
-| `thead`  | `thead`   |             | `string` | `undefined` |
+| Property  | Attribute | Description | Type     | Default     |
+| --------- | --------- | ----------- | -------- | ----------- |
+| `columns` | `columns` |             | `string` | `undefined` |
+| `rows`    | `rows`    |             | `string` | `undefined` |
 
 
 ----------------------------------------------
