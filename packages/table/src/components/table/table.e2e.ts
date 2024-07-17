@@ -1,5 +1,3 @@
-// ip-table.e2e.ts
-
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('ip-table', () => {
@@ -15,8 +13,16 @@ describe('ip-table', () => {
     const page = await newE2EPage();
 
     await page.setContent(`
-      <ip-table thead='[{"header": "Name", "type": "string"}, {"header": "Age", "type": "number"}]'
-                tbody='[["Alice", "25"], ["Bob", "30"]]'></ip-table>
+      <ip-table
+        columns='[
+          { "header": "Name" , "type": "string"},
+          { "header": "Age", "type": "number" }
+        ]'
+        rows='[
+          {"Name":"Alice", "Age":25},
+          {"Name":"Bob", "Age":30}
+        ]'
+      ></ip-table>
     `);
 
     await page.waitForChanges();
@@ -38,31 +44,76 @@ describe('ip-table', () => {
     const page = await newE2EPage();
 
     await page.setContent(`
-      <ip-table thead='[{"header": "Name", "type": "string"}, {"header": "Age", "type": "number"}]'
-                tbody='[["Alice", "25"], ["Bob", "30"]]'></ip-table>
+      <ip-table
+        columns='[
+          { "header": "Name" , "type": "string"},
+          { "header": "Age", "type": "number" }
+        ]'
+        rows='[
+          {"Name":"Alice", "Age":25},
+          {"Name":"Bob", "Age":30}
+        ]'
+      ></ip-table>
     `);
 
     await page.waitForChanges();
 
-    const nameHeader = await page.find(
-      'ip-table >>> th:first-of-type >>> button',
+    const nameHeaderButton = await page.find(
+      'ip-table >>> th:nth-of-type(1) >>> button',
     );
-    expect(nameHeader).not.toBeNull();
-
-    await nameHeader.click();
-
+    expect(nameHeaderButton).not.toBeNull();
+    await nameHeaderButton.click();
     await page.waitForChanges();
 
-    const sortedRows = await page.findAll('ip-table >>> tbody >>> tr');
+    let sortedRows = await page.findAll('ip-table >>> tbody >>> tr');
     expect(await sortedRows[0].innerText).toContain('Alice');
     expect(await sortedRows[1].innerText).toContain('Bob');
 
-    await nameHeader.click();
+    await nameHeaderButton.click();
+    await page.waitForChanges();
+
+    sortedRows = await page.findAll('ip-table >>> tbody >>> tr');
+    expect(await sortedRows[0].innerText).toContain('Bob');
+    expect(await sortedRows[1].innerText).toContain('Alice');
+  });
+
+  it('sorts numeric columns correctly', async () => {
+    const page = await newE2EPage();
+
+    await page.setContent(`
+      <ip-table
+        columns='[
+          { "header": "Name" , "type": "string"},
+          { "header": "Age", "type": "number" }
+        ]'
+        rows='[
+          {"Name":"Alice", "Age":25},
+          {"Name":"Bob", "Age":30},
+          {"Name":"Charlie", "Age":20}
+        ]'
+      ></ip-table>
+    `);
 
     await page.waitForChanges();
 
-    const reverseSortedRows = await page.findAll('ip-table >>> tbody >>> tr');
-    expect(await reverseSortedRows[0].innerText).toContain('Bob');
-    expect(await reverseSortedRows[1].innerText).toContain('Alice');
+    const ageHeaderButton = await page.find(
+      'ip-table >>> th:nth-of-type(2) >>> button',
+    );
+    expect(ageHeaderButton).not.toBeNull();
+    await ageHeaderButton.click();
+    await page.waitForChanges();
+
+    let sortedRows = await page.findAll('ip-table >>> tbody >>> tr');
+    expect(await sortedRows[0].innerText).toContain('Charlie');
+    expect(await sortedRows[1].innerText).toContain('Alice');
+    expect(await sortedRows[2].innerText).toContain('Bob');
+
+    await ageHeaderButton.click();
+    await page.waitForChanges();
+
+    sortedRows = await page.findAll('ip-table >>> tbody >>> tr');
+    expect(await sortedRows[0].innerText).toContain('Bob');
+    expect(await sortedRows[1].innerText).toContain('Alice');
+    expect(await sortedRows[2].innerText).toContain('Charlie');
   });
 });

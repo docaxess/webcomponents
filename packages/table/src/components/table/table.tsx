@@ -36,7 +36,7 @@ export class IpTable {
             item !== null &&
             'header' in item &&
             'type' in item &&
-            (item.type === 'string' || item.type === 'number')
+            (item.type === 'string' || item.type === 'number'),
         )
       ) {
         this.parsedThead = parsedColumns;
@@ -52,12 +52,14 @@ export class IpTable {
 
   parseRows(newValue: string) {
     try {
-      const parsedRows: { [key: string]: string | number }[] = JSON.parse(newValue || '[]');
+      const parsedRows: { [key: string]: string | number }[] = JSON.parse(
+        newValue || '[]',
+      );
 
-      this.parsedTbody = parsedRows.map(row =>
-        this.parsedThead.map(column =>
-          row[column.header] !== undefined ? String(row[column.header]) : ''
-        )
+      this.parsedTbody = parsedRows.map((row) =>
+        this.parsedThead.map((column) =>
+          row[column.header] !== undefined ? String(row[column.header]) : '',
+        ),
       );
     } catch (error) {
       console.error('Invalid rows:', error);
@@ -98,46 +100,55 @@ export class IpTable {
     }
   }
 
+  renderSortICon(index: number) {
+    if (this.sortedColumn === index) {
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d={`M13.9618 5.80875C13.924 5.71738 13.8599 5.63928 13.7777 5.58432C13.6955 5.52936 13.5988 5.50002 13.4999 5.5H3.49991C3.40096 5.49992 3.30421 5.5292 3.22191 5.58414C3.13962 5.63908 3.07547 5.71719 3.03759 5.8086C2.99972 5.90002 2.98982 6.00061 3.00914 6.09765C3.02847 6.1947 3.07615 6.28382 3.14616 6.35375L8.14616 11.3538C8.19259 11.4002 8.24774 11.4371 8.30844 11.4623C8.36913 11.4874 8.4342 11.5004 8.49991 11.5004C8.56561 11.5004 8.63068 11.4874 8.69138 11.4623C8.75207 11.4371 8.80722 11.4002 8.85366 11.3538L13.8537 6.35375C13.9236 6.28379 13.9711 6.19466 13.9904 6.09765C14.0096 6.00064 13.9997 5.9001 13.9618 5.80875Z`}
+            fill="white"
+            transform={`rotate(${this.isAscending ? 180 : 0} 8.5 8)`}
+          />
+        </svg>
+      );
+    }
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="17"
+        height="16"
+        viewBox="0 0 17 16"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d={`M13.9618 5.80875C13.924 5.71738 13.8599 5.63928 13.7777 5.58432C13.6955 5.52936 13.5988 5.50002 13.4999 5.5H3.49991C3.40096 5.49992 3.30421 5.5292 3.22191 5.58414C3.13962 5.63908 3.07547 5.71719 3.03759 5.8086C2.99972 5.90002 2.98982 6.00061 3.00914 6.09765C3.02847 6.1947 3.07615 6.28382 3.14616 6.35375L8.14616 11.3538C8.19259 11.4002 8.24774 11.4371 8.30844 11.4623C8.36913 11.4874 8.4342 11.5004 8.49991 11.5004C8.56561 11.5004 8.63068 11.4874 8.69138 11.4623C8.75207 11.4371 8.80722 11.4002 8.85366 11.3538L13.8537 6.35375C13.9236 6.28379 13.9711 6.19466 13.9904 6.09765C14.0096 6.00064 13.9997 5.9001 13.9618 5.80875Z`}
+          fill="white"
+        />
+      </svg>
+    );
+  }
+
   render() {
     return (
-      <table role='table'>
+      <table role="table">
         <thead>
           <tr>
             {this.parsedThead.map((column, index) => (
               <th>
-               <span>{column.header}</span> 
+                <span>{column.header}</span>
                 <button
-                 aria-label={`Sort by ${column.header}`}
+                  aria-label={`Sort by ${column.header}`}
                   onClick={() => this.sortColumn(index)}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="17"
-                    height="16"
-                    viewBox="0 0 17 16"
-                    fill="none"
-                    class={this.sortedColumn === index ? 'focus-style' : ''}
-                    aria-hidden="true"
-                  >
-                    <g clip-path="url(#clip0_2545_1451)">
-                      <path
-                        d={`M13.9618 5.80875C13.924 5.71738 13.8599 5.63928 13.7777 5.58432C13.6955 5.52936 13.5988 5.50002 13.4999 5.5H3.49991C3.40096 5.49992 3.30421 5.5292 3.22191 5.58414C3.13962 5.63908 3.07547 5.71719 3.03759 5.8086C2.99972 5.90002 2.98982 6.00061 3.00914 6.09765C3.02847 6.1947 3.07615 6.28382 3.14616 6.35375L8.14616 11.3538C8.19259 11.4002 8.24774 11.4371 8.30844 11.4623C8.36913 11.4874 8.4342 11.5004 8.49991 11.5004C8.56561 11.5004 8.63068 11.4874 8.69138 11.4623C8.75207 11.4371 8.80722 11.4002 8.85366 11.3538L13.8537 6.35375C13.9236 6.28379 13.9711 6.19466 13.9904 6.09765C14.0096 6.00064 13.9997 5.9001 13.9618 5.80875Z`}
-                        fill="white"
-                        transform={`rotate(${this.sortedColumn === index && this.isAscending ? 180 : 0} 8.5 8)`}
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2545_1451">
-                        <rect
-                          x="0.5"
-                          width="16"
-                          height="16"
-                          rx="8"
-                          fill="white"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  {this.renderSortICon(index)}
                 </button>
               </th>
             ))}
