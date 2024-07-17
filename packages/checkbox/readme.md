@@ -1,4 +1,4 @@
-<<<<<<< HEAD:packages/checkbox/readme.md
+
 
 # Checkbox documentation
 
@@ -60,80 +60,7 @@ We have a set of predefined variable used to customisation the checkbox:
 - **--font-size**
 - # **--checkbox-size**
 
-# Installation:
 
-## Step 1:
-
-Install the ip-tooltip component as a dependency in the project:
-
-<!-- TODO pending deployment on npm -->
-
-```bash
-npm install
-```
-
-## Step 2:
-
-Import module in script file:
-
-```bash
-import '../node_modules/';
-```
-
-# Usage:
-
-To use these components, we make us of tag: As input, we have the following options for each:
-
-## Ip-email
-
-- **error-message** : The error message when the user enters a wrong username or email
-- **input-label** : The name of the input, it's default value is "Email".
-- **invalid** : It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.
-
-## Ip-password
-
-- **error-message** : The error message when the user enters a wrong password.
-- **invalid** : It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.
-- **forgot-password-link** : your personal link for reinitialize password
-
-_e.g:_
-
-```html
-<form class="login-form">
-  <ip-email
-    class="form-group "
-    error-message="The username entered is incorrect"
-    invalid="true"
-    input-label="User name"
-  >
-  </ip-email>
-  <ip-password
-    class="form-group "
-    error-message="The password entered is incorrect"
-    invalid="true"
-    forgot-password-link="https://www.google.com"
-  >
-  </ip-password>
-  <button class="btn" type="submit">Login</button>
-</form>
-```
-
-# Customization:
-
-We have a set of predefined variable used to customisation the tooltip:
-
-- **--primary-color**
-- **--secondary-color**
-  > > > > > > > 42853c0 (✨feat: migrate ip-login component to the mono repo):packages/login/readme.md
-
-To update the values use the following:
-
-```css
-<<<<<<< HEAD:packages/checkbox/readme.md ip-checkbox {
-  --primary-color: #006342;
-  --secondary-color: #000000;
-}
-```
 
 #### Event
 
@@ -153,6 +80,7 @@ const checkbox = document.querySelector('ip-checkbox');
 checkbox.addEventListener('checkboxChange', (event) => {
   console.log(event.detail); // { name: 'myCheckbox', checked: true }
 });
+````
 
 ## Ip-checkbox-list
 
@@ -180,7 +108,7 @@ Example:
 <ip-checkbox-list
   options='[{"id": "option1", "label": "Option 1"}, {"id": "option2", "label": "Option 2"}]'
 ></ip-checkbox-list>
-````
+```
 
 #### Customization:
 
@@ -214,10 +142,7 @@ You can listen to the `selectionChanged` event using the `addEventListener` meth
 const checkboxList = document.querySelector('ip-checkbox-list');
 
 checkboxList.addEventListener('selectionChanged', (event) => {
-  console.log(event.detail); // ["1", "3"]
+  console.log(event.detail);
 });
 ```
 
-```
-
-```
