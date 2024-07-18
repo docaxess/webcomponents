@@ -1,0 +1,56 @@
+:host {
+    --primary-color: var(--primaryColor, #007bff);
+    --text-active-color: var(--textActiveColor, #ffffff);
+
+}
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    margin: 0;  
+  }
+  
+  li {
+    margin: 0;
+  }
+  
+  button {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  button.current {
+    background-color:var(--primary-color);
+    color: var(--text-active-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  
+  
