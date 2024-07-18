@@ -1,21 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
-
-  constructor(
-    private router: Router,
-  ) { }
-
-  goToTooltip() {
-    this.router.navigate(['tooltip']);
-  }
-}
+export class HomeComponent {}
