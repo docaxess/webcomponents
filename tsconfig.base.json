@@ -16,7 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
- 
       "@ipedis/checkbox": ["dist/packages/checkbox"],
       "@ipedis/checkbox/*": ["dist/packages/checkbox/dist/components/*"],
       "@ipedis/checkbox/loader": ["dist/packages/checkbox/loader"],
