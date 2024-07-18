@@ -11,20 +11,6 @@ export namespace Components {
         "totalPages": number;
         "visiblePages": number;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 export interface IpPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -48,15 +34,8 @@ declare global {
         prototype: HTMLIpPaginationElement;
         new (): HTMLIpPaginationElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "ip-pagination": HTMLIpPaginationElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -66,23 +45,8 @@ declare namespace LocalJSX {
         "totalPages"?: number;
         "visiblePages"?: number;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "ip-pagination": IpPagination;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -90,7 +54,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ip-pagination": LocalJSX.IpPagination & JSXBase.HTMLAttributes<HTMLIpPaginationElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }
