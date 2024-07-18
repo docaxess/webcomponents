@@ -1,12 +1,9 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './pages/header/header.component';
-import { AsideComponent } from './pages/aside/aside.component';
-import { CodeSnippetComponent } from './pages/code-snippet/code-snippet.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [ RouterOutlet, HeaderComponent , AsideComponent,CodeSnippetComponent],
+  imports: [ RouterModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

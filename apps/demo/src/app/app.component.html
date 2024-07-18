@@ -1,8 +1,74 @@
-<app-header></app-header>
-<section id="presentation" class="presentation">
-  <app-demo-aside></app-demo-aside>
+<router-outlet></router-outlet>
+
+<header>
     <div class="container">
-    <router-outlet></router-outlet>
+        <div id="lp-content" class="head">
+            <div class="logo-wrapper">
+                <a href="#">
+                    <img class="logo" src="../assets/logo/ipedis-logo.png" alt="Ipedis - Go to Ipedis Website">
+                </a>
+            </div>
+            <div class="separator"></div>
+            <h1>Web Components</h1>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt augue quis odio pharetra auctor. Nunc tempor velit eget quam tincidunt venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+    </div>
+</header>
+<section id="presentation" class="presentation">
+    <div class="container">
+        <h2>Présentation</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            malesuada, nunc nec vehicula ultricies, nunc nunc ultricies
+            sapien, nec vehicula sapien
+        </p>
+        <div class="component-list">
+            <div class="component-item">
+                <h3>Toggle</h3>
+                <ip-toggle size="small"></ip-toggle>
+                <p>Details of toggle component</p>
+
+                <h3>Tooltip</h3>
+                <ip-tooltip
+                    tooltip-trigger="Click Me!"
+                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    type="click"
+                    >
+                </ip-tooltip>
+                <h3>Dropdown</h3>
+                <ip-dropdown
+                    dropdown-title="Country"
+                    placeholder="Select a country:"
+                    items-options='["Mauritius", "France", "Germany", "Zimbabwe","Allemagne", "Angleterre", "Réunion","Canada", "USA", "Japan","China", "Korea", "Nigeria","Algeria", "Cameroun", "Mali"]'
+                >
+                <h3>Checkbox</h3>
+                <ip-checkbox-list
+                    legend="Preferences:"
+                    options='[
+                    {"id": "1", "label": "Option 1"}, 
+                    {"id": "2", "label": "Option 2"}, 
+                    {"id": "3", "label": "Option 3"}
+                    ]'
+                >
+                </ip-checkbox-list>
+                </ip-dropdown>
+                <h3>Login</h3>
+                <form>
+                <ip-email
+                    class="form-group"
+                    error-message="The email entered is incorrect"
+                >
+                </ip-email>
+                <ip-password
+                    class="form-group"
+                    error-message="The password entered is incorrect"
+                    forgot-password-link="#"
+                >
+                </ip-password>
+                <button class="btn" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
-
