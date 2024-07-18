@@ -1,0 +1,77 @@
+{
+  "name": "pagination",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pagination/src",
+  "projectType": "library",
+  "tags": [],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/pagination/src/**/*.{ts,tsx,json}",
+          "packages/pagination/*.{ts,tsx,json}"
+        ]
+      }
+    }
+  }
+}
