@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 
 import { sass } from '@stencil/sass';
 
+import { angularOutputTarget } from '@stencil/angular-output-target';
 export const config: Config = {
   namespace: 'login',
   taskQueue: 'async',
@@ -15,6 +16,11 @@ export const config: Config = {
   plugins: [sass()],
 
   outputTargets: [
+    angularOutputTarget({
+      componentCorePackage: 'login',
+      directivesProxyFile: '../login-angular/src/directives/proxies.ts',
+      valueAccessorConfigs: [],
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
