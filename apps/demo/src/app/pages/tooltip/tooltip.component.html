@@ -1,1 +1,197 @@
-<p>tooltip works!</p>
+<div class="container">
+    <nav>
+        <ul>
+            <li> <a href="#documentation">Doc</a></li>
+            <li><a href="#demo">Demo</a></li>
+        </ul>
+    </nav>
+
+    <section id="documentation">
+        <h2>Documentation</h2>
+        <p>Follow these steps to install and use the <code>ip-tooltip</code> component in your project.</p>
+        
+        <h3>Step 1</h3>
+        <p>Install the <code>ip-tooltip</code> component as a dependency in your project:</p>
+        <pre><code>npm install ip-tooltip</code></pre>
+
+        <h3>Step 2</h3>
+        <p>Import the module into your script file:</p>
+        <pre><code>import '../node_modules/ip-tooltip/dist/ip-tooltip/ip-tooltip.esm';</code></pre>
+
+        <h2>Usage</h2>
+        <p>To use this component, add the properties as attributes.</p>
+        <h3>Properties</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Attribute</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>tooltipTrigger</code></td>
+                    <td><code>tooltip-trigger</code></td>
+                    <td>Yes</td>
+                    <td>The button that will display the tooltip</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+                <tr>
+                    <td><code>tooltipContent</code></td>
+                    <td><code>tooltip-content</code></td>
+                    <td>Yes</td>
+                    <td>The text that will be displayed in the tooltip</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+                <tr>
+                    <td><code>type</code></td>
+                    <td><code>type</code></td>
+                    <td>No</td>
+                    <td>Determines if the tooltip should appear on click or hover</td>
+                    <td><code>"click" \| "hover"</code></td>
+                    <td><code>"hover"</code></td>
+                </tr>
+                <tr>
+                    <td><code>tooltipBtnClose</code></td>
+                    <td><code>tooltip-btn-close</code></td>
+                    <td>No</td>
+                    <td>If you need to add a close button in the tooltip</td>
+                    <td><code>boolean</code></td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>tooltipTitle</code></td>
+                    <td><code>tooltip-title</code></td>
+                    <td>No</td>
+                    <td>The title of the tooltip if you want to add a title</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+                <tr>
+                    <td><code>tooltipBtn1</code></td>
+                    <td><code>tooltip-btn-1</code></td>
+                    <td>No</td>
+                    <td>If you need to add a button in the tooltip</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+                <tr>
+                    <td><code>tooltipBtn2</code></td>
+                    <td><code>tooltip-btn-2</code></td>
+                    <td>No</td>
+                    <td>If you need to add a second button in the tooltip</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+                <tr>
+                    <td><code>btn1AriaLabel</code></td>
+                    <td><code>btn-1-aria-label</code></td>
+                    <td>No</td>
+                    <td>ARIA label for the first button, required for accessibility</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+                <tr>
+                    <td><code>btn2AriaLabel</code></td>
+                    <td><code>btn-2-aria-label</code></td>
+                    <td>No</td>
+                    <td>ARIA label for the second button, required for accessibility</td>
+                    <td><code>string</code></td>
+                    <td><code>undefined</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+      <h2>Customization</h2>
+        <p>We have a set of predefined variables used to customize the tooltip:</p>
+        <ul>
+            <li><code>--primary-color</code></li>
+            <li><code>--secondary-color</code></li>
+        </ul>
+        <h2>Listening to Events</h2>
+        <p>To listen to events emitted by <code>ip-tooltip</code>, open your browser's console. Event details will be displayed in the console when the buttons are interacted with.</p>
+    </section>
+    <section id="demo">
+        <h2>Demo</h2>
+        <div class="clicked-tooltip">
+            <div class="tooltip">
+                <ip-tooltip
+                tooltip-trigger="Click Me!"
+                tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                type="click"
+              >
+              </ip-tooltip>
+            </div>
+            <div class="code">
+                <pre><code>
+                    &lt;ip-tooltip
+                    tooltip-trigger="Click Me!"
+                    tooltip-content="Please enter a description of the tooltip.
+                     The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    type="click"
+                    &gt;
+                    &lt;/ip-tooltip&gt;
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="hover-tooltip">
+            <div class="tooltip">
+                <ip-tooltip
+                tooltip-trigger="Hover over me"
+                tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                type="hover"
+              >
+              </ip-tooltip>
+            </div>
+
+            <div class="code">
+                <pre><code>
+                    &lt;ip-tooltip
+                    tooltip-trigger="Hover over me"
+                    tooltip-content="Please enter a description of the tooltip.
+                     The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    type="hover"
+                    &gt;
+                    &lt;/ip-tooltip&gt;
+                </code></pre>
+            </div>
+          </div>
+
+            <div class="with-button">
+                <div class="tooltip">
+                    <ip-tooltip
+                    id="clicked-tooltip"
+                    tooltip-trigger="Click me !"
+                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    tooltip-btn-close="true"
+                    tooltip-btn-1="Cancel"
+                    tooltip-btn-2="Learn More"
+                    type="click"
+                    >
+                    </ip-tooltip>
+                </div>
+                <div class="code">
+                <pre><code>
+                    &lt;ip-tooltip
+                    id="clicked-tooltip"
+                    tooltip-trigger="Click me !"
+                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum.
+                     Arrows can be adjusted position."
+                    tooltip-btn-close="true"
+                    tooltip-btn-1="Cancel"
+                    tooltip-btn-2="Learn More"
+                    type="click"
+                    &gt;
+                    &lt;/ip-tooltip&gt;
+                    </code></pre>
+                </div>
+            </div>
+    </section>
+</div>

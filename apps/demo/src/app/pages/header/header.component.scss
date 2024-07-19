@@ -1,7 +1,9 @@
 @import '../../../assets/styles/index.scss';
 
 header {
+    background-color: #0f8570;
     color: $headerTextColor;
+    margin: 10px;
   
     .head {
       display: flex;
@@ -10,7 +12,8 @@ header {
       margin-block-end: 5rem;
       block-size: rem(70);
       padding-block: rem(10);
-      background-color:$primaryColor;
+      background-color:#0f8570;
+      color: $darkColor;
       filter: drop-shadow(50vmax 0 0 $lightColor) drop-shadow(-50vmax 0 0 $lightColor);
       margin-bottom: 10px;
   

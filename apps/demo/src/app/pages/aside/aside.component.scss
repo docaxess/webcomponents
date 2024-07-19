@@ -1,19 +1,10 @@
 @import '../../../assets/styles/index.scss';
 
-:host {
-  border-right: 3px solid $primaryColor;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  z-index: 1000;
-}
 .sidebar-menu {
   background-color: $sidebarBackgroundColor;
   color: $sidebarTextColor;
   padding: rem(30);
   border-radius: rem(15);
-  margin: rem(20);
   a {
     text-decoration: none;
     color: $lightColor ;
@@ -63,14 +54,14 @@
       box-sizing: border-box;
       width: 100%;
     }
-    li a {
+    li button {
       inline-size: 100%;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-block: rem(15);
-      padding-inline: rem(10);
+      padding-inline: rem(20);
       border-radius: rem(5);
       overflow: hidden;
       cursor: pointer;
