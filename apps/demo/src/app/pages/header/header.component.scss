@@ -1,0 +1,43 @@
+@import '../../../assets/styles/index.scss';
+
+header {
+    background-color: #0f8570;
+    color: $headerTextColor;
+    margin: 10px;
+  
+    .head {
+      display: flex;
+      align-items: flex-end;
+      gap: rem(30);
+      margin-block-end: 5rem;
+      block-size: rem(70);
+      padding-block: rem(10);
+      background-color:#0f8570;
+      color: $darkColor;
+      filter: drop-shadow(50vmax 0 0 $lightColor) drop-shadow(-50vmax 0 0 $lightColor);
+      margin-bottom: 10px;
+  
+      .separator {
+        block-size: rem(24);
+  
+        &::before {
+          inset-block-start: em(-8);
+        }
+      }
+  
+      .logo-wrapper {
+        inline-size: auto;
+        block-size: 100%;
+        display: flex;
+  
+        .logo {
+          block-size: 100%;
+          inline-size: auto;
+          max-block-size: 100%;
+          max-inline-size: 100%;
+          object-fit: contain;
+          filter: invert(1);
+        }
+      }
+    }
+}

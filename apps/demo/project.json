@@ -23,6 +23,9 @@
           }
         ],
         "styles": ["apps/demo/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/demo/src/styles"]
+        },
         "scripts": [],
         "server": "apps/demo/src/main.server.ts",
         "prerender": true,

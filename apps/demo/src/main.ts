@@ -17,3 +17,4 @@ dropdownElements(window);
 bootstrapApplication(AppComponent, appConfig).catch((err) =>
   console.error(err),
 );
+

@@ -1,0 +1,18 @@
+#demo {
+    .clicked-tooltip {
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+    }
+    .tooltip {
+        display: flex;
+        justify-content: center;
+        padding-top: 80px;
+    }
+    .code {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        width: 100%;
+    }
+}
