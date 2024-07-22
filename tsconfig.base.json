@@ -16,7 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@styles/*": ["apps/demo/src/styles/*"],
       "@ipedis/che": ["dist/libs/che"],
       "@ipedis/che/*": ["dist/libs/che/dist/components/*"],
       "@ipedis/che/loader": ["dist/libs/che/loader"],
