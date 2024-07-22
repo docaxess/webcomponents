@@ -20,7 +20,26 @@
                     >
                     </ip-toggle>
                 </div>
-                <app-code-snippet [code]="codeSnippetWithText"></app-code-snippet>
+                <div class="code">
+                    <pre><code>
+                        &lt;ip-toggle
+                        active-label="ON"
+                        inactive-label="OFF"
+                        aria-label="Toggle notifications on or off"
+                        size="small"
+                        checked="true"
+                        &gt;
+                        &lt;/ip-toggle&gt;
+
+                        &lt;ip-toggle
+                        active-label="ON"
+                        inactive-label="OFF"
+                        aria-label="Toggle notifications on or off"
+                        checked="false"
+                        &gt;
+                        &lt;/ip-toggle&gt;
+                    </code></pre>  
+                </div>
             </div>
             <div class="without-text card">
                 <div class="toggle">
@@ -37,7 +56,22 @@
                     >
                     </ip-toggle>
                 </div>
-                <app-code-snippet [code]="codeSnippetWithoutText"></app-code-snippet>
+                <div class="code">
+                    <pre><code>
+                        &lt;ip-toggle
+                        aria-label="Toggle notifications on or off"
+                        checked="true"
+                        &gt;
+                        &lt;/ip-toggle&gt;
+
+                        &lt;ip-toggle
+                        aria-label="Toggle notifications on or off"
+                        size="large"
+                        checked="false"
+                        &gt;
+                        &lt;/ip-toggle&gt;
+                    </code></pre>  
+                </div>
             </div>
             <div class="with-indication card">
                 <div class="toggle">
@@ -48,8 +82,14 @@
                         <p class="helper-text" slot="helper-text">This is the helper text.</p>
                       </ip-toggle>
                 </div>
-                <app-code-snippet [code]="codeSnippetWithIndication"></app-code-snippet>
-
+                <div class="code">
+                    <pre><code>
+                        &lt;ip-toggle size="small"&gt;
+                        &lt;label class="switch-label" slot="switch-label"&gt;Activate strong authentication&lt;/label&gt;
+                        &lt;p class="helper-text" slot="helper-text"&gt;This is the helper text.&lt;/p&gt;
+                        &lt;/ip-toggle&gt;
+                    </code></pre>
+                </div>
             </div>
     </section>
     <section id="documentation">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dropdown.component.html',
-  styleUrl: './dropdown.component.css',
+  styleUrl: './dropdown.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DropdownComponent {}
