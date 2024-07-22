@@ -2,11 +2,11 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-dropdown',
+  selector: 'app-toggle',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './dropdown.component.html',
-  styleUrl: './dropdown.component.scss',
+  templateUrl: './toggle.component.html',
+  styleUrl: './toggle.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class DropdownComponent {}
+export class ToggleComponent {}
