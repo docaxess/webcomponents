@@ -1,13 +1,83 @@
 <div class="container">
-    <nav>
-        <ul>
-            <li> <a href="#documentation">Doc</a></li>
-            <li><a href="#demo">Demo</a></li>
-        </ul>
-    </nav>
+    <section id="demo">
+        <h2 class="under-title">Demo</h2>
+        <div class="clicked-tooltip card">
+            <div class="tooltip">
+                <ip-tooltip
+                tooltip-trigger="Click Me!"
+                tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                type="click"
+              >
+              </ip-tooltip>
+            </div>
+            <div class="code">
+                <pre><code>
+                    &lt;ip-tooltip
+                    tooltip-trigger="Click Me!"
+                    tooltip-content="Please enter a description of the tooltip.
+                     The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    type="click"
+                    &gt;
+                    &lt;/ip-tooltip&gt;
+                </code></pre>
+            </div>
+        </div>
 
+        <div class="hover-tooltip card">
+            <div class="tooltip">
+                <ip-tooltip
+                tooltip-trigger="Hover over me"
+                tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                type="hover"
+              >
+              </ip-tooltip>
+            </div>
+
+            <div class="code">
+                <pre><code>
+                    &lt;ip-tooltip
+                    tooltip-trigger="Hover over me"
+                    tooltip-content="Please enter a description of the tooltip.
+                     The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    type="hover"
+                    &gt;
+                    &lt;/ip-tooltip&gt;
+                </code></pre>
+            </div>
+          </div>
+
+            <div class="with-button card">
+                <div class="tooltip">
+                    <ip-tooltip
+                    id="clicked-tooltip"
+                    tooltip-trigger="Click me !"
+                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+                    tooltip-btn-close="true"
+                    tooltip-btn-1="Cancel"
+                    tooltip-btn-2="Learn More"
+                    type="click"
+                    >
+                    </ip-tooltip>
+                </div>
+                <div class="code">
+                <pre><code>
+                    &lt;ip-tooltip
+                    id="clicked-tooltip"
+                    tooltip-trigger="Click me !"
+                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum.
+                     Arrows can be adjusted position."
+                    tooltip-btn-close="true"
+                    tooltip-btn-1="Cancel"
+                    tooltip-btn-2="Learn More"
+                    type="click"
+                    &gt;
+                    &lt;/ip-tooltip&gt;
+                    </code></pre>
+                </div>
+            </div>
+    </section>
     <section id="documentation">
-        <h2>Documentation</h2>
+        <h2 class="under-title">Installation</h2>
         <p>Follow these steps to install and use the <code>ip-tooltip</code> component in your project.</p>
         
         <h3>Step 1</h3>
@@ -18,7 +88,7 @@
         <p>Import the module into your script file:</p>
         <pre><code>import '../node_modules/ip-tooltip/dist/ip-tooltip/ip-tooltip.esm';</code></pre>
 
-        <h2>Usage</h2>
+        <h2 class="under-title">Usage</h2>
         <p>To use this component, add the properties as attributes.</p>
         <h3>Properties</h3>
         <table>
@@ -108,90 +178,45 @@
             </tbody>
         </table>
 
-      <h2>Customization</h2>
+      <h2 class="under-title">Customization</h2>
         <p>We have a set of predefined variables used to customize the tooltip:</p>
         <ul>
             <li><code>--primary-color</code></li>
             <li><code>--secondary-color</code></li>
         </ul>
-        <h2>Listening to Events</h2>
+        <p>To update the values use the following:</p>
+        <pre><code>
+            ip-tooltip &#123;
+                --primary-color: #006342;
+                --secondary-color: #000000;
+                &#125;
+        </code></pre>
+
+        <h2 class="under-title">Listening to Events</h2>
         <p>To listen to events emitted by <code>ip-tooltip</code>, open your browser's console. Event details will be displayed in the console when the buttons are interacted with.</p>
-    </section>
-    <section id="demo">
-        <h2>Demo</h2>
-        <div class="clicked-tooltip">
-            <div class="tooltip">
-                <ip-tooltip
-                tooltip-trigger="Click Me!"
-                tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-                type="click"
-              >
-              </ip-tooltip>
-            </div>
-            <div class="code">
-                <pre><code>
-                    &lt;ip-tooltip
-                    tooltip-trigger="Click Me!"
-                    tooltip-content="Please enter a description of the tooltip.
-                     The length is 3/4 lines maximum. Arrows can be adjusted position."
-                    type="click"
-                    &gt;
-                    &lt;/ip-tooltip&gt;
-                </code></pre>
-            </div>
-        </div>
-
-        <div class="hover-tooltip">
-            <div class="tooltip">
-                <ip-tooltip
-                tooltip-trigger="Hover over me"
-                tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-                type="hover"
-              >
-              </ip-tooltip>
-            </div>
-
-            <div class="code">
-                <pre><code>
-                    &lt;ip-tooltip
-                    tooltip-trigger="Hover over me"
-                    tooltip-content="Please enter a description of the tooltip.
-                     The length is 3/4 lines maximum. Arrows can be adjusted position."
-                    type="hover"
-                    &gt;
-                    &lt;/ip-tooltip&gt;
-                </code></pre>
-            </div>
-          </div>
-
-            <div class="with-button">
-                <div class="tooltip">
-                    <ip-tooltip
-                    id="clicked-tooltip"
-                    tooltip-trigger="Click me !"
-                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-                    tooltip-btn-close="true"
-                    tooltip-btn-1="Cancel"
-                    tooltip-btn-2="Learn More"
-                    type="click"
-                    >
-                    </ip-tooltip>
-                </div>
-                <div class="code">
-                <pre><code>
-                    &lt;ip-tooltip
-                    id="clicked-tooltip"
-                    tooltip-trigger="Click me !"
-                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum.
-                     Arrows can be adjusted position."
-                    tooltip-btn-close="true"
-                    tooltip-btn-1="Cancel"
-                    tooltip-btn-2="Learn More"
-                    type="click"
-                    &gt;
-                    &lt;/ip-tooltip&gt;
+        <pre><code>
+            document.addEventListener("DOMContentLoaded", function () &#123;
+                const tooltip = document.querySelector("#clicked-tooltip");
+            
+                tooltip.addEventListener("btn1Click", function () &#123;
+                    console.log("Event btn1Click captured from index.html");
+                &#125;);
+            
+                tooltip.addEventListener("btn2Click", function () &#123;
+                    console.log("Event btn2Click captured from index.html");
+                &#125;);
+            
+                // Simulation des événements pour démonstration
+                document.querySelector("#btn1").addEventListener("click", function () &#123;
+                    const event = new CustomEvent("btn1Click");
+                    tooltip.dispatchEvent(event);
+                &#125;);
+            
+                document.querySelector("#btn2").addEventListener("click", function () &#123;
+                    const event = new CustomEvent("btn2Click");
+                    tooltip.dispatchEvent(event);
+                &#125;);
+            &#125;);
                     </code></pre>
-                </div>
-            </div>
     </section>
 </div>

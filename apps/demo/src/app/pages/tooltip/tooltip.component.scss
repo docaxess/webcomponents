@@ -1,18 +1,82 @@
+@import '../../../assets/styles/index.scss';
+
+
+.under-title {
+    text-align: center;
+    color: $secondaryColor;
+    margin-top: rem(15);
+}
 #demo {
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+        a {
+            text-decoration: none;
+        }
+}
     .clicked-tooltip {
         display: flex;
         flex-direction: column;
-        margin: 15px;
     }
     .tooltip {
         display: flex;
         justify-content: center;
-        padding-top: 80px;
+        padding-top: rem(100);
     }
-    .code {
-        display: flex;
-        justify-content: center;
-        padding-top: 20px;
+    .code {  
+        padding-top: rem(15);
         width: 100%;
     }
+    .code pre {
+        color: $lightColor;
+        background-color: $darkColor;
+        border-radius: rem(5);
+        margin: 0;
+    }
+   .with-button {
+        padding-top: rem(35);
+   }
+   .card {
+    border: 1px solid $darkColor;
+    margin-top: rem(15);
+    border-radius:rem(6) ;
+    }
 }
+#documentation {
+    margin: 0 rem(18); 
+    padding: 20px;
+  
+    h3 {
+      margin-top: 20px;
+      color: $secondaryColor;
+    }
+  
+    pre {
+      background-color:$darkColor;
+      color: $lightColor;
+      padding: 10px; 
+      border-radius: 5px; 
+      overflow-x: auto;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse; 
+      margin-top: 20px; 
+  
+      th, td {
+        border: 1px solid $darkColor; 
+        padding: 8px;
+        text-align: center; 
+      }
+  
+      th {
+        background-color: $primaryColor; 
+      }
+    }
+  
+   
+  }
+  

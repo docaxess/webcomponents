@@ -1,22 +1,11 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  imports: [CommonModule, CodeSnippetComponent],
+  imports: [CommonModule],
   templateUrl: './dropdown.component.html',
-  styleUrl: './dropdown.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  styleUrl: './dropdown.component.css',
 })
-export class DropdownComponent {
-  codeSnippet = `
-                      <ip-dropdown
-                    dropdown-title="Country"
-                    placeholder="Select a country:"
-                    items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
-                    >
-                    </ip-dropdown>
-  `
-}
+export class DropdownComponent {}
