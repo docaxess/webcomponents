@@ -16,7 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@styles/*": ["apps/demo/src/styles/*"],
       "@ipedis/che": ["dist/libs/che"],
       "@ipedis/che/*": ["dist/libs/che/dist/components/*"],
       "@ipedis/che/loader": ["dist/libs/che/loader"],
@@ -37,7 +36,8 @@
       "@ipedis/toggle/loader": ["dist/libs/toggle/loader"],
       "@ipedis/tooltip": ["dist/libs/tooltip"],
       "@ipedis/tooltip/*": ["dist/libs/tooltip/dist/components/*"],
-      "@ipedis/tooltip/loader": ["dist/libs/tooltip/loader"]
+      "@ipedis/tooltip/loader": ["dist/libs/tooltip/loader"],
+      "@styles/*": ["apps/demo/src/styles/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
