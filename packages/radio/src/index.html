@@ -1,0 +1,57 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+      name="viewport"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 250px;
+      }
+      .radio-button {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      ip-radio {
+        --fieldset-border: 1px solid black;
+      }
+    </style>
+    <script src="/build/ip-radio.esm.js" type="module"></script>
+    <script nomodule src="/build/radio.js"></script>
+  </head>
+  <body>
+    <div class="radio-button">
+      <ip-radio
+        id="radio"
+        legend="What is your gender"
+        default-option-id="Female"
+        options='[
+      {"id": "Male", "label": "Male"}, 
+      {"id": "Female", "label": "Female"},
+      {"id": "Other", "label": "Other", "disabled": true}
+
+      ]'
+      ></ip-radio>
+    </div>
+
+    <ip-radio
+      class="radio-button"
+      legend="Option list"
+      options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'
+    ></ip-radio>
+    <script>
+      const radio = document.querySelector('ip-radio');
+      radio.addEventListener('selectionChanged', (event) => {
+        console.log('selectionChanged', event.detail);
+      });
+    </script>
+  </body>
+</html>
