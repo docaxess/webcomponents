@@ -63,7 +63,7 @@
   font-size: 25px;
   position: absolute;
   left: 11px;
-  top: -20px;
+  top: -18px;
   color: var(--text-color);
 }
 
@@ -71,13 +71,13 @@
   font-size: 25px;
   position: absolute;
   right: 11px;
-  top: -20px;
+  top: -22px;
   color: var(--text-color);
   font-family: var(--font-family);
 }
 .switch-checkbox.small {
-  width: 80px;
-  height: 30px;
+  width: 50px;
+  height: 25px;
 }
 
 .switch-icon.small {
@@ -103,7 +103,7 @@
 
 .active-label.small {
   left: 5px;
-  top: -4px;
+  top: -3px;
 }
 .inactive-label.small {
   right: 5px;
@@ -126,7 +126,14 @@
   left: 3px;
 }
 
-.active-label.large,
+.active-label.large {
+  font-size: 30px;
+  top: -21px;
+  left: 14px;
+
+}
 .inactive-label.large {
   font-size: 30px;
+  top: -25px;
+  right: 14px;
 }
