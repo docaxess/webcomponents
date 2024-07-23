@@ -11,30 +11,29 @@ describe('ip-checkbox', () => {
       <ip-checkbox>
         <mock:shadow-root>
           <div class="checkbox-content">
-            <input 
+              <label class="checkbox-label">
+                <input 
                 class="checkbox-input"
                 type="checkbox">
-                <label class="checkbox-label">
-                    <slot></slot>
-                </label>
+                <slot></slot>
+              </label>
           </div>
         </mock:shadow-root>
       </ip-checkbox>
     `);
   });
 
-  //This test will fail because of the slot being hard to test
   it('renders with values', async () => {
     const { root } = await newSpecPage({
       components: [IpCheckbox],
-      html: `  <ip-checkbox default-checked="true" identifier="check me">Check me !</ip-checkbox>`,
+      html: `  <ip-checkbox checked="true" identifier="check me">Check me !</ip-checkbox>`,
     });
     expect(root).toEqualHtml(`
-     <ip-checkbox default-checked="true" identifier="check me">
+     <ip-checkbox checked="true" identifier="check me">
        <mock:shadow-root>
-         <div class="checkbox-content">
-           <input checked="" class="checkbox-input" id="check me" type="checkbox">
+         <div class="checkbox-content">          
            <label class="checkbox-label" htmlfor="check me">
+           <input defaultchecked="" class="checkbox-input" id="check me" type="checkbox">
              <slot></slot>
            </label>
          </div>

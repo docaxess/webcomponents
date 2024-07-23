@@ -13,12 +13,19 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type      | Default     |
-| ---------------- | ----------------- | ----------- | --------- | ----------- |
-| `defaultChecked` | `default-checked` |             | `boolean` | `false`     |
-| `disabled`       | `disabled`        |             | `boolean` | `false`     |
-| `identifier`     | `identifier`      |             | `string`  | `undefined` |
-| `name`           | `name`            |             | `string`  | `undefined` |
+| Property     | Attribute    | Description | Type      | Default     |
+| ------------ | ------------ | ----------- | --------- | ----------- |
+| `checked`    | `checked`    |             | `boolean` | `false`     |
+| `disabled`   | `disabled`   |             | `boolean` | `false`     |
+| `identifier` | `identifier` |             | `string`  | `undefined` |
+| `name`       | `name`       |             | `string`  | `undefined` |
+
+
+## Events
+
+| Event            | Description | Type                                               |
+| ---------------- | ----------- | -------------------------------------------------- |
+| `checkboxChange` |             | `CustomEvent<{ name: string; checked: boolean; }>` |
 
 
 ----------------------------------------------

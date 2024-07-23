@@ -73,8 +73,6 @@ describe('ip-checkbox-list', () => {
                             class="checkbox-input"
                             type="checkbox"
                             id="1"
-                            aria-checked="false"
-                            role="checkbox"
                         />
                         <label class="checkbox-label" htmlfor="1">Option 1</label>
                     </div>
@@ -83,8 +81,6 @@ describe('ip-checkbox-list', () => {
                             class="checkbox-input"
                             type="checkbox"
                             id="2"
-                            aria-checked="false"
-                            role="checkbox"
                         />
                         <label class="checkbox-label" htmlfor="2">Option 2</label>
                     </div>
@@ -93,8 +89,60 @@ describe('ip-checkbox-list', () => {
                         class="checkbox-input"
                         type="checkbox"
                         id="3"
-                        aria-checked="false"
-                        role="checkbox"
+                    />
+                        <label class="checkbox-label" htmlfor="3">Option 3</label>
+                    </div>
+                </fieldset>
+            </div>
+        </mock:shadow-root>
+      </ip-checkbox-list>
+    `);
+  });
+  it('renders with options default checked', async () => {
+    const { root } = await newSpecPage({
+      components: [IpCheckboxList],
+      html: `<ip-checkbox-list
+                legend="Preferences:"
+                options='[
+                    {"id": "1", "label": "Option 1", "defaultChecked": true},
+                    {"id": "2", "label": "Option 2"},
+                    {"id": "3", "label": "Option 3"}
+                ]'
+                >
+             </ip-checkbox-list>"`,
+    });
+    expect(root).toEqualHtml(`
+      <ip-checkbox-list legend="Preferences:" options="[
+                    {&quot;id&quot;: &quot;1&quot;, &quot;label&quot;: &quot;Option 1&quot;, &quot;defaultChecked&quot;: true},
+                    {&quot;id&quot;: &quot;2&quot;, &quot;label&quot;: &quot;Option 2&quot;},
+                    {&quot;id&quot;: &quot;3&quot;, &quot;label&quot;: &quot;Option 3&quot;}
+                ]">
+        <mock:shadow-root>
+            <div class="checkbox-list">
+                <fieldset class="checkbox-content">
+                    <legend class="legend">Preferences:</legend>
+                    <div>
+                        <input
+                            class="checkbox-input"
+                            type="checkbox"
+                            id="1"
+                            defaultchecked=""
+                        />
+                        <label class="checkbox-label" htmlfor="1">Option 1</label>
+                    </div>
+                    <div>
+                        <input
+                            class="checkbox-input"
+                            type="checkbox"
+                            id="2"
+                        />
+                        <label class="checkbox-label" htmlfor="2">Option 2</label>
+                    </div>
+                    <div>
+                    <input
+                        class="checkbox-input"
+                        type="checkbox"
+                        id="3"
                     />
                         <label class="checkbox-label" htmlfor="3">Option 3</label>
                     </div>

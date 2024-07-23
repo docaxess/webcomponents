@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpCheckbox {
-        "defaultChecked": boolean;
+        "checked": boolean;
         "disabled": boolean;
         "identifier": string;
         "name": string;
@@ -17,12 +17,27 @@ export namespace Components {
         "options": string;
     }
 }
+export interface IpCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIpCheckboxElement;
+}
 export interface IpCheckboxListCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIpCheckboxListElement;
 }
 declare global {
+    interface HTMLIpCheckboxElementEventMap {
+        "checkboxChange": { name: string; checked: boolean };
+    }
     interface HTMLIpCheckboxElement extends Components.IpCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIpCheckboxElementEventMap>(type: K, listener: (this: HTMLIpCheckboxElement, ev: IpCheckboxCustomEvent<HTMLIpCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIpCheckboxElementEventMap>(type: K, listener: (this: HTMLIpCheckboxElement, ev: IpCheckboxCustomEvent<HTMLIpCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIpCheckboxElement: {
         prototype: HTMLIpCheckboxElement;
@@ -52,10 +67,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpCheckbox {
-        "defaultChecked"?: boolean;
+        "checked"?: boolean;
         "disabled"?: boolean;
         "identifier"?: string;
         "name"?: string;
+        "onCheckboxChange"?: (event: IpCheckboxCustomEvent<{ name: string; checked: boolean }>) => void;
     }
     interface IpCheckboxList {
         "legend"?: string;

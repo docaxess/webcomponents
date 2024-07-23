@@ -1,4 +1,11 @@
-import { Component, h, Element, Prop } from '@stencil/core/internal';
+import {
+  Component,
+  h,
+  Element,
+  Prop,
+  Event,
+  EventEmitter,
+} from '@stencil/core/internal';
 
 @Component({
   tag: 'ip-checkbox',
@@ -10,34 +17,30 @@ export class IpCheckbox {
 
   @Prop() identifier: string;
   @Prop() disabled = false;
-  @Prop() defaultChecked = false;
+  @Prop({ mutable: true }) checked = false;
   @Prop() name: string;
+
+  @Event() checkboxChange: EventEmitter<{ name: string; checked: boolean }>;
 
   handleChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;
-    this.hostElement.dispatchEvent(
-      new CustomEvent('change', {
-        detail: {
-          name: this.name,
-          checked: checkbox.checked,
-        },
-      }),
-    );
+    this.checked = checkbox.checked;
+    this.checkboxChange.emit({ name: this.name, checked: this.checked });
   }
 
   render() {
     return (
       <div class="checkbox-content">
-        <input
-          class="checkbox-input"
-          type="checkbox"
-          name={this.name}
-          id={this.identifier}
-          checked={this.defaultChecked}
-          disabled={this.disabled}
-          onChange={(event) => this.handleChange(event)}
-        />
         <label htmlFor={this.identifier} class="checkbox-label">
+          <input
+            id={this.identifier}
+            name={this.name}
+            class="checkbox-input"
+            type="checkbox"
+            {...(this.checked ? { defaultChecked: true } : {})}
+            disabled={this.disabled}
+            onChange={(event) => this.handleChange(event)}
+          />
           <slot></slot>
         </label>
       </div>
