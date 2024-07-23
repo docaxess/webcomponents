@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 
 @Component({
-  selector: 'demo-tooltip',
+  selector: 'app-demo-tooltip',
   standalone: true,
   imports: [CommonModule, CodeSnippetComponent],
   templateUrl: './tooltip.component.html',

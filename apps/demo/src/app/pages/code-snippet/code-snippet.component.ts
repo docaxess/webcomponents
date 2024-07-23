@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './code-snippet.component.scss',
 })
 export class CodeSnippetComponent {
-  @Input() code: string = '';
+  @Input() code = '';
   showCode = false;
   
   toggleCode() {
