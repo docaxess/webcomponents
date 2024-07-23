@@ -10,17 +10,7 @@
               >
               </ip-tooltip>
             </div>
-            <div class="code">
-                <pre><code>
-                    &lt;ip-tooltip
-                    tooltip-trigger="Click Me!"
-                    tooltip-content="Please enter a description of the tooltip.
-                     The length is 3/4 lines maximum. Arrows can be adjusted position."
-                    type="click"
-                    &gt;
-                    &lt;/ip-tooltip&gt;
-                </code></pre>
-            </div>
+                <app-code-snippet [code]="codeSnippetClick"></app-code-snippet>
         </div>
 
         <div class="hover-tooltip card">
@@ -32,22 +22,11 @@
               >
               </ip-tooltip>
             </div>
-
-            <div class="code">
-                <pre><code>
-                    &lt;ip-tooltip
-                    tooltip-trigger="Hover over me"
-                    tooltip-content="Please enter a description of the tooltip.
-                     The length is 3/4 lines maximum. Arrows can be adjusted position."
-                    type="hover"
-                    &gt;
-                    &lt;/ip-tooltip&gt;
-                </code></pre>
-            </div>
+            <app-code-snippet [code]="codeSnippetHover"></app-code-snippet>
           </div>
 
-            <div class="with-button card">
-                <div class="tooltip">
+        <div class="with-button card">
+            <div class="tooltip">
                     <ip-tooltip
                     id="clicked-tooltip"
                     tooltip-trigger="Click me !"
@@ -58,23 +37,9 @@
                     type="click"
                     >
                     </ip-tooltip>
-                </div>
-                <div class="code">
-                <pre><code>
-                    &lt;ip-tooltip
-                    id="clicked-tooltip"
-                    tooltip-trigger="Click me !"
-                    tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum.
-                     Arrows can be adjusted position."
-                    tooltip-btn-close="true"
-                    tooltip-btn-1="Cancel"
-                    tooltip-btn-2="Learn More"
-                    type="click"
-                    &gt;
-                    &lt;/ip-tooltip&gt;
-                    </code></pre>
-                </div>
             </div>
+                    <app-code-snippet [code]="codeSnippetWithButton"></app-code-snippet>
+        </div>
     </section>
     <section id="documentation">
         <h2 class="under-title">Installation</h2>

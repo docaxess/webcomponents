@@ -1,0 +1,13 @@
+<div class="code-container">
+    <div class="button-list">
+        <button (click)="toggleCode()">
+            {{showCode ? 'Hide' : 'Show'}} code
+        </button>
+        <button (click)="copyCode()" *ngIf="showCode">  &#128203;
+        </button>
+    </div>
+    <div class="code" [ngClass]="{'hidden': !showCode}">
+        <pre><code>{{code}}</code></pre>
+    </div>
+
+</div>

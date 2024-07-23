@@ -1,0 +1,38 @@
+@import '../../../assets/styles/index.scss';
+
+.code-container {
+    background-color: $darkColor;
+    color: $lightColor;
+    border-radius: rem(5);
+  }
+
+  pre {
+    padding: rem(10);
+    border-radius: rem(5);
+    overflow-x: auto;
+    margin: 0;
+  }
+  .hidden {
+    display: none;
+    transition: $transition-out-in
+  }
+  .button-list {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(10) rem(5);
+    border-bottom: 1px solid black;
+    border-radius: rem(5);
+  }
+  button {
+    color: $lightColor;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: transparent;
+  }
+
+  
+  
