@@ -1,12 +1,9 @@
 <div class="code-container">
     <div class="button-list">
-        <button 
-            [attr.aria-label]="showCode ? 'Hide code' : 'Show code'"
-           (click)="toggleCode()"
-        >
+        <button (click)="toggleCode()">
             {{showCode ? 'Hide' : 'Show'}} code
         </button>
-        <button aria-label="copy code" (click)="copyCode()" *ngIf="showCode">  Copy
+        <button (click)="copyCode()" *ngIf="showCode">  &#128203;
         </button>
     </div>
     <div class="code" [ngClass]="{'hidden': !showCode}">

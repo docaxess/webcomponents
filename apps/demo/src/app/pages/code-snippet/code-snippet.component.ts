@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './code-snippet.component.scss',
 })
 export class CodeSnippetComponent {
-  @Input() code = '';
+  @Input() code: string = '';
   showCode = false;
   
   toggleCode() {
@@ -23,5 +23,6 @@ export class CodeSnippetComponent {
     textarea.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
+    alert('Code copied to clipboard');
   }
 }
