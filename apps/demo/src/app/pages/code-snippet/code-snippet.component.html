@@ -3,7 +3,7 @@
         <button (click)="toggleCode()">
             {{showCode ? 'Hide' : 'Show'}} code
         </button>
-        <button (click)="copyCode()" *ngIf="showCode">  &#128203;
+        <button (click)="copyCode()" *ngIf="showCode">  Copy
         </button>
     </div>
     <div class="code" [ngClass]="{'hidden': !showCode}">
