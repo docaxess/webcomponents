@@ -2,7 +2,7 @@
   --primary-color: var(--ip-primary-color, #e75480);
   --secondary-color: var(--ip-secondary-color, #474747);
   --font-size: var(--ip-font-size, 16px);
-  --checkbox-size: var(--ip-checkbox-size, 15px);
+  --checkbox-size: var(--ip-checkbox-size, 17px);
 }
 
 fieldset {
@@ -62,7 +62,7 @@ fieldset {
   font-size: var(--checkbox-size);
   color: #fff;
   position: absolute;
-  top: 0px;
+  top: -3px;
   left: 3px;
 }
 
