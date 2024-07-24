@@ -3,9 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/radio/src",
   "projectType": "library",
-  "tags": [
-    "type:webcomponent"
-  ],
+  "tags": ["type:webcomponent"],
   "generators": {
     "@nxext/stencil:component": {
       "style": "scss"

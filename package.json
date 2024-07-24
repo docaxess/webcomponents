@@ -9,7 +9,7 @@
   },
   "scripts": {
     "nx": "nx",
-    "lint:update": "prettier *.json --write && nx run-many --target=lint --all --fix",
+    "lint:update": "prettier *.json --write && nx run-many --target=lint --all --fix --parallel",
     "build": "nx run-many --target=build --all --projects=tag:type:webcomponent --parallel && nx run demo:build:production",
     "lint": "nx run-many --target=lint --all --parallel",
     "e2e": "nx run-many --target=e2e --all --parallel",
