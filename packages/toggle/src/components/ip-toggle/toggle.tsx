@@ -35,9 +35,12 @@ export class ToggleButton {
   render() {
     return (
       <div class="switch-container">
-        <slot name="switch-label"></slot>
+        <label htmlFor="switch-label">
+          <slot name="switch-label"></slot>
+        </label>
         <div class="switch-button">
           <input
+            id="switch-label"
             type="checkbox"
             class={`switch-checkbox ${this.size} ${this.isActive ? 'active' : ''}`}
             onClick={() => this.handleClick()}
@@ -46,6 +49,7 @@ export class ToggleButton {
             aria-label={this.ariaLabel}
             disabled={this.toggleDisabled}
             checked={this.isActive}
+            aria-describedby="helper-text"
           />
           <span class={`switch-icon ${this.size}`}>
             {this.activeLabel && this.inactiveLabel && (
@@ -61,7 +65,9 @@ export class ToggleButton {
             )}
           </span>
         </div>
-        <slot name="helper-text"></slot>
+        <label htmlFor="" id="helper-text">
+          <slot name="helper-text"></slot>
+        </label>
       </div>
     );
   }
