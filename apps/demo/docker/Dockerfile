@@ -7,7 +7,6 @@ RUN npm install
 
 COPY . ./
 RUN npm run build
-RUN npm run nx run demo:build:production
 
 FROM node:22-alpine
 WORKDIR /usr/app
