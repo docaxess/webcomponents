@@ -3,7 +3,9 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/dropdown/src",
   "projectType": "library",
-  "tags": [],
+  "tags": [
+    "type:webcomponent"
+  ],
   "generators": {
     "@nxext/stencil:component": {
       "style": "scss"
