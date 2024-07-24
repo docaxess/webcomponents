@@ -1,0 +1,35 @@
+@import '../utilities';
+
+/*______________________________________________________________________
+  ------------------------------ COLORS --------------------------------
+  ______________________________________________________________________ */
+
+/* Main Colors
+----------------------------------*/
+$primaryColor: #0f8570;
+$secondaryColor: #b00057;
+
+/* Neutral Colors
+----------------------------------*/
+$lightColor: #ffffff;
+$darkColor: #2e3243;
+
+/* General Colors
+----------------------------------*/
+$bodyBackgroundColor: $lightColor;
+$bodyTextColor: contrast($bodyBackgroundColor, $lightColor, $darkColor);
+
+$headerBackgroundColor: $primaryColor;
+$headerTextColor: contrast($headerBackgroundColor, $lightColor, $darkColor);
+
+$sidebarBackgroundColor: $darkColor;
+$sidebarTextColor: contrast($sidebarBackgroundColor, $lightColor, $darkColor);
+
+$cardBackgroundColor: $lightColor;
+$cardTextColor: contrast($cardBackgroundColor, $lightColor, $darkColor);
+
+$tabBackgroundColor: $lightColor;
+$tabTextColor: contrast($tabBackgroundColor, $lightColor, $darkColor);
+
+$footerBackgroundColor: $darkColor;
+$footerTextColor: contrast($footerBackgroundColor, $lightColor, $darkColor);

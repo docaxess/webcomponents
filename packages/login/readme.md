@@ -119,10 +119,11 @@ _e.g:_
 
 ## Customization
 
-We have a set of predefined variable used to customisation the tooltip:
+We have a set of predefined variable used to customisation the ip-login:
 
 - **--primary-color**
 - **--secondary-color**
+- **--focus-color**
 
 To update the values use the following:
 
@@ -130,10 +131,12 @@ To update the values use the following:
 ip-email {
   --primary-color: #006342;
   --secondary-color: #000000;
+  --focus-color: #3aa593;
 }
 
 ip-password {
   --primary-color: #006342;
   --secondary-color: #000000;
+  --focus-color: #3aa593;
 }
 ```

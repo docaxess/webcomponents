@@ -16,7 +16,8 @@
     "test": "nx run-many --target=test --all",
     "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists",
-    "ci": "npm run lint && npm run test && npm run e2e && npm run build"
+    "ci": "npm run lint && npm run test && npm run e2e && npm run build",
+    "serve": "nx serve demo"
   },
   "private": false,
   "devDependencies": {
@@ -40,6 +41,7 @@
     "@nxext/stencil": "^19.0.0",
     "@playwright/test": "^1.36.0",
     "@schematics/angular": "~18.0.0",
+    "@stencil/angular-output-target": "^0.8.4",
     "@stencil/core": "^4.12.6",
     "@stencil/sass": "3.0.7",
     "@swc-node/register": "^1.9.2",
@@ -81,6 +83,7 @@
     "@angular/platform-server": "~18.0.0",
     "@angular/router": "~18.0.0",
     "@angular/ssr": "~18.0.0",
+    "@ipedis/tooltip": "^0.0.1",
     "express": "~4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

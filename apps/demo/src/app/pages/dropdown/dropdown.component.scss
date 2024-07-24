@@ -1,0 +1,57 @@
+@import '../../../assets/styles/index.scss';
+
+
+.under-title {
+    text-align: center;
+    color: $secondaryColor;
+    margin-top: rem(15);
+}
+pre {
+    background-color:$darkColor;
+    color: $lightColor;
+    padding: 10px; 
+    border-radius: 5px; 
+    overflow-x: auto;
+    margin: 0;
+
+  }
+#demo{
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: rem(160);
+    
+    }
+    .select-drop {
+        border: 1px solid $darkColor;
+        margin-top: rem(15);
+        border-radius:rem(6) ;
+    }
+}
+
+#documentation{
+    margin: 0 rem(18); 
+    padding: 20px;
+  
+    h3 {
+      margin-top: rem(20);
+      color: $secondaryColor;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse; 
+        margin-top: rem(20); 
+    
+        th, td {
+          border: 1px solid $darkColor; 
+          padding: rem(8);
+          text-align: center; 
+        }
+    
+        th {
+          background-color: $primaryColor; 
+        }
+      }
+}
