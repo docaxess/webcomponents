@@ -11,7 +11,7 @@ import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ToggleComponent {
-  codeSnippetWIthText = `
+  codeSnippetWithText = `
                         <ip-toggle
                           active-label="ON"
                           inactive-label="OFF"
