@@ -51,6 +51,8 @@ Use the `<ip-email>` and `<ip-password>` tag in your JSX/HTML.
 | `errorMessage` | `error-message` | Required  | `The error message when the user enters a wrong username or email`                                            | `string`  | `undefined` |
 | `inputLabel`   | `input-label`   | Optional  | `The name of the input, it's default value is "Email", you can specify it.`                                   | `string`  | `"Email"`   |
 | `invalid`      | `invalid`       | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
+| `required`     | `required`      | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
+
 
 ### Ip-password
 
@@ -67,14 +69,12 @@ _e.g:_
   <ip-email
     class="form-group "
     error-message="The username entered is incorrect"
-    invalid="true"
     input-label="User name"
   >
   </ip-email>
   <ip-password
     class="form-group "
     error-message="The password entered is incorrect"
-    invalid="true"
     forgot-password-link="https://your_personal_link_to_reset_password"
   >
   </ip-password>
@@ -82,7 +82,42 @@ _e.g:_
 </form>
 ```
 
-# Customization:
+## Events
+  We have predefined events to see the changes in both inputs.
+
+  ### ip-email
+
+ `inputChange`: this event is emitted when the value of the email input changes. `event.detail` is the new email value as a string.
+
+ ### ip-password
+
+ `passwordChange`: this event is emitted when the value of the password input changes. `event.detail` is the new password value as a string.
+
+ _e.g:_
+
+```html
+<form class="login-form">
+  <ip-email
+    class="form-group "
+    error-message="The username entered is incorrect"
+
+    input-label="User name"
+    onInputChange={(event) => console.log(event.detail)}
+  >
+  </ip-email>
+  <ip-password
+    class="form-group "
+    error-message="The password entered is incorrect"
+    forgot-password-link="https://your_personal_link_to_reset_password"
+    onPasswordChange={(event) => console.log(event.detail)}
+  >
+  </ip-password>
+  <button class="btn" type="submit">Login</button>
+</form>
+```
+
+
+## Customization
 
 We have a set of predefined variable used to customisation the tooltip:
 

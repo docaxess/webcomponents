@@ -12,6 +12,14 @@
 | `errorMessage` | `error-message` |             | `string`  | `undefined` |
 | `inputLabel`   | `input-label`   |             | `string`  | `"Email"`   |
 | `invalid`      | `invalid`       |             | `boolean` | `false`     |
+| `required`     | `required`      |             | `boolean` | `false`     |
+
+
+## Events
+
+| Event         | Description | Type                  |
+| ------------- | ----------- | --------------------- |
+| `inputChange` |             | `CustomEvent<string>` |
 
 
 ----------------------------------------------

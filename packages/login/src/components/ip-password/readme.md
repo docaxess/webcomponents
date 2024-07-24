@@ -14,6 +14,13 @@
 | `invalid`            | `invalid`              |             | `boolean` | `false`     |
 
 
+## Events
+
+| Event            | Description | Type                  |
+| ---------------- | ----------- | --------------------- |
+| `passwordChange` |             | `CustomEvent<string>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
