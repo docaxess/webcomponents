@@ -13,9 +13,7 @@ export class AsideComponent {
     private router: Router,
   ) { }
   
-  goToTooltip() {
-    console.log('goToTooltip');
-    
+  goToTooltip() {    
     this.router.navigate(['/tooltip']);
   }
 
