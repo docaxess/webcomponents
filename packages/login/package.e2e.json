@@ -1,0 +1,16 @@
+{
+  "name": "login",
+  "version": "1",
+  "main": "..\\..\\dist\\packages\\login/dist/index.cjs.js",
+  "module": "..\\..\\dist\\packages\\login/dist/index.js",
+  "es2015": "..\\..\\dist\\packages\\login/dist/esm/index.mjs",
+  "es2017": "..\\..\\dist\\packages\\login/dist/esm/index.mjs",
+  "types": "..\\..\\dist\\packages\\login/dist/types/index.d.ts",
+  "collection": "..\\..\\dist\\packages\\login/dist/collection/collection-manifest.json",
+  "collection:main": "..\\..\\dist\\packages\\login/dist/collection/index.js",
+  "unpkg": "..\\..\\dist\\packages\\login/dist/login/login.js",
+  "files": [
+    "..\\..\\dist\\packages\\login/dist/",
+    "..\\..\\dist\\packages\\login/loader/"
+  ]
+}

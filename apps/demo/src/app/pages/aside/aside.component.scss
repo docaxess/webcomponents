@@ -63,14 +63,14 @@
       box-sizing: border-box;
       width: 100%;
     }
-    li button {
+    li a {
       inline-size: 100%;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-block: rem(15);
-      padding-inline: rem(20);
+      padding-inline: rem(10);
       border-radius: rem(5);
       overflow: hidden;
       cursor: pointer;
