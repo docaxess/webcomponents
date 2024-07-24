@@ -1,7 +1,10 @@
 FROM node:22-alpine AS build
 WORKDIR /app/src
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python3
+
 COPY package*.json ./
-RUN npm ci
+RUN npm install
+
 COPY . ./
 RUN npm run nx run demo:build:production
 
