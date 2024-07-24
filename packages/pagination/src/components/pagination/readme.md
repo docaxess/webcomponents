@@ -1,9 +1,6 @@
 # ip-pagination
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,14 +10,12 @@
 | `totalPages`   | `total-pages`   |             | `number` | `10`    |
 | `visiblePages` | `visible-pages` |             | `number` | `5`     |
 
-
 ## Events
 
 | Event         | Description | Type                  |
 | ------------- | ----------- | --------------------- |
 | `pageChanged` |             | `CustomEvent<number>` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
