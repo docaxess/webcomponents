@@ -1,12 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
-import { defineCustomElements as tooltipElements } from 'dist/packages/tooltip/loader';
-import { defineCustomElements as toggleElements } from 'dist/packages/toggle/loader';
-import { defineCustomElements as checkboxElements } from 'dist/packages/checkbox/loader';
-import { defineCustomElements as loginElements } from 'dist/packages/login/loader';
-import { defineCustomElements as dropdownElements } from 'dist/packages/dropdown/loader';
-import { defineCustomElements as radioElements } from 'dist/packages/radio/loader';
+
+// todo - import the custom elements in external modules, preferably in async manner
+import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
+import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
+import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
+import { defineCustomElements as loginElements } from '@ipedis/login/loader';
+import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
+import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 
 
 tooltipElements(window);
@@ -15,7 +17,6 @@ checkboxElements(window);
 loginElements(window);
 dropdownElements(window);
 radioElements(window);
-
 
 bootstrapApplication(AppComponent, appConfig).catch((err) =>
   console.error(err),
