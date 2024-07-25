@@ -33,7 +33,7 @@ export class IpTabPanel {
 
   @Prop() tabPanelTitle: string;
   @Prop() titleTag: string;
-  @Prop({mutable:true}) selectedTab: string;
+  @Prop({ mutable: true }) selectedTab: string;
 
   @Watch('tabPanelHeaders')
   arrayDataWatcher(newValue: TabPanelInterface[] | string) {
@@ -53,12 +53,12 @@ export class IpTabPanel {
 
   componentWillLoad() {
     setTimeout(() => {
-      const currentItem = this.selectedTab.substring(        
+      const currentItem = this.selectedTab.substring(
         this.selectedTab.length - 1,
       );
-      
+
       this.currentTabIndex = parseInt(currentItem);
-    }, 0);    
+    }, 0);
 
     this.arrayDataWatcher(this.tabPanelHeaders);
     this.watchPropHandler(this.selectedTab, this.selectedTab);

@@ -35,19 +35,19 @@ describe('ip-tab-panel', () => {
       </ip-tab-panel>
     `);
   });
-    
-    it ('renders with content', async () => {
-        const page = await newSpecPage({
-            components: [IpTabPanel],
-            html: `<ip-tab-panel selected-tab="tab-content-5" title-tag="h2"tab-panel-title="Audit RGAA" tab-panel-headers='[ {"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]'>
+
+  it('renders with content', async () => {
+    const page = await newSpecPage({
+      components: [IpTabPanel],
+      html: `<ip-tab-panel selected-tab="tab-content-5" title-tag="h2"tab-panel-title="Audit RGAA" tab-panel-headers='[ {"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]'>
       <div slot="tab-content-1">--content of Accessibilité--</div>
       <div slot="tab-content-2">--content of Pdf Document--</div>
       <div slot="tab-content-3">--content of Statistical--</div>
       <div slot="tab-content-4">--content of Certification--</div>
       <div slot="tab-content-5">--content of Legislation--</div>
     </ip-tab-panel>`,
-        });
-        expect(page.root).toEqualHtml(`
+    });
+    expect(page.root).toEqualHtml(`
             <ip-tab-panel selected-tab="tab-content-5" title-tag="h2"tab-panel-title="Audit RGAA" tab-panel-headers='[ {"title":"Accessibilité"}, {"title":"Pdf Document"}, {"title":"Statistical"}, {"title":"Certification"}, {"title":"Legislation"}]'>
                 <mock:shadow-root>
                     <div class="ip-tab">
