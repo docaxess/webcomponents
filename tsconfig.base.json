@@ -28,13 +28,15 @@
       "@ipedis/radio": ["dist/packages/radio"],
       "@ipedis/radio/*": ["dist/packages/radio/dist/components/*"],
       "@ipedis/radio/loader": ["dist/packages/radio/loader"],
+      "@ipedis/pagination": ["dist/packages/pagination"],
+      "@ipedis/pagination/*": ["dist/packages/pagination/dist/components/*"],
+      "@ipedis/pagination/loader": ["dist/packages/pagination/loader"],
       "@ipedis/toggle": ["dist/packages/toggle"],
       "@ipedis/toggle/*": ["dist/packages/toggle/dist/components/*"],
       "@ipedis/toggle/loader": ["dist/packages/toggle/loader"],
       "@ipedis/tooltip": ["dist/packages/tooltip"],
       "@ipedis/tooltip/*": ["dist/packages/tooltip/dist/components/*"],
-      "@ipedis/tooltip/loader": ["dist/packages/tooltip/loader"],
-      "@styles/*": ["apps/demo/src/styles/*"]
+      "@ipedis/tooltip/loader": ["dist/packages/tooltip/loader"]
     }
   },
   "exclude": ["node_modules", "tmp"]

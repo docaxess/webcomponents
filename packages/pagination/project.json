@@ -1,7 +1,7 @@
 {
-  "name": "radio",
+  "name": "pagination",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/radio/src",
+  "sourceRoot": "packages/pagination/src",
   "projectType": "library",
   "tags": ["type:webcomponent"],
   "generators": {
@@ -15,9 +15,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/radio/tsconfig.lib.json",
-        "configPath": "packages/radio/stencil.config.ts",
-        "outputPath": "dist/packages/radio"
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
       }
     },
     "build": {
@@ -25,9 +25,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/radio/tsconfig.lib.json",
-        "configPath": "packages/radio/stencil.config.ts",
-        "outputPath": "dist/packages/radio"
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
       },
       "configurations": {
         "production": {
@@ -41,9 +41,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/radio/tsconfig.lib.json",
-        "configPath": "packages/radio/stencil.config.ts",
-        "outputPath": "dist/packages/radio"
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
       }
     },
     "e2e": {
@@ -51,17 +51,17 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/radio/tsconfig.lib.json",
-        "configPath": "packages/radio/stencil.config.ts",
-        "outputPath": "dist/packages/radio"
+        "tsConfig": "packages/pagination/tsconfig.lib.json",
+        "configPath": "packages/pagination/stencil.config.ts",
+        "outputPath": "dist/packages/pagination"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
-          "packages/radio/**/*.{ts,tsx,json}",
-          "packages/radio/*.{ts,tsx,json}"
+          "packages/pagination/src/**/*.{ts,tsx,json}",
+          "packages/pagination/*.{ts,tsx,json}"
         ]
       }
     }

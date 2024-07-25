@@ -46,6 +46,8 @@ jq '.bugs = {
     "email": "hi@docaxess.com"
 }' "packages/${PROJECT_NAME}/package.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/package.json"
 
+## update project.json to add th tags
+jq '.tags = ["type:webcomponent"]' "packages/${PROJECT_NAME}/project.json" > tmp.$$.json && mv tmp.$$.json "packages/${PROJECT_NAME}/project.json"
 
 echo "Project $PROJECT_NAME created"
 echo "available commands:"
