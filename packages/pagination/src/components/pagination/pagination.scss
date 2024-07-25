@@ -28,6 +28,12 @@ nav {
     padding: 10px;
     cursor: pointer;
     font-size: 14px;
+    
+    &:hover, 
+    &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+ }
   }
   
   button:disabled {

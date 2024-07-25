@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 @Component({
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   imports: [CommonModule],
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsideComponent {
   constructor(

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './code-snippet.component.html',
   styleUrl: './code-snippet.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class CodeSnippetComponent {
   @Input() code = '';
