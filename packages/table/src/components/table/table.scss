@@ -14,6 +14,10 @@
   border-radius: 8px;
   overflow: hidden;
 }
+.rotate180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
 
 table {
   width: 100%;
@@ -25,6 +29,7 @@ table {
 thead {
   background-color: var(--primary-color);
   color: var(--thead-color);
+
 }
 
 th,
@@ -37,6 +42,7 @@ td {
 th {
   background-color: var(--primary-color);
   font-weight: bold;
+
 }
 
 tbody tr:nth-child(even) {
@@ -50,6 +56,7 @@ tbody tr:hover {
 button {
   background-color: var(--primary-color);
   border: none;
+  cursor: pointer;
 }
 button:focus {
   outline: none;
@@ -61,46 +68,18 @@ button:focus {
     }
   }
 }
-.status-svg circle {
-  width: 8px;
-  height: 8px;
-  fill: #3cc13b;
-}
 
-.status-svg.red circle {
-  width: 8px;
-  height: 8px;
-  fill: #df1f15;
-}
-
-.status-svg.orange circle {
-  width: 8px;
-  height: 8px;
-  fill: #ff851b;
-}
-.status {
-  display: flex;
-  padding: 0px 30px;
-  align-items: center;
-  gap: 10px;
-  flex: 1 0 0;
-}
 @media (max-width: 768px) {
   table {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   th,
   td {
     padding: 10px;
   }
-
-  .status-svg circle {
-    width: 6px;
-    height: 6px;
-  }
-
-  .status {
-    padding: 0 10px;
+  button svg {
+    width: 14px;
+    height: 13px;
   }
 }
