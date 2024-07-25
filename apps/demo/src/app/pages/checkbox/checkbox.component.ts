@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 
@@ -9,6 +9,8 @@ import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class CheckboxComponent {
   codeSnippet =`  

@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 
@@ -8,7 +8,8 @@ import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
   imports: [CommonModule, CodeSnippetComponent],
   templateUrl: './toggle.component.html',
   styleUrl: './toggle.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToggleComponent {
   codeSnippetWithText = `
