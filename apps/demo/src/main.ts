@@ -9,6 +9,7 @@ import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loade
 import { defineCustomElements as loginElements } from '@ipedis/login/loader';
 import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
 import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
+import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
 
 
 tooltipElements(window);
@@ -17,6 +18,7 @@ checkboxElements(window);
 loginElements(window);
 dropdownElements(window);
 radioElements(window);
+paginationElements(window);
 
 bootstrapApplication(AppComponent, appConfig).catch((err) =>
   console.error(err),
