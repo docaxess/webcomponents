@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID} from '@angular/core';
+import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
+import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
 
 @Component({
   selector: 'app-pagination',
@@ -13,10 +14,15 @@ import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 })
 export class PaginationComponent {
   codeSnippet = `
-  <ip-pagination
-    total-pages="25"
-    current-page="5"
-    visible-pages="7">
-  </ip-pagination>
+<ip-pagination
+  total-pages="25"
+  current-page="5"
+  visible-pages="7">
+</ip-pagination>
   `
+  constructor() {
+    if (isPlatformBrowser(inject(PLATFORM_ID)) && paginationElements) {
+      paginationElements(inject(DOCUMENT).defaultView as Window);
+    }
+  }
 }

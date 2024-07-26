@@ -1,23 +1,22 @@
-import { Route, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { TooltipComponent } from './pages/tooltip/tooltip.component';
-import { DropdownComponent } from './pages/dropdown/dropdown.component';
-import { ToggleComponent } from './pages/toggle/toggle.component';
-import { RadioButtonComponent } from './pages/radio-button/radio-button.component';
-import { CheckboxComponent } from './pages/checkbox/checkbox.component';
-import { LoginComponent } from './pages/login/login.component';
-import { PaginationComponent } from './pages/pagination/pagination.component';
-
-
+import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
-    { path: '', component: HomeComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'tooltip', component: TooltipComponent },
-    { path: 'dropdown', component: DropdownComponent },
-    { path: 'toggle', component: ToggleComponent },
-    { path: 'radio-button', component: RadioButtonComponent },
-    { path: 'checkbox', component: CheckboxComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'pagination', component: PaginationComponent },
+    { path: '', loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+ },
+    { path: 'home', loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+ },
+    { path: 'tooltip', loadComponent: () => import('./pages/tooltip/tooltip.component').then(m => m.TooltipComponent)
+    },
+    { path: 'dropdown', loadComponent: () => import('./pages/dropdown/dropdown.component').then(m => m.DropdownComponent)
+    },
+    { path: 'toggle', loadComponent: () => import('./pages/toggle/toggle.component').then(m => m.ToggleComponent)
+    },
+    { path: 'radio-button', loadComponent: () => import('./pages/radio-button/radio-button.component').then(m => m.RadioButtonComponent)
+    },
+    { path: 'checkbox', loadComponent: () => import('./pages/checkbox/checkbox.component').then(m => m.CheckboxComponent)
+    },
+    { path: 'login', loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent)
+    },
+    { path: 'pagination', loadComponent: () => import('./pages/pagination/pagination.component').then(m => m.PaginationComponent)
+    },
     { path: '**', redirectTo: '' },
 ];

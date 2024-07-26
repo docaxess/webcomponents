@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID} from '@angular/core';
+import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
+import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 
 @Component({
   selector: 'app-checkbox',
@@ -14,24 +15,29 @@ import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 })
 export class CheckboxComponent {
   codeSnippet =`  
-              <ip-checkbox
-              default-checked="true" id="check me"
-              >
-              Check me !
-              </ip-checkbox>
-          `;
-  
+<ip-checkbox
+    default-checked="true" id="check me"
+>
+    Check me !
+</ip-checkbox>
+`;
+
   codeSnippetList = `
-                    <ip-checkbox-list
-                    legend="Select the options below:"
-                options='[
-              &#123;"id": "agree", "label": "I agree to the terms and conditions.", "defaultChecked": true , "disabled": true&#125;,
-              &#123;"id": "remember", "label": "Remember me on this device", "disabled": true&#125;, 
-              &#123;"id": "newsletter", "label": "subscribe to our newsletter for updates.","defaultChecked": true&#125;,
-              &#123;"id": "send", "label": "Send me promotional offers and discounts."&#125;,
-              &#123;"id": "participate", "label": "Participate in our user feddback program."&#125;
-              ]'
-                    >
-                    </ip-checkbox-list>
+<ip-checkbox-list
+  legend="Select the options below:"
+  options='[
+    {"id": "agree", "label": "I agree to the terms and conditions.", "defaultChecked": true , "disabled": true},
+    {"id": "remember", "label": "Remember me on this device", "disabled": true}, 
+    {"id": "newsletter", "label": "subscribe to our newsletter for updates.","defaultChecked": true},
+    {"id": "send", "label": "Send me promotional offers and discounts."},
+    {"id": "participate", "label": "Participate in our user feedback program."}
+  ]'
+>
+</ip-checkbox-list>
   `
+    constructor() {
+      if (isPlatformBrowser(inject(PLATFORM_ID)) && checkboxElements) {
+         checkboxElements(inject(DOCUMENT).defaultView as Window);
+      }
+    }
 }

@@ -6,7 +6,7 @@ import { CodeSnippetComponent } from './pages/code-snippet/code-snippet.componen
 
 @Component({
   standalone: true,
-  imports: [ RouterOutlet, HeaderComponent , AsideComponent,CodeSnippetComponent],
+  imports: [ RouterOutlet, HeaderComponent , AsideComponent, CodeSnippetComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
