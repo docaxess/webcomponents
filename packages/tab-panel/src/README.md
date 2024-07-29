@@ -7,7 +7,7 @@
 Install the ip-tab-panel component as a dependency in the project:
 
 ```bash
-npm install ip-radio
+npm install ip-tab-panel
 ```
 
 ### Step 2:
