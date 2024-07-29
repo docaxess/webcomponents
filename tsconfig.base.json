@@ -16,6 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ipedis/accordion": ["dist/libs/accordion"],
+      "@ipedis/accordion/*": ["dist/libs/accordion/dist/components/*"],
+      "@ipedis/accordion/loader": ["dist/libs/accordion/loader"],
       "@ipedis/checkbox": ["dist/packages/checkbox"],
       "@ipedis/checkbox/*": ["dist/packages/checkbox/dist/components/*"],
       "@ipedis/checkbox/loader": ["dist/packages/checkbox/loader"],
