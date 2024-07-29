@@ -1,0 +1,48 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      ip-table {
+        display: block;
+        margin: 0 auto;
+        max-width: 900px;
+      }
+    </style>
+    <script type="module" src="/build/table.esm.js"></script>
+    <script nomodule src="/build/table.js"></script>
+  </head>
+  <body>
+    <ip-table
+      columns='[
+      { "header": "Name" , "type": "string"},
+      { "header": "Number", "type": "number" },
+      { "header": "Category", "type": "string" },
+      { "header": "Price" ,"type": "number"},
+      { "header": "Status", "type": "string" }
+      ]'
+      rows='[
+      {"Name":"Slim Fit chinos","Number" :9504,"Category": "Men’s outwear","Price": 98.25, "Status": "In Stock"},
+      {"Name":"Wide-Brimmed Floppy Hat","Number": 9000,"Category": "Women’s Outwear","Price": 145.66,"Status": "Backorder"},
+      {"Name":"V-Neck Cashmere Sweater","Number": 9485,"Category": "Men’s outwear","Price": 65.00,"Status": "Low Stock"},
+      {"Name":"Striped Off-Shoulder To","Number": 1524,"Category": "Women’s Outwear","Price": 56.22,"Status": "In Stock"},
+      {"Name":"Quilted Bomber Jacket","Number": 1235,"Category": "Men’s outwear","Price": 14.56,"Status": "In Stock"},
+      {"Name":"Women’s Chescott Down Jacket","Number": 5689,"Category": "Women’s Outwear","Price": 100,"Status": "Backorder"},
+      {"Name":"Denim Trucker Jacket","Number": 2394,"Category": "Men’s outwear","Price": 52.45,"Status": "In Stock"},
+      {"Name":"High-Waisted Skinny Jeans","Number": 7859,"Category": "Women’s Outwear","Price": 125.00,"Status": "Low Stock"},
+      {"Name":"Men’s Harrington Jacket","Number":5600,"Category": "Men’s outwear","Price": 150.58,"Status": "In Stock"}
+    ]'
+    >
+    </ip-table>
+  </body>
+</html>
