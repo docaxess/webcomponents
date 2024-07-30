@@ -1,0 +1,47 @@
+@import '../utilities';
+@import '../theme/colors';
+
+h3,
+h4,
+h5,
+h6 {
+  color: $secondaryColor;
+}
+.under-title {
+  text-align: center;
+  color: $secondaryColor;
+  margin-top: rem(15);
+}
+pre {
+  background-color: $darkColor;
+  color: $lightColor;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 0;
+}
+#documentation {
+  margin: 0 rem(18);
+  padding: 20px;
+
+  h3 {
+    margin-top: rem(20);
+    color: $secondaryColor;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: rem(20);
+
+    th,
+    td {
+      border: 1px solid $darkColor;
+      padding: rem(8);
+      text-align: center;
+    }
+
+    th {
+      background-color: $primaryColor;
+    }
+  }
+}

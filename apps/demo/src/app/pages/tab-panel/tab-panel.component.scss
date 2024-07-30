@@ -1,18 +1,5 @@
 @import '../../../assets/styles/index.scss';
 
-.under-title {
-  text-align: center;
-  color: $secondaryColor;
-  margin-top: rem(15);
-}
-pre {
-  background-color: $darkColor;
-  color: $lightColor;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-x: auto;
-  margin: 0;
-}
 #demo {
   ip-tab-panel::part(tab) {
     gap: 5px;
@@ -36,10 +23,6 @@ pre {
     display: flex;
     flex-direction: column;
   }
-
-  /*=============================
-  /////////// CONTENT ///////////
-  =============================*/
 
   .ip-content {
     margin-block: 3.125em;
@@ -100,8 +83,13 @@ pre {
   }
 
   .tab-panel {
-    max-width: 1080px;
+    max-width: rem(960);
     margin: 100px auto;
+  }
+
+  .panel-wrapper {
+    border: 1px solid $darkColor;
+    border-radius: rem(5);
   }
 
   @media only screen and (max-width: 767px) and (orientation: portrait),
@@ -138,31 +126,6 @@ pre {
     .ip-content .ip-content-subtitle {
       font-size: 2rem;
       margin-block-end: 0.75em;
-    }
-  }
-}
-#documentation {
-  margin: 0 rem(18);
-  padding: 20px;
-
-  h3 {
-    margin-top: rem(20);
-    color: $secondaryColor;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: rem(20);
-
-    th,
-    td {
-      border: 1px solid $darkColor;
-      padding: rem(8);
-      text-align: center;
-    }
-
-    th {
-      background-color: $primaryColor;
     }
   }
 }
