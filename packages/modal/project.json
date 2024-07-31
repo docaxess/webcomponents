@@ -3,9 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/modal/src",
   "projectType": "library",
-  "tags": [
-    "type:webcomponent"
-  ],
+  "tags": ["type:webcomponent"],
   "generators": {
     "@nxext/stencil:component": {
       "style": "scss"
@@ -14,9 +12,7 @@
   "targets": {
     "test": {
       "executor": "@nxext/stencil:test",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/modal/tsconfig.lib.json",
@@ -26,9 +22,7 @@
     },
     "build": {
       "executor": "@nxext/stencil:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/modal/tsconfig.lib.json",
@@ -44,9 +38,7 @@
     },
     "serve": {
       "executor": "@nxext/stencil:serve",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/modal/tsconfig.lib.json",
@@ -56,9 +48,7 @@
     },
     "e2e": {
       "executor": "@nxext/stencil:e2e",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
         "tsConfig": "packages/modal/tsconfig.lib.json",
