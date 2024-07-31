@@ -1,0 +1,99 @@
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  --svg-color: var(--color-svg, #000);
+  --svg-size: var(--size-svg, 18px);
+}
+
+.modal-container {
+  position: relative;
+  gap: 10px;
+}
+svg {
+  fill: var(--svg-color);
+  width: var(--svg-size);
+  height: var(--svg-size);
+}
+
+.dialog-button {
+  padding: 12px;
+  color: black;
+  border-radius: 39px;
+  background: #ffffff;
+  transition: 0.3s ease-in;
+  border: 1px solid black;
+  outline: 1px solid darkcyan;
+  box-shadow: inset 3px 2px 3px -3px #121212;
+  outline-offset: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.dialog-button:hover {
+  background: black;
+  color: whitesmoke;
+  outline: 2px solid darkcyan;
+}
+
+.dialog-button:focus {
+  background: black;
+  color: whitesmoke;
+  outline: 2px solid darkcyan;
+  outline-offset: 4px;
+}
+
+dialog {
+  text-align: center;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 0 10px #0000001a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(30px);
+
+  button {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: #0000001a 0px 0px 10px;
+  }
+}
+
+.dialog-contents {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.close-dialog {
+  position: absolute;
+  top: -11px;
+  right: -10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
+  z-index: 1100;
+  transition: color 0.3s;
+}
+
+.close-dialog:hover {
+  color: darkred;
+}
+
+.close-dialog:focus {
+  outline: 2px solid black;
+}
+
+.dialog-content {
+  text-align: center;
+}
