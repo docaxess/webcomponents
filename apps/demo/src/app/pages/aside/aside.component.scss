@@ -8,16 +8,19 @@
   overflow-y: auto;
   z-index: 1000;
 }
+
 .sidebar-menu {
   background-color: $sidebarBackgroundColor;
   color: $sidebarTextColor;
   padding: rem(30);
   border-radius: rem(15);
   margin: rem(20);
+
   a {
     text-decoration: none;
-    color: $lightColor ;
+    color: $lightColor;
   }
+
   > h2 {
     display: flex;
     align-items: center;
@@ -50,66 +53,73 @@
     margin-block-end: rem(30);
     list-style: none;
 
-
     &:last-child {
       border: none;
       padding-block-end: 0;
       margin-block-end: 0;
     }
+
     li {
       padding: rem(10) 0;
       margin: 0;
       vertical-align: baseline;
       box-sizing: border-box;
       width: 100%;
-    }
-    li a {
-      inline-size: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-block: rem(15);
-      padding-inline: rem(10);
-      border-radius: rem(5);
-      overflow: hidden;
-      cursor: pointer;
-      background-color: transparent;
-      border: none;
-      color: white;
-      font-size: large;
 
-      &::before {
-        content: '';
-        position: absolute;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        inline-size: 0;
-        block-size: 100%;
-        background-color: $primaryColor;
-        pointer-events: none;
-      }
-
-      &[aria-current='true'],
-      &:hover,
-      &:focus,
-      &:focus-visible {
-        background-color: fade(darken($darkColor, 100), 30);
-        color: contrast(fade(darken($darkColor, 100), 30), $lightColor, $darkColor);
+      a {
+        inline-size: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: rem(15);
+        padding-inline: rem(10);
+        border-radius: rem(5);
+        overflow: hidden;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: large;
 
         &::before {
-          inline-size: rem(5);
+          content: '';
+          position: absolute;
+          inset-block-start: 0;
+          inset-inline-start: 0;
+          inline-size: 0;
+          block-size: 100%;
+          background-color: $primaryColor;
+          pointer-events: none;
         }
-      }
 
-      &:hover,
-      &:focus,
-      &:focus-visible {
-        transition: background-color $transition-in-out, color $transition-in-out,
-          outline-offset $transition-in-out;
+        &[aria-current='true'],
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          background-color: fade(darken($darkColor, 100), 30);
+          color: contrast(
+            fade(darken($darkColor, 100), 30),
+            $lightColor,
+            $darkColor
+          );
 
-        &::before {
-          transition: inline-size $transition-in-out;
+          &::before {
+            inline-size: rem(5);
+          }
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          transition:
+            background-color $transition-in-out,
+            color $transition-in-out,
+            outline-offset $transition-in-out;
+
+          &::before {
+            transition: inline-size $transition-in-out;
+          }
         }
       }
     }

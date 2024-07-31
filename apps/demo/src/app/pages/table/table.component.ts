@@ -8,7 +8,6 @@ import {
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { defineCustomElements as tableElements } from '@ipedis/table/loader';
-
 @Component({
   selector: 'app-table',
   standalone: true,
