@@ -11,13 +11,13 @@ describe('ip-accordion', () => {
         <ip-accordion>
             <mock:shadow-root>
                 <div part="ip-accordion" class="ip-accordion" id="ip-accordion">
-                    <div part="acc-panel acc-panel-1" class="ip-acc-panel">
+                    <div part="acc-panel acc-panel-1" class="ip-acc-panel" >
                         <h2 part="acc-header" class="js-acc-button">
                         <button part="acc-btn" aria-label="Afficher plus d'information sur {nom de la section}" aria-expanded="false" aria-controls="sect-1" id="accordion-1">
                             <span part="acc-title" class="accordion-title">Accessibilité</span>
                         </button>
                         </h2>
-                        <div part="acc-content" id="sect-1" class="js-panel">
+                        <div part="acc-content" id="sect-1" class="js-panel" style="display: none;">
                             <div class="acc-content">
                                 <img class="acc-content__image" src="/assets/images/tab-img-1.png" alt="">
                                 <div class="acc-content__desc-wrapper">
@@ -52,11 +52,11 @@ describe('ip-accordion', () => {
                 <div part="ip-accordion" class="ip-accordion" id="ip-accordion">
                     <div part="acc-panel acc-panel-1" class="ip-acc-panel">
                         <h2 part="acc-header" class="js-acc-button">
-                            <button part="acc-btn" aria-expanded="false" aria-controls="panel-1">
+                            <button part="acc-btn" aria-expanded="false" aria-controls="panel-1" >
                                 <span part="acc-title" class="accordion-title">Panel 1</span>
                             </button>
                         </h2>
-                        <div part="acc-content" id="panel-1" class="js-panel">
+                        <div part="acc-content" id="panel-1" class="js-panel" style="display: none;">
                         <slot name="accordion-1"></slot>
                         </div>
                     </div>
