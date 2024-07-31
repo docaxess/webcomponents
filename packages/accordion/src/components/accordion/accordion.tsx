@@ -52,24 +52,23 @@ export class Ipaccordion {
 
   componentWillLoad() {
     this.arrayDataWatcher(this.accordionHeaders);
-
-    setTimeout(() => {
-      this.accHeaderButtons = this.el.shadowRoot
-        .querySelector('#ip-accordion')
-        .querySelectorAll('button');
-
-      this.accPanels = this.el.shadowRoot
-        .querySelector('#ip-accordion')
-        .querySelectorAll('.js-panel');
-
-      this.setSlotId();
-
-      this.hidePanels();
-
-      this.openFirstPanel();
-    }, 0);
   }
 
+  componentDidLoad() {
+    this.accHeaderButtons = this.el.shadowRoot
+      .querySelector('#ip-accordion')
+      .querySelectorAll('button');
+
+    this.accPanels = this.el.shadowRoot
+      .querySelector('#ip-accordion')
+      .querySelectorAll('.js-panel');
+
+    this.setSlotId();
+
+    this.hidePanels();
+
+    this.openFirstPanel();
+  }
   // keep first panel open or not depending on prop 'isFirstPanelOpen'
   openFirstPanel() {
     if (this.isFirstPanelOpen) {
@@ -85,14 +84,10 @@ export class Ipaccordion {
       firstPanel.style.transition = 'none';
       firstPanel.style.height = firstPanel.scrollHeight + 'px';
 
-      setTimeout(() => {
-        firstPanel.style.transition = 'all 0.3s ease-in';
-      }, 500);
+      firstPanel.style.transition = 'all 0.3s ease-in';
 
       firstButton.style.transition = 'none';
-      setTimeout(() => {
-        firstButton.style.transition = 'all 0.3s ease-in-out';
-      }, 500);
+      firstButton.style.transition = 'all 0.3s ease-in-out';
     }
   }
 
@@ -144,14 +139,10 @@ export class Ipaccordion {
   setHeight(selectedPanel: HTMLElement) {
     if (selectedPanel.offsetHeight === 0) {
       selectedPanel.style.display = 'block';
-      setTimeout(() => {
-        selectedPanel.style.height = selectedPanel.scrollHeight + 'px';
-      }, 100);
+      selectedPanel.style.height = selectedPanel.scrollHeight + 'px';
     } else {
       selectedPanel.style.height = '0px';
-      setTimeout(() => {
-        selectedPanel.style.display = 'none';
-      }, 350);
+      selectedPanel.style.display = 'none';
     }
   }
 
@@ -165,25 +156,24 @@ export class Ipaccordion {
   }
 
   // For accessibility - so as not to make elements inside tabulable
-  // - After timeout, so as to make element inside rendered first to be able to determine height
-  hidePanels() {
-    setTimeout(() => {
-      const panels = Array.from(this.accPanels).filter(
-        (_panel: HTMLElement, index) => {
-          return index != 0;
-        },
-      );
 
-      if (this.isFirstPanelOpen) {
-        panels.forEach((panel: HTMLElement) => {
-          panel.style.display = 'none';
-        });
-      } else {
-        this.accPanels.forEach((panel) => {
-          panel.style.display = 'none';
-        });
+  hidePanels() {
+    const panels = Array.from(this.accPanels) as HTMLElement[];
+
+    const firstPanel = panels.shift();
+
+    if (this.isFirstPanelOpen) {
+      panels.forEach((panel: HTMLElement) => {
+        panel.style.display = 'none';
+      });
+    } else {
+      if (firstPanel) {
+        firstPanel.style.display = 'none';
       }
-    }, 500);
+      panels.forEach((panel: HTMLElement) => {
+        panel.style.display = 'none';
+      });
+    }
   }
 
   render() {
