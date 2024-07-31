@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  --primary-color: var(--color-primary, #007bff);
+  --secondary-color: var(--color-secondary, #0056b3);
+  --font-size: var(--font-size, 16px);
+  --font-color: var(--color-font, white);
+  --font-family: var(--font-family, Arial, sans-serif);
+  --svg-color: var(--color-svg, white);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  border: none;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  height: 45px;
+  padding: 13px;
+  justify-content: space-around;
+  flex-shrink: 0;
+  gap: 10px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--svg-color);
+}
