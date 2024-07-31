@@ -1,9 +1,6 @@
 # ip-modal
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,7 +10,6 @@
 | `closeAriaLabel` | `close-aria-label` |             | `string` | `'Close the dialog'` |
 | `svgColor`       | `svg-color`        |             | `string` | `'black'`            |
 
-
 ## Shadow Parts
 
 | Part               | Description |
@@ -21,7 +17,6 @@
 | `"dialog-content"` |             |
 | `"trigger-button"` |             |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
