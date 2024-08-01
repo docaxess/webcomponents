@@ -27,7 +27,7 @@ The component uses a slot named `content` for the expanded content.
 _e.g:_
 
 ```html
-<ip-show-more svg-color="#C92D6A">
+<ip-show-more>
   <div slot="content">-- Expanded content goes here --</div>
 </ip-show-more>
 ```
