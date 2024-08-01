@@ -37,10 +37,15 @@ Example:
 
 ```html
 <p>
-  Here is a sentence with a footnote reference<sup><a href="#footnote-1" id="ref1">1</a></sup
+  Here is a sentence with a footnote reference<sup
+    ><a href="#footnote-1" id="ref1">1</a></sup
   >.
 </p>
-<ip-footnote id="footnote-1" identifier="1" text="This is a detailed explanation or reference for the footnote."></ip-footnote>
+<ip-footnote
+  id="footnote-1"
+  identifier="1"
+  text="This is a detailed explanation or reference for the footnote."
+></ip-footnote>
 ```
 
 ## Customization
@@ -61,5 +66,6 @@ To update the values use the following:
 ip-footnote {
   --font-color: #006342;
   --font-size: #000000;
+  --border-left: 2px solid #000000;
 }
 ```
