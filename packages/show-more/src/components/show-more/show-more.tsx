@@ -25,10 +25,12 @@ export class ShowMoreButton {
           <button
             onClick={() => this.toggle()}
             style={{ '--svg-color': this.svgColor }}
+            aria-label={this.isExpanded ? 'Show Less' : 'Show More'}
           >
             {this.isExpanded ? 'Show Less' : 'Show More'}
             {this.isExpanded ? (
               <svg
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -41,6 +43,7 @@ export class ShowMoreButton {
               </svg>
             ) : (
               <svg
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"

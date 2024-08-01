@@ -7,7 +7,6 @@ describe('ip-show-more', () => {
       '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>',
     );
 
-    // Trouver le bouton
     const button = await page.find('ip-show-more >>> button');
     expect(await button.textContent).toBe('Show More');
   });
@@ -18,7 +17,6 @@ describe('ip-show-more', () => {
       '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>',
     );
 
-    // Trouver le bouton
     const button = await page.find('ip-show-more >>> button');
     await button.click();
     await page.waitForChanges();
@@ -30,26 +28,20 @@ describe('ip-show-more', () => {
       '<ip-show-more><div slot="content">Here is the additional content.</div></ip-show-more>',
     );
 
-    // Trouver le bouton
     const button = await page.find('ip-show-more >>> button');
 
-    // Vérifier que le contenu est caché initialement
     let content = await page.find('ip-show-more >>> .content');
     expect(content).toBeNull();
 
-    // Cliquer sur le bouton pour afficher le contenu
     await button.click();
     await page.waitForChanges();
 
-    // // Vérifier que le contenu est maintenant visible
     content = await page.find('ip-show-more >>> .content');
     expect(content).not.toBeNull();
 
-    // Cliquer sur le bouton pour masquer le contenu
     await button.click();
     await page.waitForChanges();
 
-    // Vérifier que le contenu est de nouveau caché
     content = await page.find('ip-show-more >>> .content');
     expect(content).toBeNull();
   });
