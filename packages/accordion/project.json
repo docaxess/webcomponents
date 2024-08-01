@@ -1,0 +1,69 @@
+{
+  "name": "accordion",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/accordion/src",
+  "projectType": "library",
+  "tags": ["type:webcomponent"],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/accordion/tsconfig.lib.json",
+        "configPath": "packages/accordion/stencil.config.ts",
+        "outputPath": "dist/packages/accordion"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/accordion/tsconfig.lib.json",
+        "configPath": "packages/accordion/stencil.config.ts",
+        "outputPath": "dist/packages/accordion"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/accordion/tsconfig.lib.json",
+        "configPath": "packages/accordion/stencil.config.ts",
+        "outputPath": "dist/packages/accordion"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/accordion/tsconfig.lib.json",
+        "configPath": "packages/accordion/stencil.config.ts",
+        "outputPath": "dist/packages/accordion"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/accordion/src/**/*.{ts,tsx,json}",
+          "packages/accordion/*.{ts,tsx,json}"
+        ]
+      }
+    }
+  }
+}
