@@ -1,13 +1,19 @@
-
 body {
-    font-family: Arial, sans-serif;
-  }
+  font-family: Arial, sans-serif;
+}
 
-  .presentation {
-    display: grid;
-    grid-template-columns: 24% 74%;
-    gap: 15px;
-    
-    }
-  
- 
+.main-content {
+  background-image: url('../assets/images/Rectangle-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 88vh;
+  width: 100vw;
+}
+.container {
+  margin: 0 150px;
+
+  display: grid;
+  grid-template-columns: 24% 74%;
+  gap: 15px;
+}

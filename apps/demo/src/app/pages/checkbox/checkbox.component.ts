@@ -1,20 +1,26 @@
-import {ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID} from '@angular/core';
-import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
+import { WrapperComponent } from '../wrapper/wrapper.component';
 
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  imports: [CommonModule, CodeSnippetComponent],
+  imports: [CommonModule, CodeSnippetComponent, WrapperComponent],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
-
 })
 export class CheckboxComponent {
-  codeSnippet =`  
+  codeSnippet = `  
 <ip-checkbox
     default-checked="true" id="check me"
 >
@@ -34,10 +40,10 @@ export class CheckboxComponent {
   ]'
 >
 </ip-checkbox-list>
-  `
-    constructor() {
-      if (isPlatformBrowser(inject(PLATFORM_ID)) && checkboxElements) {
-         checkboxElements(inject(DOCUMENT).defaultView as Window);
-      }
+  `;
+  constructor() {
+    if (isPlatformBrowser(inject(PLATFORM_ID)) && checkboxElements) {
+      checkboxElements(inject(DOCUMENT).defaultView as Window);
     }
+  }
 }
