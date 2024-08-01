@@ -14,9 +14,12 @@
   padding: rem(30);
   border-radius: rem(15);
   margin: rem(20);
+  height: 80vh;
+  overflow-y: auto;
+
   a {
     text-decoration: none;
-    color: $lightColor ;
+    color: $lightColor;
   }
   > h2 {
     display: flex;
@@ -49,7 +52,8 @@
     padding-block-end: rem(30);
     margin-block-end: rem(30);
     list-style: none;
-
+    padding-left: rem(15);
+    padding-bottom: rem(10);
 
     &:last-child {
       border: none;
@@ -95,7 +99,11 @@
       &:focus,
       &:focus-visible {
         background-color: fade(darken($darkColor, 100), 30);
-        color: contrast(fade(darken($darkColor, 100), 30), $lightColor, $darkColor);
+        color: contrast(
+          fade(darken($darkColor, 100), 30),
+          $lightColor,
+          $darkColor
+        );
 
         &::before {
           inline-size: rem(5);
@@ -105,7 +113,9 @@
       &:hover,
       &:focus,
       &:focus-visible {
-        transition: background-color $transition-in-out, color $transition-in-out,
+        transition:
+          background-color $transition-in-out,
+          color $transition-in-out,
           outline-offset $transition-in-out;
 
         &::before {
