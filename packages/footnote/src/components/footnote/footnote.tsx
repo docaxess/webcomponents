@@ -23,7 +23,7 @@ export class Footnote {
         </span>
         <div class="text">
           <span class="footnote-text">{this.text}</span>
-          <a href={`#ref${this.identifier}`}>
+          <a href={`#ref${this.identifier}`} aria-label="Back to main text">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
