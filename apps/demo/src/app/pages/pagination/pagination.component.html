@@ -1,5 +1,14 @@
 <div class="container">
-    <section id="demo">
+  <app-card
+    *ngFor="let card of cards"
+    [imageUrl]="card.imageUrl"
+    [title]="card.title"
+    [link]="card.link"
+  >
+  </app-card>
+</div>
+
+<!-- <section id="demo">
         <h2 class="under-title">Demo</h2>
         <div class="pagination-wrapper">
             <div class="pagination">
@@ -89,5 +98,4 @@
               console.log('Page changed to:', newPage);
               &#125;);
         </code></pre>
-    </section>
-</div>
+    </section> -->

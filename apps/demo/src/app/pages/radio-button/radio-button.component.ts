@@ -1,5 +1,11 @@
-import {ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID} from '@angular/core';
-import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 
@@ -24,7 +30,7 @@ export class RadioButtonComponent {
     {"id": "Other", "label": "Other", "disabled": true}
   ]'
 ></ip-radio>
-  `
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && radioElements) {
       radioElements(inject(DOCUMENT).defaultView as Window);

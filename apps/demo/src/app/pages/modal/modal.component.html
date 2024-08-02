@@ -1,0 +1,35 @@
+<div *ngIf="isVisible" class="modal-overlay">
+  <div class="modal-content">
+    <div class="wrapper">
+      <div class="wrapper-head">
+        <div class="wrapper-title">
+          <h3>{{ title }}</h3>
+        </div>
+        <div class="wrapper-buttons">
+          <button (click)="selectTab('preview')">
+            <img src="assets/images/Preview.png" alt="Preview" />
+          </button>
+          <button (click)="selectTab('code')">
+            <img src="assets/images/Codeicon-code.png" alt="Code" />
+          </button>
+          <button (click)="selectTab('doc')">
+            <img src="assets/images/PDF.png" alt="Documentation" />
+          </button>
+        </div>
+      </div>
+
+      <div class="wrapper-content">
+        <div *ngIf="activeTab === 'preview'">
+          <ng-content select="[preview]"></ng-content>
+        </div>
+        <div *ngIf="activeTab === 'code'">
+          <ng-content select="[code]"></ng-content>
+        </div>
+        <div *ngIf="activeTab === 'doc'">
+          <ng-content select="[doc]"></ng-content>
+        </div>
+      </div>
+      <button class="modal-close" (click)="onClose()">×</button>
+    </div>
+  </div>
+</div>

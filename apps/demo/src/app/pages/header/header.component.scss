@@ -1,7 +1,7 @@
 @import '../../../assets/styles/index.scss';
 .head {
   width: 100%;
-  position: relative;
+  // position: relative;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   background-color: #fff;
   display: flex;
@@ -10,6 +10,7 @@
   justify-content: flex-start;
   padding: rem(5) rem(240);
   box-sizing: border-box;
+  position: sticky;
 }
 .logo {
   width: 145.9px;
