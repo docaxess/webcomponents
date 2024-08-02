@@ -1,0 +1,33 @@
+@import '../../../assets/styles/index.scss';
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+  color: $secondaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-img {
+  width: 100%;
+  height: rem(200);
+  object-fit: cover;
+}
+
+.card-body {
+  padding: rem(12);
+}
+
+.card-title {
+  font-size: rem(16);
+  margin: 0;
+  color: #333;
+}

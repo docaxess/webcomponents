@@ -4,6 +4,7 @@ body {
 
 .main-content {
   background-image: url('../assets/images/Rectangle-1.png');
+  background-position-y: -200px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -16,4 +17,7 @@ body {
   display: grid;
   grid-template-columns: 24% 74%;
   gap: 15px;
+}
+.cards-wrapper {
+  margin-top: 6px;
 }

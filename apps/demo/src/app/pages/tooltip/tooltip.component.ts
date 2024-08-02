@@ -8,12 +8,12 @@ import {
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
-import { WrapperComponent } from '../wrapper/wrapper.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-demo-tooltip',
   standalone: true,
-  imports: [CommonModule, CodeSnippetComponent, WrapperComponent],
+  imports: [CommonModule, CodeSnippetComponent, ModalComponent],
   templateUrl: './tooltip.component.html',
   styleUrl: './tooltip.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
