@@ -1,12 +1,13 @@
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  PLATFORM_ID,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CardComponent } from '../../features/card/card.component';
-import { Radio1ButtonComponent } from './radio1/radio1.component';
-import { ModalComponent } from '../../features/modal/modal.component';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
+import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 
 @Component({
   selector: 'app-radio-button',
@@ -17,28 +18,21 @@ import { ModalComponent } from '../../features/modal/modal.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioButtonComponent {
-  modalVisible = false;
-  modalTitle = '';
-  selectedContentComponent: any;
-  cards = [
-    {
-      title: 'Radio button 1',
-      imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Radio1ButtonComponent,
-    },
-  ];
-  constructor(private cdRef: ChangeDetectorRef) {}
-
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-    this.cdRef.markForCheck();
-  }
-
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-    this.cdRef.markForCheck();
+  codeSnippet = `
+<ip-radio
+  id="radio"
+  legend="What is your gender"
+  default-option-id="Female"
+  options='[
+    {"id": "Male", "label": "Male"}, 
+    {"id": "Female", "label": "Female"},
+    {"id": "Other", "label": "Other", "disabled": true}
+  ]'
+></ip-radio>
+  `;
+  constructor() {
+    if (isPlatformBrowser(inject(PLATFORM_ID)) && radioElements) {
+      radioElements(inject(DOCUMENT).defaultView as Window);
+    }
   }
 }
