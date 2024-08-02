@@ -1,0 +1,114 @@
+<app-modal>
+    <div preview>
+        <div class="checkbox-wrapper">
+            <ip-checkbox default-checked="true" id="check me">
+              Check me !
+            </ip-checkbox>
+          </div>
+    </div>
+    <div code>
+        <pre><code>&lt;ip-checkbox default-checked="true" disabled="true" id="checked"&gt; Checked ! &lt;/ip-checkbox&gt;</code></pre>        
+    </div>
+    <div doc>
+        <section id="documentation">
+            <h2 class="under-title">Installation</h2>      
+            <p>
+              Follow these steps to install and use the <code>ip-checkbox</code> component in your project.
+            </p>
+            <h3>Step 1</h3>
+            <p>
+              Install the
+              <code>ip-checkbox</code> component as a dependency in your project:
+            </p>
+            <pre><code>npm install ip-checkbox</code></pre>      
+            <h3>Step 2</h3>
+            <p>Import the module into your script file:</p>
+            <pre><code>import '../node_modules/ip-checkbox/dist/ip-checkbox/ip-checkbox.esm';</code></pre>
+            <h2 class="under-title">Usage</h2>
+            <p>To use these components, you must add the properties as attributes.</p>
+    </div>
+    <h3>Properties</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Attribute</th>
+          <th>Required</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>id</code></td>
+          <td><code>id</code></td>
+          <td>Yes</td>
+          <td>The ID of the input for accessibility</td>
+          <td><code>string</code></td>
+          <td><code>undefined</code></td>
+        </tr>
+        <tr>
+          <td><code>name</code></td>
+          <td><code>name</code></td>
+          <td>Yes</td>
+          <td>The name of the input for accessibility</td>
+          <td><code>string</code></td>
+          <td><code>undefined</code></td>
+        </tr>
+        <tr>
+          <td><code>defaultChecked</code></td>
+          <td><code>default-checked</code></td>
+          <td>No</td>
+          <td>Sets the checkbox to checked by default</td>
+          <td><code>boolean</code></td>
+          <td><code>false</code></td>
+        </tr>
+        <tr>
+          <td><code>disabled</code></td>
+          <td><code>disabled</code></td>
+          <td>No</td>
+          <td>Disables the checkbox</td> 
+          <td><code>boolean</code></td>
+          <td><code>false</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h5>Content</h5>
+    <p>
+      There is a predefined label slot for the label before the checkbox, which
+      will be the content inside the tag.
+    </p>
+
+    <h5>Example:</h5>
+    <div class="example">
+      <pre><code>&lt;ip-checkbox default-checked="true" disabled="true" id="checked"&gt; Checked ! &lt;/ip-checkbox&gt;</code></pre>
+    </div>
+    <h2 class="under-title">Customization</h2>
+    <p>We have a set of predefined variables used to customize the checkbox:</p>
+    <ul>
+        <li><code>--primary-color</code></li>
+        <li><code>--secondary-color</code></li>
+        <li><code>--font-size</code></li>
+        <li><code>--checkbox-size</code></li>
+      </ul> 
+      <p>To update the values, use the following CSS:</p>
+      <pre><code>ip-checkbox &#123;
+          --primary-color: #006342;
+          --secondary-color: #000000;
+        &#125;</code></pre>
+        <h2 class="under-title">Listening to Events</h2>
+        <p>
+          To listen to events emitted by the <code>ip-checkbox</code> and
+          <code>ip-checkbox-list</code> components, open your browser's console.
+          Event details will be displayed in the console when checkboxes are
+          modified.
+        </p>
+        <h5>Example JavaScript Code:</h5>
+        <pre><code>
+    const checkbox = document.querySelector('ip-checkbox');
+    checkbox.addEventListener('change', event => &#123;
+      const isChecked = event.detail.checked;
+      console.log(isChecked);
+    &#125;);</code></pre>
+</app-modal>
