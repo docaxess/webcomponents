@@ -17,9 +17,6 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioButtonComponent {
-  modalVisible = false;
-  modalTitle = '';
-  selectedContentComponent: any;
   cards = [
     {
       title: 'Radio button 1',
@@ -27,18 +24,6 @@ export class RadioButtonComponent {
       route: '/radio-button/radio-button1',
     },
   ];
-  constructor(private cdRef: ChangeDetectorRef) {}
 
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-    this.cdRef.markForCheck();
-  }
 
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-    this.cdRef.markForCheck();
-  }
-}
+
