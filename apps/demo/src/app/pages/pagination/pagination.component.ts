@@ -1,38 +1,21 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '../../features/card/card.component';
-import { Pagination1Component } from './pagination1/pagination1.component';
-import { ModalComponent } from '../../features/modal/modal.component';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-pagination',
   standalone: true,
-  imports: [CommonModule, CardComponent, ModalComponent],
+  imports: [CommonModule, CardComponent],
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss'],
+  styleUrl: './pagination.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent {
-  modalVisible = false;
-  modalTitle = '';
-  selectedContentComponent: any;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-
   cards = [
     {
       title: 'Pagination 1',
+      link: '/pagination',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Pagination1Component,
     },
   ];
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-  }
-
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-  }
 }
