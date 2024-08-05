@@ -1,0 +1,141 @@
+<section id="documentation">
+  <h2 class="under-title">Installation</h2>
+  <p>
+    Follow these steps to install and use the <code>ip-login</code> component in
+    your project.
+  </p>
+  <h3>Step 1</h3>
+  <p>
+    Install the <code>ip-login</code> component as a dependency in your project:
+  </p>
+  <pre><code>npm install ip-login</code></pre>
+  <h3>Step 2</h3>
+  <p>Import the module into your script file:</p>
+  <pre><code>import '../node_modules/ip-login/dist/ip-login/ip-login.esm';</code></pre>
+  <h2 class="under-title">Usage</h2>
+  <p>In this component,we have two input:</p>
+  <ul>
+    <li>&lt;ip-email&gt; &lt;/ip-email&gt;</li>
+    <li>&lt;ip-password&gt; &lt;/ip-password&gt;</li>
+  </ul>
+  <p>To use these inputs, you must add theses properties as attributes.</p>
+  <h3>Properties</h3>
+  <h4>ip-email</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute</th>
+        <th>Necessity</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>errorMessage</code></td>
+        <td><code>error-message</code></td>
+        <td>Required</td>
+        <td>
+          The error message when the user enters a wrong username or email.
+        </td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>inputLabel</code></td>
+        <td><code>input-label</code></td>
+        <td>Optional</td>
+        <td>
+          The name of the input. Its default value is "Email"; you can specify
+          it.
+        </td>
+        <td><code>string</code></td>
+        <td><code>"Email"</code></td>
+      </tr>
+      <tr>
+        <td><code>invalid</code></td>
+        <td><code>invalid</code></td>
+        <td>Optional</td>
+        <td>
+          It's a boolean Prop. Attach it to your function; if
+          <code>invalid="true"</code>, the error message is displayed.
+        </td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>ip-password</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute</th>
+        <th>Necessity</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>errorMessage</code></td>
+        <td><code>error-message</code></td>
+        <td>Required</td>
+        <td>
+          The error message when the user enters a wrong username or email.
+        </td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>forgotPasswordLink</code></td>
+        <td><code>forgot-password-link</code></td>
+        <td>Required</td>
+        <td>Your personal link for reinitialize password.</td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>invalid</code></td>
+        <td><code>invalid</code></td>
+        <td>Optional</td>
+        <td>
+          It's a boolean Prop. Attach it to your function; if
+          <code>invalid="true"</code>, the error message is displayed.
+        </td>
+        <td><code>boolean</code></td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="under-title">Customization</h2>
+  <p>
+    We have a set of predefined variable used to customisation the ip-login:
+  </p>
+  <ul>
+    <li><code>--primary-color</code></li>
+    <li><code>--secondary-color</code></li>
+  </ul>
+  <p>To update the values, use the following CSS:</p>
+  <pre><code>ip-email &#123;
+        --primary-color: #006342;
+        --secondary-color: #000000;
+        --focus-color: #3aa593;
+    &#125;</code></pre>
+  <br />
+  <pre><code>ip-password &#123;
+        --primary-color: #006342;
+        --secondary-color: #000000;
+        --focus-color: #3aa593;
+      &#125;</code></pre>
+
+  <h2 class="under-title">Listening to Events</h2>
+  <p>
+    <code>ip-email</code> and <code>ip-password</code> are simple inputs, so to
+    listen to the events it’s like with standard inputs.
+  </p>
+</section>

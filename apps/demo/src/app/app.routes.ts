@@ -18,6 +18,14 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'tooltip1',
+    loadComponent: () =>
+      import('./pages/tooltip/tooltip1/tooltip1.component').then(
+        (m) => m.Tooltip1Component,
+      ),
+  },
+
+  {
     path: 'dropdown',
     loadComponent: () =>
       import('./pages/dropdown/dropdown.component').then(
@@ -53,6 +61,13 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./pages/pagination/pagination.component').then(
         (m) => m.PaginationComponent,
+      ),
+  },
+  {
+    path: 'pagination1',
+    loadComponent: () =>
+      import('./pages/pagination/pagination1/pagination1.component').then(
+        (m) => m.Pagination1Component,
       ),
   },
   {

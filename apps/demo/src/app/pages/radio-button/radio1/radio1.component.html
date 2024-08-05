@@ -1,0 +1,38 @@
+<app-modal>
+  <div preview>
+    <div class="radio-wrapper">
+      <ip-radio
+        id="radio"
+        legend="What is your gender"
+        default-option-id="Female"
+        options='[
+          {"id": "Male", "label": "Male"}, 
+          {"id": "Female", "label": "Female"},
+          {"id": "Other", "label": "Other", "disabled": true}
+    
+          ]'
+      ></ip-radio>
+    </div>
+  </div>
+  <div code>
+    <code>
+      <pre>
+        <div class="radio-wrapper">
+            <ip-radio
+              id="radio"
+              legend="What is your gender"
+              default-option-id="Female"
+              options='[
+                {"id": "Male", "label": "Male"}, 
+                {"id": "Female", "label": "Female"},
+                {"id": "Other", "label": "Other", "disabled": true}
+          
+                ]'
+            ></ip-radio>
+      </pre>
+    </code>
+  </div>
+  <div doc>
+    <app-doc-radio></app-doc-radio>
+  </div>
+</app-modal>

@@ -7,11 +7,12 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-pagination1',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ModalComponent],
   templateUrl: './pagination1.component.html',
   styleUrl: './pagination1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

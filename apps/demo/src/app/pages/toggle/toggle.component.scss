@@ -1,16 +1,7 @@
 @import '../../../assets/styles/index.scss';
 
-#demo {
-  .card {
-    border: 1px solid $darkColor;
-    margin-top: rem(15);
-    border-radius: rem(6);
-  }
-  .toggle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: rem(50) 0;
-  }
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
