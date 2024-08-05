@@ -1,16 +1,5 @@
 @import '../../../assets/styles/index.scss';
-
-#demo {
-  .pagination {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: rem(50);
-  }
-  .pagination-wrapper {
-    border: 1px solid $darkColor;
-    margin-top: rem(15);
-    border-radius: rem(6);
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
