@@ -18,6 +18,14 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'tooltip1',
+    loadComponent: () =>
+      import('./pages/tooltip/tooltip1/tooltip1.component').then(
+        (m) => m.Tooltip1Component,
+      ),
+  },
+
+  {
     path: 'dropdown',
     loadComponent: () =>
       import('./pages/dropdown/dropdown.component').then(
