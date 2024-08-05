@@ -1,27 +1,47 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  inject,
-  PLATFORM_ID,
-} from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
-import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from '../card/card.component';
+import { Tooltip1Component } from './tooltip1/tooltip1.component';
+import { Tooltip2Component } from './tooltip2/tooltip2.component';
+import { Tooltip3Component } from './tooltip3/tooltip3.component';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-demo-tooltip',
   standalone: true,
-  imports: [CommonModule, CodeSnippetComponent, ModalComponent],
+  imports: [CommonModule, CardComponent, ModalComponent],
   templateUrl: './tooltip.component.html',
   styleUrl: './tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipComponent {
-  constructor() {
-    if (isPlatformBrowser(inject(PLATFORM_ID)) && tooltipElements) {
-      tooltipElements(inject(DOCUMENT).defaultView as Window);
-    }
+  cards = [
+    {
+      title: 'Clickable tooltip',
+      imageUrl: 'assets/images/tab-img-1.png',
+      contentComponent: Tooltip1Component,
+    },
+    {
+      title: 'Hover tooltip',
+      imageUrl: 'assets/images/tab-img-1.png',
+      contentComponent: Tooltip2Component,
+    },
+    {
+      title: 'Tooltip with button',
+      imageUrl: 'assets/images/tab-img-1.png',
+      contentComponent: Tooltip3Component,
+    },
+  ];
+  selectedContentComponent: any = null;
+  isModalVisible = false;
+
+  openModal(contentComponent: any): void {
+    this.selectedContentComponent = contentComponent;
+    this.isModalVisible = true;
+  }
+
+  closeModal(): void {
+    this.isModalVisible = false;
+    this.selectedContentComponent = null;
   }
 }
