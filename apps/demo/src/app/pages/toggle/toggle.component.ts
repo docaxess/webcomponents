@@ -15,9 +15,6 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToggleComponent {
-  modalVisible = false;
-  modalTitle = '';
-  selectedContentComponent: any;
   cards = [
     {
       title: 'Simple toggle',
@@ -35,14 +32,4 @@ export class ToggleComponent {
       route: '/toggle/toggle3',
     },
   ];
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-  }
-
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-  }
 }

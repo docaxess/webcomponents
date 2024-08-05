@@ -15,13 +15,6 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
   },
-  {
-    path: 'tooltip1',
-    loadComponent: () =>
-      import('./pages/tooltip/tooltip1/tooltip1.component').then(
-        (m) => m.Tooltip1Component,
-      ),
-  },
 
   {
     path: 'dropdown',
