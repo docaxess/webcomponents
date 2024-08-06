@@ -1,53 +1,51 @@
-<app-modal>
-  <div preview>
-    <div class="with-username login">
-      <form class="login-form">
-        <ip-email
-          class="form-group"
-          error-message="The username entered is incorrect"
-          required
-        >
-        </ip-email>
-        <ip-password
+<div class="preview" *ngIf="currentView === 'preview'">
+  <div class="with-username login">
+    <form class="login-form">
+      <ip-email
+        input-label="Username"
+        class="form-group"
+        error-message="The username entered is incorrect"
+        required
+      >
+      </ip-email>
+      <ip-password
+        class="form-group"
+        error-message="The password entered is incorrect"
+        forgot-password-link="#"
+        invalid="true"
+      >
+      </ip-password>
+      <div class="submit-btn">
+        <button class="btn" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div *ngIf="currentView === 'code'">
+  <pre><code>
+      &lt;div class="with-username login">
+      &lt;form class="login-form">
+      &lt;ip-email
+         input-label="Username"
+         class="form-group"
+         error-message="The username entered is incorrect"
+         required
+        &gt;
+      &lt;/ip-email&gt;
+      &lt;ip-password
           class="form-group"
           error-message="The password entered is incorrect"
-          forgot-password-link="#"
           invalid="true"
-        >
-        </ip-password>
-        <div class="submit-btn">
-          <button class="btn" type="submit">Login</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div code>
-    <code>
-      <pre>
-          <div class="with-username login">
-              <form class="login-form">
-                <ip-email
-                  class="form-group"
-                  error-message="The username entered is incorrect"
-                  required
-                >
-                </ip-email>
-                <ip-password
-                  class="form-group"
-                  error-message="The password entered is incorrect"
-                  invalid="true"
-                  forgot-password-link="#"
-                >
-                </ip-password>
-                <div class="submit-btn">
-                  <button class="btn" type="submit">Login</button>
-                </div>
-              </form>
-          </div>
-      </pre>
-    </code>
-  </div>
-  <div doc>
-    <app-doc-login></app-doc-login>
-  </div>
-</app-modal>
+          forgot-password-link="#"
+      &gt;
+      &lt;/ip-password&gt;
+      &lt;div class="submit-btn"&gt;
+          &lt;button class="btn" type="submit"&gt;Login&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;/form&gt;
+      &lt;/div&gt;
+    </code></pre>
+</div>
+<div *ngIf="currentView === 'doc'">
+  <app-doc-login></app-doc-login>
+</div>

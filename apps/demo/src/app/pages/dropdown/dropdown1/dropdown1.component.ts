@@ -3,6 +3,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
+  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
@@ -19,6 +20,15 @@ import { ModalComponent } from '../../modal/modal.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Dropdown1Component {
+  modalTitle = 'Dropdown 1';
+  isModalVisible = false;
+  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+  handleCloseModal() {
+    this.isModalVisible = false;
+  }
+  openModal() {
+    this.isModalVisible = true;
+  }
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && dropdownElements) {
       dropdownElements(inject(DOCUMENT).defaultView as Window);

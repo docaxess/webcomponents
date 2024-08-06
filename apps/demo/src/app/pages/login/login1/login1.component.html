@@ -1,49 +1,49 @@
-<app-modal>
-  <div preview>
-    <div class="with-email login">
-      <form class="login-form">
-        <ip-email
-          class="form-group"
-          error-message="The email entered is incorrect"
-        >
-        </ip-email>
-        <ip-password
-          class="form-group"
-          error-message="The password entered is incorrect"
-          forgot-password-link="#"
-        >
-        </ip-password>
-        <div class="submit-btn">
-          <button class="btn" type="submit">Login</button>
-        </div>
-      </form>
-    </div>
+<div class="preview" *ngIf="currentView === 'preview'">
+  <div class="with-email login">
+    <form class="login-form">
+      <ip-email
+        required
+        class="form-group"
+        error-message="The email entered is incorrect"
+      >
+      </ip-email>
+      <ip-password
+        class="form-group"
+        error-message="The password entered is incorrect"
+        forgot-password-link="#"
+      >
+      </ip-password>
+      <div class="submit-btn">
+        <button class="btn" type="submit">Login</button>
+      </div>
+    </form>
   </div>
-  <div code>
-    <code>
-      <pre>
-        <div class="with-email login">
-            <form class="login-form">
-              <ip-email
-                class="form-group"
-                error-message="The email entered is incorrect"
-              >
-              </ip-email>
-              <ip-password
-                class="form-group"
-                error-message="The password entered is incorrect"
-                forgot-password-link="#"
-              >
-              </ip-password>
-              <div class="submit-btn">
-                <button class="btn" type="submit">Login</button>
-              </div>
-            </form>
-        </div>
-    </pre>
-    </code>
-  </div>
-  <div doc>
-    <app-doc-login></app-doc-login>
-  </div>
-</app-modal>
+</div>
+<div *ngIf="currentView === 'code'">
+  <pre>
+      <code>
+  &lt;div class="with-email login"&gt;
+    &lt;form class="login-form"&gt;
+      &lt;ip-email
+        required
+        class="form-group"
+         error-message="The email entered is incorrect"
+      &gt;
+      &lt;/ip-email&gt;
+      &lt;ip-password
+        class="form-group"
+        error-message="The password entered is incorrect"
+        forgot-password-link="#"
+      &gt;
+      &lt;/ip-password&gt;
+      &lt;div class="submit-btn"&gt;
+        &lt;button class="btn" type="submit"&gt;Login&lt;/button&gt;
+      &lt;/div&gt;
+   &lt;/form&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+</div>
+<div *ngIf="currentView === 'doc'">
+  <app-doc-login></app-doc-login>
+</div>

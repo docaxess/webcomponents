@@ -1,0 +1,175 @@
+<section id="documentation">
+  <h2 class="under-title">Installation</h2>
+
+  <h3>Step 1:</h3>
+  <p>
+    Install the <code>ip-radio</code> component as a dependency in the project:
+  </p>
+  <pre><code>npm install ip-radio</code></pre>
+
+  <h3>Step 2:</h3>
+  <p>Import module in script file:</p>
+  <pre><code>import '../node_modules/ip-tab-panel/dist/ip-tab-panel/ip-tab-panel.esm';</code></pre>
+
+  <h2 class="under-title">Usage:</h2>
+  <p>
+    To use this component, we must add the properties as attributes and use slot
+    for each content of tab.
+  </p>
+
+  <h3>Properties</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute</th>
+        <th>Necessity</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>tabPanelHeaders</code></td>
+        <td><code>tab-panel-headers</code></td>
+        <td>Required</td>
+        <td>
+          It defines headers for each tab in the IP Tab Panel component using a
+          JSON array
+        </td>
+        <td><code>TabPanelInterface[] | string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>selectedTab</code></td>
+        <td><code>selected-tab</code></td>
+        <td>Optional</td>
+        <td>This is the tab that displayed by default</td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>tabPanelTitle</code></td>
+        <td><code>tab-panel-title</code></td>
+        <td>Optional</td>
+        <td>This is the title of the tap-panel</td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>titleTag</code></td>
+        <td><code>title-tag</code></td>
+        <td>Optional</td>
+        <td>
+          It represents the tag we want to use for the tab-panel-title; it's
+          required if you add title
+        </td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>tab-panel-headers</h4>
+  <p>This is used to set the tab-panel header title. It has 4 properties:</p>
+  <ul>
+    <li><strong>title</strong>: this is optional for the content title</li>
+    <li>
+      <strong>imagePath</strong>: this is optional if you want to add an image
+      with or as a title
+    </li>
+    <li>
+      <strong>imgPathActive</strong>: this is optional for the image that will
+      be displayed when it is selected
+    </li>
+    <li>
+      <strong>alt</strong>: this is the <code>alt</code> of the image that is
+      required for accessibility if you add image
+    </li>
+  </ul>
+
+  <h2 class="under-title">Panels content</h2>
+  <p>
+    The contents of the panel should have as attribute
+    <code>slot="tab-content-1"</code> and value of
+    <code>tab-content-*</code> incremented accordingly
+  </p>
+  <p><em>e.g:</em></p>
+  <pre class="code-block"><code>&lt;ip-tab-panel
+  selected-tab="tab-content-2"
+  title-tag="h2"
+  tab-panel-title="Audit RGAA"
+  tab-panel-headers='[
+        &#123;"title":"Accessibilité", "imgPath": "assets/images/acc-1.svg", "imgPathActive": "assets/images/acc-1-active.svg"&#125;,
+        &#123;"title":"Pdf Document", "imgPath":"assets/images/acc-2.svg", "imgPathActive": "assets/images/acc-2-active.svg"&#125;,
+        &#123;"title":"Statistical", "imgPath":"assets/images/acc-3.svg", "imgPathActive": "assets/images/acc-3-active.svg"&#125;,
+        &#123;"title":"Certification", "imgPath":"assets/images/acc-4.svg", "imgPathActive": "assets/images/acc-4-active.svg"&#125;,
+        &#123;"title":"Legislation", "imgPath":"assets/images/acc-5.svg", "imgPathActive": "assets/images/acc-5-active.svg"&#125;
+      ]'
+&gt;
+  &lt;div slot="tab-content-1"&gt;--content of Accessibilité--&lt;/div&gt;
+  &lt;div slot="tab-content-2"&gt;--content of Pdf Document--&lt;/div&gt;
+  &lt;div slot="tab-content-3"&gt;--content of Statistical--&lt;/div&gt;
+  &lt;div slot="tab-content-4"&gt;--content of Certification--&lt;/div&gt;
+  &lt;div slot="tab-content-5"&gt;--content of Legislation--&lt;/div&gt;
+&lt;/ip-tab-panel&gt;</code></pre>
+
+  <h2 class="under-title">Customization</h2>
+
+  <h3>Style</h3>
+  <p>We have a set of predefined variable used to customize the tab-panel:</p>
+  <ul>
+    <li><code>--ip-tab-primary-color</code></li>
+    <li><code>--ip-tab-secondary-color</code></li>
+    <li><code>--ip-tab-font</code></li>
+    <li><code>--ip-tab-icon</code></li>
+  </ul>
+  <p>To update the values use the following:</p>
+  <pre class="code-block"><code>ip-tab-panel &#123;
+  --ip-tab-primary-color: #006342;
+  --ip-tab-secondary-color: #000000;
+&#125;</code></pre>
+
+  <h3>Class</h3>
+  <p>We have a set of classes that could be used to customise accordingly:</p>
+  <ul>
+    <li><code>tab-container</code>: for the container of the panels</li>
+    <li><code>tab-panel-title</code>: for the title of the panel</li>
+    <li>
+      <code>tab-btn-list</code>: for the list of the button in the header of the
+      panel
+    </li>
+    <li><code>tab-btn</code>: for button in the header</li>
+    <li>
+      <code>tab-btn-active</code>: for button in the header if its content is
+      displayed
+    </li>
+    <li>
+      <code>tab-icon</code>: for the image or icon in the header of the panel
+    </li>
+    <li>
+      <code>tab-icon-active</code>: for the image or icon in the header if its
+      content is displayed
+    </li>
+    <li><code>tab-text</code>: for the text in the header</li>
+  </ul>
+  <p>Example:</p>
+  <pre class="code-block"><code>ip-tab-panel::part(tab-btn) &#123;
+  background-color: #305b38;
+&#125;</code></pre>
+  <br />
+  <pre class="code-block"><code>ip-tab-panel &#123;
+  &::part(tab-btn) &#123;
+    background-color: #305b38;
+  &#125;
+&#125;</code></pre>
+  <br />
+  <pre class="code-block"><code>&lt;ip-tab-panel&gt;
+  &lt;div class="my-class"&gt;--content 1--&lt;/div&gt;
+
+  &lt;div class="my-class"&gt;--content 2--&lt;/div&gt;
+
+  &lt;div class="my-class"&gt;--content 3--&lt;/div&gt;
+&lt;/ip-tab-panel&gt;</code></pre>
+</section>
