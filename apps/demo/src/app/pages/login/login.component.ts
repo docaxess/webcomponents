@@ -9,6 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { CardComponent } from '../card/card.component';
+import { Login1Component } from './login1/login1.component';
+import { Login2Component } from './login2/login2.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-login',
@@ -47,14 +50,24 @@ export class LoginComponent {
   }
   cards = [
     {
-      title: 'login with email',
-      link: '/login',
+      title: 'Login with email',
       imageUrl: 'assets/images/tab-img-1.png',
+      contentComponent: Login1Component,
     },
     {
-      title: 'login with username',
-      link: '/login',
+      title: 'Login with username',
       imageUrl: 'assets/images/tab-img-1.png',
+      contentComponent: Login2Component,
     },
   ];
+  openModal(contentComponent: any, title: string) {
+    this.modalVisible = true;
+    this.modalTitle = title;
+    this.selectedContentComponent = contentComponent;
+  }
+
+  closeModal() {
+    this.modalVisible = false;
+    this.selectedContentComponent = null;
+  }
 }

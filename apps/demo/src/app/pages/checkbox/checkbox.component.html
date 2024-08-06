@@ -1,5 +1,6 @@
 <div class="container">
   <app-card
+    (click)="openModal(card.contentComponent, card.title)"
     *ngFor="let card of cards"
     [imageUrl]="card.imageUrl"
     [title]="card.title"
