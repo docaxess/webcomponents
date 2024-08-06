@@ -3,6 +3,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
+  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';

@@ -12,6 +12,9 @@ import { ModalComponent } from '../../features/modal/modal.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownComponent {
+  modalVisible = false;
+  modalTitle = '';
+  selectedContentComponent: any;
   cards = [
     {
       title: 'Dropdown 1',
@@ -19,4 +22,14 @@ export class DropdownComponent {
       route: '/dropdown/dropdown1',
     },
   ];
+  openModal(contentComponent: any, title: string) {
+    this.modalVisible = true;
+    this.modalTitle = title;
+    this.selectedContentComponent = contentComponent;
+  }
+
+  closeModal() {
+    this.modalVisible = false;
+    this.selectedContentComponent = null;
+  }
 }

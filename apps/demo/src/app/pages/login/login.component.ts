@@ -16,6 +16,9 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
+  modalVisible = false;
+  modalTitle = '';
+  selectedContentComponent: any;
   cards = [
     {
       title: 'Login with email',
@@ -28,4 +31,14 @@ export class LoginComponent {
       route: '/login/login2',
     },
   ];
+  openModal(contentComponent: any, title: string) {
+    this.modalVisible = true;
+    this.modalTitle = title;
+    this.selectedContentComponent = contentComponent;
+  }
+
+  closeModal() {
+    this.modalVisible = false;
+    this.selectedContentComponent = null;
+  }
 }

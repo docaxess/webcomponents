@@ -16,6 +16,9 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipComponent {
+  modalVisible = false;
+  modalTitle = '';
+  selectedContentComponent: any;
   cards = [
     {
       title: 'Clickable tooltip',
