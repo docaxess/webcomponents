@@ -2,7 +2,6 @@
 
 :host {
   border-right: 3px solid $primaryColor;
-  position: sticky;
   top: 0;
   height: 90vh;
   overflow-y: auto;
@@ -13,8 +12,7 @@
   color: $sidebarTextColor;
   padding: rem(30);
   border-radius: rem(15);
-  margin: rem(20);
-  height: 80vh;
+  height: 77.5vh;
   overflow-y: auto;
 
   a {

@@ -1,4 +1,15 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ComponentFactoryResolver,
+  ViewChild,
+  ViewContainerRef,
+  ComponentRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,20 +17,52 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss',
+  styleUrls: ['./modal.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalComponent {
   @Input() title: string = 'Default Title';
   @Input() isVisible: boolean = false;
+  @Input() contentComponent: any;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
 
-  activeTab: 'preview' | 'code' | 'doc' = 'preview';
+  @ViewChild('modalContent', { read: ViewContainerRef })
+  contentHost!: ViewContainerRef;
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
 
-  selectTab(tab: 'preview' | 'code' | 'doc'): void {
-    this.activeTab = tab;
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private cdRef: ChangeDetectorRef,
+  ) {}
+
+  ngOnChanges() {
+    if (this.isVisible) {
+      this.loadComponent();
+    }
+  }
+
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+    this.loadComponent();
+  }
+
+  loadComponent() {
+    if (!this.isVisible || !this.contentComponent) {
+      return;
+    }
+
+    this.contentHost.clear();
+    const componentFactory =
+      this.componentFactoryResolver.resolveComponentFactory(
+        this.contentComponent,
+      );
+    const componentRef: ComponentRef<any> =
+      this.contentHost.createComponent(componentFactory);
+    componentRef.instance.currentView = this.currentView;
   }
 
   onClose(): void {
     this.closeModal.emit();
+    this.cdRef.detectChanges();
   }
 }
