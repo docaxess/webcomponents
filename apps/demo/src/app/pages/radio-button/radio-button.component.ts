@@ -1,6 +1,12 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
+import { Radio1ButtonComponent } from './radio1/radio1.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-radio-button',
@@ -11,11 +17,28 @@ import { CardComponent } from '../card/card.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioButtonComponent {
+  modalVisible = false;
+  modalTitle = '';
+  selectedContentComponent: any;
   cards = [
     {
       title: 'Radio button 1',
-      link: '/radio',
       imageUrl: 'assets/images/tab-img-1.png',
+      contentComponent: Radio1ButtonComponent,
     },
   ];
+  constructor(private cdRef: ChangeDetectorRef) {}
+
+  openModal(contentComponent: any, title: string) {
+    this.modalVisible = true;
+    this.modalTitle = title;
+    this.selectedContentComponent = contentComponent;
+    this.cdRef.markForCheck();
+  }
+
+  closeModal() {
+    this.modalVisible = false;
+    this.selectedContentComponent = null;
+    this.cdRef.markForCheck();
+  }
 }
