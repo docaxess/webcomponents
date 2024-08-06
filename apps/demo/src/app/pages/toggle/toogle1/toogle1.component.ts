@@ -3,6 +3,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
+  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
@@ -20,6 +21,16 @@ import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Toogle1Component {
+  modalTitle = 'Toogle 1';
+  isModalVisible = false;
+  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+
+  handleCloseModal() {
+    this.isModalVisible = false;
+  }
+  openModal() {
+    this.isModalVisible = true;
+  }
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && toggleElements) {
       toggleElements(inject(DOCUMENT).defaultView as Window);

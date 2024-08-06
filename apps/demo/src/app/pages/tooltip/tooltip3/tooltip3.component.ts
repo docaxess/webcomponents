@@ -19,6 +19,7 @@ import { ModalComponent } from '../../modal/modal.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Tooltip3Component {
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tooltipElements) {
       tooltipElements(inject(DOCUMENT).defaultView as Window);

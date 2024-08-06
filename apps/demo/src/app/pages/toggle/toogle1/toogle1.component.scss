@@ -1,0 +1,8 @@
+@import '../../../../assets/styles/index.scss';
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: rem(70) 0;
+}

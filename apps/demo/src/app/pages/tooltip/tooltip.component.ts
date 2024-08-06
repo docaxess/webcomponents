@@ -15,6 +15,9 @@ import { ModalComponent } from '../modal/modal.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipComponent {
+  modalVisible = false;
+  modalTitle = '';
+  selectedContentComponent: any;
   cards = [
     {
       title: 'Clickable tooltip',
@@ -32,16 +35,15 @@ export class TooltipComponent {
       contentComponent: Tooltip3Component,
     },
   ];
-  selectedContentComponent: any = null;
-  isModalVisible = false;
 
-  openModal(contentComponent: any): void {
+  openModal(contentComponent: any, title: string) {
+    this.modalVisible = true;
+    this.modalTitle = title;
     this.selectedContentComponent = contentComponent;
-    this.isModalVisible = true;
   }
 
-  closeModal(): void {
-    this.isModalVisible = false;
+  closeModal() {
+    this.modalVisible = false;
     this.selectedContentComponent = null;
   }
 }

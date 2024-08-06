@@ -1,8 +1,12 @@
-# Ipedis web components 
+# Ipedis web components
+
+[Figma](https://www.figma.com/design/uU1M7tmg5al3bFKhUOL32j/Ipedis-Components?node-id=3-66&m=dev)
+
+[Design System](https://design.ipedis.com/5dda74a23/p/896b0d-tooltip)
 
 ## How to contribute
 
-TODO 
+TODO
 
 ### install dependencies
 
@@ -33,11 +37,13 @@ npm run e2e
 ### create a new component
 
 Execute the following command to create a new component, it will create component `foo` in the packages folder
+
 ```bash
 bin/create-component.sh foo
 ```
 
 You can now run for this particular component
+
 ```bash
 ## Build the component foo
 nx build foo

@@ -1,49 +1,47 @@
-<app-modal>
-  <div preview>
-    <div class="toggle">
-      <ip-toggle
-        active-label="ON"
-        inactive-label="OFF"
-        aria-label="Toggle notifications on or off"
-        size="small"
-        checked="true"
-      >
-      </ip-toggle>
+<div *ngIf="currentView === 'preview'">
+  <div class="toggle">
+    <ip-toggle
+      active-label="ON"
+      inactive-label="OFF"
+      aria-label="Toggle notifications on or off"
+      size="small"
+      checked="true"
+    >
+    </ip-toggle>
 
-      <ip-toggle
-        active-label="ON"
-        inactive-label="OFF"
-        aria-label="Toggle notifications on or off"
-        checked="false"
-      >
-      </ip-toggle>
-    </div>
+    <ip-toggle
+      active-label="ON"
+      inactive-label="OFF"
+      aria-label="Toggle notifications on or off"
+      checked="false"
+    >
+    </ip-toggle>
   </div>
-  <div code>
-    <code>
-      <pre>
-            <div class="toggle">
-                <ip-toggle
-                    active-label="ON"
-                    inactive-label="OFF"
-                    aria-label="Toggle notifications on or off"
-                    size="small"
-                    checked="true"
-                >
-                </ip-toggle>
+</div>
+<div *ngIf="currentView === 'code'">
+  <pre>
+  <code>
+      &lt;div class="toggle"&gt;
+      &lt;ip-toggle
+          active-label="ON"
+          inactive-label="OFF"
+          aria-label="Toggle notifications on or off"
+          size="small"
+           checked="true"
+      &gt;
+      &lt;/ip-toggle&gt;
 
-                <ip-toggle
-                    active-label="ON"
-                    inactive-label="OFF"
-                    aria-label="Toggle notifications on or off"
-                    checked="false"
-                >
-                </ip-toggle>
-            </div>
-      </pre>
-    </code>
-  </div>
-  <div doc>
-    <app-doc-toogle></app-doc-toogle>
-  </div>
-</app-modal>
+      &lt;ip-toggle
+          active-label="ON"
+          inactive-label="OFF"
+          aria-label="Toggle notifications on or off"
+          checked="false"
+      &gt;
+      &lt;/ip-toggle&gt;
+      &lt;/div&gt;
+ </code>
+</pre>
+</div>
+<div *ngIf="currentView === 'doc'">
+  <app-doc-toogle></app-doc-toogle>
+</div>

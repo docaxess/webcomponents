@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Checkbox1Component } from './checkbox1.component';
+import { DocTabPanelComponent } from './doc-tab-panel.component';
 
-describe('Checkbox1Component', () => {
-  let component: Checkbox1Component;
-  let fixture: ComponentFixture<Checkbox1Component>;
+describe('DocTabPanelComponent', () => {
+  let component: DocTabPanelComponent;
+  let fixture: ComponentFixture<DocTabPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Checkbox1Component],
+      imports: [DocTabPanelComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Checkbox1Component);
+    fixture = TestBed.createComponent(DocTabPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

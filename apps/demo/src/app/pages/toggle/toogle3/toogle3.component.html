@@ -1,29 +1,27 @@
-<app-modal>
-  <div preview>
-    <div class="toggle">
-      <ip-toggle size="small">
-        <label class="switch-label" slot="switch-label"
-          >Activate strong authentication</label
-        >
-        <p class="helper-text" slot="helper-text">This is the helper text.</p>
-      </ip-toggle>
-    </div>
+<div *ngIf="currentView === 'preview'">
+  <div class="toggle">
+    <ip-toggle size="small">
+      <label class="switch-label" slot="switch-label"
+        >Activate strong authentication</label
+      >
+      <p class="helper-text" slot="helper-text">This is the helper text.</p>
+    </ip-toggle>
   </div>
-  <div code>
+</div>
+<div *ngIf="currentView === 'code'">
+  <pre>
     <code>
-      <pre>
-        <div class="toggle">
-            <ip-toggle size="small">
-              <label class="switch-label" slot="switch-label"
-                >Activate strong authentication</label
-              >
-              <p class="helper-text" slot="helper-text">This is the helper text.</p>
-            </ip-toggle>
-          </div>
-        </pre>
+      &lt;div class="toggle"&gt;
+        &lt;ip-toggle size="small"&gt;
+          &lt;label class="switch-label" slot="switch-label"
+            &gt;Activate strong authentication
+          &lt;/label&gt;
+          &lt;p class="helper-text" slot="helper-text"&gt;This is the helper text.&lt;/p&gt;
+        &lt;/ip-toggle&gt;
+      &lt;/div&gt;
     </code>
-  </div>
-  <div doc>
-    <app-doc-toogle></app-doc-toogle>
-  </div>
-</app-modal>
+</pre>
+</div>
+<div *ngIf="currentView === 'doc'">
+  <app-doc-toogle></app-doc-toogle>
+</div>

@@ -1,0 +1,9 @@
+@import '../../../../assets/styles/index.scss';
+.container {
+  .preview {
+    margin: rem(180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

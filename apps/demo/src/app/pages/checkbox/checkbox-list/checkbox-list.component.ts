@@ -3,6 +3,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
+  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
@@ -19,6 +20,16 @@ import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loade
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CheckboxListComponent {
+  modalTitle = 'Checkbox List';
+  isModalVisible = false;
+  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+
+  handleCloseModal() {
+    this.isModalVisible = false;
+  }
+  openModal() {
+    this.isModalVisible = true;
+  }
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && checkboxElements) {
       checkboxElements(inject(DOCUMENT).defaultView as Window);
