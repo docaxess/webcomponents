@@ -1,0 +1,32 @@
+@import '../../../../assets/styles/index.scss';
+
+.preview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: rem(70) 0;
+}
+.login {
+  width: rem(350);
+  padding: rem(20);
+  border: 1px solid $darkColor;
+  border-radius: rem(5);
+  box-shadow: 0 rem(10) rem(20) rgba($darkColor, 0.1);
+}
+.submit-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button {
+    width: rem(100);
+    height: rem(40);
+    background-color: $primaryColor;
+    color: $lightColor;
+    border: none;
+    border-radius: rem(5);
+    cursor: pointer;
+    &:hover {
+      background-color: $primaryColor;
+    }
+  }
+}

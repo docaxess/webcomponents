@@ -1,56 +1,16 @@
 <div class="container">
   <app-card
+    (click)="openModal(card.contentComponent, card.title)"
     *ngFor="let card of cards"
     [imageUrl]="card.imageUrl"
     [title]="card.title"
   >
   </app-card>
-  <!-- <section id="demo">
-        <h2 class="under-title">Demo</h2>
-        <div class="card">
-            <div class="with-email login">
-                <form class="login-form">
-                    <ip-email
-                      class="form-group"
-                      error-message="The email entered is incorrect"
-                    >
-                    </ip-email>
-                    <ip-password
-                      class="form-group"
-                      error-message="The password entered is incorrect"
-                      forgot-password-link="#"
-                    >
-                    </ip-password>
-                    <div class="submit-btn">
-                    <button class="btn" type="submit">Login</button>
-                    </div>
-                  </form>
-            </div>
-            <app-code-snippet [code]="codeSnippetWithEmail"></app-code-snippet>
-        </div>
-        <div class="card">
-            <div class="with-username login">
-                <form class="login-form">
-                    <ip-email
-                      class="form-group"
-                      error-message="The username entered is incorrect"
-                      input-label="User name"
-                    >
-                    </ip-email>
-                    <ip-password
-                      class="form-group"
-                      error-message="The password entered is incorrect"
-                      invalid="true"
-                      forgot-password-link="#"
-                    >
-                    </ip-password>
-                    <div class="submit-btn">
-                        <button class="btn" type="submit">Login</button>
-                    </div>
-                  </form>
-            </div>
-            <app-code-snippet [code]="codeSnippetWithUsername"></app-code-snippet>
-        </div>
-
-    </section> -->
 </div>
+<app-modal
+  [isVisible]="modalVisible"
+  [title]="modalTitle"
+  [contentComponent]="selectedContentComponent"
+  (close)="closeModal()"
+>
+</app-modal>

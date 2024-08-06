@@ -8,9 +8,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 16px;
   background-color: #fff;
+  cursor: pointer;
 }
-a {
-  text-decoration: none;
+.title {
   color: $secondaryColor;
   display: flex;
   align-items: center;

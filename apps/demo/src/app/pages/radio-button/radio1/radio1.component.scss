@@ -1,0 +1,11 @@
+@import '../../../../assets/styles/index.scss';
+
+.preview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: rem(70) 0;
+}
+.radio-wrapper {
+  width: rem(300);
+}
