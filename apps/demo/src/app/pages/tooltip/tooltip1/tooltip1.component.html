@@ -1,8 +1,5 @@
 <div class="container">
-  Ceci est un test de tooltip
-  <button (click)="openModal()">Open</button>
-
-  <div preview>
+  <div class="preview" *ngIf="currentView === 'preview'">
     <div class="tooltip">
       <ip-tooltip
         tooltip-trigger="Click Me!"
@@ -12,7 +9,7 @@
       </ip-tooltip>
     </div>
   </div>
-  <div code>
+  <div class="code" *ngIf="currentView === 'code'">
     <pre><code>
             &lt;ip-tooltip 
             tooltip-trigger="Click Me!"
@@ -23,7 +20,7 @@
             &lt;/ip-tooltip&gt;
     </code></pre>
   </div>
-  <div doc>
+  <div *ngIf="currentView === 'doc'">
     <section id="documentation">
       <h2 class="under-title">Installation</h2>
       <p>

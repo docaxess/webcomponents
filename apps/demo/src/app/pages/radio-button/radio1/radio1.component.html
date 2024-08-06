@@ -1,38 +1,37 @@
-<app-modal>
-  <div preview>
-    <div class="radio-wrapper">
-      <ip-radio
-        id="radio"
-        legend="What is your gender"
-        default-option-id="Female"
-        options='[
+<div class="preview" *ngIf="currentView === 'preview'">
+  <div class="radio-wrapper">
+    <ip-radio
+      id="radio"
+      legend="What is your gender"
+      default-option-id="Female"
+      options='[
           {"id": "Male", "label": "Male"}, 
           {"id": "Female", "label": "Female"},
           {"id": "Other", "label": "Other", "disabled": true}
     
           ]'
-      ></ip-radio>
-    </div>
+    ></ip-radio>
   </div>
-  <div code>
-    <code>
-      <pre>
-        <div class="radio-wrapper">
-            <ip-radio
-              id="radio"
-              legend="What is your gender"
-              default-option-id="Female"
-              options='[
-                {"id": "Male", "label": "Male"}, 
-                {"id": "Female", "label": "Female"},
-                {"id": "Other", "label": "Other", "disabled": true}
-          
-                ]'
-            ></ip-radio>
-      </pre>
-    </code>
-  </div>
-  <div doc>
-    <app-doc-radio></app-doc-radio>
-  </div>
-</app-modal>
+</div>
+<div *ngIf="currentView === 'code'">
+  <pre>
+  <code>
+      &lt;div class="radio-wrapper"&gt;
+      &lt;ip-radio
+          id="radio"
+          legend="What is your gender"
+          default-option-id="Female"
+          options='[
+          &#123;"id": "Male", "label": "Male"&#125;, 
+          &#123;"id": "Female", "label": "Female"&#125;,
+          &#123;"id": "Other", "label": "Other", "disabled": true&#125;
+           ]'
+        &gt;
+      &lt;/ip-radio&gt;
+      &lt;/div&gt;
+  </code>
+</pre>
+</div>
+<div *ngIf="currentView === 'doc'">
+  <app-doc-radio></app-doc-radio>
+</div>

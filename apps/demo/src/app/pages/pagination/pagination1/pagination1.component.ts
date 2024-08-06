@@ -19,6 +19,8 @@ import { ModalComponent } from '../../modal/modal.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Pagination1Component {
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && paginationElements) {
       paginationElements(inject(DOCUMENT).defaultView as Window);
