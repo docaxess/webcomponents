@@ -1,0 +1,69 @@
+{
+  "name": "modal",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/modal/src",
+  "projectType": "library",
+  "tags": ["type:webcomponent"],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/modal/tsconfig.lib.json",
+        "configPath": "packages/modal/stencil.config.ts",
+        "outputPath": "dist/packages/modal"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/modal/tsconfig.lib.json",
+        "configPath": "packages/modal/stencil.config.ts",
+        "outputPath": "dist/packages/modal"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/modal/tsconfig.lib.json",
+        "configPath": "packages/modal/stencil.config.ts",
+        "outputPath": "dist/packages/modal"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/modal/tsconfig.lib.json",
+        "configPath": "packages/modal/stencil.config.ts",
+        "outputPath": "dist/packages/modal"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/modal/src/**/*.{ts,tsx,json}",
+          "packages/modal/*.{ts,tsx,json}"
+        ]
+      }
+    }
+  }
+}
