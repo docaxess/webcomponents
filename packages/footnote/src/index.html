@@ -1,0 +1,25 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+            ip-footnote {
+        --border-left: 4px solid rgb(161, 51, 143);
+      }
+    </style>
+    <script type="module" src="/build/footnote.esm.js"></script>
+    <script nomodule src="/build/footnote.js"></script>
+  </head>
+  <body>
+    <p>
+      Here is a sentence with a footnote reference<sup><a href="#footnote-1" id="ref1">1</a></sup
+      >.
+    </p>
+    <ip-footnote id="footnote-1" identifier="1" text="This is a detailed explanation or reference for the footnote."></ip-footnote>
+  </body>
+</html>
