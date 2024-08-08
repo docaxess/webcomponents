@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type     | Default        |
-| ------------ | ------------- | ----------- | -------- | -------------- |
-| `buttonText` | `button-text` |             | `string` | `'Open modal'` |
-| `svgColor`   | `svg-color`   |             | `string` | `'black'`      |
+| Property         | Attribute          | Description | Type     | Default              |
+| ---------------- | ------------------ | ----------- | -------- | -------------------- |
+| `buttonText`     | `button-text`      |             | `string` | `'Open modal'`       |
+| `closeAriaLabel` | `close-aria-label` |             | `string` | `'Close the dialog'` |
+| `svgColor`       | `svg-color`        |             | `string` | `'black'`            |
 
 
 ## Shadow Parts

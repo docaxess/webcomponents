@@ -10,17 +10,22 @@ export class Modal {
   @State() isOpen = false;
   @Prop() buttonText = 'Open modal';
   @Prop() svgColor = 'black';
+  @Prop() closeAriaLabel = 'Close the dialog';
 
   private triggerButton: HTMLElement;
   private closeButton: HTMLElement;
+  private focusableElements: HTMLElement[];
 
   private handleOpen = () => {
     this.isOpen = true;
-    setTimeout(() => {
-      if (this.closeButton) {
-        this.closeButton.focus();
-      }
-    }, 100);
+    requestAnimationFrame(() => {
+      queueMicrotask(() => {
+        if (this.closeButton) {
+          this.closeButton.focus();
+        }
+        this.setFocusableElements();
+      });
+    });
   };
 
   private handleClose = () => {
@@ -39,23 +44,36 @@ export class Modal {
           'input, button, a, [tabindex]:not([tabindex="-1"])',
         ),
       ) as HTMLElement[];
-      const firstFocusableElement = focusableElements[0];
-      const lastFocusableElement =
-        focusableElements[focusableElements.length - 1];
 
-      if (event.shiftKey) {
-        if (document.activeElement === firstFocusableElement) {
-          event.preventDefault();
-          lastFocusableElement.focus();
-        }
-      } else {
-        if (document.activeElement === lastFocusableElement) {
-          event.preventDefault();
-          this.closeButton.focus();
-        }
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+        this.closeButton.focus();
+        return;
+      }
+
+      const firstFocusableElement = this.focusableElements[0];
+      const lastFocusableElement =
+        this.focusableElements[this.focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstFocusableElement) {
+        event.preventDefault();
+        lastFocusableElement.focus();
+      }
+
+      if (!event.shiftKey && document.activeElement === lastFocusableElement) {
+        event.preventDefault();
+        this.closeButton.focus();
       }
     }
   };
+
+  private setFocusableElements() {
+    this.focusableElements = Array.from(
+      this.modal.querySelectorAll(
+        'input, button, a, [tabindex]:not([tabindex="-1"])',
+      ),
+    ) as HTMLElement[];
+  }
 
   private modal: HTMLDialogElement;
 
@@ -79,11 +97,12 @@ export class Modal {
         >
           <button
             class="close-dialog"
-            aria-label="Close the dialog"
+            aria-label={this.closeAriaLabel}
             onClick={this.handleClose}
             ref={(el) => (this.closeButton = el as HTMLElement)}
           >
             <svg
+              class="svg__close-icon"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 40 40"
               fill="none"
