@@ -6,25 +6,27 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class Footnote {
-  @Prop() identifier: string;
-
+  @Prop() identifier = 'default-id';
+  @Prop() btnAriaLabel = 'Back to main text';
   @Prop() text: string;
   @Prop() svgColor = 'grey';
 
   render() {
+    const id = this.identifier || 'fallback-id';
     return (
       <div
         class="footnote"
         role="note"
-        aria-labelledby={`footnote-label-${this.identifier}`}
+        aria-labelledby={`footnote-label-${id}`}
       >
-        <span id={`footnote-label-${this.identifier}`} class="footnote-id">
-          [{this.identifier}]
+        <span id={`footnote-label-${id}`} class="footnote-id">
+          [{id}]
         </span>
         <div class="text">
           <span class="footnote-text">{this.text}</span>
-          <a href={`#ref${this.identifier}`} aria-label="Back to main text">
+          <a href={`#ref${id}`} aria-label={this.btnAriaLabel}>
             <svg
+              class="svg__icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"

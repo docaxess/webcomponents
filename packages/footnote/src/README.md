@@ -28,10 +28,11 @@ The text where we will put the id of the footnote must have an `id=ref{this.iden
 
 ### Properties
 
-| Property     | Attribute    | Necessity | Description               | Type     | Default     |
-| ------------ | ------------ | --------- | ------------------------- | -------- | ----------- |
-| `identifier` | `identifier` | Required  | The ID of the footnote.   | `string` | `undefined` |
-| `text`       | `text`       | Required  | The text of the footnote. | `string` | `undefined` |
+| Property       | Attribute        | Necessity | Description                                           | Type     | Default             |
+| -------------- | ---------------- | --------- | ----------------------------------------------------- | -------- | ------------------- |
+| `identifier`   | `identifier`     | Required  | The ID of the footnote.                               | `string` | `default-id`        |
+| `text`         | `text`           | Required  | The text of the footnote.                             | `string` | `undefined`         |
+| `btnAriaLabel` | `btn-aria-label` | Required  | The aria-label of the footnote to return to the text. | `string` | `Back to main text` |
 
 Example:
 
