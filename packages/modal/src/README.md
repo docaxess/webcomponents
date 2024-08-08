@@ -24,9 +24,10 @@ To use this component, we must add the property as attribute and use slot for th
 
 ### Property
 
-| Property     | Attribute     | Necessity | Description                            | Type     | Default      |
-| ------------ | ------------- | --------- | -------------------------------------- | -------- | ------------ |
-| `buttonText` | `button-text` | Required  | `it is the text in the trigger button` | `string` | `Open modal` |
+| Property         | Attribute          | Necessity | Description                             | Type     | Default            |
+| ---------------- | ------------------ | --------- | --------------------------------------- | -------- | ------------------ |
+| `buttonText`     | `button-text`      | Required  | `it is the text in the trigger button`  | `string` | `Open modal`       |
+| `closeAriaLabel` | `close-aria-label` | Required  | `it is the aria-label for close button` | `string` | `Close the dialog` |
 
 ### Content
 
