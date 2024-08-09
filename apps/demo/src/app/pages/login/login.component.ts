@@ -11,7 +11,7 @@ import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { CardComponent } from '../card/card.component';
 import { Login1Component } from './login1/login1.component';
 import { Login2Component } from './login2/login2.component';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../../features/modal/modal.component';
 
 @Component({
   selector: 'app-login',

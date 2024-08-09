@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '../card/card.component';
+import { CardComponent } from '../../features/card/card.component';
 import { Tooltip1Component } from './tooltip1/tooltip1.component';
 import { Tooltip2Component } from './tooltip2/tooltip2.component';
 import { Tooltip3Component } from './tooltip3/tooltip3.component';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../../features/modal/modal.component';
 
 @Component({
   selector: 'app-demo-tooltip',
