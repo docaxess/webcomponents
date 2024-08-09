@@ -8,7 +8,8 @@ import {
   ViewContainerRef,
   ComponentRef,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
+  HostListener,
+  SimpleChanges,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -25,19 +26,18 @@ export class ModalComponent {
   @Input() isVisible: boolean = false;
   @Input() contentComponent: any;
   @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-
   @ViewChild('modalContent', { read: ViewContainerRef })
   contentHost!: ViewContainerRef;
   currentView: 'preview' | 'code' | 'doc' = 'preview';
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private cdRef: ChangeDetectorRef,
-  ) {}
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  ngOnChanges() {
-    if (this.isVisible) {
-      this.loadComponent();
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['isVisible']) {
+      if (this.isVisible) {
+        this.currentView = 'preview';
+        this.loadComponent();
+      }
     }
   }
 
@@ -50,7 +50,9 @@ export class ModalComponent {
     if (!this.isVisible || !this.contentComponent) {
       return;
     }
-
+    if (!this.contentHost) {
+      return;
+    }
     this.contentHost.clear();
     const componentFactory =
       this.componentFactoryResolver.resolveComponentFactory(
@@ -60,9 +62,14 @@ export class ModalComponent {
       this.contentHost.createComponent(componentFactory);
     componentRef.instance.currentView = this.currentView;
   }
-
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscapeKey(event: KeyboardEvent) {
+    if (this.isVisible) {
+      this.onClose();
+    }
+  }
   onClose(): void {
+    this.isVisible = false;
     this.closeModal.emit();
-    this.cdRef.detectChanges();
   }
 }
