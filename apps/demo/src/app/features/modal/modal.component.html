@@ -5,6 +5,9 @@
   class="modal-overlay"
   aria-modal="true"
 >
+  <button class="modal-close" aria-label="Close Modal" (click)="onClose()">
+    ×
+  </button>
   <div class="modal-content">
     <div class="wrapper">
       <div class="wrapper-head">
@@ -14,12 +17,13 @@
 
         <div class="wrapper-buttons">
           <button
-            [ngClass]="{ active: currentView === 'preview' }"
+            [ngClass]="{ previewActive: currentView === 'preview' }"
             (click)="switchView('preview')"
             class="preview"
             aria-label="View preview"
           >
             <svg
+              [ngClass]="{ 'svg-active': currentView === 'preview' }"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
@@ -30,14 +34,14 @@
               <g clip-path="url(#clip0_98_118)">
                 <path
                   d="M16 7C6 7 2 16 2 16C2 16 6 25 16 25C26 25 30 16 30 16C30 16 26 7 16 7Z"
-                  stroke="white"
+                  stroke="black"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
                 <path
                   d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21Z"
-                  stroke="white"
+                  stroke="black"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -55,8 +59,10 @@
             [ngClass]="{ active: currentView === 'code' }"
             (click)="switchView('code')"
             aria-label="View code"
+            class="code-btn"
           >
             <svg
+              [ngClass]="{ 'svg-active': currentView === 'code' }"
               width="52"
               height="52"
               viewBox="0 0 52 52"
@@ -107,8 +113,10 @@
             [ngClass]="{ active: currentView === 'doc' }"
             (click)="switchView('doc')"
             aria-label="View documentation"
+            class="doc-btn"
           >
             <svg
+              [ngClass]="{ 'svg-active': currentView === 'doc' }"
               width="52"
               height="52"
               viewBox="0 0 52 52"
@@ -182,10 +190,6 @@
       >
         <ng-template #modalContent></ng-template>
       </div>
-
-      <button class="modal-close" aria-label="Close Modal" (click)="onClose()">
-        ×
-      </button>
     </div>
   </div>
 </div>

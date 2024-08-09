@@ -1,0 +1,24 @@
+@import '../../../assets/styles/index.scss';
+
+.code-container {
+  background-color: black;
+  color: $lightColor;
+}
+
+pre {
+  padding: rem(10);
+  overflow-x: auto;
+  margin: 0;
+}
+.button-list {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(10) rem(5);
+  border-bottom: 2px solid white;
+}
+button {
+  color: $lightColor;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

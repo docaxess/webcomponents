@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
-import { CardComponent } from '../card/card.component';
-import { ModalComponent } from '../modal/modal.component';
+import { CodeSnippetComponent } from '../../features/code-snippet/code-snippet.component';
+import { CardComponent } from '../../features/card/card.component';
+import { ModalComponent } from '../../features/modal/modal.component';
 import { TabPanel1Component } from './tab-panel1/tab-panel1.component';
 
 @Component({
