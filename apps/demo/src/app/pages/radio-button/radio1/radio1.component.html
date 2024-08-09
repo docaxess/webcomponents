@@ -14,23 +14,7 @@
   </div>
 </div>
 <div *ngIf="currentView === 'code'">
-  <pre>
-  <code>
-      &lt;div class="radio-wrapper"&gt;
-      &lt;ip-radio
-          id="radio"
-          legend="What is your gender"
-          default-option-id="Female"
-          options='[
-          &#123;"id": "Male", "label": "Male"&#125;, 
-          &#123;"id": "Female", "label": "Female"&#125;,
-          &#123;"id": "Other", "label": "Other", "disabled": true&#125;
-           ]'
-        &gt;
-      &lt;/ip-radio&gt;
-      &lt;/div&gt;
-  </code>
-</pre>
+  <app-code-snippet [code]="radioCode"></app-code-snippet>
 </div>
 <div *ngIf="currentView === 'doc'">
   <app-doc-radio></app-doc-radio>

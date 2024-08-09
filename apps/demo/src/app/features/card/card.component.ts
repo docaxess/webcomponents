@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  HostListener,
   Input,
   Output,
 } from '@angular/core';
@@ -21,6 +22,14 @@ export class CardComponent {
   @Input() title: string = 'Card title';
   @Input() imageUrl: string = 'assets/images/tab-img-1.png';
   @Output() cardClick = new EventEmitter<void>();
+
+  @HostListener('keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent): void {
+    if (event.code === 'Enter' || event.code === 'Space') {
+      event.preventDefault();
+      this.onCardClick();
+    }
+  }
 
   onCardClick(): void {
     this.cardClick.emit();

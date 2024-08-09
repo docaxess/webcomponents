@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 
 @Component({

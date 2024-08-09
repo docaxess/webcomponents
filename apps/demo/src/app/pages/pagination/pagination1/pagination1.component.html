@@ -8,14 +8,7 @@
   </div>
 </div>
 <div *ngIf="currentView === 'code'">
-  <pre><code>
-    &lt;ip-pagination
-        total-pages="25"
-        current-page="5"
-        visible-pages="7"
-    &gt;
-    &lt;/ip-pagination&gt;
-    </code></pre>
+  <app-code-snippet [code]="codeSnippet"></app-code-snippet>
 </div>
 <div *ngIf="currentView === 'doc'">
   <section id="documentation">

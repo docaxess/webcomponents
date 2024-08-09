@@ -9,7 +9,7 @@ import {
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../../../features/modal/modal.component';
 
 @Component({
   selector: 'app-tab-panel1',
