@@ -4,9 +4,9 @@ import {
   Component,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '../card/card.component';
+import { CardComponent } from '../../features/card/card.component';
 import { Radio1ButtonComponent } from './radio1/radio1.component';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../../features/modal/modal.component';
 
 @Component({
   selector: 'app-radio-button',

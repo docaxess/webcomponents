@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgb(17, 11, 11);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,13 +18,13 @@
 .modal-content {
   height: 85%;
   background: white;
-  padding: 20px;
   border-radius: 8px;
   position: relative;
   max-width: 1125px;
   width: auto;
   overflow-y: auto;
-  height: 90%;
+  max-height: 90%;
+  height: auto;
 }
 
 .wrapper-head {
@@ -32,11 +32,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid $darkColor;
+  border-bottom: 1px solid #efefef;
 }
 
 .wrapper-title h3 {
   margin: 0;
+  color: #2e3243;
 }
 
 .wrapper-buttons {
@@ -45,12 +46,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 57px;
+    height: 51px;
     width: 120px;
     border-radius: 5px;
-    background-color: black;
-    color: white;
+    color: $darkColor;
     gap: 10px;
+  }
+  .previewActive {
+    background-color: $darkColor;
+    color: #fff;
   }
   button {
     border: none;
@@ -58,6 +62,28 @@
     margin-left: 10px;
     background-color: none;
     padding: 0;
+
+    &:focus,
+    &:hover {
+      outline: 2px solid $darkColor;
+      outline-offset: 3px;
+    }
+  }
+  .doc-btn,
+  .code-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: $darkColor;
+    gap: 10px;
+    background: none;
+  }
+  .svg-active {
+    fill: $darkColor;
+    path {
+      stroke: #fff;
+    }
   }
 }
 
@@ -67,10 +93,20 @@
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: rem(15);
+  right: rem(30);
   background: transparent;
   border: none;
-  font-size: 1.5em;
+  font-size: rem(32);
   cursor: pointer;
+  color: $lightColor;
+
+  &:focus,
+  &:hover {
+    border-color: $lightColor;
+    border-radius: rem(25);
+  }
+}
+.content {
+  background-color: #f4f4f4;
 }

@@ -1,7 +1,6 @@
 @import '../../../assets/styles/index.scss';
 
 :host {
-  border-right: 3px solid $primaryColor;
   top: 0;
   height: 90vh;
   overflow-y: auto;
@@ -9,7 +8,7 @@
 }
 
 .sidebar-menu {
-  background-color: $sidebarBackgroundColor;
+  background-color: #2e3243;
   color: $sidebarTextColor;
   padding: rem(30);
   border-radius: rem(15);

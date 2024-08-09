@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../../../features/modal/modal.component';
 
 @Component({
   selector: 'app-dropdown1',

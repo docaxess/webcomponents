@@ -2,13 +2,18 @@
 
 .card {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: rem(8);
   overflow: hidden;
-  width: 300px;
+  width: rem(300);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 16px;
   background-color: #fff;
   cursor: pointer;
+  &:focus,
+  &:hover {
+    outline: 3px solid $darkColor;
+    outline-offset: 4px;
+  }
 }
 .title {
   color: $secondaryColor;

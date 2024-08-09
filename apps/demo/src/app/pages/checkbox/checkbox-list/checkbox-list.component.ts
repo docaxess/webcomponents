@@ -7,7 +7,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../../../features/modal/modal.component';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 
 @Component({

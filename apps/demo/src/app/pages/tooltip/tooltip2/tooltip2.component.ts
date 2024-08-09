@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../../../features/modal/modal.component';
 
 @Component({
   selector: 'app-tooltip2',
