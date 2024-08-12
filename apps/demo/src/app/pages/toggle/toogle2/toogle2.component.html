@@ -19,28 +19,7 @@
   </div>
 </div>
 <div *ngIf="currentView === 'code'">
-  <pre>
-  <code>
-      &lt;div class="toggle"&gt;
-      &lt;ip-toggle
-          active-label="ON"
-          inactive-label="OFF"
-          aria-label="Toggle notifications on or off"
-          size="small"
-           checked="true"
-      &gt;
-      &lt;/ip-toggle&gt;
-
-      &lt;ip-toggle
-          active-label="ON"
-          inactive-label="OFF"
-          aria-label="Toggle notifications on or off"
-          checked="false"
-      &gt;
-      &lt;/ip-toggle&gt;
-      &lt;/div&gt;
- </code>
-</pre>
+  <app-code-snippet [code]="toggleWithTextCode"> </app-code-snippet>
 </div>
 <div *ngIf="currentView === 'doc'">
   <app-doc-toogle></app-doc-toogle>

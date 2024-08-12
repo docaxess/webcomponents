@@ -10,6 +10,7 @@ import {
   ChangeDetectionStrategy,
   HostListener,
   SimpleChanges,
+  OnChanges,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -21,7 +22,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ModalComponent {
+export class ModalComponent implements OnChanges {
   @Input() title: string = 'Default Title';
   @Input() isVisible: boolean = false;
   @Input() contentComponent: any;
@@ -37,6 +38,8 @@ export class ModalComponent {
       if (this.isVisible) {
         this.currentView = 'preview';
         this.loadComponent();
+      } else {
+        this.currentView = 'preview'; // Reset view to 'preview' when modal is hidden
       }
     }
   }
