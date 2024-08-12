@@ -56,6 +56,11 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'table',
+    loadComponent: () =>
+      import('./pages/table/table.component').then((m) => m.TableComponent),
+  },
+  {
     path: 'tab-panel',
     loadComponent: () =>
       import('./pages/tab-panel/tab-panel.component').then(
