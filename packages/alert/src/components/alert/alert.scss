@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  --font-size: var(--fontSize, 16px);
+  --font-family: var(--fontFamily, 'Nunito Sans');
+  --message-color: var(--messageColor, #2e3243);
+  --font-title-size: var(--fontTitleSize, 18px);
+}
+
+.alert {
+  gap: 10px;
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 5px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family);
+  font-style: normal;
+  line-height: normal;
+  color: var(--message-color);
+}
+.title {
+  font-weight: 700;
+  padding: 5px;
+  font-size: var(--font-title-size);
+}
+.message {
+  width: 95%;
+  font-size: var(--font-size);
+}
+.title-info {
+  color: #2072b7;
+}
+
+.title-warning {
+  color: #c15700;
+}
+
+.title-danger {
+  color: #d31010;
+}
+
+.title-success {
+  color: #287d17;
+}
+
+.icon {
+  margin-right: 0.5em;
+}
+
+.close-button {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: transparent;
+  border: none;
+  color: currentColor;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.message-content {
+  flex: 1;
+}
