@@ -1,0 +1,100 @@
+<section id="documentation">
+  <h2 class="under-title">Installation</h2>
+  <p>
+    Follow these steps to install and use the
+    <code>ip-dropdown</code> component in your project.
+  </p>
+  <h3>Step 1</h3>
+  <p>
+    Install the <code>ip-dropdown</code> component as a dependency in your
+    project:
+  </p>
+  <pre><code>npm install ip-dropdown</code></pre>
+
+  <h3>Step 2</h3>
+  <p>Import the module into your script file:</p>
+  <pre><code>import '../node_modules/ip-dropdown/dist/ip-dropdown/ip-dropdown.esm';</code></pre>
+
+  <h2 class="under-title">Usage</h2>
+  <p>To use this component, add the properties as attributes.</p>
+  <h3>Properties</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute</th>
+        <th>Necessity</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>itemsOptions</td>
+        <td>items-options</td>
+        <td>Required</td>
+        <td>It is an array of strings used for items in the dropdown menu.</td>
+        <td>string</td>
+        <td>"[]"</td>
+      </tr>
+      <tr>
+        <td>dropdownTitle</td>
+        <td>dropdown-title</td>
+        <td>Optional</td>
+        <td>Title of dropdown menu.</td>
+        <td>string</td>
+        <td>undefined</td>
+      </tr>
+      <tr>
+        <td>placeholder</td>
+        <td>placeholder</td>
+        <td>Optional</td>
+        <td>The placeholder of dropdown.</td>
+        <td>string</td>
+        <td>"Select an option"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="under-title">Customization</h2>
+  <p>We have a set of predefined variables used to customize the dropdown:</p>
+  <ul>
+    <li><code>--primary-color</code></li>
+    <li><code>--color-hover</code></li>
+    <li><code>--font-color</code></li>
+    <li><code>--selected-bg-color</code></li>
+    <li><code>--font-size</code></li>
+  </ul>
+  <p>To update the values, use the following CSS:</p>
+  <pre>
+            ip-dropdown &#123;
+              --primary-color: #006342;
+              --color-hover: #000000;
+              --font-color: #333333;
+              --selected-bg-color: #f0f0f0;
+              --font-size: 14px;
+            &#125;
+              </pre
+  >
+
+  <h2 class="under-title">Event</h2>
+  <p>
+    To listen this event emitted,we have definied
+    <code>itemSelected</code> event in this component.
+  </p>
+
+  <p>
+    The <code>itemSelected</code> event is fired when a user selects an item in
+    the dropdown. You can listen to this event in your application to handle the
+    selection.
+  </p>
+  <pre>
+        const dropdown = document.querySelector("ip-dropdown");   
+        dropdown.addEventListener("itemSelected", (event) => &#123;
+        const selectedItem = event.detail;
+        console.log("Item selected:", selectedItem);
+        &#125;);
+    </pre
+  >
+</section>

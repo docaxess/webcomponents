@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-doc-tab-panel',
+  selector: 'app-doc-tooltip',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './doc-tab-panel.component.html',
-  styleUrl: './doc-tab-panel.component.scss',
+  templateUrl: './doc-tooltip.component.html',
+  styleUrl: './doc-tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DocTabPanelComponent {}
+export class DocTooltipComponent {}

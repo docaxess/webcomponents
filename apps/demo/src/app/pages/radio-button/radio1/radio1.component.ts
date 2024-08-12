@@ -27,8 +27,6 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Radio1ButtonComponent {
-  modalTitle = 'Radio-button 1';
-  isModalVisible = false;
   @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
   radioCode = `
   <div class="radio-wrapper">
@@ -44,12 +42,7 @@ export class Radio1ButtonComponent {
     ></ip-radio>
   </div>
   `;
-  handleCloseModal() {
-    this.isModalVisible = false;
-  }
-  openModal() {
-    this.isModalVisible = true;
-  }
+
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && radioElements) {
       radioElements(inject(DOCUMENT).defaultView as Window);
