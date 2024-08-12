@@ -10,27 +10,38 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
+import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 
 @Component({
   selector: 'app-toogle1',
   standalone: true,
-  imports: [CommonModule, ModalComponent, DocToogleComponent],
+  imports: [
+    CommonModule,
+    ModalComponent,
+    DocToogleComponent,
+    CodeSnippetComponent,
+  ],
   templateUrl: './toogle1.component.html',
   styleUrl: './toogle1.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Toogle1Component {
-  modalTitle = 'Toogle 1';
-  isModalVisible = false;
+  toggleCode = `
+  <div class="toggle">
+    <ip-toggle aria-label="Toggle notifications on or off" checked="true">
+    </ip-toggle>
+
+    <ip-toggle
+      aria-label="Toggle notifications on or off"
+      size="large"
+      checked="false"
+    >
+    </ip-toggle>
+  </div>
+  `;
   @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
 
-  handleCloseModal() {
-    this.isModalVisible = false;
-  }
-  openModal() {
-    this.isModalVisible = true;
-  }
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && toggleElements) {
       toggleElements(inject(DOCUMENT).defaultView as Window);

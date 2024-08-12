@@ -9,18 +9,7 @@
   </div>
 </div>
 <div *ngIf="currentView === 'code'">
-  <pre>
-    <code>
-      &lt;div class="toggle"&gt;
-        &lt;ip-toggle size="small"&gt;
-          &lt;label class="switch-label" slot="switch-label"
-            &gt;Activate strong authentication
-          &lt;/label&gt;
-          &lt;p class="helper-text" slot="helper-text"&gt;This is the helper text.&lt;/p&gt;
-        &lt;/ip-toggle&gt;
-      &lt;/div&gt;
-    </code>
-</pre>
+  <app-code-snippet [code]="toggleWithIndicCode"> </app-code-snippet>
 </div>
 <div *ngIf="currentView === 'doc'">
   <app-doc-toogle></app-doc-toogle>
