@@ -4,7 +4,7 @@
   </div>
 </div>
 <div *ngIf="currentView === 'code'">
-  <pre><code>&lt;ip-checkbox default-checked="true" disabled="true" id="checked"&gt; Checked ! &lt;/ip-checkbox&gt;</code></pre>
+  <app-code-snippet [code]="checkboxCode"></app-code-snippet>
 </div>
 <div *ngIf="currentView === 'doc'">
   <section id="documentation">

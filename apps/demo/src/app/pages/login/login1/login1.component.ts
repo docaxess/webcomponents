@@ -27,8 +27,6 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Login1Component {
-  modalTitle = 'Login 1';
-  isModalVisible = false;
   @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
   withEmailCode = `
   <div class="with-email login">
@@ -51,12 +49,7 @@ export class Login1Component {
     </form>
   </div>
   `;
-  handleCloseModal() {
-    this.isModalVisible = false;
-  }
-  openModal() {
-    this.isModalVisible = true;
-  }
+
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && loginElements) {
       loginElements(inject(DOCUMENT).defaultView as Window);
