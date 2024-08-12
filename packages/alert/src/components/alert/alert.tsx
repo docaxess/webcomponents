@@ -6,10 +6,10 @@ import { Component, h, Prop, State } from '@stencil/core';
   shadow: true,
 })
 export class Alert {
-  @Prop() alertTitle: string = '';
+  @Prop() alertTitle = '';
   @Prop() type: 'info' | 'warning' | 'danger' | 'success' = 'info';
-  @Prop() message: string = '';
-  @State() visible: boolean = true;
+  @Prop() message = '';
+  @State() visible = true;
 
   private closeAlert() {
     this.visible = false;
