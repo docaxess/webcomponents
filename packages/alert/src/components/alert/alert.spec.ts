@@ -10,7 +10,7 @@ describe('ip-alert', () => {
     expect(root).toEqualHtml(`
             <ip-alert>
                 <mock:shadow-root>
-<div class="alert alert-info">
+<div class="alert alert-info" role="alert">
   <div class="icon">
     <svg
       aria-hidden="true"
@@ -32,7 +32,9 @@ describe('ip-alert', () => {
       ></path>
     </svg>
   </div>
-  <button class="close-button" aria-label="Close alert">×</button>
+  <button class="close-button" aria-label="Close alert" 
+          tabindex="0"
+   >×</button>
   <div class="message-content"><div class="message"></div></div>
 </div>
                 </mock:shadow-root>
@@ -47,7 +49,7 @@ describe('ip-alert', () => {
     expect(root).toEqualHtml(`
             <ip-alert alert-title="Test Title" message="Test Message">
                 <mock:shadow-root>
-                <div class="alert alert-info">
+                <div class="alert alert-info" role="alert">
   <div class="icon">
     <svg
       aria-hidden="true"
@@ -69,7 +71,9 @@ describe('ip-alert', () => {
       ></path>
     </svg>
   </div>
-  <button class="close-button" aria-label="Close alert">×</button>
+  <button class="close-button" aria-label="Close alert" 
+          tabindex="0"
+  >×</button>
   <div class="message-content">
     <div class="title title-info">Test Title</div>
     <div class="message">Test Message</div>

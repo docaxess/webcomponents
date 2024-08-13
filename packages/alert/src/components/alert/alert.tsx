@@ -146,12 +146,13 @@ export class Alert {
     }
 
     return (
-      <div class={`alert alert-${this.type}`}>
+      <div class={`alert alert-${this.type}`} role="alert">
         <div class="icon">{this.getIcon()}</div>
         <button
           class="close-button"
           onClick={() => this.closeAlert()}
           aria-label="Close alert"
+          tabindex="0"
         >
           ×
         </button>
