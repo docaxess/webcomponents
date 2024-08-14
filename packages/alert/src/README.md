@@ -26,11 +26,12 @@ To use this component, we must add the properties as attributes.
 
 ### Properties
 
-| Property     | Attribute     | Necessity | Description                       | Type                                           | Default  |
-| ------------ | ------------- | --------- | --------------------------------- | ---------------------------------------------- | -------- |
-| `message`    | `message`     | Required  | `the message for the alert`       | `string`                                       | `''`     |
-| `type`       | `type`        | Required  | `the type of the alert`           | `"danger" \| "info" \| "success" \| "warning"` | `'info'` |
-| `alertTitle` | `alert-title` | Optional  | `the title of alert if it exists` | `string`                                       | `''`     |
+| Property         | Attribute          | Necessity | Description                          | Type                                           | Default         |
+| ---------------- | ------------------ | --------- | ------------------------------------ | ---------------------------------------------- | --------------- |
+| `message`        | `message`          | Required  | `the message for the alert`          | `string`                                       | `''`            |
+| `type`           | `type`             | Required  | `the type of the alert`              | `"danger" \| "info" \| "success" \| "warning"` | `'info'`        |
+| `alertTitle`     | `alert-title`      | Optional  | `the title of alert if it exists`    | `string`                                       | `''`            |
+| `closeAriaLabel` | `close-aria-label` | Optional  | `the aria-label of the close button` | `string`                                       | `'Close alert'` |
 
 _e.g:_
 
@@ -47,16 +48,16 @@ _e.g:_
 
 We have a set of predefined variable used to customisation the slide:
 
-- **---font-size**
-- **--message-color**
-- **--font-family**
-- **--font-title-size**
+- **--alert-font-size**
+- **--alert-message-color**
+- **--alert-font-family**
+- **--alert-font-title-size**
 
 To update the values use the following:
 
 ```css
 ip-alert {
-  --font-family: 'Nunito Sans';
-  --font-title-size: 16px;
+  --alert-font-family: 'Nunito Sans';
+  --alert-font-title-size: 16px;
 }
 ```

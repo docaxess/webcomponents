@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property         | Attribute          | Description | Type     | Default              |
@@ -10,6 +11,7 @@
 | `closeAriaLabel` | `close-aria-label` |             | `string` | `'Close the dialog'` |
 | `svgColor`       | `svg-color`        |             | `string` | `'black'`            |
 
+
 ## Shadow Parts
 
 | Part               | Description |
@@ -17,6 +19,7 @@
 | `"dialog-content"` |             |
 | `"trigger-button"` |             |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

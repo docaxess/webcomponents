@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                           | Default  |
-| ------------ | ------------- | ----------- | ---------------------------------------------- | -------- |
-| `alertTitle` | `alert-title` |             | `string`                                       | `''`     |
-| `message`    | `message`     |             | `string`                                       | `''`     |
-| `type`       | `type`        |             | `"danger" \| "info" \| "success" \| "warning"` | `'info'` |
+| Property         | Attribute          | Description | Type                                           | Default         |
+| ---------------- | ------------------ | ----------- | ---------------------------------------------- | --------------- |
+| `alertTitle`     | `alert-title`      |             | `string`                                       | `''`            |
+| `closeAriaLabel` | `close-aria-label` |             | `string`                                       | `'Close alert'` |
+| `message`        | `message`          |             | `string`                                       | `''`            |
+| `type`           | `type`             |             | `"danger" \| "info" \| "success" \| "warning"` | `'info'`        |
 
 
 ----------------------------------------------

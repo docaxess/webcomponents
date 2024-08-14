@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpAlert {
         "alertTitle": string;
+        "closeAriaLabel": string;
         "message": string;
         "type": 'info' | 'warning' | 'danger' | 'success';
     }
@@ -26,6 +27,7 @@ declare global {
 declare namespace LocalJSX {
     interface IpAlert {
         "alertTitle"?: string;
+        "closeAriaLabel"?: string;
         "message"?: string;
         "type"?: 'info' | 'warning' | 'danger' | 'success';
     }

@@ -1,9 +1,9 @@
 :host {
   display: block;
-  --font-size: var(--fontSize, 16px);
-  --font-family: var(--fontFamily, 'Nunito Sans');
-  --message-color: var(--messageColor, #2e3243);
-  --font-title-size: var(--fontTitleSize, 18px);
+  --alert-font-size: var(--fontSize, 16px);
+  --alert-font-family: var(--fontFamily, 'Nunito Sans');
+  --alert-message-color: var(--messageColor, #2e3243);
+  --alert-font-title-size: var(--fontTitleSize, 18px);
 }
 
 .alert {
@@ -16,19 +16,19 @@
   border-radius: 4px;
   background: #fff;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-  font-family: var(--font-family);
+  font-family: var(--alert-font-family);
   font-style: normal;
   line-height: normal;
-  color: var(--message-color);
+  color: var(--alert-message-color);
 }
 .title {
   font-weight: 700;
   padding: 5px;
-  font-size: var(--font-title-size);
+  font-size: var(--alert-font-title-size);
 }
 .message {
   width: 95%;
-  font-size: var(--font-size);
+  font-size: var(--alert-font-size);
 }
 .title-info {
   color: #2072b7;
