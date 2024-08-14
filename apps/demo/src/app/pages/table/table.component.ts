@@ -6,8 +6,9 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
 import { defineCustomElements as tableElements } from '@ipedis/table/loader';
+import { CodeSnippetComponent } from '../../features/code-snippet/code-snippet.component';
+
 @Component({
   selector: 'app-table',
   standalone: true,
@@ -41,6 +42,7 @@ export class TableComponent {
   >
   </ip-table>
   `;
+
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tableElements) {
       tableElements(inject(DOCUMENT).defaultView as Window);
