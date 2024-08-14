@@ -53,20 +53,20 @@ Example:
 
 We have a set of predefined variable used to customize the dropdown:
 
-- **--border-left**
-- **--font-color**
-- **--font-size**
-- **--identifier-color**
-- **--identifier-size**
-- **--svg-size**
-- **--svg-color**
+- **--footnote-border-left**
+- **--footnote-font-color**
+- **--footnote-font-size**
+- **--footnote-identifier-color**
+- **--footnote-identifier-size**
+- **--footnote-svg-size**
+- **--footnote-svg-color**
 
 To update the values use the following:
 
 ```css
 ip-footnote {
-  --font-color: #006342;
-  --font-size: #000000;
-  --border-left: 2px solid #000000;
+  --footnote-font-color: #006342;
+  --footnote-font-size: #000000;
+  --footnote-border-left: 2px solid #000000;
 }
 ```

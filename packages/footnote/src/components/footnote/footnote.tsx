@@ -11,8 +11,13 @@ export class Footnote {
   @Prop() text: string;
   @Prop() svgColor = 'grey';
 
+  private generateUniqueId(): string {
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    return 'id-' + array[0].toString(36);
+  }
   render() {
-    const id = this.identifier || 'fallback-id';
+    const id = this.identifier || this.generateUniqueId();
     return (
       <div
         class="footnote"
