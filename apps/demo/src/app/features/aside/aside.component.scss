@@ -18,7 +18,6 @@
   a {
     text-decoration: none;
     color: $lightColor;
-    color: $lightColor;
   }
 
   > h2 {
@@ -95,32 +94,32 @@
           pointer-events: none;
         }
 
-      &[aria-current='true'],
-      &:hover,
-      &:focus,
-      &:focus-visible {
-        background-color: fade(darken($darkColor, 100), 30);
-        color: contrast(
-          fade(darken($darkColor, 100), 30),
-          $lightColor,
-          $darkColor
-        );
+        &[aria-current='true'],
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          background-color: fade(darken($darkColor, 100), 30);
+          color: contrast(
+                          fade(darken($darkColor, 100), 30),
+                          $lightColor,
+                          $darkColor
+          );
 
           &::before {
             inline-size: rem(5);
           }
         }
 
-      &:hover,
-      &:focus,
-      &:focus-visible {
-        transition:
-          background-color $transition-in-out,
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          transition: background-color $transition-in-out,
           color $transition-in-out,
           outline-offset $transition-in-out;
 
-        &::before {
-          transition: inline-size $transition-in-out;
+          &::before {
+            transition: inline-size $transition-in-out;
+          }
         }
       }
     }
