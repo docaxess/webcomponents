@@ -1,11 +1,11 @@
 :host {
   display: block;
-  --primary-color: var(--color-primary, #007bff);
-  --secondary-color: var(--color-secondary, #0056b3);
-  --font-size: var(--font-size, 16px);
-  --font-color: var(--color-font, white);
-  --font-family: var(--font-family, Arial, sans-serif);
-  --svg-color: var(--color-svg, white);
+  --ip-primary-color: var(--color-primary, #007bff);
+  --ip-secondary-color: var(--color-secondary, #0056b3);
+  --ip-font-size: var(--font-size, 16px);
+  --ip-font-color: var(--color-font, white);
+  --ip-font-family: var(--font-family, Arial, sans-serif);
+  --ip-svg-color: var(--color-svg, white);
 }
 
 .container {
@@ -26,11 +26,11 @@
 }
 
 button {
-  background-color: var(--primary-color);
-  color: var(--font-color);
+  background-color: var(--ip-primary-color);
+  color: var(--ip-font-color);
   border: none;
-  font-size: var(--font-size);
-  font-family: var(--font-family);
+  font-size: var(--ip-font-size);
+  font-family: var(--ip-font-family);
   cursor: pointer;
   align-items: center;
   display: flex;
@@ -43,11 +43,11 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--ip-secondary-color);
 }
 
 svg {
   width: 20px;
   height: 20px;
-  fill: var(--svg-color);
+  fill: var(--ip-svg-color);
 }

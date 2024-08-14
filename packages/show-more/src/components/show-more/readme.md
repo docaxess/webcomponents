@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type     | Default   |
-| ---------- | ----------- | ----------- | -------- | --------- |
-| `svgColor` | `svg-color` |             | `string` | `'white'` |
+| Property       | Attribute        | Description | Type     | Default       |
+| -------------- | ---------------- | ----------- | -------- | ------------- |
+| `showLessText` | `show-less-text` |             | `string` | `'Show Less'` |
+| `showMoreText` | `show-more-text` |             | `string` | `'Show More'` |
+| `svgColor`     | `svg-color`      |             | `string` | `'white'`     |
 
 
 ----------------------------------------------

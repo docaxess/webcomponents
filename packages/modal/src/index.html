@@ -1,0 +1,43 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .modal {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+      }
+      .content {
+        margin: 10px 0;
+        padding: 10px;
+        width: 350px;
+      }
+    </style>
+    <script type="module" src="/build/modal.esm.js"></script>
+    <script nomodule src="/build/modal.js"></script>
+  </head>
+  <body>
+    <div class="modal">
+      <ip-modal button-text="Open Custom Modal">
+        <p slot="content" class="content">
+          Join thousands getting emails in their inbox. Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Hic, unde ipsa quam quo aperiam
+          nostrum repellat laboriosam praesentium atque saepe, obcaecati,
+          perferendis molestias delectus? Maiores, cupiditate tempora.
+          Obcaecati, omnis sunt!
+        </p>
+      </ip-modal>
+    </div>
+  </body>
+</html>

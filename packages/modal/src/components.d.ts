@@ -6,40 +6,38 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface IpAlert {
-        "alertTitle": string;
+    interface IpModal {
+        "buttonText": string;
         "closeAriaLabel": string;
-        "message": string;
-        "type": 'info' | 'warning' | 'danger' | 'success';
+        "svgColor": string;
     }
 }
 declare global {
-    interface HTMLIpAlertElement extends Components.IpAlert, HTMLStencilElement {
+    interface HTMLIpModalElement extends Components.IpModal, HTMLStencilElement {
     }
-    var HTMLIpAlertElement: {
-        prototype: HTMLIpAlertElement;
-        new (): HTMLIpAlertElement;
+    var HTMLIpModalElement: {
+        prototype: HTMLIpModalElement;
+        new (): HTMLIpModalElement;
     };
     interface HTMLElementTagNameMap {
-        "ip-alert": HTMLIpAlertElement;
+        "ip-modal": HTMLIpModalElement;
     }
 }
 declare namespace LocalJSX {
-    interface IpAlert {
-        "alertTitle"?: string;
+    interface IpModal {
+        "buttonText"?: string;
         "closeAriaLabel"?: string;
-        "message"?: string;
-        "type"?: 'info' | 'warning' | 'danger' | 'success';
+        "svgColor"?: string;
     }
     interface IntrinsicElements {
-        "ip-alert": IpAlert;
+        "ip-modal": IpModal;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ip-alert": LocalJSX.IpAlert & JSXBase.HTMLAttributes<HTMLIpAlertElement>;
+            "ip-modal": LocalJSX.IpModal & JSXBase.HTMLAttributes<HTMLIpModalElement>;
         }
     }
 }
