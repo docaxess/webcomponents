@@ -10,9 +10,9 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsideComponent {
-  constructor(private router: Router) {}
+  isOpen: { [key: string]: boolean } = {};
 
-  goToTooltip() {
-    this.router.navigate(['/tooltip']);
+  toggleSection(section: string): void {
+    this.isOpen[section] = !this.isOpen[section];
   }
 }

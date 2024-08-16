@@ -39,7 +39,7 @@ export class ModalComponent implements OnChanges {
         this.currentView = 'preview';
         this.loadComponent();
       } else {
-        this.currentView = 'preview'; // Reset view to 'preview' when modal is hidden
+        this.currentView = 'preview';
       }
     }
   }

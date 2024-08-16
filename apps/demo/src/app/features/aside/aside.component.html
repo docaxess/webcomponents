@@ -1,6 +1,9 @@
 <menu class="sidebar-menu">
-  <h2>OVERVIEW</h2>
-  <ul class="global-elements">
+  <h2 (click)="toggleSection('overview')">
+    OVERVIEW
+    <span class="toggle-arrow" [class.rotate]="isOpen['overview']"></span>
+  </h2>
+  <ul class="global-elements" [class.expanded]="isOpen['overview']">
     <li>
       <a routerLink="/" aria-current="page" aria-label="Go to Introduction">
         Intro
@@ -8,13 +11,20 @@
     </li>
   </ul>
 
-  <h2>COMPONENTS</h2>
-  <ul class="global-elements">
+  <h2 (click)="toggleSection('components')">
+    COMPONENTS
+    <span class="toggle-arrow" [class.rotate]="isOpen['components']"></span>
+  </h2>
+  <ul class="global-elements" [class.expanded]="isOpen['components']">
     <li>
-      <a routerLink="/tooltip" aria-label=" Go to Tooltip component"> Tooltip </a>
+      <a routerLink="/tooltip" aria-label=" Go to Tooltip component">
+        Tooltip
+      </a>
     </li>
     <li>
-      <a routerLink="/dropdown" aria-label="Go to Dropdown component"> Dropdown </a>
+      <a routerLink="/dropdown" aria-label="Go to Dropdown component">
+        Dropdown
+      </a>
     </li>
     <li>
       <a routerLink="/toggle" aria-label="Go to Toggle component"> Toggle </a>
@@ -25,7 +35,9 @@
       </a>
     </li>
     <li>
-      <a routerLink="/checkbox" aria-label="Go to Checkbox component"> Checkbox </a>
+      <a routerLink="/checkbox" aria-label="Go to Checkbox component">
+        Checkbox
+      </a>
     </li>
     <li>
       <a routerLink="/login" aria-label="Go to Login component"> Login </a>
@@ -41,6 +53,11 @@
     <li>
       <a routerLink="/tab-panel" aria-label="Go to Tab-panel component">
         Tab-panel
+      </a>
+    </li>
+    <li>
+      <a routerLink="/accordion" aria-label="Go to Accordion component">
+        Accordion
       </a>
     </li>
   </ul>
