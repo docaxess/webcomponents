@@ -5,11 +5,12 @@ import { Tooltip1Component } from './tooltip1/tooltip1.component';
 import { Tooltip2Component } from './tooltip2/tooltip2.component';
 import { Tooltip3Component } from './tooltip3/tooltip3.component';
 import { ModalComponent } from '../../features/modal/modal.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-demo-tooltip',
   standalone: true,
-  imports: [CommonModule, CardComponent, ModalComponent],
+  imports: [CommonModule, CardComponent, ModalComponent, RouterLink],
   templateUrl: './tooltip.component.html',
   styleUrl: './tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
