@@ -12,7 +12,8 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'tooltip',
-    loadChildren: () => import('./pages/tooltip/tooltip.routing').then(m => m.tooltipRoutes)
+    loadChildren: () =>
+      import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
   },
   {
     path: 'tooltip1',
@@ -77,6 +78,13 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./pages/tab-panel/tab-panel.component').then(
         (m) => m.TabPanelComponent,
+      ),
+  },
+  {
+    path: 'accordion',
+    loadChildren: () =>
+      import('./pages/accordion/accordion.routing').then(
+        (m) => m.accordionRoutes,
       ),
   },
   { path: '**', redirectTo: '' },

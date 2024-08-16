@@ -1,0 +1,159 @@
+<div class="wrapper-buttons">
+  <div class="switch-title">
+    <h3>{{ title }}</h3>
+  </div>
+  <div class="icon-button">
+    <button
+      [ngClass]="{ previewActive: currentView === 'preview' }"
+      (click)="switchView('preview')"
+      class="preview"
+      aria-label="View preview"
+    >
+      <svg
+        [ngClass]="{ 'svg-active': currentView === 'preview' }"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        aria-hidden="true"
+      >
+        <g clip-path="url(#clip0_98_118)">
+          <path
+            d="M16 7C6 7 2 16 2 16C2 16 6 25 16 25C26 25 30 16 30 16C30 16 26 7 16 7Z"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21Z"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_98_118">
+            <rect width="32" height="32" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+      Preview
+    </button>
+    <button
+      [ngClass]="{ active: currentView === 'code' }"
+      (click)="switchView('code')"
+      aria-label="View code"
+      class="code-btn"
+    >
+      <svg
+        [ngClass]="{ 'svg-active': currentView === 'code' }"
+        width="52"
+        height="52"
+        viewBox="0 0 52 52"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect x="0.5" y="0.5" width="51" height="51" rx="4.5" fill="#F4F4F4" />
+        <rect
+          x="0.5"
+          y="0.5"
+          width="51"
+          height="51"
+          rx="4.5"
+          stroke="#A0A0A0"
+        />
+        <path
+          d="M18 21L12 26L18 31"
+          stroke="#2E3243"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M30 15L22 37"
+          stroke="#2E3243"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M34 21L40 26L34 31"
+          stroke="#2E3243"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <button
+      [ngClass]="{ active: currentView === 'doc' }"
+      (click)="switchView('doc')"
+      aria-label="View documentation"
+      class="doc-btn"
+    >
+      <svg
+        [ngClass]="{ 'svg-active': currentView === 'doc' }"
+        width="52"
+        height="52"
+        viewBox="0 0 52 52"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect x="0.5" y="0.5" width="51" height="51" rx="4.5" fill="#F4F4F4" />
+        <rect
+          x="0.5"
+          y="0.5"
+          width="51"
+          height="51"
+          rx="4.5"
+          stroke="#A0A0A0"
+        />
+        <g clip-path="url(#clip0_98_143)">
+          <path
+            d="M31 38H17C16.7348 38 16.4804 37.8946 16.2929 37.7071C16.1054 37.5196 16 37.2652 16 37V19C16 18.7348 16.1054 18.4804 16.2929 18.2929C16.4804 18.1054 16.7348 18 17 18H27L32 23V37C32 37.2652 31.8946 37.5196 31.7071 37.7071C31.5196 37.8946 31.2652 38 31 38Z"
+            stroke="#2E3243"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M20 18V15C20 14.7348 20.1054 14.4804 20.2929 14.2929C20.4804 14.1054 20.7348 14 21 14H31L36 19V33C36 33.2652 35.8946 33.5196 35.7071 33.7071C35.5196 33.8946 35.2652 34 35 34H32"
+            stroke="#2E3243"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M21 29H27"
+            stroke="#2E3243"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M21 33H27"
+            stroke="#2E3243"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_98_143">
+            <rect
+              width="32"
+              height="32"
+              fill="white"
+              transform="translate(10 10)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+</div>
