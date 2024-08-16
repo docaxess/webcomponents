@@ -12,10 +12,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'tooltip',
-    loadComponent: () =>
-      import('./pages/tooltip/tooltip.component').then(
-        (m) => m.TooltipComponent,
-      ),
+    loadChildren: () => import('./pages/tooltip/tooltip.routing').then(m => m.tooltipRoutes)
   },
   {
     path: 'tooltip1',
