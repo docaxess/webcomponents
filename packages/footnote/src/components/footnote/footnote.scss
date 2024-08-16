@@ -1,0 +1,40 @@
+:host {
+  --footnote-font-color: var(--fontColor, #000000);
+  --footnote-font-size: var(--fontSize, 0.875rem);
+  --footnote-border-left: var(--borderLeft, 3px solid #ddd);
+  --footnote-identifier-color: var(--identifierColor, #1f41ba);
+  --footnote-identifier-size: var(--identifierSize, 12px);
+  --footnote-svg-size: var(--svgSize, 14px);
+  --footnote-svg-color: var(--color-svg, #1f41ba);
+
+  display: block;
+}
+
+.footnote {
+  border-left: var(--footnote-border-left);
+  padding-left: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  color: var(--font-color);
+}
+
+.footnote-id {
+  font-weight: bold;
+  color: var(--footnote-identifier-color);
+  font-size: var(--footnote-identifier-size);
+}
+
+.footnote-text {
+  font-size: var(--footnote-font-size);
+  display: block;
+  margin-top: 0.5em;
+}
+.svg__icon {
+  width: var(--footnote-svg-size);
+  height: var(--footnote-svg-size);
+  fill: var(--footnote-svg-color);
+}
+.text {
+  display: flex;
+  align-items: flex-end;
+}
