@@ -109,9 +109,9 @@
         &:focus-visible {
           background-color: fade(darken($darkColor, 100), 30);
           color: contrast(
-                          fade(darken($darkColor, 100), 30),
-                          $lightColor,
-                          $darkColor
+            fade(darken($darkColor, 100), 30),
+            $lightColor,
+            $darkColor
           );
 
           &::before {
@@ -122,9 +122,10 @@
         &:hover,
         &:focus,
         &:focus-visible {
-          transition: background-color $transition-in-out,
-          color $transition-in-out,
-          outline-offset $transition-in-out;
+          transition:
+            background-color $transition-in-out,
+            color $transition-in-out,
+            outline-offset $transition-in-out;
 
           &::before {
             transition: inline-size $transition-in-out;
