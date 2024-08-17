@@ -11,6 +11,8 @@ import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loade
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocDropdownComponent } from '../doc-dropdown/doc-dropdown.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-dropdown1',
@@ -20,6 +22,8 @@ import { DocDropdownComponent } from '../doc-dropdown/doc-dropdown.component';
     ModalComponent,
     CodeSnippetComponent,
     DocDropdownComponent,
+    ViewSwitcherComponent,
+    BreadcrumbComponent,
   ],
   templateUrl: './dropdown1.component.html',
   styleUrl: './dropdown1.component.scss',
@@ -35,7 +39,11 @@ export class Dropdown1Component {
   >
   </ip-dropdown>
   `;
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Dropdown 1';
 
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && dropdownElements) {

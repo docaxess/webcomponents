@@ -16,35 +16,21 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipComponent {
-  modalVisible = false;
-  modalTitle = '';
-  selectedContentComponent: any;
   cards = [
     {
       title: 'Clickable tooltip',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Tooltip1Component,
+      route: '/tooltip/tooltip1',
     },
     {
       title: 'Hover tooltip',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Tooltip2Component,
+      route: '/tooltip/tooltip2',
     },
     {
       title: 'Tooltip with button',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Tooltip3Component,
+      route: '/tooltip/tooltip3',
     },
   ];
-
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-  }
-
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-  }
 }

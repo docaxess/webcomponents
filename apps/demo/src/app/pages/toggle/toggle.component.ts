@@ -2,48 +2,34 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CardComponent } from '../../features/card/card.component';
-import { Toogle1Component } from './toogle1/toogle1.component';
-import { Toogle2Component } from './toogle2/toogle2.component';
-import { Toogle3Component } from './toogle3/toogle3.component';
+
 import { ModalComponent } from '../../features/modal/modal.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-toggle',
   standalone: true,
-  imports: [CommonModule, CardComponent, ModalComponent],
+  imports: [CommonModule, CardComponent, ModalComponent, RouterLink],
   templateUrl: './toggle.component.html',
   styleUrl: './toggle.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToggleComponent {
-  modalVisible = false;
-  modalTitle = '';
-  selectedContentComponent: any;
   cards = [
     {
       title: 'Simple toggle',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Toogle1Component,
+      route: '/toggle/toggle1',
     },
     {
       title: 'Toggle with text',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Toogle2Component,
+      route: '/toggle/toggle2',
     },
     {
       title: 'Toggle with indication',
       imageUrl: 'assets/images/tab-img-1.png',
-      contentComponent: Toogle3Component,
+      route: '/toggle/toggle3',
     },
   ];
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-  }
-
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-  }
 }

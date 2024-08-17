@@ -11,6 +11,9 @@ import { defineCustomElements as loginElements } from '@ipedis/login/loader';
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocLoginComponent } from '../doc-login/doc-login.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { RouterLink } from '@angular/router';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-login2',
@@ -20,6 +23,9 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
     ModalComponent,
     DocLoginComponent,
     CodeSnippetComponent,
+    RouterLink,
+    ViewSwitcherComponent,
+    BreadcrumbComponent,
   ],
   templateUrl: './login2.component.html',
   styleUrl: './login2.component.scss',
@@ -27,7 +33,6 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Login2Component {
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
   withUsernameCode = `
   <div class="with-username login">
     <form class="login-form">
@@ -51,7 +56,11 @@ export class Login2Component {
     </form>
   </div>
   `;
-
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Login 2';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && loginElements) {
       loginElements(inject(DOCUMENT).defaultView as Window);

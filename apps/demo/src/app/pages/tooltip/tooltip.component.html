@@ -1,17 +1,9 @@
 <div class="container">
-  <a routerLink="/tooltip/tooltip1">Tooltip 1</a>
   <app-card
-    (click)="openModal(card.contentComponent, card.title)"
     *ngFor="let card of cards"
     [imageUrl]="card.imageUrl"
     [title]="card.title"
+    [route]="card.route"
   >
   </app-card>
 </div>
-<app-modal
-  [isVisible]="modalVisible"
-  [title]="modalTitle"
-  [contentComponent]="selectedContentComponent"
-  (closeModal)="closeModal()"
->
-</app-modal>
