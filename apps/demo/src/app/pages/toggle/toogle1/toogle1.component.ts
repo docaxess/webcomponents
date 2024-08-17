@@ -11,6 +11,9 @@ import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-toogle1',
@@ -20,6 +23,9 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
     ModalComponent,
     DocToogleComponent,
     CodeSnippetComponent,
+    ViewSwitcherComponent,
+    RouterLink,
+    BreadcrumbComponent,
   ],
   templateUrl: './toogle1.component.html',
   styleUrl: './toogle1.component.scss',
@@ -40,7 +46,11 @@ export class Toogle1Component {
     </ip-toggle>
   </div>
   `;
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Toggle 1';
 
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && toggleElements) {

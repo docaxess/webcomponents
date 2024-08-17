@@ -1,41 +1,9 @@
-<div class="card" tabindex="0">
-  <div class="card-body">
-    <div class="title">
-      <a routerLink="/accordion/accordion1">
-        <h2 class="card-title">Accordion 1</h2>
-        <svg
-          aria-hidden="true"
-          width="35"
-          height="35"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            x="1"
-            y="1"
-            width="38"
-            height="38"
-            rx="19"
-            stroke="#0E9980"
-            stroke-width="2"
-          />
-          <path
-            d="M12.5 20H27.5"
-            stroke="#0E9980"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M20 12L29 20L20 28"
-            stroke="#0E9980"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </a>
-    </div>
-  </div>
+<div class="container">
+  <app-card
+    *ngFor="let card of cards"
+    [imageUrl]="card.imageUrl"
+    [title]="card.title"
+    [route]="card.route"
+  >
+  </app-card>
 </div>

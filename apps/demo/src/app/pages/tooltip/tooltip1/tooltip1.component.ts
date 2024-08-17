@@ -11,6 +11,9 @@ import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader'
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tooltip1',
@@ -20,6 +23,9 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
     ModalComponent,
     DocTooltipComponent,
     CodeSnippetComponent,
+    BreadcrumbComponent,
+    ViewSwitcherComponent,
+    RouterLink,
   ],
   templateUrl: './tooltip1.component.html',
   styleUrl: './tooltip1.component.scss',
@@ -27,7 +33,11 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Tooltip1Component {
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Tooltip 1';
 
   clickableCode = `
       <ip-tooltip

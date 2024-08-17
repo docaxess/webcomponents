@@ -1,18 +1,43 @@
-<div class="container">
-  <div class="preview" *ngIf="currentView === 'preview'">
-    <div class="tooltip">
-      <ip-tooltip
-        tooltip-trigger="Click Me!"
-        tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-        type="click"
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Tooltip 1'"
+    [breadcrumbItems]="[
+      { label: 'Tooltip', link: '/tooltip' },
+      { label: 'Tooltip 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
       >
-      </ip-tooltip>
+      </app-view-switcher>
     </div>
-  </div>
-  <div class="code" *ngIf="currentView === 'code'">
-    <app-code-snippet [code]="clickableCode"> </app-code-snippet>
-  </div>
-  <div *ngIf="currentView === 'doc'">
-    <app-doc-tooltip></app-doc-tooltip>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      <div class="container">
+        <div class="preview" *ngIf="currentView === 'preview'">
+          <div class="tooltip">
+            <ip-tooltip
+              tooltip-trigger="Click Me!"
+              tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+              type="click"
+            >
+            </ip-tooltip>
+          </div>
+        </div>
+        <div class="code" *ngIf="currentView === 'code'">
+          <app-code-snippet [code]="clickableCode"> </app-code-snippet>
+        </div>
+        <div *ngIf="currentView === 'doc'">
+          <app-doc-tooltip></app-doc-tooltip>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

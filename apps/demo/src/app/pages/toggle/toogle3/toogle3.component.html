@@ -1,16 +1,43 @@
-<div *ngIf="currentView === 'preview'">
-  <div class="toggle">
-    <ip-toggle size="small">
-      <label class="switch-label" slot="switch-label"
-        >Activate strong authentication</label
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Toggle 3'"
+    [breadcrumbItems]="[
+      { label: 'Toggle', link: '/toggle' },
+      { label: 'Toggle 3' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
       >
-      <p class="helper-text" slot="helper-text">This is the helper text.</p>
-    </ip-toggle>
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      <div *ngIf="currentView === 'preview'">
+        <div class="toggle">
+          <ip-toggle size="small">
+            <label class="switch-label" slot="switch-label"
+              >Activate strong authentication</label
+            >
+            <p class="helper-text" slot="helper-text">
+              This is the helper text.
+            </p>
+          </ip-toggle>
+        </div>
+      </div>
+      <div *ngIf="currentView === 'code'">
+        <app-code-snippet [code]="toggleWithIndicCode"> </app-code-snippet>
+      </div>
+      <div *ngIf="currentView === 'doc'">
+        <app-doc-toogle></app-doc-toogle>
+      </div>
+    </div>
   </div>
-</div>
-<div *ngIf="currentView === 'code'">
-  <app-code-snippet [code]="toggleWithIndicCode"> </app-code-snippet>
-</div>
-<div *ngIf="currentView === 'doc'">
-  <app-doc-toogle></app-doc-toogle>
 </div>

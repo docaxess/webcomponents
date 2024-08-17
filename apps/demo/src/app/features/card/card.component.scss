@@ -1,5 +1,7 @@
 @import '../../../assets/styles/index.scss';
-
+a {
+  text-decoration: none;
+}
 .card {
   border: 1px solid #ddd;
   border-radius: rem(8);

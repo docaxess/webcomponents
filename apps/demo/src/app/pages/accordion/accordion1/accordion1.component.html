@@ -1,16 +1,12 @@
 <div class="modal-content">
-  <div class="wrapper-title">
-    <h3>Accordion 1</h3>
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a routerLink="/accordion">Accordion</a>
-        </li>
-        &gt;
-        <li class="breadcrumb-item active" aria-current="page">Accordion 1</li>
-      </ol>
-    </nav>
-  </div>
+  <app-breadcrumb
+    [title]="'Accordion 1'"
+    [breadcrumbItems]="[
+      { label: 'Accordion', link: '/accordion' },
+      { label: 'Accordion 1' },
+    ]"
+  >
+  </app-breadcrumb>
   <div class="wrapper">
     <div class="wrapper-head">
       <app-view-switcher

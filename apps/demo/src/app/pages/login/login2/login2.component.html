@@ -1,29 +1,54 @@
-<div class="preview" *ngIf="currentView === 'preview'">
-  <div class="with-username login">
-    <form class="login-form">
-      <ip-email
-        input-label="Username"
-        class="form-group"
-        error-message="The username entered is incorrect"
-        required
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Login 2'"
+    [breadcrumbItems]="[
+      { label: 'Login', link: '/login' },
+      { label: 'Login 2' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
       >
-      </ip-email>
-      <ip-password
-        class="form-group"
-        error-message="The password entered is incorrect"
-        forgot-password-link="#"
-        invalid="true"
-      >
-      </ip-password>
-      <div class="submit-btn">
-        <button class="btn" type="submit">Login</button>
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      <div class="preview" *ngIf="currentView === 'preview'">
+        <div class="with-username login">
+          <form class="login-form">
+            <ip-email
+              input-label="Username"
+              class="form-group"
+              error-message="The username entered is incorrect"
+              required
+            >
+            </ip-email>
+            <ip-password
+              class="form-group"
+              error-message="The password entered is incorrect"
+              forgot-password-link="#"
+              invalid="true"
+            >
+            </ip-password>
+            <div class="submit-btn">
+              <button class="btn" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
+      <div *ngIf="currentView === 'code'">
+        <app-code-snippet [code]="withUsernameCode"></app-code-snippet>
+      </div>
+      <div *ngIf="currentView === 'doc'">
+        <app-doc-login></app-doc-login>
+      </div>
+    </div>
   </div>
-</div>
-<div *ngIf="currentView === 'code'">
-  <app-code-snippet [code]="withUsernameCode"></app-code-snippet>
-</div>
-<div *ngIf="currentView === 'doc'">
-  <app-doc-login></app-doc-login>
 </div>

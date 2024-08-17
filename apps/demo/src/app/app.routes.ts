@@ -25,40 +25,36 @@ export const appRoutes: Route[] = [
 
   {
     path: 'dropdown',
-    loadComponent: () =>
-      import('./pages/dropdown/dropdown.component').then(
-        (m) => m.DropdownComponent,
-      ),
+    loadChildren: () =>
+      import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
   },
   {
     path: 'toggle',
-    loadComponent: () =>
-      import('./pages/toggle/toggle.component').then((m) => m.ToggleComponent),
+    loadChildren: () =>
+      import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
   },
   {
     path: 'radio-button',
-    loadComponent: () =>
-      import('./pages/radio-button/radio-button.component').then(
-        (m) => m.RadioButtonComponent,
+    loadChildren: () =>
+      import('./pages/radio-button/radio-button.routing').then(
+        (m) => m.radioButtonRoutes,
       ),
   },
   {
     path: 'checkbox',
-    loadComponent: () =>
-      import('./pages/checkbox/checkbox.component').then(
-        (m) => m.CheckboxComponent,
-      ),
+    loadChildren: () =>
+      import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
   },
   {
     path: 'login',
-    loadComponent: () =>
-      import('./pages/login/login.component').then((m) => m.LoginComponent),
+    loadChildren: () =>
+      import('./pages/login/login.routing').then((m) => m.loginRoutes),
   },
   {
     path: 'pagination',
-    loadComponent: () =>
-      import('./pages/pagination/pagination.component').then(
-        (m) => m.PaginationComponent,
+    loadChildren: () =>
+      import('./pages/pagination/pagination.routing').then(
+        (m) => m.paginationRoutes,
       ),
   },
   {
@@ -66,11 +62,12 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./pages/table/table.component').then((m) => m.TableComponent),
   },
+
   {
     path: 'tab-panel',
-    loadComponent: () =>
-      import('./pages/tab-panel/tab-panel.component').then(
-        (m) => m.TabPanelComponent,
+    loadChildren: () =>
+      import('./pages/tab-panel/tab-panel.routing').then(
+        (m) => m.tabPanelRoutes,
       ),
   },
   {
