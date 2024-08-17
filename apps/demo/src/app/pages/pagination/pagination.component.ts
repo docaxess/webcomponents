@@ -23,14 +23,4 @@ export class PaginationComponent {
       route: '/pagination/pagination1',
     },
   ];
-  openModal(contentComponent: any, title: string) {
-    this.modalVisible = true;
-    this.modalTitle = title;
-    this.selectedContentComponent = contentComponent;
-  }
-
-  closeModal() {
-    this.modalVisible = false;
-    this.selectedContentComponent = null;
-  }
 }
