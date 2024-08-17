@@ -11,6 +11,10 @@ import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocRadioComponent } from '../doc-radio/doc-radio.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { Router } from 'express';
+import { RouterLink } from '@angular/router';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-radio1-button',
@@ -20,6 +24,9 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
     ModalComponent,
     DocRadioComponent,
     CodeSnippetComponent,
+    RouterLink,
+    ViewSwitcherComponent,
+    BreadcrumbComponent,
   ],
   templateUrl: './radio1.component.html',
   styleUrl: './radio1.component.scss',
@@ -27,7 +34,6 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Radio1ButtonComponent {
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
   radioCode = `
   <div class="radio-wrapper">
     <ip-radio
@@ -42,7 +48,11 @@ export class Radio1ButtonComponent {
     ></ip-radio>
   </div>
   `;
-
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Accordion View Switcher';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && radioElements) {
       radioElements(inject(DOCUMENT).defaultView as Window);

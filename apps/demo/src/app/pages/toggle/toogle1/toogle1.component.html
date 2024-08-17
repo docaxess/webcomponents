@@ -1,19 +1,44 @@
-<div class="preview" *ngIf="currentView === 'preview'">
-  <div class="toggle">
-    <ip-toggle aria-label="Toggle notifications on or off" checked="true">
-    </ip-toggle>
-
-    <ip-toggle
-      aria-label="Toggle notifications on or off"
-      size="large"
-      checked="false"
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Toggle 1'"
+    [breadcrumbItems]="[
+      { label: 'Toggle', link: '/toggle' },
+      { label: 'Toggle 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
+      >
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
     >
-    </ip-toggle>
+      <div class="preview" *ngIf="currentView === 'preview'">
+        <div class="toggle">
+          <ip-toggle aria-label="Toggle notifications on or off" checked="true">
+          </ip-toggle>
+
+          <ip-toggle
+            aria-label="Toggle notifications on or off"
+            size="large"
+            checked="false"
+          >
+          </ip-toggle>
+        </div>
+      </div>
+      <div *ngIf="currentView === 'code'">
+        <app-code-snippet [code]="toggleCode"> </app-code-snippet>
+      </div>
+      <div *ngIf="currentView === 'doc'">
+        <app-doc-toogle></app-doc-toogle>
+      </div>
+    </div>
   </div>
-</div>
-<div *ngIf="currentView === 'code'">
-  <app-code-snippet [code]="toggleCode"> </app-code-snippet>
-</div>
-<div *ngIf="currentView === 'doc'">
-  <app-doc-toogle></app-doc-toogle>
 </div>

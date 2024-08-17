@@ -1,0 +1,22 @@
+<div class="wrapper-title">
+  <h3>{{ title }}</h3>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+      <ng-container *ngFor="let item of breadcrumbItems; let last = last">
+        <li
+          class="breadcrumb-item"
+          [ngClass]="{ active: last }"
+          [attr.aria-current]="last ? 'page' : null"
+        >
+          <ng-container *ngIf="!last; else lastBreadcrumb">
+            <a [routerLink]="item.link">{{ item.label }}</a>
+          </ng-container>
+          <ng-template #lastBreadcrumb>
+            {{ item.label }}
+          </ng-template>
+        </li>
+        <ng-container *ngIf="!last">&gt;</ng-container>
+      </ng-container>
+    </ol>
+  </nav>
+</div>

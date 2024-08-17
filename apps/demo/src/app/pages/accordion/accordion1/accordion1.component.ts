@@ -11,6 +11,7 @@ import { ViewSwitcherComponent } from '../../../features/view-switcher/view-swit
 import { RouterLink } from '@angular/router';
 import { DocAccordionComponent } from '../doc-accordion/doc-accordion.component';
 import { defineCustomElements as accordionElements } from '@ipedis/accordion/loader';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-accordion1',
@@ -21,6 +22,7 @@ import { defineCustomElements as accordionElements } from '@ipedis/accordion/loa
     CodeSnippetComponent,
     DocAccordionComponent,
     RouterLink,
+    BreadcrumbComponent,
   ],
   templateUrl: './accordion1.component.html',
   styleUrl: './accordion1.component.scss',

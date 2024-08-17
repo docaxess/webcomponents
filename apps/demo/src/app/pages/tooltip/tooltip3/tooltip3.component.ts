@@ -10,6 +10,9 @@ import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader'
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-tooltip3',
@@ -19,6 +22,9 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
     ModalComponent,
     DocTooltipComponent,
     CodeSnippetComponent,
+    ViewSwitcherComponent,
+    RouterLink,
+    BreadcrumbComponent,
   ],
   templateUrl: './tooltip3.component.html',
   styleUrl: './tooltip3.component.scss',
@@ -27,6 +33,10 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
 })
 export class Tooltip3Component {
   currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Tooltip 3';
   withButtonCode = `
       <ip-tooltip
         id="clicked-tooltip"

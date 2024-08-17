@@ -9,18 +9,22 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocPaginationComponent } from '../doc-pagination/doc-pagination.component';
+import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
 
 @Component({
   selector: 'app-pagination1',
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     CodeSnippetComponent,
     DocPaginationComponent,
+    RouterLink,
+    BreadcrumbComponent,
+    ViewSwitcherComponent,
   ],
   templateUrl: './pagination1.component.html',
   styleUrl: './pagination1.component.scss',
@@ -36,8 +40,11 @@ export class Pagination1Component {
     >
     </ip-pagination>
   `;
-
   currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Pagination 1';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && paginationElements) {
       paginationElements(inject(DOCUMENT).defaultView as Window);

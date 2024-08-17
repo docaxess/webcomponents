@@ -11,6 +11,9 @@ import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
 import { ModalComponent } from '../../../features/modal/modal.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tab-panel1',
@@ -20,6 +23,9 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
     DocTabPanelComponent,
     ModalComponent,
     CodeSnippetComponent,
+    BreadcrumbComponent,
+    ViewSwitcherComponent,
+    RouterLink,
   ],
   templateUrl: './tab-panel1.component.html',
   styleUrl: './tab-panel1.component.scss',
@@ -154,7 +160,11 @@ export class TabPanel1Component {
       </div>
     </ip-tab-panel>
   `;
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Tab-panel 1';
 
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tabPanelElements) {

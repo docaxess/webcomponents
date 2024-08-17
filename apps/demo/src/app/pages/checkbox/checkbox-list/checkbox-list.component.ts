@@ -7,14 +7,22 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
+import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-checkbox-list',
   standalone: true,
-  imports: [CommonModule, ModalComponent, CodeSnippetComponent],
+  imports: [
+    CommonModule,
+    CodeSnippetComponent,
+    ViewSwitcherComponent,
+    RouterLink,
+    BreadcrumbComponent,
+  ],
   templateUrl: './checkbox-list.component.html',
   styleUrl: './checkbox-list.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -34,7 +42,11 @@ export class CheckboxListComponent {
     >
     </ip-checkbox-list>
   `;
-  @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+  switchView(view: 'preview' | 'code' | 'doc'): void {
+    this.currentView = view;
+  }
+  switcherTitle = 'Checkbox List';
 
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && checkboxElements) {
