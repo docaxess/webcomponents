@@ -25,16 +25,11 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./pages/tooltip/tooltip1/tooltip1.component').then(
         (m) => m.Tooltip1Component,
-      import('./pages/tooltip/tooltip1/tooltip1.component').then(
-        (m) => m.Tooltip1Component,
       ),
   },
 
-
   {
     path: 'dropdown',
-    loadChildren: () =>
-      import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
     loadChildren: () =>
       import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
   },
@@ -42,14 +37,9 @@ export const appRoutes: Route[] = [
     path: 'toggle',
     loadChildren: () =>
       import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
-    loadChildren: () =>
-      import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
   },
   {
     path: 'radio-button',
-    loadChildren: () =>
-      import('./pages/radio-button/radio-button.routing').then(
-        (m) => m.radioButtonRoutes,
     loadChildren: () =>
       import('./pages/radio-button/radio-button.routing').then(
         (m) => m.radioButtonRoutes,
@@ -59,21 +49,14 @@ export const appRoutes: Route[] = [
     path: 'checkbox',
     loadChildren: () =>
       import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
-    loadChildren: () =>
-      import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.routing').then((m) => m.loginRoutes),
-    loadChildren: () =>
-      import('./pages/login/login.routing').then((m) => m.loginRoutes),
   },
   {
     path: 'pagination',
-    loadChildren: () =>
-      import('./pages/pagination/pagination.routing').then(
-        (m) => m.paginationRoutes,
     loadChildren: () =>
       import('./pages/pagination/pagination.routing').then(
         (m) => m.paginationRoutes,
@@ -84,7 +67,6 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('./pages/table/table.routing').then((m) => m.tableRoutes),
   },
-
 
   {
     path: 'tab-panel',
