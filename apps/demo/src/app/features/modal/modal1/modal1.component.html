@@ -21,18 +21,21 @@
       [ngClass]="{ 'code-background': currentView === 'code' }"
     >
       <div class="preview" *ngIf="currentView === 'preview'">
-        <ip-dropdown
-          dropdown-title="Country"
-          placeholder="Select a country:"
-          items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
-        >
-        </ip-dropdown>
+        <ip-modal button-text="Open Custom Modal">
+          <p slot="content" class="modal-content">
+            Join thousands getting emails in their inbox. Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit. Hic, unde ipsa quam quo aperiam
+            nostrum repellat laboriosam praesentium atque saepe, obcaecati,
+            perferendis molestias delectus? Maiores, cupiditate tempora.
+            Obcaecati, omnis sunt!
+          </p>
+        </ip-modal>
       </div>
       <div *ngIf="currentView === 'code'">
         <app-code-snippet [code]="ModalCodeSnippet"></app-code-snippet>
       </div>
       <div *ngIf="currentView === 'doc'">
-        <app-doc-dropdown></app-doc-dropdown>
+        <app-doc-modal></app-doc-modal>
       </div>
     </div>
   </div>

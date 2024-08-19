@@ -1,1 +1,103 @@
-<p>doc-footnote works!</p>
+<section id="documentation">
+  <h2 class="under-title">Installation</h2>
+  <p>
+    Follow these steps to install and use the
+    <code>ip-footnote</code> component in your project.
+  </p>
+  <h3>Step 1</h3>
+  <p>
+    Install the <code>ip-footnote</code> component as a dependency in your
+    project:
+  </p>
+  <pre><code>npm install ip-footnote</code></pre>
+
+  <h3>Step 2</h3>
+  <p>Import the module into your script file:</p>
+  <pre><code>import '../node_modules/ip-footnote/dist/ip-footnote/ip-footnote.esm';</code></pre>
+
+  <h2 class="under-title">Usage</h2>
+  <p>To use this component, you must add the properties as attributes.</p>
+  <p>
+    The text where you will place the ID of the footnote must have an
+    <code>id="ref&#123;this.identifier&#125;"</code> to allow returning to the
+    text when one is on the footnote.
+  </p>
+  <h3>Properties</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute</th>
+        <th>Necessity</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>identifier</td>
+        <td>identifier</td>
+        <td>Required</td>
+        <td>The ID of the footnote.</td>
+        <td>string</td>
+        <td>default-id</td>
+      </tr>
+      <tr>
+        <td>text</td>
+        <td>text</td>
+        <td>Required</td>
+        <td>The text of the footnote.</td>
+        <td>string</td>
+        <td>undefined</td>
+      </tr>
+      <tr>
+        <td>btnAriaLabel</td>
+        <td>btn-aria-label</td>
+        <td>Required</td>
+        <td>The aria-label of the footnote to return to the text.</td>
+        <td>string</td>
+        <td>Back to main text</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><em>e.g:</em></p>
+  <pre class="example">
+       &lt; p&gt;
+            Here is a sentence with a footnote reference&lt;sup
+            &gt;&lt;a href="#footnote-1" id="ref1"&gt;1&lt;/a&gt;&lt;/sup
+              &gt;.
+              &lt;/p&gt;
+              &lt;ip-footnote
+            id="footnote-1"
+            identifier="1"
+            text="This is a detailed explanation or reference for the footnote."
+            &gt;
+        &lt;/ip-footnote &gt;
+    </pre
+  >
+
+  <h2 class="under-title">Customization</h2>
+  <p>We have a set of predefined variables used to customize the dropdown:</p>
+  <ul>
+    <li><code>--footnote-border-left</code></li>
+    <li><code>--footnote-font-color</code></li>
+    <li><code>--footnote-font-size</code></li>
+    <li><code>--footnote-identifier-color</code></li>
+    <li><code>--footnote-identifier-size</code></li>
+    <li><code>--footnote-svg-size</code></li>
+    <li><code>--footnote-svg-color</code></li>
+  </ul>
+
+  <p><em>e.g:</em></p>
+
+  <p>To update the values, use the following CSS code:</p>
+  <pre class="example">
+        ip-footnote &#123;
+          --footnote-font-color: #006342;
+          --footnote-font-size: 16px;
+          --footnote-border-left: 2px solid #000000;
+          &#125;
+   </pre
+  >
+</section>

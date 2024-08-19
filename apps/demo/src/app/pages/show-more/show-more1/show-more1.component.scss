@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/index.scss';
+
 .content {
   background-color: #f4f4f4;
   height: 675px;
@@ -37,6 +39,13 @@
 }
 .preview {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-top: 125px;
+
+  .show-content {
+    margin: 10px 0;
+    padding: 10px;
+    width: 400px;
+    height: 135px;
+  }
 }
