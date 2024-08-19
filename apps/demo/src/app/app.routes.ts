@@ -92,5 +92,12 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
   },
+  {
+    path: 'show-more',
+    loadChildren: () =>
+      import('./pages/show-more/show-more.routing').then(
+        (m) => m.showMoreRoutes,
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];

@@ -1,0 +1,49 @@
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 15px 15px;
+}
+.wrapper-title {
+  color: #fff;
+  font-family: Avenir;
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+
+  h3 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 800;
+    margin: 15px 0;
+  }
+  .breadcrumb {
+    font-weight: 400;
+    ol {
+      display: flex;
+      gap: 10px;
+      li {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        list-style: none;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.preview {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+
+  .modal-content {
+    margin: 10px 0;
+    padding: 10px;
+    width: 400px;
+    height: 135px;
+  }
+}

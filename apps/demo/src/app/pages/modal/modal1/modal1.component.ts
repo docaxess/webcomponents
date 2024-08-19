@@ -10,7 +10,7 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
 import { DocModalComponent } from '../doc-modal/doc-modal.component';
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
+import { defineCustomElements as modalElements } from '@ipedis/modal/loader';
 
 @Component({
   selector: 'app-modal1',
@@ -29,12 +29,15 @@ import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loade
 })
 export class Modal1Component {
   ModalCodeSnippet = `
-  <ip-dropdown
-    dropdown-title="Country"
-    placeholder="Select a country:"
-    items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
-  >
-  </ip-dropdown>
+      <ip-modal button-text="Open Custom Modal">
+        <p slot="content" class="content">
+          Join thousands getting emails in their inbox. Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Hic, unde ipsa quam quo aperiam
+          nostrum repellat laboriosam praesentium atque saepe, obcaecati,
+          perferendis molestias delectus? Maiores, cupiditate tempora.
+          Obcaecati, omnis sunt!
+        </p>
+      </ip-modal>
   `;
   currentView: 'preview' | 'code' | 'doc' = 'preview';
   switchView(view: 'preview' | 'code' | 'doc'): void {
@@ -42,8 +45,8 @@ export class Modal1Component {
   }
   switcherTitle = 'Modal 1';
   constructor() {
-    if (isPlatformBrowser(inject(PLATFORM_ID)) && dropdownElements) {
-      dropdownElements(inject(DOCUMENT).defaultView as Window);
+    if (isPlatformBrowser(inject(PLATFORM_ID)) && modalElements) {
+      modalElements(inject(DOCUMENT).defaultView as Window);
     }
   }
 }

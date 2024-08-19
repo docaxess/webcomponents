@@ -9,8 +9,8 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
 import { DocFootnoteComponent } from '../doc-footnote/doc-footnote.component';
+import { defineCustomElements as footnoteElements } from '@ipedis/footnote/loader';
 
 @Component({
   selector: 'app-footnote1',
@@ -29,12 +29,11 @@ import { DocFootnoteComponent } from '../doc-footnote/doc-footnote.component';
 })
 export class Footnote1Component {
   codeSnippet = `
-  <ip-dropdown
-    dropdown-title="Country"
-    placeholder="Select a country:"
-    items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
-  >
-  </ip-dropdown>
+    <p>
+      Here is a sentence with a footnote reference<sup><a href="#footnote-1" id="ref1">1</a></sup
+      >.
+    </p>
+    <ip-footnote id="footnote-1" identifier="1" text="This is a detailed explanation or reference for the footnote."></ip-footnote>
   `;
   currentView: 'preview' | 'code' | 'doc' = 'preview';
   switchView(view: 'preview' | 'code' | 'doc'): void {
@@ -43,8 +42,8 @@ export class Footnote1Component {
   switcherTitle = 'Dropdown 1';
 
   constructor() {
-    if (isPlatformBrowser(inject(PLATFORM_ID)) && dropdownElements) {
-      dropdownElements(inject(DOCUMENT).defaultView as Window);
+    if (isPlatformBrowser(inject(PLATFORM_ID)) && footnoteElements) {
+      footnoteElements(inject(DOCUMENT).defaultView as Window);
     }
   }
 }

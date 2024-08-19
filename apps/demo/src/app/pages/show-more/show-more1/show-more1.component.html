@@ -1,0 +1,41 @@
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Show-more 1'"
+    [breadcrumbItems]="[
+      { label: 'Show-more', link: '/show-more' },
+      { label: 'Show-more 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
+      >
+      </app-view-switcher>
+      <div
+        class="content"
+        [ngClass]="{ 'code-background': currentView === 'code' }"
+      >
+        <div class="preview" *ngIf="currentView === 'preview'">
+          <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
+            <div slot="content" class="show-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+              blanditiis itaque deserunt ab ad eum, voluptas animi non quos esse
+              modi voluptate nemo temporibus? Voluptates excepturi asperiores
+              autem quisquam provident!
+            </div>
+          </ip-show-more>
+        </div>
+        <div *ngIf="currentView === 'code'">
+          <app-code-snippet [code]="showMoreCode"></app-code-snippet>
+        </div>
+        <div *ngIf="currentView === 'doc'">
+          <app-doc-show-more></app-doc-show-more>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
