@@ -1,0 +1,39 @@
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Modal 1'"
+    [breadcrumbItems]="[
+      { label: 'Modal', link: '/modal' },
+      { label: 'Modal 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
+      >
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      <div class="preview" *ngIf="currentView === 'preview'">
+        <ip-dropdown
+          dropdown-title="Country"
+          placeholder="Select a country:"
+          items-options='["Mauritius", "France", "Germany", "Zimbabwe"]'
+        >
+        </ip-dropdown>
+      </div>
+      <div *ngIf="currentView === 'code'">
+        <app-code-snippet [code]="ModalCodeSnippet"></app-code-snippet>
+      </div>
+      <div *ngIf="currentView === 'doc'">
+        <app-doc-dropdown></app-doc-dropdown>
+      </div>
+    </div>
+  </div>
+</div>

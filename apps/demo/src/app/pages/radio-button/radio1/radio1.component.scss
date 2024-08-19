@@ -9,3 +9,9 @@
 .radio-wrapper {
   width: rem(300);
 }
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 15px 15px;
+}

@@ -59,8 +59,8 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'table',
-    loadComponent: () =>
-      import('./pages/table/table.component').then((m) => m.TableComponent),
+    loadChildren: () =>
+      import('./pages/table/table.routing').then((m) => m.tableRoutes),
   },
 
   {
@@ -76,6 +76,16 @@ export const appRoutes: Route[] = [
       import('./pages/accordion/accordion.routing').then(
         (m) => m.accordionRoutes,
       ),
+  },
+  {
+    path: 'modal',
+    loadChildren: () =>
+      import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
+  },
+  {
+    path: 'footnote',
+    loadChildren: () =>
+      import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
   },
   { path: '**', redirectTo: '' },
 ];

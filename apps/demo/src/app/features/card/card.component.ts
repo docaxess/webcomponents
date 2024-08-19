@@ -21,4 +21,16 @@ export class CardComponent {
   @Input() title: string = 'Card title';
   @Input() imageUrl: string = 'assets/images/tab-img-1.png';
   @Input() route: string = '';
+  handleKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.navigate();
+    }
+  }
+
+  navigate(): void {
+    if (this.route) {
+      window.location.href = this.route;
+    }
+  }
 }

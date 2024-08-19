@@ -1,10 +1,19 @@
 <app-header></app-header>
 <div class="main-content">
+  <!-- <div class="intro">
+    <h1>Components</h1>
+    <p>
+      Explore a new dimension of web design where accessibility is at the core
+      of every component. With 16 years of unparalleled expertise, we at Ipedis
+      are proud to present a design system crafted to create inclusive digital
+      experiences for all.
+    </p>
+  </div> -->
   <div class="container">
     <div class="sidebar-menu">
       <app-demo-aside></app-demo-aside>
     </div>
-    <div class="cards-wrapper">
+    <div class="cards-wrapper" #cardContainer>
       <router-outlet></router-outlet>
     </div>
   </div>
