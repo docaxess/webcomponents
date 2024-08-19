@@ -1,9 +1,15 @@
 <menu class="sidebar-menu">
-  <h2 (click)="toggleSection('overview')">
-    OVERVIEW
+  <h2
+    (click)="toggleSection('overview')"
+    (keydown)="handleKeydown($event, 'overview')"
+    tabindex="0"
+    role="button"
+    [attr.aria-expanded]="isOpen['overview'] ? 'true' : 'false'"
+  >
+    Overview
     <span class="toggle-arrow" [class.rotate]="isOpen['overview']"></span>
   </h2>
-  <ul class="global-elements" [class.expanded]="isOpen['overview']">
+  <ul class="OVERVIEW" [class.expanded]="isOpen['overview']">
     <li>
       <a routerLink="/" aria-current="page" aria-label="Go to Introduction">
         Intro
@@ -11,37 +17,32 @@
     </li>
   </ul>
 
-  <h2 (click)="toggleSection('components')">
-    COMPONENTS
-    <span class="toggle-arrow" [class.rotate]="isOpen['components']"></span>
+  <h2
+    (click)="toggleSection('global-elements')"
+    (keydown)="handleKeydown($event, 'global-elements')"
+    tabindex="0"
+    role="button"
+    [attr.aria-expanded]="isOpen['global-elements'] ? 'true' : 'false'"
+  >
+    Global Elements
+    <span
+      class="toggle-arrow"
+      [class.rotate]="isOpen['global-elements']"
+    ></span>
   </h2>
-  <ul class="global-elements" [class.expanded]="isOpen['components']">
+  <ul class="global-elements" [class.expanded]="isOpen['global-elements']">
     <li>
       <a routerLink="/tooltip" aria-label=" Go to Tooltip component">
         Tooltip
       </a>
     </li>
-    <li>
-      <a routerLink="/dropdown" aria-label="Go to Dropdown component">
-        Dropdown
-      </a>
-    </li>
-    <li>
-      <a routerLink="/toggle" aria-label="Go to Toggle component"> Toggle </a>
-    </li>
+
     <li>
       <a routerLink="/radio-button" aria-label="Go to Radio-button component">
         Radio-button
       </a>
     </li>
-    <li>
-      <a routerLink="/checkbox" aria-label="Go to Checkbox component">
-        Checkbox
-      </a>
-    </li>
-    <li>
-      <a routerLink="/login" aria-label="Go to Login component"> Login </a>
-    </li>
+
     <li>
       <a routerLink="/table" aria-label="Go to Table component"> Table </a>
     </li>
@@ -58,6 +59,42 @@
     <li>
       <a routerLink="/accordion" aria-label="Go to Accordion component">
         Accordion
+      </a>
+    </li>
+    <li>
+      <a routerLink="/modal" aria-label="Go to Modal component"> Modal </a>
+    </li>
+    <li>
+      <a routerLink="/footnote" aria-label="Go to footnote component">
+        Footnote
+      </a>
+    </li>
+  </ul>
+  <h2
+    (click)="toggleSection('forms-input')"
+    (keydown)="handleKeydown($event, 'forms-input')"
+    tabindex="0"
+    role="button"
+    [attr.aria-expanded]="isOpen['forms-input'] ? 'true' : 'false'"
+  >
+    Forms Input
+    <span class="toggle-arrow" [class.rotate]="isOpen['forms-input']"></span>
+  </h2>
+  <ul class="global-elements" [class.expanded]="isOpen['forms-input']">
+    <li>
+      <a routerLink="/checkbox" aria-label="Go to Checkbox component">
+        Checkbox
+      </a>
+    </li>
+    <li>
+      <a routerLink="/toggle" aria-label="Go to Toggle component"> Toggle </a>
+    </li>
+    <li>
+      <a routerLink="/login" aria-label="Go to Login component"> Login </a>
+    </li>
+    <li>
+      <a routerLink="/dropdown/dropdown1" aria-label="Go to Dropdown component">
+        Dropdown
       </a>
     </li>
   </ul>

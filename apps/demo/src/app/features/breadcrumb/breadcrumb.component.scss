@@ -21,6 +21,12 @@
         font-size: 16px;
         font-weight: 400;
         list-style: none;
+        &:focus,
+        &:hover {
+          outline: 2px solid white;
+          outline-offset: 3px;
+          border-radius: 1px;
+        }
         a {
           color: #fff;
           text-decoration: none;

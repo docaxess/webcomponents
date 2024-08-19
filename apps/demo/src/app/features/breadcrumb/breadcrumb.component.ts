@@ -12,4 +12,13 @@ import { RouterLink } from '@angular/router';
 export class BreadcrumbComponent {
   @Input() title: string = '';
   @Input() breadcrumbItems: Array<{ label: string; link?: string }> = [];
+
+  handleKeydown(event: KeyboardEvent, link?: string): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (link) {
+        window.location.href = link;
+      }
+    }
+  }
 }

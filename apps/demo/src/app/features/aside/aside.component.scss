@@ -3,7 +3,6 @@
 :host {
   top: 0;
   height: 90vh;
-  // overflow-y: auto;
   z-index: 1000;
 }
 
@@ -13,8 +12,6 @@
   padding: rem(30);
   border-radius: rem(15);
   height: auto;
-  // height: 77.5vh;
-  // overflow-y: auto;
 
   a {
     text-decoration: none;

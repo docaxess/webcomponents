@@ -1,5 +1,5 @@
-<div class="card">
-  <a [routerLink]="route" class="card-content">
+<div class="card" tabindex="0" (keydown)="handleKeydown($event)">
+  <a [routerLink]="route" class="card-content" tabindex="-1">
     <img class="card-img" [src]="imageUrl" alt="{{ title }}" />
     <div class="card-body">
       <div class="title">
