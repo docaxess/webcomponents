@@ -1,9 +1,14 @@
 <div class="container">
-  <app-card
-    *ngFor="let card of cards"
-    [imageUrl]="card.imageUrl"
-    [title]="card.title"
-    [route]="card.route"
-  >
-  </app-card>
+  <div class="title">
+    <h1>Checkbox</h1>
+  </div>
+  <div class="card-wrapper">
+    <app-card
+      *ngFor="let card of cards"
+      [imageUrl]="card.imageUrl"
+      [title]="card.title"
+      [route]="card.route"
+    >
+    </app-card>
+  </div>
 </div>

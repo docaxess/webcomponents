@@ -39,7 +39,7 @@ export class Footnote1Component {
   switchView(view: 'preview' | 'code' | 'doc'): void {
     this.currentView = view;
   }
-  switcherTitle = 'Dropdown 1';
+  switcherTitle = 'Footnote 1';
 
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && footnoteElements) {

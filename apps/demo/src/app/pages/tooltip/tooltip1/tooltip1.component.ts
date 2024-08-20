@@ -3,12 +3,10 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
@@ -20,7 +18,6 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     DocTooltipComponent,
     CodeSnippetComponent,
     BreadcrumbComponent,

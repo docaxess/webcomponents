@@ -3,15 +3,12 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as loginElements } from '@ipedis/login/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocLoginComponent } from '../doc-login/doc-login.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { Router } from 'express';
 import { RouterLink } from '@angular/router';
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
@@ -21,7 +18,6 @@ import { ViewSwitcherComponent } from '../../../features/view-switcher/view-swit
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     DocLoginComponent,
     CodeSnippetComponent,
     RouterLink,

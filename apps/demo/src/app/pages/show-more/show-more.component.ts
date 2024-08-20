@@ -14,7 +14,7 @@ export class ShowMoreComponent {
   cards = [
     {
       title: 'show-more 1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/show-more.png',
       route: '/show-more/show-more1',
     },
   ];

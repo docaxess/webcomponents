@@ -1,13 +1,15 @@
+@import '../../../../assets/styles/index.scss';
 .content {
   background-color: #f4f4f4;
   height: 675px;
   overflow-y: auto;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 rem(15) rem(15);
 }
+
 .wrapper-title {
   color: #fff;
-  font-family: Avenir;
-  font-size: 16px;
+  font-family: 'Nunito';
+  font-size: rem(16);
   font-style: normal;
   line-height: normal;
 
@@ -15,16 +17,16 @@
     color: #fff;
     font-size: 40px;
     font-weight: 800;
-    margin: 15px 0;
+    margin: rem(15) 0;
   }
   .breadcrumb {
     font-weight: 400;
     ol {
       display: flex;
-      gap: 10px;
+      gap: rem(10);
       li {
         color: #fff;
-        font-size: 16px;
+        font-size: rem(16);
         font-weight: 400;
         list-style: none;
         a {

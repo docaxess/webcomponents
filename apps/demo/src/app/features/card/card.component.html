@@ -1,13 +1,16 @@
 <div class="card" tabindex="0" (keydown)="handleKeydown($event)">
   <a [routerLink]="route" class="card-content" tabindex="-1">
-    <img class="card-img" [src]="imageUrl" alt="{{ title }}" />
+    <div class="image-wrapper">
+      <img class="card-img" [src]="imageUrl" alt="{{ title }}" />
+    </div>
     <div class="card-body">
       <div class="title">
         <h2 class="card-title">{{ title }}</h2>
+
         <svg
           aria-hidden="true"
-          width="35"
-          height="35"
+          width="40"
+          height="40"
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

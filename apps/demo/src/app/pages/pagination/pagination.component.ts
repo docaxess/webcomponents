@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../features/card/card.component';
-import { Pagination1Component } from './pagination1/pagination1.component';
-import { ModalComponent } from '../../features/modal/modal.component';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -19,7 +18,7 @@ export class PaginationComponent {
   cards = [
     {
       title: 'Pagination 1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/pagination.png',
       route: '/pagination/pagination1',
     },
   ];

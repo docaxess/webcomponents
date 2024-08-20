@@ -4,7 +4,7 @@
   background-color: #f4f4f4;
   height: 675px;
   overflow-y: auto;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 rem(15) rem(15);
 }
 .wrapper-title {
   color: #fff;
@@ -15,18 +15,18 @@
 
   h3 {
     color: #fff;
-    font-size: 40px;
+    font-size: rem(40);
     font-weight: 800;
-    margin: 15px 0;
+    margin: rem(15) 0;
   }
   .breadcrumb {
     font-weight: 400;
     ol {
       display: flex;
-      gap: 10px;
+      gap: rem(10);
       li {
         color: #fff;
-        font-size: 16px;
+        font-size: rem(16);
         font-weight: 400;
         list-style: none;
         a {
@@ -40,12 +40,12 @@
 .preview {
   display: flex;
   justify-content: center;
-  margin-top: 125px;
+  margin-top: rem(125);
 
   .show-content {
-    margin: 10px 0;
-    padding: 10px;
-    width: 400px;
-    height: 135px;
+    margin: rem(10) 0;
+    padding: rem(10);
+    width: rem(400);
+    height: rem(135);
   }
 }

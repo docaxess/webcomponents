@@ -14,7 +14,7 @@ export class AccordionComponent {
   cards = [
     {
       title: 'Accordion 1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/accordeon.png',
       route: '/accordion/accordion1',
     },
   ];

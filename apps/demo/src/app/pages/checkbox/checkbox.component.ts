@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../../features/card/card.component';
-import { Checkbox1Component } from './checkbox1/checkbox1.component';
-import { CheckboxListComponent } from './checkbox-list/checkbox-list.component';
-import { ModalComponent } from '../../features/modal/modal.component';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -19,12 +17,12 @@ export class CheckboxComponent {
     {
       title: 'Simple Checkbox',
       route: '/checkbox/checkbox1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/checkboxSimple.jpg',
     },
     {
       title: 'Checkbox List',
       route: '/checkbox/checkbox-list',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/checkbox.png',
     },
   ];
 }

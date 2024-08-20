@@ -3,15 +3,12 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocRadioComponent } from '../doc-radio/doc-radio.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { Router } from 'express';
 import { RouterLink } from '@angular/router';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
@@ -21,7 +18,6 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     DocRadioComponent,
     CodeSnippetComponent,
     RouterLink,
@@ -52,7 +48,7 @@ export class Radio1ButtonComponent {
   switchView(view: 'preview' | 'code' | 'doc'): void {
     this.currentView = view;
   }
-  switcherTitle = 'Accordion View Switcher';
+  switcherTitle = 'Radio Button 1';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && radioElements) {
       radioElements(inject(DOCUMENT).defaultView as Window);

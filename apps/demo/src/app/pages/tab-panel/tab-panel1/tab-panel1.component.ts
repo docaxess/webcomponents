@@ -3,13 +3,11 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
@@ -21,7 +19,6 @@ import { RouterLink } from '@angular/router';
   imports: [
     CommonModule,
     DocTabPanelComponent,
-    ModalComponent,
     CodeSnippetComponent,
     BreadcrumbComponent,
     ViewSwitcherComponent,

@@ -3,12 +3,10 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocDropdownComponent } from '../doc-dropdown/doc-dropdown.component';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
@@ -19,7 +17,6 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     CodeSnippetComponent,
     DocDropdownComponent,
     ViewSwitcherComponent,
