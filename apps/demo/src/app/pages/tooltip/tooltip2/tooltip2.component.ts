@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
@@ -19,7 +18,6 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     DocTooltipComponent,
     CodeSnippetComponent,
     ViewSwitcherComponent,

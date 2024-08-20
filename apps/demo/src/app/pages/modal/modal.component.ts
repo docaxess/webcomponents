@@ -14,7 +14,7 @@ export class ModalComponent {
   cards = [
     {
       title: 'Modal 1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/modal.png',
       route: '/modal/modal1',
     },
   ];

@@ -2,27 +2,22 @@
 
 h1 {
   margin: rem(30);
-  color: $secondaryColor;
+  color: $primaryColor;
   font-size: rem(40);
 }
 
 h2 {
-  color: $secondaryColor;
+  color: $primaryColor;
 }
 
 .intro {
   line-height: 1.6;
-  padding-bottom: rem(25);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    sans-serif;
+}
+.content {
+  padding: rem(25);
+  font-family: 'Nunito';
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: rem(15);
 }

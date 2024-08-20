@@ -3,12 +3,10 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
-  Input,
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
-import { ModalComponent } from '../../../features/modal/modal.component';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
@@ -20,7 +18,6 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
     DocToogleComponent,
     CodeSnippetComponent,
     ViewSwitcherComponent,

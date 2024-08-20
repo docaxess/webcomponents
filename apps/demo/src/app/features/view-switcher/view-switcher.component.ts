@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ViewSwitcherComponent {
   @Input() currentView: 'preview' | 'code' | 'doc' = 'preview';
-  @Input() title: string = 'View Switcher'; // Ajoutez une entrée pour le titre
+  @Input() title = 'View Switcher';
   @Output() viewChange = new EventEmitter<'preview' | 'code' | 'doc'>();
 
   switchView(view: 'preview' | 'code' | 'doc'): void {

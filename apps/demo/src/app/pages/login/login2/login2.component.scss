@@ -12,6 +12,7 @@
   border: 1px solid $darkColor;
   border-radius: rem(5);
   box-shadow: 0 rem(10) rem(20) rgba($darkColor, 0.1);
+  background-color: #fff;
 }
 .submit-btn {
   width: 100%;
@@ -29,4 +30,10 @@
       background-color: $primaryColor;
     }
   }
+}
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 rem(15) rem(15);
 }

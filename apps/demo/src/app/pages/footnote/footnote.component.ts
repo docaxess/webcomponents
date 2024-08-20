@@ -14,7 +14,7 @@ export class FootnoteComponent {
   cards = [
     {
       title: 'Footnote 1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/footnote.png',
       route: '/footnote/footnote1',
     },
   ];

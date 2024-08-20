@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CodeSnippetComponent } from '../../features/code-snippet/code-snippet.component';
 import { CardComponent } from '../../features/card/card.component';
-import { ModalComponent } from '../../features/modal/modal.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -17,7 +16,7 @@ export class TabPanelComponent {
   cards = [
     {
       title: 'Tab-panel 1',
-      imageUrl: 'assets/images/tab-img-1.png',
+      imageUrl: 'assets/images/tab-panel.png',
       route: '/tab-panel/tab-panel1',
     },
   ];

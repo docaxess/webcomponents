@@ -2,10 +2,10 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  Output,
+  Output, OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-demo-aside',
   standalone: true,
@@ -14,12 +14,13 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './aside.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AsideComponent {
+export class AsideComponent implements OnInit {
   @Output() focusCards = new EventEmitter<void>();
   isOpen: { [key: string]: boolean } = {};
 
   ngOnInit(): void {
     this.isOpen['global-elements'] = true;
+    this.isOpen['overview'] = true;
   }
 
   toggleSection(section: string): void {

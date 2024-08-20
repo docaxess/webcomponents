@@ -1,7 +1,8 @@
+@import '../../../assets/styles/index.scss';
 .wrapper-title {
   color: #fff;
-  font-family: Avenir;
-  font-size: 16px;
+  font-family: 'Nunito';
+  font-size: rem(16);
   font-style: normal;
   line-height: normal;
 
@@ -9,7 +10,7 @@
     color: #fff;
     font-size: 40px;
     font-weight: 800;
-    margin: 15px 0;
+    margin: rem(15) 0;
   }
   .breadcrumb {
     font-weight: 400;
@@ -18,7 +19,7 @@
       gap: 10px;
       li {
         color: #fff;
-        font-size: 16px;
+        font-size: rem(16);
         font-weight: 400;
         list-style: none;
         &:focus,

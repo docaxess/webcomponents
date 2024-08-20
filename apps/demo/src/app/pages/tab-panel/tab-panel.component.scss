@@ -1,134 +1,15 @@
 @import '../../../assets/styles/index.scss';
-
-#demo {
-  ip-tab-panel {
-    &::part(tab) {
-      gap: 5px;
-      color: purple;
-      position: relative;
-    }
-
-    &::part(tab-active) {
-      background-color: purple;
-      color: white;
-    }
-
-    &::part(tab-header) {
-      outline: 2px solid red;
-      outline-offset: 0.025em;
-      display: flex;
-      flex-direction: column;
-    }
-
-    &::part(tab-list) {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media only screen and (max-width: 767px) and (orientation: portrait),
-      only screen and (max-width: 992px) and (orientation: landscape) {
-      &::part(tab-container) {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      &::part(tab-btn) {
-        margin-inline: 0;
-        padding: 0.75em;
-      }
-
-      &::part(tab-text) {
-        display: none;
-      }
-    }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  .title {
+    color: $lightColor;
   }
-
-  .ip-content {
-    margin-block: 3.125em;
+  .card-wrapper {
     display: flex;
-
-    img {
-      border-radius: 0.625em;
-    }
-
-    .ip-content-desc {
-      margin-left: 3.125em;
-      margin-right: 25px;
-    }
-
-    .ip-content-title {
-      margin-block-start: 2.188em;
-      font-family: Avenir-Heavy;
-      font-size: 1.125rem;
-      color: #b00057;
-      text-transform: uppercase;
-    }
-
-    .ip-content-subtitle {
-      margin-top: 15px;
-      font-family: Avenir-Heavy;
-      font-size: 42px;
-      color: #b00057;
-    }
-
-    .ip-content-text {
-      margin-top: 20px;
-      font-family: Avenir-Book;
-      font-size: 18px;
-      color: #2e3243;
-    }
-
-    .ip-content-btn {
-      margin-top: 20px;
-      font-family: Avenir-Heavy;
-      font-size: 16px;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 4px;
-      background-color: #b00057;
-      color: #ffffff;
-      cursor: pointer;
-
-      img {
-        margin-left: 15px;
-        width: 14px;
-        height: 15px;
-        vertical-align: middle;
-      }
-    }
-
-    @media only screen and (max-width: 767px) and (orientation: portrait),
-      only screen and (max-width: 992px) and (orientation: landscape) {
-      flex-direction: column;
-      padding-inline: 20px;
-
-      img {
-        flex-basis: 100%;
-        max-inline-size: 100%;
-      }
-
-      .ip-content-desc {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .ip-content-subtitle {
-        font-size: 2rem;
-        margin-block-end: 0.75em;
-      }
-    }
-  }
-
-  .tab-panel {
-    max-width: rem(960);
-    margin: 100px auto;
-  }
-
-  .panel-wrapper {
-    border: 1px solid $darkColor;
-    border-radius: rem(5);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: rem(40);
   }
 }
