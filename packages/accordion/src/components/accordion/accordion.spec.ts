@@ -17,7 +17,7 @@ describe('ip-accordion', () => {
                             <span part="acc-title" class="accordion-title">Accessibilité</span>
                         </button>
                         </h2>
-                        <div part="acc-content" id="sect-1" class="js-panel" style="display: none;">
+                        <div part="acc-content" id="sect-1" class="js-panel" >
                             <div class="acc-content">
                                 <img class="acc-content__image" src="/assets/images/tab-img-1.png" alt="">
                                 <div class="acc-content__desc-wrapper">
@@ -56,7 +56,7 @@ describe('ip-accordion', () => {
                                 <span part="acc-title" class="accordion-title">Panel 1</span>
                             </button>
                         </h2>
-                        <div part="acc-content" id="panel-1" class="js-panel" style="display: none;">
+                        <div part="acc-content" id="panel-1" class="js-panel" >
                         <slot name="accordion-1"></slot>
                         </div>
                     </div>
