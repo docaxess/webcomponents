@@ -52,23 +52,23 @@ export class Ipaccordion {
 
   componentWillLoad() {
     this.arrayDataWatcher(this.accordionHeaders);
+    requestAnimationFrame(() => {
+      this.accHeaderButtons = this.el.shadowRoot
+        .querySelector('#ip-accordion')
+        .querySelectorAll('button');
+
+      this.accPanels = this.el.shadowRoot
+        .querySelector('#ip-accordion')
+        .querySelectorAll('.js-panel');
+
+      this.setSlotId();
+
+      this.hidePanels();
+
+      this.openFirstPanel();
+    });
   }
 
-  componentDidLoad() {
-    this.accHeaderButtons = this.el.shadowRoot
-      .querySelector('#ip-accordion')
-      .querySelectorAll('button');
-
-    this.accPanels = this.el.shadowRoot
-      .querySelector('#ip-accordion')
-      .querySelectorAll('.js-panel');
-
-    this.setSlotId();
-
-    this.hidePanels();
-
-    this.openFirstPanel();
-  }
   // keep first panel open or not depending on prop 'isFirstPanelOpen'
   openFirstPanel() {
     if (this.isFirstPanelOpen) {
