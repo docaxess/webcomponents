@@ -15,12 +15,12 @@ export class TooltipComponent {
   cards = [
     {
       title: 'Clickable tooltip',
-      imageUrl: 'assets/images/tooltip.png',
+      imageUrl: 'assets/images/tooltip1.png',
       route: '/tooltip/tooltip1',
     },
     {
       title: 'Hover tooltip',
-      imageUrl: 'assets/images/tooltip.png',
+      imageUrl: 'assets/images/tooltip2.png',
       route: '/tooltip/tooltip2',
     },
     {
