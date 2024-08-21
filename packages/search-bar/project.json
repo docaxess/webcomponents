@@ -1,7 +1,7 @@
 {
-  "name": "combobox",
+  "name": "search-bar",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/combobox/src",
+  "sourceRoot": "packages/search-bar/src",
   "projectType": "library",
   "tags": ["type:webcomponent"],
   "generators": {
@@ -15,9 +15,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/combobox/tsconfig.lib.json",
-        "configPath": "packages/combobox/stencil.config.ts",
-        "outputPath": "dist/packages/combobox"
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
       }
     },
     "build": {
@@ -25,9 +25,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/combobox/tsconfig.lib.json",
-        "configPath": "packages/combobox/stencil.config.ts",
-        "outputPath": "dist/packages/combobox"
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
       },
       "configurations": {
         "production": {
@@ -41,9 +41,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/combobox/tsconfig.lib.json",
-        "configPath": "packages/combobox/stencil.config.ts",
-        "outputPath": "dist/packages/combobox"
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
       }
     },
     "e2e": {
@@ -51,17 +51,17 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "packages/combobox/tsconfig.lib.json",
-        "configPath": "packages/combobox/stencil.config.ts",
-        "outputPath": "dist/packages/combobox"
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
-          "packages/combobox/src/**/*.{ts,tsx,json}",
-          "packages/combobox/*.{ts,tsx,json}"
+          "packages/search-bar/src/**/*.{ts,tsx,json}",
+          "packages/search-bar/*.{ts,tsx,json}"
         ]
       }
     }

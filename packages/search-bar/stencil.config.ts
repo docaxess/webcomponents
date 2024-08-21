@@ -3,7 +3,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'combobox',
+  namespace: 'search-bar',
   taskQueue: 'async',
   sourceMap: true,
   enableCache: true,
