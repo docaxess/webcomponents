@@ -10,12 +10,11 @@
   font-family: 'Nunito';
   background-color: #2e3243;
   color: $sidebarTextColor;
-  padding: rem(30);
-  height: auto;
+  padding: 0 rem(30) rem(30) rem(30);
   margin: 0;
-  min-height: 121.1vh;
-  height: auto;
+  height: 100vh;
   overflow-y: auto;
+  border-radius: rem(20);
   ::-webkit-scrollbar {
     width: 0;
     background: transparent;

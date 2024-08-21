@@ -8,7 +8,7 @@
 
   h3 {
     color: #fff;
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 800;
     margin: rem(15) 0;
   }
@@ -17,9 +17,10 @@
     ol {
       display: flex;
       gap: 10px;
+      font-size: rem(24);
+      color: #fff;
+
       li {
-        color: #fff;
-        font-size: rem(16);
         font-weight: 400;
         list-style: none;
         &:focus,
