@@ -4,17 +4,18 @@ body {
 
 .main-content {
   background-image: url('../assets/images/Rectangle-1.png');
-  background-position-y: -400px;
+  background-position-y: -159px;
   background-repeat: no-repeat;
   min-height: 82.5vh;
   .container {
     display: grid;
-    grid-template-columns: 20% 78%;
+    grid-template-columns: 22% 77%;
     gap: 15px;
+    margin: 0 125px;
+    padding: 50px 0;
+    gap: 30px;
   }
-  .cards-wrapper {
-    margin: 20px 80px;
-  }
+
   .intro {
     display: flex;
     width: 900px;
