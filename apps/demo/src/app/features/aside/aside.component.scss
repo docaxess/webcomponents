@@ -15,6 +15,11 @@
   height: 100vh;
   overflow-y: auto;
   border-radius: rem(20);
+
+  #overview {
+    margin-top: 30px;
+  }
+
   ::-webkit-scrollbar {
     width: 0;
     background: transparent;
