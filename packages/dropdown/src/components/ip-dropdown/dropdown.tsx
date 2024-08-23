@@ -45,6 +45,16 @@ export class Dropdown {
   }
   toggleDropdown() {
     this.isOpen = !this.isOpen;
+    requestAnimationFrame(() => {
+      if (this.isOpen) {
+        const firstItem = this.el.shadowRoot.querySelector(
+          '.dropdown-list li:first-child',
+        ) as HTMLElement;
+        if (firstItem) {
+          firstItem.focus();
+        }
+      }
+    });
   }
 
   selectItem(item: string) {
@@ -60,7 +70,22 @@ export class Dropdown {
         event.preventDefault();
         this.selectItem(item);
         break;
-      case 'Tab':
+
+      case 'ArrowUp':
+        event.preventDefault();
+        {
+          const currentIndex = this.items.indexOf(item);
+          const nextIndex =
+            currentIndex === this.items.length - 1 ? 0 : currentIndex - 1;
+          const nextItem = this.el.shadowRoot.querySelector(
+            `.dropdown-list li:nth-child(${nextIndex + 1})`,
+          ) as HTMLElement;
+          if (nextItem) {
+            nextItem.focus();
+          }
+        }
+        break;
+      case 'ArrowDown':
         event.preventDefault();
         {
           const currentIndex = this.items.indexOf(item);
@@ -73,10 +98,6 @@ export class Dropdown {
             nextItem.focus();
           }
         }
-        break;
-      case 'ArrowUp':
-      case 'ArrowDown':
-        event.preventDefault();
         break;
       case 'Shift':
         event.preventDefault();

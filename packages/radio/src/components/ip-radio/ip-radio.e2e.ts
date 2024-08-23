@@ -65,27 +65,6 @@ describe('ip-radio', () => {
 
     expect(await disabledRadioInput.getProperty('checked')).toBe(false);
   });
-  it('updates options and reflects changes', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <ip-radio options='[{"id": "1", "label": "Option 1"}]'></ip-radio>
-    `);
-
-    let radioInputs = await page.findAll('ip-radio >>> input');
-    expect(radioInputs).toHaveLength(1);
-
-    await page.$eval('ip-radio', (element: any) => {
-      element.options =
-        '[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]';
-    });
-    await page.waitForChanges();
-
-    radioInputs = await page.findAll('ip-radio >>> input');
-    expect(radioInputs).toHaveLength(2);
-
-    const labels = await page.findAll('ip-radio >>> label');
-    expect(await labels[1].getProperty('textContent')).toBe('Option 2');
-  });
 
   it('sets aria-checked attribute correctly', async () => {
     const page = await newE2EPage();

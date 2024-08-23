@@ -17,11 +17,46 @@
         margin-top: 100px;
         display: flex;
         justify-content: center;
+        margin-top: 250px;
       }
       .content {
         margin: 10px 0;
         padding: 10px;
-        width: 350px;
+        width: 530px;
+      }
+      .dialog-title > p {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .dialog-contents > input {
+        width: 467px;
+        padding: 13px;
+        border-radius: 5px;
+        outline: 1px solid rgba(53, 50, 50, 0.64);
+        border: none;
+        margin-top: 20px;
+      }
+      .dialog-btn {
+        background: #2749a3 !important;
+        width: 467px;
+        border-radius: 8px;
+        font-family: 'roboto';
+        padding: 15px;
+        color: white;
+        border: none;
+        margin-top: 20px;
+      }
+      input:focus {
+        outline: 2px solid black;
+        outline-offset: 3px;
+      }
+      .dialog-btn:focus {
+        outline: 2px solid black;
+        outline-offset: 2px;
+      }
+      ip-modal::part(dialog-content) {
+        margin-top: 50px;
       }
     </style>
     <script type="module" src="/build/modal.esm.js"></script>
@@ -30,13 +65,26 @@
   <body>
     <div class="modal">
       <ip-modal button-text="Open Custom Modal">
-        <p slot="content" class="content">
-          Join thousands getting emails in their inbox. Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Hic, unde ipsa quam quo aperiam
-          nostrum repellat laboriosam praesentium atque saepe, obcaecati,
-          perferendis molestias delectus? Maiores, cupiditate tempora.
-          Obcaecati, omnis sunt!
-        </p>
+        <div slot="content" class="content">
+          <div class="dialog-title">
+            <h1 id="dialog-reference">Subscribe to our Newsletter</h1>
+            <p>Join thousands getting emails in their inbox.</p>
+          </div>
+          <div class="dialog-contents">
+            <input
+              type="text"
+              required
+              class="input-modal"
+              aria-label="Your name"
+              title="Your name"
+              placeholder="Your Name"
+              autocomplete="full-name"
+            />
+          </div>
+          <div>
+            <button class="dialog-btn">Got it, Thanks!</button>
+          </div>
+        </div>
       </ip-modal>
     </div>
   </body>
