@@ -12,11 +12,7 @@ export class SkipLinkComponent {
     event.stopPropagation();
     event.preventDefault();
 
-    const elementToScrool = document.getElementById(targetId);
-    elementToScrool?.scrollIntoView({
-      behavior: 'smooth',
-    });
-
-    elementToScrool?.focus();
+    const elementToFocus = document.getElementById(targetId);
+    elementToFocus?.focus();
   }
 }

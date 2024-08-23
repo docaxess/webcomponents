@@ -1,4 +1,10 @@
-<menu class="sidebar-menu">
+<nav
+  class="sidebar-menu"
+  id="navigation"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <!-- TODO: // change to ul > li instead of h2 -->
   <h2
     (click)="toggleSection('overview')"
     (keydown)="handleKeydown($event, 'overview')"
@@ -102,4 +108,4 @@
       <a routerLink="/toggle" aria-label="Go to Toggle component"> Toggle </a>
     </li>
   </ul>
-</menu>
+</nav>
