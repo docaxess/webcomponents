@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'skip-link',
+  selector: 'app-skip-link',
   templateUrl: './skip-link.component.html',
   standalone: true,
   styleUrls: ['./skip-link.component.scss'],
