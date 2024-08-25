@@ -20,7 +20,7 @@
       class="content"
       [ngClass]="{ 'code-background': currentView === 'code' }"
     >
-      <div *ngIf="currentView === 'preview'">
+      @if (currentView === 'preview') {
         <div class="tab-panel">
           <ip-tab-panel
             selected-tab="tab-content-2"
@@ -157,13 +157,13 @@
             </div>
           </ip-tab-panel>
         </div>
-      </div>
-      <div *ngIf="currentView === 'code'">
+      }
+      @if (currentView === 'code') {
         <app-code-snippet [code]="tabPanelCode"> </app-code-snippet>
-      </div>
-      <div *ngIf="currentView === 'doc'">
+      }
+      @if (currentView === 'doc') {
         <app-doc-tab-panel></app-doc-tab-panel>
-      </div>
+      }
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@
       class="content"
       [ngClass]="{ 'code-background': currentView === 'code' }"
     >
-      <div class="preview" *ngIf="currentView === 'preview'">
+      @if (currentView === 'preview') {
         <div class="radio-wrapper">
           <ip-radio
             id="radio"
@@ -34,13 +34,13 @@
           ]'
           ></ip-radio>
         </div>
-      </div>
-      <div *ngIf="currentView === 'code'">
+      }
+      @if (currentView === 'code') {
         <app-code-snippet [code]="radioCode"></app-code-snippet>
-      </div>
-      <div *ngIf="currentView === 'doc'">
+      }
+      @if (currentView === 'doc') {
         <app-doc-radio></app-doc-radio>
-      </div>
+      }
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@
       class="content"
       [ngClass]="{ 'code-background': currentView === 'code' }"
     >
-      <div class="preview" *ngIf="currentView === 'preview'">
+      @if (currentView === 'preview') {
         <ip-modal button-text="Open Custom Modal">
           <p slot="content" class="modal-content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
@@ -32,13 +32,13 @@
             suscipit nobis quisquam illo ipsam veritatis et, labore ut.
           </p>
         </ip-modal>
-      </div>
-      <div *ngIf="currentView === 'code'">
+      }
+      @if (currentView === 'code') {
         <app-code-snippet [code]="ModalCodeSnippet"></app-code-snippet>
-      </div>
-      <div *ngIf="currentView === 'doc'">
+      }
+      @if (currentView === 'doc') {
         <app-doc-modal></app-doc-modal>
-      </div>
+      }
     </div>
   </div>
 </div>

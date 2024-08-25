@@ -4,39 +4,32 @@ export const appRoutes: Route[] = [
     path: '',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
+    data: { title: 'Accueil' },
   },
   {
     path: 'home',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
+    data: { title: 'Accueil' },
   },
   {
     path: 'tooltip',
     loadChildren: () =>
       import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
-  },
-  {
-    path: 'tooltip1',
-    loadChildren: () =>
-      import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
-  },
-  {
-    path: 'tooltip1',
-    loadComponent: () =>
-      import('./pages/tooltip/tooltip1/tooltip1.component').then(
-        (m) => m.Tooltip1Component,
-      ),
+    data: { title: 'Tooltip' },
   },
 
   {
     path: 'dropdown',
     loadChildren: () =>
       import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
+    data: { title: 'Dropdown' },
   },
   {
     path: 'toggle',
     loadChildren: () =>
       import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
+    data: { title: 'Toggle' },
   },
   {
     path: 'radio-button',
@@ -44,16 +37,19 @@ export const appRoutes: Route[] = [
       import('./pages/radio-button/radio-button.routing').then(
         (m) => m.radioButtonRoutes,
       ),
+    data: { title: 'Radio-button' },
   },
   {
     path: 'checkbox',
     loadChildren: () =>
       import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
+    data: { title: 'Checkbox' },
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.routing').then((m) => m.loginRoutes),
+    data: { title: 'Login' },
   },
   {
     path: 'pagination',
@@ -61,11 +57,13 @@ export const appRoutes: Route[] = [
       import('./pages/pagination/pagination.routing').then(
         (m) => m.paginationRoutes,
       ),
+    data: { title: 'Pagination' },
   },
   {
     path: 'table',
     loadChildren: () =>
       import('./pages/table/table.routing').then((m) => m.tableRoutes),
+    data: { title: 'Table' },
   },
 
   {
@@ -74,6 +72,7 @@ export const appRoutes: Route[] = [
       import('./pages/tab-panel/tab-panel.routing').then(
         (m) => m.tabPanelRoutes,
       ),
+    data: { title: 'Tab-panel' },
   },
   {
     path: 'accordion',
@@ -81,16 +80,19 @@ export const appRoutes: Route[] = [
       import('./pages/accordion/accordion.routing').then(
         (m) => m.accordionRoutes,
       ),
+    data: { title: 'Accordion' },
   },
   {
     path: 'modal',
     loadChildren: () =>
       import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
+    data: { title: 'Modal' },
   },
   {
     path: 'footnote',
     loadChildren: () =>
       import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
+    data: { title: 'Footnote' },
   },
   {
     path: 'show-more',
@@ -98,6 +100,7 @@ export const appRoutes: Route[] = [
       import('./pages/show-more/show-more.routing').then(
         (m) => m.showMoreRoutes,
       ),
+    data: { title: 'Show-more' },
   },
   { path: '**', redirectTo: '' },
 ];

@@ -20,7 +20,7 @@
       class="content"
       [ngClass]="{ 'code-background': currentView === 'code' }"
     >
-      <div class="preview" *ngIf="currentView === 'preview'">
+      @if (currentView === 'preview') {
         <div class="accordion-wrapper">
           <ip-accordion
             title-tag="h2"
@@ -178,13 +178,13 @@
             </div>
           </ip-accordion>
         </div>
-      </div>
-      <div *ngIf="currentView === 'code'">
+      }
+      @if (currentView === 'code') {
         <app-code-snippet [code]="accordionCode"></app-code-snippet>
-      </div>
-      <div *ngIf="currentView === 'doc'">
+      }
+      @if (currentView === 'doc') {
         <app-doc-accordion></app-doc-accordion>
-      </div>
+      }
     </div>
   </div>
 </div>
