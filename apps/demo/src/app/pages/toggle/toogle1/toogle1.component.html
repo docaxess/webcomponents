@@ -20,7 +20,7 @@
       class="content"
       [ngClass]="{ 'code-background': currentView === 'code' }"
     >
-      <div class="preview" *ngIf="currentView === 'preview'">
+      @if (currentView === 'preview') {
         <div class="toggle">
           <ip-toggle aria-label="Toggle notifications on or off" checked="true">
           </ip-toggle>
@@ -32,13 +32,15 @@
           >
           </ip-toggle>
         </div>
-      </div>
-      <div *ngIf="currentView === 'code'">
+      }
+
+      @if (currentView === 'code') {
         <app-code-snippet [code]="toggleCode"> </app-code-snippet>
-      </div>
-      <div *ngIf="currentView === 'doc'">
+      }
+
+      @if (currentView === 'doc') {
         <app-doc-toogle></app-doc-toogle>
-      </div>
+      }
     </div>
   </div>
 </div>

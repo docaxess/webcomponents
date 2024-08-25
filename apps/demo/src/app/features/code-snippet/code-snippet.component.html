@@ -1,6 +1,6 @@
 <div class="code-container">
   <div class="button-list">
-    <label for="">HTML</label>
+    <label for="htmlCode">HTML</label>
     <button aria-label="copy code" (click)="copyCode()">
       <svg
         aria-hidden="true"
@@ -36,7 +36,7 @@
       </svg>
     </button>
   </div>
-  <div class="code">
+  <div class="code" id="htmlCode">
     <pre><code [highlight]="code" language="html" HighlightLineNumbers></code></pre>
   </div>
 </div>

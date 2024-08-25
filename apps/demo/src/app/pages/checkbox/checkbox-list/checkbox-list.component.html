@@ -17,7 +17,7 @@
       </app-view-switcher>
     </div>
     <div class="content">
-      <div class="preview" *ngIf="currentView === 'preview'">
+      @if (currentView === 'preview') {
         <div class="checkbox-wrapper">
           <ip-checkbox-list
             legend="Select the options below:"
@@ -31,11 +31,11 @@
           >
           </ip-checkbox-list>
         </div>
-      </div>
-      <div *ngIf="currentView === 'code'">
+      }
+      @if (currentView === 'code') {
         <app-code-snippet [code]="checkboxListCode"></app-code-snippet>
-      </div>
-      <div *ngIf="currentView === 'doc'">
+      }
+      @if (currentView === 'doc') {
         <section id="documentation">
           <h2 class="under-title">Installation</h2>
           <p>
@@ -145,7 +145,7 @@
             &#125;);
               </code></pre>
         </section>
-      </div>
+      }
     </div>
   </div>
 </div>
