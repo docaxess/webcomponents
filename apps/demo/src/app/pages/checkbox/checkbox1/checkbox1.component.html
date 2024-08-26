@@ -29,18 +29,18 @@
       }
       @if (currentView === 'doc') {
         <section id="documentation">
-          <h2 class="under-title">Installation</h2>
+          <h3 class="under-title">Installation</h3>
           <p>
             Follow these steps to install and use the
             <code>ip-checkbox</code> component in your project.
           </p>
-          <h3>Step 1</h3>
+          <h4>Step 1</h4>
           <p>
             Install the
             <code>ip-checkbox</code> component as a dependency in your project:
           </p>
           <pre><code>npm install ip-checkbox</code></pre>
-          <h3>Step 2</h3>
+          <h4>Step 2</h4>
           <p>Import the module into your script file:</p>
           <pre><code>import '../node_modules/ip-checkbox/dist/ip-checkbox/ip-checkbox.esm';</code></pre>
           <h2 class="under-title">Usage</h2>
@@ -48,7 +48,7 @@
             To use these components, you must add the properties as attributes.
           </p>
 
-          <h3>Properties</h3>
+          <h4>Properties</h4>
           <table>
             <thead>
               <tr>
@@ -95,17 +95,17 @@
               </tr>
             </tbody>
           </table>
-          <h5>Content</h5>
+          <h6>Content</h6>
           <p>
             There is a predefined label slot for the label before the checkbox,
             which will be the content inside the tag.
           </p>
 
-          <h5>Example:</h5>
+          <h6>Example:</h6>
           <div class="example">
             <pre><code>&lt;ip-checkbox default-checked="true" disabled="true" id="checked"&gt; Checked ! &lt;/ip-checkbox&gt;</code></pre>
           </div>
-          <h2 class="under-title">Customization</h2>
+          <h3 class="under-title">Customization</h3>
           <p>
             We have a set of predefined variables used to customize the
             checkbox:
@@ -121,14 +121,14 @@
           --primary-color: #006342;
           --secondary-color: #000000;
         &#125;</code></pre>
-          <h2 class="under-title">Listening to Events</h2>
+          <h3 class="under-title">Listening to Events</h3>
           <p>
             To listen to events emitted by the <code>ip-checkbox</code> and
             <code>ip-checkbox-list</code> components, open your browser's
             console. Event details will be displayed in the console when
             checkboxes are modified.
           </p>
-          <h5>Example JavaScript Code:</h5>
+          <h6>Example JavaScript Code:</h6>
           <pre><code>
     const checkbox = document.querySelector('ip-checkbox');
     checkbox.addEventListener('change', event => &#123;

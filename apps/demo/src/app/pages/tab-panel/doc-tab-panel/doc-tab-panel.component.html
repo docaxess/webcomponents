@@ -1,24 +1,24 @@
 <section id="documentation">
-  <h2 class="under-title">Installation</h2>
+  <h3 class="under-title">Installation</h3>
 
-  <h3>Step 1:</h3>
+  <h4>Step 1:</h4>
   <p>
     Install the <code>ip-tab-panel</code> component as a dependency in the
     project:
   </p>
   <pre><code>npm install ip-tab-panel</code></pre>
 
-  <h3>Step 2:</h3>
+  <h4>Step 2:</h4>
   <p>Import module in script file:</p>
   <pre><code>import '../node_modules/ip-tab-panel/dist/ip-tab-panel/ip-tab-panel.esm';</code></pre>
 
-  <h2 class="under-title">Usage:</h2>
+  <h3 class="under-title">Usage:</h3>
   <p>
     To use this component, we must add the properties as attributes and use slot
     for each content of tab.
   </p>
 
-  <h3>Properties</h3>
+  <h4>Properties</h4>
   <table>
     <thead>
       <tr>
@@ -90,7 +90,7 @@
     </li>
   </ul>
 
-  <h2 class="under-title">Panels content</h2>
+  <h3 class="under-title">Panels content</h3>
   <p>
     The contents of the panel should have as attribute
     <code>slot="tab-content-1"</code> and value of
@@ -99,7 +99,7 @@
   <p><em>e.g:</em></p>
   <pre class="code-block"><code>&lt;ip-tab-panel
   selected-tab="tab-content-2"
-  title-tag="h2"
+  title-tag="h3"
   tab-panel-title="Audit RGAA"
   tab-panel-headers='[
         &#123;"title":"Accessibilité", "imgPath": "assets/images/acc-1.svg", "imgPathActive": "assets/images/acc-1-active.svg"&#125;,
@@ -116,9 +116,9 @@
   &lt;div slot="tab-content-5"&gt;--content of Legislation--&lt;/div&gt;
 &lt;/ip-tab-panel&gt;</code></pre>
 
-  <h2 class="under-title">Customization</h2>
+  <h3 class="under-title">Customization</h3>
 
-  <h3>Style</h3>
+  <h4>Style</h4>
   <p>We have a set of predefined variable used to customize the tab-panel:</p>
   <ul>
     <li><code>--ip-tab-primary-color</code></li>
@@ -132,7 +132,7 @@
   --ip-tab-secondary-color: #000000;
 &#125;</code></pre>
 
-  <h3>Class</h3>
+  <h4>Class</h4>
   <p>We have a set of classes that could be used to customise accordingly:</p>
   <ul>
     <li><code>tab-container</code>: for the container of the panels</li>
