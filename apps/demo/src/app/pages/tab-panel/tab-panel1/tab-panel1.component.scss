@@ -5,6 +5,10 @@
   overflow-y: auto;
   border-radius: 0 0 rem(15) rem(15);
 }
+.tab-panel {
+  margin: rem(20);
+  width: 95%;
+}
 ip-tab-panel::part(tab) {
   gap: 5px;
   color: purple;

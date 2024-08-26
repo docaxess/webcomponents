@@ -29,17 +29,28 @@ import { defineCustomElements as modalElements } from '@ipedis/modal/loader';
 })
 export class Modal1Component {
   ModalCodeSnippet = `
-      <ip-modal button-text="Open Custom Modal">
-          <p slot="content" class="modal-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-            accusantium et recusandae adipisci enim aliquam reiciendis earum
-            voluptate eos alias, eius magni, corrupti doloremque a consequatur
-            unde similique accusamus cum! Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Minus facilis placeat facere, quasi
-            explicabo expedita esse eaque recusandae qui dolor, adipisci
-            suscipit nobis quisquam illo ipsam veritatis et, labore ut.
-          </p>
-      </ip-modal>
+          <ip-modal button-text="Open Custom Modal">
+            <div slot="content" class="modal-content">
+              <div class="dialog-title">
+                <h1 id="dialog-reference">Subscribe to our Newsletter</h1>
+                <p>Join thousands getting emails in their inbox.</p>
+              </div>
+              <div class="dialog-contents">
+                <input
+                  type="text"
+                  required
+                  class="input-modal"
+                  aria-label="Your name"
+                  title="Your name"
+                  placeholder="Your Name"
+                  autocomplete="full-name"
+                />
+              </div>
+              <div>
+                <button class="dialog-btn">Got it, Thanks!</button>
+              </div>
+            </div>
+          </ip-modal>
   `;
   currentView: 'preview' | 'code' | 'doc' = 'preview';
   switchView(view: 'preview' | 'code' | 'doc'): void {

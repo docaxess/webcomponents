@@ -16,6 +16,20 @@ pre {
   justify-content: space-between;
   padding: rem(10) rem(5);
   border-bottom: 2px solid white;
+  display: flex;
+  padding: 30px 50px;
+  gap: 50px;
+  align-items: center;
+
+  label {
+    color: #fff;
+
+    font-family: 'Nunito-bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 }
 button {
   color: $lightColor;
