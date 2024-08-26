@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Element } from '@stencil/core';
+import { Component, h, Prop, State, Element, Watch } from '@stencil/core';
 
 @Component({
   tag: 'ip-modal',
@@ -13,8 +13,21 @@ export class Modal {
   @Prop() closeAriaLabel = 'Close the dialog';
 
   private triggerButton: HTMLElement;
-  private closeButton: HTMLElement;
-  private focusableElements: HTMLElement[];
+  private focusableElements: HTMLElement[] = [];
+  private modal: HTMLDialogElement;
+  closeButton: HTMLElement;
+
+  @Watch('isOpen')
+  handleIsOpenChange() {
+    if (this.isOpen) {
+      this.updateFocusableElements();
+      this.focusFirstElement();
+      document.addEventListener('keydown', this.handleKeyDown);
+    } else {
+      document.removeEventListener('keydown', this.handleKeyDown);
+      this.focusTriggerButton();
+    }
+  }
 
   private handleOpen = () => {
     this.isOpen = true;
@@ -23,59 +36,72 @@ export class Modal {
         if (this.closeButton) {
           this.closeButton.focus();
         }
-        this.setFocusableElements();
       });
     });
   };
 
   private handleClose = () => {
     this.isOpen = false;
-    if (this.triggerButton) {
-      this.triggerButton.focus();
-    }
   };
 
   private handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
       this.handleClose();
     } else if (event.key === 'Tab') {
-      const focusableElements = Array.from(
-        this.modal.querySelectorAll(
-          'input, button, a, [tabindex]:not([tabindex="-1"])',
-        ),
-      ) as HTMLElement[];
-
-      if (focusableElements.length === 0) {
-        event.preventDefault();
-        this.closeButton.focus();
-        return;
-      }
-
-      const firstFocusableElement = this.focusableElements[0];
+      const focusableElements = this.focusableElements;
+      const firstFocusableElement = focusableElements[0];
       const lastFocusableElement =
-        this.focusableElements[this.focusableElements.length - 1];
+        focusableElements[focusableElements.length - 1];
 
       if (event.shiftKey && document.activeElement === firstFocusableElement) {
         event.preventDefault();
         lastFocusableElement.focus();
-      }
-
-      if (!event.shiftKey && document.activeElement === lastFocusableElement) {
+      } else if (
+        !event.shiftKey &&
+        document.activeElement === lastFocusableElement
+      ) {
         event.preventDefault();
-        this.closeButton.focus();
+        firstFocusableElement.focus();
       }
     }
   };
 
-  private setFocusableElements() {
-    this.focusableElements = Array.from(
-      this.modal.querySelectorAll(
-        'input, button, a, [tabindex]:not([tabindex="-1"])',
-      ),
-    ) as HTMLElement[];
+  private updateFocusableElements() {
+    const slot = this.modal.querySelector('slot');
+    if (slot) {
+      requestAnimationFrame(() => {
+        const slotNodes = slot.assignedNodes({ flatten: true });
+        this.focusableElements = [
+          ...Array.from(
+            this.modal.querySelectorAll(
+              'input, button, a, [tabindex]:not([tabindex="-1"])',
+            ),
+          ),
+          ...slotNodes.flatMap((node) =>
+            node.nodeType === Node.ELEMENT_NODE
+              ? Array.from(
+                  (node as HTMLElement).querySelectorAll(
+                    'input, button, a, [tabindex]:not([tabindex="-1"])',
+                  ),
+                )
+              : [],
+          ),
+        ] as HTMLElement[];
+      });
+    }
   }
 
-  private modal: HTMLDialogElement;
+  private focusFirstElement() {
+    if (this.focusableElements.length > 0) {
+      this.focusableElements[0].focus();
+    }
+  }
+
+  private focusTriggerButton() {
+    if (this.triggerButton) {
+      this.triggerButton.focus();
+    }
+  }
 
   render() {
     return (
@@ -93,7 +119,6 @@ export class Modal {
         <dialog
           ref={(el) => (this.modal = el as HTMLDialogElement)}
           open={this.isOpen}
-          onKeyDown={this.handleKeyDown}
         >
           <button
             class="close-dialog"

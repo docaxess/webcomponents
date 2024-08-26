@@ -1,14 +1,12 @@
 import {
   Component,
-  Event,
-  EventEmitter,
   h,
   Prop,
   State,
-  Watch,
+  Event,
+  EventEmitter,
+  Element,
 } from '@stencil/core';
-import { convertToObjectArray } from '../../utils/utils';
-import { Element } from '@stencil/core/internal';
 
 interface RadioOption {
   id: string | number;
@@ -22,79 +20,116 @@ interface RadioOption {
   shadow: true,
 })
 export class IpRadio {
-  @Element() hostElement: HTMLElement;
+  @Element() el: HTMLElement;
 
-  @Prop() labelPosition: 'before' | 'after' = 'after';
-  @Prop() options: string;
-  @Prop() defaultOptionId: string | number;
   @Prop() legend: string;
-  @Event({ bubbles: true, composed: true })
-  selectionChanged: EventEmitter<RadioOption>;
-  radioOptions: RadioOption[] = [];
-
+  @Prop() options: string;
+  @Prop() labelPosition: 'before' | 'after' = 'after';
+  @Prop() defaultOptionId: string | number;
+  @State() selectedId = '';
   @State() selectedOption: RadioOption = null;
 
-  @Watch('options')
-  writeValue(value: string | null) {
-    this.radioOptions = convertToObjectArray<RadioOption>(value, [
-      'id',
-      'label',
-    ]);
-    if (this.defaultOptionId) {
-      this.selectedOption =
-        this.radioOptions.find(
-          (option) => option.id === this.defaultOptionId,
-        ) || null;
+  @Event({ bubbles: true, composed: true })
+  selectionChanged: EventEmitter<RadioOption>;
+
+  private optionsList: RadioOption[] = [];
+
+  componentWillLoad() {
+    try {
+      this.optionsList = JSON.parse(this.options);
+      if (this.defaultOptionId) {
+        const defaultOption = this.optionsList.find(
+          (option) => option.id.toString() === this.defaultOptionId.toString(),
+        );
+        if (defaultOption) {
+          this.selectedOption = defaultOption;
+          this.selectedId = defaultOption.id.toString();
+        }
+      }
+    } catch (error) {
+      console.error('Invalid options format:', error);
     }
   }
 
-  componentWillLoad() {
-    this.writeValue(this.options);
+  private handleChange(option: RadioOption) {
+    if (!option.disabled) {
+      this.selectedOption = option;
+      this.selectedId = option.id.toString();
+      this.selectionChanged.emit(option);
+    }
   }
 
-  handleOptionChange(option: RadioOption) {
-    this.selectedOption = option;
-    this.selectionChanged.emit(option);
+  private handleKeyDown(event: KeyboardEvent) {
+    const radios = Array.from(
+      this.el.querySelectorAll('input[type="radio"]'),
+    ) as HTMLInputElement[];
+    const currentIndex = radios.findIndex(
+      (radio) => radio === document.activeElement,
+    );
+
+    if (currentIndex === -1) return;
+
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+      const nextIndex = (currentIndex + 1) % radios.length;
+      radios[nextIndex].focus();
+      radios[nextIndex].checked = true;
+      this.handleChange(this.optionsList[nextIndex]);
+    }
+
+    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+      const prevIndex = (currentIndex - 1 + radios.length) % radios.length;
+      radios[prevIndex].focus();
+      radios[prevIndex].checked = true;
+      this.handleChange(this.optionsList[prevIndex]);
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      const checkedRadio = radios.find(
+        (radio) => radio === document.activeElement,
+      );
+      if (checkedRadio) {
+        checkedRadio.checked = true;
+        this.handleChange(
+          this.optionsList.find(
+            (option) => option.id.toString() === checkedRadio.value,
+          ),
+        );
+      }
+    }
   }
 
   render() {
     return (
-      <fieldset class="custom-fieldset">
+      <fieldset class="custom-fieldset" tabindex="0">
         {this.legend && <legend>{this.legend}</legend>}
-        {this.radioOptions.map((option) => {
-          const containerClasses = {
-            container: true,
-            [this.labelPosition]: true,
-            disabled: option.disabled,
-          };
-          const isChecked =
-            this.selectedOption && this.selectedOption.id === option.id;
-          const inputId = `radio-${option.id}`;
-          const labelId = `label-${inputId}`;
-          return (
-            <div class={containerClasses}>
-              <div class="radio">
-                <input
-                  type="radio"
-                  value={option.id}
-                  id={inputId}
-                  name={'radio' + option.id}
-                  disabled={option.disabled}
-                  checked={isChecked}
-                  aria-checked={isChecked ? 'true' : 'false'}
-                  onChange={() => this.handleOptionChange(option)}
-                />
-                <div class="radio-background">
-                  <div class="outer-circle"></div>
-                  <div class="inner-circle"></div>
-                </div>
-              </div>
-              <label id={labelId} htmlFor={inputId}>
-                {option.label}
-              </label>
+        <div
+          onKeyDown={(event) => this.handleKeyDown(event as KeyboardEvent)}
+          role="radiogroup"
+        >
+          {this.optionsList.map((option) => (
+            <div key={option.id} class={{ disabled: option.disabled }}>
+              {this.labelPosition === 'before' && (
+                <label htmlFor={option.id.toString()}>{option.label}</label>
+              )}
+              <input
+                type="radio"
+                id={option.id.toString()}
+                name="ip-radio-group"
+                value={option.id.toString()}
+                onChange={() => this.handleChange(option)}
+                checked={this.selectedId === option.id.toString()}
+                disabled={option.disabled}
+                aria-checked={
+                  this.selectedId === option.id.toString() ? 'true' : 'false'
+                }
+              />
+              {this.labelPosition === 'after' && (
+                <label htmlFor={option.id.toString()}>{option.label}</label>
+              )}
             </div>
-          );
-        })}
+          ))}
+        </div>
       </fieldset>
     );
   }

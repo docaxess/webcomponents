@@ -74,6 +74,9 @@ export class IpTooltip {
       event.preventDefault();
       this.showTooltip = !this.showTooltip;
     }
+    if (event.key === 'Escape') {
+      this.showTooltip = false;
+    }
   };
 
   handleBtn1Click = () => {
