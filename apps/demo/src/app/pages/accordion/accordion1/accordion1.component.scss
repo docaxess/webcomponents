@@ -37,14 +37,14 @@
     }
   }
 }
-.preview {
+
+.accordion-wrapper {
   display: flex;
   justify-content: center;
-  padding-bottom: rem(10);
-  .accordion-wrapper {
-    padding-top: rem(10);
-    width: 85%;
-  }
+  align-items: center;
+  flex-wrap: wrap;
+  padding: rem(30);
+  width: 92%;
 }
 
 .ip-accordion {

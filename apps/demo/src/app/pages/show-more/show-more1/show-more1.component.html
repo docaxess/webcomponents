@@ -20,14 +20,19 @@
         [ngClass]="{ 'code-background': currentView === 'code' }"
       >
         @if (currentView === 'preview') {
-          <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
-            <div slot="content" class="show-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              blanditiis itaque deserunt ab ad eum, voluptas animi non quos esse
-              modi voluptate nemo temporibus? Voluptates excepturi asperiores
-              autem quisquam provident!
-            </div>
-          </ip-show-more>
+          <div class="show-more-wrapper">
+            <ip-show-more
+              show-less-text="Voir moins"
+              show-more-text="Voir plus"
+            >
+              <div slot="content" class="show-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                blanditiis itaque deserunt ab ad eum, voluptas animi non quos
+                esse modi voluptate nemo temporibus? Voluptates excepturi
+                asperiores autem quisquam provident!
+              </div>
+            </ip-show-more>
+          </div>
         }
         @if (currentView === 'code') {
           <app-code-snippet [code]="showMoreCode"></app-code-snippet>

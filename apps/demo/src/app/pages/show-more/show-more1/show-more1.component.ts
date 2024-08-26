@@ -31,11 +31,16 @@ import { DocShowMoreComponent } from '../doc-show-more/doc-show-more.component';
 })
 export class ShowMore1Component {
   showMoreCode = `
-    <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
-      <div slot="content" class="show-content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              blanditiis itaque deserunt ab ad eum, voluptas animi non quos esse
-              modi voluptate nemo temporibus? Voluptates excepturi asperiores
-              autem quisquam provident!</div>
+    <ip-show-more
+      show-less-text="Voir moins"
+      show-more-text="Voir plus"
+    >
+        <div slot="content" class="show-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+          blanditiis itaque deserunt ab ad eum, voluptas animi non quos esse
+          modi voluptate nemo temporibus? Voluptates excepturi asperiores
+          autem quisquam provident!
+        </div>
     </ip-show-more>
   `;
   currentView: 'preview' | 'code' | 'doc' = 'preview';

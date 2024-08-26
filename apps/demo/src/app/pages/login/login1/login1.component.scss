@@ -4,34 +4,138 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: rem(70) 0;
+  padding: rem(25) 0;
 }
 .login {
-  width: rem(350);
   padding: rem(20);
   border: 1px solid $darkColor;
   border-radius: rem(5);
   box-shadow: 0 rem(10) rem(20) rgba($darkColor, 0.1);
   background-color: #fff;
-}
+  .title {
+    font-size: rem(20);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: rem(20);
+  }
 
-.submit-btn {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  button {
-    width: rem(100);
-    height: rem(40);
-    background-color: $primaryColor;
-    color: $lightColor;
-    border: none;
-    border-radius: rem(5);
-    cursor: pointer;
-    &:hover {
-      background-color: $primaryColor;
+  .email {
+    margin-bottom: rem(25);
+    width: 280px;
+
+    input {
+      width: 100%;
+      height: rem(40);
+      padding: rem(0) rem(10);
+      border: 1px solid $darkColor;
+      border-radius: rem(5);
+      &:focus {
+        outline: none;
+      }
     }
   }
+  .password {
+    margin-bottom: rem(25);
+    width: 280px;
+
+    input {
+      width: 100%;
+      height: rem(40);
+      padding: rem(0) rem(10);
+      border: 1px solid $darkColor;
+      border-radius: rem(5);
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .social-media {
+    padding-top: 40px;
+    padding-bottom: 120px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    .text {
+      color: #384048;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+    }
+    .logo-list {
+      display: flex;
+      justify-content: center;
+      .twitter,
+      .google,
+      .facebook {
+        width: rem(40);
+        height: rem(40);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: rem(10);
+        cursor: pointer;
+        .icon {
+          color: #fff;
+          font-size: rem(20);
+        }
+      }
+      .twitter {
+        background-color: #4ca1ea;
+        border-radius: 50%;
+      }
+      .google {
+        background-color: #f44336;
+        border-radius: 50%;
+      }
+      .facebook {
+        background-color: #3b5998;
+        border-radius: 50%;
+      }
+    }
+  }
+  .submit-btn {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button {
+      width: 280px;
+
+      display: flex;
+      padding: 20px 30px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 50px;
+      background: #417cfd;
+      border: none;
+      label {
+        color: #fff;
+
+        font-family: 'Nunito';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
+  .create-account {
+    color: #384048;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+  }
 }
+
 .content {
   background-color: #f4f4f4;
   height: 675px;

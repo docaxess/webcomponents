@@ -28,5 +28,20 @@ export class TooltipComponent {
       imageUrl: 'assets/images/tooltipWithBtn.png',
       route: '/tooltip/tooltip3',
     },
+    {
+      title: 'Clickable tooltip',
+      imageUrl: 'assets/images/tooltip1.png',
+      route: '/tooltip/tooltip1',
+    },
+    {
+      title: 'Hover tooltip',
+      imageUrl: 'assets/images/tooltip2.png',
+      route: '/tooltip/tooltip2',
+    },
+    {
+      title: 'Tooltip with button',
+      imageUrl: 'assets/images/tooltipWithBtn.png',
+      route: '/tooltip/tooltip3',
+    },
   ];
 }

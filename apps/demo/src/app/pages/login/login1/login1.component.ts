@@ -31,25 +31,57 @@ import { ViewSwitcherComponent } from '../../../features/view-switcher/view-swit
 })
 export class Login1Component {
   withEmailCode = `
-  <div class="with-email login">
-    <form class="login-form">
-      <ip-email
-        required
-        class="form-group"
-        error-message="The email entered is incorrect"
-      >
-      </ip-email>
-      <ip-password
-        class="form-group"
-        error-message="The password entered is incorrect"
-        forgot-password-link="#"
-      >
-      </ip-password>
-      <div class="submit-btn">
-        <button class="btn" type="submit">Login</button>
-      </div>
-    </form>
-  </div>
+          <div class="with-email login">
+            <form class="login-form">
+              <div class="title">
+                <h1>Log In</h1>
+              </div>
+              <div class="email">
+                <ip-email
+                  required
+                  class="form-group"
+                  error-message="The email entered is incorrect"
+                >
+                </ip-email>
+              </div>
+              <div class="password">
+                <ip-password
+                  class="form-group"
+                  error-message="The password entered is incorrect"
+                  forgot-password-link="#"
+                >
+                </ip-password>
+              </div>
+
+              <div class="submit-btn">
+                <button class="btn" type="submit">
+                  <label for="">Continue</label>
+                  <img src="assets/images/arrow-right.svg" alt="" />
+                </button>
+              </div>
+
+              <div class="social-media">
+                <div class="text">
+                  <span>Or sign up using</span>
+                </div>
+                <div class="logo-list">
+                  <div class="twitter">
+                    <img src="assets/images/twitter.svg" alt="" />
+                  </div>
+                  <div class="google">
+                    <img src="assets/images/google.svg" alt="" />
+                  </div>
+                  <div class="facebook">
+                    <img src="assets/images/facebook.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="create-account">
+                <span>Don't have an account ? </span>
+                <a href="#">Create Account</a>
+              </div>
+            </form>
+          </div>
   `;
   currentView: 'preview' | 'code' | 'doc' = 'preview';
   switchView(view: 'preview' | 'code' | 'doc'): void {
