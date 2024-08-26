@@ -12,7 +12,6 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioButtonComponent {
-
   cards = [
     {
       title: 'Radio button 1',
@@ -20,6 +19,4 @@ export class RadioButtonComponent {
       route: '/radio-button/radio-button1',
     },
   ];
-
-
-
+}
