@@ -4,11 +4,11 @@
   <p>
     Install the <code>ip-table</code> component as a dependency in your project:
   </p>
-  <pre><code>npm install ip-table</code></pre>
+  <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
   <h4>Step 2</h4>
   <p>Import the module in your script file:</p>
-  <pre><code>import '../node_modules/ip-table/dist/ip-table/ip-table.esm';</code></pre>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
 
   <h3 class="under-title">Usage</h3>
 
@@ -78,17 +78,7 @@
     correspond to the column headers and values represent the cell data.
   </p>
   <div class="code-example">
-    <pre><code>&lt;ip-table
-  columns='[
-      &#123; "header": "Name" , "type": "string"&#125;,
-      &#123; "header": "Age", "type": "number" &#125;
-      ]'
-  rows='[
-      &#123;"Name":"Benoit", "Age":25&#125;,
-      &#123;"Name":"Linda", "Age":23&#125;
-    ]'
-&gt;
-&lt;/ip-table&gt;</code></pre>
+    <pre><code [highlight]="example" language="html"></code></pre>
   </div>
 
   <h3 class="under-title">Customization</h3>
@@ -103,13 +93,6 @@
   </ul>
   <p>To update the values use the following:</p>
   <div class="code-example">
-    <pre><code>ip-table &#123;
-  --primary-color: #006342;
-  --secondary-color: #000000;
-  --thead-color: #f4f4f4;
-  --hover-color: #e7f3ff;
-  --font-size: 16px;
-  --font-family: Arial, sans-serif;
-&#125;</code></pre>
+    <pre><code [highlight]="custom" language="css"></code></pre>
   </div>
 </section>

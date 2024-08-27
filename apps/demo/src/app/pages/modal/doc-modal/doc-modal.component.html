@@ -8,10 +8,12 @@
   <p>
     Install the <code>ip-modal</code> component as a dependency in your project:
   </p>
-  <pre><code>npm install ip-modal</code></pre>
+  <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
+
   <h4>Step 2</h4>
   <p>Import the module into your script file:</p>
-  <pre><code>import '../node_modules/ip-modal/dist/ip-modal/ip-modal.esm';</code></pre>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
+
   <h3 class="under-title">Usage</h3>
 
   <p>To use this input, you must add the following properties as attributes.</p>
@@ -55,16 +57,8 @@
 
   <p><em>e.g:</em></p>
   <pre class="example">
-&lt;ip-modal button-text="Open Modal"&gt;
-&lt;div slot="content" class="content"&gt;
-Join thousands getting emails in their inbox. Lorem ipsum dolor sit amet,
-consectetur adipisicing elit. Hic, unde ipsa quam quo aperiam nostrum
-repellat laboriosam praesentium atque saepe, obcaecati, perferendis
-molestias delectus? Maiores, cupiditate tempora. Obcaecati, omnis sunt!
-&lt;/div&gt;
-&lt;/ip-modal&gt;
-    </pre
-  >
+    <code [highlight]="content" language="html"></code>
+    </pre>
 
   <h3 class="under-title">Customization</h3>
   <h4>Style</h4>
@@ -83,10 +77,6 @@ molestias delectus? Maiores, cupiditate tempora. Obcaecati, omnis sunt!
 
   <p><em>e.g:</em></p>
   <pre class="example">
-ip-modal::part(trigger-button) &#123;
-background-color: #305b38;
-border: 1px solid black;
-&#125;
-    </pre
-  >
+    <code [highlight]="example1" language="css"></code>
+    </pre>
 </section>

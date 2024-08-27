@@ -9,11 +9,12 @@
     Install the <code>ip-footnote</code> component as a dependency in your
     project:
   </p>
-  <pre><code>npm install ip-footnote</code></pre>
+  <pre><code>npm install ip-footnote</code>
+  </pre>
 
   <h4>Step 2</h4>
   <p>Import the module into your script file:</p>
-  <pre><code>import '../node_modules/ip-footnote/dist/ip-footnote/ip-footnote.esm';</code></pre>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
 
   <h3 class="under-title">Usage</h3>
   <p>To use this component, you must add the properties as attributes.</p>
@@ -63,19 +64,8 @@
   </table>
   <p><em>e.g:</em></p>
   <pre class="example">
-       &lt; p&gt;
-            Here is a sentence with a footnote reference&lt;sup
-            &gt;&lt;a href="#footnote-1" id="ref1"&gt;1&lt;/a&gt;&lt;/sup
-              &gt;.
-              &lt;/p&gt;
-              &lt;ip-footnote
-            id="footnote-1"
-            identifier="1"
-            text="This is a detailed explanation or reference for the footnote."
-            &gt;
-        &lt;/ip-footnote &gt;
-    </pre
-  >
+    <code [highlight]="example" language="html"></code>
+    </pre>
 
   <h3 class="under-title">Customization</h3>
   <p>We have a set of predefined variables used to customize the dropdown:</p>
@@ -93,11 +83,6 @@
 
   <p>To update the values, use the following CSS code:</p>
   <pre class="example">
-        ip-footnote &#123;
-          --footnote-font-color: #006342;
-          --footnote-font-size: 16px;
-          --footnote-border-left: 2px solid #000000;
-          &#125;
-   </pre
-  >
+    <code [highlight]="custom1" language="css"></code>
+   </pre>
 </section>
