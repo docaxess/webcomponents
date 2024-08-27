@@ -9,10 +9,12 @@
     Install the <code>ip-pagination</code> component as a dependency in your
     project:
   </p>
-  <pre><code>npm install ip-pagination</code></pre>
+  <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
+
   <h4>Step 2</h4>
   <p>Import the module into your script file:</p>
-  <pre><code>import '../node_modules/ip-pagination/dist/ip-pagination/ip-pagination.esm';</code></pre>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
+
   <h3 class="under-title">Usage</h3>
   <p>To use this component, add the properties as attributes.</p>
   <h4>Properties</h4>
@@ -66,13 +68,9 @@
   </ul>
   <p>To update the values, use the following CSS:</p>
   <pre>
-        ip-pagination &#123;
-          --pagination-button-background: #006342;
-          --pagination-button-active-background: #333333;
-          --pagination-button-border-radius: 14px;
-        &#125;
-          </pre
-  >
+    <code [highlight]="custom" language="css"></code>
+  </pre>
+
   <h3 class="under-title">Event</h3>
   <p>
     To listen this event emitted,we have definied
@@ -82,12 +80,7 @@
     The <code>pageChanged</code> event is fired when the current page changes.
     You can listen to this event to handle page changes.
   </p>
-  <pre><code>
-            const pagination = document.querySelector('ip-pagination');
-            
-            pagination.addEventListener('pageChanged', (event) => &#123;
-              const newPage = event.detail;
-              console.log('Page changed to:', newPage);
-              &#125;);
-        </code></pre>
+  <pre>
+    <code [highlight]="handlingEventExample" language="typescript"></code>
+  </pre>
 </section>
