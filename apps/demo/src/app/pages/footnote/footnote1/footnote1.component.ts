@@ -30,7 +30,8 @@ import { defineCustomElements as footnoteElements } from '@ipedis/footnote/loade
 export class Footnote1Component {
   codeSnippet = `
     <p>
-      Here is a sentence with a footnote reference<sup><a href="#footnote-1" id="ref1">1</a></sup>.
+      Here is a sentence with a footnote reference
+      <sup><a href="#footnote-1" id="ref1">1</a></sup>.
     </p>
     <ip-footnote
       id="footnote-1"

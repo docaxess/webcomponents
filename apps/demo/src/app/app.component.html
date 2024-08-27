@@ -3,9 +3,24 @@
 <div class="main-content">
   <div class="container">
     <div class="sidebar-menu">
-      <app-demo-aside></app-demo-aside>
+      <button
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        aria-label="Toggle menu"
+      >
+        ☰ Menu
+      </button>
+      <div class="aside" [ngClass]="{ 'mobile-visible': isMenuVisible }">
+        <app-demo-aside (linkClicked)="closeMenu()"></app-demo-aside>
+      </div>
     </div>
-    <main id="mainContent" role="main" tabindex="-1" class="cards-wrapper">
+    <main
+      id="mainContent"
+      role="main"
+      tabindex="-1"
+      class="cards-wrapper"
+      (click)="closeMenu()"
+    >
       <router-outlet></router-outlet>
     </main>
   </div>

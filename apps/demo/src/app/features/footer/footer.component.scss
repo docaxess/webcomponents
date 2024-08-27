@@ -22,4 +22,18 @@ footer {
     border-bottom: 1px solid white;
     transition: 0.3s;
   }
+
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+    flex-direction: row;
+    gap: 20px;
+    .footer-link {
+      display: block;
+      text-align: center;
+    }
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
 }

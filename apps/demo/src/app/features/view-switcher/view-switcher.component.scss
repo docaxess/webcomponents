@@ -19,6 +19,7 @@
   border-radius: 20px 20px 0 0;
   .icon-button {
     display: flex;
+    align-items: center;
   }
   .preview {
     display: flex;
@@ -67,4 +68,27 @@
 
 .wrapper-content {
   padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .icon-button {
+    display: flex;
+    align-items: center;
+  }
+  .wrapper-buttons {
+    padding: 20px;
+    .preview {
+      height: 40px;
+      width: 100px;
+      font-size: 14px;
+    }
+    .icon-button {
+      gap: 5px;
+    }
+  }
+  .switch-title {
+    h2 {
+      font-size: 20px;
+    }
+  }
 }
