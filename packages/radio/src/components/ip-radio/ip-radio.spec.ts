@@ -11,29 +11,30 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'>
         <mock:shadow-root>
-        <fieldset class="custom-fieldset">
-
-          <div class="container after">
-            <div class="radio">
-              <input type="radio" value="1" id="radio-1" name="radio1" aria-checked="false">
-              <div class="radio-background">
-                <div class="outer-circle"></div>
-                <div class="inner-circle"></div>
-              </div>
-            </div>
-            <label id="label-radio-1" htmlfor="radio-1">Option 1</label>
-          </div>
-          <div class="container after">
-            <div class="radio">
-              <input type="radio" value="2" id="radio-2" name="radio2" aria-checked="false" >
-              <div class="radio-background">
-                <div class="outer-circle"></div>
-                <div class="inner-circle"></div>
-              </div>
-            </div>
-            <label id="label-radio-2" htmlfor="radio-2">Option 2</label>
-          </div>
-          </fieldset>
+    <fieldset class="custom-fieldset" tabindex="0">
+      <div role="radiogroup">
+        <div class="">
+          <input
+            type="radio"
+            id="1"
+            name="ip-radio-group"
+            value="1"
+             
+            aria-checked="false"
+          /><label htmlfor="1">Option 1</label>
+        </div>
+        <div class="">
+          <input
+            type="radio"
+            id="2"
+            name="ip-radio-group"
+            value="2"
+             
+            aria-checked="false"
+          /><label htmlfor="2">Option 2</label>
+        </div>
+      </div>
+    </fieldset>
         </mock:shadow-root>
       </ip-radio>
     `);
@@ -55,28 +56,30 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'>
         <mock:shadow-root>
-        <fieldset class="custom-fieldset">
-          <div class="container after">
-            <div class="radio">
-              <input type="radio" value="1" id="radio-1" name="radio1" aria-checked="true" checked>
-              <div class="radio-background">
-                <div class="outer-circle"></div>
-                <div class="inner-circle"></div>
-              </div>
-            </div>
-            <label id="label-radio-1" htmlfor="radio-1">Option 1</label>
-          </div>
-          <div class="container after">
-            <div class="radio">
-              <input type="radio" value="2" id="radio-2" name="radio2" aria-checked="false">
-              <div class="radio-background">
-                <div class="outer-circle"></div>
-                <div class="inner-circle"></div>
-              </div>
-            </div>
-            <label id="label-radio-2" htmlfor="radio-2">Option 2</label>
-          </div>
-        </fieldset>
+    <fieldset class="custom-fieldset" tabindex="0">
+      <div role="radiogroup">
+        <div class="">
+          <input
+            type="radio"
+            id="1"
+            name="ip-radio-group"
+            value="1"
+              checked
+            aria-checked="true"
+          /><label htmlfor="1">Option 1</label>
+        </div>
+        <div class="">
+          <input
+            type="radio"
+            id="2"
+            name="ip-radio-group"
+            value="2"
+             
+            aria-checked="false"
+          /><label htmlfor="2">Option 2</label>
+        </div>
+      </div>
+    </fieldset>
         </mock:shadow-root>
       </ip-radio>
     `);
@@ -91,18 +94,20 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio options='[{"id": "1", "label": "Option 1"}]'>
         <mock:shadow-root>
-        <fieldset class="custom-fieldset">
-          <div class="container after">
-            <div class="radio">
-              <input type="radio" value="1" id="radio-1" name="radio1" aria-checked="false" >
-              <div class="radio-background">
-                <div class="outer-circle"></div>
-                <div class="inner-circle"></div>
-              </div>
-            </div>
-            <label id="label-radio-1" htmlfor="radio-1">Option 1</label>
-          </div>
-        </fieldset>
+    <fieldset class="custom-fieldset" tabindex="0">
+      <div role="radiogroup">
+        <div class="">
+          <input
+            type="radio"
+            id="1"
+            name="ip-radio-group"
+            value="1"
+             
+            aria-checked="false"
+          /><label htmlfor="1">Option 1</label>
+        </div>
+      </div>
+    </fieldset>
         </mock:shadow-root>
       </ip-radio>
     `);
@@ -118,29 +123,31 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio legend="Legend" options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'>
       <mock:shadow-root>
-      <fieldset class="custom-fieldset">
-        <legend>Legend</legend>
-        <div class="container after">
-          <div class="radio">
-            <input type="radio" value="1" id="radio-1" name="radio1" aria-checked="false">
-            <div class="radio-background">
-              <div class="outer-circle"></div>
-              <div class="inner-circle"></div>
-            </div>
-          </div>
-          <label id="label-radio-1" htmlfor="radio-1">Option 1</label>
+    <fieldset class="custom-fieldset" tabindex="0">
+      <legend>Legend</legend>
+      <div role="radiogroup">
+        <div class="">
+          <input
+            type="radio"
+            id="1"
+            name="ip-radio-group"
+            value="1"
+             
+            aria-checked="false"
+          /><label htmlfor="1">Option 1</label>
         </div>
-        <div class="container after">
-          <div class="radio">
-            <input type="radio" value="2" id="radio-2" name="radio2" aria-checked="false" >
-            <div class="radio-background">
-              <div class="outer-circle"></div>
-              <div class="inner-circle"></div>
-            </div>
-          </div>
-          <label id="label-radio-2" htmlfor="radio-2">Option 2</label>
+        <div class="">
+          <input
+            type="radio"
+            id="2"
+            name="ip-radio-group"
+            value="2"
+             
+            aria-checked="false"
+          /><label htmlfor="2">Option 2</label>
         </div>
-      </fieldset>
+      </div>
+    </fieldset>
         </mock:shadow-root>
       </ip-radio>
     `);

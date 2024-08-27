@@ -1,0 +1,69 @@
+{
+  "name": "search-bar",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/search-bar/src",
+  "projectType": "library",
+  "tags": ["type:webcomponent"],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/search-bar/tsconfig.lib.json",
+        "configPath": "packages/search-bar/stencil.config.ts",
+        "outputPath": "dist/packages/search-bar"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/search-bar/src/**/*.{ts,tsx,json}",
+          "packages/search-bar/*.{ts,tsx,json}"
+        ]
+      }
+    }
+  }
+}
