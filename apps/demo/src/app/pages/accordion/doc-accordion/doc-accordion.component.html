@@ -9,11 +9,11 @@
     Install the <code>ip-accordion</code> component as a dependency in your
     project:
   </p>
-  <pre><code>npm install ip-accordion</code></pre>
+  <pre><code [highlight]="installationScript" language="bash">npm install ip-accordion</code></pre>
 
   <h4>Step 2</h4>
   <p>Import the module into your script file:</p>
-  <pre><code>import '../node_modules/ip-accordion/dist/ip-accordion/ip-accordion.esm';</code></pre>
+  <pre><code [highlight]="code" language="typescript"></code></pre>
 
   <h3 class="under-title">Usage</h3>
 
@@ -100,23 +100,7 @@
   </p>
 
   <p><em>e.g:</em></p>
-  <pre><code>&lt;ip-accordion
-        accordion-headers='[
-        &#123;"title":"Section 1", "iconPath": "assets/images/icon1.svg", "iconActivePath": "assets/images/icon1-active.svg", "btnAlt": "Open Section 1", "btnAltClose": "Close Section 1", "ariaText": "section-1"&#125;,
-        &#123;"title":"Section 2", "iconPath":"assets/images/icon2.svg", "iconActivePath": "assets/images/icon2-active.svg", "btnAlt": "Open Section 2", "btnAltClose": "Close Section 2", "ariaText": "section-2"&#125;,
-        &#123;"title":"Section 3", "iconPath":"assets/images/icon3.svg", "iconActivePath": "assets/images/icon3-active.svg", "btnAlt": "Open Section 3", "btnAltClose": "Close Section 3", "ariaText": "section-3"&#125;
-      ]'
-  is-first-panel-open
-  is-single-open
-  title-tag="h4"    
-        &gt;
-        &lt;div slot="accordion-1"&gt;--content of Accessibilité--&lt;/div&gt;
-        &lt;div slot="accordion-2"&gt;--content of Pdf Document--&lt;/div&gt;
-        &lt;div slot="accordion-3"&gt;--content of Statistical--&lt;/div&gt;
-        &lt;div slot="accordion-4"&gt;--content of Certification--&lt;/div&gt;
-        &lt;div slot="accordion-5"&gt;--content of Legislation--&lt;/div&gt;
-      &lt;/ip-accordion&gt;
-    </code></pre>
+  <pre><code [highlight]="example" language="html"></code></pre>
 
   <h3 class="under-title">Customization</h3>
   <p>
@@ -129,10 +113,9 @@
     <li><code>--ip-acc-icon-size</code></li>
   </ul>
   <p>To update the values use the following:</p>
-  <pre class="code-block"><code>ip-accordion &#123;
-  --ip-acc-primary-color: #006342;
-  --ip-acc-secondary-color: #000000;
-&#125;</code></pre>
+  <pre class="code-block">
+    <code [highlight]="custom" language="css"></code>
+  </pre>
 
   <h4>Class</h4>
   <p>We have a set of classes that could be used to customise accordingly:</p>
@@ -143,21 +126,16 @@
     <li><code>acc-panel</code>: for each panel div</li>
   </ul>
   <p>Example:</p>
-  <pre class="code-block"><code>ip-accordion::part(acc-content) &#123;
-  background-color: #305b38;
-&#125;</code></pre>
+  <!-- TODO: Combine with a comment on each block -->
+  <pre
+    class="code-block"
+  ><code [highlight]="custom1" language="css"></code></pre>
   <br />
-  <pre class="code-block"><code>ip-accordion &#123;
-  &::part(acc-content) &#123;
-    background-color: #305b38;
-  &#125;
-&#125;</code></pre>
+  <pre class="code-block">
+    <code [highlight]="custom2" language="css"></code>
+  </pre>
   <br />
-  <pre class="code-block"><code>&lt;ip-accordion&gt;
-  &lt;div class="my-class"&gt;--content 1--&lt;/div&gt;
-
-  &lt;div class="my-class"&gt;--content 2--&lt;/div&gt;
-
-  &lt;div class="my-class"&gt;--content 3--&lt;/div&gt;
-&lt;/ip-accordion&gt;</code></pre>
+  <pre
+    class="code-block"
+  ><code [highlight]="custom3" language="html"></code></pre>
 </section>

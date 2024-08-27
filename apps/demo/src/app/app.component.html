@@ -1,13 +1,13 @@
 <app-skip-link></app-skip-link>
 <app-header></app-header>
-<main class="main-content">
+<div class="main-content">
   <div class="container">
     <div class="sidebar-menu">
       <app-demo-aside></app-demo-aside>
     </div>
-    <div class="cards-wrapper" #cardContainer>
+    <main id="mainContent" role="main" tabindex="-1" class="cards-wrapper">
       <router-outlet></router-outlet>
-    </div>
+    </main>
   </div>
-</main>
+</div>
 <app-footer></app-footer>
