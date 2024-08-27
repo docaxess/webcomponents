@@ -47,3 +47,24 @@ pre {
     }
   }
 }
+@media (max-width: 1024px) {
+  #documentation {
+    margin: 0 rem(12);
+    padding: rem(15);
+
+    h3 {
+      font-size: rem(24);
+    }
+
+    pre {
+      padding: rem(8);
+    }
+
+    table {
+      th,
+      td {
+        padding: rem(6);
+      }
+    }
+  }
+}

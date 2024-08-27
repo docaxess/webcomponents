@@ -38,7 +38,8 @@ export class Tooltip2Component {
   hoverCode = `
       <ip-tooltip
         tooltip-trigger="Hover Me!"
-        tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+        tooltip-content="Please enter a description of the tooltip.
+         The length is 3/4 lines maximum. Arrows can be adjusted position."
       >
       </ip-tooltip>
   `;

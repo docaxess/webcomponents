@@ -46,7 +46,9 @@
         </div>
       }
       @if (currentView === 'code') {
-        <app-code-snippet [code]="codeSnippet"></app-code-snippet>
+        <div class="code-wrapper">
+          <app-code-snippet [code]="codeSnippet"></app-code-snippet>
+        </div>
       }
       @if (currentView === 'doc') {
         <app-doc-table></app-doc-table>

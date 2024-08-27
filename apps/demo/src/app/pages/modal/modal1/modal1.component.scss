@@ -101,3 +101,40 @@
     outline-offset: 3px;
   }
 }
+@media (max-width: 1024px) {
+  .modal-wrapper {
+    margin-top: 150px;
+
+    .modal-content {
+      width: 350px;
+
+      .dialog-contents {
+        input {
+          width: 300px;
+        }
+      }
+      .dialog-btn {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-wrapper {
+    margin-top: 150px;
+
+    .modal-content {
+      width: 250px;
+
+      .dialog-contents {
+        input {
+          width: 240px;
+        }
+      }
+      .dialog-btn {
+        width: 240px;
+      }
+    }
+  }
+}

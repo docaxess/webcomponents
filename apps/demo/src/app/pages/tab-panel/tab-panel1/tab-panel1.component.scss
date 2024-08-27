@@ -33,12 +33,14 @@ ip-tab-panel::part(tab-list) {
 }
 
 .ip-content {
-  margin-block: 3.125em;
+  margin-block: 1rem;
   display: flex;
 }
 
 .ip-content img {
   border-radius: 0.625em;
+  object-fit: contain;
+  width: 350px;
 }
 
 .ip-content .ip-content-desc {
