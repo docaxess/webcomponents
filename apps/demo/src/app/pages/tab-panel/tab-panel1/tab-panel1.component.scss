@@ -1,0 +1,138 @@
+@import '../../../../assets/styles/index.scss';
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 rem(15) rem(15);
+}
+.tab-panel {
+  margin: rem(20);
+  width: 95%;
+}
+ip-tab-panel::part(tab) {
+  gap: 5px;
+  color: purple;
+  position: relative;
+}
+
+ip-tab-panel::part(tab-active) {
+  background-color: purple;
+  color: white;
+}
+
+ip-tab-panel::part(tab-header) {
+  outline: 2px solid red;
+  outline-offset: 0.025em;
+  display: flex;
+  flex-direction: column;
+}
+
+ip-tab-panel::part(tab-list) {
+  display: flex;
+  flex-direction: column;
+}
+
+.ip-content {
+  margin-block: 3.125em;
+  display: flex;
+}
+
+.ip-content img {
+  border-radius: 0.625em;
+}
+
+.ip-content .ip-content-desc {
+  margin-left: 3.125em;
+  margin-right: 25px;
+}
+
+.ip-content .ip-content-title {
+  margin-block-start: 2.188em;
+  font-family: 'Nunito-Bold';
+  font-size: 1.125rem;
+  color: #b00057;
+  text-transform: uppercase;
+}
+
+.ip-content .ip-content-subtitle {
+  margin-top: rem(15);
+  font-family: 'Nunito-Bold';
+  font-size: 42px;
+  color: #b00057;
+}
+
+.ip-content .ip-content-text {
+  margin-top: rem(20);
+  font-family: 'Nunitos';
+  font-size: 18px;
+  color: #2e3243;
+}
+
+.ip-content .ip-content-btn {
+  margin-top: rem(20);
+  font-family: 'Nunito-Bold';
+  font-size: rem(16);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: rem(10) rem(16);
+  border: none;
+  border-radius: 4px;
+  background-color: #b00057;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ip-content .ip-content-btn img {
+  margin-left: rem(15);
+  width: 14px;
+  height: rem(15);
+  vertical-align: middle;
+}
+
+.tab-panel {
+  max-width: rem(960);
+  margin: rem(20) auto;
+}
+
+.panel-wrapper {
+  border: 1px solid $darkColor;
+  border-radius: rem(5);
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait),
+  only screen and (max-width: 992px) and (orientation: landscape) {
+  ip-tab-panel::part(tab-container) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ip-tab-panel::part(tab-btn) {
+    margin-inline: 0;
+    padding: 0.75em;
+  }
+
+  ip-tab-panel::part(tab-text) {
+    display: none;
+  }
+
+  .ip-content {
+    flex-direction: column;
+    padding-inline: rem(20);
+  }
+
+  .ip-content img {
+    flex-basis: 100%;
+    max-inline-size: 100%;
+  }
+
+  .ip-content .ip-content-desc {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ip-content .ip-content-subtitle {
+    font-size: 2rem;
+    margin-block-end: 0.75em;
+  }
+}

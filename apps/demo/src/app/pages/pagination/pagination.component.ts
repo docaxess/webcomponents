@@ -1,28 +1,25 @@
-import {ChangeDetectionStrategy, Component, CUSTOM_ELEMENTS_SCHEMA, inject, PLATFORM_ID} from '@angular/core';
-import {CommonModule, DOCUMENT, isPlatformBrowser} from '@angular/common';
-import { CodeSnippetComponent } from '../code-snippet/code-snippet.component';
-import { defineCustomElements as paginationElements } from '@ipedis/pagination/loader';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from '../../features/card/card.component';
+
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pagination',
   standalone: true,
-  imports: [CommonModule, CodeSnippetComponent],
+  imports: [CommonModule, CardComponent, RouterLink],
   templateUrl: './pagination.component.html',
-  styleUrl: './pagination.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  styleUrls: ['./pagination.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent {
-  codeSnippet = `
-<ip-pagination
-  total-pages="25"
-  current-page="5"
-  visible-pages="7">
-</ip-pagination>
-  `
-  constructor() {
-    if (isPlatformBrowser(inject(PLATFORM_ID)) && paginationElements) {
-      paginationElements(inject(DOCUMENT).defaultView as Window);
-    }
-  }
+  currentView: 'preview' | 'code' | 'doc' = 'preview';
+
+  cards = [
+    {
+      title: 'Pagination 1',
+      imageUrl: 'assets/images/pagination.png',
+      route: '/pagination/pagination1',
+    },
+  ];
 }

@@ -5,15 +5,15 @@ h3,
 h4,
 h5,
 h6 {
-  color: $secondaryColor;
+  color: $primaryColor;
 }
 .under-title {
   text-align: center;
-  color: $secondaryColor;
+  color: $primaryColor;
   margin-top: rem(15);
 }
 pre {
-  background-color: $darkColor;
+  background-color: #1e1e1e;
   color: $lightColor;
   padding: 10px;
   border-radius: 5px;
@@ -23,10 +23,11 @@ pre {
 #documentation {
   margin: 0 rem(18);
   padding: 20px;
+  font-family: 'Nunito';
 
   h3 {
     margin-top: rem(20);
-    color: $secondaryColor;
+    color: $primaryColor;
   }
   table {
     width: 100%;
@@ -42,6 +43,7 @@ pre {
 
     th {
       background-color: $primaryColor;
+      color: $lightColor;
     }
   }
 }

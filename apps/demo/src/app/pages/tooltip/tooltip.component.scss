@@ -1,41 +1,15 @@
 @import '../../../assets/styles/index.scss';
-
-#demo {
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    a {
-      text-decoration: none;
-    }
-  }
-  .clicked-tooltip {
-    display: flex;
-    flex-direction: column;
-  }
-  .tooltip {
-    display: flex;
-    justify-content: center;
-    padding-top: rem(100);
-    padding-bottom: rem(10);
-  }
-  .code {
-    padding-top: rem(15);
-    width: 100%;
-  }
-  .code pre {
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  .title {
     color: $lightColor;
-    background-color: $darkColor;
-    border-radius: rem(5);
-    margin: 0;
   }
-  .with-button {
-    padding-top: rem(35);
-  }
-  .card {
-    border: 1px solid $darkColor;
-    margin-top: rem(15);
-    border-radius: rem(6);
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: rem(22);
   }
 }

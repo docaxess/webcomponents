@@ -4,68 +4,103 @@ export const appRoutes: Route[] = [
     path: '',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
+    data: { title: 'Accueil' },
   },
   {
     path: 'home',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
+    data: { title: 'Accueil' },
   },
   {
     path: 'tooltip',
-    loadComponent: () =>
-      import('./pages/tooltip/tooltip.component').then(
-        (m) => m.TooltipComponent,
-      ),
+    loadChildren: () =>
+      import('./pages/tooltip/tooltip.routing').then((m) => m.tooltipRoutes),
+    data: { title: 'Tooltip' },
   },
+
   {
     path: 'dropdown',
-    loadComponent: () =>
-      import('./pages/dropdown/dropdown.component').then(
-        (m) => m.DropdownComponent,
-      ),
+    loadChildren: () =>
+      import('./pages/dropdown/dropdown.routing').then((m) => m.dropdownRoutes),
+    data: { title: 'Dropdown' },
   },
   {
     path: 'toggle',
-    loadComponent: () =>
-      import('./pages/toggle/toggle.component').then((m) => m.ToggleComponent),
+    loadChildren: () =>
+      import('./pages/toggle/toggle.routing').then((m) => m.toggleRoues),
+    data: { title: 'Toggle' },
   },
   {
     path: 'radio-button',
-    loadComponent: () =>
-      import('./pages/radio-button/radio-button.component').then(
-        (m) => m.RadioButtonComponent,
+    loadChildren: () =>
+      import('./pages/radio-button/radio-button.routing').then(
+        (m) => m.radioButtonRoutes,
       ),
+    data: { title: 'Radio-button' },
   },
   {
     path: 'checkbox',
-    loadComponent: () =>
-      import('./pages/checkbox/checkbox.component').then(
-        (m) => m.CheckboxComponent,
-      ),
+    loadChildren: () =>
+      import('./pages/checkbox/checkbox.routing').then((m) => m.checkboxRoutes),
+    data: { title: 'Checkbox' },
   },
   {
     path: 'login',
-    loadComponent: () =>
-      import('./pages/login/login.component').then((m) => m.LoginComponent),
+    loadChildren: () =>
+      import('./pages/login/login.routing').then((m) => m.loginRoutes),
+    data: { title: 'Login' },
   },
   {
     path: 'pagination',
-    loadComponent: () =>
-      import('./pages/pagination/pagination.component').then(
-        (m) => m.PaginationComponent,
+    loadChildren: () =>
+      import('./pages/pagination/pagination.routing').then(
+        (m) => m.paginationRoutes,
       ),
+    data: { title: 'Pagination' },
   },
   {
     path: 'table',
-    loadComponent: () =>
-      import('./pages/table/table.component').then((m) => m.TableComponent),
+    loadChildren: () =>
+      import('./pages/table/table.routing').then((m) => m.tableRoutes),
+    data: { title: 'Table' },
   },
+
   {
     path: 'tab-panel',
-    loadComponent: () =>
-      import('./pages/tab-panel/tab-panel.component').then(
-        (m) => m.TabPanelComponent,
+    loadChildren: () =>
+      import('./pages/tab-panel/tab-panel.routing').then(
+        (m) => m.tabPanelRoutes,
       ),
+    data: { title: 'Tab-panel' },
+  },
+  {
+    path: 'accordion',
+    loadChildren: () =>
+      import('./pages/accordion/accordion.routing').then(
+        (m) => m.accordionRoutes,
+      ),
+    data: { title: 'Accordion' },
+  },
+  {
+    path: 'modal',
+    loadChildren: () =>
+      import('./pages/modal/modal.routing').then((m) => m.modalRoutes),
+    data: { title: 'Modal' },
+  },
+  {
+    path: 'footnote',
+    loadChildren: () =>
+      import('./pages/footnote/footnote.routing').then((m) => m.footnoteRoutes),
+    data: { title: 'Footnote' },
+  },
+  {
+    path: 'show-more',
+    loadChildren: () =>
+      import('./pages/show-more/show-more.routing').then(
+        (m) => m.showMoreRoutes,
+      ),
+    data: { title: 'Show-more' },
   },
   { path: '**', redirectTo: '' },
 ];

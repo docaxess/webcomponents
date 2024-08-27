@@ -1,13 +1,25 @@
-
 body {
-    font-family: Arial, sans-serif;
-  }
+  font-family: 'Nunito';
+}
 
-  .presentation {
-    display: grid;
-    grid-template-columns: 24% 74%;
-    gap: 15px;
-    
+.main-content {
+  background-image: url('../assets/images/Rectangle-1.png');
+  background-position-y: -159px;
+  background-repeat: no-repeat;
+  min-height: 82.5vh;
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 240px;
+    padding: 50px 0;
+    gap: 60px;
+
+    .sidebar-menu {
+      width: 420px;
     }
-  
- 
+    .cards-wrapper {
+      width: 960px;
+      gap: 22px;
+    }
+  }
+}

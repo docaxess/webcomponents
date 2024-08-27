@@ -1,0 +1,57 @@
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Modal 1'"
+    [breadcrumbItems]="[
+      { label: 'Modal', link: '/modal' },
+      { label: 'Modal 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
+      >
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      @if (currentView === 'preview') {
+        <div class="modal-wrapper">
+          <ip-modal button-text="Open Custom Modal">
+            <div slot="content" class="modal-content">
+              <div class="dialog-title">
+                <h1 id="dialog-reference">Subscribe to our Newsletter</h1>
+                <p>Join thousands getting emails in their inbox.</p>
+              </div>
+              <div class="dialog-contents">
+                <input
+                  type="text"
+                  required
+                  class="input-modal"
+                  aria-label="Your name"
+                  title="Your name"
+                  placeholder="Your Name"
+                  autocomplete="full-name"
+                />
+              </div>
+              <div>
+                <button class="dialog-btn">Got it, Thanks!</button>
+              </div>
+            </div>
+          </ip-modal>
+        </div>
+      }
+      @if (currentView === 'code') {
+        <app-code-snippet [code]="ModalCodeSnippet"></app-code-snippet>
+      }
+      @if (currentView === 'doc') {
+        <app-doc-modal></app-doc-modal>
+      }
+    </div>
+  </div>
+</div>

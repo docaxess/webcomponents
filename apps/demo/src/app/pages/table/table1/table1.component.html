@@ -1,0 +1,56 @@
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Table 1'"
+    [breadcrumbItems]="[
+      { label: 'Table', link: '/table' },
+      { label: 'Table 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
+      >
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      @if (currentView === 'preview') {
+        <div class="table-wrapper">
+          <ip-table
+            columns='[
+                  &#123; "header": "Name" , "type": "string"&#125;,
+                  &#123; "header": "Number", "type": "number" &#125;,
+                  &#123; "header": "Category", "type": "string" &#125;,
+                  &#123; "header": "Price" ,"type": "number"&#125;,
+                  &#123; "header": "Status", "type": "string" &#125;
+                  ]'
+            rows='[
+                  &#123;"Name":"Slim Fit chinos","Number" :9504,"Category": "Men’s outwear","Price": 98.25, "Status": "In Stock"&#125;,
+                  &#123;"Name":"Wide-Brimmed Floppy Hat","Number": 9000,"Category": "Women’s Outwear","Price": 145.66,"Status": "Backorder"&#125;,
+                  &#123;"Name":"V-Neck Cashmere Sweater","Number": 9485,"Category": "Men’s outwear","Price": 65.00,"Status": "Low Stock"&#125;,
+                  &#123;"Name":"Striped Off-Shoulder To","Number": 1524,"Category": "Women’s Outwear","Price": 56.22,"Status": "In Stock"&#125;,
+                  &#123;"Name":"Quilted Bomber Jacket","Number": 1235,"Category": "Men’s outwear","Price": 14.56,"Status": "In Stock"&#125;,
+                  &#123;"Name":"Women’s Chescott Down Jacket","Number": 5689,"Category": "Women’s Outwear","Price": 100,"Status": "Backorder"&#125;,
+                  &#123;"Name":"Denim Trucker Jacket","Number": 2394,"Category": "Men’s outwear","Price": 52.45,"Status": "In Stock"&#125;,
+                  &#123;"Name":"High-Waisted Skinny Jeans","Number": 7859,"Category": "Women’s Outwear","Price": 125.00,"Status": "Low Stock"&#125;,
+                  &#123;"Name":"Men’s Harrington Jacket","Number":5600,"Category": "Men’s outwear","Price": 150.58,"Status": "In Stock"&#125;
+                ]'
+          >
+          </ip-table>
+        </div>
+      }
+      @if (currentView === 'code') {
+        <app-code-snippet [code]="codeSnippet"></app-code-snippet>
+      }
+      @if (currentView === 'doc') {
+        <app-doc-table></app-doc-table>
+      }
+    </div>
+  </div>
+</div>

@@ -1,93 +1,14 @@
 <div class="container">
-    <section id="demo">
-        <h2 class="under-title">Demo</h2>
-        <div class="pagination-wrapper">
-            <div class="pagination">
-                <ip-pagination total-pages="25" current-page="5" visible-pages="7"></ip-pagination>
-            </div>
-            <app-code-snippet [code]="codeSnippet"></app-code-snippet>
-        </div>
-    </section>
-    <section id="documentation">
-        <h2 class="under-title">
-            Installation
-        </h2>
-        <p>Follow these steps to install and use the <code>ip-pagination</code> component in your project.</p>
-        <h3>Step 1</h3>
-        <p>Install the <code>ip-pagination</code> component as a dependency in your project:</p>
-        <pre><code>npm install ip-pagination</code></pre>
-        <h3>Step 2</h3>
-        <p>Import the module into your script file:</p>
-        <pre><code>import '../node_modules/ip-pagination/dist/ip-pagination/ip-pagination.esm';</code></pre>
-        <h2 class="under-title">Usage</h2>
-        <p>To use this component, add the properties as attributes.</p>
-        <h3>Properties</h3>
-        <table>
-            <thead>
-              <tr>
-                <th>Property</th>
-                <th>Attribute</th>
-                <th>Necessity</th>
-                <th>Description</th>
-                <th>Type</th>
-                <th>Default</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>totalPages</td>
-                <td>total-pages</td>
-                <td>Required</td>
-                <td>The total number of pages.</td>
-                <td>number</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>currentPage</td>
-                <td>current-page</td>
-                <td>Optional</td>
-                <td>The current active page.</td>
-                <td>number</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>visiblePages</td>
-                <td>visible-pages</td>
-                <td>Optional</td>
-                <td>The number of pages to display in the pagination controls.</td>
-                <td>number</td>
-                <td>5</td>
-              </tr>
-            </tbody>
-          </table>
-        <h2 class="under-title">Customization</h2>
-        <p>We have a set of predefined variables used to customize the dropdown:</p>
-        <ul>
-            <li><code>--pagination-button-color</code></li>
-            <li><code>--pagination-button-background</code></li>
-            <li><code>--pagination-button-border-radius</code></li>
-            <li><code>--pagination-button-padding</code></li>
-            <li><code>--pagination-button-active-background</code></li>
-            <li><code>--pagination-button-disabled-color</code></li>
-          </ul>
-          <p>To update the values, use the following CSS:</p>
-          <pre>
-        ip-pagination &#123;
-          --pagination-button-background: #006342;
-          --pagination-button-active-background: #333333;
-          --pagination-button-border-radius: 14px;
-        &#125;
-          </pre>
-        <h2 class="under-title">Event</h2>
-        <p>To listen this event emitted,we have definied <code>pageChanged</code>  event in this component.</p>
-        <p>The <code>pageChanged</code> event is fired when the current page changes. You can listen to this event to handle page changes. </p>
-        <pre><code>
-            const pagination = document.querySelector('ip-pagination');
-            
-            pagination.addEventListener('pageChanged', (event) => &#123;
-              const newPage = event.detail;
-              console.log('Page changed to:', newPage);
-              &#125;);
-        </code></pre>
-    </section>
+  <div class="title">
+    <h1>Tooltip</h1>
+  </div>
+  <div class="card-wrapper">
+    <app-card
+      *ngFor="let card of cards"
+      [imageUrl]="card.imageUrl"
+      [title]="card.title"
+      [route]="card.route"
+    >
+    </app-card>
+  </div>
 </div>

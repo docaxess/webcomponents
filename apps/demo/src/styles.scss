@@ -1,5 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'highlight.js/styles/vs2015.css';
+
+@font-face {
+  font-family: 'Nunito-bold';
+  src: url('/assets/styles/fonts/Nunito-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('/assets/styles/fonts/Nunito-Regular.woff') format('woff');
+}
 body {
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  font-family: 'Nunito-bold';
 }

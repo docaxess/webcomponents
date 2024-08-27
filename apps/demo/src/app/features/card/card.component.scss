@@ -1,0 +1,75 @@
+@import '../../../assets/styles/index.scss';
+a {
+  text-decoration: none;
+}
+.card {
+  background-color: $cardBackgroundColor;
+  color: $cardTextColor;
+  width: rem(459);
+  box-shadow: 0 0 rem(12) 0 fade(darken($darkColor, 100), 20);
+  border-radius: rem(15);
+  border: 2px solid $cardBackgroundColor;
+  will-change: transform;
+  transition: transform $transition-in-out;
+  overflow: hidden;
+  &:hover,
+  &:focus-within {
+    transform: scale(1.03);
+    transition:
+      transform $transition-in-out,
+      outline $transition-in-out,
+      outline-offset $transition-in-out;
+  }
+
+  &:focus-within {
+    outline-offset: em(5);
+    outline: 2px solid var(--focus-color);
+    outline: 3px solid $darkColor;
+    outline-offset: 4px;
+  }
+}
+.title {
+  font-family: 'Nunito-Bold', sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align: start;
+  color: $secondaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.image-wrapper {
+  padding: 50px;
+  block-size: 13.25rem;
+  background-color: #fafafa;
+}
+.card-img {
+  block-size: 100%;
+  inline-size: 100%;
+
+  object-fit: contain;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(30);
+  border-block-start: 2px solid darken($cardBackgroundColor, 9);
+
+  h2 {
+    font-size: rem(20);
+    margin: 0;
+    color: $cardTextColor;
+  }
+}
+
+.card-title {
+  font-size: rem(16);
+  margin: 0;
+  color: #333;
+}

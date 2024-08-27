@@ -1,0 +1,43 @@
+<div class="modal-content">
+  <app-breadcrumb
+    [title]="'Footnote 1'"
+    [breadcrumbItems]="[
+      { label: 'Footnote', link: '/footnote' },
+      { label: 'Footnote 1' },
+    ]"
+  >
+  </app-breadcrumb>
+  <div class="wrapper">
+    <div class="wrapper-head">
+      <app-view-switcher
+        [currentView]="currentView"
+        [title]="switcherTitle"
+        (viewChange)="switchView($event)"
+      >
+      </app-view-switcher>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{ 'code-background': currentView === 'code' }"
+    >
+      @if (currentView === 'preview') {
+        <p>
+          Here is a sentence with a footnote reference<sup
+            ><a href="#footnote-1" id="ref1">1</a></sup
+          >.
+        </p>
+        <ip-footnote
+          id="footnote-1"
+          identifier="1"
+          text="This is a detailed explanation or reference for the footnote."
+        ></ip-footnote>
+      }
+      @if (currentView === 'code') {
+        <app-code-snippet [code]="codeSnippet"></app-code-snippet>
+      }
+      @if (currentView === 'doc') {
+        <app-doc-footnote></app-doc-footnote>
+      }
+    </div>
+  </div>
+</div>

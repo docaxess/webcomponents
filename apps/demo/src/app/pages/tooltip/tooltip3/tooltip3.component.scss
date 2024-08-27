@@ -1,0 +1,15 @@
+@import '../../../../assets/styles/index.scss';
+.container {
+  .preview {
+    margin: rem(180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 rem(15) rem(15);
+}

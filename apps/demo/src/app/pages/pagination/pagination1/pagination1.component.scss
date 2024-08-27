@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/index.scss';
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: rem(70) 0;
+}
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 rem(15) rem(15);
+}

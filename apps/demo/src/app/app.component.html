@@ -1,8 +1,13 @@
+<app-skip-link></app-skip-link>
 <app-header></app-header>
-<section id="presentation" class="presentation">
-  <app-demo-aside></app-demo-aside>
-    <div class="container">
-    <router-outlet></router-outlet>
+<main class="main-content">
+  <div class="container">
+    <div class="sidebar-menu">
+      <app-demo-aside></app-demo-aside>
     </div>
-</section>
-
+    <div class="cards-wrapper" #cardContainer>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

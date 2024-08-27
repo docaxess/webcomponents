@@ -1,0 +1,17 @@
+@import '../../../../assets/styles/index.scss';
+
+.content {
+  background-color: #f4f4f4;
+  height: 675px;
+  overflow-y: auto;
+  border-radius: 0 0 rem(15) rem(15);
+  display: flex;
+  justify-content: center;
+}
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  padding: 10px;
+  height: 425px;
+}

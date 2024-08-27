@@ -1,0 +1,92 @@
+<section id="documentation">
+  <h3 class="under-title">Installation</h3>
+  <p>
+    Follow these steps to install and use the <code>ip-modal</code> component in
+    your project.
+  </p>
+  <h4>Step 1</h4>
+  <p>
+    Install the <code>ip-modal</code> component as a dependency in your project:
+  </p>
+  <pre><code>npm install ip-modal</code></pre>
+  <h4>Step 2</h4>
+  <p>Import the module into your script file:</p>
+  <pre><code>import '../node_modules/ip-modal/dist/ip-modal/ip-modal.esm';</code></pre>
+  <h3 class="under-title">Usage</h3>
+
+  <p>To use this input, you must add the following properties as attributes.</p>
+  <h4>Properties</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Attribute</th>
+        <th>Necessity</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>buttonText</td>
+        <td>button-text</td>
+        <td>Required</td>
+        <td>The text to display on the trigger button</td>
+        <td>string</td>
+        <td>Open modal</td>
+      </tr>
+      <tr>
+        <td>closeAriaLabel</td>
+        <td>close-aria-label</td>
+        <td>Required</td>
+        <td>The aria-label text for the close button</td>
+        <td>string</td>
+        <td>Close the dialog</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Content</h4>
+  <p>
+    The content of the modal should be inserted with the
+    <code>slot="content"</code> attribute.
+  </p>
+
+  <p><em>e.g:</em></p>
+  <pre class="example">
+&lt;ip-modal button-text="Open Modal"&gt;
+&lt;div slot="content" class="content"&gt;
+Join thousands getting emails in their inbox. Lorem ipsum dolor sit amet,
+consectetur adipisicing elit. Hic, unde ipsa quam quo aperiam nostrum
+repellat laboriosam praesentium atque saepe, obcaecati, perferendis
+molestias delectus? Maiores, cupiditate tempora. Obcaecati, omnis sunt!
+&lt;/div&gt;
+&lt;/ip-modal&gt;
+    </pre
+  >
+
+  <h3 class="under-title">Customization</h3>
+  <h4>Style</h4>
+  <p>We have a set of predefined CSS variables used to customize the modal:</p>
+  <ul>
+    <li><code>--svg-color</code></li>
+    <li><code>--svg-size</code></li>
+  </ul>
+
+  <h4>Class</h4>
+  <p>We have a set of classes that can be used for further customization:</p>
+  <ul>
+    <li><code>dialog-content</code>: for the container of the modal</li>
+    <li><code>trigger-button</code>: for the trigger button</li>
+  </ul>
+
+  <p><em>e.g:</em></p>
+  <pre class="example">
+ip-modal::part(trigger-button) &#123;
+background-color: #305b38;
+border: 1px solid black;
+&#125;
+    </pre
+  >
+</section>
