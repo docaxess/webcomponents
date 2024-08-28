@@ -102,5 +102,11 @@ export const appRoutes: Route[] = [
       ),
     data: { title: 'Show-more' },
   },
+  {
+    path: 'alert',
+    loadChildren: () =>
+      import('./pages/alert/alert.routing').then((m) => m.alertRouting),
+    data: { title: 'Alert' },
+  },
   { path: '**', redirectTo: '' },
 ];

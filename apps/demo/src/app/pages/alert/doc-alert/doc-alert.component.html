@@ -1,0 +1,85 @@
+<section id="documentation">
+  <h3 class="under-title">Installation</h3>
+  <p>
+    Follow these steps to install and use the
+    <code>ip-alert</code> component in your project.
+  </p>
+  <h4>Step 1</h4>
+  <p>
+    Install the <code>ip-alert</code> component as a dependency in your project:
+  </p>
+  <pre><code>npm install ip-alert</code></pre>
+
+  <h4>Step 2</h4>
+  <p>Import the module into your script file:</p>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
+
+  <h3 class="under-title">Usage</h3>
+  <p>To use this component, add the properties as attributes.</p>
+  <h4>Properties</h4>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Necessity</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>message</td>
+        <td>message</td>
+        <td>Required</td>
+        <td>the message for the alert</td>
+        <td>string</td>
+        <td>''</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>type</td>
+        <td>Required</td>
+        <td>the type of the alert</td>
+        <td>"danger" | "info" | "success" | "warning"</td>
+        <td>'info'</td>
+      </tr>
+      <tr>
+        <td>alertTitle</td>
+        <td>alert-title</td>
+        <td>Optional</td>
+        <td>the title of alert if it exists</td>
+        <td>string</td>
+        <td>''</td>
+      </tr>
+      <tr>
+        <td>closeAriaLabel</td>
+        <td>close-aria-label</td>
+        <td>Optional</td>
+        <td>the aria-label of the close button</td>
+        <td>string</td>
+        <td>'Close alert'</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><em>e.g:</em></p>
+  <pre class="example">
+      <code [highlight]="example" language="html"></code>
+      </pre>
+  <h3 class="under-title">Customization</h3>
+  <p>We have a set of predefined variables used to customize the alert:</p>
+  <ul>
+    <li><code>--alert-font-size</code></li>
+    <li><code>--alert-message-color</code></li>
+    <li><code>--alert-font-family</code></li>
+    <li><code>--alert-font-title-size</code></li>
+  </ul>
+
+  <p><em>e.g:</em></p>
+
+  <p>To update the values, use the following CSS code:</p>
+  <pre class="example">
+        <code [highlight]="custom1" language="css"></code>
+       </pre>
+</section>
