@@ -34,7 +34,7 @@ export class InfoAlertComponent {
     <ip-alert
       type="info"
       alert-title="Info"
-      message="Here is somme supporting text for the user to how to resolve alert."
+      message="System updates are complete. You may now continue working."
     >
     </ip-alert>
   `;

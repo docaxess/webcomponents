@@ -34,7 +34,7 @@ export class DangerAlertComponent {
     <ip-alert
       type="danger"
       alert-title="Danger"
-      message="Here is somme supporting text for the user to how to resolve alert."
+      message="A critical error occurred while processing your request. Please contact technical support."
     >
     </ip-alert>
   `;

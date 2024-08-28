@@ -108,5 +108,12 @@ export const appRoutes: Route[] = [
       import('./pages/alert/alert.routing').then((m) => m.alertRouting),
     data: { title: 'Alert' },
   },
+  {
+    path: 'search-bar',
+    loadChildren: () =>
+      import('./pages/search-bar/search-bar.routing').then(
+        (m) => m.searchBarRouting,
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];

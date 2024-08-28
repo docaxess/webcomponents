@@ -15,22 +15,22 @@ export class AlertComponent {
     {
       title: 'Success Alert',
       route: '/alert/success-alert',
-      imageUrl: 'assets/images/success-alert.jpg',
+      imageUrl: 'assets/images/alertSuccess.png',
     },
     {
       title: 'Info Alert',
       route: '/alert/info-alert',
-      imageUrl: 'assets/images/info-alert.jpg',
+      imageUrl: 'assets/images/alertInfo.png',
     },
     {
       title: 'Warning Alert',
       route: '/alert/warning-alert',
-      imageUrl: 'assets/images/warning-alert.jpg',
+      imageUrl: 'assets/images/alertWarning.png',
     },
     {
       title: 'Danger Alert',
       route: '/alert/danger-alert',
-      imageUrl: 'assets/images/danger-alert.jpg',
+      imageUrl: 'assets/images/alertDanger.png',
     },
   ];
 }

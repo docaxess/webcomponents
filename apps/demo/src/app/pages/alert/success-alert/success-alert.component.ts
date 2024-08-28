@@ -34,7 +34,7 @@ export class SuccessAlertComponent {
     <ip-alert
       type="success"
       alert-title="Success"
-      message="Here is somme supporting text for the user to how to resolve alert."
+      message="Your registration was completed successfully! You can now access your account."
     >
     </ip-alert>
   `;
