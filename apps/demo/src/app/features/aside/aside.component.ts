@@ -2,7 +2,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  Output, OnInit,
+  Output,
+  OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -16,7 +17,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class AsideComponent implements OnInit {
   @Output() focusCards = new EventEmitter<void>();
+  @Output() linkClicked = new EventEmitter<void>();
   isOpen: { [key: string]: boolean } = {};
+  isMenuVisible = false;
 
   ngOnInit(): void {
     this.isOpen['global-elements'] = true;
@@ -32,5 +35,11 @@ export class AsideComponent implements OnInit {
       event.preventDefault();
       this.toggleSection(section);
     }
+  }
+  toggleMenu(): void {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+  onLinkClick(): void {
+    this.linkClicked.emit();
   }
 }

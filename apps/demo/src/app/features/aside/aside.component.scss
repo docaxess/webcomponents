@@ -16,7 +16,7 @@
   overflow-y: auto;
   border-radius: rem(20);
   gap: rem(20);
-  margin-bottom: 360px;
+  margin-bottom: 280px;
   ul {
     list-style: none;
     margin: 0;
@@ -137,4 +137,55 @@
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+@media (max-width: 1300px) {
+  :host {
+    height: auto;
+  }
+
+  .sidebar-menu {
+    margin-bottom: 180px;
+    padding: 0 rem(20) rem(20) rem(20);
+    margin-bottom: 100px;
+
+    .menu-item {
+      h3 {
+        font-size: rem(18);
+
+        padding-inline-end: rem(8);
+      }
+
+      ul {
+        max-height: 600px;
+      }
+
+      a {
+        font-size: rem(16);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-menu {
+    margin-bottom: 20px;
+    padding: 0 rem(15) rem(15) rem(15);
+    border-radius: 0px;
+    .menu-list {
+      .menu-item {
+        h3 {
+          font-size: rem(16);
+          padding-inline-end: rem(6);
+        }
+
+        ul {
+          max-height: 500px;
+        }
+
+        a {
+          font-size: rem(12);
+        }
+      }
+    }
+  }
 }

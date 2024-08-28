@@ -6,7 +6,7 @@
 * {
   box-sizing: border-box;
   margin: 5px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .input {
   width: 100%;
@@ -49,6 +49,8 @@
 
 .input__input:focus {
   border: 1px solid var(--focus-color);
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .required-asterisk {

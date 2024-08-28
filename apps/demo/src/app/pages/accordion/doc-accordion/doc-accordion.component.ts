@@ -13,9 +13,30 @@ export class DocAccordionComponent {
   code = `import '../node_modules/ip-accordion/dist/ip-accordion/ip-accordion.esm';`;
   example = `<ip-accordion
   accordion-headers='[
-        {"title":"Section 1", "iconPath": "assets/images/icon1.svg", "iconActivePath": "assets/images/icon1-active.svg", "btnAlt": "Open Section 1", "btnAltClose": "Close Section 1", "ariaText": "section-1"},
-        {"title":"Section 2", "iconPath":"assets/images/icon2.svg", "iconActivePath": "assets/images/icon2-active.svg", "btnAlt": "Open Section 2", "btnAltClose": "Close Section 2", "ariaText": "section-2"},
-        {"title":"Section 3", "iconPath":"assets/images/icon3.svg", "iconActivePath": "assets/images/icon3-active.svg", "btnAlt": "Open Section 3", "btnAltClose": "Close Section 3", "ariaText": "section-3"}
+        {
+          "title":"Section 1",
+          "iconPath": "assets/images/icon1.svg",
+          "iconActivePath": "assets/images/icon1-active.svg",
+          "btnAlt": "Open Section 1",
+          "btnAltClose": "Close Section 1",
+          "ariaText": "section-1"
+        },
+        {
+          "title":"Section 2",
+          "iconPath":"assets/images/icon2.svg",
+          "iconActivePath": "assets/images/icon2-active.svg",
+          "btnAlt": "Open Section 2",
+          "btnAltClose": "Close Section 2",
+          "ariaText": "section-2"
+        },
+        {
+          "title":"Section 3",
+          "iconPath":"assets/images/icon3.svg",
+          "iconActivePath": "assets/images/icon3-active.svg",
+          "btnAlt": "Open Section 3",
+          "btnAltClose": "Close Section 3",
+          "ariaText": "section-3"
+        }
       ]'
   is-first-panel-open
   is-single-open

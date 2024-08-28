@@ -4,6 +4,8 @@
   background-color: #1e1e1e;
   color: $lightColor;
   height: 675px;
+  width: 100%;
+  overflow-x: auto;
 }
 
 pre {
@@ -36,4 +38,13 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .button-list {
+    padding: 10px 30px;
+    label {
+      font-size: 20px;
+    }
+  }
 }

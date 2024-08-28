@@ -42,3 +42,16 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper-title {
+    h1 {
+      font-size: 26px;
+    }
+    .breadcrumb {
+      ol {
+        font-size: 16px;
+      }
+    }
+  }
+}

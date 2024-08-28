@@ -39,7 +39,8 @@ export class Tooltip3Component {
       <ip-tooltip
         id="clicked-tooltip"
         tooltip-trigger="Click me !"
-        tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+        tooltip-content="Please enter a description of the tooltip.
+         The length is 3/4 lines maximum. Arrows can be adjusted position."
         tooltip-btn-close="true"
         tooltip-btn-1="Cancel"
         tooltip-btn-2="Learn More"

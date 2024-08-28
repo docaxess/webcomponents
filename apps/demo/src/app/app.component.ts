@@ -10,6 +10,7 @@ import { AsideComponent } from './features/aside/aside.component';
 import { FooterComponent } from './features/footer/footer.component';
 import { SkipLinkComponent } from './components/skip-link/skip-link.component';
 import { TitleService } from './core/services/title.service';
+import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   imports: [
@@ -18,6 +19,7 @@ import { TitleService } from './core/services/title.service';
     AsideComponent,
     FooterComponent,
     SkipLinkComponent,
+    CommonModule,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,9 +27,16 @@ import { TitleService } from './core/services/title.service';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent implements OnInit {
+  isMenuVisible = false;
   constructor(@Inject(TitleService) private titleService: TitleService) {}
 
   ngOnInit() {
     this.titleService.init();
+  }
+  toggleMenu(): void {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+  closeMenu() {
+    this.isMenuVisible = false;
   }
 }

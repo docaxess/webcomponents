@@ -7,19 +7,119 @@ body {
   background-position-y: -159px;
   background-repeat: no-repeat;
   min-height: 82.5vh;
+
   .container {
     display: flex;
     flex-direction: row;
-    margin: 0 240px;
+    margin: 0 150px;
+    margin: 0 150px;
     padding: 50px 0;
     gap: 60px;
 
     .sidebar-menu {
-      width: 420px;
+      width: 400px;
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .aside {
+        display: block;
+      }
     }
+
     .cards-wrapper {
       width: 960px;
       gap: 22px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .main-content {
+    background-image: none;
+    background-color: #0e9980;
+    .container {
+      margin: 0 50px;
+      gap: 30px;
+
+      .sidebar-menu {
+        width: 400px;
+      }
+
+      .cards-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 1084px) {
+  .main-content {
+    background-image: none;
+    background-color: #0e9980;
+    .container {
+      margin: 0 50px;
+      gap: 30px;
+
+      .sidebar-menu {
+        width: 400px;
+      }
+
+      .cards-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 852px) {
+  .main-content {
+    background-color: #0e9980;
+    min-height: 110vh;
+    .container {
+      flex-direction: column;
+      margin: 0 20px;
+      padding: 20px 0;
+      gap: 20px;
+      height: auto;
+
+      .sidebar-menu {
+        width: 100%;
+        z-index: 1000;
+        position: relative;
+
+        .menu-toggle {
+          display: block;
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          margin-bottom: 10px;
+          color: #fff;
+        }
+
+        .aside {
+          position: absolute;
+          top: 20px;
+          left: -40px;
+          width: 100%;
+          z-index: 1000;
+          color: white;
+          padding: 20px;
+          box-sizing: border-box;
+          transition: transform 0.3s ease-in-out;
+          transform: translateX(-100%);
+          &.mobile-visible {
+            display: block;
+            transform: translateX(0);
+            height: 100%;
+            width: 70%;
+          }
+        }
+      }
+
+      .cards-wrapper {
+        width: 100%;
+      }
     }
   }
 }

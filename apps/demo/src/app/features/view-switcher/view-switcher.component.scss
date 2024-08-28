@@ -19,6 +19,8 @@
   border-radius: 20px 20px 0 0;
   .icon-button {
     display: flex;
+    align-items: center;
+    align-items: center;
   }
   .preview {
     display: flex;
@@ -29,6 +31,7 @@
     border-radius: 5px;
     color: $darkColor;
     gap: 10px;
+    font-size: 16px;
   }
   .previewActive {
     background-color: $darkColor;
@@ -67,4 +70,73 @@
 
 .wrapper-content {
   padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .icon-button {
+    display: flex;
+    align-items: center;
+  }
+  .wrapper-buttons {
+    padding: 20px;
+    .preview {
+      height: 40px;
+      width: 100px;
+      font-size: 14px;
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .icon-button {
+      gap: 2px;
+      .preview {
+        height: 40px;
+        width: 100px;
+        font-size: 14px;
+      }
+      button {
+        width: 40px;
+        height: 35px;
+      }
+    }
+  }
+  .switch-title {
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .wrapper-buttons {
+    padding: 10px;
+    .preview {
+      height: 30px;
+      width: 80px;
+      font-size: 12px;
+      gap: 5px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .icon-button {
+      gap: 2px;
+      .preview {
+        height: 25px;
+        width: 70px;
+        font-size: 10px;
+      }
+      button {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .switch-title {
+    h2 {
+      font-size: 16px;
+    }
+  }
 }
