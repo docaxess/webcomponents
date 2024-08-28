@@ -1,6 +1,9 @@
 @import '../../../../assets/styles/index.scss';
-
+.modal-content {
+  width: 100%;
+}
 .content {
+  width: 100%;
   background-color: #f4f4f4;
   height: rem(675);
   overflow-y: auto;

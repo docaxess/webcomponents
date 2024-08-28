@@ -19,7 +19,7 @@ body {
       width: 400px;
 
       .menu-toggle {
-        display: none; // Hide the button by default
+        display: none;
       }
 
       .aside {
@@ -33,8 +33,7 @@ body {
     }
   }
 }
-
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .main-content {
     background-image: none;
     background-color: #0e9980;
@@ -47,13 +46,31 @@ body {
       }
 
       .cards-wrapper {
-        width: 700px;
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 1084px) {
+  .main-content {
+    background-image: none;
+    background-color: #0e9980;
+    .container {
+      margin: 0 50px;
+      gap: 30px;
+
+      .sidebar-menu {
+        width: 400px;
+      }
+
+      .cards-wrapper {
+        width: 100%;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 852px) {
   .main-content {
     background-color: #0e9980;
     min-height: 110vh;

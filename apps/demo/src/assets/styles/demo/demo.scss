@@ -68,3 +68,21 @@ pre {
     }
   }
 }
+@media (max-width: 768px) {
+  #documentation {
+    font-size: rem(16);
+
+    h3 {
+      font-size: rem(20);
+    }
+  }
+}
+@media (max-width: 480px) {
+  #documentation {
+    font-size: rem(14);
+
+    h3 {
+      font-size: rem(16);
+    }
+  }
+}
