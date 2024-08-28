@@ -46,8 +46,12 @@
               </div>
 
               <div class="submit-btn">
-                <button class="btn" type="submit">
-                  <label for="">Continue</label>
+                <button
+                  class="btn"
+                  type="submit"
+                  (click)="$event.preventDefault()"
+                >
+                  <span>Continue</span>
                   <img src="assets/images/arrow-right.svg" alt="" />
                 </button>
               </div>
@@ -58,13 +62,13 @@
                 </div>
                 <div class="logo-list">
                   <div class="twitter">
-                    <img src="assets/images/twitter.svg" alt="" />
+                    <img src="assets/images/twitter.svg" alt="Twitter" />
                   </div>
                   <div class="google">
-                    <img src="assets/images/google.svg" alt="" />
+                    <img src="assets/images/google.svg" alt="Google" />
                   </div>
                   <div class="facebook">
-                    <img src="assets/images/facebook.svg" alt="" />
+                    <img src="assets/images/facebook.svg" alt="Facebook" />
                   </div>
                 </div>
               </div>

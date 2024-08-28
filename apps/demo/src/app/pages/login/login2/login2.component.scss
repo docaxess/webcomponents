@@ -102,6 +102,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+
     button {
       width: 280px;
 
@@ -114,9 +115,17 @@
       border-radius: 50px;
       background: #417cfd;
       border: none;
-      label {
-        color: #fff;
+      cursor: pointer;
 
+      &:focus,
+      &:hover {
+        outline: 3px solid hsl(221, 58%, 48%);
+        outline-offset: 3px;
+      }
+
+      span {
+        cursor: pointer;
+        color: #fff;
         font-family: 'Nunito';
         font-size: 16px;
         font-style: normal;
