@@ -57,7 +57,7 @@ export class IpPassword {
             autoComplete="new-password"
             required
             aria-invalid={this.invalid ? 'true' : 'false'}
-            aria-describedby={this.invalid ? 'password-error' : null}
+            aria-describedby={this.invalid ? 'password-error' : ''}
             placeholder="Type your password here..."
             onInput={(event) => this._handleInput(event)}
             value={this.value}
