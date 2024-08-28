@@ -7,14 +7,26 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
-
+    <style>
+      .br {
+        margin: 20px;
+      }
+    </style>
     <script type="module" src="/build/breadcrumb.esm.js"></script>
     <script nomodule src="/build/breadcrumb.js"></script>
   </head>
   <body>
-    <my-component
-      first="Stencil"
-      last="'Don't call me a framework' JS"
-    ></my-component>
+    <div class="br">
+      <ip-breadcrumb
+        breadcrumb-title="Bread"
+        breadcrumb-items='[
+        {"label": "Home", "link": "/google"},
+        {"label": "Category", "link": "/youtube"},
+        {"label": "Item"}
+      ]'
+        prefix-aria-label="Link to"
+      >
+      </ip-breadcrumb>
+    </div>
   </body>
 </html>
