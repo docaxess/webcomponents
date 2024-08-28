@@ -74,11 +74,10 @@
       width: 467px;
       padding: 13px;
       border-radius: 5px;
-      outline: 1px solid rgba(53, 50, 50, 0.64);
-      border: none;
+      border: 1px solid rgba(0, 0, 0.9);
       margin-top: 20px;
-      input:focus {
-        outline: 2px solid black;
+      &:focus {
+        outline: 3px solid black;
         outline-offset: 3px;
       }
     }
@@ -98,7 +97,7 @@
   }
 
   .dialog-btn:focus {
-    outline: 2px solid black;
-    outline-offset: 2px;
+    outline: 3px solid black;
+    outline-offset: 3px;
   }
 }
