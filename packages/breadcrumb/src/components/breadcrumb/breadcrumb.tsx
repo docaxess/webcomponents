@@ -6,10 +6,10 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class BreadcrumbComponent {
-  @Prop() breadcrumbTitle: string = '';
-  @Prop() breadcrumbItems: string = '[]';
-  @Prop() prefixAriaLabel: string = 'Link to';
-  @Prop() separatorIcon: string = '>';
+  @Prop() breadcrumbTitle = '';
+  @Prop() breadcrumbItems = '[]';
+  @Prop() prefixAriaLabel = 'Link to';
+  @Prop() separatorIcon = '>';
 
   private parseBreadcrumbItems() {
     try {
@@ -36,9 +36,9 @@ export class BreadcrumbComponent {
     const items = this.parseBreadcrumbItems();
     return (
       <div class="wrapper-title">
-        {this.breadcrumbTitle && <h1>{this.breadcrumbTitle}</h1>}
+        {this.breadcrumbTitle && <h1 part="title">{this.breadcrumbTitle}</h1>}
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol class="breadcrumb">
+          <ol class="breadcrumb" part="breadcrumb" role="list">
             {items.map((item, index) => {
               const isLast = index === items.length - 1;
               return (
@@ -55,6 +55,7 @@ export class BreadcrumbComponent {
                       }
                       aria-label={`${this.prefixAriaLabel} ${item.label}`}
                       role="link"
+                      part="breadcrumb"
                     >
                       {item.label}
                     </a>
@@ -62,7 +63,12 @@ export class BreadcrumbComponent {
                     <span>{item.label}</span>
                   )}
                   {!isLast && (
-                    <span class="icon" innerHTML={this.separatorIcon}></span>
+                    <span
+                      part="icon"
+                      aria-hidden="true"
+                      class="icon"
+                      innerHTML={this.separatorIcon}
+                    ></span>
                   )}
                 </li>
               );

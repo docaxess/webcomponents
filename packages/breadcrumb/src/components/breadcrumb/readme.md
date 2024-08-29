@@ -15,6 +15,15 @@
 | `separatorIcon`   | `separator-icon`    |             | `string` | `'>'`       |
 
 
+## Shadow Parts
+
+| Part           | Description |
+| -------------- | ----------- |
+| `"breadcrumb"` |             |
+| `"icon"`       |             |
+| `"title"`      |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
