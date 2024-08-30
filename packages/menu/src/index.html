@@ -7,14 +7,249 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
+    <style>
+      body {
+        background-image: url('./assets/images/bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+      }
+      .head {
+        margin: 0;
+        padding: 0;
+      }
+      .contact-us-btn {
+        display: inline-flex;
+        padding: 10px 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border-radius: 50px;
+        border: 1px #fff solid;
+        background-color: transparent;
+        color: #fff;
 
+        font-family: Lato;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.9px;
+      }
+      .contact-us-btn:focus,
+      .contact-us-btn:hover {
+        background-color: #226f54;
+        outline: 3px solid #fff;
+      }
+      .logo-wrapper {
+        gap: 20px;
+        display: flex;
+        width: 231px;
+        height: 71px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo-text {
+        color: #fff;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-family: 'La Belle Aurore';
+        font-size: 55px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 0px; /* 0% */
+        letter-spacing: 2.75px;
+        text-transform: capitalize;
+      }
+      .left-menu-content {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin: 0 20px;
+        width: 100%;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        width: 300px;
+        height: 325px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        background: #226f54;
+      }
+      .content label {
+        color: #fff;
+        text-align: center;
+        font-family: Lato;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        width: 239.978px;
+        height: 98px;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media (max-width: 1024px) {
+        .content {
+          width: 220px;
+          height: 250px;
+        }
+
+        .content img {
+          width: 100%;
+        }
+        .contact-us-btn {
+          width: 190px;
+          height: 45px;
+        }
+
+        .contact-us-btn img {
+          width: 22px;
+          height: 22px;
+        }
+        .content label {
+          font-size: 22px;
+          width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .left-menu-content {
+          flex-direction: row;
+          align-items: center;
+        }
+        .logo-wrapper {
+          width: 180px;
+          height: 60px;
+        }
+
+        .logo-text {
+          font-size: 40px;
+          letter-spacing: 1.5px;
+        }
+
+        .contact-us-btn {
+          width: 50px;
+          height: 36px;
+        }
+        .contact-us-btn label {
+          display: none;
+        }
+        .contact-us-btn img {
+          width: 22px;
+          height: 22px;
+        }
+
+        .left-menu-content {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .content {
+          width: 220px;
+          height: 250px;
+        }
+
+        .content img {
+          width: 100%;
+        }
+
+        .content label {
+          font-size: 22px;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo-wrapper {
+          width: 140px;
+          height: 50px;
+        }
+
+        .logo-text {
+          font-size: 30px;
+          letter-spacing: 1px;
+        }
+        .contact-us-btn {
+          width: 50px;
+          height: 32px;
+        }
+        .contact-us-btn label {
+          display: none;
+        }
+        .contact-us-btn img {
+          width: 19px;
+          height: 19px;
+        }
+        .left-menu-content {
+          display: inline-block !important;
+          width: 100%;
+          gap: 5px;
+        }
+        .content {
+          width: 100%;
+          height: auto;
+          margin-top: 15px;
+        }
+        .content img {
+          display: none;
+        }
+        .content label {
+          font-size: 18px;
+          width: 100%;
+          text-align: start;
+          height: 50px;
+        }
+      }
+    </style>
     <script type="module" src="/build/menu.esm.js"></script>
     <script nomodule src="/build/menu.js"></script>
   </head>
   <body>
-    <my-component
-      first="Stencil"
-      last="'Don't call me a framework' JS"
-    ></my-component>
+    <div class="head">
+      <custom-menu
+        menu-data='[
+      {"label": "Home", "href": "#home"},
+      {"label": "Discover our team", "href": "#about"},
+      {"label": "Our partners", "href": "#partners"},
+      {"label": "Ultimate Solution", "href": "#Solution"},
+      {"label": "Our Donate Now", "href": "#Donate"},
+      {"label": "Join our community", "href": "#community"},
+      {"label": "FAQ", "href": "#faq"},
+      {"label": "Our publications", "href": "#publications", "disabled": true}
+    ]'
+      >
+        <div slot="logo" class="logo-wrapper">
+          <img src="./assets/images/Frame.png" alt="Logo" />
+          <label class="logo-text" for="">Kestrel</label>
+        </div>
+        <div slot="button">
+          <button class="contact-us-btn" aria-label="Contact us">
+            <label for=""> Contact us </label>
+            <img src="./assets/images/paper-pale-right.svg" alt="" />
+          </button>
+        </div>
+        <div slot="left-menu-content" class="left-menu-content">
+          <div class="content" tabindex="0">
+            <img src="./assets/images/image1.png" alt="" />
+            <label for="">Who are we ?</label>
+          </div>
+          <div class="content" tabindex="0">
+            <img src="./assets/images/image2.png" alt="" />
+            <label for="">Who are we ?</label>
+          </div>
+          <div class="content" tabindex="0">
+            <img src="./assets/images/image3.png" alt="" />
+            <label for="">Who are we ?</label>
+          </div>
+        </div>
+      </custom-menu>
+    </div>
   </body>
 </html>
