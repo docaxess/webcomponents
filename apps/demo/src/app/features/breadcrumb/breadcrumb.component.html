@@ -13,6 +13,7 @@
             <a
               [routerLink]="item.link"
               (keydown)="handleKeydown($event, item.link)"
+              [attr.aria-label]="'Link to ' + item.label"
               >{{ item.label }}</a
             >
           </ng-container>

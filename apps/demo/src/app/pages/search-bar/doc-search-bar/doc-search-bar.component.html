@@ -1,0 +1,87 @@
+<section id="documentation">
+  <h3 class="under-title">Installation</h3>
+  <p>
+    Follow these steps to install and use the
+    <code>ip-search-bar</code> component in your project.
+  </p>
+  <h4>Step 1</h4>
+  <p>
+    Install the <code>ip-search-bar</code> component as a dependency in your
+    project:
+  </p>
+  <pre><code>npm install ip-search-bar</code></pre>
+
+  <h4>Step 2</h4>
+  <p>Import the module into your script file:</p>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
+  <h3 class="under-title">Usage</h3>
+  <p>To use this component, add the properties as attributes.</p>
+  <h4>Properties</h4>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Necessity</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>suggestionsData</td>
+        <td>suggestions-data</td>
+        <td>Required</td>
+        <td>JSON string of suggestions used for autocomplete</td>
+        <td>string</td>
+        <td>'[]'</td>
+      </tr>
+      <tr>
+        <td>labelButton</td>
+        <td>label-button</td>
+        <td>Optional</td>
+        <td>Label for the search button</td>
+        <td>string</td>
+        <td>'Search'</td>
+      </tr>
+      <tr>
+        <td>placeholder</td>
+        <td>placeholder</td>
+        <td>Optional</td>
+        <td>Placeholder text for the input field</td>
+        <td>string</td>
+        <td>'Search...'</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><em>e.g:</em></p>
+  <pre class="example">
+    <code [highlight]="example" language="html"></code>
+    </pre>
+  <h3 class="under-title">Customization</h3>
+  <p>We have a set of predefined variables used to customize the search-bar:</p>
+  <ul>
+    <li><code>--bg-btn-color</code></li>
+    <li><code>--bg-btn-color-hover</code></li>
+    <li><code>--text-btn-color</code></li>
+    <li><code>--font-size</code></li>
+  </ul>
+  <p><em>e.g:</em></p>
+
+  <p>To update the values, use the following CSS code:</p>
+  <pre class="example">
+        <code [highlight]="custom1" language="css"></code>
+       </pre>
+
+  <h3 class="under-title">Event</h3>
+  <p>The ip-search-bar component emits the following event:</p>
+  <p>
+    <code>buttonClicked</code> Fired when the search button is clicked. To
+    listen to this event, add an event listener to your component:
+  </p>
+  <p><em>e.g:</em></p>
+  <pre class="javascript">
+    <code [highlight]="event" language="typescript"></code>
+   </pre>
+</section>
