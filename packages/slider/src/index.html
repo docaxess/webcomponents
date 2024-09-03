@@ -7,14 +7,82 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
-
+    <style>
+      .slide {
+        margin: 10px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        height: 425px;
+        padding: 35px 18px 0px 18px;
+        align-items: flex-start;
+        gap: 10px;
+        background: #efefef;
+      }
+      .container {
+        width: 324px;
+        color: var(--Primary-color-Dark, #1c1c1c);
+        text-align: center;
+        font-family: 'Barlow Condensed';
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 40px; /* 105.263% */
+      }
+      img {
+        height: 160px;
+        width: 160px;
+      }
+    </style>
     <script type="module" src="/build/slider.esm.js"></script>
     <script nomodule src="/build/slider.js"></script>
   </head>
   <body>
-    <my-component
-      first="Stencil"
-      last="'Don't call me a framework' JS"
-    ></my-component>
+    <div class="slider">
+      <ip-carousel-slider>
+        <div class="slide">
+          <div class="card">
+            <img src="./assets/ico1.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="./assets/ico2.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="./assets/ico3.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="card">
+            <img src="./assets/ico5.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </ip-carousel-slider>
+    </div>
   </body>
 </html>

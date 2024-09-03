@@ -1,0 +1,90 @@
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: center;
+}
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.slider {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 1258px;
+}
+
+.slide {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.slide-content {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1em;
+}
+
+.slide-content {
+  flex: 1;
+  min-width: calc(100% / 3 - 20px);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+.indicator:hover {
+  background-color: #666;
+}
