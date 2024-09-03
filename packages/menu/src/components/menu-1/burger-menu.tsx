@@ -7,18 +7,23 @@ export interface MenuItem {
 }
 
 @Component({
-  tag: 'custom-menu',
-  styleUrl: 'menu1.scss',
+  tag: 'ip-burger-menu',
+  styleUrl: 'burger-menu.scss',
   shadow: true,
 })
-export class CustomMenu {
+export class IpBurgerMenu {
   @Element() el: HTMLElement;
-
+  @Prop() openMenuAriaLabel = 'Open menu';
+  @Prop() closeMenuAriaLabel = 'Close menu';
+  @Prop() pathToCloseIcon = '../../assets/images/x-icon.svg';
+  @Prop() pathToOpenIcon = '../../assets/images/icon-list.svg';
+  @Prop() pathToArrowRightIcon = '../../assets/images/arrow-right.svg';
   @Prop() menuData: string;
   @Prop() items: MenuItem[] = [];
 
-  @State() isOpen: boolean = false;
+  @State() isOpen = false;
   @State() openSubMenu: string | null = null;
+  menuButton: HTMLButtonElement;
 
   componentWillLoad() {
     if (this.menuData) {
@@ -29,7 +34,9 @@ export class CustomMenu {
       }
     }
   }
-
+  componentDidLoad() {
+    document.addEventListener('keydown', this.handleKeyDown.bind(this));
+  }
   toggleMenu() {
     this.isOpen = !this.isOpen;
   }
@@ -38,35 +45,59 @@ export class CustomMenu {
     this.openSubMenu = this.openSubMenu === label ? null : label;
   }
 
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.isOpen = false;
+      this.menuButton.focus();
+    }
+  }
+  handleLinkKeyDown(event: KeyboardEvent, href?: string) {
+    if ((event.key === 'Enter' || event.key === ' ') && href) {
+      event.preventDefault();
+      window.location.href = href;
+    }
+  }
+
   render() {
     return (
-      <nav aria-label="Main Navigation">
+      <nav
+        id="navigation"
+        aria-label="Main Navigation"
+        role="navigation"
+        part="nav-bar"
+      >
         <div class={`head ${this.isOpen ? 'open' : ''}`}>
           <div class="logo">
-            <slot name="logo"></slot>
+            <slot name="left-head-content"></slot>
           </div>
           <div class="right-head-content">
             <div class="button">
-              <slot name="button"></slot>
+              <slot name="before-toggle-menu-content"></slot>
             </div>
             <div class="toggle-burger-menu">
               <button
-                aria-label={this.isOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={this.isOpen}
+                part="toggle-menu-btn"
+                ref={(el) => (this.menuButton = el as HTMLButtonElement)}
+                aria-label={
+                  this.isOpen ? this.closeMenuAriaLabel : this.openMenuAriaLabel
+                }
+                aria-controls="burger-menu"
+                aria-expanded={this.isOpen ? 'true' : 'false'}
                 class="burger-menu-btn"
                 onClick={() => this.toggleMenu()}
+                onKeyDown={(event) => this.handleKeyDown(event)}
               >
                 {this.isOpen ? (
                   <img
                     class="svg-icon"
-                    src="../../assets/images/x-icon.svg"
-                    alt="Close menu"
+                    src={this.pathToCloseIcon}
+                    alt={this.closeMenuAriaLabel}
                   />
                 ) : (
                   <img
                     class="svg-icon"
-                    src="../../assets/images/icon-list.svg"
-                    alt="Open menu"
+                    src={this.pathToOpenIcon}
+                    alt={this.openMenuAriaLabel}
                   />
                 )}
               </button>
@@ -74,13 +105,17 @@ export class CustomMenu {
           </div>
         </div>
         {this.isOpen ? (
-          <div class={`burger-menu ${this.isOpen ? 'open' : ''}`}>
-            <div class="open-menu">
+          <div
+            id="burger-menu"
+            class={`burger-menu ${this.isOpen ? 'open' : ''}`}
+            role="menu"
+          >
+            <div class="open-menu" part="menu-content">
               <div class="left-menu-content">
                 <slot name="left-menu-content"></slot>
               </div>
               <div class="right-menu-content">
-                <ul class="columns">
+                <ul class="columns" part="menu-list">
                   {this.items.map((item) => (
                     <li key={item.label}>
                       <a
@@ -88,15 +123,17 @@ export class CustomMenu {
                         class={{
                           disabled: item.disabled,
                         }}
+                        role="menuitem"
                         tabIndex={item.disabled ? -1 : 0}
                         aria-disabled={item.disabled ? 'true' : 'false'}
+                        onKeyDown={(event) =>
+                          this.handleLinkKeyDown(event, item.href)
+                        }
+                        aria-label={item.label}
                       >
                         <div class="item-label">
                           <label htmlFor="">{item.label}</label>
-                          <img
-                            src="../../assets/images/arrow-right.svg"
-                            alt=""
-                          />
+                          <img src={this.pathToArrowRightIcon} alt="" />
                         </div>
                       </a>
                     </li>

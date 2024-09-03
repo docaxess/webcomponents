@@ -14,6 +14,13 @@
         background-repeat: no-repeat;
         margin: 0;
       }
+
+      ip-burger-menu::part(menu-list) {
+        column-count: 3;
+        column-gap: 20px;
+        gap: 50px;
+      }
+
       .head {
         margin: 0;
         padding: 0;
@@ -59,7 +66,7 @@
         font-size: 55px;
         font-style: normal;
         font-weight: 400;
-        line-height: 0px; /* 0% */
+        line-height: 0px;
         letter-spacing: 2.75px;
         text-transform: capitalize;
       }
@@ -96,9 +103,10 @@
         flex-direction: column;
         justify-content: center;
       }
+
       @media (max-width: 1024px) {
         .content {
-          width: 220px;
+          width: 220px; /* 300px */
           height: 250px;
         }
 
@@ -213,7 +221,7 @@
   </head>
   <body>
     <div class="head">
-      <custom-menu
+      <ip-burger-menu
         menu-data='[
       {"label": "Home", "href": "#home"},
       {"label": "Discover our team", "href": "#about"},
@@ -225,11 +233,11 @@
       {"label": "Our publications", "href": "#publications", "disabled": true}
     ]'
       >
-        <div slot="logo" class="logo-wrapper">
+        <div slot="left-head-content" class="logo-wrapper">
           <img src="./assets/images/Frame.png" alt="Logo" />
           <label class="logo-text" for="">Kestrel</label>
         </div>
-        <div slot="button">
+        <div slot="before-toggle-menu-content">
           <button class="contact-us-btn" aria-label="Contact us">
             <label for=""> Contact us </label>
             <img src="./assets/images/paper-pale-right.svg" alt="" />
@@ -249,7 +257,7 @@
             <label for="">Who are we ?</label>
           </div>
         </div>
-      </custom-menu>
+      </ip-burger-menu>
     </div>
   </body>
 </html>

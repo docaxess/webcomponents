@@ -5,39 +5,49 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MenuItem } from "./components/menu-1/menu1";
-export { MenuItem } from "./components/menu-1/menu1";
+import { MenuItem } from "./components/menu-1/burger-menu";
+export { MenuItem } from "./components/menu-1/burger-menu";
 export namespace Components {
-    interface CustomMenu {
+    interface IpBurgerMenu {
+        "closeMenuAriaLabel": string;
         "items": MenuItem[];
         "menuData": string;
+        "openMenuAriaLabel": string;
+        "pathToArrowRightIcon": string;
+        "pathToCloseIcon": string;
+        "pathToOpenIcon": string;
     }
 }
 declare global {
-    interface HTMLCustomMenuElement extends Components.CustomMenu, HTMLStencilElement {
+    interface HTMLIpBurgerMenuElement extends Components.IpBurgerMenu, HTMLStencilElement {
     }
-    var HTMLCustomMenuElement: {
-        prototype: HTMLCustomMenuElement;
-        new (): HTMLCustomMenuElement;
+    var HTMLIpBurgerMenuElement: {
+        prototype: HTMLIpBurgerMenuElement;
+        new (): HTMLIpBurgerMenuElement;
     };
     interface HTMLElementTagNameMap {
-        "custom-menu": HTMLCustomMenuElement;
+        "ip-burger-menu": HTMLIpBurgerMenuElement;
     }
 }
 declare namespace LocalJSX {
-    interface CustomMenu {
+    interface IpBurgerMenu {
+        "closeMenuAriaLabel"?: string;
         "items"?: MenuItem[];
         "menuData"?: string;
+        "openMenuAriaLabel"?: string;
+        "pathToArrowRightIcon"?: string;
+        "pathToCloseIcon"?: string;
+        "pathToOpenIcon"?: string;
     }
     interface IntrinsicElements {
-        "custom-menu": CustomMenu;
+        "ip-burger-menu": IpBurgerMenu;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "custom-menu": LocalJSX.CustomMenu & JSXBase.HTMLAttributes<HTMLCustomMenuElement>;
+            "ip-burger-menu": LocalJSX.IpBurgerMenu & JSXBase.HTMLAttributes<HTMLIpBurgerMenuElement>;
         }
     }
 }

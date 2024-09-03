@@ -1,3 +1,13 @@
+:host {
+  --bg-nav-open-menu: var(--bg-dark, #131313);
+  --primary-color: var(--primary, #226f54);
+  --secondary-color: var(--secondary, #fff);
+  --menu-item-color: var(--menu-item, #fff);
+}
+
+.svg-icon {
+  fill: var(--svg-color);
+}
 .head {
   display: flex;
   justify-content: space-between;
@@ -5,7 +15,7 @@
   padding: 0 20px;
   background-color: transparent;
   &.open {
-    background-color: #131313;
+    background-color: var(--bg-nav-open-menu);
   }
   .right-head-content {
     display: flex;
@@ -14,26 +24,24 @@
     .burger-menu-btn {
       padding: 5px 10px;
       margin-right: 10px;
+      margin-top: 5px;
       border-radius: 50px;
-      border: 1px #fff solid;
+      border: 1px solid var(--secondary-color);
       background-color: transparent;
 
       &:hover,
       &:focus {
-        background-color: #226f54;
-        outline: 3px solid #fff;
+        background-color: var(--primary-color);
+        outline: 3px solid var(--secondary-color);
       }
     }
   }
 }
-.svg-icon {
-  fill: #ff0000;
-  stroke: #ff0000;
-}
+
 .burger-menu {
   transition: background-color 0.3s ease-in-out;
   &.open {
-    background-color: #131313;
+    background-color: var(--bg-nav-open-menu);
   }
   .open-menu {
     display: flex;
@@ -58,7 +66,7 @@
         padding: 10px 15px;
 
         a {
-          color: #fff;
+          color: var(--menu-item-color);
           text-decoration: none;
         }
       }
@@ -89,7 +97,7 @@
           padding-bottom: 3px;
           cursor: pointer;
           &:hover {
-            border-bottom: 2px solid #226f54;
+            border-bottom: 2px solid var(--primary-color);
           }
         }
       }
