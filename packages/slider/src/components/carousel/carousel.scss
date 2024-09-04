@@ -1,0 +1,127 @@
+:host {
+  --svg-color: var(--svgColor, #504da2);
+  --primary-color: var(--primaryColor, #504da2);
+  --secondary-color: var(--secondaryColor, #efefef);
+}
+.ip-carousel-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  .ip-carousel-prev {
+    margin-right: 40px;
+  }
+  .ip-carousel-next {
+    margin-left: 40px;
+  }
+}
+
+.ip-carousel-slides {
+  display: flex;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  gap: 30px;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.ip-carousel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--secondary-color);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+}
+.ip-carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: 3px solid var(--primary-color);
+    border-radius: 5px;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+@media (max-width: 1230px) {
+  .ip-carousel-item {
+    min-width: 28%;
+    width: 210px;
+    height: 340px;
+  }
+}
+@media (max-width: 1024px) {
+  .ip-carousel-item {
+    min-width: 28%;
+    width: 190px;
+    height: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .ip-carousel-item {
+    min-width: 28%;
+    width: 140px;
+    height: 270px;
+  }
+  .ip-carousel-indicators {
+    margin-top: 25px;
+  }
+  .ip-carousel-indicator {
+    margin: 0 5px;
+  }
+}
+@media (max-width: 480px) {
+  .ip-carousel-item {
+    min-width: 28%;
+    width: 200px;
+    height: 270px;
+  }
+}
+.ip-carousel-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.ip-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.ip-carousel-indicator {
+  background-color: none;
+
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ip-carousel-indicator-active {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}

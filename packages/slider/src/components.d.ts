@@ -6,10 +6,36 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface IpCarousel1 {
+        "btnNextAriaLabel": string;
+        "btnPrevAriaLabel": string;
+        "svgColor": string;
+    }
     interface IpCarouselSlider {
     }
 }
+export interface IpCarousel1CustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIpCarousel1Element;
+}
 declare global {
+    interface HTMLIpCarousel1ElementEventMap {
+        "slideChanged": number;
+    }
+    interface HTMLIpCarousel1Element extends Components.IpCarousel1, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIpCarousel1ElementEventMap>(type: K, listener: (this: HTMLIpCarousel1Element, ev: IpCarousel1CustomEvent<HTMLIpCarousel1ElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIpCarousel1ElementEventMap>(type: K, listener: (this: HTMLIpCarousel1Element, ev: IpCarousel1CustomEvent<HTMLIpCarousel1ElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIpCarousel1Element: {
+        prototype: HTMLIpCarousel1Element;
+        new (): HTMLIpCarousel1Element;
+    };
     interface HTMLIpCarouselSliderElement extends Components.IpCarouselSlider, HTMLStencilElement {
     }
     var HTMLIpCarouselSliderElement: {
@@ -17,13 +43,21 @@ declare global {
         new (): HTMLIpCarouselSliderElement;
     };
     interface HTMLElementTagNameMap {
+        "ip-carousel-1": HTMLIpCarousel1Element;
         "ip-carousel-slider": HTMLIpCarouselSliderElement;
     }
 }
 declare namespace LocalJSX {
+    interface IpCarousel1 {
+        "btnNextAriaLabel"?: string;
+        "btnPrevAriaLabel"?: string;
+        "onSlideChanged"?: (event: IpCarousel1CustomEvent<number>) => void;
+        "svgColor"?: string;
+    }
     interface IpCarouselSlider {
     }
     interface IntrinsicElements {
+        "ip-carousel-1": IpCarousel1;
         "ip-carousel-slider": IpCarouselSlider;
     }
 }
@@ -31,6 +65,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ip-carousel-1": LocalJSX.IpCarousel1 & JSXBase.HTMLAttributes<HTMLIpCarousel1Element>;
             "ip-carousel-slider": LocalJSX.IpCarouselSlider & JSXBase.HTMLAttributes<HTMLIpCarouselSliderElement>;
         }
     }

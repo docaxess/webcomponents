@@ -8,32 +8,39 @@
     />
     <title>Stencil Component Starter</title>
     <style>
-      .slide {
-        margin: 10px;
+      .slider {
+        margin: 40px;
       }
       .card {
         display: flex;
         flex-direction: column;
-        width: 360px;
-        height: 425px;
-        padding: 35px 18px 0px 18px;
-        align-items: flex-start;
+        padding-top: 20px;
         gap: 10px;
-        background: #efefef;
       }
       .container {
-        width: 324px;
-        color: var(--Primary-color-Dark, #1c1c1c);
+        width: 100%;
+        color: #1c1c1c;
         text-align: center;
         font-family: 'Barlow Condensed';
-        font-size: 38px;
+        font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 40px; /* 105.263% */
+        line-height: 40px;
       }
       img {
         height: 160px;
         width: 160px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        img {
+          height: 80px;
+          width: 80px;
+        }
       }
     </style>
     <script type="module" src="/build/slider.esm.js"></script>
@@ -41,8 +48,8 @@
   </head>
   <body>
     <div class="slider">
-      <ip-carousel-slider>
-        <div class="slide">
+      <ip-carousel-1>
+        <div slot="slide-1">
           <div class="card">
             <img src="./assets/ico1.svg" alt="Avatar" style="width: 100%" />
             <div class="container">
@@ -52,7 +59,7 @@
             </div>
           </div>
         </div>
-        <div class="slide">
+        <div slot="slide-2">
           <div class="card">
             <img src="./assets/ico2.svg" alt="Avatar" style="width: 100%" />
             <div class="container">
@@ -62,7 +69,7 @@
             </div>
           </div>
         </div>
-        <div class="slide">
+        <div slot="slide-3">
           <div class="card">
             <img src="./assets/ico3.svg" alt="Avatar" style="width: 100%" />
             <div class="container">
@@ -72,7 +79,17 @@
             </div>
           </div>
         </div>
-        <div class="slide">
+        <div slot="slide-4">
+          <div class="card">
+            <img src="./assets/ico4.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div slot="slide-5">
           <div class="card">
             <img src="./assets/ico5.svg" alt="Avatar" style="width: 100%" />
             <div class="container">
@@ -82,7 +99,47 @@
             </div>
           </div>
         </div>
-      </ip-carousel-slider>
+        <div slot="slide-6">
+          <div class="card">
+            <img src="./assets/ico6.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div slot="slide-7">
+          <div class="card">
+            <img src="./assets/ico4.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div slot="slide-8">
+          <div class="card">
+            <img src="./assets/ico1.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div slot="slide-9">
+          <div class="card">
+            <img src="./assets/ico5.svg" alt="Avatar" style="width: 100%" />
+            <div class="container">
+              <p>
+                Le SaaS PubliSpeak™ est disponible en français et en anglais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </ip-carousel-1>
     </div>
   </body>
 </html>
