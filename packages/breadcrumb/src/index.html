@@ -1,0 +1,32 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+      .br {
+        margin: 20px;
+      }
+    </style>
+    <script type="module" src="/build/breadcrumb.esm.js"></script>
+    <script nomodule src="/build/breadcrumb.js"></script>
+  </head>
+  <body>
+    <div class="br">
+      <ip-breadcrumb
+        breadcrumb-title="LIST OF COMPONENTS"
+        breadcrumb-items='[
+        {"label": "Home", "link": "/"},
+        {"label": "Accessibility", "link": "/Accessibility"},
+        {"label": "List of components"}
+      ]'
+        prefix-aria-label="Link to"
+      >
+      </ip-breadcrumb>
+    </div>
+  </body>
+</html>

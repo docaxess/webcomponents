@@ -1,0 +1,21 @@
+{
+  "name": "@ipedis/breadcrumb",
+  "version": "0.0.1",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "es2015": "./dist/esm/index.mjs",
+  "es2017": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "collection": "./dist/collection/collection-manifest.json",
+  "collection:main": "./dist/collection/index.js",
+  "unpkg": "./dist/breadcrumb/breadcrumb.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "homepage": "https://github.com/docaxess/webcomponents",
+  "bugs": {
+    "url": "https://github.com/docaxess/webcomponents/issues",
+    "email": "hi@docaxess.com"
+  }
+}
