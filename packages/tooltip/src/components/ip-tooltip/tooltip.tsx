@@ -50,12 +50,12 @@ export class IpTooltip {
     }
   }
 
-  @Listen('mouseleave')
-  handleMouseLeave() {
+  // @Listen('mouseleave')
+  handleMouseLeave = () => {
     if (this.type === 'hover') {
       this.showTooltip = false;
     }
-  }
+  };
 
   closeTooltip = () => {
     this.showTooltip = false;
@@ -90,70 +90,71 @@ export class IpTooltip {
   render() {
     return (
       <div class="tooltip-container">
-        <div
+        <button
           class="tooltip-trigger"
-          tabindex="0"
-          role="button"
           aria-describedby="desc-tooltip"
           onFocus={this.type === 'click' ? undefined : this._toggleTooltip}
           onBlur={this.type === 'click' ? undefined : this.handleBlur}
           onKeyUp={this.handleKeyUp}
           onClick={this.type === 'click' ? this._toggleTooltip : undefined}
+          onMouseLeave={
+            this.type === 'click' ? undefined : this.handleMouseLeave
+          }
         >
           {this.tooltipTrigger}
-        </div>
+        </button>
 
-        {this.showTooltip && (
-          <div
-            class="tooltip-content"
-            role="tooltip"
-            id="desc-tooltip"
-            aria-hidden={this.showTooltip ? 'false' : 'true'}
-          >
-            {this.tooltipTitle && (
-              <h3 aria-label={this.tooltipTitle} class="tooltip-title">
-                {this.tooltipTitle}
-              </h3>
-            )}
-            {this.tooltipBtnClose && (
+        <div
+          class={`tooltip-content ${this.showTooltip ? 'show' : 'hide'}`}
+          role="tooltip"
+          id="desc-tooltip"
+          onMouseLeave={
+            this.type === 'click' ? undefined : this.handleMouseLeave
+          }
+        >
+          {this.tooltipTitle && (
+            <h3 aria-label={this.tooltipTitle} class="tooltip-title">
+              {this.tooltipTitle}
+            </h3>
+          )}
+          {this.tooltipBtnClose && (
+            <button
+              class="close"
+              role="button"
+              tabindex="0"
+              aria-label="Close tooltip"
+              onClick={this.closeTooltip}
+            >
+              <span>x</span>
+            </button>
+          )}
+
+          <p>{this.tooltipContent}</p>
+          <div class="btn-inside">
+            {this.tooltipBtn1 && (
               <button
-                class="close"
+                class="cancel"
                 role="button"
+                aria-label={this.btn1AriaLabel}
                 tabindex="0"
-                aria-label="Close tooltip"
-                onClick={this.closeTooltip}
+                onClick={this.handleBtn1Click}
               >
-                <span>x</span>
+                {this.tooltipBtn1}
               </button>
             )}
-
-            <p>{this.tooltipContent}</p>
-            <div class="btn-inside">
-              {this.tooltipBtn1 && (
-                <button
-                  class="cancel"
-                  role="button"
-                  aria-label={this.btn1AriaLabel}
-                  tabindex="0"
-                  onClick={this.handleBtn1Click}
-                >
-                  {this.tooltipBtn1}
-                </button>
-              )}
-              {this.tooltipBtn2 && (
-                <button
-                  class="learn-more"
-                  role="button"
-                  aria-label={this.btn2AriaLabel}
-                  tabindex="0"
-                  onClick={this.handleBtn2Click}
-                >
-                  {this.tooltipBtn2}
-                </button>
-              )}
-            </div>
+            {this.tooltipBtn2 && (
+              <button
+                class="learn-more"
+                role="button"
+                aria-label={this.btn2AriaLabel}
+                tabindex="0"
+                onClick={this.handleBtn2Click}
+              >
+                {this.tooltipBtn2}
+              </button>
+            )}
           </div>
-        )}
+        </div>
       </div>
     );
   }

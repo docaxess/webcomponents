@@ -15,12 +15,10 @@ describe('ip-toggle', () => {
         <slot name="switch-label"></slot>
       </label>
            <div class="switch-button">
-           <input aria-checked="false" class="medium switch-checkbox" role="switch" type="checkbox" aria-describedby="helper-text" id="switch-label">
+           <input aria-checked="false" class="medium switch-checkbox" role="switch" type="checkbox"   id="switch-label">
                <span class="medium switch-icon"></span>
           </div>
-          <label htmlFor="" id="helper-text">
-          <slot name="helper-text"></slot>
-        </label>
+
         </div>
         </mock:shadow-root>
       </ip-toggle>
@@ -40,7 +38,7 @@ describe('ip-toggle', () => {
           <slot name="switch-label"></slot>
         </label>
             <div class="switch-button">            
-            <input aria-checked="false" class="medium switch-checkbox" role="switch" type="checkbox" aria-describedby="helper-text" id="switch-label">
+            <input aria-checked="false" class="medium switch-checkbox" role="switch" type="checkbox"   id="switch-label">
               <span class="medium switch-icon">
                 <span class="label">
                   <p class="inactive-label medium">
@@ -49,9 +47,7 @@ describe('ip-toggle', () => {
                 </span>
               </span>
             </div>
-            <label htmlFor="" id="helper-text">
-            <slot name="helper-text"></slot>
-          </label>
+  
           </div>
         </mock:shadow-root>
   </ip-toggle>

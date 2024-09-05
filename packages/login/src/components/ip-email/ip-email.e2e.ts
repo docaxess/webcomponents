@@ -9,7 +9,7 @@ describe('ip-email', () => {
     const input = await page.find('ip-email >>> input');
 
     expect(email).toHaveClass('hydrated');
-    expect(input).toEqualAttribute('type', 'email');
+    expect(input).toEqualAttribute('type', 'string');
   });
 
   it('renders with values', async () => {

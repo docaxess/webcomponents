@@ -18,7 +18,7 @@ describe('ip-email', () => {
                             </span>
                         </label>
                         <div class="input_btn">
-                            <input type="email" id="email" class="input__input" autocomplete="email" required value="" placeholder="Type your Email here...">
+                            <input part="email-input" type="string" id="email" class="input__input" autocomplete="email" required value="" placeholder="Type your email here...">
                         </div>
                     </div>
                 </mock:shadow-root>
@@ -39,7 +39,7 @@ describe('ip-email', () => {
                             Username
                             </label>
                             <div class="input_btn">
-                                <input type="email" id="email" class="input__input" autocomplete="email" value="" placeholder="Type your Username here...">
+                                <input type="string" part="email-input" id="email" class="input__input" autocomplete="email" value="" placeholder="Type your email here...">
                             </div>
                         </div>
                     </mock:shadow-root>

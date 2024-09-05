@@ -5,7 +5,7 @@
 .tooltip-container {
   position: relative;
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 100;
 }
 
@@ -24,8 +24,9 @@
 }
 
 .tooltip-content {
+  cursor: pointer;
   position: relative;
-  display: inline-block;
+  display: none;
   width: 300px;
   background-color: var(--primary-color);
   color: #fff;
@@ -40,6 +41,13 @@
   margin-bottom: 10px;
 }
 
+.tooltip-content.show {
+  display: block;
+}
+
+.tooltip-content.hide {
+  display: none;
+}
 .tooltip-content p {
   margin: 0;
   font-size: 0.85rem;
@@ -59,7 +67,7 @@
   border: none;
 }
 .tooltip-content::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100%;
   left: 50%;

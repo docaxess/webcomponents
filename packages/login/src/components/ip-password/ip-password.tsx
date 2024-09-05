@@ -19,7 +19,10 @@ export class IpPassword {
   @Prop() errorMessage: string;
   @Prop({ mutable: true }) invalid: boolean = false;
   @Prop() forgotPasswordLink: string;
-
+  @Prop() emptyFieldErrorMessage: string = 'Password field cannot be empty';
+  @Prop() inputPlaceholder: string = 'Type your password here...';
+  @Prop() hidePasswordAriaLabel: string = 'Hide password';
+  @Prop() showPasswordAriaLabel: string = 'Show password';
   @State() value: string = '';
   @State() passwordVisible: boolean = false;
 
@@ -28,8 +31,16 @@ export class IpPassword {
   _handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement;
     this.value = target.value;
+
+    if (this.value.trim() === '') {
+      this.invalid = true;
+      this.errorMessage = this.emptyFieldErrorMessage;
+    } else {
+      this.invalid = !target.checkValidity();
+      this.errorMessage = this.invalid ? this.errorMessage : '';
+    }
+
     this.passwordChange.emit(this.value);
-    this.invalid = !target.checkValidity();
   };
 
   _togglePasswordVisibility() {
@@ -41,6 +52,9 @@ export class IpPassword {
       input__input: true,
       'input__input--invalid': this.invalid,
     };
+    const passwordVisibilityClass = this.passwordVisible
+      ? 'show-password'
+      : 'hide-password';
     return (
       <div class="input">
         <label htmlFor="password" class="input__label">
@@ -51,14 +65,15 @@ export class IpPassword {
         </label>
         <div class="input_btn">
           <input
+            part="passsword-input"
             type={this.passwordVisible ? 'text' : 'password'}
             id="password"
             class={inputClasses}
             autoComplete="new-password"
             required
-            aria-invalid={this.invalid ? 'true' : 'false'}
-            aria-describedby={this.invalid ? 'password-error' : ''}
-            placeholder="Type your password here..."
+            aria-invalid={this.invalid ? 'true' : null}
+            aria-describedby={this.invalid ? 'password-error' : null}
+            placeholder={this.inputPlaceholder}
             onInput={(event) => this._handleInput(event)}
             value={this.value}
           />
@@ -67,13 +82,14 @@ export class IpPassword {
             class="toggle-password"
             onClick={() => this._togglePasswordVisibility()}
             aria-label={
-              this.passwordVisible ? 'Hide password' : 'Show password'
+              this.passwordVisible
+                ? this.hidePasswordAriaLabel
+                : this.showPasswordAriaLabel
             }
           >
             <svg
               aria-hidden="true"
-              role="img"
-              class="icon-show"
+              class={`icon-show ${passwordVisibilityClass}`}
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -83,8 +99,7 @@ export class IpPassword {
             </svg>
             <svg
               aria-hidden="true"
-              role="img"
-              class="icon-hide"
+              class={`icon-hide ${passwordVisibilityClass}`}
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -95,16 +110,16 @@ export class IpPassword {
           </button>
         </div>
         <div class="input_footer">
+          {this.invalid && (
+            <p id="password-error" class="input__error">
+              {this.errorMessage}
+            </p>
+          )}
           {this.forgotPasswordLink && (
             <p class="forgot-password">
               <a href={this.forgotPasswordLink} target="_blank">
                 Forgot password
               </a>
-            </p>
-          )}
-          {this.invalid && (
-            <p id="password-error" class="input__error">
-              {this.errorMessage}
             </p>
           )}
         </div>

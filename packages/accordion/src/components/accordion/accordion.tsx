@@ -69,7 +69,6 @@ export class Ipaccordion {
     });
   }
 
-  // keep first panel open or not depending on prop 'isFirstPanelOpen'
   openFirstPanel() {
     if (this.isFirstPanelOpen) {
       const firstPanel = this.accPanels[0];

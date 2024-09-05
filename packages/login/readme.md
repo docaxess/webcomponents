@@ -53,7 +53,6 @@ Use the `<ip-email>` and `<ip-password>` tag in your JSX/HTML.
 | `invalid`      | `invalid`       | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
 | `required`     | `required`      | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
 
-
 ### Ip-password
 
 | Property             | Attribute              | Necessity | Description                                                                                                   | Type      | Default     |
@@ -83,39 +82,38 @@ _e.g:_
 ```
 
 ## Events
-  We have predefined events to see the changes in both inputs.
 
-  ### ip-email
+We have predefined events to see the changes in both inputs.
 
- `inputChange`: this event is emitted when the value of the email input changes. `event.detail` is the new email value as a string.
+### ip-email
 
- ### ip-password
+`inputChange`: this event is emitted when the value of the email input changes. `event.detail` is the new email value as a string.
 
- `passwordChange`: this event is emitted when the value of the password input changes. `event.detail` is the new password value as a string.
+### ip-password
 
- _e.g:_
+`passwordChange`: this event is emitted when the value of the password input changes. `event.detail` is the new password value as a string.
+
+_e.g:_
 
 ```html
 <form class="login-form">
   <ip-email
     class="form-group "
     error-message="The username entered is incorrect"
-
     input-label="User name"
-    onInputChange={(event) => console.log(event.detail)}
+    onInputChange="{(event) => console.log(event.detail)} "
   >
   </ip-email>
   <ip-password
     class="form-group "
     error-message="The password entered is incorrect"
     forgot-password-link="https://your_personal_link_to_reset_password"
-    onPasswordChange={(event) => console.log(event.detail)}
+    onInputChange="{(event) => console.log(event.detail)} "
   >
   </ip-password>
   <button class="btn" type="submit">Login</button>
 </form>
 ```
-
 
 ## Customization
 
@@ -124,8 +122,16 @@ We have a set of predefined variable used to customisation the ip-login:
 - **--primary-color**
 - **--secondary-color**
 - **--focus-color**
+- **--font-family**
+- **--font-size**
+- **--forgot-pwd-font-size**
 
-To update the values use the following:
+Also, to customize the input, we use the `part`:
+
+- **passsword-input**: for the input in ip-password
+- **email-input**: for the input in ip-email
+
+  To update the values use the following:
 
 ```css
 ip-email {
@@ -133,10 +139,19 @@ ip-email {
   --secondary-color: #000000;
   --focus-color: #3aa593;
 }
+ip-email::part(email-input) {
+  width: 150px;
+  height: 40px;
+}
 
 ip-password {
   --primary-color: #006342;
   --secondary-color: #000000;
   --focus-color: #3aa593;
+}
+
+ip-password::part(password-input) {
+  width: 150px;
+  height: 40px;
 }
 ```

@@ -22,6 +22,12 @@
   .username {
     margin-bottom: rem(25);
     width: 280px;
+    margin-bottom: 20px;
+
+    ip-email {
+      --font-size: 16px;
+      --font-family: 'Nunito';
+    }
 
     input {
       width: 100%;
@@ -37,7 +43,10 @@
   .password {
     margin-bottom: rem(25);
     width: 280px;
-
+    ip-password {
+      --font-size: 16px;
+      --font-family: 'Nunito';
+    }
     input {
       width: 100%;
       height: rem(40);
@@ -51,8 +60,8 @@
   }
 
   .social-media {
-    padding-top: 40px;
-    padding-bottom: 120px;
+    padding-top: 38px;
+    padding-bottom: 80px;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -81,6 +90,11 @@
         .icon {
           color: #fff;
           font-size: rem(20);
+        }
+        &:focus,
+        &:hover {
+          outline: 3px solid hsl(221, 58%, 48%);
+          outline-offset: 3px;
         }
       }
       .twitter {
@@ -113,7 +127,7 @@
       gap: 10px;
       align-self: stretch;
       border-radius: 50px;
-      background: #417cfd;
+      background: #0343c4;
       border: none;
       cursor: pointer;
 
@@ -149,4 +163,11 @@
   height: 675px;
   overflow-y: auto;
   border-radius: 0 0 rem(15) rem(15);
+}
+.required-indication {
+  font-size: 12px;
+  padding-bottom: 15px;
+  .asterisk {
+    color: red;
+  }
 }
