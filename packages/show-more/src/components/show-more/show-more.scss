@@ -40,10 +40,13 @@ button {
   flex-shrink: 0;
   gap: 10px;
   border-radius: 4px;
-}
 
-button:hover {
-  background-color: var(--ip-secondary-color);
+  &:focus,
+  &:hover {
+    background-color: var(--ip-secondary-color);
+    outline: 3px solid var(--ip-primary-color);
+    outline-offset: 2px;
+  }
 }
 
 svg {
