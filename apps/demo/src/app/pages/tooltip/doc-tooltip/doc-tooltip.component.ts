@@ -13,24 +13,25 @@ import { Highlight } from 'ngx-highlightjs';
 export class DocTooltipComponent {
   installationScript = `npm install ip-tooltip`;
   import = `import '../node_modules/ip-tooltip/dist/ip-tooltip/ip-tooltip.esm';`;
-  example = `<ip-table
-  columns='[
-      { "header": "Name" , "type": "string"},
-      { "header": "Age", "type": "number" }
-      ]'
-  rows='[
-      {"Name":"Benoit", "Age":25},
-      {"Name":"Linda", "Age":23}
-    ]'
+  example = `<ip-tooltip
+  tooltip-title="Tooltip Title"
+  tooltip-content="The text in the tooltip"
+  tooltip-trigger="Click me!"
+  tooltip-btn-1="Don't show again"
+  btn-1-aria-label="Don't show again"
+  tooltip-btn-2="Learn More"
+  btn-2-aria-label="Learn More"
+  tooltip-btn-close="true"
 >
-</ip-table>`;
-  custom = `ip-table {
+</ip-tooltip>`;
+  custom = `ip-tooltip {
   --primary-color: #006342;
   --secondary-color: #000000;
-  --thead-color: #f4f4f4;
-  --hover-color: #e7f3ff;
-  --font-size: 16px;
-  --font-family: Arial, sans-serif;
+}
+
+ip-tooltip::part(tooltip-trigger) {
+  width: 250px;
+  height: 35px;
 }
 `;
 

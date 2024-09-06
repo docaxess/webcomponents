@@ -26,9 +26,11 @@
 
 ## Shadow Parts
 
-| Part                | Description |
-| ------------------- | ----------- |
-| `"passsword-input"` |             |
+| Part              | Description |
+| ----------------- | ----------- |
+| `"email-input"`   |             |
+| `"error-message"` |             |
+| `"input-label"`   |             |
 
 
 ----------------------------------------------

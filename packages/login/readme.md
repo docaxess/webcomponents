@@ -128,8 +128,12 @@ We have a set of predefined variable used to customisation the ip-login:
 
 Also, to customize the input, we use the `part`:
 
-- **passsword-input**: for the input in ip-password
 - **email-input**: for the input in ip-email
+- **error-message**: for the error message in ip-email
+- **input-label**: for the label of each input in ip-password and ip-email
+- **passsword-input**: for the input in ip-password
+- **password-error**: for the error message in ip-password
+- **forgot-password**: for the label for forgot password in ip-password
 
   To update the values use the following:
 

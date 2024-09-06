@@ -30,15 +30,21 @@ export class IpEmail {
   _handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement;
     this.value = target.value;
+    this.inputChange.emit(this.value);
+  };
+
+  validate() {
     if (this.value.trim() === '') {
       this.invalid = true;
       this.errorMessage = this.emptyFieldErrorMessage;
+      return false;
     } else {
-      this.invalid = !target.checkValidity();
+      const inputElement = this.el.shadowRoot.querySelector('input');
+      this.invalid = !inputElement.checkValidity();
       this.errorMessage = this.invalid ? this.errorMessage : '';
+      return !this.invalid;
     }
-    this.inputChange.emit(this.value);
-  };
+  }
 
   render() {
     const inputClasses = {
@@ -47,7 +53,7 @@ export class IpEmail {
     };
     return (
       <div class="input">
-        <label htmlFor="email" class="input__label">
+        <label htmlFor="email" part="input-label" class="input__label">
           {this.inputLabel}
           {this.required && (
             <span aria-hidden="true" class="required-asterisk">
@@ -72,7 +78,11 @@ export class IpEmail {
         </div>
 
         {this.invalid && (
-          <p id={`${this.inputLabel}-error`} class="input__error">
+          <p
+            part="error-message"
+            id={`${this.inputLabel}-error`}
+            class="input__error"
+          >
             {this.errorMessage}
           </p>
         )}

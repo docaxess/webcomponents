@@ -13,10 +13,10 @@ describe('ip tooltip', () => {
       <ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="tooltip-content" >
           <mock:shadow-root>
    <div class="tooltip-container">
-      <button class="tooltip-trigger" aria-describedby="desc-tooltip">
+      <button class="tooltip-trigger" part="tooltip-trigger" aria-describedby="desc-tooltip">
         Trigger Text
       </button>
-      <div class="tooltip-content hide" role="tooltip" id="desc-tooltip">
+      <div part="tooltip-content" class="tooltip-content hide" role="tooltip" id="desc-tooltip">
         <p>tooltip-content</p>
         <div class="btn-inside"></div>
       </div>
@@ -37,10 +37,10 @@ describe('ip tooltip', () => {
             <ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="tooltip-content" tooltip-title="Title" type="click">
                 <mock:shadow-root>
                     <div class="tooltip-container">
-      <button class="tooltip-trigger" aria-describedby="desc-tooltip">
+      <button class="tooltip-trigger" part="tooltip-trigger" aria-describedby="desc-tooltip">
         Trigger Text
       </button>
-      <div class="tooltip-content hide" role="tooltip" id="desc-tooltip">
+      <div part="tooltip-content" class="tooltip-content hide" role="tooltip" id="desc-tooltip">
         <h3 aria-label="Title" class="tooltip-title">Title</h3>
         <p>tooltip-content</p>
         <div class="btn-inside"></div>
@@ -63,12 +63,13 @@ describe('ip tooltip', () => {
             <ip-tooltip tooltip-trigger="Trigger Text" tooltip-content="tooltip-content" tooltip-title="Title" tooltip-btn-close="true" type="click">
                 <mock:shadow-root>
                    <div class="tooltip-container">
-      <button class="tooltip-trigger" aria-describedby="desc-tooltip">
+      <button class="tooltip-trigger" part="tooltip-trigger" aria-describedby="desc-tooltip">
         Trigger Text
       </button>
-      <div class="tooltip-content hide" role="tooltip" id="desc-tooltip">
+      <div part="tooltip-content" class="tooltip-content hide" role="tooltip" id="desc-tooltip">
         <h3 aria-label="Title" class="tooltip-title">Title</h3>
         <button
+        part="close-btn"
           class="close"
           role="button"
           tabindex="0"
@@ -97,12 +98,13 @@ describe('ip tooltip', () => {
     <ip-tooltip tooltip-btn-close="true" tooltip-btn-1="Cancel" tooltip-btn-2="Learn More" type="click" tooltip-content="tooltip-content" tooltip-title="Title" tooltip-trigger="Trigger Text">
         <mock:shadow-root>
               <div class="tooltip-container">
-      <button class="tooltip-trigger" aria-describedby="desc-tooltip">
+      <button class="tooltip-trigger" part="tooltip-trigger" aria-describedby="desc-tooltip">
         Trigger Text
       </button>
-      <div class="tooltip-content hide" role="tooltip" id="desc-tooltip">
+      <div class="tooltip-content hide" part="tooltip-content" role="tooltip" id="desc-tooltip">
         <h3 aria-label="Title" class="tooltip-title">Title</h3>
         <button
+        part="close-btn"
           class="close"
           role="button"
           tabindex="0"
@@ -112,8 +114,8 @@ describe('ip tooltip', () => {
         </button>
         <p>tooltip-content</p>
         <div class="btn-inside">
-          <button class="cancel" role="button" tabindex="0">Cancel</button
-          ><button class="learn-more" role="button" tabindex="0">
+          <button part="tooltip-btn1" class="cancel" role="button" tabindex="0">Cancel</button
+          ><button part="tooltip-btn2" class="learn-more" role="button" tabindex="0">
             Learn More
           </button>
         </div>

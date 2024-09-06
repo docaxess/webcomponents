@@ -50,12 +50,12 @@ export class IpTooltip {
     }
   }
 
-  // @Listen('mouseleave')
-  handleMouseLeave = () => {
+  @Listen('mouseleave')
+  handleMouseLeave() {
     if (this.type === 'hover') {
       this.showTooltip = false;
     }
-  };
+  }
 
   closeTooltip = () => {
     this.showTooltip = false;
@@ -91,15 +91,13 @@ export class IpTooltip {
     return (
       <div class="tooltip-container">
         <button
+          part="tooltip-trigger"
           class="tooltip-trigger"
           aria-describedby="desc-tooltip"
           onFocus={this.type === 'click' ? undefined : this._toggleTooltip}
           onBlur={this.type === 'click' ? undefined : this.handleBlur}
           onKeyUp={this.handleKeyUp}
           onClick={this.type === 'click' ? this._toggleTooltip : undefined}
-          onMouseLeave={
-            this.type === 'click' ? undefined : this.handleMouseLeave
-          }
         >
           {this.tooltipTrigger}
         </button>
@@ -108,9 +106,7 @@ export class IpTooltip {
           class={`tooltip-content ${this.showTooltip ? 'show' : 'hide'}`}
           role="tooltip"
           id="desc-tooltip"
-          onMouseLeave={
-            this.type === 'click' ? undefined : this.handleMouseLeave
-          }
+          part="tooltip-content"
         >
           {this.tooltipTitle && (
             <h3 aria-label={this.tooltipTitle} class="tooltip-title">
@@ -119,6 +115,7 @@ export class IpTooltip {
           )}
           {this.tooltipBtnClose && (
             <button
+              part="close-btn"
               class="close"
               role="button"
               tabindex="0"
@@ -133,6 +130,7 @@ export class IpTooltip {
           <div class="btn-inside">
             {this.tooltipBtn1 && (
               <button
+                part="tooltip-btn1"
                 class="cancel"
                 role="button"
                 aria-label={this.btn1AriaLabel}
@@ -144,6 +142,7 @@ export class IpTooltip {
             )}
             {this.tooltipBtn2 && (
               <button
+                part="tooltip-btn2"
                 class="learn-more"
                 role="button"
                 aria-label={this.btn2AriaLabel}

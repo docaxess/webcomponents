@@ -31,20 +31,24 @@ export class IpPassword {
   _handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement;
     this.value = target.value;
-
-    if (this.value.trim() === '') {
-      this.invalid = true;
-      this.errorMessage = this.emptyFieldErrorMessage;
-    } else {
-      this.invalid = !target.checkValidity();
-      this.errorMessage = this.invalid ? this.errorMessage : '';
-    }
-
     this.passwordChange.emit(this.value);
   };
 
   _togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
+  }
+
+  validate() {
+    if (this.value.trim() === '') {
+      this.invalid = true;
+      this.errorMessage = this.emptyFieldErrorMessage;
+      return false;
+    } else {
+      const inputElement = this.el.shadowRoot.querySelector('input');
+      this.invalid = !inputElement.checkValidity();
+      this.errorMessage = this.invalid ? this.errorMessage : '';
+      return !this.invalid;
+    }
   }
 
   render() {
@@ -57,7 +61,7 @@ export class IpPassword {
       : 'hide-password';
     return (
       <div class="input">
-        <label htmlFor="password" class="input__label">
+        <label htmlFor="password" part="input-label" class="input__label">
           Password
           <span aria-hidden="true" class="required-asterisk">
             *
@@ -111,12 +115,12 @@ export class IpPassword {
         </div>
         <div class="input_footer">
           {this.invalid && (
-            <p id="password-error" class="input__error">
+            <p id="password-error" part="password-error" class="input__error">
               {this.errorMessage}
             </p>
           )}
           {this.forgotPasswordLink && (
-            <p class="forgot-password">
+            <p class="forgot-password" part="forgot-password">
               <a href={this.forgotPasswordLink} target="_blank">
                 Forgot password
               </a>

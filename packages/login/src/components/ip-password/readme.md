@@ -29,7 +29,10 @@
 
 | Part                | Description |
 | ------------------- | ----------- |
+| `"forgot-password"` |             |
+| `"input-label"`     |             |
 | `"passsword-input"` |             |
+| `"password-error"`  |             |
 
 
 ----------------------------------------------

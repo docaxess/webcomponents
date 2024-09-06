@@ -77,12 +77,25 @@ We have a set of predefined variable used to customisation the tooltip:
 - **--primary-color**
 - **--secondary-color**
 
+Also, We have a set of parts that could be used to customize accordingly:
+
+- **close-btn**: for the close button if it exist
+- **tooltip-btn1**: for the first button if it exist
+- **tooltip-btn2**: for the second button if it exist
+- **tooltip-content**: for tooltip-content
+- **tooltip-trigger**: for the trigger button
+
 To update the values use the following:
 
 ```css
 ip-tooltip {
   --primary-color: #006342;
   --secondary-color: #000000;
+}
+
+ip-tooltip::part(tooltip-trigger) {
+  width: 250px;
+  height: 35px;
 }
 ```
 
