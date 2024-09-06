@@ -6,8 +6,6 @@
 
 ## Installation
 
-<!-- TODO  -->
-
 ### Step 1:
 
 Install the ip-tooltip component as a dependency in the project:
@@ -79,12 +77,25 @@ We have a set of predefined variable used to customisation the tooltip:
 - **--primary-color**
 - **--secondary-color**
 
+Also, We have a set of parts that could be used to customize accordingly:
+
+- **close-btn**: for the close button if it exist
+- **tooltip-btn1**: for the first button if it exist
+- **tooltip-btn2**: for the second button if it exist
+- **tooltip-content**: for tooltip-content
+- **tooltip-trigger**: for the trigger button
+
 To update the values use the following:
 
 ```css
 ip-tooltip {
   --primary-color: #006342;
   --secondary-color: #000000;
+}
+
+ip-tooltip::part(tooltip-trigger) {
+  width: 250px;
+  height: 35px;
 }
 ```
 
@@ -94,15 +105,15 @@ To listen to events emitted by ip-tooltip,open your browser's console. Event det
 Example JavaScript code to listen to events:
 
 ```javascript
-document.addEventListener("DOMContentLoaded", function () {
-  const tooltip = document.querySelector("#clicked-tooltip");
+document.addEventListener('DOMContentLoaded', function () {
+  const tooltip = document.querySelector('#clicked-tooltip');
 
-  tooltip.addEventListener("btn1Click", function () {
-    console.log("Event btn1Click captured from index.html");
+  tooltip.addEventListener('btn1Click', function () {
+    console.log('Event btn1Click captured from index.html');
   });
 
-  tooltip.addEventListener("btn2Click", function () {
-    console.log("Event btn2Click captured from index.html");
+  tooltip.addEventListener('btn2Click', function () {
+    console.log('Event btn2Click captured from index.html');
   });
 });
 ```

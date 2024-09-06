@@ -49,7 +49,6 @@ export class ToggleButton {
             aria-label={this.ariaLabel}
             disabled={this.toggleDisabled}
             checked={this.isActive}
-            aria-describedby="helper-text"
           />
           <span class={`switch-icon ${this.size}`}>
             {this.activeLabel && this.inactiveLabel && (
@@ -65,9 +64,6 @@ export class ToggleButton {
             )}
           </span>
         </div>
-        <label htmlFor="" id="helper-text">
-          <slot name="helper-text"></slot>
-        </label>
       </div>
     );
   }

@@ -2,11 +2,13 @@
   --primary-color: var(--primaryColor, #1a73e8);
   --secondary-color: var(--secondaryColor, #a3a3a3);
   --focus-color: var(--focusColor, #3aa593);
+  --font-family: var(--fontFamily, 'Open Sans', sans-serif);
+  --font-size: var(--fontSize, 16px);
 }
 * {
   box-sizing: border-box;
   margin: 5px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family);
 }
 .input {
   width: 100%;
@@ -23,7 +25,7 @@
   background: #fff;
   padding: 0 0.5em;
   margin-bottom: 0.5em;
-  font-size: 0.8em;
+  font-size: var(--font-size);
   color: #000;
   cursor: pointer;
 }
@@ -37,10 +39,10 @@
   border: 1px solid var(--secondary-color);
   border-radius: 4px;
   height: 35px;
-  font-size: 12px;
+  font-size: var(--font-size);
 
   &--invalid {
-    border: 1px solid red;
+    border: 1px solid #bd0f0f;
   }
 }
 .input__input:hover {
@@ -61,9 +63,9 @@
 
 .input__error {
   color: red;
-  font-size: 12px;
+  font-size: var(--font-size);
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 .input_btn {
   margin: 0;

@@ -8,10 +8,10 @@
   <p>
     Install the <code>ip-login</code> component as a dependency in your project:
   </p>
-  <pre><code>npm install ip-login</code></pre>
+  <pre><code [highlight]="installationScript" language="typescript"></code></pre>
   <h4>Step 2</h4>
   <p>Import the module into your script file:</p>
-  <pre><code>import '../node_modules/ip-login/dist/ip-login/ip-login.esm';</code></pre>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
   <h3 class="under-title">Usage</h3>
   <p>In this component,we have two input:</p>
   <ul>
@@ -71,12 +71,12 @@
   <table>
     <thead>
       <tr>
-        <th>Property</th>
-        <th>Attribute</th>
-        <th>Necessity</th>
-        <th>Description</th>
-        <th>Type</th>
-        <th>Default</th>
+        <th scope="col">Property</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Necessity</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">Default</th>
       </tr>
     </thead>
     <tbody>
@@ -119,19 +119,30 @@
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
+    <li><code>--focus-color</code></li>
+    <li><code>--font-family</code></li>
+    <li><code>--font-size</code></li>
+    <li><code>--forgot-pwd-font-size</code></li>
+  </ul>
+  <p>
+    Also, We have a set of parts that could be used to customize accordingly:
+  </p>
+  <ul>
+    <li><code>email-input</code>: for the input in ip-email</li>
+    <li><code>error-message</code>: for the error message in ip-email</li>
+    <li>
+      <code>input-label</code>: for the label of each input in ip-password and
+      ip-email
+    </li>
+    <li><code>passsword-input</code>: for the input in ip-password</li>
+    <li><code>password-error</code>: for the error message in ip-password</li>
+    <li>
+      <code>forgot-password</code>: for the label for forgot password in
+      ip-password
+    </li>
   </ul>
   <p>To update the values, use the following CSS:</p>
-  <pre><code>ip-email &#123;
-        --primary-color: #006342;
-        --secondary-color: #000000;
-        --focus-color: #3aa593;
-    &#125;</code></pre>
-  <br />
-  <pre><code>ip-password &#123;
-        --primary-color: #006342;
-        --secondary-color: #000000;
-        --focus-color: #3aa593;
-      &#125;</code></pre>
+  <pre><code [highlight]="custom" language="css"></code></pre>
 
   <h3 class="under-title">Listening to Events</h3>
   <p>

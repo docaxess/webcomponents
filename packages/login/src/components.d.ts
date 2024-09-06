@@ -7,15 +7,21 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpEmail {
+        "emptyFieldErrorMessage": string;
         "errorMessage": string;
         "inputLabel": string;
+        "inputPlaceholder": string;
         "invalid": boolean;
         "required": boolean;
     }
     interface IpPassword {
+        "emptyFieldErrorMessage": string;
         "errorMessage": string;
         "forgotPasswordLink": string;
+        "hidePasswordAriaLabel": string;
+        "inputPlaceholder": string;
         "invalid": boolean;
+        "showPasswordAriaLabel": string;
     }
 }
 export interface IpEmailCustomEvent<T> extends CustomEvent<T> {
@@ -68,17 +74,23 @@ declare global {
 }
 declare namespace LocalJSX {
     interface IpEmail {
+        "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
         "inputLabel"?: string;
+        "inputPlaceholder"?: string;
         "invalid"?: boolean;
         "onInputChange"?: (event: IpEmailCustomEvent<string>) => void;
         "required"?: boolean;
     }
     interface IpPassword {
+        "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
         "forgotPasswordLink"?: string;
+        "hidePasswordAriaLabel"?: string;
+        "inputPlaceholder"?: string;
         "invalid"?: boolean;
         "onPasswordChange"?: (event: IpPasswordCustomEvent<string>) => void;
+        "showPasswordAriaLabel"?: string;
     }
     interface IntrinsicElements {
         "ip-email": IpEmail;

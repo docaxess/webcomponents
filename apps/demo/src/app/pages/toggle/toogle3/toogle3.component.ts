@@ -35,7 +35,6 @@ export class Toogle3Component {
       <label class="switch-label" slot="switch-label"
         >Activate strong authentication</label
       >
-      <p class="helper-text" slot="helper-text">This is the helper text.</p>
     </ip-toggle>
   `;
   currentView: 'preview' | 'code' | 'doc' = 'preview';

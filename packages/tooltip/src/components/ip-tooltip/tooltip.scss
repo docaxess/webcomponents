@@ -5,7 +5,7 @@
 .tooltip-container {
   position: relative;
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 100;
 }
 
@@ -15,6 +15,7 @@
   background-color: var(--primary-color);
   color: white;
   border-radius: 2px;
+  margin-top: 10px;
 }
 
 .tooltip-trigger:focus,
@@ -24,8 +25,9 @@
 }
 
 .tooltip-content {
+  cursor: pointer;
   position: relative;
-  display: inline-block;
+  display: none;
   width: 300px;
   background-color: var(--primary-color);
   color: #fff;
@@ -37,9 +39,15 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 10px;
 }
 
+.tooltip-content.show {
+  display: block;
+}
+
+.tooltip-content.hide {
+  display: none;
+}
 .tooltip-content p {
   margin: 0;
   font-size: 0.85rem;
@@ -59,7 +67,7 @@
   border: none;
 }
 .tooltip-content::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 100%;
   left: 50%;

@@ -11,14 +11,14 @@ describe('ip-email', () => {
             <ip-email required>
                 <mock:shadow-root>
                     <div class="input">
-                        <label htmlfor="email" class="input__label" >
+                        <label htmlfor="email" class="input__label" part="input-label" >
                             Email
                             <span aria-hidden="true" class="required-asterisk">
                                 *
                             </span>
                         </label>
                         <div class="input_btn">
-                            <input type="email" id="email" class="input__input" autocomplete="email" required value="" placeholder="Type your Email here...">
+                            <input part="email-input" type="string" id="email" class="input__input" autocomplete="email" required value="" placeholder="Type your email here...">
                         </div>
                     </div>
                 </mock:shadow-root>
@@ -35,11 +35,11 @@ describe('ip-email', () => {
                 <ip-email input-label="Username">
                     <mock:shadow-root>
                         <div class="input">
-                            <label htmlfor="email" class="input__label">
+                            <label htmlfor="email" class="input__label" part="input-label">
                             Username
                             </label>
                             <div class="input_btn">
-                                <input type="email" id="email" class="input__input" autocomplete="email" value="" placeholder="Type your Username here...">
+                                <input type="string" part="email-input" id="email" class="input__input" autocomplete="email" value="" placeholder="Type your email here...">
                             </div>
                         </div>
                     </mock:shadow-root>

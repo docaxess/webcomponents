@@ -28,6 +28,17 @@
 | `btn2Click` |             | `CustomEvent<any>` |
 
 
+## Shadow Parts
+
+| Part                | Description |
+| ------------------- | ----------- |
+| `"close-btn"`       |             |
+| `"tooltip-btn1"`    |             |
+| `"tooltip-btn2"`    |             |
+| `"tooltip-content"` |             |
+| `"tooltip-trigger"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
