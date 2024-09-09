@@ -29,8 +29,8 @@ describe('ip-table', () => {
 
     const headers = await page.findAll('ip-table >>> th');
     expect(headers).toHaveLength(2);
-    expect(await headers[0].innerText).toBe('Name');
-    expect(await headers[1].innerText).toBe('Age');
+    expect(await headers[0].innerText).toBe('Name ');
+    expect(await headers[1].innerText).toBe('Age ');
 
     const rows = await page.findAll('ip-table >>> tbody >>> tr');
     expect(rows).toHaveLength(2);
@@ -59,7 +59,7 @@ describe('ip-table', () => {
     await page.waitForChanges();
 
     const nameHeaderButton = await page.find(
-      'ip-table >>> th:nth-of-type(1) >>> button',
+      'ip-table >>> th:nth-of-type(1) >>> span',
     );
     expect(nameHeaderButton).not.toBeNull();
     await nameHeaderButton.click();
@@ -97,7 +97,7 @@ describe('ip-table', () => {
     await page.waitForChanges();
 
     const ageHeaderButton = await page.find(
-      'ip-table >>> th:nth-of-type(2) >>> button',
+      'ip-table >>> th:nth-of-type(2) >>> span',
     );
     expect(ageHeaderButton).not.toBeNull();
     await ageHeaderButton.click();

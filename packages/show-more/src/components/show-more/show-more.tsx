@@ -49,7 +49,7 @@ export class ShowMoreButton {
     return (
       <div class="container">
         {this.isExpanded && (
-          <div class="content">
+          <div class="content" id="expandable-content">
             <slot name="content"></slot>
           </div>
         )}
@@ -58,6 +58,8 @@ export class ShowMoreButton {
             onClick={() => this.toggle()}
             style={{ '--svg-color': this.svgColor }}
             aria-label={this.isExpanded ? this.showLessText : this.showMoreText}
+            aria-controls="expandable-content"
+            aria-expanded={this.isExpanded.toString()}
           >
             {this.isExpanded ? this.showLessText : this.showMoreText}
             {this.isExpanded ? arrowDown : arrowUp}
