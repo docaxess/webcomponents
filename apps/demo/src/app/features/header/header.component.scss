@@ -5,20 +5,42 @@ header {
 .head {
   width: 100%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+  background-color: #0e9980;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: rem(5) rem(240);
+  padding: rem(10) rem(32);
   box-sizing: border-box;
   position: sticky;
   .logo {
-    width: 145.9px;
+    width: 122px;
     position: relative;
-    height: 50px;
+    height: 46px;
     overflow: hidden;
     flex-shrink: 0;
+  }
+  .title-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    justify-content: space-between;
+    gap: rem(25);
+  }
+  .title {
+    font-size: rem(18);
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    line-height: normal;
+    font-style: normal;
+    color: #fff;
+    gap: 10px;
+    padding: 0 25px;
+    display: flex;
+    border-left: 1px solid #fff;
   }
 }
 @media (max-width: 768px) {

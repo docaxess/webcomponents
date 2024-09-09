@@ -1,41 +1,26 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Info Alert'"
-    [breadcrumbItems]="[
-      { label: 'Alert', link: '/alert' },
-      { label: 'Info Alert' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <div class="alert-wrapper">
-          <ip-alert
-            type="info"
-            alert-title="Info"
-            message="System updates are complete. You may now continue working."
-          >
-          </ip-alert>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <app-code-snippet [code]="infoAlertCode"></app-code-snippet>
-      }
-      @if (currentView === 'doc') {
-        <app-doc-alert></app-doc-alert>
-      }
-    </div>
+  <div class="component">
+    <h2 class="title">Alert</h2>
+    <p>
+      Alerts are used to inform users of important information. They can be used
+      to provide feedback on user actions, inform users of system updates, or
+      provide important information.
+    </p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="alert-wrapper">
+      <ip-alert
+        type="info"
+        alert-title="Info"
+        message="System updates are complete. You may now continue working."
+      >
+      </ip-alert>
+    </div>
+  </app-accordion>
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="infoAlertCode"></app-code-snippet>
+  </app-accordion>
+  <app-accordion title="Documentation">
+    <app-doc-alert></app-doc-alert>
+  </app-accordion>
 </div>

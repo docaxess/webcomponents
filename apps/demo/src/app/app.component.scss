@@ -3,22 +3,15 @@ body {
 }
 
 .main-content {
-  background-image: url('../assets/images/Rectangle-1.png');
-  background-position-y: -159px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 82.5vh;
-
+  max-height: auto;
   .container {
     display: flex;
     flex-direction: row;
-    margin: 0 150px;
-    margin: 0 150px;
-    padding: 50px 0;
+
     gap: 60px;
 
     .sidebar-menu {
-      width: 400px;
+      width: 300px;
 
       .menu-toggle {
         display: none;
@@ -29,9 +22,9 @@ body {
       }
     }
 
-    .cards-wrapper {
-      width: 960px;
+    .main-wrapper {
       gap: 22px;
+      margin: 0 auto;
     }
   }
 }

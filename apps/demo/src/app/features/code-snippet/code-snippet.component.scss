@@ -1,50 +1,59 @@
-@import '../../../assets/styles/index.scss';
-
-.code-container {
+.tabs {
+  display: flex;
+  padding: 30px 25px 40px 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
   background-color: #1e1e1e;
-  color: $lightColor;
-  height: 675px;
-  width: 100%;
-  overflow-x: auto;
-}
+  .tab-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-bottom: 1px solid #fff;
 
-pre {
-  padding: rem(10);
-  overflow-x: auto;
-  margin: 0;
-}
-.button-list {
-  display: flex;
-  justify-content: space-between;
-  padding: rem(10) rem(5);
-  border-bottom: 2px solid white;
-  display: flex;
-  padding: 30px 50px;
-  gap: 50px;
-  align-items: center;
+    .code-btn {
+      display: flex;
+      align-items: center;
+      gap: 20px;
 
-  label {
-    color: #fff;
+      button {
+        border: none;
+        color: #fff;
+        padding-bottom: 20px;
+        font-size: 13px;
+        background-color: transparent;
 
-    font-family: 'Nunito-bold';
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+        &.active {
+          border-bottom: 3px solid #fff;
+        }
+      }
+    }
+    .copy-button {
+      background-color: transparent;
+      border: none;
+    }
   }
-}
-button {
-  color: $lightColor;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
 
-@media (max-width: 768px) {
-  .button-list {
-    padding: 10px 30px;
-    label {
-      font-size: 20px;
+  .tab-content {
+    .code-container {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background: transparent;
+      width: 100%;
+
+      pre {
+        margin: 0;
+        padding: 10px;
+        overflow: auto;
+      }
+
+      button {
+        margin-top: 10px;
+      }
     }
   }
 }

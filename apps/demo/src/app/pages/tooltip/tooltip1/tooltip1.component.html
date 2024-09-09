@@ -32,7 +32,7 @@
           </div>
         }
         @if (currentView === 'code') {
-          <app-code-snippet [code]="clickableCode"> </app-code-snippet>
+          <app-code-snippet [htmlCode]="clickableCode"> </app-code-snippet>
         }
         @if (currentView === 'doc') {
           <app-doc-tooltip></app-doc-tooltip>

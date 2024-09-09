@@ -5,217 +5,170 @@
   aria-label="Main navigation"
 >
   <ul class="menu-list">
-    <li class="menu-item">
-      <h3
-        (click)="toggleSection('overview')"
-        (keydown)="handleKeydown($event, 'overview')"
-        tabindex="0"
-        role="button"
-        id="overview"
-        [attr.aria-expanded]="isOpen['overview'] ? 'true' : 'false'"
+    <li class="item">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        aria-label="Go to Introduction"
+        (click)="onLinkClick()"
       >
-        Overview
-        <span class="toggle-arrow" [class.rotate]="isOpen['overview']"></span>
-      </h3>
-      <ul class="OVERVIEW" [class.expanded]="isOpen['overview']">
-        <li class="item">
-          <a
-            routerLink="/"
-            routerLinkActive="active"
-            aria-label="Go to Introduction"
-            (click)="onLinkClick()"
-          >
-            Intro
-          </a>
-        </li>
-      </ul>
+        Intro
+      </a>
     </li>
 
-    <li class="menu-item">
-      <h3
-        (click)="toggleSection('global-elements')"
-        (keydown)="handleKeydown($event, 'global-elements')"
-        tabindex="0"
-        role="button"
-        [attr.aria-expanded]="isOpen['global-elements'] ? 'true' : 'false'"
+    <li>
+      <a
+        routerLink="/accordion"
+        routerLinkActive="active"
+        aria-label="Go to Accordion component"
+        (click)="onLinkClick()"
       >
-        Global Elements
-        <span
-          class="toggle-arrow"
-          [class.rotate]="isOpen['global-elements']"
-        ></span>
-      </h3>
-      <ul class="global-elements" [class.expanded]="isOpen['global-elements']">
-        <li>
-          <a
-            routerLink="/accordion"
-            routerLinkActive="active"
-            aria-label="Go to Accordion component"
-            (click)="onLinkClick()"
-          >
-            Accordion
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/alert"
-            routerLinkActive="active"
-            aria-label="Go to Alert component"
-            (click)="onLinkClick()"
-          >
-            Alert
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/footnote"
-            routerLinkActive="active"
-            aria-label="Go to Footnote component"
-            (click)="onLinkClick()"
-          >
-            Footnote
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/modal"
-            routerLinkActive="active"
-            aria-label="Go to Modal component"
-            (click)="onLinkClick()"
-          >
-            Modal
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/pagination"
-            routerLinkActive="active"
-            aria-label="Go to Pagination component"
-            (click)="onLinkClick()"
-          >
-            Pagination
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/show-more"
-            routerLinkActive="active"
-            aria-label="Go to Show-more component"
-            (click)="onLinkClick()"
-          >
-            Show-more
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/table"
-            routerLinkActive="active"
-            aria-label="Go to Table component"
-            (click)="onLinkClick()"
-          >
-            Table
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/tab-panel"
-            routerLinkActive="active"
-            aria-label="Go to Tab-panel component"
-            (click)="onLinkClick()"
-          >
-            Tab-panel
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/tooltip"
-            routerLinkActive="active"
-            aria-label="Go to Tooltip component"
-            (click)="onLinkClick()"
-          >
-            Tooltip
-          </a>
-        </li>
-      </ul>
+        Accordion
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/alert"
+        routerLinkActive="active"
+        aria-label="Go to Alert component"
+        (click)="onLinkClick()"
+      >
+        Alert
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/footnote"
+        routerLinkActive="active"
+        aria-label="Go to Footnote component"
+        (click)="onLinkClick()"
+      >
+        Footnote
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/modal"
+        routerLinkActive="active"
+        aria-label="Go to Modal component"
+        (click)="onLinkClick()"
+      >
+        Modal
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/pagination"
+        routerLinkActive="active"
+        aria-label="Go to Pagination component"
+        (click)="onLinkClick()"
+      >
+        Pagination
+      </a>
     </li>
 
-    <li class="menu-item">
-      <h3
-        (click)="toggleSection('forms-input')"
-        (keydown)="handleKeydown($event, 'forms-input')"
-        tabindex="0"
-        role="button"
-        [attr.aria-expanded]="isOpen['forms-input'] ? 'true' : 'false'"
+    <li>
+      <a
+        routerLink="/show-more"
+        routerLinkActive="active"
+        aria-label="Go to Show-more component"
+        (click)="onLinkClick()"
       >
-        Forms Input
-        <span
-          class="toggle-arrow"
-          [class.rotate]="isOpen['forms-input']"
-        ></span>
-      </h3>
-      <ul class="forms-input" [class.expanded]="isOpen['forms-input']">
-        <li>
-          <a
-            routerLink="/checkbox"
-            routerLinkActive="active"
-            aria-label="Go to Checkbox component"
-            (click)="onLinkClick()"
-          >
-            Checkbox
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/dropdown"
-            routerLinkActive="active"
-            aria-label="Go to Dropdown component"
-            (click)="onLinkClick()"
-          >
-            Dropdown
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/login"
-            routerLinkActive="active"
-            aria-label="Go to Login component"
-            (click)="onLinkClick()"
-          >
-            Login
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/radio-button"
-            aria-label="Go to Radio-button component"
-            routerLinkActive="active"
-            (click)="onLinkClick()"
-          >
-            Radio-button
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/search-bar"
-            routerLinkActive="active"
-            aria-label="Go to search-bar component"
-            (click)="onLinkClick()"
-          >
-            Search-bar
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/toggle"
-            routerLinkActive="active"
-            aria-label="Go to Toggle component"
-            (click)="onLinkClick()"
-          >
-            Toggle
-          </a>
-        </li>
-      </ul>
+        Show-more
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/table"
+        routerLinkActive="active"
+        aria-label="Go to Table component"
+        (click)="onLinkClick()"
+      >
+        Table
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/tab-panel"
+        routerLinkActive="active"
+        aria-label="Go to Tab-panel component"
+        (click)="onLinkClick()"
+      >
+        Tab-panel
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/tooltip"
+        routerLinkActive="active"
+        aria-label="Go to Tooltip component"
+        (click)="onLinkClick()"
+      >
+        Tooltip
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="/checkbox"
+        routerLinkActive="active"
+        aria-label="Go to Checkbox component"
+        (click)="onLinkClick()"
+      >
+        Checkbox
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/dropdown"
+        routerLinkActive="active"
+        aria-label="Go to Dropdown component"
+        (click)="onLinkClick()"
+      >
+        Dropdown
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/login"
+        routerLinkActive="active"
+        aria-label="Go to Login component"
+        (click)="onLinkClick()"
+      >
+        Login
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/radio-button"
+        aria-label="Go to Radio-button component"
+        routerLinkActive="active"
+        (click)="onLinkClick()"
+      >
+        Radio-button
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/search-bar"
+        routerLinkActive="active"
+        aria-label="Go to search-bar component"
+        (click)="onLinkClick()"
+      >
+        Search-bar
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/toggle"
+        routerLinkActive="active"
+        aria-label="Go to Toggle component"
+        (click)="onLinkClick()"
+      >
+        Toggle
+      </a>
     </li>
   </ul>
+  <!-- </li>
+  </ul> -->
 </nav>

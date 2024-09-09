@@ -12,6 +12,7 @@ import { ViewSwitcherComponent } from '../../../features/view-switcher/view-swit
 import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 import { RouterLink } from '@angular/router';
 import { defineCustomElements as AlertElements } from '@ipedis/alert/loader';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-info-alert',
@@ -23,6 +24,7 @@ import { defineCustomElements as AlertElements } from '@ipedis/alert/loader';
     CodeSnippetComponent,
     DocAlertComponent,
     ViewSwitcherComponent,
+    AccordionComponent,
   ],
   templateUrl: './info-alert.component.html',
   styleUrl: './info-alert.component.scss',
