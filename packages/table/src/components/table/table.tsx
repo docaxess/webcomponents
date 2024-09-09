@@ -130,14 +130,19 @@ export class IpTable {
         <thead>
           <tr>
             {this.parsedThead.map((column, index) => (
-              <th>
-                <span>{column.header}</span>
-                <button
-                  aria-label={`Sort by ${column.header}`}
-                  onClick={() => this.sortColumn(index)}
-                >
-                  {this.renderSortICon(index)}
-                </button>
+              <th
+                aria-sort={
+                  this.sortedColumn === index
+                    ? this.isAscending
+                      ? 'ascending'
+                      : 'descending'
+                    : null
+                }
+                onClick={() => this.sortColumn(index)}
+              >
+                <span tabindex="0" class="table-header">
+                  {column.header} {this.renderSortICon(index)}
+                </span>
               </th>
             ))}
           </tr>

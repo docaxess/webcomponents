@@ -26,10 +26,19 @@ table {
   font-size: var(--font-size);
 }
 
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:focus,
+  &:hover {
+    outline: 3px solid #000;
+    outline-offset: 4px;
+  }
+}
 thead {
   background-color: var(--primary-color);
   color: var(--thead-color);
-
 }
 
 th,
@@ -42,7 +51,6 @@ td {
 th {
   background-color: var(--primary-color);
   font-weight: bold;
-
 }
 
 tbody tr:nth-child(even) {
