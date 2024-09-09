@@ -73,23 +73,12 @@ export class Ipaccordion {
     if (this.isFirstPanelOpen) {
       const firstPanel = this.accPanels[0];
       const firstButton = this.accHeaderButtons[0];
-
-      (this.accHeaderButtons[0] as HTMLElement).setAttribute(
-        'aria-expanded',
-        'true',
-      );
+      firstPanel.classList.remove('hidden');
+      firstPanel.classList.add('visible');
+      firstButton.setAttribute('aria-expanded', 'true');
       this.currentPanel = 'panel-1';
-
-      firstPanel.style.transition = 'none';
-      firstPanel.style.height = firstPanel.scrollHeight + 'px';
-
-      firstPanel.style.transition = 'all 0.3s ease-in';
-
-      firstButton.style.transition = 'none';
-      firstButton.style.transition = 'all 0.3s ease-in-out';
     }
   }
-
   // For accessibility - set an id on the slotted elements
   setSlotId() {
     const slottedElems = this.el.querySelectorAll('ip-accordion > [slot]');
@@ -111,15 +100,25 @@ export class Ipaccordion {
 
     this.setAriaExpanded(selectedButton);
 
-    this.isOpen(selectedButton);
+    if (this.isSingleOpen) {
+      this.closeOtherPanels(index);
+    }
 
     this.setHeight(selectedPanel);
   }
-
+  closeOtherPanels(selectedIndex: number) {
+    this.accPanels.forEach((panel, index) => {
+      if (index !== selectedIndex) {
+        panel.classList.remove('visible');
+        panel.classList.add('hidden');
+        this.accHeaderButtons[index].setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
   isOpen(selectedButton: HTMLElement) {
     if (this.isSingleOpen) {
       this.accPanels.forEach((panel) => {
-        panel.style.height = '0px';
+        panel.style.height = 'auto';
       });
 
       this.accHeaderButtons.forEach((accButton) => {
@@ -136,12 +135,12 @@ export class Ipaccordion {
   }
 
   setHeight(selectedPanel: HTMLElement) {
-    if (selectedPanel.offsetHeight === 0) {
-      selectedPanel.style.display = 'block';
-      selectedPanel.style.height = selectedPanel.scrollHeight + 'px';
+    if (selectedPanel.classList.contains('hidden')) {
+      selectedPanel.classList.remove('hidden');
+      selectedPanel.classList.add('visible');
     } else {
-      selectedPanel.style.height = '0px';
-      selectedPanel.style.display = 'none';
+      selectedPanel.classList.remove('visible');
+      selectedPanel.classList.add('hidden');
     }
   }
 
@@ -157,22 +156,9 @@ export class Ipaccordion {
   // For accessibility - so as not to make elements inside tabulable
 
   hidePanels() {
-    const panels = Array.from(this.accPanels) as HTMLElement[];
-
-    const firstPanel = panels.shift();
-
-    if (this.isFirstPanelOpen) {
-      panels.forEach((panel: HTMLElement) => {
-        panel.style.display = 'none';
-      });
-    } else {
-      if (firstPanel) {
-        firstPanel.style.display = 'none';
-      }
-      panels.forEach((panel: HTMLElement) => {
-        panel.style.display = 'none';
-      });
-    }
+    this.accPanels.forEach((panel) => {
+      panel.classList.add('hidden');
+    });
   }
 
   render() {
@@ -205,9 +191,14 @@ export class Ipaccordion {
                             : null
                       }
                       type="button"
-                      aria-expanded="false"
+                      aria-expanded={
+                        this.isFirstPanelOpen && index === 0 ? 'true' : 'false'
+                      }
                       aria-controls={tabHeader.ariaText}
                       id={tabHeader.id}
+                      class={
+                        this.isFirstPanelOpen && index === 0 ? 'visible' : ''
+                      }
                     >
                       <img
                         part={
@@ -269,9 +260,14 @@ export class Ipaccordion {
                             ? tabHeader.btnAlt
                             : null
                       }
-                      aria-expanded="false"
+                      aria-expanded={
+                        this.isFirstPanelOpen && index === 0 ? 'true' : 'false'
+                      }
                       aria-controls={tabHeader.ariaText}
                       id={tabHeader.id}
+                      class={
+                        this.isFirstPanelOpen && index === 0 ? 'visible' : ''
+                      }
                     >
                       <span
                         part={
@@ -321,9 +317,14 @@ export class Ipaccordion {
                           ? tabHeader.btnAlt
                           : null
                     }
-                    aria-expanded="false"
+                    aria-expanded={
+                      this.isFirstPanelOpen && index === 0 ? 'true' : 'false'
+                    }
                     aria-controls={tabHeader.ariaText}
                     id={tabHeader.id}
+                    class={
+                      this.isFirstPanelOpen && index === 0 ? 'visible' : ''
+                    }
                   >
                     <img
                       part={
@@ -343,7 +344,11 @@ export class Ipaccordion {
                 </div>
               )}
 
-              <div part="acc-content" id={tabHeader.ariaText} class="js-panel">
+              <div
+                part="acc-content"
+                id={tabHeader.ariaText}
+                class={`js-panel ${this.isFirstPanelOpen && index === 0 ? 'visible' : 'hidden'}`}
+              >
                 <slot name={'accordion-' + (index + 1)}></slot>
               </div>
             </div>
@@ -359,9 +364,10 @@ export class Ipaccordion {
                 }
                 onClick={this.onSelectPanel.bind(this, 0)}
                 aria-label="Afficher plus d'information sur {nom de la section}"
-                aria-expanded="false"
+                aria-expanded={this.isFirstPanelOpen ? 'true' : 'false'}
                 aria-controls="sect-1"
                 id="accordion-1"
+                class={this.isFirstPanelOpen ? 'visible' : ''}
               >
                 <span
                   part={
@@ -375,7 +381,11 @@ export class Ipaccordion {
                 </span>
               </button>
             </h2>
-            <div part="acc-content" id="sect-1" class="js-panel">
+            <div
+              part="acc-content"
+              id="sect-1"
+              class={`js-panel ${this.isFirstPanelOpen ? 'visible' : 'hidden'}`}
+            >
               <div class="acc-content">
                 <img
                   class="acc-content__image"
