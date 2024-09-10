@@ -7,10 +7,10 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+
 import { DocSearchBarComponent } from '../doc-search-bar/doc-search-bar.component';
 import { defineCustomElements as SearchBarElements } from '@ipedis/combobox/loader';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-search-bar1',
@@ -18,9 +18,8 @@ import { defineCustomElements as SearchBarElements } from '@ipedis/combobox/load
   imports: [
     CommonModule,
     CodeSnippetComponent,
-    ViewSwitcherComponent,
-    BreadcrumbComponent,
     DocSearchBarComponent,
+    AccordionComponent,
   ],
   templateUrl: './search-bar1.component.html',
   styleUrl: './search-bar1.component.scss',
@@ -28,10 +27,6 @@ import { defineCustomElements as SearchBarElements } from '@ipedis/combobox/load
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SearchBar1Component {
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
   switcherTitle = 'Search-bar 1';
 
   searchCode = `   

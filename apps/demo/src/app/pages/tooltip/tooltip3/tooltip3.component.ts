@@ -9,9 +9,9 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { RouterLink } from '@angular/router';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-tooltip3',
@@ -20,9 +20,8 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
     CommonModule,
     DocTooltipComponent,
     CodeSnippetComponent,
-    ViewSwitcherComponent,
     RouterLink,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './tooltip3.component.html',
   styleUrl: './tooltip3.component.scss',
@@ -30,10 +29,6 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Tooltip3Component {
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
   switcherTitle = 'Tooltip 3';
   withButtonCode = `
       <ip-tooltip

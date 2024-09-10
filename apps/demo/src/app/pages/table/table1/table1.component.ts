@@ -8,9 +8,9 @@ import {
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tableElements } from '@ipedis/table/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { DocTableComponent } from '../doc-table/doc-table.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-table1',
@@ -18,9 +18,8 @@ import { DocTableComponent } from '../doc-table/doc-table.component';
   imports: [
     CommonModule,
     CodeSnippetComponent,
-    BreadcrumbComponent,
-    ViewSwitcherComponent,
     DocTableComponent,
+    AccordionComponent,
   ],
   templateUrl: './table1.component.html',
   styleUrl: './table1.component.scss',
@@ -96,10 +95,7 @@ export class Table1Component {
   >
 </ip-table>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Table 1';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tableElements) {

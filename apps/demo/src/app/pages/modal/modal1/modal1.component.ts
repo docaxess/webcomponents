@@ -7,10 +7,10 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { DocModalComponent } from '../doc-modal/doc-modal.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
 import { defineCustomElements as modalElements } from '@ipedis/modal/loader';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-modal1',
@@ -18,9 +18,8 @@ import { defineCustomElements as modalElements } from '@ipedis/modal/loader';
   imports: [
     CommonModule,
     CodeSnippetComponent,
-    ViewSwitcherComponent,
     DocModalComponent,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './modal1.component.html',
   styleUrl: './modal1.component.scss',
@@ -52,11 +51,65 @@ export class Modal1Component {
     </div>
   </ip-modal>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
+  modalCss = `
+ip-modal::part(trigger-button) {
+  font-family: 'Nunito-bold';
+}
+.modal-content {
+  margin: 10px 0;
+  padding: 10px;
+
+  .dialog-title {
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #2749a3;
+      font-family: 'Nunito';
+    }
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
   }
-  switcherTitle = 'Modal 1';
+  .dialog-contents {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    input {
+      width: 467px;
+      padding: 13px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0.9);
+      margin-top: 20px;
+      &:focus {
+        outline: 3px solid black;
+        outline-offset: 3px;
+      }
+    }
+    label {
+      margin-right: 90px;
+    }
+  }
+  .dialog-btn {
+    background: #2749a3 !important;
+    width: 467px;
+    border-radius: 8px;
+    font-family: 'Nunito';
+    padding: 15px;
+    color: white;
+    border: none;
+    margin-top: 20px;
+  }
+
+  .dialog-btn:focus {
+    outline: 3px solid black;
+    outline-offset: 3px;
+  }
+}
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && modalElements) {
       modalElements(inject(DOCUMENT).defaultView as Window);

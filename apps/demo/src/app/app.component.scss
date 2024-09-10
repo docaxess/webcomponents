@@ -8,10 +8,10 @@ body {
     display: flex;
     flex-direction: row;
 
-    gap: 60px;
-
     .sidebar-menu {
+      min-width: 300px;
       width: 300px;
+      position: static;
 
       .menu-toggle {
         display: none;
@@ -23,21 +23,21 @@ body {
     }
 
     .main-wrapper {
+      width: 100%;
       gap: 22px;
-      margin: 0 auto;
+      margin: 60px 150px;
     }
   }
 }
 @media (max-width: 1200px) {
   .main-content {
     background-image: none;
-    background-color: #0e9980;
     .container {
       margin: 0 50px;
       gap: 30px;
 
       .sidebar-menu {
-        width: 400px;
+        width: 300px;
       }
 
       .cards-wrapper {

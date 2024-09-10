@@ -1,151 +1,142 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Checkbox List'"
-    [breadcrumbItems]="[
-      { label: 'Checkbox', link: '/checkbox' },
-      { label: 'Checkbox List' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div class="content">
-      @if (currentView === 'preview') {
-        <div class="checkbox-wrapper">
-          <ip-checkbox-list
-            legend="Select the options below:"
-            options='[
+  <div class="component-intro">
+    <h2 class="title">Checkbox-list</h2>
+    <p>
+      A checkbox is a component that allows users to make a selection from a set
+      of options. Typically presented as a small square box, it can be either
+      checked (selected) or unchecked (not selected). Checkboxes are commonly
+      used in forms and settings where users can indicate their choices or
+      preferences. They are particularly useful for options that are not
+      mutually exclusive, allowing multiple selections from a group of choices.
+      When a checkbox is selected, a checkmark or a tick appears inside the box,
+      visually indicating the user's choice.
+    </p>
+  </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="checkbox-wrapper">
+      <ip-checkbox-list
+        legend="Select the options below:"
+        options='[
             &#123;"id": "agree", "label": "I agree to the terms and conditions.", "defaultChecked": true , "disabled": true&#125;,
             &#123;"id": "remember", "label": "Remember me on this device", "disabled": true&#125;, 
             &#123;"id": "newsletter", "label": "subscribe to our newsletter for updates.","defaultChecked": true&#125;,
             &#123;"id": "send", "label": "Send me promotional offers and discounts."&#125;,
             &#123;"id": "participate", "label": "Participate in our user feddback program."&#125;
             ]'
-          >
-          </ip-checkbox-list>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <app-code-snippet [htmlCode]="checkboxListCode"></app-code-snippet>
-      }
-      @if (currentView === 'doc') {
-        <section id="documentation">
-          <h3 class="under-title">Installation</h3>
-          <p>
-            Follow these steps to install and use the
-            <code>ip-checkbox-list</code> component in your project.
-          </p>
-          <h4>Step 1</h4>
-          <p>
-            Install the
-            <code>ip-checkbox-list</code> component as a dependency in your
-            project:
-          </p>
-          <pre><code>npm install ip-checkbox-list</code></pre>
-          <h4>Step 2</h4>
-          <p>Import the module into your script file:</p>
-          <pre><code>import '../node_modules/ip-checkbox-list/dist/ip-checkbox-list/ip-checkbox-list.esm';</code></pre>
-          <h3 class="under-title">Usage</h3>
-          <p>
-            To use these components, you must add the properties as attributes.
-          </p>
-          <h4>Properties</h4>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Property</th>
-                <th scope="col">Attribute</th>
-                <th scope="col">Necessity</th>
-                <th scope="col">Description</th>
-                <th scope="col">Type</th>
-                <th scope="col">Default</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>options</code></td>
-                <td><code>options</code></td>
-                <td>Yes</td>
-                <td>An array of objects used to pass options as checkboxes</td>
-                <td><code>string</code></td>
-                <td><code>undefined</code></td>
-              </tr>
-              <tr>
-                <td><code>id</code></td>
-                <td><code>id</code></td>
-                <td>Yes</td>
-                <td>ID of the input for accessibility</td>
-                <td><code>string</code></td>
-                <td><code>undefined</code></td>
-              </tr>
-              <tr>
-                <td><code>defaultChecked</code></td>
-                <td><code>default-checked</code></td>
-                <td>No</td>
-                <td>When you need to set the checkbox to checked by default</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-              </tr>
-              <tr>
-                <td><code>disabled</code></td>
-                <td><code>disabled</code></td>
-                <td>No</td>
-                <td>When you need to set the checkbox to disabled</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-              </tr>
-              <tr>
-                <td><code>legend</code></td>
-                <td><code>legend</code></td>
-                <td>No</td>
-                <td>The legend for the list of checkboxes</td>
-                <td><code>string</code></td>
-                <td><code>undefined</code></td>
-              </tr>
-            </tbody>
-          </table>
-          <h6>Example:</h6>
-          <pre><code>&lt;ip-checkbox-list options='[&#123;"id": "option1", "label": "Option 1"&#125;, &#123;"id": "option2", "label": "Option 2"&#125;]'&gt;&lt;/ip-checkbox-list&gt;</code></pre>
-          <h3 class="under-title">Customization</h3>
-          <p>
-            We have a set of predefined variables used to customize the
-            checkbox:
-          </p>
-          <ul>
-            <li><code>--primary-color</code></li>
-            <li><code>--secondary-color</code></li>
-            <li><code>--font-size</code></li>
-            <li><code>--checkbox-size</code></li>
-          </ul>
-          <p>To update the values, use the following CSS:</p>
-          <pre><code>ip-checkbox-list &#123;
+      >
+      </ip-checkbox-list>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="checkboxListCode"></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <section id="documentation">
+      <h3 class="under-title">Installation</h3>
+      <p>
+        Follow these steps to install and use the
+        <code>ip-checkbox-list</code> component in your project.
+      </p>
+      <h4>Step 1</h4>
+      <p>
+        Install the
+        <code>ip-checkbox-list</code> component as a dependency in your project:
+      </p>
+      <pre><code>npm install ip-checkbox-list</code></pre>
+      <h4>Step 2</h4>
+      <p>Import the module into your script file:</p>
+      <pre><code>import '../node_modules/ip-checkbox-list/dist/ip-checkbox-list/ip-checkbox-list.esm';</code></pre>
+      <h3 class="under-title">Usage</h3>
+      <p>To use these components, you must add the properties as attributes.</p>
+      <h4>Properties</h4>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Property</th>
+            <th scope="col">Attribute</th>
+            <th scope="col">Necessity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Type</th>
+            <th scope="col">Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>options</code></td>
+            <td><code>options</code></td>
+            <td>Yes</td>
+            <td>An array of objects used to pass options as checkboxes</td>
+            <td><code>string</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>id</code></td>
+            <td><code>id</code></td>
+            <td>Yes</td>
+            <td>ID of the input for accessibility</td>
+            <td><code>string</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>defaultChecked</code></td>
+            <td><code>default-checked</code></td>
+            <td>No</td>
+            <td>When you need to set the checkbox to checked by default</td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>disabled</code></td>
+            <td><code>disabled</code></td>
+            <td>No</td>
+            <td>When you need to set the checkbox to disabled</td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>legend</code></td>
+            <td><code>legend</code></td>
+            <td>No</td>
+            <td>The legend for the list of checkboxes</td>
+            <td><code>string</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <h6>Example:</h6>
+      <pre><code>&lt;ip-checkbox-list options='[&#123;"id": "option1", "label": "Option 1"&#125;, &#123;"id": "option2", "label": "Option 2"&#125;]'&gt;&lt;/ip-checkbox-list&gt;</code></pre>
+      <h3 class="under-title">Customization</h3>
+      <p>
+        We have a set of predefined variables used to customize the checkbox:
+      </p>
+      <ul>
+        <li><code>--primary-color</code></li>
+        <li><code>--secondary-color</code></li>
+        <li><code>--font-size</code></li>
+        <li><code>--checkbox-size</code></li>
+      </ul>
+      <p>To update the values, use the following CSS:</p>
+      <pre><code>ip-checkbox-list &#123;
               --primary-color: #006342;
               --secondary-color: #000000;
                 &#125;</code></pre>
-          <h3 class="under-title">Listening to Events</h3>
-          <p>
-            To listen to events emitted by the
-            <code>ip-checkbox-list</code> components, open your browser's
-            console. Event details will be displayed in the console when
-            checkboxes are modified.
-          </p>
-          <h5>Example JavaScript Code:</h5>
-          <pre><code>const checkboxList = document.querySelector('ip-checkbox-list');
+      <h3 class="under-title">Listening to Events</h3>
+      <p>
+        To listen to events emitted by the
+        <code>ip-checkbox-list</code> components, open your browser's console.
+        Event details will be displayed in the console when checkboxes are
+        modified.
+      </p>
+      <h5>Example JavaScript Code:</h5>
+      <pre><code>const checkboxList = document.querySelector('ip-checkbox-list');
             const checkbox = document.querySelector('ip-checkbox');
             
             checkboxList.addEventListener('change', event => &#123;
               console.log(event.detail);
             &#125;);
               </code></pre>
-        </section>
-      }
-    </div>
-  </div>
+    </section>
+  </app-accordion>
 </div>

@@ -10,8 +10,8 @@ import { defineCustomElements as radioElements } from '@ipedis/radio/loader';
 import { DocRadioComponent } from '../doc-radio/doc-radio.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { RouterLink } from '@angular/router';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-radio1-button',
@@ -21,8 +21,7 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
     DocRadioComponent,
     CodeSnippetComponent,
     RouterLink,
-    ViewSwitcherComponent,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './radio1.component.html',
   styleUrl: './radio1.component.scss',
@@ -44,10 +43,7 @@ export class Radio1ButtonComponent {
     ></ip-radio>
   </div>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Radio Button 1';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && radioElements) {

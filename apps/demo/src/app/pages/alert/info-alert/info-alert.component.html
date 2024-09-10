@@ -1,6 +1,6 @@
 <div class="modal-content">
-  <div class="component">
-    <h2 class="title">Alert</h2>
+  <div class="component-intro">
+    <h2 class="title">Alert Info</h2>
     <p>
       Alerts are used to inform users of important information. They can be used
       to provide feedback on user actions, inform users of system updates, or
@@ -9,12 +9,17 @@
   </div>
   <app-accordion title="Preview" [alwaysOpen]="true">
     <div class="alert-wrapper">
-      <ip-alert
-        type="info"
-        alert-title="Info"
-        message="System updates are complete. You may now continue working."
-      >
-      </ip-alert>
+      @if (isAlertVisible) {
+        <ip-alert
+          type="info"
+          alert-title="Info"
+          message="System updates are complete. You may now continue working."
+          (alertClosed)="hideAlert()"
+          #alertComponent
+        >
+        </ip-alert>
+      }
+      <button (click)="displayAlert()" #showAlertButton>Show alert</button>
     </div>
   </app-accordion>
   <app-accordion title="Code">

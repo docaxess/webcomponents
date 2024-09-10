@@ -4,12 +4,13 @@
   --font-color: var(--ip-font-color, #2749a3);
   --selected-bg-color: var(--ip-selected-bg, #738cce1a);
   --font-size: var(--ip-font-size, 14px);
+  --font-family: var(--ip-font-family, 'Inter');
 }
 .dropdown {
   position: relative;
   width: 200px;
   color: var(--font-color);
-  font-family: Inter;
+  font-family: var(--font-family);
   font-size: var(--font-size);
   font-style: normal;
   font-weight: 400;

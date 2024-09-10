@@ -5,7 +5,7 @@
   aria-label="Main navigation"
 >
   <ul class="menu-list">
-    <li class="item">
+    <li class="item" [class.open]="isOpen['intro']">
       <a
         routerLink="/"
         routerLinkActive="active"
@@ -16,9 +16,9 @@
       </a>
     </li>
 
-    <li>
+    <li class="item" [class.open]="isOpen['accordion']">
       <a
-        routerLink="/accordion"
+        routerLink="/accordion/accordion1"
         routerLinkActive="active"
         aria-label="Go to Accordion component"
         (click)="onLinkClick()"
@@ -26,19 +26,59 @@
         Accordion
       </a>
     </li>
-    <li>
-      <a
-        routerLink="/alert"
-        routerLinkActive="active"
-        aria-label="Go to Alert component"
-        (click)="onLinkClick()"
+
+    <li class="item" [class.open]="isOpen['alert']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('alert')"
+        (keydown)="handleKeydown($event, 'alert')"
       >
-        Alert
-      </a>
+        <span> Alert </span>
+        <div class="icon">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+
+      <ul class="sub-menu" [class.open]="isOpen['alert']">
+        <li>
+          <a
+            routerLink="/alert/info-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert info preview"
+            >Alert info</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alert/success-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert success preview"
+            >Alert success</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alert/warning-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert Warning preview"
+            >Alert Warning</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alert/danger-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert Danger preview"
+            >Alert Danger</a
+          >
+        </li>
+      </ul>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['footnote']">
       <a
-        routerLink="/footnote"
+        routerLink="/footnote/footnote1"
         routerLinkActive="active"
         aria-label="Go to Footnote component"
         (click)="onLinkClick()"
@@ -46,9 +86,10 @@
         Footnote
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['modal']">
       <a
-        routerLink="/modal"
+        routerLink="/modal/modal1"
         routerLinkActive="active"
         aria-label="Go to Modal component"
         (click)="onLinkClick()"
@@ -56,9 +97,10 @@
         Modal
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['pagination']">
       <a
-        routerLink="/pagination"
+        routerLink="/pagination/pagination1"
         routerLinkActive="active"
         aria-label="Go to Pagination component"
         (click)="onLinkClick()"
@@ -67,9 +109,9 @@
       </a>
     </li>
 
-    <li>
+    <li class="item" [class.open]="isOpen['show-more']">
       <a
-        routerLink="/show-more"
+        routerLink="/show-more/show-more1"
         routerLinkActive="active"
         aria-label="Go to Show-more component"
         (click)="onLinkClick()"
@@ -77,9 +119,10 @@
         Show-more
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['table']">
       <a
-        routerLink="/table"
+        routerLink="/table/table1"
         routerLinkActive="active"
         aria-label="Go to Table component"
         (click)="onLinkClick()"
@@ -87,9 +130,10 @@
         Table
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['tab-panel']">
       <a
-        routerLink="/tab-panel"
+        routerLink="/tab-panel/tab-panel1"
         routerLinkActive="active"
         aria-label="Go to Tab-panel component"
         (click)="onLinkClick()"
@@ -97,7 +141,8 @@
         Tab-panel
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['tooltip']">
       <a
         routerLink="/tooltip"
         routerLinkActive="active"
@@ -108,7 +153,7 @@
       </a>
     </li>
 
-    <li>
+    <li class="item" [class.open]="isOpen['checkbox']">
       <a
         routerLink="/checkbox"
         routerLinkActive="active"
@@ -118,9 +163,10 @@
         Checkbox
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['dropdown']">
       <a
-        routerLink="/dropdown"
+        routerLink="/dropdown/dropdown1"
         routerLinkActive="active"
         aria-label="Go to Dropdown component"
         (click)="onLinkClick()"
@@ -128,7 +174,8 @@
         Dropdown
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['login']">
       <a
         routerLink="/login"
         routerLinkActive="active"
@@ -138,9 +185,10 @@
         Login
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['radio-button']">
       <a
-        routerLink="/radio-button"
+        routerLink="/radio-button/radio-button1"
         aria-label="Go to Radio-button component"
         routerLinkActive="active"
         (click)="onLinkClick()"
@@ -148,9 +196,10 @@
         Radio-button
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['search-bar']">
       <a
-        routerLink="/search-bar"
+        routerLink="/search-bar/search-bar1"
         routerLinkActive="active"
         aria-label="Go to search-bar component"
         (click)="onLinkClick()"
@@ -158,7 +207,8 @@
         Search-bar
       </a>
     </li>
-    <li>
+
+    <li class="item" [class.open]="isOpen['toggle']">
       <a
         routerLink="/toggle"
         routerLinkActive="active"
@@ -169,6 +219,4 @@
       </a>
     </li>
   </ul>
-  <!-- </li>
-  </ul> -->
 </nav>

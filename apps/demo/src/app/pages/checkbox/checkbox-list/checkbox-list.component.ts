@@ -8,20 +8,14 @@ import {
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as checkboxElements } from '@ipedis/checkbox/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { RouterLink } from '@angular/router';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-checkbox-list',
   standalone: true,
-  imports: [
-    CommonModule,
-    CodeSnippetComponent,
-    ViewSwitcherComponent,
-    RouterLink,
-    BreadcrumbComponent,
-  ],
+  imports: [CommonModule, CodeSnippetComponent, RouterLink, AccordionComponent],
   templateUrl: './checkbox-list.component.html',
   styleUrl: './checkbox-list.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -41,10 +35,7 @@ export class CheckboxListComponent {
     >
     </ip-checkbox-list>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Checkbox List';
 
   constructor() {

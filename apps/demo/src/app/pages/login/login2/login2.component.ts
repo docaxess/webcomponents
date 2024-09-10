@@ -10,8 +10,8 @@ import { defineCustomElements as loginElements } from '@ipedis/login/loader';
 import { DocLoginComponent } from '../doc-login/doc-login.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { RouterLink } from '@angular/router';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-login2',
@@ -21,8 +21,7 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
     DocLoginComponent,
     CodeSnippetComponent,
     RouterLink,
-    ViewSwitcherComponent,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './login2.component.html',
   styleUrl: './login2.component.scss',
@@ -53,10 +52,7 @@ export class Login2Component {
     </form>
   </div>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Login 2';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && loginElements) {

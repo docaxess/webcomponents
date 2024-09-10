@@ -14,7 +14,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 export class CodeSnippetComponent {
   @Input() htmlCode = '';
   @Input() cssCode = '';
-  @Input() jsCode = '';
+  @Input() jsCode = 'import "./styles.css"';
   selectedTab: 'html' | 'css' | 'js' = 'html';
 
   selectTab(tab: 'html' | 'css' | 'js') {

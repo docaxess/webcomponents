@@ -1,142 +1,134 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Checkbox 1'"
-    [breadcrumbItems]="[
-      { label: 'Checkbox', link: '/checkbox' },
-      { label: 'Checkbox 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
+  <div class="component-intro">
+    <h2 class="title">Simple Checkbox</h2>
+    <p>
+      A checkbox is a component that allows users to make a selection from a set
+      of options. Typically presented as a small square box, it can be either
+      checked (selected) or unchecked (not selected). Checkboxes are commonly
+      used in forms and settings where users can indicate their choices or
+      preferences. They are particularly useful for options that are not
+      mutually exclusive, allowing multiple selections from a group of choices.
+      When a checkbox is selected, a checkmark or a tick appears inside the box,
+      visually indicating the user's choice.
+    </p>
+  </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="checkbox-wrapper">
+      <ip-checkbox default-checked="true" id="check me">
+        Check me !
+      </ip-checkbox>
     </div>
-    <div class="content">
-      @if (currentView === 'preview') {
-        <div class="checkbox-wrapper">
-          <ip-checkbox default-checked="true" id="check me">
-            Check me !
-          </ip-checkbox>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <app-code-snippet [htmlCode]="checkboxCode"></app-code-snippet>
-      }
-      @if (currentView === 'doc') {
-        <section id="documentation">
-          <h3 class="under-title">Installation</h3>
-          <p>
-            Follow these steps to install and use the
-            <code>ip-checkbox</code> component in your project.
-          </p>
-          <h4>Step 1</h4>
-          <p>
-            Install the
-            <code>ip-checkbox</code> component as a dependency in your project:
-          </p>
-          <pre><code>npm install ip-checkbox</code></pre>
-          <h4>Step 2</h4>
-          <p>Import the module into your script file:</p>
-          <pre><code>import '../node_modules/ip-checkbox/dist/ip-checkbox/ip-checkbox.esm';</code></pre>
-          <h2 class="under-title">Usage</h2>
-          <p>
-            To use these components, you must add the properties as attributes.
-          </p>
+  </app-accordion>
 
-          <h4>Properties</h4>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Property</th>
-                <th scope="col">Attribute</th>
-                <th scope="col">Necessity</th>
-                <th scope="col">Description</th>
-                <th scope="col">Type</th>
-                <th scope="col">Default</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>id</code></td>
-                <td><code>id</code></td>
-                <td>Yes</td>
-                <td>The ID of the input for accessibility</td>
-                <td><code>string</code></td>
-                <td><code>undefined</code></td>
-              </tr>
-              <tr>
-                <td><code>name</code></td>
-                <td><code>name</code></td>
-                <td>Yes</td>
-                <td>The name of the input for accessibility</td>
-                <td><code>string</code></td>
-                <td><code>undefined</code></td>
-              </tr>
-              <tr>
-                <td><code>defaultChecked</code></td>
-                <td><code>default-checked</code></td>
-                <td>No</td>
-                <td>Sets the checkbox to checked by default</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-              </tr>
-              <tr>
-                <td><code>disabled</code></td>
-                <td><code>disabled</code></td>
-                <td>No</td>
-                <td>Disables the checkbox</td>
-                <td><code>boolean</code></td>
-                <td><code>false</code></td>
-              </tr>
-            </tbody>
-          </table>
-          <h6>Content</h6>
-          <p>
-            There is a predefined label slot for the label before the checkbox,
-            which will be the content inside the tag.
-          </p>
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="checkboxCode"></app-code-snippet>
+  </app-accordion>
 
-          <h6>Example:</h6>
-          <div class="example">
-            <pre><code>&lt;ip-checkbox default-checked="true" disabled="true" id="checked"&gt; Checked ! &lt;/ip-checkbox&gt;</code></pre>
-          </div>
-          <h3 class="under-title">Customization</h3>
-          <p>
-            We have a set of predefined variables used to customize the
-            checkbox:
-          </p>
-          <ul>
-            <li><code>--primary-color</code></li>
-            <li><code>--secondary-color</code></li>
-            <li><code>--font-size</code></li>
-            <li><code>--checkbox-size</code></li>
-          </ul>
-          <p>To update the values, use the following CSS:</p>
-          <pre><code>ip-checkbox &#123;
+  <app-accordion title="Documentation">
+    <section id="documentation">
+      <h3 class="under-title">Installation</h3>
+      <p>
+        Follow these steps to install and use the
+        <code>ip-checkbox</code> component in your project.
+      </p>
+      <h4>Step 1</h4>
+      <p>
+        Install the
+        <code>ip-checkbox</code> component as a dependency in your project:
+      </p>
+      <pre><code>npm install ip-checkbox</code></pre>
+      <h4>Step 2</h4>
+      <p>Import the module into your script file:</p>
+      <pre><code>import '../node_modules/ip-checkbox/dist/ip-checkbox/ip-checkbox.esm';</code></pre>
+      <h2 class="under-title">Usage</h2>
+      <p>To use these components, you must add the properties as attributes.</p>
+
+      <h4>Properties</h4>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Property</th>
+            <th scope="col">Attribute</th>
+            <th scope="col">Necessity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Type</th>
+            <th scope="col">Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>id</code></td>
+            <td><code>id</code></td>
+            <td>Yes</td>
+            <td>The ID of the input for accessibility</td>
+            <td><code>string</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>name</code></td>
+            <td><code>name</code></td>
+            <td>Yes</td>
+            <td>The name of the input for accessibility</td>
+            <td><code>string</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>defaultChecked</code></td>
+            <td><code>default-checked</code></td>
+            <td>No</td>
+            <td>Sets the checkbox to checked by default</td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>disabled</code></td>
+            <td><code>disabled</code></td>
+            <td>No</td>
+            <td>Disables the checkbox</td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <h6>Content</h6>
+      <p>
+        There is a predefined label slot for the label before the checkbox,
+        which will be the content inside the tag.
+      </p>
+
+      <h6>Example:</h6>
+      <div class="example">
+        <pre><code>&lt;ip-checkbox default-checked="true" disabled="true" id="checked"&gt; Checked ! &lt;/ip-checkbox&gt;</code></pre>
+      </div>
+      <h3 class="under-title">Customization</h3>
+      <p>
+        We have a set of predefined variables used to customize the checkbox:
+      </p>
+      <ul>
+        <li><code>--primary-color</code></li>
+        <li><code>--secondary-color</code></li>
+        <li><code>--font-size</code></li>
+        <li><code>--checkbox-size</code></li>
+      </ul>
+      <p>To update the values, use the following CSS:</p>
+      <pre><code>ip-checkbox &#123;
           --primary-color: #006342;
           --secondary-color: #000000;
         &#125;</code></pre>
-          <h3 class="under-title">Listening to Events</h3>
-          <p>
-            To listen to events emitted by the <code>ip-checkbox</code> and
-            <code>ip-checkbox-list</code> components, open your browser's
-            console. Event details will be displayed in the console when
-            checkboxes are modified.
-          </p>
-          <h6>Example JavaScript Code:</h6>
-          <pre><code>
+      <h3 class="under-title">Listening to Events</h3>
+      <p>
+        To listen to events emitted by the <code>ip-checkbox</code> and
+        <code>ip-checkbox-list</code> components, open your browser's console.
+        Event details will be displayed in the console when checkboxes are
+        modified.
+      </p>
+      <h6>Example JavaScript Code:</h6>
+      <pre><code>
     const checkbox = document.querySelector('ip-checkbox');
     checkbox.addEventListener('change', event => &#123;
       const isChecked = event.detail.checked;
       console.log(isChecked);
     &#125;);</code></pre>
-        </section>
-      }
-    </div>
-  </div>
+    </section>
+  </app-accordion>
 </div>

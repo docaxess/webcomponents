@@ -86,3 +86,28 @@ pre {
     }
   }
 }
+
+.component-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 15px;
+
+  .title {
+    color: #2e3243;
+    margin: 0;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  p {
+    margin: 10px;
+    color: #474747;
+    font-family: Mulish;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

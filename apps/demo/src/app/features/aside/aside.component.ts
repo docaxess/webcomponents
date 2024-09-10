@@ -7,12 +7,13 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+
 @Component({
   selector: 'app-demo-aside',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './aside.component.html',
-  styleUrl: './aside.component.scss',
+  styleUrls: ['./aside.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AsideComponent implements OnInit {
@@ -22,8 +23,7 @@ export class AsideComponent implements OnInit {
   isMenuVisible = false;
 
   ngOnInit(): void {
-    this.isOpen['global-elements'] = true;
-    this.isOpen['overview'] = true;
+    this.isOpen['alert'] = true;
   }
 
   toggleSection(section: string): void {
@@ -36,9 +36,11 @@ export class AsideComponent implements OnInit {
       this.toggleSection(section);
     }
   }
+
   toggleMenu(): void {
     this.isMenuVisible = !this.isMenuVisible;
   }
+
   onLinkClick(): void {
     this.linkClicked.emit();
   }

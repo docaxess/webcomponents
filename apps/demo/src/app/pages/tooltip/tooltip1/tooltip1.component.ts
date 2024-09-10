@@ -9,9 +9,9 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { RouterLink } from '@angular/router';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-tooltip1',
@@ -20,9 +20,8 @@ import { RouterLink } from '@angular/router';
     CommonModule,
     DocTooltipComponent,
     CodeSnippetComponent,
-    BreadcrumbComponent,
-    ViewSwitcherComponent,
     RouterLink,
+    AccordionComponent,
   ],
   templateUrl: './tooltip1.component.html',
   styleUrl: './tooltip1.component.scss',
@@ -30,10 +29,6 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Tooltip1Component {
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
   switcherTitle = 'Tooltip 1';
 
   clickableCode = `
