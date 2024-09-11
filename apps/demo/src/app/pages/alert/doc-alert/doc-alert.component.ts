@@ -18,7 +18,7 @@ export class DocAlertComponent {
 </ip-alert>
 `;
   custom1 = `ip-alert {
-  --alert-font-family: 'Nunito Sans';
+  --alert-font-family: 'Mulish-regular Sans';
   --alert-font-title-size: 16px;
   }`;
   import = `import '../node_modules/ip-alert/dist/ip-alert/ip-alert.esm';

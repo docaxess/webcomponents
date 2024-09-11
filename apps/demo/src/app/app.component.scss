@@ -1,5 +1,5 @@
 body {
-  font-family: 'Nunito';
+  font-family: 'Mulish-regular';
 }
 
 .main-content {
@@ -9,9 +9,10 @@ body {
     flex-direction: row;
 
     .sidebar-menu {
-      min-width: 300px;
+      min-width: 200px;
       width: 300px;
       position: static;
+      background-color: #2e3243;
 
       .menu-toggle {
         display: none;
@@ -31,35 +32,22 @@ body {
 }
 @media (max-width: 1200px) {
   .main-content {
-    background-image: none;
     .container {
-      margin: 0 50px;
-      gap: 30px;
-
-      .sidebar-menu {
-        width: 300px;
-      }
-
-      .cards-wrapper {
-        width: 100%;
+      .main-wrapper {
+        margin: 30px;
       }
     }
   }
 }
 @media (max-width: 1084px) {
   .main-content {
-    background-image: none;
-    background-color: #0e9980;
     .container {
-      margin: 0 50px;
-      gap: 30px;
-
       .sidebar-menu {
-        width: 400px;
+        min-width: none;
+        width: 200px;
       }
-
-      .cards-wrapper {
-        width: 100%;
+      .main-wrapper {
+        margin: 10px;
       }
     }
   }
@@ -67,7 +55,6 @@ body {
 
 @media (max-width: 852px) {
   .main-content {
-    background-color: #0e9980;
     min-height: 110vh;
     .container {
       flex-direction: column;
@@ -115,5 +102,8 @@ body {
         width: 100%;
       }
     }
+  }
+  .main-wrapper {
+    margin: 0;
   }
 }

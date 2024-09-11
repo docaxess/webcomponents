@@ -23,7 +23,7 @@ export class AsideComponent implements OnInit {
   isMenuVisible = false;
 
   ngOnInit(): void {
-    this.isOpen['alert'] = true;
+    // this.isOpen['alert'] = true;
   }
 
   toggleSection(section: string): void {

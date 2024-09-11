@@ -96,6 +96,12 @@ export class Table1Component {
 </ip-table>
   `;
 
+  cssTable = `
+  ip-table {
+   --font-family: 'Mulish-regular';
+   --primary-color: #b00057;
+}
+  `;
   switcherTitle = 'Table 1';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tableElements) {

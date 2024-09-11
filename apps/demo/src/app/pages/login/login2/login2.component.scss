@@ -26,13 +26,17 @@
 
     ip-email {
       --font-size: 16px;
-      --font-family: 'Nunito';
+      --font-family: 'Mulish-regular';
     }
 
     input {
       width: 100%;
       height: rem(40);
       padding: rem(0) rem(10);
+      ip-email {
+        --font-size: 16px;
+        --font-family: 'Mulish-regular';
+      }
       border: 1px solid $darkColor;
       border-radius: rem(5);
       &:focus {
@@ -43,9 +47,10 @@
   .password {
     margin-bottom: rem(25);
     width: 280px;
+
     ip-password {
       --font-size: 16px;
-      --font-family: 'Nunito';
+      --font-family: 'Mulish-regular';
     }
     input {
       width: 100%;
@@ -140,7 +145,7 @@
       span {
         cursor: pointer;
         color: #fff;
-        font-family: 'Nunito';
+        font-family: 'Mulish-regular';
         font-size: 16px;
         font-style: normal;
         font-weight: 700;

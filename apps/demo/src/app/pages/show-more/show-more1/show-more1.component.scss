@@ -3,13 +3,23 @@
 .show-more-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: rem(125);
-  height: 350px;
-
+  margin: 20px;
+  flex-direction: column;
+  gap: 15px;
+  .card-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
   .show-content {
-    margin: rem(10) 0;
-    padding: rem(10);
-    width: rem(400);
-    height: rem(135);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 25px;
+  }
+
+  ip-show-more {
+    --ip-font-family: 'Mulish-regular';
   }
 }

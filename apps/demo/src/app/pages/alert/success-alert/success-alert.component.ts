@@ -35,7 +35,7 @@ export class SuccessAlertComponent {
     | ElementRef<HTMLButtonElement>
     | undefined;
   @ViewChild('alertComponent') alertComponent: ElementRef | undefined;
-  isAlertVisible = false;
+  isAlertVisible = true;
 
   displayAlert() {
     this.isAlertVisible = true;
@@ -77,7 +77,27 @@ export class SuccessAlertComponent {
     >
     </ip-alert>
   `;
-
+  cssAlertCode = `
+button {
+  margin-top: 20px;
+  font-family: 'Mulish-regular';
+  font-size: 16px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b00057;
+  color: #ffffff;
+  cursor: pointer;
+  width: 175px;
+}
+ip-alert {
+  --alert-font-family: 'Mulish-regular';
+  --alert-font-size: 18px;
+}
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && AlertElements) {
       AlertElements(inject(DOCUMENT).defaultView as Window);

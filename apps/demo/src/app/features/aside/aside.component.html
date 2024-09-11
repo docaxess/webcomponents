@@ -15,7 +15,6 @@
         Intro
       </a>
     </li>
-
     <li class="item" [class.open]="isOpen['accordion']">
       <a
         routerLink="/accordion/accordion1"
@@ -27,20 +26,21 @@
       </a>
     </li>
 
-    <li class="item" [class.open]="isOpen['alert']">
+    <li class="item with-content" [class.open]="isOpen['alert']">
       <div
         class="sub-title"
         tabindex="0"
         (click)="toggleSection('alert')"
         (keydown)="handleKeydown($event, 'alert')"
+        [attr.aria-expanded]="isOpen['alert']"
       >
         <span> Alert </span>
-        <div class="icon">
+        <div class="icon" [class.open]="isOpen['alert']">
           <img src="assets/images/vector.svg" alt="" />
         </div>
       </div>
 
-      <ul class="sub-menu" [class.open]="isOpen['alert']">
+      <ul class="sub-menu" role="list" [class.open]="isOpen['alert']">
         <li>
           <a
             routerLink="/alert/info-alert"
@@ -76,6 +76,53 @@
       </ul>
     </li>
 
+    <li class="item with-content" [class.open]="isOpen['checkbox']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('checkbox')"
+        (keydown)="handleKeydown($event, 'checkbox')"
+      >
+        <span> Checkbox </span>
+        <div class="icon" [class.open]="isOpen['checkbox']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['checkbox']">
+        <li>
+          <a
+            routerLink="/checkbox/checkbox1"
+            routerLinkActive="active"
+            aria-label="Go to Simple Checkbox"
+            (click)="onLinkClick()"
+          >
+            Simple checkbox
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/checkbox/checkbox-list"
+            routerLinkActive="active"
+            aria-label="Go to Checkbox list"
+            (click)="onLinkClick()"
+          >
+            Checkbox list
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="item" [class.open]="isOpen['dropdown']">
+      <a
+        routerLink="/dropdown/dropdown1"
+        routerLinkActive="active"
+        aria-label="Go to Dropdown component"
+        (click)="onLinkClick()"
+      >
+        Dropdown
+      </a>
+    </li>
+
     <li class="item" [class.open]="isOpen['footnote']">
       <a
         routerLink="/footnote/footnote1"
@@ -85,6 +132,43 @@
       >
         Footnote
       </a>
+    </li>
+
+    <li class="item with-content" [class.open]="isOpen['login']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('login')"
+        (keydown)="handleKeydown($event, 'login')"
+        [attr.aria-expanded]="isOpen['login']"
+      >
+        <span> Login </span>
+        <div class="icon" [class.open]="isOpen['login']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['login']">
+        <li>
+          <a
+            routerLink="/login/login1"
+            routerLinkActive="active"
+            aria-label="Go to Login with email"
+            (click)="onLinkClick()"
+          >
+            with email
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/login/login2"
+            routerLinkActive="active"
+            aria-label="Go to Login with username"
+            (click)="onLinkClick()"
+          >
+            with username
+          </a>
+        </li>
+      </ul>
     </li>
 
     <li class="item" [class.open]="isOpen['modal']">
@@ -106,83 +190,6 @@
         (click)="onLinkClick()"
       >
         Pagination
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['show-more']">
-      <a
-        routerLink="/show-more/show-more1"
-        routerLinkActive="active"
-        aria-label="Go to Show-more component"
-        (click)="onLinkClick()"
-      >
-        Show-more
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['table']">
-      <a
-        routerLink="/table/table1"
-        routerLinkActive="active"
-        aria-label="Go to Table component"
-        (click)="onLinkClick()"
-      >
-        Table
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['tab-panel']">
-      <a
-        routerLink="/tab-panel/tab-panel1"
-        routerLinkActive="active"
-        aria-label="Go to Tab-panel component"
-        (click)="onLinkClick()"
-      >
-        Tab-panel
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['tooltip']">
-      <a
-        routerLink="/tooltip"
-        routerLinkActive="active"
-        aria-label="Go to Tooltip component"
-        (click)="onLinkClick()"
-      >
-        Tooltip
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['checkbox']">
-      <a
-        routerLink="/checkbox"
-        routerLinkActive="active"
-        aria-label="Go to Checkbox component"
-        (click)="onLinkClick()"
-      >
-        Checkbox
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['dropdown']">
-      <a
-        routerLink="/dropdown/dropdown1"
-        routerLinkActive="active"
-        aria-label="Go to Dropdown component"
-        (click)="onLinkClick()"
-      >
-        Dropdown
-      </a>
-    </li>
-
-    <li class="item" [class.open]="isOpen['login']">
-      <a
-        routerLink="/login"
-        routerLinkActive="active"
-        aria-label="Go to Login component"
-        (click)="onLinkClick()"
-      >
-        Login
       </a>
     </li>
 
@@ -208,15 +215,128 @@
       </a>
     </li>
 
-    <li class="item" [class.open]="isOpen['toggle']">
+    <li class="item" [class.open]="isOpen['show-more']">
       <a
-        routerLink="/toggle"
+        routerLink="/show-more/show-more1"
         routerLinkActive="active"
-        aria-label="Go to Toggle component"
+        aria-label="Go to Show-more component"
         (click)="onLinkClick()"
       >
-        Toggle
+        Show-more
       </a>
+    </li>
+
+    <li class="item" [class.open]="isOpen['tab-panel']">
+      <a
+        routerLink="/tab-panel/tab-panel1"
+        routerLinkActive="active"
+        aria-label="Go to Tab-panel component"
+        (click)="onLinkClick()"
+      >
+        Tab-panel
+      </a>
+    </li>
+    <li class="item" [class.open]="isOpen['table']">
+      <a
+        routerLink="/table/table1"
+        routerLinkActive="active"
+        aria-label="Go to Table component"
+        (click)="onLinkClick()"
+      >
+        Table
+      </a>
+    </li>
+    <li class="item with-content" [class.open]="isOpen['toggle']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('toggle')"
+        (keydown)="handleKeydown($event, 'toggle')"
+        [attr.aria-expanded]="isOpen['toggle']"
+      >
+        <span> Toggle </span>
+        <div class="icon" [class.open]="isOpen['toggle']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['toggle']">
+        <li>
+          <a
+            routerLink="/toggle/toggle1"
+            routerLinkActive="active"
+            aria-label="Go to Simple Toggle"
+            (click)="onLinkClick()"
+          >
+            Simple
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/toggle/toggle2"
+            routerLinkActive="active"
+            aria-label="Go to Toggle With text"
+            (click)="onLinkClick()"
+          >
+            With text
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/toggle/toggle3"
+            routerLinkActive="active"
+            aria-label="Go to Toggle With indication"
+            (click)="onLinkClick()"
+          >
+            With indication
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="item with-content" [class.open]="isOpen['tooltip']">
+      <div
+        class="sub-title"
+        (click)="toggleSection('tooltip')"
+        (keydown)="handleKeydown($event, 'tooltip')"
+        [attr.aria-expanded]="isOpen['tooltip']"
+      >
+        <span> Tooltip </span>
+        <div class="icon" [class.open]="isOpen['tooltip']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['tooltip']">
+        <li>
+          <a
+            routerLink="/tooltip/tooltip1"
+            routerLinkActive="active"
+            aria-label="Go to Tooltip Clickable"
+            (click)="onLinkClick()"
+          >
+            Clickable
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/tooltip/tooltip2"
+            routerLinkActive="active"
+            aria-label="Go to Tooltip Hover"
+            (click)="onLinkClick()"
+          >
+            Hover
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/tooltip/tooltip3"
+            routerLinkActive="active"
+            aria-label="Go to Tooltip With button"
+            (click)="onLinkClick()"
+          >
+            With button
+          </a>
+        </li>
+      </ul>
     </li>
   </ul>
 </nav>

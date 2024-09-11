@@ -4,96 +4,97 @@
   top: 0;
   z-index: 1000;
 }
-.sidebar-menu {
-  background-color: #2e3243;
-}
 
 .menu-list {
   color: #fff;
   display: flex;
   width: 90%;
-  min-height: 1100px;
-  height: auto;
-  max-height: 2500px;
+  height: 100%;
   padding: 24px 8px 0px 8px;
   flex-direction: column;
   flex-shrink: 0;
   margin: 0;
-
-  .sub-title {
-    cursor: pointer;
-    width: 100%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  .item {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    &.hover {
-      background-color: #b00057;
+    align-self: stretch;
+    a {
+      padding: 10px 10px 10px 30px;
+      width: 100%;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      &:focus,
+      &:hover,
+      &:active {
+        background-color: #b00057;
+        border-radius: 4px;
+      }
     }
   }
-  li {
-    position: relative;
-    padding: 10px 10px 10px 30px;
+  .with-content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    .sub-title {
+      padding: 10px 10px 10px 30px;
 
-    .arrow {
-      position: absolute;
-      right: 10px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      &:focus,
+      &:hover,
+      &:active {
+        background-color: #b00057;
+        border-radius: 4px;
+      }
     }
-
     .sub-menu {
-      display: none;
-      padding: 0;
-      margin: 0;
       list-style: none;
-      background-color: transparent;
-
+      display: none;
       li {
-        padding: 5px 10px;
-
+        display: flex;
+        width: 100%;
+      }
+      a {
+        text-decoration: none;
+        width: 100%;
+        padding: 10px;
+        color: #fff;
+        &:focus,
         &:hover,
-        &:focus {
-          background-color: #b00057;
-        }
         &:active {
-          background-color: #a10252;
-        }
-
-        a {
-          color: #fff;
+          background-color: #b00057;
+          border-radius: 4px;
         }
       }
     }
-
     &.open .sub-menu {
       display: block;
-    }
-
-    &:focus {
-      background-color: #b00057;
-    }
-    &:active {
-      background-color: #a10252;
-    }
-
-    &.focus {
-      outline: 3px solid #000;
-    }
-    a {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      width: 100%;
     }
   }
   .icon {
     display: flex;
     align-items: center;
-    svg {
+    img {
       transition: transform 0.3s ease;
       transform: rotate(180deg);
     }
-    &.open svg {
+    &.open img {
       transform: rotate(0deg);
     }
   }

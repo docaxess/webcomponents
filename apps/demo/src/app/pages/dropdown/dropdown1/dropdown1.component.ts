@@ -40,7 +40,7 @@ export class Dropdown1Component {
   ip-dropdown {
    --primary-color: #b00057;
    --font-color: #000000;
-   --font-family: 'Nunito-bold';
+   --font-family: 'Mulish-regular';
   }
   `;
 

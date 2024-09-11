@@ -19,11 +19,16 @@
         >
         </ip-alert>
       }
-      <button (click)="displayAlert()" #showAlertButton>Show alert</button>
+      @if (!isAlertVisible) {
+        <button (click)="displayAlert()" #showAlertButton>Show alert</button>
+      }
     </div>
   </app-accordion>
   <app-accordion title="Code">
-    <app-code-snippet [htmlCode]="infoAlertCode"></app-code-snippet>
+    <app-code-snippet
+      [htmlCode]="infoAlertCode"
+      [cssCode]="cssAlertCode"
+    ></app-code-snippet>
   </app-accordion>
   <app-accordion title="Documentation">
     <app-doc-alert></app-doc-alert>

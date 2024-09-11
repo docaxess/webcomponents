@@ -10,7 +10,7 @@
 
 button {
   margin-top: rem(20);
-  font-family: 'Nunito-bold';
+  font-family: 'Mulish-regular';
   font-size: rem(16);
   display: inline-block;
   justify-content: center;
@@ -22,4 +22,8 @@ button {
   color: #ffffff;
   cursor: pointer;
   width: 175px;
+}
+ip-alert {
+  --alert-font-family: 'Mulish-regular';
+  --alert-font-size: 18px;
 }

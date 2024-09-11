@@ -19,10 +19,11 @@
   </app-accordion>
 
   <app-accordion title="Code">
-    <app-code-snippet [htmlCode]="hoverCode"> </app-code-snippet>
+    <app-code-snippet [htmlCode]="hoverCode" [cssCode]="cssTooltip2">
+    </app-code-snippet>
   </app-accordion>
 
-  <app-accordion title="Code">
+  <app-accordion title="Documentation">
     <app-doc-tooltip> </app-doc-tooltip>
   </app-accordion>
 </div>

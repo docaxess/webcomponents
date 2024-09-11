@@ -1,4 +1,10 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  ElementRef,
+  Renderer2,
+  AfterViewInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,20 +12,32 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './accordion.component.html',
-  styleUrl: './accordion.component.scss',
+  styleUrls: ['./accordion.component.scss'],
 })
-export class AccordionComponent {
+export class AccordionComponent implements AfterViewInit {
   @Input() title: string = '';
   @Input() alwaysOpen: boolean = false;
   isOpen: boolean = false;
   contentId: string = '';
   headerId: string = '';
+
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
+
   ngOnInit() {
     this.contentId = `accordion-content-${Math.random().toString(36).substr(2, 9)}`;
     this.headerId = `accordion-header-${Math.random().toString(36).substr(2, 9)}`;
   }
+
+  ngAfterViewInit() {
+    this.updateFocusability();
+  }
+
   toggle() {
     this.isOpen = !this.isOpen;
+    this.updateFocusability();
   }
 
   handleKeyDown(event: KeyboardEvent) {
@@ -27,5 +45,22 @@ export class AccordionComponent {
       event.preventDefault();
       this.toggle();
     }
+  }
+
+  private updateFocusability() {
+    const contentElement = this.el.nativeElement.querySelector('.content');
+    const focusableElements = contentElement.querySelectorAll(
+      'a, button, input, select, textarea',
+    );
+
+    focusableElements.forEach((element: HTMLElement) => {
+      if (this.isOpen || this.alwaysOpen) {
+        this.renderer.removeAttribute(element, 'tabindex');
+        this.renderer.setAttribute(element, 'aria-hidden', 'false');
+      } else {
+        this.renderer.setAttribute(element, 'tabindex', '-1');
+        this.renderer.setAttribute(element, 'aria-hidden', 'true');
+      }
+    });
   }
 }

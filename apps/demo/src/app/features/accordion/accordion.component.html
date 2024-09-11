@@ -39,6 +39,7 @@
     role="region"
     id="content"
     [attr.aria-labelledby]="headerId"
+    [attr.aria-hidden]="!(isOpen || alwaysOpen)"
   >
     <ng-content></ng-content>
   </div>

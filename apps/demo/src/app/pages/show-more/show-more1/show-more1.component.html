@@ -5,12 +5,23 @@
   </div>
   <app-accordion title="Preview" [alwaysOpen]="true">
     <div class="show-more-wrapper">
+      <div class="card-wrap">
+        <app-card
+          *ngFor="let card of cards"
+          [imageUrl]="card.imageUrl"
+          [title]="card.title"
+        >
+        </app-card>
+      </div>
+
       <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
         <div slot="content" class="show-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-          blanditiis itaque deserunt ab ad eum, voluptas animi non quos esse
-          modi voluptate nemo temporibus? Voluptates excepturi asperiores autem
-          quisquam provident!
+          <app-card
+            *ngFor="let card of moreCards"
+            [imageUrl]="card.imageUrl"
+            [title]="card.title"
+          >
+          </app-card>
         </div>
       </ip-show-more>
     </div>

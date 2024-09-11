@@ -184,7 +184,7 @@ export class Accordion1Component {
 `;
   cssAccordion = `
 ip-accordion {
-  --ip-acc-font: 'Nunito';
+  --ip-acc-font: 'Mulish-regular';
 }
 .ip-accordion {
   max-width: 1200px;
@@ -210,7 +210,7 @@ a {
 }
 .acc-content__btn {
   margin-top: 20px;
-  font-family: 'Nunito-bold';
+  font-family: 'Mulish-regular';
   font-size: 16px;
   display: inline-block;
   justify-content: center;
