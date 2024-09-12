@@ -12,7 +12,7 @@
 
   <p>Import module in script file:</p>
 
-  <pre><code>import '../node_modules/ip-radio/dist/ip-radio/ip-radio.esm';
+  <pre><code [highlight]="import" language="typescript">
 </code></pre>
 
   <h3 class="under-title">Usage:</h3>
@@ -81,16 +81,7 @@
 
   <p>Example:</p>
 
-  <pre><code>&lt;ip-radio
-label-position="before"
-default-option-id="3"
-options='[
-&#123;"id": "1", "label": "Option 1", "disabled": true&#125;,
-&#123;"id": "2", "label": "Option 2"&#125;, 
-&#123;"id": "3", "label": "Option 3"&#125;
-  ]'
-&gt;
-&lt;/ip-radio&gt;
+  <pre><code [highlight]="example" language="html">
 </code></pre>
 
   <h3 class="under-title">Customization</h3>
@@ -110,12 +101,7 @@ options='[
 
   <p>To update the values use the following:</p>
 
-  <pre><code>ip-checkbox-list &#123;
---primary-color: #006342;
---secondary-color: #000000;
---radio-size: 18px;
---fieldset-border: 2px solid #d6254f;
-&#125;
+  <pre><code [highlight]="customCSS" language="css">
 </code></pre>
 
   <h3 class="under-title">Event</h3>
@@ -129,9 +115,7 @@ options='[
 
   <p>e.g:</p>
 
-  <pre><code>const radio = document.querySelector('ip-radio');
-radio.addEventListener('selectionChanged', (event) => &#123;
-console.log('selectionChanged', event.detail);
-&#125;);
+  <pre><code [highlight]="event" language="typescript">
+    
 </code></pre>
 </section>

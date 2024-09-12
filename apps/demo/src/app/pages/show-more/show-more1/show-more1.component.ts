@@ -44,28 +44,25 @@ export class ShowMore1Component {
         </div>
     </ip-show-more>
   `;
+  smCss = `
+   .show-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 25px;
+  }
 
+  ip-show-more {
+    --ip-font-family: 'Mulish-regular';
+  }
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && showMoreElements) {
       showMoreElements(inject(DOCUMENT).defaultView as Window);
     }
   }
 
-  cards = [
-    {
-      title: 'Enchanted moments',
-      imageUrl: 'assets/images/eg-sm/Image=01.jpg',
-    },
-    {
-      title: 'Beyond the Stars',
-      imageUrl: 'assets/images/eg-sm/Image=02.jpg',
-      route: '#',
-    },
-    {
-      title: 'Deep Blue Discoveries',
-      imageUrl: 'assets/images/eg-sm/Image=03.png',
-    },
-  ];
   moreCards = [
     {
       title: "Nature's Symphony",

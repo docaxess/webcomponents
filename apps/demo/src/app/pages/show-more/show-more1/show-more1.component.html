@@ -5,15 +5,6 @@
   </div>
   <app-accordion title="Preview" [alwaysOpen]="true">
     <div class="show-more-wrapper">
-      <div class="card-wrap">
-        <app-card
-          *ngFor="let card of cards"
-          [imageUrl]="card.imageUrl"
-          [title]="card.title"
-        >
-        </app-card>
-      </div>
-
       <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
         <div slot="content" class="show-content">
           <app-card
@@ -28,7 +19,10 @@
   </app-accordion>
 
   <app-accordion title="Code">
-    <app-code-snippet [htmlCode]="showMoreCode"></app-code-snippet>
+    <app-code-snippet
+      [htmlCode]="showMoreCode"
+      [cssCode]="smCss"
+    ></app-code-snippet>
   </app-accordion>
 
   <app-accordion title="Documentation">

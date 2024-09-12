@@ -11,25 +11,13 @@ import { Highlight } from 'ngx-highlightjs';
 })
 export class DocShowMoreComponent {
   installationScript = `npm install ip-table`;
-  import = `import '../node_modules/ip-table/dist/ip-table/ip-table.esm';`;
-  example = `<ip-table
-  columns='[
-      { "header": "Name" , "type": "string"},
-      { "header": "Age", "type": "number" }
-      ]'
-  rows='[
-      {"Name":"Benoit", "Age":25},
-      {"Name":"Linda", "Age":23}
-    ]'
->
-</ip-table>`;
-  custom = `ip-table {
-  --primary-color: #006342;
-  --secondary-color: #000000;
-  --thead-color: #f4f4f4;
-  --hover-color: #e7f3ff;
-  --font-size: 16px;
-  --font-family: Arial, sans-serif;
+  import = `import '../node_modules/ip-show-more/dist/ip-show-more/ip-show-more.esm';`;
+  example = `<ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
+  <div slot="content">-- Expanded content goes here --</div>
+</ip-show-more>`;
+  custom = `ip-show-more {
+  --ip-primary-color: #006342;
+  --ip-secondary-color: #000000;
 }
 `;
 }

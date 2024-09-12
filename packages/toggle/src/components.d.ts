@@ -15,8 +15,23 @@ export namespace Components {
         "toggleDisabled": boolean;
     }
 }
+export interface IpToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIpToggleElement;
+}
 declare global {
+    interface HTMLIpToggleElementEventMap {
+        "toggleChange": boolean;
+    }
     interface HTMLIpToggleElement extends Components.IpToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIpToggleElementEventMap>(type: K, listener: (this: HTMLIpToggleElement, ev: IpToggleCustomEvent<HTMLIpToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIpToggleElementEventMap>(type: K, listener: (this: HTMLIpToggleElement, ev: IpToggleCustomEvent<HTMLIpToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIpToggleElement: {
         prototype: HTMLIpToggleElement;
@@ -32,6 +47,7 @@ declare namespace LocalJSX {
         "ariaLabel"?: string;
         "checked"?: boolean;
         "inactiveLabel"?: string;
+        "onToggleChange"?: (event: IpToggleCustomEvent<boolean>) => void;
         "size"?: 'small' | 'medium' | 'large';
         "toggleDisabled"?: boolean;
     }

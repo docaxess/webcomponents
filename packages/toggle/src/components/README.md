@@ -83,3 +83,23 @@ ip-toggle {
   --secondary-color: #000000;
 }
 ```
+
+## Event
+
+The ip-toggle component emits the following event:
+
+- **toggleChange** : fired when the toggle state change.
+
+To listen this event and add an event listener to your component:
+_e.g:_
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('ip-toggle');
+  if (toggle) {
+    toggle.addEventListener('toggleChange', (event) => {
+      console.log('Toggle changed:', event.detail);
+    });
+  }
+});
+```

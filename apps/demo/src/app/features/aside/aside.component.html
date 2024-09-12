@@ -29,10 +29,15 @@
     <li class="item with-content" [class.open]="isOpen['alert']">
       <div
         class="sub-title"
+        role="button"
         tabindex="0"
         (click)="toggleSection('alert')"
         (keydown)="handleKeydown($event, 'alert')"
         [attr.aria-expanded]="isOpen['alert']"
+        aria-controls="alert-sub-menu"
+        [attr.aria-label]="
+          isOpen['alert'] ? 'Collapse Alert section' : 'Expand Alert section'
+        "
       >
         <span> Alert </span>
         <div class="icon" [class.open]="isOpen['alert']">
@@ -82,6 +87,14 @@
         tabindex="0"
         (click)="toggleSection('checkbox')"
         (keydown)="handleKeydown($event, 'checkbox')"
+        role="button"
+        aria-controls="checkbox-sub-menu"
+        [attr.aria-expanded]="isOpen['checkbox']"
+        [attr.aria-label]="
+          isOpen['checkbox']
+            ? 'Collapse checkbox section'
+            : 'Expand checkbox section'
+        "
       >
         <span> Checkbox </span>
         <div class="icon" [class.open]="isOpen['checkbox']">
@@ -141,6 +154,11 @@
         (click)="toggleSection('login')"
         (keydown)="handleKeydown($event, 'login')"
         [attr.aria-expanded]="isOpen['login']"
+        aria-controls="login-sub-menu"
+        [attr.aria-label]="
+          isOpen['login'] ? 'Collapse Login section' : 'Expand Login section'
+        "
+        role="button"
       >
         <span> Login </span>
         <div class="icon" [class.open]="isOpen['login']">
@@ -253,6 +271,11 @@
         (click)="toggleSection('toggle')"
         (keydown)="handleKeydown($event, 'toggle')"
         [attr.aria-expanded]="isOpen['toggle']"
+        role="button"
+        aria-controls="toggle-sub-menu"
+        [attr.aria-label]="
+          isOpen['toggle'] ? 'Collapse Toggle section' : 'Expand Toggle section'
+        "
       >
         <span> Toggle </span>
         <div class="icon" [class.open]="isOpen['toggle']">
@@ -296,9 +319,17 @@
     <li class="item with-content" [class.open]="isOpen['tooltip']">
       <div
         class="sub-title"
+        tabindex="0"
         (click)="toggleSection('tooltip')"
         (keydown)="handleKeydown($event, 'tooltip')"
         [attr.aria-expanded]="isOpen['tooltip']"
+        role="button"
+        aria-controls="tooltip-sub-menu"
+        [attr.aria-label]="
+          isOpen['tooltip']
+            ? 'Collapse Tooltip section'
+            : 'Expand Tooltip section'
+        "
       >
         <span> Tooltip </span>
         <div class="icon" [class.open]="isOpen['tooltip']">

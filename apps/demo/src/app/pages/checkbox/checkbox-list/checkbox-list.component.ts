@@ -11,11 +11,18 @@ import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippe
 
 import { RouterLink } from '@angular/router';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { Highlight } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-checkbox-list',
   standalone: true,
-  imports: [CommonModule, CodeSnippetComponent, RouterLink, AccordionComponent],
+  imports: [
+    CommonModule,
+    CodeSnippetComponent,
+    RouterLink,
+    AccordionComponent,
+    Highlight,
+  ],
   templateUrl: './checkbox-list.component.html',
   styleUrl: './checkbox-list.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -36,8 +43,26 @@ export class CheckboxListComponent {
     </ip-checkbox-list>
   `;
 
-  switcherTitle = 'Checkbox List';
-
+  import = `import '../node_modules/ip-checkbox-list/dist/ip-checkbox-list/ip-checkbox-list.esm';`;
+  example = `
+<ip-checkbox-list
+ options='[
+  {"id": "option1", "label": "Option 1"},
+  {"id": "option2", "label": "Option 2"}]'
+>
+</ip-checkbox-list>`;
+  customCSS = `
+  ip-checkbox-list {
+    --primary-color: #006342;
+    --secondary-color: #000000;
+  }
+  `;
+  event = `
+    const checkboxList = document.querySelector('ip-checkbox-list');            
+      checkboxList.addEventListener('change', event => {
+      console.log(event.detail);
+    });
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && checkboxElements) {
       checkboxElements(inject(DOCUMENT).defaultView as Window);

@@ -5,17 +5,16 @@
   </div>
   <app-accordion title="Preview" [alwaysOpen]="true">
     <div>
-      <h1>Welcome to My Angular App</h1>
-      <p id="reffn1">
-        This is a sample paragraph. For more details, see the footnote below.
-        <a href="#fn1">[1]</a>
+      <p>
+        Here is a sentence with a footnote reference
+        <sup><a href="#footnote-1" id="ref1">1</a></sup
+        >.
       </p>
 
       <ip-footnote
-        identifier="fn1"
-        btnAriaLabel="Back to main text"
-        text="This is a detailed explanation of the point made above."
-        svgColor="blue"
+        id="footnote-1"
+        identifier="1"
+        text="This is a detailed explanation or reference for the footnote."
       >
       </ip-footnote>
     </div>

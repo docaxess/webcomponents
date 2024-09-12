@@ -13,7 +13,7 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 })
 export class CodeSnippetComponent {
   @Input() htmlCode = '';
-  @Input() cssCode = '';
+  @Input() cssCode = '*{font-family: "Mulish";}';
   @Input() jsCode = 'import "./styles.css"';
   selectedTab: 'html' | 'css' | 'js' = 'html';
 

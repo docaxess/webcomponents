@@ -38,26 +38,22 @@ export class Accordion1Component {
    {
     "title": "Accessibilité", "iconPath": "assets/images/acc-1.svg",
     "iconActivePath": "assets/images/acc-1-active.svg", "id": "accordion-1",
-    "ariaText": "sect-1", "btnAlt": "Afficher plus sur section 1",
-    "btnAltClose": "Afficher moins sur section 1"
+    "ariaText": "sect-1"
     },
    {
     "title": "Pdf Document", "iconPath": "assets/images/acc-2.svg",
     "iconActivePath": "assets/images/acc-2-active.svg", "id": "accordion-2",
-     "ariaText": "sect-2", "btnAlt": "Afficher plus sur section 2",
-     "btnAltClose": "Afficher moins sur section 2"
+     "ariaText": "sect-2"
      },
    {
      "title": "Statistical", "iconPath": "assets/images/acc-3.svg",
     "iconActivePath": "assets/images/acc-3-active.svg", "id": "accordion-3",
-     "ariaText": "sect-3", "btnAlt": "Afficher plus sur section 3",
-      "btnAltClose": "Afficher moins sur section 3"
+     "ariaText": "sect-3"
     },
    {
     "title": "Certification", "iconPath": "assets/images/acc-4.svg",
     "iconActivePath": "assets/images/acc-4-active.svg", "id": "accordion-4",
-    "ariaText": "sect-4", "btnAlt": "Afficher plus sur section 4",
-    "btnAltClose": "Afficher moins sur section 4"
+    "ariaText": "sect-4"
    }
  ]'
 >
@@ -113,7 +109,7 @@ export class Accordion1Component {
       </p>
       <a
         class="acc-content__btn"
-        aria-label="En savoir plus, (update me to real title)"
+        aria-label="En savoir plus sur Comment ont été conçus les PDF ?"
         href="#"
       >
         En savoir plus
@@ -142,8 +138,7 @@ export class Accordion1Component {
       </p>
       <a
         class="acc-content__btn"
-        aria-label="En savoir plus,
-    (update me to real title)"
+        En savoir plus sur comment gerer efficacement la creation"
         href="#"
       >
         En savoir plus
@@ -172,8 +167,7 @@ export class Accordion1Component {
       </p>
       <a
         class="acc-content__btn"
-        aria-label="En savoir plus,
-   (update me to real title)"
+        aria-label="En savoir plussur Nos équipes vous accompagnent"
         href="#"
       >
         En savoir plus

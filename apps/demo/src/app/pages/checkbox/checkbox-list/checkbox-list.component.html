@@ -47,7 +47,7 @@
       <pre><code>npm install ip-checkbox-list</code></pre>
       <h4>Step 2</h4>
       <p>Import the module into your script file:</p>
-      <pre><code>import '../node_modules/ip-checkbox-list/dist/ip-checkbox-list/ip-checkbox-list.esm';</code></pre>
+      <pre><code [highlight]="import" language="typescript"> </code></pre>
       <h3 class="under-title">Usage</h3>
       <p>To use these components, you must add the properties as attributes.</p>
       <h4>Properties</h4>
@@ -105,8 +105,8 @@
           </tr>
         </tbody>
       </table>
-      <h6>Example:</h6>
-      <pre><code>&lt;ip-checkbox-list options='[&#123;"id": "option1", "label": "Option 1"&#125;, &#123;"id": "option2", "label": "Option 2"&#125;]'&gt;&lt;/ip-checkbox-list&gt;</code></pre>
+      <h4>Example:</h4>
+      <pre><code [highlight]="example" language="html"></code></pre>
       <h3 class="under-title">Customization</h3>
       <p>
         We have a set of predefined variables used to customize the checkbox:
@@ -118,10 +118,7 @@
         <li><code>--checkbox-size</code></li>
       </ul>
       <p>To update the values, use the following CSS:</p>
-      <pre><code>ip-checkbox-list &#123;
-              --primary-color: #006342;
-              --secondary-color: #000000;
-                &#125;</code></pre>
+      <pre><code [highlight]="customCSS" language="css"></code></pre>
       <h3 class="under-title">Listening to Events</h3>
       <p>
         To listen to events emitted by the
@@ -129,13 +126,8 @@
         Event details will be displayed in the console when checkboxes are
         modified.
       </p>
-      <h5>Example JavaScript Code:</h5>
-      <pre><code>const checkboxList = document.querySelector('ip-checkbox-list');
-            const checkbox = document.querySelector('ip-checkbox');
-            
-            checkboxList.addEventListener('change', event => &#123;
-              console.log(event.detail);
-            &#125;);
+      <h4>Example JavaScript Code:</h4>
+      <pre><code [highlight]="event" language="typescript">
               </code></pre>
     </section>
   </app-accordion>

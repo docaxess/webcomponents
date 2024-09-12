@@ -9,7 +9,7 @@ body {
     flex-direction: row;
 
     .sidebar-menu {
-      min-width: 200px;
+      min-width: 250px;
       width: 300px;
       position: static;
       background-color: #2e3243;
@@ -67,6 +67,7 @@ body {
         width: 100%;
         z-index: 1000;
         position: relative;
+        background-color: #fff;
 
         .menu-toggle {
           display: block;
@@ -75,7 +76,7 @@ body {
           font-size: 24px;
           cursor: pointer;
           margin-bottom: 10px;
-          color: #fff;
+          color: #2e3243;
         }
 
         .aside {
