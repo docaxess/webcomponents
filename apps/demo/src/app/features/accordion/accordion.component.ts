@@ -3,7 +3,7 @@ import {
   Input,
   ElementRef,
   Renderer2,
-  AfterViewInit,
+  AfterViewInit, OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,12 +14,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss'],
 })
-export class AccordionComponent implements AfterViewInit {
-  @Input() title: string = '';
-  @Input() alwaysOpen: boolean = false;
-  isOpen: boolean = false;
-  contentId: string = '';
-  headerId: string = '';
+export class AccordionComponent implements AfterViewInit, OnInit {
+  @Input() title = '';
+  @Input() alwaysOpen = false;
+  isOpen = false;
+  contentId = '';
+  headerId = '';
 
   constructor(
     private el: ElementRef,

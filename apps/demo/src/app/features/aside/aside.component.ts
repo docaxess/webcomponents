@@ -16,15 +16,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./aside.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AsideComponent implements OnInit {
+export class AsideComponent {
   @Output() focusCards = new EventEmitter<void>();
   @Output() linkClicked = new EventEmitter<void>();
   isOpen: { [key: string]: boolean } = {};
   isMenuVisible = false;
-
-  ngOnInit(): void {
-    // this.isOpen['alert'] = true;
-  }
 
   toggleSection(section: string): void {
     this.isOpen[section] = !this.isOpen[section];

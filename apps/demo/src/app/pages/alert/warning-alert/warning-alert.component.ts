@@ -5,7 +5,7 @@ import {
   ElementRef,
   inject,
   PLATFORM_ID,
-  ViewChild,
+  ViewChild, AfterViewInit,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
@@ -29,7 +29,7 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WarningAlertComponent {
+export class WarningAlertComponent implements AfterViewInit {
   @ViewChild('showAlertButton') showAlertButton:
     | ElementRef<HTMLButtonElement>
     | undefined;

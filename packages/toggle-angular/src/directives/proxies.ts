@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
 
-import { ProxyCmp } from './angular-component-lib/utils';
+import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from 'toggle';
 
@@ -22,10 +22,14 @@ export class IpToggle {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggleChange']);
   }
 }
 
 
-export declare interface IpToggle extends Components.IpToggle {}
+export declare interface IpToggle extends Components.IpToggle {
+
+  toggleChange: EventEmitter<CustomEvent<boolean>>;
+}
 
 
