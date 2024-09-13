@@ -1,24 +1,10 @@
 # Login Documentation
 
-In this component we have two elements combined:
-
-- **ip-email**: for email or username input
-  [Figma link](https://www.figma.com/design/63w4li687mfdYtETlBu6a9/Component---Mixed?node-id=616-2637&m=dev)
-
-[Design System link](https://design.ipedis.com/5dda74a23/p/83b269-text-input)
-
-- **ip-password**: for password input
-  [Figma link](https://www.figma.com/design/63w4li687mfdYtETlBu6a9/Component---Mixed?node-id=616-2637&m=dev)
-
-[Design System link](https://design.ipedis.com/5dda74a23/p/59c81f-password-input)
-
 ## Installation:
-
-  <!-- TODO  -->
 
 ### Step 1:
 
-Install the ip-tooltip component as a dependency in the project:
+Install the ip-login component as a dependency in the project:
 
 ```bash
 npm install
@@ -29,133 +15,116 @@ npm install
 Import module in script file:
 
 ```bash
-import '../node_modules/';
+import '../node_modules/ip-login/dist/ip-login/ip-login.esm';
 ```
 
 ## Usage:
 
-These components can be utilized as simple inputs, with the addition of validators and properties such as value, name, and disabled.
-
-To make use of these components, we need to add the properties as attributes.
-
-### Component Tag:
-
-Use the `<ip-email>` and `<ip-password>` tag in your JSX/HTML.
+To use this component, add it to your HTML and configure it with the desired properties.
 
 ### Properties
 
-### Ip-email
-
-| Property       | Attribute       | Necessity | Description                                                                                                   | Type      | Default     |
-| -------------- | --------------- | --------- | ------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `errorMessage` | `error-message` | Required  | `The error message when the user enters a wrong username or email`                                            | `string`  | `undefined` |
-| `inputLabel`   | `input-label`   | Optional  | `The name of the input, it's default value is "Email", you can specify it.`                                   | `string`  | `"Email"`   |
-| `invalid`      | `invalid`       | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
-| `required`     | `required`      | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
-
-### Ip-password
-
-| Property             | Attribute              | Necessity | Description                                                                                                   | Type      | Default     |
-| -------------------- | ---------------------- | --------- | ------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `errorMessage`       | `error-message`        | Required  | `The error message when the user enters a wrong username or email`                                            | `string`  | `undefined` |
-| `forgotPasswordLink` | `forgot-password-link` | Required  | `your personal link for reinitialize password`                                                                | `string`  | `undefined` |
-| `invalid`            | `invalid`              | Optional  | `It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.` | `boolean` | `false`     |
+| Property                    | Attribute                      | Necessity | Description                                              | Type           | Default                                           |
+| --------------------------- | ------------------------------ | --------- | -------------------------------------------------------- | -------------- | ------------------------------------------------- |
+| `usernameLabel`             | `username-label`               | Optional  | `Label for the username input field`                     | `string`       | `Username`                                        |
+| `passwordLabel`             | `forgot-password-link`         | Optional  | `Label for the password input field`                     | `string`       | `Password`                                        |
+| `submitButtonLabel`         | `submit-button-label`          | Optional  | `Label for the submit button`                            | `string`       | `Login`                                           |
+| `usernameErrorMsg`          | `username-error-msg`           | Optional  | `Error message for empty username field`                 | `string`       | `Username is required`                            |
+| `usernameInvalidEmailMsg`   | `username-invalid-email-msg`   | Optional  | `Error message for invalid email format`                 | `string`       | `The email address is invalid`                    |
+| `passwordLengthErrorMsg`    | `	password-length-error-msg`    | Optional  | `Error message for insufficient password length`         | `string`       | `The password must contain at least 8 characters` |
+| `passwordUppercaseErrorMsg` | `	password-uppercase-error-msg` | Optional  | `Error message for missing uppercase letter in password` | `string`       | `Password must contain at least one capital`      |
+| `passwordLowercaseErrorMsg` | `	password-lower-error-msg`     | Optional  | `Error message for missing lowercase letter in password` | `string`       | `The password must contain at least a lower case` |
+| `passwordDigitErrorMsg`     | `password-digit-error-msg`     | Optional  | `Error message for missing digit in password`            | `string`       | `The password must contain at least one digit`    |
+| `usernameType`              | `username-type`                | Optional  | `Type of the username input field (text or email)`       | `text / email` | `text`                                            |
+| `showPasswordAriaLabel`     | `show-password-aria-label`     | Optional  | `Aria label for the button to show password`             | `string`       | `Show password`                                   |
+| `hidePasswordAriaLabel`     | `hide-password-aria-label`     | Optional  | `Aria label for the button to hide password`             | `string`       | `Hide password`                                   |
+| `usernameRequired`          | `username-required`            | Optional  | `	Whether the username field is required`                 | `boolean`      | `false`                                           |
+| `pwdPlaceholder`            | `pwd-placeholder`              | Optional  | `	Placeholder text for the password field`                | `string`       | `Type your password here...`                      |
+| `usernamePlaceholder`       | `username-placeholder`         | Optional  | `Placeholder text for the username field`                | `string`       | `Type your username here...`                      |
+| `forgotPasswordLink`        | `forgot-password-link`         | Optional  | `URL for the forgot password link`                       | `string`       | `''`                                              |
+| `forgotPasswordLabel`       | `forgot-password-label`        | Optional  | `Label text for the forgot password link`                | `string`       | `'Forgot password?`                               |
+| `loginTitle`                | `login-title`                  | Optional  | `Title of the login form`                                | `string`       | `Login`                                           |
+| `indicationLabel`           | `indication-label`             | Optional  | `Label indicating required fields`                       | `string`       | `Required fields`                                 |
+| `submitBtnAriaLabel`        | `submit-btn-aria-label`        | Optional  | `Aria-label of submit button`                            | `string`       | `Submit the form`                                 |
 
 _e.g:_
 
 ```html
-<form class="login-form">
-  <ip-email
-    class="form-group "
-    error-message="The username entered is incorrect"
-    input-label="User name"
-  >
-  </ip-email>
-  <ip-password
-    class="form-group "
-    error-message="The password entered is incorrect"
-    forgot-password-link="https://your_personal_link_to_reset_password"
-  >
-  </ip-password>
-  <button class="btn" type="submit">Login</button>
-</form>
+<ip-login
+  username-label="Username"
+  password-label="Password"
+  submit-button-label="Login"
+  username-error-msg="Username is required"
+  username-invalid-email-msg="The email address is invalid"
+  password-length-error-msg="The password must contain at least 8 characters"
+  password-uppercase-error-msg="Password must contain at least one capital"
+  password-lowercase-error-msg="The password must contain at least a lower case"
+  password-digit-error-msg="The password must contain at least one digit"
+  username-type="email"
+  show-password-aria-label="Show password"
+  hide-password-aria-label="Hide password"
+  username-required
+  pwd-placeholder="Type your password here..."
+  username-placeholder="Type your username here..."
+  forgot-password-link="https://example.com/forgot-password"
+  forgot-password-label="Forgot password?"
+  login-title="Login"
+  indication-label="Required fields"
+></ip-login>
 ```
 
 ## Events
 
-We have predefined events to see the changes in both inputs.
-
-### ip-email
-
-`inputChange`: this event is emitted when the value of the email input changes. `event.detail` is the new email value as a string.
-
-### ip-password
-
-`passwordChange`: this event is emitted when the value of the password input changes. `event.detail` is the new password value as a string.
+The login-form component emits a `formSubmitted` event when the form is successfully submitted. You can listen to this event in your JavaScript code:
 
 _e.g:_
 
-```html
-<form class="login-form">
-  <ip-email
-    class="form-group "
-    error-message="The username entered is incorrect"
-    input-label="User name"
-    onInputChange="{(event) => console.log(event.detail)} "
-  >
-  </ip-email>
-  <ip-password
-    class="form-group "
-    error-message="The password entered is incorrect"
-    forgot-password-link="https://your_personal_link_to_reset_password"
-    onInputChange="{(event) => console.log(event.detail)} "
-  >
-  </ip-password>
-  <button class="btn" type="submit">Login</button>
-</form>
+```javascript
+document.addEventListener('DOMContentLoaded', function () {
+  const loginForm = document.querySelector('login-form');
+
+  loginForm.addEventListener('formSubmitted', function (event) {
+    console.log('Form submitted with:', event.detail);
+  });
+});
 ```
 
 ## Customization
 
-We have a set of predefined variable used to customisation the ip-login:
+You can customize the appearance of the login-form component using CSS variables and part selectors:
+
+### CSS variables
 
 - **--primary-color**
 - **--secondary-color**
 - **--focus-color**
-- **--font-family**
-- **--font-size**
-- **--forgot-pwd-font-size**
 
-Also, to customize the input, we use the `part`:
+### Part Selectors
 
-- **email-input**: for the input in ip-email
-- **error-message**: for the error message in ip-email
-- **input-label**: for the label of each input in ip-password and ip-email
-- **passsword-input**: for the input in ip-password
-- **password-error**: for the error message in ip-password
-- **forgot-password**: for the label for forgot password in ip-password
+- **title**:For the title section
+- **indication**: For the required indication label
+- **username-label**: For the username label.
+- **username-input**: For the username input field
+- **passsword-label**: For the password label.
+- **passsword-input**: For the password input field
+- **toggle-password**: For the button to toggle password visibility.
+- **error-message**: For error message.
+- **forgot-password**: For the forgot password link.
+- **submit-btn**: For the submit button.
 
   To update the values use the following:
 
 ```css
-ip-email {
+ip-login {
   --primary-color: #006342;
   --secondary-color: #000000;
-  --focus-color: #3aa593;
-}
-ip-email::part(email-input) {
-  width: 150px;
-  height: 40px;
 }
 
-ip-password {
-  --primary-color: #006342;
-  --secondary-color: #000000;
-  --focus-color: #3aa593;
+ip-login::part(title) {
+  color: var(--primary-color);
 }
 
-ip-password::part(password-input) {
-  width: 150px;
-  height: 40px;
+ip-login::part(username-input) {
+  width: 250px;
 }
 ```

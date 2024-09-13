@@ -29,61 +29,108 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Login1Component {
-  withEmailCode = `
-          <div class="with-email login">
-            <form class="login-form">
-              <div class="title">
-                <h1>Log In</h1>
-              </div>
-              <div class="email">
-                <ip-email
-                  required
-                  class="form-group"
-                  error-message="The email entered is incorrect"
-                >
-                </ip-email>
-              </div>
-              <div class="password">
-                <ip-password
-                  class="form-group"
-                  error-message="The password entered is incorrect"
-                  forgot-password-link="#"
-                >
-                </ip-password>
-              </div>
+  withEmailCode = `<ip-login username-type="email" username-label="Email" username-required>
+  <div class="social-media">
+    <div class="text">
+      <span>Or sign up using</span>
+    </div>
+    <div class="logo-list">
+      <a
+        class="twitter"
+        href="#"
+        target="_blank"
+        aria-label="Sign up with twitter"
+      >
+        <img src="assets/images/twitter.svg" alt="Twitter" />
+      </a>
+      <a
+        class="google"
+        href="#"
+        target="_blank"
+        aria-label="Sign up with google"
+      >
+        <img src="assets/images/google.svg" alt="Google" />
+      </a>
+      <a
+        class="facebook"
+        href="#"
+        target="_blank"
+        aria-label="Sign up with facebook"
+      >
+        <img src="assets/images/facebook.svg" alt="Facebook" />
+      </a>
+    </div>
+  </div>
+  <div class="create-account">
+    <span>Don't have an account ? </span>
+    <a href="#">Create Account</a>
+  </div>
+</ip-login>
 
-              <div class="submit-btn">
-                <button class="btn" type="submit">
-                  <label for="">Continue</label>
-                  <img src="assets/images/arrow-right.svg" alt="" />
-                </button>
-              </div>
-
-              <div class="social-media">
-                <div class="text">
-                  <span>Or sign up using</span>
-                </div>
-                <div class="logo-list">
-                  <div class="twitter">
-                    <img src="assets/images/twitter.svg" alt="" />
-                  </div>
-                  <div class="google">
-                    <img src="assets/images/google.svg" alt="" />
-                  </div>
-                  <div class="facebook">
-                    <img src="assets/images/facebook.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div class="create-account">
-                <span>Don't have an account ? </span>
-                <a href="#">Create Account</a>
-              </div>
-            </form>
-          </div>
   `;
+  cssCode = `.social-media {
+    padding-top: 38px;
+    padding-bottom: 80px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    .text {
+      color: #384048;
+      font-family: 'Mulish-regular';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+    }
+    .logo-list {
+      display: flex;
+      justify-content: center;
+      .twitter,
+      .google,
+      .facebook {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        cursor: pointer;
+        .icon {
+          color: #fff;
+          font-size: 20px;
+        }
 
-  switcherTitle = 'Login 1';
+        &:focus,
+        &:hover {
+          outline: 3px solid hsl(221, 58%, 48%);
+          outline-offset: 3px;
+        }
+      }
+      .twitter {
+        background-color: #4ca1ea;
+        border-radius: 50%;
+      }
+      .google {
+        background-color: #f44336;
+        border-radius: 50%;
+      }
+      .facebook {
+        background-color: #3b5998;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .create-account {
+    color: #384048;
+    font-family: 'Mulish-regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+  }`;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && loginElements) {
       loginElements(inject(DOCUMENT).defaultView as Window);

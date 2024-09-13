@@ -21,16 +21,6 @@
       >
         CSS
       </button>
-      <button
-        role="tab"
-        [attr.aria-selected]="selectedTab === 'js' ? 'true' : 'false'"
-        aria-controls="js-tab"
-        (click)="selectTab('js')"
-        (keydown)="handleKeyDown($event, 'js')"
-        [class.active]="selectedTab === 'js'"
-      >
-        JavaScript
-      </button>
     </div>
 
     <div class="copy-btn">
@@ -89,14 +79,6 @@
       class="code-container"
     >
       <pre><code [highlight]="cssCode" language="css" HighlightLineNumbers></code></pre>
-    </div>
-    <div
-      id="js-tab"
-      role="tab-panel"
-      *ngIf="selectedTab === 'js'"
-      class="code-container"
-    >
-      <pre><code [highlight]="jsCode" language="javascript" HighlightLineNumbers></code></pre>
     </div>
   </div>
 </div>

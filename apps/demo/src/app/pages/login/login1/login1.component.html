@@ -6,47 +6,11 @@
   <app-accordion title="Preview" [alwaysOpen]="true">
     <div class="preview">
       <div class="with-email login">
-        <form class="login-form">
-          <div class="title">
-            <h1>Log In</h1>
-          </div>
-          <div class="required-indication" aria-hidden="true">
-            <span><span class="asterisk">*</span>Required fields</span>
-          </div>
-          <div class="email">
-            <ip-email
-              required
-              class="form-group"
-              error-message="The email entered is incorrect"
-            >
-            </ip-email>
-          </div>
-          <div class="password">
-            <ip-password
-              class="form-group"
-              error-message="The password entered is incorrect"
-              forgot-password-link="#"
-            >
-            </ip-password>
-          </div>
-
-          <div class="submit-btn">
-            <button
-              class="btn"
-              aria-label="Continue"
-              type="submit"
-              (click)="$event.preventDefault()"
-            >
-              <span>Continue</span>
-              <!-- TODO: convert to an svg -->
-              <img
-                aria-hidden="true"
-                src="assets/images/arrow-right.svg"
-                alt=""
-              />
-            </button>
-          </div>
-
+        <ip-login
+          username-type="email"
+          username-label="Email"
+          username-required
+        >
           <div class="social-media">
             <div class="text">
               <span>Or sign up using</span>
@@ -82,13 +46,16 @@
             <span>Don't have an account ? </span>
             <a href="#">Create Account</a>
           </div>
-        </form>
+        </ip-login>
       </div>
     </div>
   </app-accordion>
 
   <app-accordion title="Code">
-    <app-code-snippet [htmlCode]="withEmailCode"></app-code-snippet>
+    <app-code-snippet
+      [htmlCode]="withEmailCode"
+      [cssCode]="cssCode"
+    ></app-code-snippet>
   </app-accordion>
 
   <app-accordion title="Documentation">

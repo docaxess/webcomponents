@@ -15,12 +15,12 @@ export class CodeSnippetComponent {
   @Input() htmlCode = '';
   @Input() cssCode = '*{font-family: "Mulish";}';
   @Input() jsCode = 'import "./styles.css"';
-  selectedTab: 'html' | 'css' | 'js' = 'html';
+  selectedTab: 'html' | 'css' = 'html';
 
-  selectTab(tab: 'html' | 'css' | 'js') {
+  selectTab(tab: 'html' | 'css') {
     this.selectedTab = tab;
   }
-  handleKeyDown(event: KeyboardEvent, tab: 'html' | 'css' | 'js') {
+  handleKeyDown(event: KeyboardEvent, tab: 'html' | 'css') {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       this.selectTab(tab);

@@ -1,6 +1,8 @@
 @import '../../../assets/styles/index.scss';
 header {
   width: 100%;
+  position: fixed;
+  overflow: hidden;
 }
 .head {
   width: 100%;

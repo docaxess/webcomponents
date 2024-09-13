@@ -1,15 +1,21 @@
 body {
   font-family: 'Mulish-regular';
+  height: 100vh;
 }
 
 .main-content {
-  max-height: auto;
+  overflow-y: auto;
+  height: 100%;
   .container {
     display: flex;
     flex-direction: row;
+    padding-top: 65px;
+    height: 87.5vh;
 
     .sidebar-menu {
-      min-width: 250px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      min-width: 300px;
       width: 300px;
       position: static;
       background-color: #2e3243;
@@ -24,9 +30,12 @@ body {
     }
 
     .main-wrapper {
+      overflow-y: auto;
+      overflow-x: hidden;
       width: 100%;
       gap: 22px;
-      margin: 60px 150px;
+      padding: 50px 120px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -47,7 +56,7 @@ body {
         width: 200px;
       }
       .main-wrapper {
-        margin: 10px;
+        padding: 10px;
       }
     }
   }
@@ -105,6 +114,6 @@ body {
     }
   }
   .main-wrapper {
-    margin: 0;
+    padding: 10px;
   }
 }

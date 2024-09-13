@@ -14,6 +14,28 @@ export namespace Components {
         "invalid": boolean;
         "required": boolean;
     }
+    interface IpLogin {
+        "forgotPasswordLabel": string;
+        "forgotPasswordLink": string;
+        "hidePasswordAriaLabel": string;
+        "indicationLabel": string;
+        "loginTitle": string;
+        "passwordDigitErrorMsg": string;
+        "passwordLabel": string;
+        "passwordLengthErrorMsg": string;
+        "passwordLowercaseErrorMsg": string;
+        "passwordUppercaseErrorMsg": string;
+        "pwdPlaceholder": string;
+        "showPasswordAriaLabel": string;
+        "submitBtnAriaLabel": string;
+        "submitButtonLabel": string;
+        "usernameErrorMsg": string;
+        "usernameInvalidEmailMsg": string;
+        "usernameLabel": string;
+        "usernamePlaceholder": string;
+        "usernameRequired": boolean;
+        "usernameType": 'text' | 'email';
+    }
     interface IpPassword {
         "emptyFieldErrorMessage": string;
         "errorMessage": string;
@@ -27,6 +49,10 @@ export namespace Components {
 export interface IpEmailCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIpEmailElement;
+}
+export interface IpLoginCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIpLoginElement;
 }
 export interface IpPasswordCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -50,6 +76,23 @@ declare global {
         prototype: HTMLIpEmailElement;
         new (): HTMLIpEmailElement;
     };
+    interface HTMLIpLoginElementEventMap {
+        "formSubmitted": any;
+    }
+    interface HTMLIpLoginElement extends Components.IpLogin, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIpLoginElementEventMap>(type: K, listener: (this: HTMLIpLoginElement, ev: IpLoginCustomEvent<HTMLIpLoginElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIpLoginElementEventMap>(type: K, listener: (this: HTMLIpLoginElement, ev: IpLoginCustomEvent<HTMLIpLoginElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIpLoginElement: {
+        prototype: HTMLIpLoginElement;
+        new (): HTMLIpLoginElement;
+    };
     interface HTMLIpPasswordElementEventMap {
         "passwordChange": string;
     }
@@ -69,6 +112,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ip-email": HTMLIpEmailElement;
+        "ip-login": HTMLIpLoginElement;
         "ip-password": HTMLIpPasswordElement;
     }
 }
@@ -82,6 +126,29 @@ declare namespace LocalJSX {
         "onInputChange"?: (event: IpEmailCustomEvent<string>) => void;
         "required"?: boolean;
     }
+    interface IpLogin {
+        "forgotPasswordLabel"?: string;
+        "forgotPasswordLink"?: string;
+        "hidePasswordAriaLabel"?: string;
+        "indicationLabel"?: string;
+        "loginTitle"?: string;
+        "onFormSubmitted"?: (event: IpLoginCustomEvent<any>) => void;
+        "passwordDigitErrorMsg"?: string;
+        "passwordLabel"?: string;
+        "passwordLengthErrorMsg"?: string;
+        "passwordLowercaseErrorMsg"?: string;
+        "passwordUppercaseErrorMsg"?: string;
+        "pwdPlaceholder"?: string;
+        "showPasswordAriaLabel"?: string;
+        "submitBtnAriaLabel"?: string;
+        "submitButtonLabel"?: string;
+        "usernameErrorMsg"?: string;
+        "usernameInvalidEmailMsg"?: string;
+        "usernameLabel"?: string;
+        "usernamePlaceholder"?: string;
+        "usernameRequired"?: boolean;
+        "usernameType"?: 'text' | 'email';
+    }
     interface IpPassword {
         "emptyFieldErrorMessage"?: string;
         "errorMessage"?: string;
@@ -94,6 +161,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ip-email": IpEmail;
+        "ip-login": IpLogin;
         "ip-password": IpPassword;
     }
 }
@@ -102,6 +170,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ip-email": LocalJSX.IpEmail & JSXBase.HTMLAttributes<HTMLIpEmailElement>;
+            "ip-login": LocalJSX.IpLogin & JSXBase.HTMLAttributes<HTMLIpLoginElement>;
             "ip-password": LocalJSX.IpPassword & JSXBase.HTMLAttributes<HTMLIpPasswordElement>;
         }
     }
