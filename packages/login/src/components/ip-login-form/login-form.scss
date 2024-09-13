@@ -59,7 +59,7 @@ form {
   }
 
   &__error {
-    color: red;
+    color: #d60505;
     font-size: 16px;
     display: flex;
     flex-direction: row;
@@ -85,7 +85,7 @@ form {
 }
 
 .required-asterisk {
-  color: red;
+  color: #d60505;
   margin-left: 2px;
   margin-right: 0;
 }
@@ -133,7 +133,7 @@ form {
   padding-bottom: 20px;
 
   .asterisk {
-    color: red;
+    color: #d60505;
   }
 }
 
