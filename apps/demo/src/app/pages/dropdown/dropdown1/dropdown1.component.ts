@@ -9,8 +9,8 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as dropdownElements } from '@ipedis/dropdown/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocDropdownComponent } from '../doc-dropdown/doc-dropdown.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-dropdown1',
@@ -19,8 +19,7 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
     CommonModule,
     CodeSnippetComponent,
     DocDropdownComponent,
-    ViewSwitcherComponent,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './dropdown1.component.html',
   styleUrl: './dropdown1.component.scss',
@@ -36,10 +35,15 @@ export class Dropdown1Component {
   >
   </ip-dropdown>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
+
+  dropdown1Css = `
+  ip-dropdown {
+   --primary-color: #b00057;
+   --font-color: #000000;
+   --font-family: 'Mulish-regular';
   }
+  `;
+
   switcherTitle = 'Dropdown 1';
 
   constructor() {

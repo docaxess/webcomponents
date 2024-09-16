@@ -2,10 +2,15 @@
 a {
   text-decoration: none;
 }
+.card-content {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Mulish-regular';
+}
 .card {
   background-color: $cardBackgroundColor;
   color: $cardTextColor;
-  width: rem(459);
+  width: rem(250);
   box-shadow: 0 0 rem(12) 0 fade(darken($darkColor, 100), 20);
   border-radius: rem(15);
   border: 2px solid $cardBackgroundColor;
@@ -29,7 +34,7 @@ a {
   }
 }
 .title {
-  font-family: 'Nunito-Bold', sans-serif;
+  font-family: 'Mulish-regular';
   font-weight: normal;
   line-height: 1.2;
   text-align: start;
@@ -43,8 +48,6 @@ a {
   text-overflow: ellipsis;
 }
 .image-wrapper {
-  padding: 50px;
-  block-size: 13.25rem;
   background-color: #fafafa;
 }
 .card-img {
@@ -58,18 +61,19 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: rem(30);
+  padding: 10px;
   border-block-start: 2px solid darken($cardBackgroundColor, 9);
 
   h2 {
-    font-size: rem(20);
+    font-size: rem(16);
     margin: 0;
     color: $cardTextColor;
+    font-family: 'Mulish-regular';
   }
 }
 
 .card-title {
-  font-size: rem(16);
+  font-size: rem(14);
   margin: 0;
   color: #333;
 }

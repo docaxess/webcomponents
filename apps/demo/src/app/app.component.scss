@@ -1,24 +1,24 @@
 body {
-  font-family: 'Nunito';
+  font-family: 'Mulish-regular';
+  height: 100vh;
 }
 
 .main-content {
-  background-image: url('../assets/images/Rectangle-1.png');
-  background-position-y: -159px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 82.5vh;
-
+  overflow-y: auto;
+  height: 100%;
   .container {
     display: flex;
     flex-direction: row;
-    margin: 0 150px;
-    margin: 0 150px;
-    padding: 50px 0;
-    gap: 60px;
+    padding-top: 65px;
+    height: 87.5vh;
 
     .sidebar-menu {
-      width: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      min-width: 300px;
+      width: 300px;
+      position: static;
+      background-color: #2e3243;
 
       .menu-toggle {
         display: none;
@@ -29,44 +29,34 @@ body {
       }
     }
 
-    .cards-wrapper {
-      width: 960px;
+    .main-wrapper {
+      overflow-y: auto;
+      overflow-x: hidden;
+      width: 100%;
       gap: 22px;
+      padding: 50px 120px;
+      margin-bottom: 20px;
     }
   }
 }
 @media (max-width: 1200px) {
   .main-content {
-    background-image: none;
-    background-color: #0e9980;
     .container {
-      margin: 0 50px;
-      gap: 30px;
-
-      .sidebar-menu {
-        width: 400px;
-      }
-
-      .cards-wrapper {
-        width: 100%;
+      .main-wrapper {
+        margin: 30px;
       }
     }
   }
 }
 @media (max-width: 1084px) {
   .main-content {
-    background-image: none;
-    background-color: #0e9980;
     .container {
-      margin: 0 50px;
-      gap: 30px;
-
       .sidebar-menu {
-        width: 400px;
+        min-width: none;
+        width: 200px;
       }
-
-      .cards-wrapper {
-        width: 100%;
+      .main-wrapper {
+        padding: 10px;
       }
     }
   }
@@ -74,7 +64,6 @@ body {
 
 @media (max-width: 852px) {
   .main-content {
-    background-color: #0e9980;
     min-height: 110vh;
     .container {
       flex-direction: column;
@@ -87,6 +76,7 @@ body {
         width: 100%;
         z-index: 1000;
         position: relative;
+        background-color: #fff;
 
         .menu-toggle {
           display: block;
@@ -95,7 +85,7 @@ body {
           font-size: 24px;
           cursor: pointer;
           margin-bottom: 10px;
-          color: #fff;
+          color: #2e3243;
         }
 
         .aside {
@@ -122,5 +112,8 @@ body {
         width: 100%;
       }
     }
+  }
+  .main-wrapper {
+    padding: 10px;
   }
 }

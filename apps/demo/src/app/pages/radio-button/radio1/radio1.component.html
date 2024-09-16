@@ -1,46 +1,34 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Radio-button 1'"
-    [breadcrumbItems]="[
-      { label: 'Radio-button', link: '/radio-button' },
-      { label: 'Radio-button 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <div class="radio-wrapper">
-          <ip-radio
-            id="radio"
-            legend="What is your gender"
-            default-option-id="Female"
-            options='[
+  <div class="component-intro">
+    <h2 class="title">Radio Button</h2>
+    <p>
+      Radio buttons allow users to select one option from a set of mutually
+      exclusive choices. They're ideal for forms where users must make a single
+      choice; they're easily navigable via mouse or keyboard and are
+      screen-reader friendly with proper labeling.
+    </p>
+  </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="radio-wrapper">
+      <ip-radio
+        id="radio"
+        legend="What is your gender"
+        default-option-id="Female"
+        options='[
           {"id": "Male", "label": "Male"}, 
           {"id": "Female", "label": "Female"},
           {"id": "Other", "label": "Other", "disabled": true}
     
           ]'
-          ></ip-radio>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <app-code-snippet [code]="radioCode"></app-code-snippet>
-      }
-      @if (currentView === 'doc') {
-        <app-doc-radio></app-doc-radio>
-      }
+      ></ip-radio>
     </div>
-  </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="radioCode"></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-radio></app-doc-radio>
+  </app-accordion>
 </div>

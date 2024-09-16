@@ -8,10 +8,11 @@ import {
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { RouterLink } from '@angular/router';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+
 import { defineCustomElements as showMoreElements } from '@ipedis/show-more/loader';
 import { DocShowMoreComponent } from '../doc-show-more/doc-show-more.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
+import { CardComponent } from '../../../features/card/card.component';
 
 @Component({
   selector: 'app-show-more1',
@@ -20,9 +21,9 @@ import { DocShowMoreComponent } from '../doc-show-more/doc-show-more.component';
     CommonModule,
     CodeSnippetComponent,
     RouterLink,
-    ViewSwitcherComponent,
-    BreadcrumbComponent,
     DocShowMoreComponent,
+    AccordionComponent,
+    CardComponent,
   ],
   templateUrl: './show-more1.component.html',
   styleUrl: './show-more1.component.scss',
@@ -43,14 +44,37 @@ export class ShowMore1Component {
         </div>
     </ip-show-more>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
+  smCss = `
+   .show-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 25px;
   }
-  switcherTitle = 'Show-more 1 ';
+
+  ip-show-more {
+    --ip-font-family: 'Mulish-regular';
+  }
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && showMoreElements) {
       showMoreElements(inject(DOCUMENT).defaultView as Window);
     }
   }
+
+  moreCards = [
+    {
+      title: "Nature's Symphony",
+      imageUrl: 'assets/images/eg-sm/Image=04.png',
+    },
+    {
+      title: 'Skybound Serently',
+      imageUrl: 'assets/images/eg-sm/Image=05.png',
+    },
+    {
+      title: 'Infinite Horizons',
+      imageUrl: 'assets/images/eg-sm/Image=06.jpg',
+    },
+  ];
 }

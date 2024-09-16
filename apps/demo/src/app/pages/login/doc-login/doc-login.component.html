@@ -13,14 +13,12 @@
   <p>Import the module into your script file:</p>
   <pre><code [highlight]="import" language="typescript"></code></pre>
   <h3 class="under-title">Usage</h3>
-  <p>In this component,we have two input:</p>
-  <ul>
-    <li>&lt;ip-email&gt; &lt;/ip-email&gt;</li>
-    <li>&lt;ip-password&gt; &lt;/ip-password&gt;</li>
-  </ul>
-  <p>To use these inputs, you must add theses properties as attributes.</p>
+
+  <p>
+    To use this component, add it to your HTML and configure it with the desired
+    properties.
+  </p>
   <h4>Properties</h4>
-  <h5>ip-email</h5>
   <table>
     <thead>
       <tr>
@@ -34,119 +32,209 @@
     </thead>
     <tbody>
       <tr>
-        <td><code>errorMessage</code></td>
-        <td><code>error-message</code></td>
-        <td>Required</td>
-        <td>
-          The error message when the user enters a wrong username or email.
-        </td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
+        <td>usernameLabel</td>
+        <td>username-label</td>
+        <td>Optional</td>
+        <td>Label for the username input field</td>
+        <td>string</td>
+        <td>Username</td>
       </tr>
       <tr>
-        <td><code>inputLabel</code></td>
-        <td><code>input-label</code></td>
+        <td>passwordLabel</td>
+        <td>forgot-password-link</td>
         <td>Optional</td>
-        <td>
-          The name of the input. Its default value is "Email"; you can specify
-          it.
-        </td>
-        <td><code>string</code></td>
-        <td><code>"Email"</code></td>
+        <td>Label for the password input field</td>
+        <td>string</td>
+        <td>Password</td>
       </tr>
       <tr>
-        <td><code>invalid</code></td>
-        <td><code>invalid</code></td>
+        <td>submitButtonLabel</td>
+        <td>submit-button-label</td>
         <td>Optional</td>
-        <td>
-          It's a boolean Prop. Attach it to your function; if
-          <code>invalid="true"</code>, the error message is displayed.
-        </td>
-        <td><code>boolean</code></td>
-        <td><code>false</code></td>
+        <td>Label for the submit button</td>
+        <td>string</td>
+        <td>Login</td>
+      </tr>
+      <tr>
+        <td>usernameErrorMsg</td>
+        <td>username-error-msg</td>
+        <td>Optional</td>
+        <td>Error message for empty username field</td>
+        <td>string</td>
+        <td>Username is required</td>
+      </tr>
+      <tr>
+        <td>usernameInvalidEmailMsg</td>
+        <td>username-invalid-email-msg</td>
+        <td>Optional</td>
+        <td>Error message for invalid email format</td>
+        <td>string</td>
+        <td>The email address is invalid</td>
+      </tr>
+      <tr>
+        <td>passwordLengthErrorMsg</td>
+        <td>password-length-error-msg</td>
+        <td>Optional</td>
+        <td>Error message for insufficient password length</td>
+        <td>string</td>
+        <td>The password must contain at least 8 characters</td>
+      </tr>
+      <tr>
+        <td>passwordUppercaseErrorMsg</td>
+        <td>password-uppercase-error-msg</td>
+        <td>Optional</td>
+        <td>Error message for missing uppercase letter in password</td>
+        <td>string</td>
+        <td>Password must contain at least one capital</td>
+      </tr>
+      <tr>
+        <td>passwordLowercaseErrorMsg</td>
+        <td>password-lower-error-msg</td>
+        <td>Optional</td>
+        <td>Error message for missing lowercase letter in password</td>
+        <td>string</td>
+        <td>The password must contain at least a lower case</td>
+      </tr>
+      <tr>
+        <td>passwordDigitErrorMsg</td>
+        <td>password-digit-error-msg</td>
+        <td>Optional</td>
+        <td>Error message for missing digit in password</td>
+        <td>string</td>
+        <td>The password must contain at least one digit</td>
+      </tr>
+      <tr>
+        <td>usernameType</td>
+        <td>username-type</td>
+        <td>Optional</td>
+        <td>Type of the username input field (text or email)</td>
+        <td>text / email</td>
+        <td>text</td>
+      </tr>
+      <tr>
+        <td>showPasswordAriaLabel</td>
+        <td>show-password-aria-label</td>
+        <td>Optional</td>
+        <td>Aria label for the button to show password</td>
+        <td>string</td>
+        <td>Show password</td>
+      </tr>
+      <tr>
+        <td>hidePasswordAriaLabel</td>
+        <td>hide-password-aria-label</td>
+        <td>Optional</td>
+        <td>Aria label for the button to hide password</td>
+        <td>string</td>
+        <td>Hide password</td>
+      </tr>
+      <tr>
+        <td>usernameRequired</td>
+        <td>username-required</td>
+        <td>Optional</td>
+        <td>Whether the username field is required</td>
+        <td>boolean</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>pwdPlaceholder</td>
+        <td>pwd-placeholder</td>
+        <td>Optional</td>
+        <td>Placeholder text for the password field</td>
+        <td>string</td>
+        <td>Type your password here...</td>
+      </tr>
+      <tr>
+        <td>usernamePlaceholder</td>
+        <td>username-placeholder</td>
+        <td>Optional</td>
+        <td>Placeholder text for the username field</td>
+        <td>string</td>
+        <td>Type your username here...</td>
+      </tr>
+      <tr>
+        <td>forgotPasswordLink</td>
+        <td>forgot-password-link</td>
+        <td>Optional</td>
+        <td>URL for the forgot password link</td>
+        <td>string</td>
+        <td>''</td>
+      </tr>
+      <tr>
+        <td>forgotPasswordLabel</td>
+        <td>forgot-password-label</td>
+        <td>Optional</td>
+        <td>Label text for the forgot password link</td>
+        <td>string</td>
+        <td>Forgot password?</td>
+      </tr>
+      <tr>
+        <td>loginTitle</td>
+        <td>login-title</td>
+        <td>Optional</td>
+        <td>Title of the login form</td>
+        <td>string</td>
+        <td>Login</td>
+      </tr>
+      <tr>
+        <td>indicationLabel</td>
+        <td>indication-label</td>
+        <td>Optional</td>
+        <td>Label indicating required fields</td>
+        <td>string</td>
+        <td>Required fields</td>
+      </tr>
+      <tr>
+        <td>submitBtnAriaLabel</td>
+        <td>submit-btn-aria-label</td>
+        <td>Optional</td>
+        <td>Aria-label of submit button</td>
+        <td>string</td>
+        <td>Submit the form</td>
       </tr>
     </tbody>
   </table>
-  <h5>ip-password</h5>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Property</th>
-        <th scope="col">Attribute</th>
-        <th scope="col">Necessity</th>
-        <th scope="col">Description</th>
-        <th scope="col">Type</th>
-        <th scope="col">Default</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>errorMessage</code></td>
-        <td><code>error-message</code></td>
-        <td>Required</td>
-        <td>
-          The error message when the user enters a wrong username or email.
-        </td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
-      </tr>
-      <tr>
-        <td><code>forgotPasswordLink</code></td>
-        <td><code>forgot-password-link</code></td>
-        <td>Required</td>
-        <td>Your personal link for reinitialize password.</td>
-        <td><code>string</code></td>
-        <td><code>undefined</code></td>
-      </tr>
-      <tr>
-        <td><code>invalid</code></td>
-        <td><code>invalid</code></td>
-        <td>Optional</td>
-        <td>
-          It's a boolean Prop. Attach it to your function; if
-          <code>invalid="true"</code>, the error message is displayed.
-        </td>
-        <td><code>boolean</code></td>
-        <td><code>false</code></td>
-      </tr>
-    </tbody>
-  </table>
+  <p><em>e.g:</em></p>
+  <pre><code [highlight]="example" language="html"></code></pre>
 
   <h3 class="under-title">Customization</h3>
   <p>
-    We have a set of predefined variable used to customisation the ip-login:
+    You can customize the appearance of the login-form component using CSS
+    variables and part selectors:
   </p>
+
+  <h4>CSS variables</h4>
   <ul>
     <li><code>--primary-color</code></li>
     <li><code>--secondary-color</code></li>
     <li><code>--focus-color</code></li>
-    <li><code>--font-family</code></li>
-    <li><code>--font-size</code></li>
-    <li><code>--forgot-pwd-font-size</code></li>
   </ul>
-  <p>
-    Also, We have a set of parts that could be used to customize accordingly:
-  </p>
+
+  <h4>Parts Selectors</h4>
+
   <ul>
-    <li><code>email-input</code>: for the input in ip-email</li>
-    <li><code>error-message</code>: for the error message in ip-email</li>
+    <li><code>title</code>: For the title section</li>
+    <li><code>indication</code>: For the required indication label</li>
+    <li><code>username-label</code>: For the username label</li>
+    <li><code>username-input</code>: For the username input field</li>
+    <li><code>passsword-label</code>: For the password label</li>
+    <li><code>passsword-input</code>: For the password input field</li>
     <li>
-      <code>input-label</code>: for the label of each input in ip-password and
-      ip-email
+      <code>toggle-password</code>: For the button to toggle password visibility
     </li>
-    <li><code>passsword-input</code>: for the input in ip-password</li>
-    <li><code>password-error</code>: for the error message in ip-password</li>
-    <li>
-      <code>forgot-password</code>: for the label for forgot password in
-      ip-password
-    </li>
+    <li><code>error-message</code>: For error message</li>
+    <li><code>forgot-password</code>: For the forgot password link</li>
+    <li><code>submit-btn</code>: For the submit button</li>
   </ul>
+
   <p>To update the values, use the following CSS:</p>
   <pre><code [highlight]="custom" language="css"></code></pre>
 
   <h3 class="under-title">Listening to Events</h3>
   <p>
-    <code>ip-email</code> and <code>ip-password</code> are simple inputs, so to
-    listen to the events it’s like with standard inputs.
+    The login-form component emits a <code>formSubmitted`</code> event when the
+    form is successfully submitted. You can listen to this event in your
+    JavaScript code:
   </p>
+  <p><em>e.g:</em></p>
+  <pre><code [highlight]="eventListener" language="typescript"></code></pre>
 </section>

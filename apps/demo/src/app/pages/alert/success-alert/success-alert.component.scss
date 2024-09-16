@@ -2,13 +2,27 @@
 
 .alert-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: rem(70) 0;
 }
-.content {
-  background-color: #f4f4f4;
-  height: 675px;
-  overflow-y: auto;
-  border-radius: 0 0 rem(15) rem(15);
+button {
+  margin-top: rem(20);
+  font-family: 'Mulish-regular';
+  font-size: rem(16);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: rem(10) rem(16);
+  border: none;
+  border-radius: rem(4);
+  background-color: #b00057;
+  color: #ffffff;
+  cursor: pointer;
+  width: 175px;
+}
+ip-alert {
+  --alert-font-family: 'Mulish-regular';
+  --alert-font-size: 18px;
 }

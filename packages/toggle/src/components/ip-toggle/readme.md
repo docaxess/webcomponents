@@ -17,6 +17,13 @@
 | `toggleDisabled` | `toggle-disabled` |             | `boolean`                        | `false`     |
 
 
+## Events
+
+| Event          | Description | Type                   |
+| -------------- | ----------- | ---------------------- |
+| `toggleChange` |             | `CustomEvent<boolean>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

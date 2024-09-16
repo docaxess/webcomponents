@@ -1,4 +1,12 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  State,
+  Watch,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 
 @Component({
   tag: 'ip-toggle',
@@ -15,10 +23,12 @@ export class ToggleButton {
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
   @Prop() checked = false;
 
+  @Event() toggleChange: EventEmitter<boolean>;
   @Watch('checked')
   handleCheckedChange(newValue: boolean) {
     if (newValue !== this.isActive) {
       this.isActive = newValue;
+      this.toggleChange.emit(this.isActive);
     }
   }
 
@@ -29,6 +39,7 @@ export class ToggleButton {
   handleClick() {
     if (!this.toggleDisabled) {
       this.isActive = !this.isActive;
+      this.toggleChange.emit(this.isActive);
     }
   }
 

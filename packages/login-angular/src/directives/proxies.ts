@@ -34,6 +34,32 @@ export declare interface IpEmail extends Components.IpEmail {
 
 
 @ProxyCmp({
+  inputs: ['forgotPasswordLabel', 'forgotPasswordLink', 'hidePasswordAriaLabel', 'indicationLabel', 'loginTitle', 'passwordDigitErrorMsg', 'passwordLabel', 'passwordLengthErrorMsg', 'passwordLowercaseErrorMsg', 'passwordUppercaseErrorMsg', 'pwdPlaceholder', 'showPasswordAriaLabel', 'submitBtnAriaLabel', 'submitButtonLabel', 'usernameErrorMsg', 'usernameInvalidEmailMsg', 'usernameLabel', 'usernamePlaceholder', 'usernameRequired', 'usernameType']
+})
+@Component({
+  selector: 'ip-login',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['forgotPasswordLabel', 'forgotPasswordLink', 'hidePasswordAriaLabel', 'indicationLabel', 'loginTitle', 'passwordDigitErrorMsg', 'passwordLabel', 'passwordLengthErrorMsg', 'passwordLowercaseErrorMsg', 'passwordUppercaseErrorMsg', 'pwdPlaceholder', 'showPasswordAriaLabel', 'submitBtnAriaLabel', 'submitButtonLabel', 'usernameErrorMsg', 'usernameInvalidEmailMsg', 'usernameLabel', 'usernamePlaceholder', 'usernameRequired', 'usernameType'],
+})
+export class IpLogin {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['formSubmitted']);
+  }
+}
+
+
+export declare interface IpLogin extends Components.IpLogin {
+
+  formSubmitted: EventEmitter<CustomEvent<any>>;
+}
+
+
+@ProxyCmp({
   inputs: ['emptyFieldErrorMessage', 'errorMessage', 'forgotPasswordLink', 'hidePasswordAriaLabel', 'inputPlaceholder', 'invalid', 'showPasswordAriaLabel']
 })
 @Component({

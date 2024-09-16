@@ -10,8 +10,8 @@ import { defineCustomElements as paginationElements } from '@ipedis/pagination/l
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { DocPaginationComponent } from '../doc-pagination/doc-pagination.component';
 import { RouterLink } from '@angular/router';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-pagination1',
@@ -21,8 +21,7 @@ import { ViewSwitcherComponent } from '../../../features/view-switcher/view-swit
     CodeSnippetComponent,
     DocPaginationComponent,
     RouterLink,
-    BreadcrumbComponent,
-    ViewSwitcherComponent,
+    AccordionComponent,
   ],
   templateUrl: './pagination1.component.html',
   styleUrl: './pagination1.component.scss',
@@ -38,10 +37,7 @@ export class Pagination1Component {
     >
     </ip-pagination>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Pagination 1';
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && paginationElements) {

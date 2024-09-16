@@ -1,0 +1,147 @@
+:host {
+  --primary-color: var(--primaryColor, #0343c4);
+  --secondary-color: var(--secondaryColor, #a3a3a3);
+  --focus-color: var(--focusColor, #3aa593);
+  --font-size: 16px;
+  --forgot-pwd-font-size: 14px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+
+  &__label {
+    position: absolute;
+    left: 1em;
+    top: -0.5em;
+    background: #fff;
+    padding: 0 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  &__input {
+    color: #000;
+    border-style: none;
+    outline: none;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    font-size: 16px;
+
+    &:hover,
+    &:focus {
+      border: 1px solid var(--focus-color);
+      outline: 3px solid var(--focus-color);
+      outline-offset: 2px;
+    }
+  }
+
+  &__password {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__error {
+    color: #d60505;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.toggle-password {
+  position: absolute;
+  right: 4px;
+  margin-top: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.4rem;
+  color: #585454;
+  height: auto;
+}
+
+.forgot-password {
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.required-asterisk {
+  color: #d60505;
+  margin-left: 2px;
+  margin-right: 0;
+}
+
+.input_btn {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 250px;
+  display: flex;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 50px;
+  border: none;
+  background: var(--primary-color);
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    outline: 3px solid hsl(221, 58%, 48%);
+    outline-offset: 3px;
+  }
+}
+
+.indication {
+  font-size: 12px;
+  padding-bottom: 20px;
+
+  .asterisk {
+    color: #d60505;
+  }
+}
+
+.title {
+  color: #384048;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}

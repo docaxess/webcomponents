@@ -1,20 +1,15 @@
 @import '../../../../assets/styles/index.scss';
 
-.content {
-  background-color: #f4f4f4;
-  height: 675px;
-  overflow-y: auto;
-  border-radius: 0 0 rem(15) rem(15);
-  display: flex;
-  justify-content: center;
-}
 .table-wrapper {
   display: flex;
   justify-content: center;
-  width: 100%;
   padding: 10px;
   height: 425px;
 }
 .code-wrapper {
   width: 100%;
+}
+ip-table {
+  --font-family: 'Mulish-regular';
+  --primary-color: #b00057;
 }

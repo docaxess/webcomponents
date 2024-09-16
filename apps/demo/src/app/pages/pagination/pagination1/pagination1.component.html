@@ -1,40 +1,23 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Pagination 1'"
-    [breadcrumbItems]="[
-      { label: 'Pagination', link: '/pagination' },
-      { label: 'Pagination 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <div class="pagination">
-          <ip-pagination
-            total-pages="25"
-            current-page="5"
-            visible-pages="7"
-          ></ip-pagination>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <app-code-snippet [code]="codeSnippet"></app-code-snippet>
-      }
-      @if (currentView === 'doc') {
-        <app-doc-pagination></app-doc-pagination>
-      }
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Pagination</h2>
+    <p></p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="pagination">
+      <ip-pagination
+        total-pages="25"
+        current-page="5"
+        visible-pages="7"
+      ></ip-pagination>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="codeSnippet"></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-pagination></app-doc-pagination>
+  </app-accordion>
 </div>

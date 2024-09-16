@@ -9,9 +9,9 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { RouterLink } from '@angular/router';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-toogle1',
@@ -20,9 +20,8 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
     CommonModule,
     DocToogleComponent,
     CodeSnippetComponent,
-    ViewSwitcherComponent,
     RouterLink,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './toogle1.component.html',
   styleUrl: './toogle1.component.scss',
@@ -43,10 +42,7 @@ export class Toogle1Component {
     </ip-toggle>
   </div>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Toggle 1';
 
   constructor() {

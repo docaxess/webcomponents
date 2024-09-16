@@ -10,8 +10,8 @@ import { defineCustomElements as toggleElements } from '@ipedis/toggle/loader';
 import { DocToogleComponent } from '../doc-toogle/doc-toogle.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
 import { RouterLink } from '@angular/router';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-toogle2',
@@ -21,8 +21,7 @@ import { ViewSwitcherComponent } from '../../../features/view-switcher/view-swit
     DocToogleComponent,
     CodeSnippetComponent,
     RouterLink,
-    BreadcrumbComponent,
-    ViewSwitcherComponent,
+    AccordionComponent,
   ],
   templateUrl: './toogle2.component.html',
   styleUrl: './toogle2.component.scss',
@@ -50,10 +49,7 @@ export class Toogle2Component {
     </ip-toggle>
   </div>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Toggle 2';
 
   constructor() {

@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 import infoIcon from './icon/info-icon.svg';
 import warningIcon from './icon/warning-icon.svg';
 import dangerIcon from './icon/danger-icon.svg';
@@ -15,8 +15,10 @@ export class Alert {
   @Prop() closeAriaLabel = 'Close alert';
   @State() visible = true;
 
+  @Event() alertClosed: EventEmitter<void>;
   private closeAlert() {
     this.visible = false;
+    this.alertClosed.emit();
   }
 
   private getIcon() {
@@ -41,7 +43,9 @@ export class Alert {
 
     return (
       <div class={`alert alert-${this.type}`} role="alert">
-        <div class="icon">{this.getIcon()}</div>
+        <div class="icon" aria-hidden="true">
+          {this.getIcon()}
+        </div>
         <button
           class="close-button"
           onClick={() => this.closeAlert()}

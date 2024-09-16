@@ -7,10 +7,10 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+
 import { DocFootnoteComponent } from '../doc-footnote/doc-footnote.component';
 import { defineCustomElements as footnoteElements } from '@ipedis/footnote/loader';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-footnote1',
@@ -18,9 +18,8 @@ import { defineCustomElements as footnoteElements } from '@ipedis/footnote/loade
   imports: [
     CommonModule,
     CodeSnippetComponent,
-    ViewSwitcherComponent,
-    BreadcrumbComponent,
     DocFootnoteComponent,
+    AccordionComponent,
   ],
   templateUrl: './footnote1.component.html',
   styleUrl: './footnote1.component.scss',
@@ -31,18 +30,18 @@ export class Footnote1Component {
   codeSnippet = `
     <p>
       Here is a sentence with a footnote reference
-      <sup><a href="#footnote-1" id="ref1">1</a></sup>.
+      <sup><a href="#footnote-1" id="ref1">1</a></sup
+      >.
     </p>
+   
     <ip-footnote
       id="footnote-1"
       identifier="1"
-      text="This is a detailed explanation or reference for the footnote.">
+      text="This is a detailed explanation or reference for the footnote."
+    >
     </ip-footnote>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
+
   switcherTitle = 'Footnote 1';
 
   constructor() {

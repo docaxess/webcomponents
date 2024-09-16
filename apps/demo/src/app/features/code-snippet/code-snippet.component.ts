@@ -8,23 +8,35 @@ import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
   standalone: true,
   imports: [CommonModule, Highlight, HighlightLineNumbers],
   templateUrl: './code-snippet.component.html',
-  styleUrl: './code-snippet.component.scss',
+  styleUrls: ['./code-snippet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CodeSnippetComponent {
-  @Input() code = '';
-  showCode = false;
+  @Input() htmlCode = '';
+  @Input() cssCode = '*{font-family: "Mulish";}';
+  @Input() jsCode = 'import "./styles.css"';
+  selectedTab: 'html' | 'css' = 'html';
 
-  toggleCode() {
-    this.showCode = !this.showCode;
+  selectTab(tab: 'html' | 'css') {
+    this.selectedTab = tab;
+  }
+  handleKeyDown(event: KeyboardEvent, tab: 'html' | 'css') {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.selectTab(tab);
+    }
   }
 
   copyCode() {
-    const textarea = document.createElement('textarea');
-    textarea.value = this.code;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
+    let codeToCopy = '';
+    if (this.selectedTab === 'html') {
+      codeToCopy = this.htmlCode;
+    } else if (this.selectedTab === 'css') {
+      codeToCopy = this.cssCode;
+    } else if (this.selectedTab === 'js') {
+      codeToCopy = this.jsCode;
+    }
+
+    navigator.clipboard.writeText(codeToCopy);
   }
 }

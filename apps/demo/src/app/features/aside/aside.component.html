@@ -5,214 +5,366 @@
   aria-label="Main navigation"
 >
   <ul class="menu-list">
-    <li class="menu-item">
-      <h3
-        (click)="toggleSection('overview')"
-        (keydown)="handleKeydown($event, 'overview')"
-        tabindex="0"
-        role="button"
-        id="overview"
-        [attr.aria-expanded]="isOpen['overview'] ? 'true' : 'false'"
+    <li class="item" [class.open]="isOpen['intro']">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        aria-label="Go to Introduction"
+        (click)="onLinkClick()"
       >
-        Overview
-        <span class="toggle-arrow" [class.rotate]="isOpen['overview']"></span>
-      </h3>
-      <ul class="OVERVIEW" [class.expanded]="isOpen['overview']">
-        <li class="item">
+        Intro
+      </a>
+    </li>
+    <li class="item" [class.open]="isOpen['accordion']">
+      <a
+        routerLink="/accordion/accordion1"
+        routerLinkActive="active"
+        aria-label="Go to Accordion component"
+        (click)="onLinkClick()"
+      >
+        Accordion
+      </a>
+    </li>
+
+    <li class="item with-content" [class.open]="isOpen['alert']">
+      <div
+        class="sub-title"
+        role="button"
+        tabindex="0"
+        (click)="toggleSection('alert')"
+        (keydown)="handleKeydown($event, 'alert')"
+        [attr.aria-expanded]="isOpen['alert']"
+        aria-controls="alert-sub-menu"
+        [attr.aria-label]="
+          isOpen['alert'] ? 'Collapse Alert section' : 'Expand Alert section'
+        "
+      >
+        <span> Alert </span>
+        <div class="icon" [class.open]="isOpen['alert']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+
+      <ul class="sub-menu" role="list" [class.open]="isOpen['alert']">
+        <li>
           <a
-            routerLink="/"
+            routerLink="/alert/info-alert"
             routerLinkActive="active"
-            aria-label="Go to Introduction"
+            aria-label="Go to Alert info preview"
+            >Alert info</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alert/success-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert success preview"
+            >Alert success</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alert/warning-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert Warning preview"
+            >Alert Warning</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/alert/danger-alert"
+            routerLinkActive="active"
+            aria-label="Go to Alert Danger preview"
+            >Alert Danger</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="item with-content" [class.open]="isOpen['checkbox']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('checkbox')"
+        (keydown)="handleKeydown($event, 'checkbox')"
+        role="button"
+        aria-controls="checkbox-sub-menu"
+        [attr.aria-expanded]="isOpen['checkbox']"
+        [attr.aria-label]="
+          isOpen['checkbox']
+            ? 'Collapse checkbox section'
+            : 'Expand checkbox section'
+        "
+      >
+        <span> Checkbox </span>
+        <div class="icon" [class.open]="isOpen['checkbox']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['checkbox']">
+        <li>
+          <a
+            routerLink="/checkbox/checkbox1"
+            routerLinkActive="active"
+            aria-label="Go to Simple Checkbox"
             (click)="onLinkClick()"
           >
-            Intro
+            Simple checkbox
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/checkbox/checkbox-list"
+            routerLinkActive="active"
+            aria-label="Go to Checkbox list"
+            (click)="onLinkClick()"
+          >
+            Checkbox list
           </a>
         </li>
       </ul>
     </li>
 
-    <li class="menu-item">
-      <h3
-        (click)="toggleSection('global-elements')"
-        (keydown)="handleKeydown($event, 'global-elements')"
-        tabindex="0"
-        role="button"
-        [attr.aria-expanded]="isOpen['global-elements'] ? 'true' : 'false'"
+    <li class="item" [class.open]="isOpen['dropdown']">
+      <a
+        routerLink="/dropdown/dropdown1"
+        routerLinkActive="active"
+        aria-label="Go to Dropdown component"
+        (click)="onLinkClick()"
       >
-        Global Elements
-        <span
-          class="toggle-arrow"
-          [class.rotate]="isOpen['global-elements']"
-        ></span>
-      </h3>
-      <ul class="global-elements" [class.expanded]="isOpen['global-elements']">
-        <li>
-          <a
-            routerLink="/accordion"
-            routerLinkActive="active"
-            aria-label="Go to Accordion component"
-            (click)="onLinkClick()"
-          >
-            Accordion
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/alert"
-            routerLinkActive="active"
-            aria-label="Go to Alert component"
-            (click)="onLinkClick()"
-          >
-            Alert
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/footnote"
-            routerLinkActive="active"
-            aria-label="Go to Footnote component"
-            (click)="onLinkClick()"
-          >
-            Footnote
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/modal"
-            routerLinkActive="active"
-            aria-label="Go to Modal component"
-            (click)="onLinkClick()"
-          >
-            Modal
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/pagination"
-            routerLinkActive="active"
-            aria-label="Go to Pagination component"
-            (click)="onLinkClick()"
-          >
-            Pagination
-          </a>
-        </li>
+        Dropdown
+      </a>
+    </li>
 
+    <li class="item" [class.open]="isOpen['footnote']">
+      <a
+        routerLink="/footnote/footnote1"
+        routerLinkActive="active"
+        aria-label="Go to Footnote component"
+        (click)="onLinkClick()"
+      >
+        Footnote
+      </a>
+    </li>
+
+    <li class="item with-content" [class.open]="isOpen['login']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('login')"
+        (keydown)="handleKeydown($event, 'login')"
+        [attr.aria-expanded]="isOpen['login']"
+        aria-controls="login-sub-menu"
+        [attr.aria-label]="
+          isOpen['login'] ? 'Collapse Login section' : 'Expand Login section'
+        "
+        role="button"
+      >
+        <span> Login </span>
+        <div class="icon" [class.open]="isOpen['login']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['login']">
         <li>
           <a
-            routerLink="/show-more"
+            routerLink="/login/login1"
             routerLinkActive="active"
-            aria-label="Go to Show-more component"
+            aria-label="Go to Login with email"
             (click)="onLinkClick()"
           >
-            Show-more
+            with email
           </a>
         </li>
         <li>
           <a
-            routerLink="/table"
+            routerLink="/login/login2"
             routerLinkActive="active"
-            aria-label="Go to Table component"
+            aria-label="Go to Login with username"
             (click)="onLinkClick()"
           >
-            Table
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/tab-panel"
-            routerLinkActive="active"
-            aria-label="Go to Tab-panel component"
-            (click)="onLinkClick()"
-          >
-            Tab-panel
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/tooltip"
-            routerLinkActive="active"
-            aria-label="Go to Tooltip component"
-            (click)="onLinkClick()"
-          >
-            Tooltip
+            with username
           </a>
         </li>
       </ul>
     </li>
 
-    <li class="menu-item">
-      <h3
-        (click)="toggleSection('forms-input')"
-        (keydown)="handleKeydown($event, 'forms-input')"
-        tabindex="0"
-        role="button"
-        [attr.aria-expanded]="isOpen['forms-input'] ? 'true' : 'false'"
+    <li class="item" [class.open]="isOpen['modal']">
+      <a
+        routerLink="/modal/modal1"
+        routerLinkActive="active"
+        aria-label="Go to Modal component"
+        (click)="onLinkClick()"
       >
-        Forms Input
-        <span
-          class="toggle-arrow"
-          [class.rotate]="isOpen['forms-input']"
-        ></span>
-      </h3>
-      <ul class="forms-input" [class.expanded]="isOpen['forms-input']">
+        Modal
+      </a>
+    </li>
+
+    <li class="item" [class.open]="isOpen['pagination']">
+      <a
+        routerLink="/pagination/pagination1"
+        routerLinkActive="active"
+        aria-label="Go to Pagination component"
+        (click)="onLinkClick()"
+      >
+        Pagination
+      </a>
+    </li>
+
+    <li class="item" [class.open]="isOpen['radio-button']">
+      <a
+        routerLink="/radio-button/radio-button1"
+        aria-label="Go to Radio-button component"
+        routerLinkActive="active"
+        (click)="onLinkClick()"
+      >
+        Radio-button
+      </a>
+    </li>
+
+    <li class="item" [class.open]="isOpen['search-bar']">
+      <a
+        routerLink="/search-bar/search-bar1"
+        routerLinkActive="active"
+        aria-label="Go to search-bar component"
+        (click)="onLinkClick()"
+      >
+        Search-bar
+      </a>
+    </li>
+
+    <li class="item" [class.open]="isOpen['show-more']">
+      <a
+        routerLink="/show-more/show-more1"
+        routerLinkActive="active"
+        aria-label="Go to Show-more component"
+        (click)="onLinkClick()"
+      >
+        Show-more
+      </a>
+    </li>
+
+    <li class="item" [class.open]="isOpen['tab-panel']">
+      <a
+        routerLink="/tab-panel/tab-panel1"
+        routerLinkActive="active"
+        aria-label="Go to Tab-panel component"
+        (click)="onLinkClick()"
+      >
+        Tab-panel
+      </a>
+    </li>
+    <li class="item" [class.open]="isOpen['table']">
+      <a
+        routerLink="/table/table1"
+        routerLinkActive="active"
+        aria-label="Go to Table component"
+        (click)="onLinkClick()"
+      >
+        Table
+      </a>
+    </li>
+    <li class="item with-content" [class.open]="isOpen['toggle']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('toggle')"
+        (keydown)="handleKeydown($event, 'toggle')"
+        [attr.aria-expanded]="isOpen['toggle']"
+        role="button"
+        aria-controls="toggle-sub-menu"
+        [attr.aria-label]="
+          isOpen['toggle'] ? 'Collapse Toggle section' : 'Expand Toggle section'
+        "
+      >
+        <span> Toggle </span>
+        <div class="icon" [class.open]="isOpen['toggle']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['toggle']">
         <li>
           <a
-            routerLink="/checkbox"
+            routerLink="/toggle/toggle1"
             routerLinkActive="active"
-            aria-label="Go to Checkbox component"
+            aria-label="Go to Simple Toggle"
             (click)="onLinkClick()"
           >
-            Checkbox
+            Simple
           </a>
         </li>
         <li>
           <a
-            routerLink="/dropdown"
+            routerLink="/toggle/toggle2"
             routerLinkActive="active"
-            aria-label="Go to Dropdown component"
+            aria-label="Go to Toggle With text"
             (click)="onLinkClick()"
           >
-            Dropdown
+            With text
           </a>
         </li>
         <li>
           <a
-            routerLink="/login"
+            routerLink="/toggle/toggle3"
             routerLinkActive="active"
-            aria-label="Go to Login component"
+            aria-label="Go to Toggle With indication"
             (click)="onLinkClick()"
           >
-            Login
+            With indication
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="item with-content" [class.open]="isOpen['tooltip']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('tooltip')"
+        (keydown)="handleKeydown($event, 'tooltip')"
+        [attr.aria-expanded]="isOpen['tooltip']"
+        role="button"
+        aria-controls="tooltip-sub-menu"
+        [attr.aria-label]="
+          isOpen['tooltip']
+            ? 'Collapse Tooltip section'
+            : 'Expand Tooltip section'
+        "
+      >
+        <span> Tooltip </span>
+        <div class="icon" [class.open]="isOpen['tooltip']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['tooltip']">
+        <li>
+          <a
+            routerLink="/tooltip/tooltip1"
+            routerLinkActive="active"
+            aria-label="Go to Tooltip Clickable"
+            (click)="onLinkClick()"
+          >
+            Clickable
           </a>
         </li>
         <li>
           <a
-            routerLink="/radio-button"
-            aria-label="Go to Radio-button component"
+            routerLink="/tooltip/tooltip2"
             routerLinkActive="active"
+            aria-label="Go to Tooltip Hover"
             (click)="onLinkClick()"
           >
-            Radio-button
+            Hover
           </a>
         </li>
         <li>
           <a
-            routerLink="/search-bar"
+            routerLink="/tooltip/tooltip3"
             routerLinkActive="active"
-            aria-label="Go to search-bar component"
+            aria-label="Go to Tooltip With button"
             (click)="onLinkClick()"
           >
-            Search-bar
-          </a>
-        </li>
-        <li>
-          <a
-            routerLink="/toggle"
-            routerLinkActive="active"
-            aria-label="Go to Toggle component"
-            (click)="onLinkClick()"
-          >
-            Toggle
+            With button
           </a>
         </li>
       </ul>

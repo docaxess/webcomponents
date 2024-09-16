@@ -1,49 +1,34 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Tooltip 3'"
-    [breadcrumbItems]="[
-      { label: 'Tooltip', link: '/tooltip' },
-      { label: 'Tooltip 3' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      <div class="container">
-        @if (currentView === 'preview') {
-          <div class="preview">
-            <ip-tooltip
-              id="clicked-tooltip"
-              tooltip-trigger="Click me !"
-              tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-              tooltip-btn-close="true"
-              tooltip-btn-1="Cancel"
-              tooltip-btn-2="Learn More"
-              type="click"
-            >
-            </ip-tooltip>
-          </div>
-        }
-
-        @if (currentView === 'code') {
-          <app-code-snippet [code]="withButtonCode"> </app-code-snippet>
-        }
-
-        @if (currentView === 'doc') {
-          <app-doc-tooltip></app-doc-tooltip>
-        }
-      </div>
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Tooltip with button</h2>
+    <p>
+      A tooltip is a brief, informative message that appears when a user hovers
+      over or focuses on an element within a graphical user interface. It
+      provides explanations or extra context for the item, enhancing usability
+      and guidance.
+    </p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="preview">
+      <ip-tooltip
+        id="clicked-tooltip"
+        tooltip-trigger="Click me !"
+        tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+        tooltip-btn-close="true"
+        tooltip-btn-1="Cancel"
+        tooltip-btn-2="Learn More"
+        type="click"
+      >
+      </ip-tooltip>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="withButtonCode" [cssCode]="cssTooltip3">
+    </app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-tooltip></app-doc-tooltip>
+  </app-accordion>
 </div>

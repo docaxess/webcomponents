@@ -7,22 +7,20 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
 import { RouterLink } from '@angular/router';
 import { DocAccordionComponent } from '../doc-accordion/doc-accordion.component';
 import { defineCustomElements as accordionElements } from '@ipedis/accordion/loader';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-accordion1',
   standalone: true,
   imports: [
     CommonModule,
-    ViewSwitcherComponent,
     CodeSnippetComponent,
     DocAccordionComponent,
     RouterLink,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './accordion1.component.html',
   styleUrl: './accordion1.component.scss',
@@ -40,26 +38,22 @@ export class Accordion1Component {
    {
     "title": "Accessibilité", "iconPath": "assets/images/acc-1.svg",
     "iconActivePath": "assets/images/acc-1-active.svg", "id": "accordion-1",
-    "ariaText": "sect-1", "btnAlt": "Afficher plus sur section 1",
-    "btnAltClose": "Afficher moins sur section 1"
+    "ariaText": "sect-1"
     },
    {
     "title": "Pdf Document", "iconPath": "assets/images/acc-2.svg",
     "iconActivePath": "assets/images/acc-2-active.svg", "id": "accordion-2",
-     "ariaText": "sect-2", "btnAlt": "Afficher plus sur section 2",
-     "btnAltClose": "Afficher moins sur section 2"
+     "ariaText": "sect-2"
      },
    {
      "title": "Statistical", "iconPath": "assets/images/acc-3.svg",
     "iconActivePath": "assets/images/acc-3-active.svg", "id": "accordion-3",
-     "ariaText": "sect-3", "btnAlt": "Afficher plus sur section 3",
-      "btnAltClose": "Afficher moins sur section 3"
+     "ariaText": "sect-3"
     },
    {
     "title": "Certification", "iconPath": "assets/images/acc-4.svg",
     "iconActivePath": "assets/images/acc-4-active.svg", "id": "accordion-4",
-    "ariaText": "sect-4", "btnAlt": "Afficher plus sur section 4",
-    "btnAltClose": "Afficher moins sur section 4"
+    "ariaText": "sect-4"
    }
  ]'
 >
@@ -115,7 +109,7 @@ export class Accordion1Component {
       </p>
       <a
         class="acc-content__btn"
-        aria-label="En savoir plus, (update me to real title)"
+        aria-label="En savoir plus sur Comment ont été conçus les PDF ?"
         href="#"
       >
         En savoir plus
@@ -144,8 +138,7 @@ export class Accordion1Component {
       </p>
       <a
         class="acc-content__btn"
-        aria-label="En savoir plus,
-    (update me to real title)"
+        En savoir plus sur comment gerer efficacement la creation"
         href="#"
       >
         En savoir plus
@@ -174,8 +167,7 @@ export class Accordion1Component {
       </p>
       <a
         class="acc-content__btn"
-        aria-label="En savoir plus,
-   (update me to real title)"
+        aria-label="En savoir plussur Nos équipes vous accompagnent"
         href="#"
       >
         En savoir plus
@@ -184,12 +176,90 @@ export class Accordion1Component {
   </div>
 </ip-accordion>
 `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
-  switcherTitle = 'Accordion 1';
+  cssAccordion = `
+ip-accordion {
+  --ip-acc-font: 'Mulish-regular';
+}
+.ip-accordion {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+.acc-content {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.acc-content__title {
+  margin-block-start: 2.188em;
+  font-size: 1.125rem;
+  color: #b00057;
+  text-transform: uppercase;
+}
+a {
+  text-decoration: none;
+  color: #b00057;
+}
+.acc-content__btn {
+  margin-top: 20px;
+  font-family: 'Mulish-regular';
+  font-size: 16px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b00057;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ip-accordion .ip-accordion-panel {
+  visibility: visible;
+  opacity: 1;
+  max-height: 1000px;
+  transition: all 0.3s ease-in;
+}
+.ip-accordion .js-acc-panel-hide {
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+}
+@media (max-width: 768px) {
+  .acc-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .acc-content__btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ip-accordion {
+    padding: 1rem;
+  }
+
+  .acc-content {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .acc-content__title {
+    font-size: 1rem;
+  }
+
+  .acc-content__btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && accordionElements) {
       accordionElements(inject(DOCUMENT).defaultView as Window);

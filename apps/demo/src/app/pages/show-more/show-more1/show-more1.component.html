@@ -1,46 +1,31 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Show-more 1'"
-    [breadcrumbItems]="[
-      { label: 'Show-more', link: '/show-more' },
-      { label: 'Show-more 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-      <div
-        class="content"
-        [ngClass]="{ 'code-background': currentView === 'code' }"
-      >
-        @if (currentView === 'preview') {
-          <div class="show-more-wrapper">
-            <ip-show-more
-              show-less-text="Voir moins"
-              show-more-text="Voir plus"
-            >
-              <div slot="content" class="show-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                blanditiis itaque deserunt ab ad eum, voluptas animi non quos
-                esse modi voluptate nemo temporibus? Voluptates excepturi
-                asperiores autem quisquam provident!
-              </div>
-            </ip-show-more>
-          </div>
-        }
-        @if (currentView === 'code') {
-          <app-code-snippet [code]="showMoreCode"></app-code-snippet>
-        }
-        @if (currentView === 'doc') {
-          <app-doc-show-more></app-doc-show-more>
-        }
-      </div>
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Show-more button</h2>
+    <p></p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="show-more-wrapper">
+      <ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
+        <div slot="content" class="show-content">
+          <app-card
+            *ngFor="let card of moreCards"
+            [imageUrl]="card.imageUrl"
+            [title]="card.title"
+          >
+          </app-card>
+        </div>
+      </ip-show-more>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet
+      [htmlCode]="showMoreCode"
+      [cssCode]="smCss"
+    ></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-show-more></app-doc-show-more>
+  </app-accordion>
 </div>

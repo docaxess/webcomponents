@@ -1,43 +1,30 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Footnote 1'"
-    [breadcrumbItems]="[
-      { label: 'Footnote', link: '/footnote' },
-      { label: 'Footnote 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <p>
-          Here is a sentence with a footnote reference<sup
-            ><a href="#footnote-1" id="ref1">1</a></sup
-          >.
-        </p>
-        <ip-footnote
-          id="footnote-1"
-          identifier="1"
-          text="This is a detailed explanation or reference for the footnote."
-        ></ip-footnote>
-      }
-      @if (currentView === 'code') {
-        <app-code-snippet [code]="codeSnippet"></app-code-snippet>
-      }
-      @if (currentView === 'doc') {
-        <app-doc-footnote></app-doc-footnote>
-      }
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Footnote</h2>
+    <p></p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div>
+      <p>
+        Here is a sentence with a footnote reference
+        <sup><a href="#footnote-1" id="ref1">1</a></sup
+        >.
+      </p>
+
+      <ip-footnote
+        id="footnote-1"
+        identifier="1"
+        text="This is a detailed explanation or reference for the footnote."
+      >
+      </ip-footnote>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="codeSnippet"></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-footnote></app-doc-footnote>
+  </app-accordion>
 </div>

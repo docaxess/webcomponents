@@ -1,11 +1,4 @@
 @import '../../../../assets/styles/index.scss';
-.content {
-  background-color: #f4f4f4;
-  height: 675px;
-  overflow-y: auto;
-  border-radius: 0 0 rem(15) rem(15);
-  width: 100%;
-}
 
 .modal-wrapper {
   display: flex;
@@ -13,40 +6,12 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 200px;
-}
-.wrapper-title {
-  color: #fff;
-  font-family: 'Nunito';
-  font-size: rem(16);
-  font-style: normal;
-  line-height: normal;
-
-  h3 {
-    color: #fff;
-    font-size: rem(40);
-    font-weight: 800;
-    margin: rem(15) 0;
-  }
-  .breadcrumb {
-    font-weight: 400;
-    ol {
-      display: flex;
-      gap: rem(10);
-      li {
-        color: #fff;
-        font-size: rem(16);
-        font-weight: 400;
-        list-style: none;
-        a {
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-    }
-  }
+  height: 500px;
 }
 
+ip-modal::part(trigger-button) {
+  font-family: 'Mulish-regular';
+}
 .modal-content {
   margin: rem(10) 0;
   padding: rem(10);
@@ -56,7 +21,7 @@
       font-size: rem(30);
       font-weight: 800;
       color: #2749a3;
-      font-family: 'Nunitp';
+      font-family: 'Mulish-regular';
     }
     p {
       text-align: center;
@@ -89,7 +54,7 @@
     background: #2749a3 !important;
     width: 467px;
     border-radius: 8px;
-    font-family: 'roboto';
+    font-family: 'Mulish-regular';
     padding: 15px;
     color: white;
     border: none;

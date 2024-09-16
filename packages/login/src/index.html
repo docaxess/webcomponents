@@ -9,7 +9,7 @@
     <title>Login Web-component</title>
     <style>
       .login-form {
-        max-width: 300px;
+        max-width: 500px;
         margin: 0 auto;
         padding: 20px;
         border: 1px solid #ccc;
@@ -49,7 +49,10 @@
     <script nomodule src="/build/login.js"></script>
   </head>
   <body>
-    <form class="login-form">
+    <div class="login-form">
+      <ip-login username-required></ip-login>
+    </div>
+    <!-- <form class="login-form">
       <ip-email
         class="form-group"
         error-message="The email entered is incorrect"
@@ -79,6 +82,6 @@
       >
       </ip-password>
       <button class="btn" type="submit">Login</button>
-    </form>
+    </form> -->
   </body>
 </html>

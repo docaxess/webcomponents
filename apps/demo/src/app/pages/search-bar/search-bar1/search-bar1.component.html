@@ -1,42 +1,25 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Search-bar 1'"
-    [breadcrumbItems]="[
-      { label: 'Search-bar', link: '/search-bar' },
-      { label: 'Search-bar 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <div class="search-wrapper">
-          <ip-search-bar
-            placeholder="Please enter a keyword !"
-            suggestions-data='["Accessibility Web ", "Accessibility Website", "Accessibility assistive technologies", "Accessibility ressources", "Accessibility barrier-free solutions", "Accessibility Web content guidelines"]'
-          >
-          </ip-search-bar>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <div class="code-wrapper">
-          <app-code-snippet [code]="searchCode"></app-code-snippet>
-        </div>
-      }
-      @if (currentView === 'doc') {
-        <app-doc-search-bar></app-doc-search-bar>
-      }
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Search-bar</h2>
+    <p></p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="search-wrapper">
+      <ip-search-bar
+        placeholder="Please enter a keyword !"
+        suggestions-data='["Accessibility Web ", "Accessibility Website", "Accessibility assistive technologies", "Accessibility ressources", "Accessibility barrier-free solutions", "Accessibility Web content guidelines"]'
+      >
+      </ip-search-bar>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <div class="code-wrapper">
+      <app-code-snippet [htmlCode]="searchCode"></app-code-snippet>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-search-bar></app-doc-search-bar>
+  </app-accordion>
 </div>

@@ -73,7 +73,7 @@ We have a set of predefined variable used to customisation the checkbox:
 To update the values use the following:
 
 ```css
-ip-checkbox-list {
+ip-radio {
   --primary-color: #006342;
   --secondary-color: #000000;
   --radio-size: 18px;

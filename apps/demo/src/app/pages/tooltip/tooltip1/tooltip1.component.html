@@ -1,43 +1,30 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Tooltip 1'"
-    [breadcrumbItems]="[
-      { label: 'Tooltip', link: '/tooltip' },
-      { label: 'Tooltip 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      <div class="container">
-        @if (currentView === 'preview') {
-          <div class="preview">
-            <ip-tooltip
-              tooltip-trigger="Click Me!"
-              tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
-              type="click"
-            >
-            </ip-tooltip>
-          </div>
-        }
-        @if (currentView === 'code') {
-          <app-code-snippet [code]="clickableCode"> </app-code-snippet>
-        }
-        @if (currentView === 'doc') {
-          <app-doc-tooltip></app-doc-tooltip>
-        }
-      </div>
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Clickable tooltip</h2>
+    <p>
+      A tooltip is a brief, informative message that appears when a user hovers
+      over or focuses on an element within a graphical user interface. It
+      provides explanations or extra context for the item, enhancing usability
+      and guidance.
+    </p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="preview">
+      <ip-tooltip
+        tooltip-trigger="Click Me!"
+        tooltip-content="Please enter a description of the tooltip. The length is 3/4 lines maximum. Arrows can be adjusted position."
+        type="click"
+      >
+      </ip-tooltip>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="clickableCode" [cssCode]="cssTooltip1">
+    </app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-tooltip></app-doc-tooltip>
+  </app-accordion>
 </div>

@@ -1,36 +1,19 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Table 1'"
-    [breadcrumbItems]="[
-      { label: 'Table', link: '/table' },
-      { label: 'Table 1' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <div class="table-wrapper">
-          <ip-table
-            columns='[
+  <div class="component-intro">
+    <h2 class="title">Table</h2>
+    <p></p>
+  </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="table-wrapper">
+      <ip-table
+        columns='[
                   &#123; "header": "Name" , "type": "string"&#125;,
                   &#123; "header": "Number", "type": "number" &#125;,
                   &#123; "header": "Category", "type": "string" &#125;,
                   &#123; "header": "Price" ,"type": "number"&#125;,
                   &#123; "header": "Status", "type": "string" &#125;
                   ]'
-            rows='[
+        rows='[
                   &#123;"Name":"Slim Fit chinos","Number" :9504,"Category": "Men’s outwear","Price": 98.25, "Status": "In Stock"&#125;,
                   &#123;"Name":"Wide-Brimmed Floppy Hat","Number": 9000,"Category": "Women’s Outwear","Price": 145.66,"Status": "Backorder"&#125;,
                   &#123;"Name":"V-Neck Cashmere Sweater","Number": 9485,"Category": "Men’s outwear","Price": 65.00,"Status": "Low Stock"&#125;,
@@ -41,18 +24,21 @@
                   &#123;"Name":"High-Waisted Skinny Jeans","Number": 7859,"Category": "Women’s Outwear","Price": 125.00,"Status": "Low Stock"&#125;,
                   &#123;"Name":"Men’s Harrington Jacket","Number":5600,"Category": "Men’s outwear","Price": 150.58,"Status": "In Stock"&#125;
                 ]'
-          >
-          </ip-table>
-        </div>
-      }
-      @if (currentView === 'code') {
-        <div class="code-wrapper">
-          <app-code-snippet [code]="codeSnippet"></app-code-snippet>
-        </div>
-      }
-      @if (currentView === 'doc') {
-        <app-doc-table></app-doc-table>
-      }
+      >
+      </ip-table>
     </div>
-  </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <div class="code-wrapper">
+      <app-code-snippet
+        [htmlCode]="codeSnippet"
+        [cssCode]="cssTable"
+      ></app-code-snippet>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-table></app-doc-table>
+  </app-accordion>
 </div>

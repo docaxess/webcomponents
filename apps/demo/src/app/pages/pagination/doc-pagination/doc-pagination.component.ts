@@ -13,12 +13,12 @@ import { Highlight } from 'ngx-highlightjs';
 export class DocPaginationComponent {
   installationScript = `npm install ip-pagination`;
   import = `import '../node_modules/ip-pagination/dist/ip-pagination/ip-pagination.esm';`;
-  custom = `ip-pagination {
-          --pagination-button-background: #006342;
-          --pagination-button-active-background: #333333;
-          --pagination-button-border-radius: 14px;
-        }
-          `;
+  custom = `
+  ip-pagination {
+    --pagination-button-background: #006342;
+    --pagination-button-active-background: #333333;
+    --pagination-button-border-radius: 14px;
+  }`;
   handlingEventExample = `const pagination = document.querySelector('ip-pagination');
   
 pagination?.addEventListener('pageChanged', (event) => {

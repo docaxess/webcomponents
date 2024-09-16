@@ -11,21 +11,22 @@ import { Highlight } from 'ngx-highlightjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DocTableComponent {
-  installationScript = `npm install ip-show-more`;
-  import = `import '../node_modules/ip-show-more/dist/ip-show-more/ip-show-more.esm';`;
-  example = `<ip-show-more show-more-text="Read More" show-less-text="Read Less">
-  <div slot="content">
-    This is the expanded content that will be shown or hidden when the button is
-    clicked.
-  </div>
-</ip-show-more>`;
-  custom = `ip-show-more {
-  --ip-primary-color: #006342;
-  --ip-secondary-color: #000000;
-  --ip-font-size: 16px;
-  --ip-font-color: #333;
-  --ip-font-family: Arial, sans-serif;
-  --ip-svg-color: #fff;
+  installationScript = `npm install ip-table`;
+  import = `import '../node_modules/ip-table/dist/ip-table/ip-table.esm';`;
+  example = `<ip-table
+  columns='[
+      { "header": "Name" , "type": "string"},
+      { "header": "Age", "type": "number" },
+      ]'
+  rows='[
+      {"Name":"Benoit", "Age":25}
+      {"Name":"Linda", "Age":23}
+    ]'
+>
+</ip-table>`;
+  custom = `ip-table {
+  --primary-color: #006342;
+  --secondary-color: #000000;
 }
 `;
 }

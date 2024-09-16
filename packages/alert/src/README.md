@@ -57,7 +57,7 @@ To update the values use the following:
 
 ```css
 ip-alert {
-  --alert-font-family: 'Nunito Sans';
+  --alert-font-family: 'Mulish-regular Sans';
   --alert-font-title-size: 16px;
 }
 ```

@@ -9,9 +9,9 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { DocTabPanelComponent } from '../doc-tab-panel/doc-tab-panel.component';
 import { defineCustomElements as tabPanelElements } from '@ipedis/tab-panel/loader';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { RouterLink } from '@angular/router';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-tab-panel1',
@@ -20,9 +20,8 @@ import { RouterLink } from '@angular/router';
     CommonModule,
     DocTabPanelComponent,
     CodeSnippetComponent,
-    BreadcrumbComponent,
-    ViewSwitcherComponent,
     RouterLink,
+    AccordionComponent,
   ],
   templateUrl: './tab-panel1.component.html',
   styleUrl: './tab-panel1.component.scss',
@@ -172,12 +171,106 @@ export class TabPanel1Component {
       </div>
     </ip-tab-panel>
   `;
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
-  switcherTitle = 'Tab-panel 1';
 
+  cssTabPanel = `
+ip-tab-panel::part(tab) {
+  gap: 5px;
+  color: purple;
+  position: relative;
+}
+ip-tab-panel::part(tab-container) {
+  font-family: 'Mulish-regular';
+}
+ip-tab-panel::part(tab-panel-title) {
+  font-family: 'Mulish-regular';
+}
+ip-tab-panel::part(tab-active) {
+  background-color: purple;
+  color: white;
+}
+
+ip-tab-panel::part(tab-header) {
+  outline: 2px solid red;
+  outline-offset: 0.025em;
+  display: flex;
+  flex-direction: column;
+}
+
+ip-tab-panel::part(tab-list) {
+  display: flex;
+  flex-direction: column;
+}
+
+.ip-content {
+  margin-block: 1rem;
+  display: flex;
+}
+
+.ip-content img {
+  border-radius: 0.625em;
+  object-fit: contain;
+  width: 350px;
+}
+
+.ip-content .ip-content-desc {
+  margin-left: 3.125em;
+  margin-right: 25px;
+}
+
+.ip-content .ip-content-title {
+  margin-block-start: 2.188em;
+  font-family: 'Mulish-regular';
+  font-size: 1.125rem;
+  color: #b00057;
+  text-transform: uppercase;
+}
+
+.ip-content .ip-content-subtitle {
+  margin-top: 15px;
+  font-family: 'Mulish-regular';
+  font-size: 42px;
+  color: #b00057;
+}
+
+.ip-content .ip-content-text {
+  margin-top: 20px;
+  font-family: 'Mulish-regular';
+  font-size: 18px;
+  color: #2e3243;
+}
+
+.ip-content .ip-content-btn {
+  margin-top: 20px;
+  font-family: 'Mulish-regular';
+  font-size: 16px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #b00057;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ip-content .ip-content-btn img {
+  margin-left: 15px;
+  width: 14px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.tab-panel {
+  max-width: 960px;
+  margin: 20px auto;
+}
+
+.panel-wrapper {
+  border: 1px solid $darkColor;
+  border-radius: 5px;
+}
+  `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tabPanelElements) {
       tabPanelElements(inject(DOCUMENT).defaultView as Window);

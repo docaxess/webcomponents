@@ -28,10 +28,10 @@ To use this component, we must add the properties as attributes.
 
 ### Properties
 
-| Property | Attribute | Necessity | Description                                                         | Type     | Default     |
-| -------- | --------- | --------- | ------------------------------------------------------------------- | -------- | ----------- |
-| `columns`| `columns` | Required  | `This is a JSON string representing an array of objects for thead ` | `string` | `undefined` |
-| `rows`   | `rows`    | Required  | `This is a JSON string representing an array of objects for tbody ` | `string` | `undefined` |
+| Property  | Attribute | Necessity | Description                                                         | Type     | Default     |
+| --------- | --------- | --------- | ------------------------------------------------------------------- | -------- | ----------- |
+| `columns` | `columns` | Required  | `This is a JSON string representing an array of objects for thead ` | `string` | `undefined` |
+| `rows`    | `rows`    | Required  | `This is a JSON string representing an array of objects for tbody ` | `string` | `undefined` |
 
 #### Columns property
 
@@ -74,7 +74,7 @@ We have a set of predefined variable used to customisation the tooltip:
   To update the values use the following:
 
 ```css
-ip-tooltip {
+ip-table {
   --primary-color: #006342;
   --secondary-color: #000000;
 }

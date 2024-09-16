@@ -1,18 +1,12 @@
 @import 'highlight.js/styles/vs2015.css';
 
 @font-face {
-  font-family: 'Nunito-bold';
-  src: url('/assets/styles/fonts/Nunito-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Nunito';
-  src: url('/assets/styles/fonts/Nunito-Regular.woff') format('woff');
+  font-family: 'Mulish-regular';
+  src: url('/assets/styles/fonts/Mulish-Regular.woff') format('woff');
 }
 body {
   margin: 0;
-  font-family: 'Nunito-bold';
+  font-family: 'Mulish-regular';
   //default style for accessibility
   color: #000;
   background-color: white;

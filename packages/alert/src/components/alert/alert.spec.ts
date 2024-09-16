@@ -16,8 +16,8 @@ describe('ip-alert', () => {
             <ip-alert>
                 <mock:shadow-root>
 <div class="alert alert-info" role="alert">
-  <div class="icon">
-<img alt="Info Icon" src="info-icon.svg">
+  <div class="icon" aria-hidden="true">
+<img alt="Info Icon"  src="info-icon.svg">
   </div>
   <button class="close-button" aria-label="Close alert" 
    >×</button>
@@ -36,8 +36,8 @@ describe('ip-alert', () => {
             <ip-alert alert-title="Test Title" message="Test Message">
                 <mock:shadow-root>
                 <div class="alert alert-info" role="alert">
-  <div class="icon">
-<img alt="Info Icon" src="info-icon.svg">
+  <div class="icon" aria-hidden="true">
+<img alt="Info Icon"  src="info-icon.svg">
   </div>
   <button class="close-button" aria-label="Close alert" 
   >×</button>

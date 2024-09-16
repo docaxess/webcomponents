@@ -1,53 +1,41 @@
 <div class="modal-content">
-  <app-breadcrumb
-    [title]="'Toggle 2'"
-    [breadcrumbItems]="[
-      { label: 'Toggle', link: '/toggle' },
-      { label: 'Toggle 2' },
-    ]"
-  >
-  </app-breadcrumb>
-  <div class="wrapper">
-    <div class="wrapper-head">
-      <app-view-switcher
-        [currentView]="currentView"
-        [title]="switcherTitle"
-        (viewChange)="switchView($event)"
-      >
-      </app-view-switcher>
-    </div>
-    <div
-      class="content"
-      [ngClass]="{ 'code-background': currentView === 'code' }"
-    >
-      @if (currentView === 'preview') {
-        <div class="toggle">
-          <ip-toggle
-            active-label="ON"
-            inactive-label="OFF"
-            aria-label="Toggle notifications on or off"
-            size="small"
-            checked="true"
-          >
-          </ip-toggle>
-
-          <ip-toggle
-            active-label="ON"
-            inactive-label="OFF"
-            aria-label="Toggle notifications on or off"
-            checked="false"
-          >
-          </ip-toggle>
-        </div>
-      }
-
-      @if (currentView === 'code') {
-        <app-code-snippet [code]="toggleWithTextCode"> </app-code-snippet>
-      }
-
-      @if (currentView === 'doc') {
-        <app-doc-toogle></app-doc-toogle>
-      }
-    </div>
+  <div class="component-intro">
+    <h2 class="title">Toggle with text</h2>
+    <p>
+      Used in digital interfaces to switch a single setting or option on and
+      off. Resembling a physical switch, it provides a clear visual cue of its
+      state, making it intuitive for users. Toggles are commonly employed for
+      binary settings like turning options on or off in applications and
+      websites, offering a simpler alternative to checkboxes for immediate,
+      single-action settings.
+    </p>
   </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="toggle">
+      <ip-toggle
+        active-label="ON"
+        inactive-label="OFF"
+        aria-label="Toggle notifications on or off"
+        size="small"
+        checked="true"
+      >
+      </ip-toggle>
+
+      <ip-toggle
+        active-label="ON"
+        inactive-label="OFF"
+        aria-label="Toggle notifications on or off"
+        checked="false"
+      >
+      </ip-toggle>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet [htmlCode]="toggleWithTextCode"> </app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-toogle></app-doc-toogle>
+  </app-accordion>
 </div>

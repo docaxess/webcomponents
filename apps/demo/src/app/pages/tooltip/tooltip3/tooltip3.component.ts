@@ -9,9 +9,9 @@ import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { defineCustomElements as tooltipElements } from '@ipedis/tooltip/loader';
 import { DocTooltipComponent } from '../doc-tooltip/doc-tooltip.component';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { ViewSwitcherComponent } from '../../../features/view-switcher/view-switcher.component';
+
 import { RouterLink } from '@angular/router';
-import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.component';
+import { AccordionComponent } from '../../../features/accordion/accordion.component';
 
 @Component({
   selector: 'app-tooltip3',
@@ -20,9 +20,8 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
     CommonModule,
     DocTooltipComponent,
     CodeSnippetComponent,
-    ViewSwitcherComponent,
     RouterLink,
-    BreadcrumbComponent,
+    AccordionComponent,
   ],
   templateUrl: './tooltip3.component.html',
   styleUrl: './tooltip3.component.scss',
@@ -30,10 +29,6 @@ import { BreadcrumbComponent } from '../../../features/breadcrumb/breadcrumb.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Tooltip3Component {
-  currentView: 'preview' | 'code' | 'doc' = 'preview';
-  switchView(view: 'preview' | 'code' | 'doc'): void {
-    this.currentView = view;
-  }
   switcherTitle = 'Tooltip 3';
   withButtonCode = `
       <ip-tooltip
@@ -47,6 +42,34 @@ export class Tooltip3Component {
         type="click"
       >
       </ip-tooltip>
+  `;
+
+  cssTooltip3 = `
+ip-tooltip::part(tooltip-trigger) {
+  font-family: 'Mulish-regular';
+  width: 125px;
+  height: 40px;
+  font-size: 18px;
+  &:focus,
+  &:hover {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+}
+ip-tooltip::part(tooltip-content) {
+  font-family: 'Mulish-regular';
+  font-size: 16px;
+}
+
+ip-tooltip::part(tooltip-btn1) {
+  font-family: 'Mulish-regular';
+  font-size: 16px;
+  color: #c21313;
+}
+ip-tooltip::part(tooltip-btn2) {
+  font-family: 'Mulish-regular';
+  font-size: 16px;
+}
   `;
   constructor() {
     if (isPlatformBrowser(inject(PLATFORM_ID)) && tooltipElements) {

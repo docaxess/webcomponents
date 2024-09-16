@@ -15,6 +15,13 @@
 | `type`           | `type`             |             | `"danger" \| "info" \| "success" \| "warning"` | `'info'`        |
 
 
+## Events
+
+| Event         | Description | Type                |
+| ------------- | ----------- | ------------------- |
+| `alertClosed` |             | `CustomEvent<void>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
