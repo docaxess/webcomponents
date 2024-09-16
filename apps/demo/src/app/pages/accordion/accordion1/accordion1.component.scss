@@ -1,13 +1,18 @@
 @import '../../../../assets/styles/index.scss';
+
+.preview {
+  display: flex;
+  justify-content: center;
+}
 .modal-content {
   width: 100%;
 }
 ip-accordion {
-  --ip-acc-font: 'Mulish-regular';
+  --ip-acc-font: 'Mulish-light';
 }
 .accordion-wrapper {
   padding: rem(30);
-  width: 92%;
+  width: 70%;
 }
 
 .ip-accordion {
@@ -21,7 +26,12 @@ ip-accordion {
   gap: rem(20);
   margin-bottom: rem(20);
 }
-
+.acc-content__image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: rem(4);
+}
 .acc-content__title {
   margin-block-start: 2.188em;
   font-size: 1.125rem;
@@ -34,7 +44,7 @@ a {
 }
 .acc-content__btn {
   margin-top: rem(20);
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: rem(16);
   display: inline-block;
   justify-content: center;

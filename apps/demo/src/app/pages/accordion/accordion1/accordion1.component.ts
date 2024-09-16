@@ -178,7 +178,7 @@ export class Accordion1Component {
 `;
   cssAccordion = `
 ip-accordion {
-  --ip-acc-font: 'Mulish-regular';
+  --ip-acc-font: 'Mulish-light';
 }
 .ip-accordion {
   max-width: 1200px;
@@ -204,7 +204,7 @@ a {
 }
 .acc-content__btn {
   margin-top: 20px;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 16px;
   display: inline-block;
   justify-content: center;

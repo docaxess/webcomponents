@@ -5,7 +5,7 @@ a {
 .card-content {
   display: flex;
   flex-direction: column;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
 }
 .card {
   background-color: $cardBackgroundColor;
@@ -34,7 +34,7 @@ a {
   }
 }
 .title {
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-weight: normal;
   line-height: 1.2;
   text-align: start;
@@ -68,7 +68,7 @@ a {
     font-size: rem(16);
     margin: 0;
     color: $cardTextColor;
-    font-family: 'Mulish-regular';
+    font-family: 'Mulish-light';
   }
 }
 

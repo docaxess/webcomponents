@@ -5,7 +5,8 @@ import {
   ElementRef,
   inject,
   PLATFORM_ID,
-  ViewChild, AfterViewInit,
+  ViewChild,
+  AfterViewInit,
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
@@ -79,7 +80,7 @@ export class WarningAlertComponent implements AfterViewInit {
   cssAlertCode = `
 button {
   margin-top: 20px;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 16px;
   display: inline-block;
   justify-content: center;
@@ -93,7 +94,7 @@ button {
   width: 175px;
 }
 ip-alert {
-  --alert-font-family: 'Mulish-regular';
+  --alert-font-family: 'Mulish-light';
   --alert-font-size: 18px;
 }
   `;

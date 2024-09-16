@@ -42,7 +42,7 @@ export class Tooltip1Component {
   `;
   cssTooltip1 = `
 ip-tooltip::part(tooltip-trigger) {
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   width: 125px;
   height: 40px;
   font-size: 18px;
@@ -53,7 +53,7 @@ ip-tooltip::part(tooltip-trigger) {
   }
 }
 ip-tooltip::part(tooltip-content) {
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 16px;
 }
 

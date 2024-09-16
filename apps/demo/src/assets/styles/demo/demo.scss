@@ -1,18 +1,63 @@
 @import '../utilities';
 @import '../theme/colors';
+.modal-content {
+  padding-left: 20px;
+  .component-intro {
+    color: #2e3243;
+    display: flex;
+    width: 706px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding-bottom: 60px;
+    margin: 0;
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      p {
+        color: #474747;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin: 0;
+        font-family: 'Mulish-light';
+      }
+      h2 {
+        color: #2e3243;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        margin: 0;
+        font-family: 'Mulish-bold';
+      }
+    }
+    p {
+      margin: 0;
+      line-height: 27px;
+      font-weight: 300;
+      font-size: 18px;
+      font-family: 'Mulish-light';
+    }
+  }
+}
 
 h3,
 h4,
 h5,
 h6 {
-  color: $primaryColor;
+  color: #2e3243;
 }
 .under-title {
-  color: $primaryColor;
+  color: #2e3243;
   margin-top: rem(15);
   font-size: 24px;
   font-weight: 700;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
 }
 pre {
   background-color: #1e1e1e;
@@ -23,9 +68,9 @@ pre {
   margin: 0;
 }
 #documentation {
-  margin: 0 rem(18);
-  padding: 20px;
-  font-family: 'Mulish-regular';
+  background-color: #fff;
+  padding: 25px;
+  font-family: 'Mulish-light';
 
   h4 {
     font-size: 18px;
@@ -87,30 +132,5 @@ pre {
     h3 {
       font-size: rem(16);
     }
-  }
-}
-
-.component-intro {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 15px;
-
-  .title {
-    color: #2e3243;
-    margin: 0;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-  }
-  p {
-    margin: 10px;
-    color: #474747;
-    font-family: 'Mulish-regular';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
 }

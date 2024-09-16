@@ -74,7 +74,7 @@ export class Login2Component {
     flex-direction: column;
     .text {
       color: #384048;
-      font-family: 'Mulish-regular';
+      font-family: 'Mulish-light';
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -122,7 +122,7 @@ export class Login2Component {
 
   .create-account {
     color: #384048;
-    font-family: 'Mulish-regular';
+    font-family: 'Mulish-light';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

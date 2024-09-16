@@ -14,15 +14,19 @@
         <app-demo-aside (linkClicked)="closeMenu()"></app-demo-aside>
       </div>
     </div>
-    <main
-      id="mainContent"
-      role="main"
-      tabindex="-1"
-      class="main-wrapper"
-      (click)="closeMenu()"
-    >
-      <router-outlet></router-outlet>
-    </main>
+    <div class="main">
+      <main
+        id="mainContent"
+        role="main"
+        tabindex="-1"
+        class="main-wrapper"
+        (click)="closeMenu()"
+      >
+        <router-outlet></router-outlet>
+      </main>
+      <div class="footer">
+        <app-footer></app-footer>
+      </div>
+    </div>
   </div>
 </div>
-<app-footer></app-footer>
