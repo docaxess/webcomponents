@@ -53,7 +53,7 @@ export class Modal1Component {
   `;
   modalCss = `
 ip-modal::part(trigger-button) {
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
 }
 .modal-content {
   margin: 10px 0;
@@ -64,7 +64,7 @@ ip-modal::part(trigger-button) {
       font-size: 30px;
       font-weight: 800;
       color: #2749a3;
-      font-family: 'Mulish-regular';
+      font-family: 'Mulish-light';
     }
     p {
       text-align: center;
@@ -97,7 +97,7 @@ ip-modal::part(trigger-button) {
     background: #2749a3 !important;
     width: 467px;
     border-radius: 8px;
-    font-family: 'Mulish-regular';
+    font-family: 'Mulish-light';
     padding: 15px;
     color: white;
     border: none;

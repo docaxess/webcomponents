@@ -54,7 +54,7 @@ export class ShowMore1Component {
   }
 
   ip-show-more {
-    --ip-font-family: 'Mulish-regular';
+    --ip-font-family: 'Mulish-light';
   }
   `;
   constructor() {

@@ -98,7 +98,7 @@ export class Table1Component {
 
   cssTable = `
   ip-table {
-   --font-family: 'Mulish-regular';
+   --font-family: 'Mulish-light';
    --primary-color: #b00057;
 }
   `;

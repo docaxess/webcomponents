@@ -1,6 +1,8 @@
 .accordion {
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  color: #2e3243;
+  border-radius: 5px;
+  border: 1px solid #efefef;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.05);
   margin-bottom: 10px;
   width: 98%;
 }
@@ -27,6 +29,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    font-family: 'Mulish-bold';
   }
 }
 .icon {

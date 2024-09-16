@@ -179,10 +179,10 @@ ip-tab-panel::part(tab) {
   position: relative;
 }
 ip-tab-panel::part(tab-container) {
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
 }
 ip-tab-panel::part(tab-panel-title) {
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
 }
 ip-tab-panel::part(tab-active) {
   background-color: purple;
@@ -219,7 +219,7 @@ ip-tab-panel::part(tab-list) {
 
 .ip-content .ip-content-title {
   margin-block-start: 2.188em;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 1.125rem;
   color: #b00057;
   text-transform: uppercase;
@@ -227,21 +227,21 @@ ip-tab-panel::part(tab-list) {
 
 .ip-content .ip-content-subtitle {
   margin-top: 15px;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 42px;
   color: #b00057;
 }
 
 .ip-content .ip-content-text {
   margin-top: 20px;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 18px;
   color: #2e3243;
 }
 
 .ip-content .ip-content-btn {
   margin-top: 20px;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   font-size: 16px;
   display: inline-block;
   justify-content: center;

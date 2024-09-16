@@ -4,9 +4,17 @@
   font-family: 'Mulish-regular';
   src: url('/assets/styles/fonts/Mulish-Regular.woff') format('woff');
 }
+@font-face {
+  font-family: 'Mulish-bold';
+  src: url('/assets/styles/fonts/Mulish-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Mulish-light';
+  src: url('/assets/styles/fonts/Mulish-Light.woff') format('woff');
+}
 body {
   margin: 0;
-  font-family: 'Mulish-regular';
+  font-family: 'Mulish-light';
   //default style for accessibility
   color: #000;
   background-color: white;
