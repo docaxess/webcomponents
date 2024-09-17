@@ -33,9 +33,11 @@ export class CheckboxListComponent {
     <ip-checkbox-list
       legend="Select the options below:"
       options='[
-          {"id": "agree", "label": "I agree to the terms and conditions.", "defaultChecked": true , "disabled": true},
+          {"id": "agree", "label": "I agree to the terms and conditions.",
+          "defaultChecked": true , "disabled": true},
           {"id": "remember", "label": "Remember me on this device", "disabled": true}, 
-          {"id": "newsletter", "label": "subscribe to our newsletter for updates.","defaultChecked": true},
+          {"id": "newsletter", "label": "subscribe to our newsletter for updates.",
+          "defaultChecked": true},
           {"id": "send", "label": "Send me promotional offers and discounts."},
           {"id": "participate", "label": "Participate in our user feddback program."}
           ]'

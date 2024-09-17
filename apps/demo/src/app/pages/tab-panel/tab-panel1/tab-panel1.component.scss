@@ -1,5 +1,11 @@
 @import '../../../../assets/styles/index.scss';
-
+.preview {
+  display: flex;
+  justify-content: center;
+}
+.modal-content {
+  width: 100%;
+}
 .tab-panel {
   margin: rem(20);
   width: 95%;
@@ -64,6 +70,7 @@ ip-tab-panel::part(tab-list) {
 }
 
 .ip-content .ip-content-text {
+  width: 100%;
   margin-top: rem(20);
   font-family: 'Mulish-light';
   font-size: 18px;

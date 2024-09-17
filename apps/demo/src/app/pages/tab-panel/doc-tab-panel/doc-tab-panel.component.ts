@@ -18,11 +18,16 @@ export class DocTabPanelComponent {
   title-tag="h3"
   tab-panel-title="Audit RGAA"
   tab-panel-headers='[
-        {"title":"Accessibilité", "imgPath": "assets/images/acc-1.svg", "imgPathActive": "assets/images/acc-1-active.svg"},
-        {"title":"Pdf Document", "imgPath":"assets/images/acc-2.svg", "imgPathActive": "assets/images/acc-2-active.svg"},
-        {"title":"Statistical", "imgPath":"assets/images/acc-3.svg", "imgPathActive": "assets/images/acc-3-active.svg"},
-        {"title":"Certification", "imgPath":"assets/images/acc-4.svg", "imgPathActive": "assets/images/acc-4-active.svg"},
-        {"title":"Legislation", "imgPath":"assets/images/acc-5.svg", "imgPathActive": "assets/images/acc-5-active.svg"}
+        {"title":"Accessibilité", "imgPath": "assets/images/acc-1.svg",
+         "imgPathActive": "assets/images/acc-1-active.svg"},
+        {"title":"Pdf Document", "imgPath":"assets/images/acc-2.svg",
+         "imgPathActive": "assets/images/acc-2-active.svg"},
+        {"title":"Statistical", "imgPath":"assets/images/acc-3.svg",
+         "imgPathActive": "assets/images/acc-3-active.svg"},
+        {"title":"Certification", "imgPath":"assets/images/acc-4.svg",
+         "imgPathActive": "assets/images/acc-4-active.svg"},
+        {"title":"Legislation", "imgPath":"assets/images/acc-5.svg",
+         "imgPathActive": "assets/images/acc-5-active.svg"}
       ]'
 >
   <div slot="tab-content-1">--content of Accessibilité--</div>

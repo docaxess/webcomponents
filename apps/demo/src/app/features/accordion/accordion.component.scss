@@ -4,7 +4,7 @@
   border: 1px solid #efefef;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.05);
   margin-bottom: 10px;
-  width: 98%;
+  width: 100%;
 }
 
 .header {
@@ -13,25 +13,28 @@
   cursor: pointer;
   display: flex;
   height: 60px;
-  padding: 0px 20px;
+  padding: 0 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-self: stretch;
   gap: 50px;
-
-  &.focus {
-    outline: 3px solid #000;
-  }
-  h3 {
-    color: #2e3243;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    font-family: 'Mulish-bold';
-  }
+  transition: height 0.3s ease;
 }
+
+.header.focus {
+  outline: 3px solid #000;
+}
+
+.header h3 {
+  color: #2e3243;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: 'Mulish-bold';
+  margin: 0;
+}
+
 .icon {
   display: flex;
   align-items: center;
@@ -39,35 +42,81 @@
     transition: transform 0.3s ease;
     transform: rotate(180deg);
   }
-  &.open svg {
-    transform: rotate(0deg);
-  }
 }
+
+.icon.open svg {
+  transform: rotate(0deg);
+}
+
 .content {
   background-color: #efefef;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease;
-  width: auto;
+  width: 100%;
 }
 
 .content.open {
-  min-height: 100%;
-  max-height: 100%;
+  max-height: none;
 }
+
+@media (max-width: 1200px) {
+  .accordion {
+    width: 100%;
+  }
+  .header {
+    padding: 0 15px;
+    gap: 40px;
+  }
+
+  .header h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .accordion {
+    width: 100%;
+  }
+  .header {
+    padding: 0 10px;
+    gap: 30px;
+  }
+
+  .header h3 {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 600px) {
+  .accordion {
+    width: 85%;
+  }
   .header {
     height: auto;
     padding: 10px 15px;
     gap: 15px;
   }
 
-  h3 {
-    font-size: 16px;
-    margin: 0;
+  .header h3 {
+    font-size: 14px;
   }
 
   .content.open {
-    height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .accordion {
+    width: 60%;
+  }
+  .header {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .header h3 {
+    font-size: 13px;
   }
 }

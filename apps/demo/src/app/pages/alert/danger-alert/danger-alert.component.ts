@@ -75,7 +75,8 @@ export class DangerAlertComponent implements AfterViewInit {
     <ip-alert
       type="danger"
       alert-title="Danger"
-      message="A critical error occurred while processing your request. Please contact technical support."
+      message="A critical error occurred while processing your request.
+       Please contact technical support."
     >
     </ip-alert>
   `;

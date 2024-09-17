@@ -2,15 +2,18 @@
 @import '../theme/colors';
 .modal-content {
   padding-left: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+
   .component-intro {
     color: #2e3243;
     display: flex;
-    width: 706px;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
     padding-bottom: 60px;
-    margin: 0;
+    width: 80%;
 
     .title {
       display: flex;
@@ -26,6 +29,7 @@
         margin: 0;
         font-family: 'Mulish-light';
       }
+
       h2 {
         color: #2e3243;
         font-size: 40px;
@@ -36,12 +40,72 @@
         font-family: 'Mulish-bold';
       }
     }
+
     p {
       margin: 0;
       line-height: 27px;
       font-weight: 300;
       font-size: 18px;
       font-family: 'Mulish-light';
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .modal-content {
+    max-width: 95%;
+  }
+
+  .component-intro {
+    padding-bottom: 40px;
+
+    .title h2 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .modal-content {
+    max-width: 95%;
+    padding-left: 10px;
+  }
+
+  .component-intro {
+    padding-bottom: 30px;
+
+    .title h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 85%;
+    padding-left: 5px;
+  }
+
+  .component-intro {
+    padding-bottom: 20px;
+
+    .title h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 20px;
     }
   }
 }
