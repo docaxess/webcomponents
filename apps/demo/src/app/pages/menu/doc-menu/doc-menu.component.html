@@ -1,0 +1,148 @@
+<section id="documentation">
+  <h3 class="under-title">Installation</h3>
+  <p>
+    Follow these steps to install and use the
+    <code>ip-burger-menu</code> component in your project.
+  </p>
+  <h4>Step 1</h4>
+  <p>
+    Install the <code>ip-burger-menu</code> component as a dependency in your
+    project:
+  </p>
+  <pre><code [highlight]="installationScript" language="bash"></code></pre>
+
+  <h4>Step 2</h4>
+  <p>Import the module into your script file:</p>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
+
+  <h3 class="under-title">Usage</h3>
+
+  <p>
+    To use the ip-burger-menu component, you need to set the properties as
+    attributes and use slots for additional content.
+  </p>
+  <h4>Properties</h4>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Necessity</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>menuData</td>
+        <td>menu-data</td>
+        <td>Required</td>
+        <td>JSON string to define menu items.</td>
+        <td>string</td>
+        <td>undefined</td>
+      </tr>
+      <tr>
+        <td>closeMenuAriaLabel</td>
+        <td>close-menu-aria-label</td>
+        <td>Optional</td>
+        <td>ARIA label for the button that closes the menu.</td>
+        <td>string</td>
+        <td>'Close menu'</td>
+      </tr>
+      <tr>
+        <td>openMenuAriaLabel</td>
+        <td>open-menu-aria-label</td>
+        <td>Optional</td>
+        <td>ARIA label for the button that opens the menu.</td>
+        <td>string</td>
+        <td>'Open menu'</td>
+      </tr>
+      <tr>
+        <td>pathToArrowRightIcon</td>
+        <td>path-to-arrow-right-icon</td>
+        <td>Optional</td>
+        <td>Path to the icon image used for menu item arrows.</td>
+        <td>string</td>
+        <td>'../../assets/images/arrow-right.svg'</td>
+      </tr>
+      <tr>
+        <td>pathToCloseIcon</td>
+        <td>path-to-close-icon</td>
+        <td>Optional</td>
+        <td>Path to the icon image used to close the menu.</td>
+        <td>string</td>
+        <td>'../../assets/images/x-icon.svg'</td>
+      </tr>
+      <tr>
+        <td>pathToOpenIcon</td>
+        <td>path-to-open-icon</td>
+        <td>Optional</td>
+        <td>Path to the icon image used to open the menu.</td>
+        <td>string</td>
+        <td>'../../assets/images/icon-list.svg'</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5>Menu-item Interface</h5>
+  <p>
+    The items property is an array of MenuItem objects with the following
+    structure:
+  </p>
+  <ul>
+    <li><code>label</code>: The text label of the menu item.</li>
+    <li><code>href</code>:URL to navigate to when the item is clicked.</li>
+    <li><code>disabled</code>: Optional boolean to disable the menu item.</li>
+  </ul>
+  <h4>Slot</h4>
+  <p>
+    The ip-burger-menu component supports the following slots for additional
+    content:
+  </p>
+  <ul>
+    <li>
+      <code>left-head-content</code>: Content to be displayed on the left side
+      of the header.
+    </li>
+    <li>
+      <code>before-toggle-menu-content</code>: Content to be displayed before
+      the toggle menu button.
+    </li>
+    <li>
+      <code>left-menu-content</code>: Content to be displayed on the left side
+      of the menu.
+    </li>
+  </ul>
+
+  <p><em>e.g:</em></p>
+  <pre class="example">
+      <code [highlight]="example" language="html"></code>
+      </pre>
+
+  <h3 class="under-title">Customization</h3>
+  <h4>Style</h4>
+  <p>
+    We have a set of predefined CSS variables used to customize the burger-menu:
+  </p>
+  <ul>
+    <li><code>--primary-color</code></li>
+    <li><code>--secondary-color</code></li>
+    <li><code>--bg-nav-open-menu</code></li>
+    <li><code>--menu-item-color</code></li>
+  </ul>
+
+  <h4>Part</h4>
+  <p>We have a set of classes that could be used to customise accordingly:</p>
+  <ul>
+    <li><code>nav-bar</code>: the nav for the menu content</li>
+    <li><code>toggle-menu-btn</code>: The button that toggles the menu</li>
+    <li><code>menu-content</code>: The content of the menu</li>
+    <li><code>menu-list</code>: The list of elements in the menu</li>
+  </ul>
+
+  <p><em>e.g:</em></p>
+  <pre class="example">
+      <code [highlight]="css" language="css"></code>
+      </pre>
+</section>

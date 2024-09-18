@@ -1,11 +1,10 @@
 import { Route } from '@angular/router';
-import { FootnoteComponent } from './footnote.component';
 import { Footnote1Component } from './footnote1/footnote1.component';
 
 export const footnoteRoutes: Route[] = [
   {
     path: '',
-    component: FootnoteComponent,
+    component: Footnote1Component,
   },
   {
     path: 'footnote1',

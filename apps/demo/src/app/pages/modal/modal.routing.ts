@@ -1,11 +1,10 @@
 import { Route } from '@angular/router';
-import { ModalComponent } from './modal.component';
 import { Modal1Component } from './modal1/modal1.component';
 
 export const modalRoutes: Route[] = [
   {
     path: '',
-    component: ModalComponent,
+    component: Modal1Component,
   },
   {
     path: 'modal1',

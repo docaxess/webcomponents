@@ -1,0 +1,16 @@
+@import '../../../../assets/styles/index.scss';
+
+.breadcrumb-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 70px;
+}
+ip-breadcrumb {
+  &::part(title) {
+    font-family: 'Mulish-bold';
+    font-size: 32px;
+  }
+  &::part(breadcrumb) {
+    font-family: 'Mulish-light';
+  }
+}

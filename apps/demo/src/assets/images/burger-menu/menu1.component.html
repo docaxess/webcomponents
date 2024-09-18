@@ -1,0 +1,58 @@
+<div class="modal-content">
+  <div class="component-intro">
+    <div class="title">
+      <p>COMPONENTS</p>
+      <h2>Burger-menu</h2>
+    </div>
+    <p>
+      A burger main menu is usually represented by three stacked lines, forming
+      an icon that signifies a hidden menu. When users click or tap on these
+      lines, a menu slides into view or a drawer appears, revealing a list of
+      navigation items or other elements that users can interact with.
+    </p>
+  </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="menu-wrapper">
+      <ip-burger-menu
+        menu-data='[
+      {"label": "Home", "href": "#home"},
+      {"label": "Discover our team", "href": "#about"},
+      {"label": "Our partners", "href": "#partners"},
+      {"label": "Ultimate Solution", "href": "#Solution"},
+      {"label": "Our Donate Now", "href": "#Donate"},
+      {"label": "Join our community", "href": "#community"},
+      {"label": "FAQ", "href": "#faq"},
+      {"label": "Our publications", "href": "#publications", "disabled": true}
+    ]'
+      >
+        <div slot="left-head-content" class="logo-wrapper">
+          <img src="./assets/images/Frame.png" alt="Logo" />
+          <label class="logo-text" for="">Kestrel</label>
+        </div>
+        <div slot="before-toggle-menu-content">
+          <button class="contact-us-btn" aria-label="Contact us">
+            <label for=""> Contact us </label>
+            <img src="./assets/images/paper-pale-right.svg" alt="" />
+          </button>
+        </div>
+        <div slot="left-menu-content" class="left-menu-content">
+          <div class="content" tabindex="0">
+            <img src="./assets/images/image2.png" alt="" />
+            <label for="">Who are we ?</label>
+          </div>
+        </div>
+      </ip-burger-menu>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet
+      [htmlCode]="codeSnippet"
+      [cssCode]="css"
+    ></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-menu></app-doc-menu>
+  </app-accordion>
+</div>

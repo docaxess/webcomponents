@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { AlertComponent } from './alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { InfoAlertComponent } from './info-alert/info-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
@@ -8,7 +7,7 @@ import { DangerAlertComponent } from './danger-alert/danger-alert.component';
 export const alertRouting: Route[] = [
   {
     path: '',
-    component: AlertComponent,
+    component: SuccessAlertComponent,
   },
   {
     path: 'success-alert',

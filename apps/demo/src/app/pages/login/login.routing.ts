@@ -1,12 +1,11 @@
 import { Route } from '@angular/router';
-import { LoginComponent } from './login.component';
 import { Login1Component } from './login1/login1.component';
 import { Login2Component } from './login2/login2.component';
 
 export const loginRoutes: Route[] = [
   {
     path: '',
-    component: LoginComponent,
+    component: Login1Component,
   },
   {
     path: 'login1',

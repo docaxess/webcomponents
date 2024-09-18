@@ -1,11 +1,10 @@
-import { ShowMoreComponent } from './show-more.component';
 import { ShowMore1Component } from './show-more1/show-more1.component';
 import { Routes } from '@angular/router';
 
 export const showMoreRoutes: Routes = [
   {
     path: '',
-    component: ShowMoreComponent,
+    component: ShowMore1Component,
   },
   {
     path: 'show-more1',
