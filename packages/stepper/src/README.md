@@ -26,16 +26,17 @@ The ip-stepper component facilitates step-by-step navigation. To use this compon
 
 ### Properties
 
-| Property               | Attribute                 | Necessity | Description                                | Type     | Default                          |
-| ---------------------- | ------------------------- | --------- | ------------------------------------------ | -------- | -------------------------------- |
-| `steps`                | `steps`                   | Required  | `Total number of steps in the stepper`     | `number` | `0`                              |
-| `backBtnAriaLabel`     | `back-btn-aria-label`     | Optional  | `ARIA label for the back button`           | `string` | `'Go back to the previous step'` |
-| `backBtnText`          | `back-btn-text`           | Optional  | `Text displayed on the back button`        | `string` | `'Back'`                         |
-| `continueBtnAriaLabel` | `continue-btn-aria-label` | Optional  | `ARIA label for the continue button`       | `string` | `'Continue to the next step'`    |
-| `continueBtnText`      | `continue-btn-text`       | Optional  | `Text displayed on the continue button`    | `string` | `'Continue'`                     |
-| `finishBtnAriaLabel`   | `finish-btn-aria-label`   | Optional  | `ARIA label for the finish button`         | `string` | `'Finish the process'`           |
-| `finishBtnText`        | `finish-btn-text`         | Optional  | `Text displayed on the finish button`      | `string` | `'Finish'`                       |
-| `indicatorText`        | `indicator-text`          | Optional  | `Text displayed before the step indicator` | `string` | `'Step'`                         |
+| Property               | Attribute                 | Necessity | Description                                              | Type     | Default                          |
+| ---------------------- | ------------------------- | --------- | -------------------------------------------------------- | -------- | -------------------------------- |
+| `steps`                | `steps`                   | Required  | `Total number of steps in the stepper`                   | `number` | `0`                              |
+| `backBtnAriaLabel`     | `back-btn-aria-label`     | Optional  | `ARIA label for the back button`                         | `string` | `'Go back to the previous step'` |
+| `backBtnText`          | `back-btn-text`           | Optional  | `Text displayed on the back button`                      | `string` | `'Back'`                         |
+| `continueBtnAriaLabel` | `continue-btn-aria-label` | Optional  | `ARIA label for the continue button`                     | `string` | `'Continue to the next step'`    |
+| `continueBtnText`      | `continue-btn-text`       | Optional  | `Text displayed on the continue button`                  | `string` | `'Continue'`                     |
+| `finishBtnAriaLabel`   | `finish-btn-aria-label`   | Optional  | `ARIA label for the finish button`                       | `string` | `'Finish the process'`           |
+| `finishBtnText`        | `finish-btn-text`         | Optional  | `Text displayed on the finish button`                    | `string` | `'Finish'`                       |
+| `indicatorText`        | `indicator-text`          | Optional  | `Text displayed before the step indicator`               | `string` | `'Step'`                         |
+| `simulatorAria`        | `simulator-aria`          | Optional  | `The aria label is used for the list of step indicators` | `string` | `'Simulator progress'`           |
 
 ### Step Content
 

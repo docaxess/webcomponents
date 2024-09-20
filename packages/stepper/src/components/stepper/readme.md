@@ -16,6 +16,7 @@
 | `finishBtnAriaLabel`   | `finish-btn-aria-label`   |             | `string` | `'Finish the process'`           |
 | `finishBtnText`        | `finish-btn-text`         |             | `string` | `'Finish'`                       |
 | `indicatorText`        | `indicator-text`          |             | `string` | `'Step'`                         |
+| `simulatorAria`        | `simulator-aria`          |             | `string` | `'Simulator progress'`           |
 | `steps`                | `steps`                   |             | `number` | `0`                              |
 
 
