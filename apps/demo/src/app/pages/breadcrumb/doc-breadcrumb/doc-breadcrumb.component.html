@@ -1,0 +1,89 @@
+<section id="documentation">
+  <h3 class="under-title">Installation</h3>
+  <p>
+    Follow these steps to install and use the
+    <code>ip-breadcrumb</code> component in your project.
+  </p>
+  <h4>Step 1</h4>
+  <p>
+    Install the <code>ip-breadcrumb</code> component as a dependency in your
+    project:
+  </p>
+  <pre><code [highlight]="installationScript" language="bash"></code></pre>
+
+  <h4>Step 2</h4>
+  <p>Import the module into your script file:</p>
+  <pre><code [highlight]="import" language="typescript"></code></pre>
+
+  <h3 class="under-title">Usage</h3>
+
+  <p>To use this input, you must add the following properties as attributes.</p>
+  <h4>Properties</h4>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Property</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Necessity</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>breadcrumbItems</td>
+        <td>breadcrumb-items</td>
+        <td>Required</td>
+        <td>
+          A JSON string of an array of breadcrumb items, each with a label and
+          optional link
+        </td>
+        <td>string</td>
+        <td>'[]'</td>
+      </tr>
+      <tr>
+        <td>breadcrumbTitle</td>
+        <td>breadcrumb-title</td>
+        <td>Optional</td>
+        <td>Title of the breadcrumb navigation</td>
+        <td>string</td>
+        <td>''</td>
+      </tr>
+      <tr>
+        <td>prefixAriaLabel</td>
+        <td>prefix-aria-label</td>
+        <td>Optional</td>
+        <td>Aria label prefix for the links</td>
+        <td>string</td>
+        <td>'Link to'</td>
+      </tr>
+      <tr>
+        <td>separatorIcon</td>
+        <td>separator-icon</td>
+        <td>Optional</td>
+        <td>The icon or text used to separate breadcrumb items</td>
+        <td>string</td>
+        <td>'&gt;'</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><em>e.g:</em></p>
+  <pre class="example">
+      <code [highlight]="example" language="html"></code>
+      </pre>
+
+  <h3 class="under-title">Customization</h3>
+
+  <p>We have a set of classes that can be used for further customization:</p>
+  <ul>
+    <li><code>title</code>:for the breadcrumb title</li>
+    <li><code>breadcrumb</code>: for breadcrumb item</li>
+    <li><code>icon</code>: for the separator icon</li>
+  </ul>
+  <p>To update the values use the following:</p>
+  <pre class="example">
+      <code [highlight]="css" language="css"></code>
+      </pre>
+</section>

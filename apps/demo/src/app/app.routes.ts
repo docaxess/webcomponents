@@ -114,6 +114,21 @@ export const appRoutes: Route[] = [
       import('./pages/search-bar/search-bar.routing').then(
         (m) => m.searchBarRouting,
       ),
+    data: { title: 'Search-bar' },
+  },
+  {
+    path: 'breadcrumb',
+    loadChildren: () =>
+      import('./pages/breadcrumb/breadcrumb.routing').then(
+        (m) => m.breadcrumbRouting,
+      ),
+    data: { title: 'Breadcrumb' },
+  },
+  {
+    path: 'menu',
+    loadChildren: () =>
+      import('./pages/menu/menu.routing').then((m) => m.menuRoutes),
+    data: { title: 'Menu' },
   },
   { path: '**', redirectTo: '' },
 ];

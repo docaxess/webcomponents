@@ -1,0 +1,40 @@
+<div class="modal-content">
+  <div class="component-intro">
+    <div class="title">
+      <p>COMPONENTS</p>
+      <h2>Breadcrumb</h2>
+    </div>
+    <p>
+      A breadcrumb is a navigation aid used in web interfaces that provides
+      users with a clear path of their journey through a website. It typically
+      appears as a horizontal row of textual links, with each link separated by
+      symbols such as greater than signs (>), indicating the hierarchy of the
+      content.
+    </p>
+  </div>
+  <app-accordion title="Preview" [alwaysOpen]="true">
+    <div class="breadcrumb-wrapper">
+      <ip-breadcrumb
+        breadcrumb-title="LIST OF COMPONENTS"
+        breadcrumb-items='[
+        {"label": "Home", "link": "#"},
+        {"label": "Accessibility", "link": "#"},
+        {"label": "List of components"}
+      ]'
+        prefix-aria-label="Link to"
+      >
+      </ip-breadcrumb>
+    </div>
+  </app-accordion>
+
+  <app-accordion title="Code">
+    <app-code-snippet
+      [htmlCode]="codeSnippet"
+      [cssCode]="css"
+    ></app-code-snippet>
+  </app-accordion>
+
+  <app-accordion title="Documentation">
+    <app-doc-breadcrumb></app-doc-breadcrumb>
+  </app-accordion>
+</div>

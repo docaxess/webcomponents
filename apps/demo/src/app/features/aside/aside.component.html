@@ -84,7 +84,16 @@
         </li>
       </ul>
     </li>
-
+    <li class="item" [class.open]="isOpen['breadcrumb']">
+      <a
+        routerLink="/breadcrumb/breadcrumb1"
+        routerLinkActive="active"
+        aria-label="Go to breadcrumbcomponent"
+        (click)="onLinkClick()"
+      >
+        Breadcrumb
+      </a>
+    </li>
     <li class="item with-content" [class.open]="isOpen['checkbox']">
       <div
         class="sub-title"
@@ -191,6 +200,16 @@
           </a>
         </li>
       </ul>
+    </li>
+    <li class="item" [class.open]="isOpen['menu']">
+      <a
+        routerLink="/menu/burger-menu"
+        routerLinkActive="active"
+        aria-label="Go to menu component"
+        (click)="onLinkClick()"
+      >
+        Menu
+      </a>
     </li>
 
     <li class="item" [class.open]="isOpen['modal']">
