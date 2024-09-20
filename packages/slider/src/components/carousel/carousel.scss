@@ -3,6 +3,9 @@
   --primary-color: var(--primaryColor, #504da2);
   --secondary-color: var(--secondaryColor, #efefef);
 }
+.ip-carousel {
+  width: 100%;
+}
 .ip-carousel-content {
   display: flex;
   align-items: center;

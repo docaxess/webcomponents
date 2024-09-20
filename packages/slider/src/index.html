@@ -8,8 +8,19 @@
     />
     <title>Stencil Component Starter</title>
     <style>
+      ip-carousel-1::part(slide-card) {
+        width: 200px;
+        height: 200px;
+      }
+      ip-carousel-1::part(carousel) {
+        width: 100%;
+      }
       .slider {
         margin: 40px;
+        width: 100%;
+      }
+      ip-carousel-1 {
+        width: 100%;
       }
       .card {
         display: flex;
@@ -22,14 +33,14 @@
         color: #1c1c1c;
         text-align: center;
         font-family: 'Barlow Condensed';
-        font-size: 24px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        line-height: 40px;
+        line-height: 20px;
       }
       img {
-        height: 160px;
-        width: 160px;
+        height: 60px;
+        width: 60px;
       }
 
       @media (max-width: 768px) {
@@ -48,7 +59,7 @@
   </head>
   <body>
     <div class="slider">
-      <ip-carousel-1>
+      <ip-carousel-1 slides-per-view="3">
         <div slot="slide-1">
           <div class="card">
             <img src="./assets/ico1.svg" alt="Avatar" style="width: 100%" />

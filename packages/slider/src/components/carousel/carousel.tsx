@@ -19,13 +19,15 @@ export class IpCarousel {
   @Prop() btnPrevAriaLabel: string = 'Previous Slide';
   @Prop() btnNextAriaLabel: string = 'Next Slide';
   @Prop() svgColor = 'grey';
+  @Prop() slidesPerView: number = 3;
   @State() currentIndex: number = 0;
-  @State() slidesPerView: number = 3;
   @State() canPrev: boolean = false;
   @State() canNext: boolean = true;
 
   @Event() slideChanged: EventEmitter<number>;
   slidesCount: number;
+  nextButton: HTMLButtonElement;
+  prevButton: HTMLButtonElement;
 
   @Watch('children')
   childrenWatcher() {
@@ -51,8 +53,6 @@ export class IpCarousel {
   }
 
   updateSlideCount() {
-    const width = window.innerWidth;
-    this.slidesPerView = width <= 480 ? 1 : 3;
     this.slidesCount = Math.ceil(this.el.children.length / this.slidesPerView);
     if (this.currentIndex >= this.slidesCount) {
       this.currentIndex = this.slidesCount - 1;
@@ -71,6 +71,7 @@ export class IpCarousel {
         this.currentIndex === 0 ? this.slidesCount - 1 : this.currentIndex - 1;
       this.slideChanged.emit(this.currentIndex);
       this.updateButtonStates();
+      this.focusCurrentSlide();
     }
   }
 
@@ -80,6 +81,7 @@ export class IpCarousel {
         this.currentIndex === this.slidesCount - 1 ? 0 : this.currentIndex + 1;
       this.slideChanged.emit(this.currentIndex);
       this.updateButtonStates();
+      this.focusCurrentSlide();
     }
   }
 
@@ -87,24 +89,14 @@ export class IpCarousel {
     this.currentIndex = index;
     this.slideChanged.emit(this.currentIndex);
     this.updateButtonStates();
+    this.focusCurrentSlide();
   }
 
   onKeyboard(event: KeyboardEvent) {
     switch (event.key) {
-      case 'ArrowLeft':
-        this.handlePrevious();
-        event.preventDefault();
-        break;
-
-      case 'ArrowRight':
-        this.handleNext();
-        event.preventDefault();
-        break;
-
       case 'Tab':
         this.handleTab(event);
         break;
-
       default:
         break;
     }
@@ -132,6 +124,15 @@ export class IpCarousel {
     }
   }
 
+  focusCurrentSlide() {
+    const currentSlide = this.el.shadowRoot.querySelector(
+      `.ip-carousel-item[aria-labelledby="carousel-item-${this.currentIndex + 1}"]`,
+    );
+    if (currentSlide) {
+      (currentSlide as HTMLElement).focus();
+    }
+  }
+
   render() {
     const startIndex = this.currentIndex * this.slidesPerView;
     const endIndex = startIndex + this.slidesPerView;
@@ -147,23 +148,26 @@ export class IpCarousel {
             'ip-carousel-indicator': true,
             'ip-carousel-indicator-active': index === this.currentIndex,
           }}
-          aria-label={`Slide ${index + 1}`}
+          aria-label={`Go to Slide ${index + 1}`}
           onClick={() => this.handleIndicatorClick(index)}
           key={index}
           role="tab"
           aria-selected={index === this.currentIndex ? 'true' : 'false'}
+          aria-pressed={index === this.currentIndex ? 'true' : 'false'}
         ></button>
       ),
     );
 
     return (
-      <div class="ip-carousel" role="region">
+      <div class="ip-carousel" role="region" part="carousel">
         <div class="ip-carousel-content" part="content-wrapper">
           <button
-            class={`ip-carousel-button ip-carousel-prev `}
+            class={`ip-carousel-button ip-carousel-prev`}
             aria-label={this.btnPrevAriaLabel}
             onClick={() => this.handlePrevious()}
             disabled={!this.canPrev}
+            aria-disabled={!this.canPrev}
+            ref={!this.canPrev ? (el) => (this.prevButton = el) : undefined}
           >
             <svg
               class="svg-icon"
@@ -206,10 +210,12 @@ export class IpCarousel {
             })}
           </div>
           <button
-            class={`ip-carousel-button ip-carousel-next `}
+            class={`ip-carousel-button ip-carousel-next`}
             aria-label={this.btnNextAriaLabel}
             onClick={() => this.handleNext()}
             disabled={!this.canNext}
+            aria-disabled={!this.canNext}
+            ref={!this.canNext ? (el) => (this.nextButton = el) : undefined}
           >
             <svg
               class="svg-icon"

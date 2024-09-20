@@ -11,6 +11,7 @@
 | ------------------ | --------------------- | ----------- | -------- | ------------------ |
 | `btnNextAriaLabel` | `btn-next-aria-label` |             | `string` | `'Next Slide'`     |
 | `btnPrevAriaLabel` | `btn-prev-aria-label` |             | `string` | `'Previous Slide'` |
+| `slidesPerView`    | `slides-per-view`     |             | `number` | `3`                |
 | `svgColor`         | `svg-color`           |             | `string` | `'grey'`           |
 
 
@@ -25,6 +26,7 @@
 
 | Part                | Description |
 | ------------------- | ----------- |
+| `"carousel"`        |             |
 | `"content-wrapper"` |             |
 | `"slide-card"`      |             |
 | `"slides-wrapper"`  |             |

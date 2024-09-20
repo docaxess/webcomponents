@@ -9,6 +9,7 @@ export namespace Components {
     interface IpCarousel1 {
         "btnNextAriaLabel": string;
         "btnPrevAriaLabel": string;
+        "slidesPerView": number;
         "svgColor": string;
     }
     interface IpCarouselSlider {
@@ -52,6 +53,7 @@ declare namespace LocalJSX {
         "btnNextAriaLabel"?: string;
         "btnPrevAriaLabel"?: string;
         "onSlideChanged"?: (event: IpCarousel1CustomEvent<number>) => void;
+        "slidesPerView"?: number;
         "svgColor"?: string;
     }
     interface IpCarouselSlider {
