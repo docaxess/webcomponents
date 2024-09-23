@@ -31,9 +31,9 @@ export class IpSliderSl1 {
   componentWillLoad() {
     this.slides = Array.from(this.el.querySelectorAll('[slot]'));
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       this.initializeSlider();
-    }, 500);
+    });
 
     this.checkIfMobile();
   }
@@ -160,10 +160,8 @@ export class IpSliderSl1 {
 
   forceFocus(event: KeyboardEvent) {
     if (event.key === 'Enter') {
-      setTimeout(() => {
-        const startingIndex = this.sliderPosition * this.itemToShow;
-        this.slides[startingIndex]?.querySelector('a')?.focus();
-      }, 500);
+      const startingIndex = this.sliderPosition * this.itemToShow;
+      this.slides[startingIndex]?.querySelector('a')?.focus();
     }
   }
 

@@ -16,7 +16,7 @@ describe('ip-slider-sl-1', () => {
     const sliderBullets = await page.findAll(
       'ip-slider-sl-1 >>> .slider-bullets__li',
     );
-    expect(sliderBullets.length).toBe(0);
+    expect(sliderBullets.length).toBe(3);
   });
 
   it('navigates to the next slide', async () => {
