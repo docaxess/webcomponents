@@ -12,7 +12,15 @@ export namespace Components {
         "slidesPerView": number;
         "svgColor": string;
     }
-    interface IpCarouselSlider {
+    interface IpSliderSl1 {
+        "bulletBtnAria": string;
+        "isPreviousNextNavigation": boolean;
+        "isSlideBullet": boolean;
+        "itemToShow": number;
+        "nextBtnAria": string;
+        "previousBtnAria": string;
+        "slideGap": number;
+        "slideTitleAria": string;
     }
 }
 export interface IpCarousel1CustomEvent<T> extends CustomEvent<T> {
@@ -37,15 +45,15 @@ declare global {
         prototype: HTMLIpCarousel1Element;
         new (): HTMLIpCarousel1Element;
     };
-    interface HTMLIpCarouselSliderElement extends Components.IpCarouselSlider, HTMLStencilElement {
+    interface HTMLIpSliderSl1Element extends Components.IpSliderSl1, HTMLStencilElement {
     }
-    var HTMLIpCarouselSliderElement: {
-        prototype: HTMLIpCarouselSliderElement;
-        new (): HTMLIpCarouselSliderElement;
+    var HTMLIpSliderSl1Element: {
+        prototype: HTMLIpSliderSl1Element;
+        new (): HTMLIpSliderSl1Element;
     };
     interface HTMLElementTagNameMap {
         "ip-carousel-1": HTMLIpCarousel1Element;
-        "ip-carousel-slider": HTMLIpCarouselSliderElement;
+        "ip-slider-sl-1": HTMLIpSliderSl1Element;
     }
 }
 declare namespace LocalJSX {
@@ -56,11 +64,19 @@ declare namespace LocalJSX {
         "slidesPerView"?: number;
         "svgColor"?: string;
     }
-    interface IpCarouselSlider {
+    interface IpSliderSl1 {
+        "bulletBtnAria"?: string;
+        "isPreviousNextNavigation"?: boolean;
+        "isSlideBullet"?: boolean;
+        "itemToShow"?: number;
+        "nextBtnAria"?: string;
+        "previousBtnAria"?: string;
+        "slideGap"?: number;
+        "slideTitleAria"?: string;
     }
     interface IntrinsicElements {
         "ip-carousel-1": IpCarousel1;
-        "ip-carousel-slider": IpCarouselSlider;
+        "ip-slider-sl-1": IpSliderSl1;
     }
 }
 export { LocalJSX as JSX };
@@ -68,7 +84,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ip-carousel-1": LocalJSX.IpCarousel1 & JSXBase.HTMLAttributes<HTMLIpCarousel1Element>;
-            "ip-carousel-slider": LocalJSX.IpCarouselSlider & JSXBase.HTMLAttributes<HTMLIpCarouselSliderElement>;
+            "ip-slider-sl-1": LocalJSX.IpSliderSl1 & JSXBase.HTMLAttributes<HTMLIpSliderSl1Element>;
         }
     }
 }
