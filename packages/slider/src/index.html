@@ -1,0 +1,91 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .ip-slider-1 {
+        width: 800px;
+        max-width: 1200px;
+        padding: 0 15px;
+      }
+      .slot-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        gap: 10px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-left: 10px;
+      }
+    </style>
+    <script type="module" src="/build/slider.esm.js"></script>
+    <script nomodule src="/build/slider.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="ip-slider-1">
+        <ip-slider-sl-1 item-to-show="2" slide-gap="30">
+          <div class="slot-content" slot="slide-1">
+            <h2>Slot 1 Title</h2>
+            <p>Content for Slot 1</p>
+            <a href="#">Link on Slot 1</a>
+          </div>
+          <div class="slot-content" slot="slide-2">
+            <h2>Slot 2 Title</h2>
+            <p>Content for Slot 2</p>
+            <a href="#">Link on Slot 2</a>
+          </div>
+          <div class="slot-content" slot="slide-3">
+            <h2>Slot 3 Title</h2>
+            <p>Content for Slot 3</p>
+            <a href="#">Link on Slot 3</a>
+          </div>
+          <div class="slot-content" slot="slide-4">
+            <h2>Slot 4 Title</h2>
+            <p>Content for Slot 4</p>
+            <a href="#">Link on Slot 4</a>
+          </div>
+          <div class="slot-content" slot="slide-5">
+            <h2>Slot 5 Title</h2>
+            <p>Content for Slot 5</p>
+            <a href="#">Link on Slot 5</a>
+          </div>
+          <div class="slot-content" slot="slide-6">
+            <h2>Slot 6 Title</h2>
+            <p>Content for Slot 6</p>
+            <a href="#">Link on Slot 6</a>
+          </div>
+          <div class="slot-content" slot="slide-7">
+            <h2>Slot 7 Title</h2>
+            <p>Content for Slot 7</p>
+            <a href="#">Link on Slot 7</a>
+          </div>
+          <div class="slot-content" slot="slide-8">
+            <h2>Slot 8 Title</h2>
+            <p>Content for Slot 8</p>
+            <a href="#">Link on Slot 8</a>
+          </div>
+          <div class="slot-content" slot="slide-9">
+            <h2>Slot 9 Title</h2>
+            <p>Content for Slot 9</p>
+            <a href="#">Link on Slot 9</a>
+          </div>
+        </ip-slider-sl-1>
+      </div>
+    </div>
+  </body>
+</html>
