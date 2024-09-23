@@ -130,5 +130,11 @@ export const appRoutes: Route[] = [
       import('./pages/menu/menu.routing').then((m) => m.menuRoutes),
     data: { title: 'Menu' },
   },
+  {
+    path: 'stepper',
+    loadChildren: () =>
+      import('./pages/stepper/stepper.routing').then((m) => m.stepperRouting),
+    data: { title: 'Stepper' },
+  },
   { path: '**', redirectTo: '' },
 ];

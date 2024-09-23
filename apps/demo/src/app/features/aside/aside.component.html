@@ -266,6 +266,16 @@
         Show-more
       </a>
     </li>
+    <li class="item" [class.open]="isOpen['stepper']">
+      <a
+        routerLink="/stepper/stepper1"
+        routerLinkActive="active"
+        aria-label="Go to Stepper component"
+        (click)="onLinkClick()"
+      >
+        Stepper
+      </a>
+    </li>
 
     <li class="item" [class.open]="isOpen['tab-panel']">
       <a

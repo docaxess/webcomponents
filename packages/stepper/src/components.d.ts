@@ -14,6 +14,7 @@ export namespace Components {
         "finishBtnAriaLabel": string;
         "finishBtnText": string;
         "indicatorText": string;
+        "simulatorAria": string;
         "steps": number;
     }
 }
@@ -53,6 +54,7 @@ declare namespace LocalJSX {
         "finishBtnText"?: string;
         "indicatorText"?: string;
         "onFinishButtonClick"?: (event: IpStepperCustomEvent<void>) => void;
+        "simulatorAria"?: string;
         "steps"?: number;
     }
     interface IntrinsicElements {

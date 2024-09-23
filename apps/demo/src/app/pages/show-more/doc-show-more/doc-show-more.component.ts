@@ -10,7 +10,7 @@ import { Highlight } from 'ngx-highlightjs';
   styleUrl: './doc-show-more.component.scss',
 })
 export class DocShowMoreComponent {
-  installationScript = `npm install ip-table`;
+  installationScript = `npm install show-more`;
   import = `import '../node_modules/ip-show-more/dist/ip-show-more/ip-show-more.esm';`;
   example = `<ip-show-more show-less-text="Voir moins" show-more-text="Voir plus">
   <div slot="content">-- Expanded content goes here --</div>

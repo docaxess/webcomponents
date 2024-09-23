@@ -11,22 +11,16 @@ describe('ip-stepper', () => {
     expect(page.root).toEqualHtml(`
       <ip-stepper>
         <mock:shadow-root>
-          <div class="stepper" role="region" aria-labelledby="stepper-heading">
-            <div id="stepper-heading" class="step-indicator">
-              <span>Step 1 / 0</span>
-            </div>
-            <div class="step-container">
-              <ol class="step-numbers"></ol>
-              <div class="step-content">
-                <slot></slot>
-              </div>
-            </div>
-            <div class="controls single-button">
-              <button class="continue-button" aria-label="Continue to the next step">
-                Continue
-              </button>
-            </div>
-          </div>
+         <div class="stepper" role="region" aria-labelledby="stepper-heading">
+  <div id="stepper-heading" class="step-indicator"><span>Step 1 / 0</span></div>
+  <ol aria-label="Simulator progress" class="step-numbers"></ol>
+  <div class="step-content" aria-live="polite"><slot></slot></div>
+  <div class="controls single-button">
+    <button class="continue-button" aria-label="Continue to the next step">
+      Continue
+    </button>
+  </div>
+</div>
         </mock:shadow-root>
       </ip-stepper>
     `);
