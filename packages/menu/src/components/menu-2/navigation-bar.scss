@@ -6,8 +6,7 @@
 
 nav {
   display: flex;
-  min-width: 1440px;
-  padding-right: 0.106px;
+  padding-right: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 30px 50px;
@@ -16,6 +15,7 @@ nav {
 .toggle-menu-btn {
   display: none;
 }
+
 .right-content {
   display: flex;
   flex-direction: row;
@@ -42,15 +42,17 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 100%;
+
     .menu-item-btn {
       border: none;
       background-color: #fff;
       padding: 10px;
     }
+
     a {
       padding: 0 10px;
     }
+
     a,
     .menu-item-btn {
       width: 100%;
@@ -67,6 +69,7 @@ nav {
       display: flex;
       justify-content: center;
       align-items: center;
+
       &:hover,
       &:focus {
         background-color: #b00057;
@@ -74,16 +77,19 @@ nav {
         outline: none;
       }
     }
+
     .menu-item-label {
       display: flex;
       align-items: center;
       gap: 5px;
       justify-content: center;
     }
+
     .submenu-container {
       display: inline-flex;
       flex-direction: column;
       align-items: flex-start;
+
       .sub-menu {
         top: 75px;
         left: -24px;
@@ -91,190 +97,73 @@ nav {
         background: #fff;
         padding: 0;
       }
-      .submenu-items {
+
+      .submenu-item {
         list-style: none;
         background-color: #fff;
         display: flex;
-        width: 240px;
-        height: 56px;
-        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
 
-        &:hover,
-        &:focus {
-          background-color: #b00057;
-        }
-        a {
-          padding: 0;
-          width: 100%;
-          display: block;
+        .submenu-item-link {
+          padding: 10px;
           color: var(--main, #03396c);
-          font-family: Inter;
-          font-size: 15px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 0;
+          text-decoration: none;
 
           &:hover,
           &:focus {
             background-color: #b00057;
-
             color: #fff;
           }
         }
-      }
-      &:hover .submenu-container,
-      &:focus-within .submenu-container {
-        display: block;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 768px;
-    min-width: 0px;
+  .toggle-menu-btn {
+    display: flex;
   }
 
+  nav {
+    flex-direction: column;
+    position: relative;
+  }
   .left-content {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
   }
 
   .right-content {
-    display: flex;
-    flex-direction: column;
-
-    width: 345px;
-    height: 599px;
-    flex-shrink: 0;
-    background-color: #03396c;
+    display: none;
     position: absolute;
-    color: #fff;
     top: 110px;
     right: 0;
+    background-color: #03396c;
+    color: #fff;
+    width: 50%;
 
-    .elements {
+    &.active {
       display: flex;
-      align-items: flex-start;
       flex-direction: column;
-      gap: 30px;
-      width: 100%;
-      .menu {
-        flex-direction: column;
-
-        width: 100%;
-
-        .menu-items {
-          width: 100%;
-          border-bottom: 1px solid #6999c7;
-
-          a {
-            width: 100%;
-            display: flex;
-            justify-content: start;
-          }
-          .menu-item-btn {
-            border: none;
-            background-color: transparent;
-            display: flex;
-            justify-content: start;
-          }
-          .menu-item-btn,
-          a {
-            padding: 10px 20px;
-
-            color: #fff;
-            font-family: Inter;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            text-transform: uppercase;
-          }
-          .menu-item-label {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            .icon {
-              border-left: 1px solid #6999c7;
-              display: flex;
-
-              justify-content: center;
-              align-items: center;
-              flex-shrink: 0;
-              svg {
-                fill: #fff;
-              }
-            }
-          }
-          .submenu-container {
-            position: static;
-            display: none;
-
-            .submenu-items {
-              a {
-                padding-left: 30px;
-              }
-            }
-          }
-
-          &:hover .submenu-container,
-          &:focus-within .submenu-container {
-            display: block;
-          }
-        }
-      }
     }
   }
-  .toggle-menu-btn {
-    display: block;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  .menu {
-    flex-direction: column;
-    width: 100%;
-
-    .menu-items {
-      width: 100%;
-
-      a {
-        width: 100%;
-      }
-
-      .submenu-container {
-        position: static;
-        display: none;
-
-        .submenu-items {
-          a {
-            padding-left: 30px;
-          }
+  .elements {
+    .menu {
+      flex-direction: column;
+      .menu-items {
+        .menu-item-btn {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
-      }
-
-      &:hover .submenu-container,
-      &:focus-within .submenu-container {
-        display: block;
+        a {
+          color: #fff;
+        }
       }
     }
   }

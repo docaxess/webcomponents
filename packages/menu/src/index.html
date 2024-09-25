@@ -249,6 +249,21 @@
         outline: 3px solid #b00057;
         outline-offset: 2px;
       }
+
+      @media (max-width: 768px) {
+        .menu-2-btn {
+          color: #fff;
+          border: 1px solid #fff;
+          background-color: #03396c;
+        }
+        .menu-2-btn:focus,
+        .menu-2-btn:hover {
+          background-color: #fff;
+          color: #03396c;
+          outline: 3px solid #fff;
+          outline-offset: 2px;
+        }
+      }
       body {
         width: 100%;
       }
@@ -306,14 +321,13 @@
           {"label": "Page-3", "href": "/pages/page3"},
           {"label": "Page-4", "href": "/pages/page4"}
         ]},
-        {"label": "News", "href": "/news", 
-          "submenus": [
-          {"label": "News-1", "href": "/news/news1"},
-          {"label": "News-2", "href": "/news/news2"},
-          {"label": "News-3", "href": "/news/news3"},
-          {"label": "News-4", "href": "/news/news4"}
-        ]},
-        {"label": "Contact", "href": "/contact"}
+        {"label": "Contact", "href": "/contact"},{"label": "News", "href": "/news", 
+        "submenus": [
+        {"label": "News-1", "href": "/news/news1"},
+        {"label": "News-2", "href": "/news/news2"},
+        {"label": "News-3", "href": "/news/news3"},
+        {"label": "News-4", "href": "/news/news4"}
+      ]}
       ]'
       >
         <div class="logo" slot="left-head">

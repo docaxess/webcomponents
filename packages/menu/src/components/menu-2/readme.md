@@ -11,7 +11,7 @@
 | -------------------- | ----------------------- | ----------- | ------------ | ------------------------------------- |
 | `closeMenuAriaLabel` | `close-menu-aria-label` |             | `string`     | `'Close menu'`                        |
 | `closeSubmenuPrefix` | `close-submenu-prefix`  |             | `string`     | `'Close'`                             |
-| `menuData`           | `menu-data`             |             | `string`     | `undefined`                           |
+| `menuData`           | `menu-data`             |             | `string`     | `'[]'`                                |
 | `menuItems`          | --                      |             | `MenuItem[]` | `[]`                                  |
 | `openMenuAriaLabel`  | `open-menu-aria-label`  |             | `string`     | `'Open menu'`                         |
 | `openSubmenuPrefix`  | `open-submenu-prefix`   |             | `string`     | `'Open'`                              |
@@ -23,15 +23,13 @@
 
 | Part                  | Description |
 | --------------------- | ----------- |
-| `"items"`             |             |
 | `"menu"`              |             |
 | `"menu-items"`        |             |
 | `"menu-items-link"`   |             |
 | `"nav-bar"`           |             |
-| `"submenu-"`          |             |
 | `"submenu-container"` |             |
 | `"submenu-item"`      |             |
-| `"submenu-item-link"` |             |
+| `"submenu-items"`     |             |
 | `"toggle-menu-btn"`   |             |
 
 
