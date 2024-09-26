@@ -9,6 +9,7 @@
     <title>Stencil Component Starter</title>
     <style>
       body {
+        /* background-color: #000; */
         background-image: url('./assets/images/bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -20,10 +21,13 @@
         column-gap: 20px;
         gap: 50px;
       }
-
-      .head {
+      .head-burger {
+        background-color: #000;
+      }
+      .head-nav {
         margin: 0;
         padding: 0;
+        background-color: #fff;
       }
       .contact-us-btn {
         display: inline-flex;
@@ -215,12 +219,62 @@
           height: 50px;
         }
       }
+
+      .logo {
+        display: flex;
+        width: 188.894px;
+        height: 46px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .menu-2-btn {
+        background-color: #fff;
+        display: flex;
+        padding: 10px 21px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        border: 1px solid #b00057;
+        color: #b00057;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .menu-2-btn:focus,
+      .menu-2-btn:hover {
+        background-color: #b00057;
+        color: #fff;
+        outline: 3px solid #b00057;
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .menu-2-btn {
+          color: #fff;
+          border: 1px solid #fff;
+          background-color: #03396c;
+        }
+        .menu-2-btn:focus,
+        .menu-2-btn:hover {
+          background-color: #fff;
+          color: #03396c;
+          outline: 3px solid #fff;
+          outline-offset: 2px;
+        }
+      }
+      body {
+        width: 100%;
+      }
     </style>
     <script type="module" src="/build/menu.esm.js"></script>
     <script nomodule src="/build/menu.js"></script>
   </head>
   <body>
-    <div class="head">
+    <div class="head-burger">
       <ip-burger-menu
         menu-data='[
       {"label": "Home", "href": "#home"},
@@ -258,6 +312,35 @@
           </div>
         </div>
       </ip-burger-menu>
+    </div>
+    <div class="head-nav">
+      <ip-navigation-bar
+        menu-data='[
+      {"label": "Home", "href": "/"},
+      {"label": "About", "href": "/about"},
+      {"label": "Pages",   "href": "/news",
+        "submenus": [
+        {"label": "Page-1", "href": "/pages/page1"},
+        {"label": "Page-2", "href": "/pages/page2"},
+        {"label": "Page-3", "href": "/pages/page3"},
+        {"label": "Page-4", "href": "/pages/page4"}
+      ]},
+      {"label": "Contact", "href": "/contact"},{"label": "News", "href": "/news", 
+      "submenus": [
+      {"label": "News-1", "href": "/news/news1"},
+      {"label": "News-2", "href": "/news/news2"},
+      {"label": "News-3", "href": "/news/news3"},
+      {"label": "News-4", "href": "/news/news4"}
+    ]}
+    ]'
+      >
+        <div class="logo" slot="left-head">
+          <img class="menu-2-logo" src="./assets/images/Logo.png" alt="" />
+        </div>
+        <div slot="right-head">
+          <button class="menu-2-btn">GET A QUOTE</button>
+        </div>
+      </ip-navigation-bar>
     </div>
   </body>
 </html>

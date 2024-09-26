@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItem } from "./components/menu-1/burger-menu";
+import { MenuItem as MenuItem1 } from "./components/menu-2/navigation-bar";
 export { MenuItem } from "./components/menu-1/burger-menu";
+export { MenuItem as MenuItem1 } from "./components/menu-2/navigation-bar";
 export namespace Components {
     interface IpBurgerMenu {
         "closeMenuAriaLabel": string;
@@ -14,6 +16,16 @@ export namespace Components {
         "menuData": string;
         "openMenuAriaLabel": string;
         "pathToArrowRightIcon": string;
+        "pathToCloseIcon": string;
+        "pathToOpenIcon": string;
+    }
+    interface IpNavigationBar {
+        "closeMenuAriaLabel": string;
+        "closeSubmenuPrefix": string;
+        "menuData": string;
+        "menuItems": MenuItem1[];
+        "openMenuAriaLabel": string;
+        "openSubmenuPrefix": string;
         "pathToCloseIcon": string;
         "pathToOpenIcon": string;
     }
@@ -25,8 +37,15 @@ declare global {
         prototype: HTMLIpBurgerMenuElement;
         new (): HTMLIpBurgerMenuElement;
     };
+    interface HTMLIpNavigationBarElement extends Components.IpNavigationBar, HTMLStencilElement {
+    }
+    var HTMLIpNavigationBarElement: {
+        prototype: HTMLIpNavigationBarElement;
+        new (): HTMLIpNavigationBarElement;
+    };
     interface HTMLElementTagNameMap {
         "ip-burger-menu": HTMLIpBurgerMenuElement;
+        "ip-navigation-bar": HTMLIpNavigationBarElement;
     }
 }
 declare namespace LocalJSX {
@@ -39,8 +58,19 @@ declare namespace LocalJSX {
         "pathToCloseIcon"?: string;
         "pathToOpenIcon"?: string;
     }
+    interface IpNavigationBar {
+        "closeMenuAriaLabel"?: string;
+        "closeSubmenuPrefix"?: string;
+        "menuData"?: string;
+        "menuItems"?: MenuItem1[];
+        "openMenuAriaLabel"?: string;
+        "openSubmenuPrefix"?: string;
+        "pathToCloseIcon"?: string;
+        "pathToOpenIcon"?: string;
+    }
     interface IntrinsicElements {
         "ip-burger-menu": IpBurgerMenu;
+        "ip-navigation-bar": IpNavigationBar;
     }
 }
 export { LocalJSX as JSX };
@@ -48,6 +78,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ip-burger-menu": LocalJSX.IpBurgerMenu & JSXBase.HTMLAttributes<HTMLIpBurgerMenuElement>;
+            "ip-navigation-bar": LocalJSX.IpNavigationBar & JSXBase.HTMLAttributes<HTMLIpNavigationBarElement>;
         }
     }
 }
