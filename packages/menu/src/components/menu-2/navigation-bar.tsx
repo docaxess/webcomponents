@@ -13,16 +13,16 @@ export interface MenuItem {
 })
 export class IpNavigationBar {
   @Prop() menuItems: MenuItem[] = [];
-  @Prop() menuData: string = '[]';
-  @Prop() openSubmenuPrefix: string = 'Open';
-  @Prop() closeSubmenuPrefix: string = 'Close';
-  @Prop() closeMenuAriaLabel: string = 'Close menu';
-  @Prop() openMenuAriaLabel: string = 'Open menu';
-  @Prop() pathToCloseIcon: string = '../../assets/images/x-icon.svg';
-  @Prop() pathToOpenIcon: string = '../../assets/images/icon-list.svg';
+  @Prop() menuData = '[]';
+  @Prop() openSubmenuPrefix = 'Open';
+  @Prop() closeSubmenuPrefix = 'Close';
+  @Prop() closeMenuAriaLabel = 'Close menu';
+  @Prop() openMenuAriaLabel = 'Open menu';
+  @Prop() pathToCloseIcon = '../../assets/images/close-icon.svg';
+  @Prop() pathToOpenIcon = '../../assets/images/open-icon.svg';
 
   @State() openSubmenu: string | null = null;
-  @State() isMenuOpen: boolean = false;
+  @State() isMenuOpen = false;
 
   componentWillLoad() {
     if (this.menuData) {
@@ -80,9 +80,26 @@ export class IpNavigationBar {
       }
     }
   }
-
+  _handleClickOutside(event: MouseEvent) {
+    const menu = document.querySelector('ip-navigation-bar .right-content');
+    if (menu && !menu.contains(event.target as Node)) {
+      this.isMenuOpen = false;
+    }
+  }
   _toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) {
+      document.addEventListener('click', this._handleClickOutside.bind(this));
+    } else {
+      document.removeEventListener(
+        'click',
+        this._handleClickOutside.bind(this),
+      );
+    }
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('click', this._handleClickOutside.bind(this));
   }
 
   _handleFocusOut(event: FocusEvent) {
@@ -154,11 +171,11 @@ export class IpNavigationBar {
           <div class="elements">
             <ul
               class="menu"
-              part="menu"
+              part="menu-items"
               onFocusout={(event) => this._handleFocusOut(event)}
             >
               {this.menuItems.map((item) => (
-                <li part="menu-items" class="menu-items" key={item.label}>
+                <li part="menu-item" class="menu-items" key={item.label}>
                   {item.submenus ? (
                     <button
                       class="menu-item-btn"
@@ -187,10 +204,13 @@ export class IpNavigationBar {
                             height="16"
                             viewBox="0 0 16 16"
                             fill="none"
+                            class={
+                              this.openSubmenu === item.label ? 'rotate' : ''
+                            }
                           >
                             <path
                               d="M13.0811 6.125L8.39355 10.8125L3.70605 6.125"
-                              stroke="#03396C"
+                              stroke="currentColor"
                               stroke-width="1.5"
                               stroke-linecap="round"
                               stroke-linejoin="round"
