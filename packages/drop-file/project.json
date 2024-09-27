@@ -1,0 +1,79 @@
+{
+  "name": "drop-file",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/drop-file/src",
+  "projectType": "library",
+  "tags": [
+    "type:webcomponent"
+  ],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/drop-file/tsconfig.lib.json",
+        "configPath": "packages/drop-file/stencil.config.ts",
+        "outputPath": "dist/packages/drop-file"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/drop-file/tsconfig.lib.json",
+        "configPath": "packages/drop-file/stencil.config.ts",
+        "outputPath": "dist/packages/drop-file"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/drop-file/tsconfig.lib.json",
+        "configPath": "packages/drop-file/stencil.config.ts",
+        "outputPath": "dist/packages/drop-file"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/drop-file/tsconfig.lib.json",
+        "configPath": "packages/drop-file/stencil.config.ts",
+        "outputPath": "dist/packages/drop-file"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/drop-file/src/**/*.{ts,tsx,json}",
+          "packages/drop-file/*.{ts,tsx,json}"
+        ]
+      }
+    }
+  }
+}
