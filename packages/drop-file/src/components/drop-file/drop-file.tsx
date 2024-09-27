@@ -16,8 +16,16 @@ export class FileUpload {
   @State() errorMessages: { [name: string]: string } = {};
   @State() uploadStartTime: { [name: string]: number } = {};
 
-  @Prop() accept: string = '*/*'; // Types de fichiers autorisés
-  @Prop() maxFileSize: number = 20 * 1024 * 1024; // Taille maximale en octets
+  @Prop() accept: string = '*/*';
+  @Prop() maxFileSize: number = 20 * 1024 * 1024;
+  @Prop() placeholder: string =
+    'Glissez-déposez vos fichiers ici ou cliquez pour les sélectionner';
+  @Prop() downloadLabel: string = 'Télécharger';
+  @Prop() pauseLabel: string = 'Mettre en pause le téléchargement';
+  @Prop() resumeLabel: string = 'Reprendre le téléchargement';
+  @Prop() removeFileLabel: string = 'Supprimer';
+  @Prop() timeLeft: string = 'Temps restant';
+  @Prop() fileSize: string = 'Taille';
 
   private dropZone: HTMLDivElement;
   private fileInput: HTMLInputElement;
@@ -60,7 +68,7 @@ export class FileUpload {
     const input = event.target as HTMLInputElement;
     if (input.files) {
       this.uploadFiles(input.files);
-      input.value = ''; // Clear the input
+      input.value = '';
     }
   };
 
@@ -97,7 +105,6 @@ export class FileUpload {
 
   private async uploadFile(file: File) {
     return new Promise<void>((resolve, reject) => {
-      // const startTime = this.uploadStartTime[file.name];
       const uploadInterval = setInterval(() => {
         if (this.uploadPaused[file.name]) {
           clearInterval(uploadInterval);
@@ -126,7 +133,6 @@ export class FileUpload {
 
       setTimeout(() => {
         if (Math.random() < 0.1) {
-          // Simule une erreur avec 10% de chance
           clearInterval(uploadInterval);
           reject(new Error('Erreur simulée'));
         }
@@ -167,11 +173,11 @@ export class FileUpload {
   private calculateRemainingTime(fileName: string): string {
     const progress = this.uploadProgress[fileName] || 0;
     const startTime = this.uploadStartTime[fileName] || Date.now();
-    const elapsedTime = (Date.now() - startTime) / 1000; // En secondes
-    const estimatedTime = (elapsedTime * 100) / progress; // Estimation en secondes
+    const elapsedTime = (Date.now() - startTime) / 1000;
+    const estimatedTime = (elapsedTime * 100) / progress;
 
     return progress < 100
-      ? `${Math.max(Math.round(estimatedTime - elapsedTime), 0)} s`
+      ? `${Math.max(Math.round(estimatedTime - elapsedTime), 0)}`
       : 'Terminé';
   }
 
@@ -181,16 +187,30 @@ export class FileUpload {
     return this.formatBytes(uploadedSize);
   }
 
+  private downloadFile(file: File) {
+    console.log('download', file);
+
+    const url = URL.createObjectURL(file);
+    const a = document.createElement('a') as HTMLAnchorElement;
+    a.href = url;
+    a.download = file.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
   render() {
     return (
       <div>
         <div
           class="drop-zone"
           ref={(el) => (this.dropZone = el as HTMLDivElement)}
+          tabindex="0"
+          role="document"
+          aria-label={this.placeholder}
         >
-          <p>
-            Glissez-déposez vos fichiers ici ou cliquez pour les sélectionner
-          </p>
+          <p>{this.placeholder}</p>
           <input
             class="default-input"
             type="file"
@@ -205,7 +225,7 @@ export class FileUpload {
             <span>{file.name}</span>
             <div class="file-details">
               <div class="file-size">
-                Taille totale: {this.formatBytes(file.size)}
+                {this.fileSize}: {this.formatBytes(file.size)}
               </div>
               {this.fileStatuses[file.name] === 'uploading' && (
                 <div>
@@ -219,7 +239,7 @@ export class FileUpload {
                     Uploadé: {this.calculateUploadedSize(file)}
                   </div>
                   <div class="time-remaining">
-                    Temps restant: {this.calculateRemainingTime(file.name)}
+                    {this.timeLeft}: {this.calculateRemainingTime(file.name)}
                   </div>
                 </div>
               )}
@@ -228,13 +248,41 @@ export class FileUpload {
               )}
               {this.fileStatuses[file.name] === 'completed' &&
                 this.uploadUrls[file.name] && (
-                  <a
-                    href={this.uploadUrls[file.name]}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => this.downloadFile(file)}
+                    aria-label={`${this.downloadLabel} ${file.name}`}
                   >
-                    Télécharger {file.name}
-                  </a>
+                    <svg
+                      aria-hideen="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.71875 8.59375L10 11.875L13.2812 8.59375"
+                        stroke="#2E3243"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10 3.125V11.875"
+                        stroke="#2E3243"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.875 11.875V16.25C16.875 16.4158 16.8092 16.5747 16.6919 16.6919C16.5747 16.8092 16.4158 16.875 16.25 16.875H3.75C3.58424 16.875 3.42527 16.8092 3.30806 16.6919C3.19085 16.5747 3.125 16.4158 3.125 16.25V11.875"
+                        stroke="#2E3243"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
                 )}
             </div>
             <button
@@ -243,11 +291,19 @@ export class FileUpload {
                   ? this.handlePauseResume(file)
                   : this.handleRemove(file)
               }
+              aria-label={
+                this.fileStatuses[file.name] === 'uploading'
+                  ? this.uploadPaused[file.name]
+                    ? `${this.resumeLabel} ${file.name}`
+                    : `${this.pauseLabel} ${file.name}`
+                  : `${this.removeFileLabel} ${file.name}`
+              }
               class="icon-button"
             >
               {this.fileStatuses[file.name] === 'uploading' ? (
                 this.uploadPaused[file.name] ? (
                   <svg
+                    aria-hideen="true"
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
@@ -258,6 +314,7 @@ export class FileUpload {
                   </svg>
                 ) : (
                   <svg
+                    aria-hideen="true"
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
@@ -269,15 +326,26 @@ export class FileUpload {
                 )
               ) : (
                 <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
+                  aria-hideen="true"
                   xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
                 >
                   <path
-                    d="M3 6H5V18H3V6ZM19 6H21V18H19V6ZM11 6H13V18H11V6Z"
-                    fill="#000"
+                    d="M15.625 4.375L4.375 15.625"
+                    stroke="#2E3243"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.625 15.625L4.375 4.375"
+                    stroke="#2E3243"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                 </svg>
               )}

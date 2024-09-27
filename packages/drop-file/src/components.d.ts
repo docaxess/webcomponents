@@ -8,7 +8,14 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpDropFile {
         "accept": string;
+        "downloadLabel": string;
+        "fileSize": string;
         "maxFileSize": number;
+        "pauseLabel": string;
+        "placeholder": string;
+        "removeFileLabel": string;
+        "resumeLabel": string;
+        "timeLeft": string;
     }
 }
 declare global {
@@ -25,7 +32,14 @@ declare global {
 declare namespace LocalJSX {
     interface IpDropFile {
         "accept"?: string;
+        "downloadLabel"?: string;
+        "fileSize"?: string;
         "maxFileSize"?: number;
+        "pauseLabel"?: string;
+        "placeholder"?: string;
+        "removeFileLabel"?: string;
+        "resumeLabel"?: string;
+        "timeLeft"?: string;
     }
     interface IntrinsicElements {
         "ip-drop-file": IpDropFile;
