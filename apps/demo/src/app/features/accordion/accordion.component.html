@@ -37,7 +37,7 @@
     class="content"
     [ngClass]="{ open: isOpen || alwaysOpen }"
     role="region"
-    id="content"
+    [id]="contentId"
     [attr.aria-labelledby]="headerId"
     [attr.aria-hidden]="!(isOpen || alwaysOpen)"
   >

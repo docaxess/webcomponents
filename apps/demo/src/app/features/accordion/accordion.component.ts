@@ -3,7 +3,8 @@ import {
   Input,
   ElementRef,
   Renderer2,
-  AfterViewInit, OnInit,
+  AfterViewInit,
+  OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
