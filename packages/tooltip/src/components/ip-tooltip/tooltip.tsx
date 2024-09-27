@@ -117,8 +117,6 @@ export class IpTooltip {
             <button
               part="close-btn"
               class="close"
-              role="button"
-              tabindex="0"
               aria-label="Close tooltip"
               onClick={this.closeTooltip}
             >
@@ -132,9 +130,7 @@ export class IpTooltip {
               <button
                 part="tooltip-btn1"
                 class="cancel"
-                role="button"
                 aria-label={this.btn1AriaLabel}
-                tabindex="0"
                 onClick={this.handleBtn1Click}
               >
                 {this.tooltipBtn1}
@@ -144,9 +140,7 @@ export class IpTooltip {
               <button
                 part="tooltip-btn2"
                 class="learn-more"
-                role="button"
                 aria-label={this.btn2AriaLabel}
-                tabindex="0"
                 onClick={this.handleBtn2Click}
               >
                 {this.tooltipBtn2}

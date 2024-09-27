@@ -49,17 +49,19 @@ export class LoginForm {
   validateForm() {
     let valid = true;
 
-    if (this.username.trim() === '') {
-      this.usernameError = this.usernameErrorMsg;
-      valid = false;
-    } else if (
-      this.usernameType === 'email' &&
-      !this.isValidEmail(this.username)
-    ) {
-      this.usernameError = this.usernameInvalidEmailMsg;
-      valid = false;
-    } else {
-      this.usernameError = '';
+    if (this.usernameRequired) {
+      if (this.username.trim() === '') {
+        this.usernameError = this.usernameErrorMsg;
+        valid = false;
+      } else if (
+        this.usernameType === 'email' &&
+        !this.isValidEmail(this.username)
+      ) {
+        valid = false;
+        this.usernameError = this.usernameInvalidEmailMsg;
+      } else {
+        this.usernameError = '';
+      }
     }
 
     if (this.password.length < 8) {
@@ -84,7 +86,6 @@ export class LoginForm {
         password: this.password,
       });
       this.resetForm();
-      console.log('Formulaire soumis avec succès');
     } else {
       if (this.usernameError) {
         this.usernameInput.focus();
@@ -101,10 +102,17 @@ export class LoginForm {
 
   handleInputChange(event: Event) {
     const target = event.target as HTMLInputElement;
+
     if (target.name === 'username') {
       this.username = target.value;
+      if (this.usernameError) {
+        this.usernameError = '';
+      }
     } else if (target.name === 'password') {
       this.password = target.value;
+      if (this.passwordError) {
+        this.passwordError = '';
+      }
     }
   }
 
@@ -154,8 +162,10 @@ export class LoginForm {
                 id="username"
                 name="username"
                 value={this.username}
+                autocomplete={
+                  this.usernameType === 'email' ? 'email' : 'username'
+                }
                 onInput={(event) => this.handleInputChange(event)}
-                required={this.usernameRequired}
                 aria-invalid={this.usernameError ? 'true' : null}
                 aria-describedby={this.usernameError ? 'username-error' : null}
                 placeholder={this.usernamePlaceholder}
@@ -187,6 +197,7 @@ export class LoginForm {
             <div class="input_btn">
               <input
                 ref={(el) => (this.passwordInput = el as HTMLInputElement)}
+                autocomplete="current-password"
                 part="password-input"
                 class="input__input"
                 type={this.passwordVisible ? 'text' : 'password'}
@@ -196,7 +207,6 @@ export class LoginForm {
                 onInput={(event) => this.handleInputChange(event)}
                 aria-invalid={this.passwordError ? 'true' : null}
                 aria-describedby={this.passwordError ? 'password-error' : null}
-                required
                 placeholder={this.pwdPlaceholder}
               />
               <button

@@ -71,8 +71,7 @@ describe('ip tooltip', () => {
         <button
         part="close-btn"
           class="close"
-          role="button"
-          tabindex="0"
+    
           aria-label="Close tooltip"
         >
           <span>x</span>
@@ -106,16 +105,15 @@ describe('ip tooltip', () => {
         <button
         part="close-btn"
           class="close"
-          role="button"
-          tabindex="0"
+          
           aria-label="Close tooltip"
         >
           <span>x</span>
         </button>
         <p>tooltip-content</p>
         <div class="btn-inside">
-          <button part="tooltip-btn1" class="cancel" role="button" tabindex="0">Cancel</button
-          ><button part="tooltip-btn2" class="learn-more" role="button" tabindex="0">
+          <button part="tooltip-btn1" class="cancel" >Cancel</button
+          ><button part="tooltip-btn2" class="learn-more" >
             Learn More
           </button>
         </div>

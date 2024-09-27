@@ -116,12 +116,12 @@ export class Pagination {
             <button
               class="first"
               aria-label="Go to the first page"
-              title="First page"
+              // title="First page"
               onClick={() => this.handleFirstPage()}
               disabled={this.currentPage === 1}
             >
               <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">First page</span>
+              {/* <span class="sr-only">First page</span> */}
             </button>
           </li>
           <li>
@@ -167,12 +167,12 @@ export class Pagination {
             <button
               class="last"
               aria-label="Go to the last page"
-              title="Last page"
+              // title="Last page"
               onClick={() => this.handleLastPage()}
               disabled={this.currentPage === this.totalPages}
             >
               <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Last page</span>
+              {/* <span class="sr-only">Last page</span> */}
             </button>
           </li>
         </ul>
