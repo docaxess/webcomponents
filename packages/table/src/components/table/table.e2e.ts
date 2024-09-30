@@ -59,7 +59,7 @@ describe('ip-table', () => {
     await page.waitForChanges();
 
     const nameHeaderButton = await page.find(
-      'ip-table >>> th:nth-of-type(1) >>> span',
+      'ip-table >>> th:nth-of-type(1) >>> button',
     );
     expect(nameHeaderButton).not.toBeNull();
     await nameHeaderButton.click();
@@ -97,7 +97,7 @@ describe('ip-table', () => {
     await page.waitForChanges();
 
     const ageHeaderButton = await page.find(
-      'ip-table >>> th:nth-of-type(2) >>> span',
+      'ip-table >>> th:nth-of-type(2) >>> button',
     );
     expect(ageHeaderButton).not.toBeNull();
     await ageHeaderButton.click();

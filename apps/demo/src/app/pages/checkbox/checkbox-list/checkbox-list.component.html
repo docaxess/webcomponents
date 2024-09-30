@@ -17,17 +17,19 @@
   </div>
   <app-accordion title="Preview" [alwaysOpen]="true">
     <div class="checkbox-wrapper">
-      <ip-checkbox-list
-        legend="Select the options below:"
-        options='[
+      <div class="checkbox-list">
+        <ip-checkbox-list
+          legend="Select the options below:"
+          options='[
             &#123;"id": "agree", "label": "I agree to the terms and conditions.", "defaultChecked": true , "disabled": true&#125;,
             &#123;"id": "remember", "label": "Remember me on this device", "disabled": true&#125;, 
             &#123;"id": "newsletter", "label": "subscribe to our newsletter for updates.","defaultChecked": true&#125;,
             &#123;"id": "send", "label": "Send me promotional offers and discounts."&#125;,
             &#123;"id": "participate", "label": "Participate in our user feddback program."&#125;
             ]'
-      >
-      </ip-checkbox-list>
+        >
+        </ip-checkbox-list>
+      </div>
     </div>
   </app-accordion>
 

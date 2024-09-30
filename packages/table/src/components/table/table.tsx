@@ -126,7 +126,7 @@ export class IpTable {
 
   render() {
     return (
-      <table role="table">
+      <table>
         <thead>
           <tr>
             {this.parsedThead.map((column, index) => (
@@ -140,9 +140,9 @@ export class IpTable {
                 }
                 onClick={() => this.sortColumn(index)}
               >
-                <span tabindex="0" class="table-header">
+                <button class="table-header">
                   {column.header} {this.renderSortICon(index)}
-                </span>
+                </button>
               </th>
             ))}
           </tr>

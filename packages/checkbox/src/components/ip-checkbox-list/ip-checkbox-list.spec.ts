@@ -19,7 +19,9 @@ describe('ip-checkbox-list', () => {
       <ip-checkbox-list options="{}">
          <mock:shadow-root>
            <div class="checkbox-list">
-             <fieldset class="checkbox-content"></fieldset>
+             <fieldset class="checkbox-content">
+             <div class="checkbox-elements"></div>
+             </fieldset>
            </div>
          </mock:shadow-root>
       </ip-checkbox-list>
@@ -38,7 +40,9 @@ describe('ip-checkbox-list', () => {
       <ip-checkbox-list>
          <mock:shadow-root>
            <div class="checkbox-list">
-             <fieldset class="checkbox-content"></fieldset>
+             <fieldset class="checkbox-content">
+             <div class="checkbox-elements"></div>
+             </fieldset>
            </div>
          </mock:shadow-root>
       </ip-checkbox-list>
@@ -65,35 +69,49 @@ describe('ip-checkbox-list', () => {
                     {&quot;id&quot;: &quot;3&quot;, &quot;label&quot;: &quot;Option 3&quot;}
                 ]">
         <mock:shadow-root>
-            <div class="checkbox-list">
-                <fieldset class="checkbox-content">
-                    <legend class="legend">Preferences:</legend>
-                    <div>
-                        <input
-                            class="checkbox-input"
-                            type="checkbox"
-                            id="1"
-                        />
-                        <label class="checkbox-label" htmlfor="1">Option 1</label>
-                    </div>
-                    <div>
-                        <input
-                            class="checkbox-input"
-                            type="checkbox"
-                            id="2"
-                        />
-                        <label class="checkbox-label" htmlfor="2">Option 2</label>
-                    </div>
-                    <div>
-                    <input
-                        class="checkbox-input"
-                        type="checkbox"
-                        id="3"
-                    />
-                        <label class="checkbox-label" htmlfor="3">Option 3</label>
-                    </div>
-                </fieldset>
-            </div>
+    <div class="checkbox-list">
+      <fieldset class="checkbox-content">
+        <legend class="legend">Preferences:</legend>
+        <div class="checkbox-elements">
+          <div class="wrapper">
+            <span
+              role="checkbox"
+              aria-labelledby="1-label"
+              id="1"
+              aria-checked="false"
+              tabindex="0"
+              class="custom-checkbox"
+              aria-disabled="false"
+              ><span class="checkbox-icon" aria-hidden="false"></span></span
+            ><label id="1-label" class="checkbox-label">Option 1</label>
+          </div>
+          <div class="wrapper">
+            <span
+              role="checkbox"
+              aria-labelledby="2-label"
+              id="2"
+              aria-checked="false"
+              tabindex="0"
+              class="custom-checkbox"
+              aria-disabled="false"
+              ><span class="checkbox-icon" aria-hidden="false"></span></span
+            ><label id="2-label" class="checkbox-label">Option 2</label>
+          </div>
+          <div class="wrapper">
+            <span
+              role="checkbox"
+              aria-labelledby="3-label"
+              id="3"
+              aria-checked="false"
+              tabindex="0"
+              class="custom-checkbox"
+              aria-disabled="false"
+              ><span class="checkbox-icon" aria-hidden="false"></span></span
+            ><label id="3-label" class="checkbox-label">Option 3</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
         </mock:shadow-root>
       </ip-checkbox-list>
     `);
@@ -118,36 +136,49 @@ describe('ip-checkbox-list', () => {
                     {&quot;id&quot;: &quot;3&quot;, &quot;label&quot;: &quot;Option 3&quot;}
                 ]">
         <mock:shadow-root>
-            <div class="checkbox-list">
-                <fieldset class="checkbox-content">
-                    <legend class="legend">Preferences:</legend>
-                    <div>
-                        <input
-                            class="checkbox-input"
-                            type="checkbox"
-                            id="1"
-                            defaultchecked=""
-                        />
-                        <label class="checkbox-label" htmlfor="1">Option 1</label>
-                    </div>
-                    <div>
-                        <input
-                            class="checkbox-input"
-                            type="checkbox"
-                            id="2"
-                        />
-                        <label class="checkbox-label" htmlfor="2">Option 2</label>
-                    </div>
-                    <div>
-                    <input
-                        class="checkbox-input"
-                        type="checkbox"
-                        id="3"
-                    />
-                        <label class="checkbox-label" htmlfor="3">Option 3</label>
-                    </div>
-                </fieldset>
-            </div>
+   <div class="checkbox-list">
+      <fieldset class="checkbox-content">
+        <legend class="legend">Preferences:</legend>
+        <div class="checkbox-elements">
+          <div class="wrapper">
+            <span
+              role="checkbox"
+              aria-labelledby="1-label"
+              id="1"
+              aria-checked="true"
+              tabindex="0"
+              class="custom-checkbox checked"
+              aria-disabled="false"
+              ><span class="checkbox-icon" aria-hidden="true">✓</span></span
+            ><label id="1-label" class="checkbox-label checked">Option 1</label>
+          </div>
+          <div class="wrapper">
+            <span
+              role="checkbox"
+              aria-labelledby="2-label"
+              id="2"
+              aria-checked="false"
+              tabindex="0"
+              class="custom-checkbox"
+              aria-disabled="false"
+              ><span class="checkbox-icon" aria-hidden="false"></span></span
+            ><label id="2-label" class="checkbox-label">Option 2</label>
+          </div>
+          <div class="wrapper">
+            <span
+              role="checkbox"
+              aria-labelledby="3-label"
+              id="3"
+              aria-checked="false"
+              tabindex="0"
+              class="custom-checkbox"
+              aria-disabled="false"
+              ><span class="checkbox-icon" aria-hidden="false"></span></span
+            ><label id="3-label" class="checkbox-label">Option 3</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
         </mock:shadow-root>
       </ip-checkbox-list>
     `);

@@ -212,7 +212,6 @@ export class IpTabPanel {
               tabindex={
                 this.selectedTab === 'tab-content-' + (index + 1) ? 0 : -1
               }
-              aria-label={tabHeader.title ? tabHeader.title : tabHeader.alt}
             >
               {tabHeader.imgPath ? (
                 <img

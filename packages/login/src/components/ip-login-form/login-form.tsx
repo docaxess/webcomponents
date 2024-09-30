@@ -57,8 +57,8 @@ export class LoginForm {
         this.usernameType === 'email' &&
         !this.isValidEmail(this.username)
       ) {
-        valid = false;
         this.usernameError = this.usernameInvalidEmailMsg;
+        valid = false;
       } else {
         this.usernameError = '';
       }
