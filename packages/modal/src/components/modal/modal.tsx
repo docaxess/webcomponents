@@ -120,6 +120,7 @@ export class Modal {
           ref={(el) => (this.modal = el as HTMLDialogElement)}
           open={this.isOpen}
           aria-modal="true"
+          aria-labelledby="dialog-reference"
         >
           <button
             class="close-dialog"

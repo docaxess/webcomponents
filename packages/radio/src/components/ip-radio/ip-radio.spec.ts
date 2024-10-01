@@ -11,8 +11,8 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'>
         <mock:shadow-root>
-    <fieldset class="custom-fieldset" tabindex="0">
-      <div role="radiogroup">
+    <fieldset class="custom-fieldset"  >
+      <div >
         <div class="">
           <input
             type="radio"
@@ -56,8 +56,8 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'>
         <mock:shadow-root>
-    <fieldset class="custom-fieldset" tabindex="0">
-      <div role="radiogroup">
+    <fieldset class="custom-fieldset"  >
+      <div >
         <div class="">
           <input
             type="radio"
@@ -94,8 +94,8 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio options='[{"id": "1", "label": "Option 1"}]'>
         <mock:shadow-root>
-    <fieldset class="custom-fieldset" tabindex="0">
-      <div role="radiogroup">
+    <fieldset class="custom-fieldset"  >
+      <div >
         <div class="">
           <input
             type="radio"
@@ -123,9 +123,9 @@ describe('IpRadio Component', () => {
     expect(page.root).toEqualHtml(`
       <ip-radio legend="Legend" options='[{"id": "1", "label": "Option 1"}, {"id": "2", "label": "Option 2"}]'>
       <mock:shadow-root>
-    <fieldset class="custom-fieldset" tabindex="0">
+    <fieldset class="custom-fieldset"  >
       <legend>Legend</legend>
-      <div role="radiogroup">
+      <div >
         <div class="">
           <input
             type="radio"

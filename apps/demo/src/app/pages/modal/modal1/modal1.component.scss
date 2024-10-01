@@ -140,3 +140,27 @@ ip-modal::part(trigger-button) {
     }
   }
 }
+
+@media (max-width: 460px) {
+  .modal-wrapper {
+    width: 283px;
+  }
+  .dialog-title {
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .dialog-title {
+    input {
+      width: 100px;
+      margin-left: 15px;
+    }
+  }
+  .dialog-btn {
+    width: 100px;
+    font-size: 14px;
+  }
+}

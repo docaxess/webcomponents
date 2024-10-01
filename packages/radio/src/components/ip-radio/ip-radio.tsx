@@ -117,9 +117,9 @@ export class IpRadio {
                 onChange={() => this.handleChange(option)}
                 checked={this.selectedId === option.id.toString()}
                 disabled={option.disabled}
-                // aria-checked={
-                //   this.selectedId === option.id.toString() ? 'true' : 'false'
-                // }
+                aria-checked={
+                  this.selectedId === option.id.toString() ? 'true' : 'false'
+                }
               />
               {this.labelPosition === 'after' && (
                 <label htmlFor={option.id.toString()}>{option.label}</label>
