@@ -29,7 +29,12 @@ import { AccordionComponent } from '../../../features/accordion/accordion.compon
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Login1Component {
-  withEmailCode = `<ip-login username-type="email" username-label="Email" username-required>
+  withEmailCode = `<ip-login 
+    username-type="email"
+    username-label="Email"
+    username-error-msg="Email is required"
+    username-required
+  >
   <div class="social-media">
     <div class="text">
       <span>Or sign up using</span>

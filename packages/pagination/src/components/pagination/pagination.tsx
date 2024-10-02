@@ -7,6 +7,7 @@ import {
   EventEmitter,
   Watch,
   Element,
+  Listen,
 } from '@stencil/core';
 
 @Component({
@@ -20,6 +21,10 @@ export class Pagination {
   @Prop() totalPages = 10;
   @Prop({ mutable: true }) currentPage = 1;
   @Prop() visiblePages = 5;
+  @Prop() firstPageAriaLabel = 'Go to the first page';
+  @Prop() prevPageAriaLabel = 'Go to the previous page';
+  @Prop() nextPageAriaLabel = 'Go to the next page';
+  @Prop() lastPageAriaLabel = 'Go to the last page';
 
   @State() pages: number[] = [];
 
@@ -43,11 +48,23 @@ export class Pagination {
   }
 
   componentWillLoad() {
+    this.updateVisiblePages();
     this.updatePages();
   }
 
   componentDidUpdate() {
     this.focusCurrentPage();
+  }
+
+  @Listen('resize', { target: 'window' })
+  handleResize() {
+    this.updateVisiblePages();
+  }
+
+  private updateVisiblePages() {
+    const isMobile = window.matchMedia('(max-width: 460px)').matches;
+    this.visiblePages = isMobile ? 3 : this.visiblePages;
+    this.updatePages();
   }
 
   updatePages() {
@@ -114,31 +131,30 @@ export class Pagination {
         <ul>
           <li>
             <button
+              part="first-btn"
               class="first"
-              aria-label="Go to the first page"
-              title="First page"
+              aria-label={this.firstPageAriaLabel}
               onClick={() => this.handleFirstPage()}
               disabled={this.currentPage === 1}
             >
               <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">First page</span>
             </button>
           </li>
           <li>
             <button
+              part="prev-btn"
               class="previous"
-              aria-label="Go to the previous page"
-              title="Previous page"
+              aria-label={this.prevPageAriaLabel}
               onClick={() => this.handlePrevPage()}
               disabled={this.currentPage === 1}
             >
               <span aria-hidden="true">&lsaquo;</span>
-              <span class="sr-only">Previous page</span>
             </button>
           </li>
           {this.pages.map((page) => (
             <li key={page}>
               <button
+                part="page-btn"
                 aria-label={`Page ${page}`}
                 aria-current={this.currentPage === page ? 'page' : undefined}
                 class={this.currentPage === page ? 'current' : ''}
@@ -153,26 +169,24 @@ export class Pagination {
           ))}
           <li>
             <button
+              part="next-btn"
               class="next"
-              aria-label="Go to the next page"
-              title="Next page"
+              aria-label={this.nextPageAriaLabel}
               onClick={() => this.handleNextPage()}
               disabled={this.currentPage === this.totalPages}
             >
               <span aria-hidden="true">&rsaquo;</span>
-              <span class="sr-only">Next page</span>
             </button>
           </li>
           <li>
             <button
+              part="last-btn"
               class="last"
-              aria-label="Go to the last page"
-              title="Last page"
+              aria-label={this.lastPageAriaLabel}
               onClick={() => this.handleLastPage()}
               disabled={this.currentPage === this.totalPages}
             >
               <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Last page</span>
             </button>
           </li>
         </ul>

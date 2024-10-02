@@ -1,5 +1,5 @@
 :host {
-  --primary-color: var(--primaryColor, #007bff);
+  --primary-color: var(--primaryColor, #0168d5);
   --text-active-color: var(--textActiveColor, #ffffff);
 }
 nav {
@@ -27,6 +27,9 @@ button {
   padding: 10px;
   cursor: pointer;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover,
   &:focus {
@@ -59,4 +62,17 @@ button.current {
 
 button {
   width: 39px;
+}
+
+@media (max-width: 768px) {
+  button {
+    font-size: 14px;
+    width: 30px;
+  }
+}
+@media (max-width: 460px) {
+  button {
+    font-size: 12px;
+    width: 25px;
+  }
 }

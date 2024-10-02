@@ -54,19 +54,19 @@ describe('ip-tab-panel', () => {
                         <div part="tab-container" class="ip-tab-header">
                             <h2 part="tab-panel-title" id="tablist-1" class="ip-tab-header-title">Audit RGAA</h2>
                             <div role="tablist" part="tab-btn-list" aria-labelledby="tablist-1" class="ip-tab-buttons" id="tab-buttons">
-                            <button class="" id="tab-1" type="button" role="tab" part="tab-btn tab-btn-1" aria-selected="false" aria-controls="tab-content-1" tabindex="-1" aria-label="Accessibilité">
+                            <button class="" id="tab-1" type="button" role="tab" part="tab-btn tab-btn-1" aria-selected="false" aria-controls="tab-content-1" tabindex="-1" >
                                 <span part="tab-text" class="tab-panel-text">Accessibilité</span>
                             </button>
-                            <button class="" id="tab-2" type="button" role="tab" part="tab-btn tab-btn-2" aria-selected="false" aria-controls="tab-content-2" tabindex="-1" aria-label="Pdf Document">
+                            <button class="" id="tab-2" type="button" role="tab" part="tab-btn tab-btn-2" aria-selected="false" aria-controls="tab-content-2" tabindex="-1" >
                                 <span part="tab-text" class="tab-panel-text">Pdf Document</span>
                             </button>
-                            <button class="" id="tab-3" type="button" role="tab" part="tab-btn tab-btn-3" aria-selected="false" aria-controls="tab-content-3" tabindex="-1" aria-label="Statistical">
+                            <button class="" id="tab-3" type="button" role="tab" part="tab-btn tab-btn-3" aria-selected="false" aria-controls="tab-content-3" tabindex="-1" >
                                 <span part="tab-text" class="tab-panel-text">Statistical</span>
                             </button>
-                            <button class="" id="tab-4" type="button" role="tab" part="tab-btn tab-btn-4" aria-selected="false" aria-controls="tab-content-4" tabindex="-1" aria-label="Certification">
+                            <button class="" id="tab-4" type="button" role="tab" part="tab-btn tab-btn-4" aria-selected="false" aria-controls="tab-content-4" tabindex="-1" >
                                 <span part="tab-text" class="tab-panel-text">Certification</span>
                             </button>
-                            <button class="tab-content-active" id="tab-5" type="button" role="tab" part="tab-btn tab-btn-5 tab-btn-active" aria-selected="true" aria-controls="tab-content-5" tabindex="0" aria-label="Legislation">
+                            <button class="tab-content-active" id="tab-5" type="button" role="tab" part="tab-btn tab-btn-5 tab-btn-active" aria-selected="true" aria-controls="tab-content-5" tabindex="0" >
                                 <span part="tab-text" class="tab-panel-text">Legislation</span>
                             </button>
                             </div>

@@ -26,11 +26,15 @@ To use this component, add the properties as attributes to the `<ip-pagination>`
 
 ### Properties
 
-| Property       | Attribute       | Necessity | Description                                                | Type     | Default |
-| -------------- | --------------- | --------- | ---------------------------------------------------------- | -------- | ------- |
-| `totalPages`   | `total-pages`   | Required  | The total number of pages.                                 | `number` | `10`    |
-| `currentPage`  | `current-page`  | Optional  | The current active page.                                   | `number` | `1`     |
-| `visiblePages` | `visible-pages` | Optional  | The number of pages to display in the pagination controls. | `number` | `5`     |
+| Property             | Attribute               | Necessity | Description                                                | Type     | Default                     |
+| -------------------- | ----------------------- | --------- | ---------------------------------------------------------- | -------- | --------------------------- |
+| `totalPages`         | `total-pages`           | Required  | The total number of pages.                                 | `number` | `10`                        |
+| `currentPage`        | `current-page`          | Optional  | The current active page.                                   | `number` | `1`                         |
+| `visiblePages`       | `visible-pages`         | Optional  | The number of pages to display in the pagination controls. | `number` | `5`                         |
+| `firstPageAriaLabel` | `first-page-aria-label` | Optional  | The aria-label for first page button.                      | `string` | `'Go to the first page'`    |
+| `lastPageAriaLabel`  | `last-page-aria-label`  | Optional  | The aria-label for last page button.                       | `string` | `'Go to the last page'`     |
+| `nextPageAriaLabel`  | `next-page-aria-label`  | Optional  | The aria-label for next page button.                       | `string` | `'Go to the next page'`     |
+| `prevPageAriaLabel`  | `prev-page-aria-label`  | Optional  | The aria-label for previous page button.                   | `string` | `'Go to the previois page'` |
 
 _e.g:_
 

@@ -44,7 +44,8 @@ $icon-size: 2em;
     font-weight: bold;
   }
 
-  @media only screen and (max-width: 767px) and (orientation: portrait), only screen and (max-width: 992px) and (orientation: landscape) {
+  @media only screen and (max-width: 767px) and (orientation: portrait),
+    only screen and (max-width: 992px) and (orientation: landscape) {
     flex-direction: column;
   }
 }
@@ -86,12 +87,14 @@ $icon-size: 2em;
     }
 
     &:focus,
+    &:hover,
     &:focus-visible {
       outline: 2px solid $secondaryColor;
       outline-offset: 5px;
     }
 
-    @media only screen and (max-width: 767px) and (orientation: portrait), only screen and (max-width: 992px) and (orientation: landscape) {
+    @media only screen and (max-width: 767px) and (orientation: portrait),
+      only screen and (max-width: 992px) and (orientation: landscape) {
       margin-inline: 0;
       padding: 0.75em;
 
@@ -167,7 +170,8 @@ $icon-size: 2em;
     }
   }
 
-  @media only screen and (max-width: 767px) and (orientation: portrait), only screen and (max-width: 992px) and (orientation: landscape) {
+  @media only screen and (max-width: 767px) and (orientation: portrait),
+    only screen and (max-width: 992px) and (orientation: landscape) {
     flex-direction: column;
 
     img {

@@ -174,7 +174,7 @@ export class Dropdown {
   render() {
     return (
       <div class="dropdown">
-        <div class="dropdown-title" aria-label={this.dropdownTitle}>
+        <div class="dropdown-title" id="dropdown-title">
           {this.dropdownTitle}
         </div>
         <div
@@ -185,7 +185,6 @@ export class Dropdown {
           onClick={() => this.toggleDropdown()}
           onKeyDown={(event) => this.handleKeyDown(event)}
           aria-expanded={this.isOpen ? 'true' : 'false'}
-          aria-label={this.placeholder}
         >
           <span class="dropdown-head" role="button" aria-haspopup="listbox">
             {this.selectedItem || this.placeholder}

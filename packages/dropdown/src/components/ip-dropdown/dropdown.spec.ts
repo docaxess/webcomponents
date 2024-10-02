@@ -12,8 +12,8 @@ describe('Dropdown', () => {
     <ip-dropdown dropdown-title="Select an option" items-options='["Option 1", "Option 2", "Option 3"]'>
     <mock:shadow-root>
       <div class="dropdown">
-        <div class="dropdown-title" aria-label="Select an option">Select an option</div>
-        <div class="dropdown-content" tabindex="0" aria-expanded="false" role="combobox" aria-label="Select an option"
+        <div class="dropdown-title" id="dropdown-title" >Select an option</div>
+        <div class="dropdown-content" tabindex="0" aria-expanded="false" role="combobox" 
         aria-labelledby="dropdown-title">
           <span class="dropdown-head" aria-haspopup="listbox" role="button">Select an option</span>
           <span class="dropdown-arrow" aria-hidden="true">

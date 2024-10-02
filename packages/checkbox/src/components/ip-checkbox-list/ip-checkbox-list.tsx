@@ -59,10 +59,33 @@ export class IpCheckboxList {
   }
 
   handleChange(optionId: string) {
+    const option = this.parsedOptions.find((opt) => opt.id === optionId);
+    if (option && option.disabled) {
+      return;
+    }
+
     this.selectedOptions = this.selectedOptions.includes(optionId)
       ? this.selectedOptions.filter((id) => id !== optionId)
       : [...this.selectedOptions, optionId];
     this.selectionChanged.emit(this.selectedOptions);
+  }
+
+  toggleOption(optionId: string) {
+    this.selectedOptions = this.selectedOptions.includes(optionId)
+      ? this.selectedOptions.filter((id) => id !== optionId)
+      : [...this.selectedOptions, optionId];
+  }
+
+  handleKeyDown(event: KeyboardEvent, optionId: string) {
+    const option = this.parsedOptions.find((opt) => opt.id === optionId);
+    if (option && option.disabled) {
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.toggleOption(optionId);
+    }
   }
 
   render() {
@@ -70,23 +93,44 @@ export class IpCheckboxList {
       <div class="checkbox-list">
         <fieldset class="checkbox-content">
           {this.legend && <legend class="legend">{this.legend}</legend>}
-          {this.parsedOptions.map((option) => (
-            <div key={option.id}>
-              <input
-                class="checkbox-input"
-                type="checkbox"
-                id={option.id}
-                {...(this.selectedOptions.includes(option.id)
-                  ? { defaultChecked: true }
-                  : {})}
-                onChange={() => this.handleChange(option.id)}
-                disabled={option.disabled}
-              />
-              <label class="checkbox-label" htmlFor={option.id}>
-                {option.label}
-              </label>
-            </div>
-          ))}
+          <div class="checkbox-elements">
+            {this.parsedOptions.map((option) => (
+              <div class="wrapper" key={option.id}>
+                <span
+                  role="checkbox"
+                  aria-labelledby={`${option.id}-label`}
+                  id={option.id}
+                  aria-checked={
+                    this.selectedOptions.includes(option.id) ? 'true' : 'false'
+                  }
+                  tabindex={option.disabled ? '-1' : '0'}
+                  onClick={() => this.handleChange(option.id)}
+                  onKeyDown={(event: KeyboardEvent) =>
+                    this.handleKeyDown(event, option.id)
+                  }
+                  class={`custom-checkbox ${this.selectedOptions.includes(option.id) ? 'checked' : ''} ${option.disabled ? 'disabled' : ''}`}
+                  aria-disabled={option.disabled ? 'true' : 'false'}
+                >
+                  <span
+                    class="checkbox-icon"
+                    aria-hidden={
+                      this.selectedOptions.includes(option.id)
+                        ? 'true'
+                        : 'false'
+                    }
+                  >
+                    {this.selectedOptions.includes(option.id) ? '\u2713' : ''}
+                  </span>
+                </span>
+                <label
+                  id={`${option.id}-label`}
+                  class={`checkbox-label ${this.selectedOptions.includes(option.id) ? 'checked' : ''} ${option.disabled ? 'disabled' : ''}`}
+                >
+                  {option.label}
+                </label>
+              </div>
+            ))}
+          </div>
         </fieldset>
       </div>
     );

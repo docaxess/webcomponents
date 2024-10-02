@@ -101,12 +101,9 @@ export class IpRadio {
 
   render() {
     return (
-      <fieldset class="custom-fieldset" tabindex="0">
+      <fieldset class="custom-fieldset">
         {this.legend && <legend>{this.legend}</legend>}
-        <div
-          onKeyDown={(event) => this.handleKeyDown(event as KeyboardEvent)}
-          role="radiogroup"
-        >
+        <div onKeyDown={(event) => this.handleKeyDown(event as KeyboardEvent)}>
           {this.optionsList.map((option) => (
             <div key={option.id} class={{ disabled: option.disabled }}>
               {this.labelPosition === 'before' && (

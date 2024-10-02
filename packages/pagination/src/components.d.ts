@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface IpPagination {
         "currentPage": number;
+        "firstPageAriaLabel": string;
+        "lastPageAriaLabel": string;
+        "nextPageAriaLabel": string;
+        "prevPageAriaLabel": string;
         "totalPages": number;
         "visiblePages": number;
     }
@@ -41,7 +45,11 @@ declare global {
 declare namespace LocalJSX {
     interface IpPagination {
         "currentPage"?: number;
+        "firstPageAriaLabel"?: string;
+        "lastPageAriaLabel"?: string;
+        "nextPageAriaLabel"?: string;
         "onPageChanged"?: (event: IpPaginationCustomEvent<number>) => void;
+        "prevPageAriaLabel"?: string;
         "totalPages"?: number;
         "visiblePages"?: number;
     }

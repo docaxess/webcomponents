@@ -3,7 +3,7 @@
   --secondary-color: var(--ip-secondary-color, #f9f9f9);
   --font-size: var(--ip-font-size, 15px);
   --font-family: var(--ip-font-family, Arial, sans-serif);
-  --thead-color: var(--ip-thead-color, white);
+  --thead-color: var(--ip-thead-color, #fff);
   --hover-color: var(--ip-hover-color, #8f2b8f);
 }
 
@@ -27,6 +27,7 @@ table {
 }
 
 .table-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,19 +63,13 @@ tbody tr:hover {
   border: 2px solid var(--hover-color);
 }
 button {
+  color: var(--ip-thead-color);
   background-color: var(--primary-color);
   border: none;
   cursor: pointer;
 }
 button:focus {
   outline: none;
-  svg {
-    background-color: white;
-    border-radius: 10px;
-    path {
-      fill: var(--primary-color);
-    }
-  }
 }
 
 @media (max-width: 768px) {

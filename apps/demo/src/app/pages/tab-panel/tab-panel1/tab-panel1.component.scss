@@ -90,6 +90,12 @@ ip-tab-panel::part(tab-list) {
   background-color: #b00057;
   color: #ffffff;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: 3px solid #000;
+    outline-offset: 2px;
+  }
 }
 
 .ip-content .ip-content-btn img {
