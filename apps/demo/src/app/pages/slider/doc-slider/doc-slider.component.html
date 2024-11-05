@@ -1,0 +1,130 @@
+<section id="documentation">
+    <h3 class="under-title">Installation</h3>
+    <p>
+      Follow these steps to install and use the
+      <code>ip-slider</code> component in your project.
+    </p>
+    <h4>Step 1:</h4>
+
+    <p>Install the ip-slider component as a dependency in the project:</p>
+  
+    <pre><code>npm install ip-slider
+  </code></pre>
+  
+    <h4>Step 2:</h4>
+  
+    <p>Import module in script file:</p>
+  
+    <pre><code [highlight]="import" language="typescript">
+  </code></pre>
+  
+    <h3 class="under-title">Usage:</h3>
+    <p>To use this component, we must add the properties as attributes and slot attribute for the content for each slide.</p>
+
+  <h4>Properties</h4>
+  <table>
+    <thead>
+        <tr>
+            <th scope="col">Property</th>
+            <th scope="col">Attribute</th>
+            <th scope="col">Necessity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Type</th>
+            <th scope="col">Default</th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>itemToShow</code></td>
+        <td><code>item-to-show</code></td>
+        <td>Required</td>
+        <td>The number of slides to display at once in the viewport.</td>
+        <td><code>number</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>slideTitleAria</code></td>
+        <td><code>slide-title-aria</code></td>
+        <td>Optional</td>
+        <td>The aria label of the slider component.</td>
+        <td><code>string</code></td>
+        <td><code>undefined</code></td>
+      </tr>
+      <tr>
+        <td><code>slideGap</code></td>
+        <td><code>slide-gap</code></td>
+        <td>Optional</td>
+        <td>The gap between each slide in pixels.</td>
+        <td><code>number</code></td>
+        <td><code>30</code></td>
+      </tr>
+      <tr>
+        <td><code>isSlideBullet</code></td>
+        <td><code>is-slide-bullet</code></td>
+        <td>Optional</td>
+        <td>Determines if pagination bullets are displayed.</td>
+        <td><code>boolean</code></td>
+        <td><code>true</code></td>
+      </tr>
+      <tr>
+        <td><code>isPreviousNextNavigation</code></td>
+        <td><code>is-previous-next-navigation</code></td>
+        <td>Optional</td>
+        <td>Enables or disables the previous/next navigation buttons.</td>
+        <td><code>boolean</code></td>
+        <td><code>true</code></td>
+      </tr>
+      <tr>
+        <td><code>previousBtnAria</code></td>
+        <td><code>previous-btn-aria</code></td>
+        <td>Optional</td>
+        <td>ARIA label for the previous button for accessibility.</td>
+        <td><code>string</code></td>
+        <td><code>'Previous slide'</code></td>
+      </tr>
+      <tr>
+        <td><code>nextBtnAria</code></td>
+        <td><code>next-btn-aria</code></td>
+        <td>Optional</td>
+        <td>ARIA label for the next button for accessibility.</td>
+        <td><code>string</code></td>
+        <td><code>'Next slide'</code></td>
+      </tr>
+      <tr>
+        <td><code>bulletBtnAria</code></td>
+        <td><code>bullet-btn-aria</code></td>
+        <td>Optional</td>
+        <td>ARIA label for the bullet buttons for accessibility.</td>
+        <td><code>string</code></td>
+        <td><code>'Go to slide'</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Slot</h4>
+  <p>The contents of the slide should have as attribute slot="slide-1" and value of slide-\* incremented accordingly</p>
+
+  <p><em>e.g:</em></p>
+  <pre class="example">
+    <code [highlight]="example" language="html"></code>
+  </pre>
+  <h3 class="under-title">Customization</h3>
+  <h4> Color </h4>
+  <p>We have a set of predefined variable used to customisation the slider:</p>
+  <ul>
+    <li><code>--ip-sl-primary-color</code></li>
+    <li><code>--ip-sl-secondary-color</code></li>
+    <li><code>--svg-color</code></li>
+  </ul>
+  <h4>Part</h4>
+  <p>We have a set of classes that could be used to customise accordingly:</p>
+  <ul>
+    <li><code>bullet-btn</code>:for the bullet button</li>
+    <li><code>left-btn</code>:for the left button</li>
+    <li><code>right-btn</code>:for the right button</li>
+  </ul>
+
+  <p>To update the values use the following:</p>
+  <pre class="example">
+    <code [highlight]="custom" language="css"></code>
+   </pre>
+</section>

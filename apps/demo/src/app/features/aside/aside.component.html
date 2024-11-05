@@ -201,16 +201,48 @@
         </li>
       </ul>
     </li>
-    <li class="item" [class.open]="isOpen['menu']">
-      <a
-        routerLink="/menu/burger-menu"
-        routerLinkActive="active"
-        aria-label="Go to menu component"
-        (click)="onLinkClick()"
+    <li class="item with-content" [class.open]="isOpen['menu']">
+      <div
+        class="sub-title"
+        tabindex="0"
+        (click)="toggleSection('menu')"
+        (keydown)="handleKeydown($event, 'menu')"
+        [attr.aria-expanded]="isOpen['menu']"
+        aria-controls="login-sub-menu"
+        [attr.aria-label]="
+          isOpen['menu'] ? 'Collapse menu section' : 'Expand menu section'
+        "
+        role="button"
       >
-        Menu
-      </a>
+        <span> Menu </span>
+        <div class="icon" [class.open]="isOpen['menu']">
+          <img src="assets/images/vector.svg" alt="" />
+        </div>
+      </div>
+      <ul class="sub-menu" role="list" [class.open]="isOpen['menu']">
+        <li>
+          <a
+            routerLink="/menu/burger-menu"
+            routerLinkActive="active"
+            aria-label="Go to burger-menu"
+            (click)="onLinkClick()"
+          >
+          Burger Menu
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/menu/navigation-bar"
+            routerLinkActive="active"
+            aria-label="Go to navigation bar"
+            (click)="onLinkClick()"
+          >
+            Navigation Bar
+          </a>
+        </li>
+      </ul>
     </li>
+   
 
     <li class="item" [class.open]="isOpen['modal']">
       <a
@@ -264,6 +296,16 @@
         (click)="onLinkClick()"
       >
         Show-more
+      </a>
+    </li>
+    <li class="item" [class.open]="isOpen['slider']">
+      <a
+        routerLink="/slider/slider1"
+        routerLinkActive="active"
+        aria-label="Go to slider component"
+        (click)="onLinkClick()"
+      >
+      Slider
       </a>
     </li>
     <li class="item" [class.open]="isOpen['stepper']">

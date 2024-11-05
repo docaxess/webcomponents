@@ -1,0 +1,54 @@
+<div class="modal-content">
+    <div class="component-intro">
+      <div class="title">
+        <p>COMPONENTS</p>
+        <h2>Burger Menu</h2>
+      </div>
+      <p>
+        Navigation menus replicate the layout of the website, assisting users in navigation. Given their fundamental roles, menus are pivotal components in both web pages and applications, demanding focused consideration during the design and development phases.
+      </p>
+    </div>
+    <app-accordion title="Preview" [alwaysOpen]="true">
+      <div class="head-nav ">
+        <ip-navigation-bar
+        menu-data='[
+      {"label": "Home", "href": "/"},
+      {"label": "About", "href": "/about"},
+      {"label": "Pages",   "href": "/news",
+        "submenus": [
+        {"label": "Page-1", "href": "/pages/page1"},
+        {"label": "Page-2", "href": "/pages/page2"},
+        {"label": "Page-3", "href": "/pages/page3"},
+        {"label": "Page-4", "href": "/pages/page4"}
+      ]},
+      {"label": "Contact", "href": "/contact"},{"label": "News", "href": "/news", 
+      "submenus": [
+      {"label": "News-1", "href": "/news/news1"},
+      {"label": "News-2", "href": "/news/news2"},
+      {"label": "News-3", "href": "/news/news3"},
+      {"label": "News-4", "href": "/news/news4"}
+    ]}
+    ]'
+      >
+        <div class="logo" slot="left-head">
+          <img class="menu-2-logo" src="./assets/images/burger-menu/Logo.png" alt="" />
+        </div>
+        <div slot="right-head">
+          <button class="menu-2-btn">GET A QUOTE</button>
+        </div>
+      </ip-navigation-bar>
+      </div>
+    </app-accordion>
+  
+    <app-accordion title="Code">
+      <app-code-snippet
+        [htmlCode]="codeSnippet"
+        [cssCode]="css"
+      ></app-code-snippet>
+    </app-accordion>
+  
+    <app-accordion title="Documentation">
+      <app-doc-menu></app-doc-menu>
+    </app-accordion>
+  </div>
+  

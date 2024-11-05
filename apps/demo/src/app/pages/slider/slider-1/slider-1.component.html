@@ -1,0 +1,75 @@
+<div class="modal-content">
+    <div class="component-intro">
+      <div class="title">
+        <p>COMPONENTS</p>
+        <h2>Slider</h2>
+      </div>
+      <p></p>
+    </div>
+    <app-accordion title="Preview" [alwaysOpen]="true">
+      <div class="slider-wrapper">
+          <div class="ip-slider-1">
+            <ip-slider-sl-1 item-to-show="2" slide-gap="30">
+              <div class="slot-content" slot="slide-1">
+                <h2>Slot 1 Title</h2>
+                <p>Content for Slot 1</p>
+                <a href="#">Link on Slot 1</a>
+              </div>
+              <div class="slot-content" slot="slide-2">
+                <h2>Slot 2 Title</h2>
+                <p>Content for Slot 2</p>
+                <a href="#">Link on Slot 2</a>
+              </div>
+              <div class="slot-content" slot="slide-3">
+                <h2>Slot 3 Title</h2>
+                <p>Content for Slot 3</p>
+                <a href="#">Link on Slot 3</a>
+              </div>
+              <div class="slot-content" slot="slide-4">
+                <h2>Slot 4 Title</h2>
+                <p>Content for Slot 4</p>
+                <a href="#">Link on Slot 4</a>
+              </div>
+              <div class="slot-content" slot="slide-5">
+                <h2>Slot 5 Title</h2>
+                <p>Content for Slot 5</p>
+                <a href="#">Link on Slot 5</a>
+              </div>
+              <div class="slot-content" slot="slide-6">
+                <h2>Slot 6 Title</h2>
+                <p>Content for Slot 6</p>
+                <a href="#">Link on Slot 6</a>
+              </div>
+              <div class="slot-content" slot="slide-7">
+                <h2>Slot 7 Title</h2>
+                <p>Content for Slot 7</p>
+                <a href="#">Link on Slot 7</a>
+              </div>
+              <div class="slot-content" slot="slide-8">
+                <h2>Slot 8 Title</h2>
+                <p>Content for Slot 8</p>
+                <a href="#">Link on Slot 8</a>
+              </div>
+              <div class="slot-content" slot="slide-9">
+                <h2>Slot 9 Title</h2>
+                <p>Content for Slot 9</p>
+                <a href="#">Link on Slot 9</a>
+              </div>
+            </ip-slider-sl-1>
+          </div>        
+     
+      </div>
+    </app-accordion>
+  
+    <app-accordion title="Code">
+      <app-code-snippet
+        [htmlCode]="sliderCode"
+        [cssCode]="sliderCss"
+      ></app-code-snippet>
+    </app-accordion>
+  
+    <app-accordion title="Documentation">
+      <app-doc-slider></app-doc-slider>
+    </app-accordion>
+  </div>
+  

@@ -1,0 +1,60 @@
+.head-nav {
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6f6;
+  min-height: 450px;
+
+  }
+
+
+    ip-navigation-bar::part(submenu-container) {
+        top: 50px;
+        }
+
+    
+.logo {
+    display: flex;
+    width: 188.894px;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .menu-2-btn {
+    background-color: #fff;
+    display: flex;
+    padding: 10px 21px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid #b00057;
+    color: #b00057;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .menu-2-btn:focus,
+  .menu-2-btn:hover {
+    background-color: #b00057;
+    color: #fff;
+    outline: 3px solid #b00057;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .menu-2-btn {
+      color: #fff;
+      border: 1px solid #fff;
+      background-color: #03396c;
+    }
+    .menu-2-btn:focus,
+    .menu-2-btn:hover {
+      background-color: #fff;
+      color: #03396c;
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+  }
