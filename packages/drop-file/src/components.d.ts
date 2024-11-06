@@ -18,8 +18,23 @@ export namespace Components {
         "timeLeft": string;
     }
 }
+export interface IpDropFileCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIpDropFileElement;
+}
 declare global {
+    interface HTMLIpDropFileElementEventMap {
+        "fileUploaded": File;
+    }
     interface HTMLIpDropFileElement extends Components.IpDropFile, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIpDropFileElementEventMap>(type: K, listener: (this: HTMLIpDropFileElement, ev: IpDropFileCustomEvent<HTMLIpDropFileElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIpDropFileElementEventMap>(type: K, listener: (this: HTMLIpDropFileElement, ev: IpDropFileCustomEvent<HTMLIpDropFileElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIpDropFileElement: {
         prototype: HTMLIpDropFileElement;
@@ -35,6 +50,7 @@ declare namespace LocalJSX {
         "downloadLabel"?: string;
         "fileSize"?: string;
         "maxFileSize"?: number;
+        "onFileUploaded"?: (event: IpDropFileCustomEvent<File>) => void;
         "pauseLabel"?: string;
         "placeholder"?: string;
         "removeFileLabel"?: string;

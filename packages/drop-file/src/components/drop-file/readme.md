@@ -20,6 +20,13 @@
 | `timeLeft`        | `time-left`         |             | `string` | `'Temps restant'`                                                     |
 
 
+## Events
+
+| Event          | Description | Type                |
+| -------------- | ----------- | ------------------- |
+| `fileUploaded` |             | `CustomEvent<File>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

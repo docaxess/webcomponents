@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'ip-drop-file',
@@ -26,6 +26,9 @@ export class FileUpload {
   @Prop() removeFileLabel: string = 'Supprimer';
   @Prop() timeLeft: string = 'Temps restant';
   @Prop() fileSize: string = 'Taille';
+
+  // Ajout de l'événement personnalisé
+  @Event() fileUploaded: EventEmitter<File>;
 
   private dropZone: HTMLDivElement;
   private fileInput: HTMLInputElement;
@@ -127,6 +130,9 @@ export class FileUpload {
             ...this.uploadUrls,
             [file.name]: URL.createObjectURL(file),
           };
+
+          this.fileUploaded.emit(file);
+
           resolve();
         }
       }, 500);
