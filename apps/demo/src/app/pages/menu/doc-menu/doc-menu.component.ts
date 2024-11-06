@@ -10,7 +10,7 @@ import { Highlight } from 'ngx-highlightjs';
   styleUrl: './doc-menu.component.scss',
 })
 export class DocMenuComponent {
-  installationScript = `install ip-burger-menu`;
+  installationScript = `install ip-menu`;
   example = `<ip-burger-menu
   open-menu-aria-label="Ouvrir le menu"
   close-menu-aria-label="Fermer le menu"
@@ -45,6 +45,6 @@ ip-burger-menu {
   --bg-nav-open-menu: #0000;
 }`;
   import = `
-import '../node_modules/ip-burger-menu/dist/ip-burger-menu/ip-burger-menu.esm';
+import '../node_modules/ip-menu/dist/ip-menu/ip-menu.esm';
   `;
 }

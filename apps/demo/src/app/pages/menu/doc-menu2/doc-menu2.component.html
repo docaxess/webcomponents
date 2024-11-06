@@ -1,1 +1,105 @@
-<p>doc-menu2 works!</p>
+<section id="documentation">
+    <h3 class="under-title">Installation</h3>
+    <p>
+      Follow these steps to install and use the
+      <code>ip-menu</code> component in your project.
+    </p>
+    <h4>Step 1</h4>
+    <p>
+      Install the <code>ip-menu</code> component as a dependency in your
+      project:
+    </p>
+    <pre><code [highlight]="installationScript" language="bash"></code></pre>
+  
+    <h4>Step 2</h4>
+    <p>Import the module into your script file:</p>
+    <pre><code [highlight]="import" language="typescript"></code></pre>
+  
+    <h3 class="under-title">Usage</h3>
+  
+    <p>
+      To use the ip-navigation-bar component, you need to set the properties as
+      attributes and use slots for additional content.
+    </p>
+    <h4>Properties</h4>
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">Property</th>
+            <th scope="col">Attribute</th>
+            <th scope="col">Necessity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Type</th>
+            <th scope="col">Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>menuData</td>
+            <td>menu-data</td>
+            <td>Required</td>
+            <td>JSON string to define menu items.</td>
+            <td>string</td>
+            <td>undefined</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <h5>Menu-item Interface</h5>
+      <p>
+        The items property is an array of MenuItem objects with the following
+        structure:
+      </p>
+      <ul>
+        <li><code>label</code>: The text label of the menu item.</li>
+        <li><code>href</code>:URL to navigate to when the item is clicked.</li>
+        <li><code>submenus</code>: optional if menu item had a submenu.</li>
+      </ul>
+      <h4>Slot</h4>
+      <p>
+        The ip-navigation-bar component supports the following slots for additional content:
+      </p>
+      <ul>
+        <li>
+          <code>left-head</code>: Content to be displayed on the left side
+          of the header.
+        </li>
+        <li>
+          <code>left-head</code>: Content to display on the right side of the header.
+        </li>
+      </ul>
+      <p><em>e.g:</em></p>
+      <pre class="example">
+          <code [highlight]="example" language="html"></code>
+          </pre>
+          <h3 class="under-title">Customization</h3>
+          <h4>Style</h4>
+          <p>
+            We have a set of predefined CSS variables used to customize the burger-menu:
+          </p>
+          <ul>
+            <li><code>--primary-color</code></li>
+            <li><code>--secondary-color</code></li>
+          </ul>
+        
+          <h4>Part</h4>
+          <p>We have a set of classes that could be used to customise accordingly:</p>
+          <ul>
+            <li><code>nav-bar</code>: The nav for the menu content.</li>
+            <li><code>menu-items</code>: The list of menu elements (ul).</li>
+            <li><code>menu-item</code>: The menu items (li).</li>
+            <li><code>menu-items-link</code>: For link in each menu item.</li>
+            <li><code>submenu-container</code>: The container of submenu.</li>
+            <li><code>submenu-items</code>: The list of submenu elements (ul).</li>
+            <li><code>submenu-item</code>: The submenu item.</li>
+            <li><code>toggle-menu-btn</code>: The button that toggles the menu for mobile and tablet.</li>
+          </ul>
+          
+        
+          <p><em>e.g:</em></p>
+          <pre class="example">
+              <code [highlight]="css" language="css"></code>
+              </pre>
+        </section>
+    
+      

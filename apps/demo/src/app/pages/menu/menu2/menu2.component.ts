@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CodeSnippetComponent } from '../../../features/code-snippet/code-snippet.component';
-import { DocMenuComponent } from '../doc-menu/doc-menu.component';
+import { DocMenu2Component } from '../doc-menu2/doc-menu2.component';
 import { AccordionComponent } from '../../../features/accordion/accordion.component';
 import { defineCustomElements as menuElements } from '@ipedis/menu/loader';
 
@@ -15,7 +15,7 @@ import { defineCustomElements as menuElements } from '@ipedis/menu/loader';
   selector: 'app-menu2',
   standalone: true,
   imports: [CommonModule,CodeSnippetComponent,
-    DocMenuComponent,
+    DocMenu2Component,
     AccordionComponent,],
   templateUrl: './menu2.component.html',
   styleUrl: './menu2.component.scss',

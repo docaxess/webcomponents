@@ -130,12 +130,6 @@ To use the ip-navigation-bar component, you need to set the properties as attrib
 | Property             | Attribute               | Necessity | Description                                                                   | Type     | Default                               |
 | -------------------- | ----------------------- | --------- | ----------------------------------------------------------------------------- | -------- | ------------------------------------- |
 | `menuData`           | `menu-data`             | Required  | `JSON string to define menu items.`                                           | `string` | `undefined`                           |
-| `closeSubmenuPrefix` | `close-submenu-prefix`  | Optional  | `Prefix of aria-label of button to close submenu,it is followed by the label` | `string` | `'Close'`                             |
-| `openSubmenuPrefix`  | `open-submenu-prefix`   | Optional  | `Prefix of aria-label of button to open submenu,it is followed by the`        | `string` | `'Open menu'`                         |
-| `closeMenuAriaLabel` | `close-menu-aria-label` | Optional  | `ARIA label for the button that closes the menu for tablet and mobile.`       | `string` | `'Close menu'`                        |
-| `openMenuAriaLabel`  | `open-menu-aria-label`  | Optional  | `ARIA label for the button that opens the menu for tablet and mobile.`        | `string` | `'Open menu'`                         |
-| `pathToCloseIcon`    | `path-to-close-icon`    | Optional  | `Path to the icon image used to close the menu.`                              | `string` | `'../../assets/images/x-icon.svg'`    |
-| `pathToOpenIcon`     | `path-to-open-icon`     | Optional  | `Path to the icon image used to open the menu.`                               | `string` | `'../../assets/images/icon-list.svg'` |
 
 ##### Menu-item Interface
 
@@ -155,34 +149,40 @@ The ip-navigation-bar component supports the following slots for additional cont
 _e.g:_
 
 ```html
-<ip-navigation-bar
-  close-submenu-prefix="Fermer le sous menu de "
-  open-submenu-prefix="Ouvrir le sous menu de "
-  open-menu-aria-label="Ouvrir le menu"
-  close-menu-aria-label="Fermer le menu"
-  path-to-close-icon="../../assets/images/x-icon.svg"
-  path-to-open-icon="../../assets/images/icon-list.svg"
-  menu-data='[
-      {"label":"Home", "href":"/home"},
-      {"label":"About", "href":"/about"},
-      {"label":"Services", "href":"/services"},
-      {"label":"Contact", "href":"/contact", "disabled": true}
+      <ip-navigation-bar
+        menu-data='[
+      {"label": "Home", "href": "/"},
+      {"label": "About", "href": "/about"},
+      {"label": "Pages",   "href": "/news",
+        "submenus": [
+        {"label": "Page-1", "href": "/pages/page1"},
+        {"label": "Page-2", "href": "/pages/page2"},
+        {"label": "Page-3", "href": "/pages/page3"},
+        {"label": "Page-4", "href": "/pages/page4"}
+      ]},
+      {"label": "Contact", "href": "/contact"},{"label": "News", "href": "/news", 
+      "submenus": [
+      {"label": "News-1", "href": "/news/news1"},
+      {"label": "News-2", "href": "/news/news2"},
+      {"label": "News-3", "href": "/news/news3"},
+      {"label": "News-4", "href": "/news/news4"}
+    ]}
     ]'
->
-  <div slot="left-head">
-    <img src="../../assets/images/logo.png" alt="" />
-  </div>
-  <div slot="right-head">
-    <button>Contactez-nous</button>
-  </div>
-</ip-navigation-bar>
+      >
+        <div class="logo" slot="left-head">
+          <img class="menu-2-logo" src="./assets/images/Logo.png" alt="" />
+        </div>
+        <div slot="right-head">
+          <button class="menu-2-btn">GET A QUOTE</button>
+        </div>
+      </ip-navigation-bar>
 ```
 
 ### Customization
 
 #### Style
 
-We have a set of predefined variable used to customize the burger-menu:
+We have a set of predefined variable used to customize the navigation-bar:
 
 - **--primary-color**
 - **--secondary-color**
