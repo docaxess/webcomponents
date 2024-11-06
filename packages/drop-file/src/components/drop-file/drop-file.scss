@@ -26,28 +26,32 @@
   background-color: #f9f9f9;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #f1f1f1;
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: #000;
   }
 
-  .file-details {
+  .uploaded {
+    width: 70%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    margin-right: 10px;
-
-    .file-name {
-      font-size: 14px;
-      color: #333;
-      margin-bottom: 5px;
+    
+    .error-message {
+      color: red;
+      font-size: 12px;
     }
 
     .progress-bar {
       width: 100%;
-      background-color: #f3f3f3;
       border-radius: 5px;
       overflow: hidden;
       margin-bottom: 5px;
+
+      .dot {
+        margin: 0 10px;
+        font-size: 30px;
+      }
 
       .progress-bar-fill {
         height: 10px;
@@ -55,16 +59,48 @@
         transition: width 0.3s ease;
       }
     }
+  }
+  
 
-    .error-message {
-      color: red;
-      font-size: 12px;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+
+
+
+  .download-button {
+    width: 38px;
+    height: 38px;
+    background: none;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.1);
     }
+
+ 
+
+
+    .file-name {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+
   }
 
   .icon-button {
+    width: 38px;
+    height: 38px;
     background: none;
-    border: none;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
     cursor: pointer;
     padding: 0;
     display: flex;
@@ -76,10 +112,6 @@
       transform: scale(1.1);
     }
 
-    svg {
-      width: 16px;
-      height: 16px;
-      fill: #000;
-    }
+
   }
 }

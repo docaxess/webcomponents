@@ -17,7 +17,7 @@
 | `placeholder`     | `placeholder`       |             | `string` | `'Glissez-déposez vos fichiers ici ou cliquez pour les sélectionner'` |
 | `removeFileLabel` | `remove-file-label` |             | `string` | `'Supprimer'`                                                         |
 | `resumeLabel`     | `resume-label`      |             | `string` | `'Reprendre le téléchargement'`                                       |
-| `timeLeft`        | `time-left`         |             | `string` | `'Temps restant'`                                                     |
+| `timeLeft`        | `time-left`         |             | `string` | `'secondes restants'`                                                 |
 
 
 ## Events

@@ -24,10 +24,9 @@ export class FileUpload {
   @Prop() pauseLabel: string = 'Mettre en pause le téléchargement';
   @Prop() resumeLabel: string = 'Reprendre le téléchargement';
   @Prop() removeFileLabel: string = 'Supprimer';
-  @Prop() timeLeft: string = 'Temps restant';
+  @Prop() timeLeft: string = 'secondes restants';
   @Prop() fileSize: string = 'Taille';
 
-  // Ajout de l'événement personnalisé
   @Event() fileUploaded: EventEmitter<File>;
 
   private dropZone: HTMLDivElement;
@@ -228,35 +227,33 @@ export class FileUpload {
         </div>
         {this.files.map((file) => (
           <div key={file.name} class="file-container">
+            <div class="uploaded">
             <span>{file.name}</span>
-            <div class="file-details">
-              <div class="file-size">
-                {this.fileSize}: {this.formatBytes(file.size)}
-              </div>
-              {this.fileStatuses[file.name] === 'uploading' && (
-                <div>
+            {this.fileStatuses[file.name]=== 'uploading' && (
                   <div class="progress-bar">
-                    <div
-                      class="progress-bar-fill"
-                      style={{ width: `${this.uploadProgress[file.name]}%` }}
-                    ></div>
+                    <div class="uploaded-size">
+                   {this.calculateUploadedSize(file)}/{this.formatBytes(file.size)} 
+                   <span class="dot">.</span>
+                   {this.calculateRemainingTime(file.name)} {this.timeLeft} 
                   </div>
-                  <div class="uploaded-size">
-                    Uploadé: {this.calculateUploadedSize(file)}
-                  </div>
-                  <div class="time-remaining">
-                    {this.timeLeft}: {this.calculateRemainingTime(file.name)}
-                  </div>
-                </div>
-              )}
+                  <div
+                    class="progress-bar-fill"
+                    style={{ width: `${this.uploadProgress[file.name]}%` }}
+                  ></div>
+                </div>              
+            )}
+            
               {this.fileStatuses[file.name] === 'error' && (
                 <div class="error-message">{this.errorMessages[file.name]}</div>
               )}
-              {this.fileStatuses[file.name] === 'completed' &&
+            </div>
+
+            {this.fileStatuses[file.name] === 'completed' &&
                 this.uploadUrls[file.name] && (
                   <button
                     onClick={() => this.downloadFile(file)}
                     aria-label={`${this.downloadLabel} ${file.name}`}
+                    class="download-button"
                   >
                     <svg
                       aria-hideen="true"
@@ -290,7 +287,7 @@ export class FileUpload {
                     </svg>
                   </button>
                 )}
-            </div>
+
             <button
               onClick={() =>
                 this.fileStatuses[file.name] === 'uploading'
