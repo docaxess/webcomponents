@@ -43,6 +43,9 @@ export class FileUpload {
     this.dropZone.addEventListener('dragleave', this.handleDragLeave);
     this.dropZone.addEventListener('drop', this.handleDrop);
     this.dropZone.addEventListener('click', () => this.fileInput.click());
+    this.dropZone.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') this.fileInput.click();
+    });
   }
 
   private handleDragOver = (event: DragEvent) => {
@@ -193,8 +196,6 @@ export class FileUpload {
   }
 
   private downloadFile(file: File) {
-    console.log('download', file);
-
     const url = URL.createObjectURL(file);
     const a = document.createElement('a') as HTMLAnchorElement;
     a.href = url;
