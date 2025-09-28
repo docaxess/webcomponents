@@ -1,0 +1,16 @@
+{
+  "name": "show-more",
+  "version": "1",
+  "main": "../../dist/packages/show-more/dist/index.cjs.js",
+  "module": "../../dist/packages/show-more/dist/index.js",
+  "es2015": "../../dist/packages/show-more/dist/esm/index.mjs",
+  "es2017": "../../dist/packages/show-more/dist/esm/index.mjs",
+  "types": "../../dist/packages/show-more/dist/types/index.d.ts",
+  "collection": "../../dist/packages/show-more/dist/collection/collection-manifest.json",
+  "collection:main": "../../dist/packages/show-more/dist/collection/index.js",
+  "unpkg": "../../dist/packages/show-more/dist/show-more/show-more.js",
+  "files": [
+    "../../dist/packages/show-more/dist/",
+    "../../dist/packages/show-more/loader/"
+  ]
+}

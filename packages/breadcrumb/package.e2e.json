@@ -1,0 +1,16 @@
+{
+  "name": "breadcrumb",
+  "version": "1",
+  "main": "../../dist/packages/breadcrumb/dist/index.cjs.js",
+  "module": "../../dist/packages/breadcrumb/dist/index.js",
+  "es2015": "../../dist/packages/breadcrumb/dist/esm/index.mjs",
+  "es2017": "../../dist/packages/breadcrumb/dist/esm/index.mjs",
+  "types": "../../dist/packages/breadcrumb/dist/types/index.d.ts",
+  "collection": "../../dist/packages/breadcrumb/dist/collection/collection-manifest.json",
+  "collection:main": "../../dist/packages/breadcrumb/dist/collection/index.js",
+  "unpkg": "../../dist/packages/breadcrumb/dist/breadcrumb/breadcrumb.js",
+  "files": [
+    "../../dist/packages/breadcrumb/dist/",
+    "../../dist/packages/breadcrumb/loader/"
+  ]
+}

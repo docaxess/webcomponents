@@ -1,0 +1,16 @@
+{
+  "name": "dropdown",
+  "version": "1",
+  "main": "../../dist/packages/dropdown/dist/index.cjs.js",
+  "module": "../../dist/packages/dropdown/dist/index.js",
+  "es2015": "../../dist/packages/dropdown/dist/esm/index.mjs",
+  "es2017": "../../dist/packages/dropdown/dist/esm/index.mjs",
+  "types": "../../dist/packages/dropdown/dist/types/index.d.ts",
+  "collection": "../../dist/packages/dropdown/dist/collection/collection-manifest.json",
+  "collection:main": "../../dist/packages/dropdown/dist/collection/index.js",
+  "unpkg": "../../dist/packages/dropdown/dist/dropdown/dropdown.js",
+  "files": [
+    "../../dist/packages/dropdown/dist/",
+    "../../dist/packages/dropdown/loader/"
+  ]
+}
