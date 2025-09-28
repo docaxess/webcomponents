@@ -9,7 +9,7 @@ import * as dotenv from 'dotenv';
 // Load environment variables
 dotenv.config();
 
-const API_KEY = process.env.AXE_DEVELOPER_HUB_API_KEY;
+const API_KEY = process.env['AXE_DEVELOPER_HUB_API_KEY'];
 
 if (!API_KEY) {
   console.warn('AXE_DEVELOPER_HUB_API_KEY not found in environment variables');
