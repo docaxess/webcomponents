@@ -37,7 +37,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Demo Axe tests
-        run: build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
+        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
         env:
           AXE_DEVELOPER_HUB_API_KEY: ${{ secrets.AXE_DEVELOPER_HUB_API_KEY }}
   axe-linter:
