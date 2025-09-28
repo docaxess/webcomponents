@@ -42,6 +42,7 @@ Thumbs.db
 .nx/workspace-data
 
 packages/*/.stencil
+packages/*/package.e2e.json
 .angular
 .env
 
