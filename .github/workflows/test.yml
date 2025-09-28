@@ -30,8 +30,14 @@ jobs:
       - name: Test all packages
         run: npm run test
 
-      - name: e2e all packages
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Demo e2e tests
         run: npm run e2e
+
+      - name: Demo Axe tests
+        run: npm run e2e:axe
 
   axe-linter:
     runs-on: ubuntu-latest

@@ -1,0 +1,16 @@
+{
+  "name": "search-bar",
+  "version": "1",
+  "main": "../../dist/packages/search-bar/dist/index.cjs.js",
+  "module": "../../dist/packages/search-bar/dist/index.js",
+  "es2015": "../../dist/packages/search-bar/dist/esm/index.mjs",
+  "es2017": "../../dist/packages/search-bar/dist/esm/index.mjs",
+  "types": "../../dist/packages/search-bar/dist/types/index.d.ts",
+  "collection": "../../dist/packages/search-bar/dist/collection/collection-manifest.json",
+  "collection:main": "../../dist/packages/search-bar/dist/collection/index.js",
+  "unpkg": "../../dist/packages/search-bar/dist/search-bar/search-bar.js",
+  "files": [
+    "../../dist/packages/search-bar/dist/",
+    "../../dist/packages/search-bar/loader/"
+  ]
+}

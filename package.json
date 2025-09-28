@@ -17,7 +17,20 @@
     "demo:ssr": "nx run demo:build:production && node dist/demo/server/server.mjs",
     "migrate": "nx migrate latest && nx migrate --run-migrations --if-exists",
     "run:ci": "npm run lint && npm run test && npm run e2e && npm run build",
-    "serve": "nx serve demo"
+    "serve": "nx serve demo",
+    "demo:e2e": "nx run demo:e2e",
+    "demo:e2e:manual": "playwright test --config apps/demo/playwright.config.manual.ts",
+    "e2e:demo": "nx run demo:e2e",
+    "e2e:axe": "playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts",
+    "ci:demo": "npm run build && npm run e2e:demo",
+    "ci:axe": "npm run build && npm run e2e:axe",
+    "ci:basic": "npm run lint && npm run test && npm run build"
+  },
+  "engines": {
+    "node": "^22.0.0"
+  },
+  "volta": {
+    "node": "22.20.0"
   },
   "private": false,
   "devDependencies": {
@@ -30,6 +43,7 @@
     "@angular/cli": "^18.1.3",
     "@angular/compiler-cli": "18.1.1",
     "@angular/language-service": "18.1.1",
+    "@axe-core/watcher": "^3.23.0",
     "@nrwl/angular": "^19.5.6",
     "@nrwl/workspace": "^19.5.6",
     "@nx/angular": "19.5.2",
@@ -55,6 +69,7 @@
     "@typescript-eslint/eslint-plugin": "7.17.0",
     "@typescript-eslint/parser": "7.17.0",
     "@typescript-eslint/utils": "7.17.0",
+    "dotenv": "^17.2.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest": "^28.6.0",
