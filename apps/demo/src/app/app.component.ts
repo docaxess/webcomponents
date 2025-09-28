@@ -1,9 +1,4 @@
-import {
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  Inject,
-  OnInit,
-} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './features/header/header.component';
 import { AsideComponent } from './features/aside/aside.component';
@@ -27,8 +22,9 @@ import { CommonModule } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent implements OnInit {
+  private titleService = inject<TitleService>(TitleService);
+
   isMenuVisible = false;
-  constructor(@Inject(TitleService) private titleService: TitleService) {}
 
   ngOnInit() {
     this.titleService.init();

@@ -14,6 +14,11 @@ export const config: Config = {
 
   plugins: [sass()],
 
+  testing: {
+    browserExecutablePath:
+      '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  },
+
   outputTargets: [
     {
       type: 'dist',
