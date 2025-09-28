@@ -19,7 +19,7 @@ jobs:
         run: npm ci
 
       - name: Build all packages
-        run: npm run build
+        run: npx nx run-many --target=build --all --projects=tag:type:webcomponent --parallel && npx nx run demo:build:production
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -46,11 +46,8 @@ jobs:
         with:
           name: build-artifacts
 
-      - name: Fix node_modules binaries
-        run: npm ci --prefer-offline
-
       - name: Lint all packages
-        run: npm run lint
+        run: npx nx run-many --target=lint --all --parallel
 
   test:
     runs-on: ubuntu-latest
@@ -68,11 +65,8 @@ jobs:
         with:
           name: build-artifacts
 
-      - name: Fix node_modules binaries
-        run: npm ci --prefer-offline
-
       - name: Test all packages
-        run: npm run test
+        run: npx nx run-many --target=test --all --parallel
 
   e2e-tests:
     runs-on: ubuntu-latest
@@ -90,14 +84,11 @@ jobs:
         with:
           name: build-artifacts
 
-      - name: Fix node_modules binaries
-        run: npm ci --prefer-offline
-
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Demo e2e tests
-        run: npm run e2e
+        run: npx nx run-many --target=e2e --all --parallel --exclude=demo
 
   axe-tests:
     runs-on: ubuntu-latest
@@ -115,15 +106,13 @@ jobs:
         with:
           name: build-artifacts
 
-      - name: Fix node_modules binaries
-        run: npm ci --prefer-offline
-
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Demo Axe tests
-        run: npm run e2e:axe
-
+        run: npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
+        env:
+          AXE_DEVELOPER_HUB_API_KEY: ${{ secrets.AXE_DEVELOPER_HUB_API_KEY }}
   axe-linter:
     runs-on: ubuntu-latest
     steps:
