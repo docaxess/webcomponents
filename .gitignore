@@ -47,3 +47,4 @@ packages/*/package.e2e.json
 .env
 
 playwright-report
+test-results

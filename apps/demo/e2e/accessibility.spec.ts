@@ -32,7 +32,7 @@ test.describe('Accessibility Tests', () => {
       args: ['--headless=new']
     }));
     const p = await browserContext.newPage();
-    const controller = new PlaywrightController(p);
+    controller = new PlaywrightController(p);
 
     // Wrap the page for axe monitoring
     wrapPlaywrightPage(p, controller);
