@@ -23,7 +23,7 @@ test.describe('Accessibility Tests', () => {
       '',
       playwrightConfig({
       axe: {
-        apiKey: API_KEY,
+        apiKey: API_KEY || '',
         timeout: {
           flush: 10000
         }
