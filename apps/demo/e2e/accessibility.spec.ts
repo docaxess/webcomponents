@@ -18,7 +18,7 @@ if (!API_KEY) {
 test.describe('Accessibility Tests', () => {
   let controller: PlaywrightController;
 
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, browser }) => {
     const browserContext: BrowserContext = await chromium.launchPersistentContext(
       '',
       playwrightConfig({
@@ -28,7 +28,7 @@ test.describe('Accessibility Tests', () => {
           flush: 10000
         }
       },
-      headless: false,
+      channel: 'chromium',
       args: ['--headless=new']
     }));
     const p = await browserContext.newPage();
