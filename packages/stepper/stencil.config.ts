@@ -14,6 +14,10 @@ export const config: Config = {
 
   plugins: [sass()],
 
+  testing: {
+    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+  },
+
   outputTargets: [
     {
       type: 'dist',

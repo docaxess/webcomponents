@@ -36,20 +36,20 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-staging-image]
     steps:
-    - uses: passeidireto/trigger-external-workflow-action@main
-      env:
-        PAYLOAD_SERVICE: "webcomponents"
-      with:
-        repository: docaxess/pdfa11y-k8s-webservices
-        event: deploy_staging
-        github_pat: ${{ secrets.K8S_WEBSERVICES_PAT }}
+      - uses: passeidireto/trigger-external-workflow-action@main
+        env:
+          PAYLOAD_SERVICE: "webcomponents"
+        with:
+          repository: docaxess/pdfa11y-k8s-webservices
+          event: deploy_staging
+          github_pat: ${{ secrets.K8S_WEBSERVICES_PAT }}
 
-    - uses: slackapi/slack-github-action@v1.26.0
-      with:
-        channel-id: 'C0779L6QQT1' #'saas-deployment'
-        payload: |
-          {
-            "text": ":rocket: webcomponents.ipedis.com has been released on staging ! :tada: ( ${{ github.ref_name }} )"
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.DEPLOYMENT_SLACK_BOT }}
+      - uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook-type: webhook-trigger
+          #'saas-deployment'
+          webhook: ${{ secrets.DEPLOYMENT_SLACK_BOT }}
+          payload: |
+            {
+              "text": ":rocket: webcomponents.ipedis.com has been released on staging ! :tada: ( ${{ github.ref_name }} )"
+            }

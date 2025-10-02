@@ -5,30 +5,43 @@ on:
   pull_request:
 
 jobs:
-  build-and-test:
+  setup:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22.x]
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '22.x'
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Lint all packages
-        run: npm run lint
+        run: npm ci
 
       - name: Build all packages
         run: npm run build
 
-      - name: Test all packages
-        run: npm run test
+      - name: Lint all packages
+        run: npx nx run-many --target=lint --all --parallel
 
-      - name: e2e all packages
-        run: npm run e2e
+      - name: Test all packages
+        run: npx nx run-many --target=test --all --parallel
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Demo e2e tests
+        run: npx nx run-many --target=e2e --all --parallel --exclude=demo
+
+      - name: Demo Axe tests
+        run: npm run build:cleanup && npx playwright test apps/demo/e2e/accessibility.spec.ts --config apps/demo/playwright.config.ts
+        env:
+          AXE_DEVELOPER_HUB_API_KEY: ${{ secrets.AXE_DEVELOPER_HUB_API_KEY }}
+  axe-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dequelabs/axe-linter-action@v1
+        with:
+          api_key: ${{ secrets.AXE_LINTER_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}

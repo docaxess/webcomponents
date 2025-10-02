@@ -89,6 +89,13 @@
       "options": {
         "jestConfig": "apps/demo/jest.config.ts"
       }
+    },
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright"],
+      "options": {
+        "config": "apps/demo/playwright.config.ts"
+      }
     }
   }
 }
